@@ -1,0 +1,409 @@
+{
+  "name": "@fundingStreamCode national funding allocation",
+  "type": "Page",
+  "groups": [
+    {
+      "type": "Html/Div",
+      "classname": "govuk-grid-row",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "column-two-thirds",
+          "groups": [
+            {
+              "type": "Conditional/Condition",
+              "expression": "@isCurrentYear=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "Html/Element",
+                      "subtype": "H1",
+                      "value": "@expandedFundingStreamNameHtml @year1 to @year2",
+                      "classname": "heading-xlarge public"
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "classname": "lede",
+                      "title": "Find out about @shortFundingStreamNameHtml funding allocations for @yearTypeName @year1 to @year2."
+                    }
+                  ]
+                },
+                {
+                  "type": "Conditional/FalseOutput",
+                  "groups": [
+                    {
+                      "type": "Html/Element",
+                      "subtype": "H1",
+                      "value": "@expandedFundingStreamNameHtml @currentYearFrom to @currentYearTo",
+                      "classname": "heading-xlarge public",
+                      "groups": [
+                        {
+                          "type": "Html/Span",
+                          "classname": "heading-secondary",
+                          "groups": [
+                            {
+                              "type": "Tag/NotLatest"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "classname": "lede",
+                      "title": "Find out about @shortFundingStreamNameHtml funding allocations for @yearTypeName @currentYearFrom to @currentYearTo."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Heading/Medium",
+              "title": "Allocations",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@isCurrentYear=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "General/Repeater",
+                      "expression": "@Spreadsheets",
+                      "groups": [
+                        {
+                          "type": "Block/DownloadADocument",
+                          "title": "Download @shortFundingStreamNameHtml allocations @year1 to @year2",
+                          "value": "@RepeaterItem",
+                          "variables": [
+                            {
+                              "name": "showPublicationDate",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Conditional/FalseOutput",
+                  "groups": [
+                    {
+                      "type": "General/Repeater",
+                      "expression": "@Spreadsheets",
+                      "groups": [
+                        {
+                          "type": "Block/DownloadADocument",
+                          "title": "Download @shortFundingStreamNameHtml allocations @(RepeaterItem.YearFrom) to  @(RepeaterItem.YearTo)",
+                          "value": "@RepeaterItem",
+                          "variables": [
+                            {
+                              "name": "showPublicationDate",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "form-block",
+              "groups": [
+                {
+                  "type": "Heading/Small",
+                  "title": "General @fundingStreamNameWithinSentence resources",
+                  "classname": "heading-medium heading-guidance"
+                },
+                {
+                  "type": "Pattern/UnorderedList",
+                  "classname": "list",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "@fundingStreamName: conditions of grant @currentYearFrom to @currentYearTo",
+                      "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-conditions-of-grant-@currentYearFrom-to-@currentYearTo"
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "@fundingStreamName for primary schools",
+                      "value": "https://www.gov.uk/guidance/@fundingStreamNamePathPart-for-primary-schools"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Html/Div",
+          "classname": "one-third",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "related-container",
+              "groups": [
+                {
+                  "type": "Html/Element",
+                  "subtype": "Aside",
+                  "classname": "related",
+                  "id": "related",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "inner group related-subsection",
+                      "groups": [
+
+                        {
+                          "type": "Conditional/Condition",
+                          "expression": "@isCurrentYear=true",
+                          "groups": [
+                            {
+                              "type": "Conditional/TrueOutput",
+                              "groups": [
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "H2",
+                                  "id": "parent-subsection-0",
+                                  "title": "Historic funding allocations"
+                                },
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "Nav role=\"navigation\" aria-labelledby=\"parent-subsection-0\"",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "ul",
+                                      "classname": "list",
+                                      "groups": [
+                                        {
+                                          "type": "General/Repeater",
+                                          "expression": "@CurrentYearsBeforeThisYear",
+                                          "groups": [
+                                            {
+                                              "type": "Html/Element",
+                                              "subtype": "li",
+                                              "groups": [
+                                                {
+                                                  "type": "General/StandardLink",
+                                                  "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                  "classname": "related-links",
+                                                  "value": "@basePath/national-funding-allocations/@fundingStreamCode/@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "General/Repeater",
+                                          "expression": "@HistoricYears",
+                                          "groups": [
+                                            {
+                                              "type": "Html/Element",
+                                              "subtype": "li",
+                                              "groups": [
+                                                {
+                                                  "type": "Conditional/Condition",
+                                                  "expression": "@(RepeaterItem.Item1)>2017",
+                                                  "groups": [
+                                                    {
+                                                      "type": "Conditional/TrueOutput",
+                                                      "groups": [
+                                                        {
+                                                          "type": "General/StandardLink",
+                                                          "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                          "classname": "related-links",
+                                                          "value": "@basePath/national-funding-allocations/@fundingStreamCode/@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "Conditional/FalseOutput",
+                                                      "groups": [
+                                                        {
+                                                          "type": "Conditional/Condition",
+                                                          "expression": "@(RepeaterItem.Item1)=2016",
+                                                          "groups": [
+                                                            {
+                                                              "type": "Conditional/TrueOutput",
+                                                              "groups": [
+                                                                {
+                                                                  "type": "General/ExternalLink",
+                                                                  "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                                  "classname": "related-links",
+                                                                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-conditions-for-@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "Conditional/FalseOutput",
+                                                              "groups": [
+                                                                {
+                                                                  "type": "General/ExternalLink",
+                                                                  "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                                  "classname": "related-links",
+                                                                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-allocations-for-@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/FalseOutput",
+                              "groups": [
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "H2",
+                                  "id": "parent-subsection-0",
+                                  "title": "Latest funding allocations"
+                                },
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "Nav role=\"navigation\" aria-labelledby=\"parent-subsection-0\"",
+                                  "groups": [
+                                    {
+                                      "type": "Pattern/UnorderedList",
+                                      "classname": "list",
+                                      "groups": [
+                                        {
+                                          "type": "General/Repeater",
+                                          "expression": "@FutureYears",
+                                          "groups": [
+                                            {
+                                              "type": "Html/Element",
+                                              "subtype": "li",
+                                              "groups": [
+                                                {
+                                                  "type": "General/StandardLink",
+                                                  "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                  "classname": "related-links",
+                                                  "value": "@basePath/national-funding-allocations/@fundingStreamCode/@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                        
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "H2",
+                                  "id": "parent-subsection-1",
+                                  "title": "Historic funding allocations"
+                                },
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "Nav role=\"navigation\" aria-labelledby=\"parent-subsection-1\"",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "ul",
+                                      "classname": "list",
+                                      "groups": [
+                                        {
+                                          "type": "General/Repeater",
+                                          "expression": "@LatestHistoricYears",
+                                          "groups": [
+                                            {
+                                              "type": "Html/Element",
+                                              "subtype": "li",
+                                              "groups": [
+                                                {
+                                                  "type": "Conditional/Condition",
+                                                  "expression": "@(RepeaterItem.Item1)>2017",
+                                                  "groups": [
+                                                    {
+                                                      "type": "Conditional/TrueOutput",
+                                                      "groups": [
+                                                        {
+                                                          "type": "General/StandardLink",
+                                                          "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                          "classname": "related-links",
+                                                          "value": "@basePath/national-funding-allocations/@fundingStreamCode/@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "Conditional/FalseOutput",
+                                                      "groups": [
+                                                        {
+                                                          "type": "Conditional/Condition",
+                                                          "expression": "@(RepeaterItem.Item1)=2016",
+                                                          "groups": [
+                                                            {
+                                                              "type": "Conditional/TrueOutput",
+                                                              "groups": [
+                                                                {
+                                                                  "type": "General/ExternalLink",
+                                                                  "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                                  "classname": "related-links",
+                                                                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-conditions-for-@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "Conditional/FalseOutput",
+                                                              "groups": [
+                                                                {
+                                                                  "type": "General/ExternalLink",
+                                                                  "title": "@shortFundingStreamNameHtml: funding allocations for @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                                                  "classname": "related-links",
+                                                                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-allocations-for-@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

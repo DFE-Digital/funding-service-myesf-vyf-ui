@@ -1,0 +1,44 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.GenerateFundingReportsViewModel
+
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_PdfGenerationActionsGenerateFundingReport, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <dl class="dl-horizontal-halves">
+            <dt>
+                @Html.DisplayNameFor(model => model.FundingPeriodCode)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FundingPeriodCode)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReportType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReportType)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+
+            </dd>
+        </dl>
+    </div>
+
+    @Html.HiddenFor(m => m.ReportType)
+    @Html.HiddenFor(m => m.FundingPeriodCode)
+    <input type="submit" class="button" value="Generate Report" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome)
+}
+

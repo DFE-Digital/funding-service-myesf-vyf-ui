@@ -1,0 +1,3280 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ViewYourFunding.Automation</name>
+    </assembly>
+    <members>
+        <member name="T:ViewYourFunding.Automation.Pages.BasePage">
+            <summary>
+            The Base Page class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.EnsureCurrentPage(System.String,System.Boolean)">
+            <summary>
+            Ensures the current page.
+            </summary>
+            <param name="expectedText">The expected text.</param>
+            <param name="allowContains">if set to <c>true</c> [allow contains].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.EnsureServiceNameHeadingDoesntExist">
+            <summary>
+            Ensures the service name heading doesnt exist.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.EnsureFinalBreadcrumbText(System.String)">
+            <summary>
+            Ensures the final breadcrumb text.
+            </summary>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.EnsureBreadcrumbLinksText(System.String[])">
+            <summary>
+            Ensures the breadcrumb links text.
+            </summary>
+            <param name="linkTexts">The link texts.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.ClickSkillsFundingServiceHeaderLink">
+            <summary>
+            Clicks the skills funding service header link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.Goto(System.String)">
+            <summary>
+            Goes to the specified relative URL.
+            </summary>
+            <param name="relativeUrl">The relative URL.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.MainTitleHeading">
+            <summary>
+            Gets the main title heading.
+            </summary>
+            <value>
+            The main title heading.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.BreadcrumbContainer">
+            <summary>
+            Gets the breadcrumb container.
+            </summary>
+            <value>
+            The breadcrumb container.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.BreadcrumbLinks">
+            <summary>
+            Gets the breadcrumb links.
+            </summary>
+            <value>
+            The breadcrumb links.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.BreadcrumbFinalText">
+            <summary>
+            Gets the breadcrumb final text.
+            </summary>
+            <value>
+            The breadcrumb final text.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.SupportInformation">
+            <summary>
+            Gets the support information.
+            </summary>
+            <value>
+            The support information.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.SupportInformationByLocator">
+            <summary>
+            Gets the support information by locator.
+            </summary>
+            <value>
+            The support information by locator.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.SkillsFundingServiceHeaderLink">
+            <summary>
+            Gets the skills funding service header link.
+            </summary>
+            <value>
+            The skills funding service header link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.AccountDetails">
+            <summary>
+            Gets the accounts details div.
+            </summary>
+            <value>
+            The account details div.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.CurrentUrl">
+            <summary>
+            Gets the current URL.
+            </summary>
+            <value>
+            The current URL.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.BasePage.ServiceNameHeading">
+            <summary>
+            Gets the service name heading.
+            </summary>
+            <value>
+            The service name heading.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.BasePage.GetWebElementForBy(OpenQA.Selenium.By)">
+            <summary>
+            For a given By object, we retrieve the interactable Web element on the page for it.
+            </summary>
+            <param name="b">The b.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage">
+            <summary>
+            The DSGDownloadPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureCurrentPage(System.Int32,System.Int32)">
+            <summary>
+            Ensures the current page.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureHistoricAllocations(System.Int32,System.Int32)">
+            <summary>
+            Ensures the historic allocations.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureGuidanceLink(System.Int32,System.Int32)">
+            <summary>
+            Ensures the guidance link.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureFundingBlockResourceLinks">
+            <summary>
+            Ensures the funding block resource links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureFundingBlockResourceLink(System.String,System.String)">
+            <summary>
+            Ensures the funding block resource link.
+            </summary>
+            <param name="expectedLinkText">The expected link text.</param>
+            <param name="expectedUrl">The expected URL.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureSpreadsheetLinks(System.Int32,System.Int32)">
+            <summary>
+            Ensures the spreadsheet links.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.EnsureFormatRequestLinks(System.Int32,System.Int32)">
+            <summary>
+            Ensures the format request links.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.GuidanceLinkListItem">
+            <summary>
+            Gets the guidance link list item.
+            </summary>
+            <value>
+            The guidance link list item.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.FundingBlockResourceLinks">
+            <summary>
+            Gets the funding block resource links.
+            </summary>
+            <value>
+            The funding block resource links.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.DocumentDownloadContainers">
+            <summary>
+            Gets the document download containers.
+            </summary>
+            <value>
+            The document download containers.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.DSGDownloadPage.FormatRequestLinks">
+            <summary>
+            Gets the format request links.
+            </summary>
+            <value>
+            The format request links.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage">
+            <summary>
+            The FindAnOrganisationPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ClickProviderOptionButton">
+            <summary>
+            Clicks the provider option button.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ClickLaCodeOptionButton">
+            <summary>
+            Clicks the la code option button.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.InputLocalAuthoritySearchText(System.String)">
+            <summary>
+            Inputs the local authority search text.
+            </summary>
+            <param name="searchText">The search text.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.SubmitLocalAuthoritySearch">
+            <summary>
+            Submits the local authority search.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.InputProviderText(System.String)">
+            <summary>
+            Inputs the provider text.
+            </summary>
+            <param name="searchText">The search text.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.SubmitProviderSearch">
+            <summary>
+            Submits the provider search.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.EnsureOrganisationsOptionsAvailable">
+            <summary>
+            Ensures the organisations options available.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.EnsureProviderOptionInputFieldIsDisplayed(System.Boolean)">
+            <summary>
+            Ensures the provider option input field is displayed.
+            </summary>
+            <param name="isDisplayed">if set to <c>true</c> [is displayed].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.EnsureLaCodeOptionInputFieldIsDisplayed(System.Boolean)">
+            <summary>
+            Ensures the la code option input field is displayed.
+            </summary>
+            <param name="isDisplayed">if set to <c>true</c> [is displayed].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.EnsureErrorLinkisCorrect(System.String)">
+            <summary>
+            Ensures the error linkis correct.
+            </summary>
+            <param name="expectedValidationErrorInputId">The expected validation error input identifier.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.EnsureErrorLinkIsHidden">
+            <summary>
+            Ensures the error link is hidden.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ProviderOptionInputField">
+            <summary>
+            Gets the provider option input field.
+            </summary>
+            <value>
+            The provider option input field.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.LaCodeOptionInputField">
+            <summary>
+            Gets the la code option input field.
+            </summary>
+            <value>
+            The la code option input field.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ProviderOption">
+            <summary>
+            Gets the provider option.
+            </summary>
+            <value>
+            The provider option.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.LaCodeOption">
+            <summary>
+            Gets the la code option.
+            </summary>
+            <value>
+            The la code option.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ProviderSearchArea">
+            <summary>
+            Gets the provider search area.
+            </summary>
+            <value>
+            The provider search area.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ProviderSearchSubmitButton">
+            <summary>
+            Gets the provider search submit button.
+            </summary>
+            <value>
+            The provider search submit button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.LocalAuthoritySearchSubmitButton">
+            <summary>
+            Gets the local authority search submit button.
+            </summary>
+            <value>
+            The local authority search submit button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.FindAnOrganisationPage.ErrorMessageLink">
+            <summary>
+            Gets the error message link.
+            </summary>
+            <value>
+            The error message link.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage">
+            <summary>
+            The LocalAuthorityDidYouMeanPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.BackToTopLinkSelector">
+            <summary>
+            The back to top link selector.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.NavigateToPageUsingSearchTerm(System.String)">
+            <summary>
+            Navigates to page using search term.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.ClickLocalAuthorityLink(System.String)">
+            <summary>
+            Clicks the local authority link.
+            </summary>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.EnsureSearchResultText(System.String)">
+            <summary>
+            Ensures the search result text.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.EnsureLocalAuthorityStatementLinks(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Ensures the local authority statement links.
+            </summary>
+            <param name="expectedLocalAuthorities">The expected local authorities.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.EnsureBackToTopLinkIsDisplayed(System.Boolean)">
+            <summary>
+            Ensures the back to top link is displayed.
+            </summary>
+            <param name="isDisplayed">if set to <c>true</c> [is displayed].</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.SearchResultCountParagraph">
+            <summary>
+            Gets the search result count paragraph.
+            </summary>
+            <value>
+            The search result count paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.LocalAuthorityStatementLinkBlock">
+            <summary>
+            Gets the local authority statement link block.
+            </summary>
+            <value>
+            The local authority statement link block.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDidYouMeanPage.BackToTopLink">
+            <summary>
+            Gets the back to top link.
+            </summary>
+            <value>
+            The back to top link.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage">
+            <summary>
+            The LocalAuthorityDSGFundingBreakdownPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.Open(System.Int32,System.Int32,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Opens the specified year from.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="searchTerm">The search term.</param>
+            <param name="localAuthorityName">Name of the local authority.</param>
+            <param name="blockName">Name of the block.</param>
+            <param name="multipleSearchResults">if set to <c>true</c> [multiple search results].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsDisabilityAccessFundShows">
+            <summary>
+            Highes the needs disability access fund shows.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsHospitalDoesNotShow">
+            <summary>
+            Highes the needs hospital does not show.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickHistoryLink">
+            <summary>
+            Clicks the history link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickSchoolsTab">
+            <summary>
+            Clicks the schools tab.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickCentralSchoolServicesTab">
+            <summary>
+            Clicks the central school services tab.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickHighNeedsTab">
+            <summary>
+            Clicks the high needs tab.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickEarlyYearsTab">
+            <summary>
+            Clicks the early years tab.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickFormatRequestLink">
+            <summary>
+            Clicks the format request link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.ClickHowWeCalculateThisLink(System.String)">
+            <summary>
+            Clicks the how we calculate this link.
+            </summary>
+            <param name="elementId">The element identifier.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureGuidanceLink(System.Int32,System.Int32)">
+            <summary>
+            Ensures the guidance link.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureOpenDocumentLink">
+            <summary>
+            Ensures the open document link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureSpreadsheetLink(System.String,System.Int32,System.Int32)">
+            <summary>
+            Ensures the spreadsheet link.
+            </summary>
+            <param name="organisation">The organisation.</param>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureEarlyYearsUniversalEntitlement(System.String)">
+            <summary>
+            Ensures the early years universal entitlement.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureEarlyYearsAdditional15(System.String)">
+            <summary>
+            Ensures the early years additional15.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureAllocationAmount(System.String)">
+            <summary>
+            Ensures the allocation amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureEarlyYears2YearEntitlement(System.String)">
+            <summary>
+            Ensures the early years2 year entitlement.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureTotalAmount(System.String)">
+            <summary>
+            Ensures the total amount.
+            </summary>
+            <param name="area">The area.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureEarlyYearsDisabilityAccess(System.String)">
+            <summary>
+            Ensures the early years disability access.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureEarlyYearsPupilPremium(System.String)">
+            <summary>
+            Ensures the early years pupil premium.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedsNFFAmount(System.String)">
+            <summary>
+            Ensures the high needs NFF amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureEarlyYearsMaintainedNursery(System.String)">
+            <summary>
+            Ensures the early years maintained nursery.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedsBasicEntitlementAmount(System.String)">
+            <summary>
+            Ensures the high needs basic entitlement amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedDeductionsDirectFundingAmount(System.String)">
+            <summary>
+            Ensures the high need deductions direct funding amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedMaintainedMainstream(System.String)">
+            <summary>
+            Ensures the high need maintained mainstream.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedFEILPAmount(System.String)">
+            <summary>
+            Ensures the high need feilp amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHistoryLink(System.Int32,System.Int32)">
+            <summary>
+            Ensures the history link.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedsAdditionalFundingSpecialAmount(System.String)">
+            <summary>
+            Ensures the high needs additional funding special amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedsImportExportAmount(System.String)">
+            <summary>
+            Ensures the high needs import export amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedsAdditionalFundingAmount(System.String)">
+            <summary>
+            Ensures the high needs additional funding amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureFormatRequestEmailLinkShown(System.String,System.Int32,System.Int32)">
+            <summary>
+            Ensures the format request email link shown.
+            </summary>
+            <param name="organisation">The organisation.</param>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureAllPost16SpecialEducationalNeedsPlacesMatch(System.String[])">
+            <summary>
+            Ensures all post16 special educational needs places match.
+            </summary>
+            <param name="amounts">The amounts.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedTotalBeforeDeductions(System.String)">
+            <summary>
+            Ensures the high need total before deductions.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureFormatRequestEmailLinkNotShownWhenSectionHasBeenCollapsed(System.Int32)">
+            <summary>
+            Ensures the format request email link not shown when section has been collapsed.
+            </summary>
+            <param name="numberOfLinks">The number of links.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedAPAmount(System.String)">
+            <summary>
+            Ensures the high need ap amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureCorrectTabHasBeenSelected(System.String)">
+            <summary>
+            Ensures the correct tab has been selected.
+            </summary>
+            <param name="expectedTab">The expected tab.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHighNeedMaintainedSpecialAmount(System.String)">
+            <summary>
+            Ensures the high need maintained special amount.
+            </summary>
+            <param name="amount">The amount.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureFindOutWhyPartialPupilNumbersAreUsedLink(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Ensures the find out why partial pupil numbers are used link.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="linkShouldBeDisplayed">if set to <c>true</c> [link should be displayed].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureDSGTechnicalNotesLinkIsCorrect(System.Int32,System.Int32)">
+            <summary>
+            Ensures the DSG technical notes link is correct.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureGuidanceListItems(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Ensure that guidance links are correct for the selected tab.
+            </summary>
+            <param name="tabNumber">0 is Schools tab and 1 is CSS tab.</param>
+            <param name="yearFrom">Year from.</param>
+            <param name="yearTo">Year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsurePrintThisPageItems(System.Int32)">
+            <summary>
+            Ensures the print this page items.
+            </summary>
+            <param name="tabNumber">The tab number.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureSchoolTabTotal">
+            <summary>
+            Ensures the school tab total.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureCentralSchoolServicesTabTotal">
+            <summary>
+            Ensures the central school services tab total.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureHowWeCalculateThisLinkToggles(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Ensures the how we calculate this link toggles.
+            </summary>
+            <param name="numberOfLinks">The number of links.</param>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureTableData(OpenQA.Selenium.IWebElement,System.Collections.Generic.KeyValuePair{System.String,System.String}[],System.Collections.Generic.KeyValuePair{System.String,System.String}[])">
+            <summary>
+            Ensures the table data.
+            </summary>
+            <param name="tableElement">The table element.</param>
+            <param name="expectedTableData">The expected table data.</param>
+            <param name="alternativeExpectedTableData">Alternative expected table data (optional).</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureBreadcrumbsAndFinalText(System.String,System.String[])">
+            <summary>
+            Ensures the breadcrumbs and final text.
+            </summary>
+            <param name="finalText">The final text.</param>
+            <param name="breadcrumbLinks">The breadcrumb links.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EnsureTableRow(OpenQA.Selenium.IWebElement,System.String,System.String,System.Int32)">
+            <summary>
+            Ensures the table row.
+            </summary>
+            <param name="tableElement">The table element.</param>
+            <param name="expectedKey">The expected key.</param>
+            <param name="expectedText">The expected text.</param>
+            <param name="rowNumber">The row number.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.GetColumnKeyNameFromTableRow(System.Int32,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the column key name from table row.
+            </summary>
+            <param name="rowNumber">The row number.</param>
+            <param name="tableElement">The table element.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.GetColumnKeyValueFromTableRow(System.Int32,OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the column key value from table row.
+            </summary>
+            <param name="rowNumber">The row number.</param>
+            <param name="tableElement">The table element.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsUniversalEntitlement">
+            <summary>
+            Gets the early years universal entitlement.
+            </summary>
+            <value>
+            The early years universal entitlement.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsAdditional15">
+            <summary>
+            Gets the early years additional15.
+            </summary>
+            <value>
+            The early years additional15.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYears2YearEntitlement">
+            <summary>
+            Gets the early years2 year entitlement.
+            </summary>
+            <value>
+            The early years2 year entitlement.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsDisabilityAccess">
+            <summary>
+            Gets the early years disability access.
+            </summary>
+            <value>
+            The early years disability access.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsMaintainedNursery">
+            <summary>
+            Gets the early years maintained nursery.
+            </summary>
+            <value>
+            The early years maintained nursery.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsPupilPremium">
+            <summary>
+            Gets the early years pupil premium.
+            </summary>
+            <value>
+            The early years pupil premium.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsNFFTotal">
+            <summary>
+            Gets the high needs NFF total.
+            </summary>
+            <value>
+            The high needs NFF total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsBasicEntitlementTotal">
+            <summary>
+            Gets the high needs basic entitlement total.
+            </summary>
+            <value>
+            The high needs basic entitlement total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsAdditionalFundingSpecialTotal">
+            <summary>
+            Gets the high needs additional funding special total.
+            </summary>
+            <value>
+            The high needs additional funding special total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsImportExportTotal">
+            <summary>
+            Gets the high needs import export total.
+            </summary>
+            <value>
+            The high needs import export total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsAdditionalFundingTotal">
+            <summary>
+            Gets the high needs additional funding total.
+            </summary>
+            <value>
+            The high needs additional funding total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsTotalBeforeDeduction">
+            <summary>
+            Gets the high needs total before deduction.
+            </summary>
+            <value>
+            The high needs total before deduction.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsAPAmountTotal">
+            <summary>
+            Gets the high needs ap amount total.
+            </summary>
+            <value>
+            The high needs ap amount total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedMaintainedSpecialAmounTotal">
+            <summary>
+            Gets the high need maintained special amoun total.
+            </summary>
+            <value>
+            The high need maintained special amoun total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedDeductionsDirectFundingAmount">
+            <summary>
+            Gets the high need deductions direct funding amount.
+            </summary>
+            <value>
+            The high need deductions direct funding amount.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedMaintainedMainstream">
+            <summary>
+            Gets the high need maintained mainstream.
+            </summary>
+            <value>
+            The high need maintained mainstream.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedFEILPAmount">
+            <summary>
+            Gets the high need feilp amount.
+            </summary>
+            <value>
+            The high need feilp amount.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.PrimarySchoolTable">
+            <summary>
+            Gets the primary school table.
+            </summary>
+            <value>
+            The primary school table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.SecondarySchoolTable">
+            <summary>
+            Gets the secondary school table.
+            </summary>
+            <value>
+            The secondary school table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.LocalAuthorityProtectionTable">
+            <summary>
+            Gets the local authority protection table.
+            </summary>
+            <value>
+            The local authority protection table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.PremisesMobilityTable">
+            <summary>
+            Gets the premises mobility table.
+            </summary>
+            <value>
+            The premises mobility table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HistoricCommitmentsTable">
+            <summary>
+            Gets the historic commitments table.
+            </summary>
+            <value>
+            The historic commitments table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.TotalSchoolsBlockTable">
+            <summary>
+            Gets the total schools block table.
+            </summary>
+            <value>
+            The total schools block table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.CentralSchoolServicesTable">
+            <summary>
+            Gets the central school services table.
+            </summary>
+            <value>
+            The central school services table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.GrowthTable">
+            <summary>
+            Gets the growth table.
+            </summary>
+            <value>
+            The growth table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.TotalsTable">
+            <summary>
+            Gets the totals table.
+            </summary>
+            <value>
+            The totals table.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.SchoolBlockTotal">
+            <summary>
+            Gets the school block total.
+            </summary>
+            <value>
+            The school block total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.CentralSchoolServicesBlockTotal">
+            <summary>
+            Gets the central school services block total.
+            </summary>
+            <value>
+            The central school services block total.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.FindOutWhyPartialPupilNumbersAreUsedListItem">
+            <summary>
+            Gets the find out why partial pupil numbers are used list item.
+            </summary>
+            <value>
+            The find out why partial pupil numbers are used list item.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.SchoolTabHowWeCalculateThisLink(System.String)">
+            <summary>
+            Schools the tab how we calculate this link.
+            </summary>
+            <param name="elementIdName">Name of the element identifier.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.DSGTechnicalNotesLinks(System.Int32,System.Int32)">
+            <summary>
+            DSGs the technical notes links.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <returns>The web element list.</returns>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.Post16SpecialEducationalNeedsPlaces">
+            <summary>
+            Gets the post16 special educational needs places.
+            </summary>
+            <value>
+            The post16 special educational needs places.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.GuidanceListItems">
+            <summary>
+            Gets the guidance list items.
+            </summary>
+            <value>
+            The guidance list items.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.PrintThisPageItems">
+            <summary>
+            Gets the print this page items.
+            </summary>
+            <value>
+            The print this page items.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.GuidanceLinkListItem">
+            <summary>
+            Gets the guidance link list item.
+            </summary>
+            <value>
+            The guidance link list item.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HistoryLink">
+            <summary>
+            Gets the history link.
+            </summary>
+            <value>
+            The history link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.DisabilityAccessFund">
+            <summary>
+            Gets the disability access fund.
+            </summary>
+            <value>
+            The disability access fund.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsHospital">
+            <summary>
+            Gets the high needs hospital.
+            </summary>
+            <value>
+            The high needs hospital.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.SchoolsTab">
+            <summary>
+            Gets the schools tab.
+            </summary>
+            <value>
+            The schools tab.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.CentralSchoolServicesTab">
+            <summary>
+            Gets the central school services tab.
+            </summary>
+            <value>
+            The central school services tab.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsTab">
+            <summary>
+            Gets the high needs tab.
+            </summary>
+            <value>
+            The high needs tab.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsTab">
+            <summary>
+            Gets the early years tab.
+            </summary>
+            <value>
+            The early years tab.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.AllocationAmount">
+            <summary>
+            Gets the allocation amount.
+            </summary>
+            <value>
+            The allocation amount.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.EarlyYearsTotalAmount">
+            <summary>
+            Gets the early years total amount.
+            </summary>
+            <value>
+            The early years total amount.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.HighNeedsTotalAmount">
+            <summary>
+            Gets the high needs total amount.
+            </summary>
+            <value>
+            The high needs total amount.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.DocumentDownloadContainer">
+            <summary>
+            Gets the document download container.
+            </summary>
+            <value>
+            The document download container.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.FormatRequestLink">
+            <summary>
+            Gets the format request link.
+            </summary>
+            <value>
+            The format request link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.FormatRequestEmailLinks">
+            <summary>
+            Gets the format request email links.
+            </summary>
+            <value>
+            The format request email links.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGFundingBreakdownPage.OpenDocumentFormatLink">
+            <summary>
+            Gets the open document format link.
+            </summary>
+            <value>
+            The open document format link.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage">
+            <summary>
+            The LocalAuthorityDSGHistoryPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.NavigateToPageViaDidYouMeanPage(System.String,System.String)">
+            <summary>
+            Navigates to page via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.NavigateToPageUsingExactSearch(System.String)">
+            <summary>
+            Navigates to page using exact search.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.EnsureMainParagraph(System.String)">
+            <summary>
+            Ensures the main paragraph.
+            </summary>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.EnsureAllYears(System.Int32,System.Int32,System.String)">
+            <summary>
+            Ensures all years.
+            </summary>
+            <param name="latestYearFrom">The latest year from.</param>
+            <param name="latestYearTo">The latest year to.</param>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.MainPageParagraph">
+            <summary>
+            Gets the main page paragraph.
+            </summary>
+            <value>
+            The main page paragraph.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.LocalAuthorityDSGFundingBreakDownPublicationLinkCells(System.Int32,System.Int32)">
+            <summary>
+            Locals the authority DSG funding break down publication link cells.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <returns>The list of web elements.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.LegacyFundingBreakdownLinkForYear(System.Int32,System.Int32)">
+            <summary>
+            Legacies the funding breakdown link for year.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityDSGHistoryPage.EnsureHeading(System.String)">
+            <summary>
+            Ensures the heading.
+            </summary>
+            <param name="headingText">The heading text.</param>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage">
+            <summary>
+            The LocalAuthorityNoResultsPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage.NavigateToPageUsingSearchTerm(System.String)">
+            <summary>
+            Navigates to page using search term.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage.EnsureNoResultsText(System.String)">
+            <summary>
+            Ensures the no results text.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage.EnsureAndClickFindAnOrganisationLink">
+            <summary>
+            Ensures the and click find an organisation link.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage.FindOrganisationLink">
+            <summary>
+            Gets the find organisation link.
+            </summary>
+            <value>
+            The find organisation link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityNoResultsPage.NoResultsHeader">
+            <summary>
+            Gets the no results header.
+            </summary>
+            <value>
+            The no results header.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page">
+            <summary>
+            The LocalAuthorityPSGBreakdown201819Page class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.GuidanceLinks">
+            <summary>
+            The guidance links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.NavigateToPageViaDidYouMeanPage(System.String,System.String)">
+            <summary>
+            Navigates to page via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.NavigateToPageUsingExactSearch(System.String)">
+            <summary>
+            Navigates to page using exact search.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.EnsureAllocationHistoryLink">
+            <summary>
+            Ensures the allocation history link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.EnsureMainParagraph">
+            <summary>
+            Ensures the main paragraph.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.EnsureGuidanceLinks">
+            <summary>
+            Ensures the guidance links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.EnsureDownloadLinksAvailable">
+            <summary>
+            Ensures the download links available.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.MainPageParagraph">
+            <summary>
+            Gets the main page paragraph.
+            </summary>
+            <value>
+            The main page paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.AllocationHistoryLink">
+            <summary>
+            Gets the allocation history link.
+            </summary>
+            <value>
+            The allocation history link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGBreakdown201819Page.DownloadDocumentLinks">
+            <summary>
+            Gets the download document links.
+            </summary>
+            <value>
+            The download document links.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage">
+            <summary>
+            The LocalAuthorityPSGFundingBreakdownPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.OneMatchLocator">
+            <summary>
+            The one match locator.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.MultipleMatchLocator">
+            <summary>
+            The multiple match locator.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.BackToTopLinkLocator">
+            <summary>
+            The back to top link locator.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.NavigateToPageViaDidYouMeanPage(System.String,System.String)">
+            <summary>
+            Navigates to page via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.NavigateToPageUsingExactSearch(System.String)">
+            <summary>
+            Navigates to page using exact search.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.ApplyLastEstablishmentFilter">
+            <summary>
+            Applies the last establishment filter.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.ApplyFirstEstablishmentFilter">
+            <summary>
+            Applies the first establishment filter.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.GetProviderTotalAllocationAmount">
+            <summary>
+            Gets the provider total allocation amount.
+            </summary>
+            <returns>The provider total allocation amount.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureFilters">
+            <summary>
+            Ensures the filters.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureTotalAllocation(System.Int32,System.Int32)">
+            <summary>
+            Ensures the total allocation.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureDocumentLink">
+            <summary>
+            Ensures the document link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureBreakdownTable">
+            <summary>
+            Ensures the breakdown table.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureBackToTopLink">
+            <summary>
+            Ensures the back to top link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureBackToTopLinkIsNotDisplayed">
+            <summary>
+            Ensures the back to top link is not displayed.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureAllocationHistoryLink">
+            <summary>
+            Ensures the allocation history link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureGeneralResourcesSection">
+            <summary>
+            Ensures the general resources section.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureFilterMultipleMatchTextIsDisplayed(System.Boolean)">
+            <summary>
+            Ensures the filter multiple match text is displayed.
+            </summary>
+            <param name="isDisplayed">if set to <c>true</c> [is displayed].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureFilterSingleMatchTextIsDisplayed(System.Boolean)">
+            <summary>
+            Ensures the filter single match text is displayed.
+            </summary>
+            <param name="isDisplayed">if set to <c>true</c> [is displayed].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EnsureProviderFundingTotalAllocationAmountIsUpdated(System.String)">
+            <summary>
+            Ensures the provider funding total allocation amount is updated.
+            </summary>
+            <param name="originalAmount">The original amount.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.FilterSection">
+            <summary>
+            Gets the filter section.
+            </summary>
+            <value>
+            The filter section.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.TotalAllocationSection">
+            <summary>
+            Gets the total allocation section.
+            </summary>
+            <value>
+            The total allocation section.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.DocumentDownloadContainer">
+            <summary>
+            Gets the document download container.
+            </summary>
+            <value>
+            The document download container.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.TableHeader">
+            <summary>
+            Gets the table header.
+            </summary>
+            <value>
+            The table header.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.TableRows">
+            <summary>
+            Gets the table rows.
+            </summary>
+            <value>
+            The table rows.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.BackToTopLink">
+            <summary>
+            Gets the back to top link.
+            </summary>
+            <value>
+            The back to top link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.AllocationHistory">
+            <summary>
+            Gets the allocation history.
+            </summary>
+            <value>
+            The allocation history.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.GeneralResources">
+            <summary>
+            Gets the general resources.
+            </summary>
+            <value>
+            The general resources.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.EstablishmentOptions">
+            <summary>
+            Gets the establishment options.
+            </summary>
+            <value>
+            The establishment options.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGFundingBreakdownPage.ProviderFundingTotalAllocationAmount">
+            <summary>
+            Gets the provider funding total allocation amount.
+            </summary>
+            <value>
+            The provider funding total allocation amount.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage">
+            <summary>
+            The LocalAuthorityPSGHistoryPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.NavigateToPageViaDidYouMeanPage(System.String,System.String)">
+            <summary>
+            Navigates to page via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.NavigateToPageUsingExactSearch(System.String)">
+            <summary>
+            Navigates to page using exact search.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.Click201819Link">
+            <summary>
+            Click201819s the link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.EnsureMainParagraph(System.String)">
+            <summary>
+            Ensures the main paragraph.
+            </summary>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.EnsureAllYears(System.Int32,System.Int32,System.String)">
+            <summary>
+            Ensures all years.
+            </summary>
+            <param name="latestYearFrom">The latest year from.</param>
+            <param name="latestYearTo">The latest year to.</param>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.MainPageParagraph">
+            <summary>
+            Gets the main page paragraph.
+            </summary>
+            <value>
+            The main page paragraph.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.LocalAuthorityPSGFundingBreakDownPublicationLinkCells(System.Int32,System.Int32)">
+            <summary>
+            Locals the authority PSG funding break down publication link cells.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <returns>The list of web elements.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.LegacyFundingBreakdownLinkForYear(System.Int32,System.Int32)">
+            <summary>
+            Legacies the funding breakdown link for year.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityPSGHistoryPage.EnsureHeading(System.String)">
+            <summary>
+            Ensures the heading.
+            </summary>
+            <param name="headingText">The heading text.</param>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage">
+            <summary>
+            The LocalAuthorityStatementPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.ExpectedNextPaymentDateFormat">
+            <summary>
+            The expected next payment date format.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.NavigateToPageViaDidYouMeanPage(System.String,System.String)">
+            <summary>
+            Navigates to page via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="localAuthorityName">Name of the local authority.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.NavigateToPageUsingExactSearch(System.String)">
+            <summary>
+            Navigates to page using exact search.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.ClickFundingBlock(System.String,System.Int32,System.Int32)">
+            <summary>
+            Clicks the funding block.
+            </summary>
+            <param name="blockName">Name of the block.</param>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.EnsureAccordionSectionsCount(System.Int32)">
+            <summary>
+            Ensures the accordion sections count.
+            </summary>
+            <param name="expectedCount">The expected count.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.ClickDSGSchoolsBlock">
+            <summary>
+            Clicks the DSG schools block.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.OpenDSGAccordion">
+            <summary>
+            Opens the DSG accordion.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.EnsureDSGSection(System.Int32,System.Int32,System.DateTime,System.Boolean)">
+            <summary>
+            Ensures the DSG section.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="nextPaymentDate">The next payment date.</param>
+            <param name="withRecoupment">if set to <c>true</c> [with recoupment].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.EnsurePSGSection(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            Ensures the PSG section.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="nextPaymentDate">The next payment date.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.ClickPSGFundingBreakdownLink">
+            <summary>
+            Clicks the PSG funding breakdown link.
+            </summary>
+            <exception cref="T:System.Exception">PSG funding breakdown link was not found.</exception>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.ClickPSGAllocationHistoryLink">
+            <summary>
+            Clicks the PSG allocation history link.
+            </summary>
+            <exception cref="T:System.Exception">PSG allocation history link was not found.</exception>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.ClickDSGAllocationHistoryLink">
+            <summary>
+            Clicks the DSG allocation history link.
+            </summary>
+            <exception cref="T:System.Exception">DSG allocation history link was not found.</exception>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.EnsureAlternativeFunding">
+            <summary>
+            Ensures the alternative funding.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.AccordionSections">
+            <summary>
+            Gets the accordion sections.
+            </summary>
+            <value>
+            The accordion sections.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.AlternativeFunding">
+            <summary>
+            Gets the alternative funding.
+            </summary>
+            <value>
+            The alternative funding.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.LocalAuthorityStatementPage.SchoolsBlockLink">
+            <summary>
+            Gets the schools block link.
+            </summary>
+            <value>
+            The schools block link.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage">
+            <summary>
+            The ProviderDetailPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.ProviderName">
+            <summary>
+            The provider name.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.NavigateToPage(System.String)">
+            <summary>
+            Navigates to page.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.NavigateToViaDidYouMeanPage(System.String)">
+            <summary>
+            Navigates to via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.ResetAllSectionsToCollapsed">
+            <summary>
+            Resets all sections to collapsed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.MainSectionIsOpen">
+            <summary>
+            Gets a value indicating whether the library remembers the last state the accordion was in on the page. So we need to check if it loads as open or closed.
+            </summary>
+            <value>
+              <c>true</c> if [main section is open]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.AlternativeFundingSectionIsOpen">
+            <summary>
+            Gets a value indicating whether [alternative funding section is open].
+            </summary>
+            <value>
+              <c>true</c> if [alternative funding section is open]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.ToggleMainContent">
+            <summary>
+            Toggles the content of the main.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.ToggleAlternativeFunding">
+            <summary>
+            Toggles the alternative funding.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.OpenMainContent">
+            <summary>
+            Opens the content of the main.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.NavigateToPSGAllocationHistoryPage">
+            <summary>
+            Navigates to PSG allocation history page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.EnsureCurrentProviderPage">
+            <summary>
+            Ensures the current provider page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.EnsureNextAvailablePaymentDate(System.String)">
+            <summary>
+            Ensures the next available payment date.
+            </summary>
+            <param name="expectedDate">The expected date.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.EnsureMainContent(System.Boolean)">
+            <summary>
+            Ensures the content of the main.
+            </summary>
+            <param name="visible">if set to <c>true</c> [visible].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.ExpandPSG">
+            <summary>
+            Expands the PSG.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.EnsureAlternativeFundings(System.Boolean)">
+            <summary>
+            Ensures the alternative fundings.
+            </summary>
+            <param name="visible">if set to <c>true</c> [visible].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.EnsureLinkIsDisplayed(OpenQA.Selenium.IWebElement,System.String,System.String)">
+            <summary>
+            Ensures the link is displayed.
+            </summary>
+            <param name="parent">The parent.</param>
+            <param name="expectedLinkText">The expected link text.</param>
+            <param name="expectedUrl">The expected URL.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.EnsureElementByTagAndTextIsDisplayed(OpenQA.Selenium.IWebElement,System.String,System.String)">
+            <summary>
+            Ensures the element by tag and text is displayed.
+            </summary>
+            <param name="parent">The parent.</param>
+            <param name="tagName">Name of the tag.</param>
+            <param name="expectedText">The expected text.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.AllocationHistoryLink">
+            <summary>
+            Gets the allocation history link.
+            </summary>
+            <value>
+            The allocation history link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.AlternativeFundingsArea">
+            <summary>
+            Gets the alternative fundings area.
+            </summary>
+            <value>
+            The alternative fundings area.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.MainProviderDetailsArea">
+            <summary>
+            Gets the main provider details area.
+            </summary>
+            <value>
+            The main provider details area.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.ToggleMainContentButton">
+            <summary>
+            Gets the toggle main content button.
+            </summary>
+            <value>
+            The toggle main content button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.AlternativeFundingButton">
+            <summary>
+            Gets the alternative funding button.
+            </summary>
+            <value>
+            The alternative funding button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.NextAvailablePaymentDate">
+            <summary>
+            Gets the next available payment date.
+            </summary>
+            <value>
+            The next available payment date.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.Section1Button">
+            <summary>
+            Gets the section1 button.
+            </summary>
+            <value>
+            The section1 button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderDetailPage.Section1Div">
+            <summary>
+            Gets the section1 div.
+            </summary>
+            <value>
+            The section1 div.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage">
+            <summary>
+            The ProviderFilterResultsPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.PageTitle">
+            <summary>
+            The page title.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.LocalAuthoritySearchBoxSelector">
+            <summary>
+            The local authority search box selector.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.NavigateToPageUsingSearchTerm(System.String)">
+            <summary>
+            Navigates to page using search term.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyOneLocalAuthorityFilter">
+            <summary>
+            Applies the one local authority filter.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyOneEstablishmentFilter">
+            <summary>
+            Applies the one establishment filter.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyAllLocalAuthorityFilters">
+            <summary>
+            Applies all local authority filters.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyAllEstablishmentFilters">
+            <summary>
+            Applies all establishment filters.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ResetFilters">
+            <summary>
+            Resets the filters.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyLastLocalAuthorityFilter">
+            <summary>
+            Applies the last local authority filter.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyLastEstablishmentTypeFilter">
+            <summary>
+            Applies the last establishment type filter.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ApplyLocalAuthorityFilterTerm(System.String)">
+            <summary>
+            Applies the local authority filter term.
+            </summary>
+            <param name="filterTerm">The filter term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.GetLocalAuthorityDisplayOptionsCount">
+            <summary>
+            Gets the local authority display options count.
+            </summary>
+            <returns>The display options count.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ResetLocalAuthorityFilterTerm">
+            <summary>
+            Resets the local authority filter term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureCurrentProviderPage">
+            <summary>
+            Ensures the current provider page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureResultsText(System.String)">
+            <summary>
+            Ensures the results text.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureNoFilterResultsText">
+            <summary>
+            Ensures the no filter results text.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureSearchResultsReturned">
+            <summary>
+            Ensures the search results returned.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureResetFilterLink">
+            <summary>
+            Ensures the reset filter link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureFilterOptions">
+            <summary>
+            Ensures the filter options.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureLessResults(System.Int32)">
+            <summary>
+            Ensures the less results.
+            </summary>
+            <param name="originalSearchCount">The original search count.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureSameResults(System.Int32)">
+            <summary>
+            Ensures the same results.
+            </summary>
+            <param name="originalSearchCount">The original search count.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureNoOptionIsSelected">
+            <summary>
+            Ensures the no option is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureLocalAuthorityFilterSearchBox(System.Boolean)">
+            <summary>
+            Ensures the local authority filter search box.
+            </summary>
+            <param name="isVisible">if set to <c>true</c> [is visible].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureLocalAuthorityCountIsLessThan(System.Int32)">
+            <summary>
+            Ensures the local authority count is less than.
+            </summary>
+            <param name="originalLocalAuthoritiesCount">The original local authorities count.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EnsureLocalAuthorityCountIsTheSameAs(System.Int32)">
+            <summary>
+            Ensures the local authority count is the same as.
+            </summary>
+            <param name="originalLocalAuthoritiesCount">The original local authorities count.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.GetSearchResultsCount">
+            <summary>
+            Gets the search results count.
+            </summary>
+            <returns>The search results count.</returns>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ResultsListSection">
+            <summary>
+            Gets the results list section.
+            </summary>
+            <value>
+            The results list section.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ResultRows">
+            <summary>
+            Gets the result rows.
+            </summary>
+            <value>
+            The result rows.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ResultsParagraph">
+            <summary>
+            Gets the results paragraph.
+            </summary>
+            <value>
+            The results paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.ResetFilterLink">
+            <summary>
+            Gets the reset filter link.
+            </summary>
+            <value>
+            The reset filter link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.LocalAuthorityFilterOptions">
+            <summary>
+            Gets the local authority filter options.
+            </summary>
+            <value>
+            The local authority filter options.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.LocalAuthorityOptionDisplayItems">
+            <summary>
+            Gets the local authority option display items.
+            </summary>
+            <value>
+            The local authority option display items.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.EstablishmentOptions">
+            <summary>
+            Gets the establishment options.
+            </summary>
+            <value>
+            The establishment options.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.BackToTopLink">
+            <summary>
+            Gets the back to top link.
+            </summary>
+            <value>
+            The back to top link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderFilterResultsPage.LocalAuthorityFilterSearchBox">
+            <summary>
+            Gets the local authority filter search box.
+            </summary>
+            <value>
+            The local authority filter search box.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage">
+            <summary>
+            The ProviderNoResultsPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.PageTitle">
+            <summary>
+            The page title.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.NavigateToPageUsingSearchTerm(System.String)">
+            <summary>
+            Navigates to page using search term.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.EnsureCurrentNoReultsPage">
+            <summary>
+            Ensures the current no reults page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.EnsureNoResultsText(System.String)">
+            <summary>
+            Ensures the no results text.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.EnsureFindAnOrganisationLink">
+            <summary>
+            Ensures the find an organisation link.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.FindOrganisationLink">
+            <summary>
+            Gets the find organisation link.
+            </summary>
+            <value>
+            The find organisation link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderNoResultsPage.NoResultsHeader">
+            <summary>
+            Gets the no results header.
+            </summary>
+            <value>
+            The no results header.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage">
+            <summary>
+            The ProviderPSGAllocationHistoryPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.ProviderName">
+            <summary>
+            The provider name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.PageTitle">
+            <summary>
+            The page title.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.YearHeadings">
+            <summary>
+            The year headings.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.AllocationPageLinks">
+            <summary>
+            The allocation page links.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.PartialAllocationPageLinks">
+            <summary>
+            The partial allocation page links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.NavigateToViaDidYouMeanPage(System.String)">
+            <summary>
+            Navigates to via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.NavigateToPSGFundingBreakdownPage2018">
+            <summary>
+            Navigates to PSG funding breakdown page2018.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.NavigateToPsgFundingBreakdownPage">
+            <summary>
+            Navigates to PSG funding breakdown page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.EnsureCurrentProviderPage">
+            <summary>
+            Ensures the current provider page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.EnsureMainParagraph">
+            <summary>
+            Ensures the main paragraph.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.EnsureAllYearHeadings">
+            <summary>
+            Ensures all year headings.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.EnsureAllAllocationLinks">
+            <summary>
+            Ensures all allocation links.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.MainPageParagraph">
+            <summary>
+            Gets the main page paragraph.
+            </summary>
+            <value>
+            The main page paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.PSGFundingBreakDown2018Link">
+            <summary>
+            Gets the PSG funding break down2018 link.
+            </summary>
+            <value>
+            The PSG funding break down2018 link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.PSGFundingBreakdownLink">
+            <summary>
+            Gets the PSG funding breakdown link.
+            </summary>
+            <value>
+            The PSG funding breakdown link.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGAllocationHistoryPage.EnsureHeading(System.String)">
+            <summary>
+            Ensures the heading.
+            </summary>
+            <param name="headingText">The heading text.</param>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page">
+            <summary>
+            The ProviderPSGFundingBreakdown201819Page class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.ProviderName">
+            <summary>
+            The provider name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.PageTitle">
+            <summary>
+            The page title.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.GovUKLinks">
+            <summary>
+            The gov uk links.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.SpreadsheetLinks">
+            <summary>
+            The spreadsheet links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.NavigateToViaDidYouMeanPage(System.String)">
+            <summary>
+            Navigates to via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.EnsureCurrentProviderPage">
+            <summary>
+            Ensures the current provider page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.EnsureAllocationHistoryLink">
+            <summary>
+            Ensures the allocation history link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.EnsureMainParagraph">
+            <summary>
+            Ensures the main paragraph.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.EnsureGovUkLinks">
+            <summary>
+            Ensures the gov uk links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.EnsureDownloadLinksAvailable">
+            <summary>
+            Ensures the download links are available.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.MainPageParagraph">
+            <summary>
+            Gets the main page paragraph.
+            </summary>
+            <value>
+            The main page paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.AllocationHistoryLink">
+            <summary>
+            Gets the allocation history link.
+            </summary>
+            <value>
+            The allocation history link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdown201819Page.DownloadDocumentLinks">
+            <summary>
+            Gets the download document links.
+            </summary>
+            <value>
+            The download document links.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage">
+            <summary>
+            The ProviderPSGFundingBreakdownPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.ProviderName">
+            <summary>
+            The provider name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.PageTitleStartsWith">
+            <summary>
+            The page title starts with.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.PageTitleEndsWith">
+            <summary>
+            The page title ends with.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.GovUKLinks">
+            <summary>
+            The gov uk links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.NavigateToViaDidYouMeanPage(System.String)">
+            <summary>
+            Navigates to via did you mean page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.EnsureCurrentProviderPage">
+            <summary>
+            Ensures the current provider page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.EnsureAllocationHistoryLink">
+            <summary>
+            Ensures the allocation history link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.EnsureTotalFundingSummary">
+            <summary>
+            Ensures the total funding summary.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.EnsureDownloadSpreadsheetLink">
+            <summary>
+            Ensures the download spreadsheet link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.EnsureFundingTableRowColumns">
+            <summary>
+            Ensures the funding table row columns.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.EnsureGovUkLinks">
+            <summary>
+            Ensures the gov uk links.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.MainPageParagraph">
+            <summary>
+            Gets the main page paragraph.
+            </summary>
+            <value>
+            The main page paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.AllocationHistoryLink">
+            <summary>
+            Gets the allocation history link.
+            </summary>
+            <value>
+            The allocation history link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.TotalFundingSummary">
+            <summary>
+            Gets the total funding summary.
+            </summary>
+            <value>
+            The total funding summary.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.ProviderDetailsRowColumns">
+            <summary>
+            Gets the provider details row columns.
+            </summary>
+            <value>
+            The provider details row columns.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderPSGFundingBreakdownPage.DownloadSpreadsheetLink">
+            <summary>
+            Gets the download spreadsheet link.
+            </summary>
+            <value>
+            The download spreadsheet link.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage">
+            <summary>
+            The ProviderResultsPage class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.PageTitle">
+            <summary>
+            The page title.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.NavigateToPageUsingSearchTerm(System.String)">
+            <summary>
+            Navigates to page using search term.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.ClickProviderLink(System.String)">
+            <summary>
+            Clicks the provider link.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.EnsureCurrentProviderPage">
+            <summary>
+            Ensures the current provider page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.EnsureResultsText(System.String)">
+            <summary>
+            Ensures the results text.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.EnsureSearchResultsReturned">
+            <summary>
+            Ensures the search results returned.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.ResultsListSection">
+            <summary>
+            Gets the results list section.
+            </summary>
+            <value>
+            The results list section.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.ResultRows">
+            <summary>
+            Gets the result rows.
+            </summary>
+            <value>
+            The result rows.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.ResultsParagraph">
+            <summary>
+            Gets the results paragraph.
+            </summary>
+            <value>
+            The results paragraph.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ProviderResultsPage.ProviderStatementLinkBlock">
+            <summary>
+            Gets the provider statement link block.
+            </summary>
+            <value>
+            The provider statement link block.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage">
+            <summary>
+            The PSGDownloadPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.ClickLinkToLatestOrHistoricAllocations(System.Int32,System.Int32)">
+            <summary>
+            Clicks the link to latest or historic allocations.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.EnsureCurrentPage(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Ensures the current page.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="isLatest">if set to <c>true</c> [is latest].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.EnsureLinkToLatestOrHistoricAllocations(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Ensures the link to latest or historic allocations.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="isLatest">if set to <c>true</c> [is latest].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.EnsureSpreadsheetLinks(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Ensures the spreadsheet links.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="isLatest">if set to <c>true</c> [is latest].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.EnsureFormatRequestLinks(System.Int32,System.Int32)">
+            <summary>
+            Ensures the format request links.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.DocumentDownloadContainers">
+            <summary>
+            Gets the document download containers.
+            </summary>
+            <value>
+            The document download containers.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.PSGDownloadPage.FormatRequestLinks">
+            <summary>
+            Gets the format request links.
+            </summary>
+            <value>
+            The format request links.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.StartPage">
+            <summary>
+            The StartPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.StartPage.Open">
+            <summary>
+            Opens this instance.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.StartPage.ClickStartButton">
+            <summary>
+            Clicks the start button.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.StartPage.StartButton">
+            <summary>
+            Gets the start button.
+            </summary>
+            <value>
+            The start button.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage">
+            <summary>
+            The ViewingChoicePage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.ClickContinueButton">
+            <summary>
+            Clicks the continue button.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.SelectOrganisationOption">
+            <summary>
+            Selects the organisation option.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.SelectNationalOption">
+            <summary>
+            Selects the national option.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.ContinueButton">
+            <summary>
+            Gets the continue button.
+            </summary>
+            <value>
+            The continue button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.OrganisationOption">
+            <summary>
+            Gets the organisation option.
+            </summary>
+            <value>
+            The organisation option.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewingChoicePage.NationalOption">
+            <summary>
+            Gets the national option.
+            </summary>
+            <value>
+            The national option.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage">
+            <summary>
+            The ViewYourFundingBasePage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.EnsureErrorComponents(System.Boolean)">
+            <summary>
+            Ensures the error components.
+            </summary>
+            <param name="showErrors">if set to <c>true</c> [show errors].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.EnsureBreadcrumbs">
+            <summary>
+            Ensures the breadcrumbs.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.EnsureAndClickBreadcrumb(System.String)">
+            <summary>
+            Ensures the and click breadcrumb.
+            </summary>
+            <param name="linkText">The link text.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.EnsureBreadcrumbNotShown(System.String)">
+            <summary>
+            Ensures the breadcrumb not shown.
+            </summary>
+            <param name="linkText">The link text.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.EnsureRelatedLink(System.String,System.String,System.String)">
+            <summary>
+            Ensures the related link.
+            </summary>
+            <param name="expectedText">The expected text.</param>
+            <param name="expectedUrl">The expected URL.</param>
+            <param name="expectedHeader">The expected header.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.Breadcrumbs">
+            <summary>
+            Gets the breadcrumbs.
+            </summary>
+            <value>
+            The breadcrumbs.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.ViewYourFundingBasePage.RelatedLinksSection">
+            <summary>
+            Gets the related links section.
+            </summary>
+            <value>
+            The related links section.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage">
+            <summary>
+            The WhichAllocationPage class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.NavigateToPage">
+            <summary>
+            Navigates to page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.ClickContinueButton">
+            <summary>
+            Clicks the continue button.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.ClickProgressiveDisclosureButton">
+            <summary>
+            Clicks the progressive disclosure button.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.SelectDSG">
+            <summary>
+            Selects the DSG.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.SelectPSG">
+            <summary>
+            Selects the PSG.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.EnsureCurrentPage">
+            <summary>
+            Ensures the current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.EnsureProgressiveDisclosureContent(System.Boolean)">
+            <summary>
+            Ensures the content of the progressive disclosure.
+            </summary>
+            <param name="expectedVisible">if set to <c>true</c> [expected visible].</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.ContinueButton">
+            <summary>
+            Gets the continue button.
+            </summary>
+            <value>
+            The continue button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.ProgressiveDisclosureButton">
+            <summary>
+            Gets the progressive disclosure button.
+            </summary>
+            <value>
+            The progressive disclosure button.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.ProgressiveDisclosureContent">
+            <summary>
+            Gets the content of the progressive disclosure.
+            </summary>
+            <value>
+            The content of the progressive disclosure.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.Option_DSG">
+            <summary>
+            Gets the option DSG.
+            </summary>
+            <value>
+            The option DSG.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Pages.ViewYourFunding.WhichAllocationPage.Option_PSG">
+            <summary>
+            Gets the option PSG.
+            </summary>
+            <value>
+            The option PSG.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Testing.AssemblyTestSetup">
+            <summary>
+            The AssemblyTestSetup class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Testing.AssemblyTestSetup.SetUpTestSuite(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)">
+            <summary>
+            Sets up test suite.
+            </summary>
+            <param name="testContext">The test context.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Testing.AssemblyTestSetup.TeardownTestSuite">
+            <summary>
+            Teardowns the test suite.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Testing.AssemblyTestSetup.IsLocalDev">
+            <summary>
+            Gets a value indicating whether this instance is local dev.
+            </summary>
+            <value>
+              <c>true</c> if this instance is local dev; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Testing.BaseRegressionTest">
+            <summary>
+            The BaseRegressionTest class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Testing.BaseRegressionTest.DisplayViewYourFunding">
+            <summary>
+            The display view your funding.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Testing.BaseRegressionTest.AddDocumentToAzureFileShare(System.String,System.IO.Stream,System.String)">
+            <summary>
+            Adds the document to azure file share.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="stream">The stream.</param>
+            <param name="shareKey">The share key.</param>
+            <returns>>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.>.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Testing.BaseRegressionTest.RemoveDocumentFromAzureFileShare(System.String,System.String)">
+            <summary>
+            Removes the document from azure file share.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="shareKey">The share key.</param>
+            <returns>>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.>.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Testing.BaseRegressionTest.GetShare(System.String)">
+            <summary>
+            Gets the share.
+            </summary>
+            <param name="shareKey">The share key.</param>
+            <returns>The CloudFileDirectory result.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Utilities.ConfigHelper">
+            <summary>
+            The Config helper.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.ConfigHelper.GetIConfigurationRoot">
+            <summary>
+            Gets the i configuration root.
+            </summary>
+            <returns>The configuration.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Utilities.Driver">
+            <summary>
+            The Driver class.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Driver.Instance">
+            <summary>
+            Gets or sets the instance.
+            </summary>
+            <value>
+            The instance.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Driver.DownloadDirectory">
+            <summary>
+            Gets the download directory.
+            </summary>
+            <value>
+            The download directory.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Driver.Initialise">
+            <summary>
+            Initialises this instance.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Driver.CleanUpBeforeTest">
+            <summary>
+            Cleans up before test.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Driver.CleanUpAfterTest(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Boolean)">
+            <summary>
+            Cleans up after test.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="signOut">if set to <c>true</c> [sign out].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Driver.SaveScreenshotAndPageSource(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.String)">
+            <summary>
+            Saves the screenshot and page source.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Driver.TearDown">
+            <summary>
+            Tears down.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Driver.DownloadFile(System.String,System.String)">
+            <summary>
+            Downloads the file.
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns>The download file.</returns>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Driver.CookieString">
+            <summary>
+            Gets the cookie string.
+            </summary>
+            <value>
+            The cookie string.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Utilities.IWebDriverExtensions">
+            <summary>
+            The web driver extensions.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.AssertShouldExist(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Asserts the should exist.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="by">The by.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.AssertShouldNotExist(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Asserts the should not exist.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="by">The by.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.WaitToFindElementInvisibility(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Waits to find element invisibility.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="by">The by.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+            <returns>Element visibility.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.WaitToFindElementContentHasChangedFromOriginalContent(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement,System.String,System.Int32)">
+            <summary>
+            Waits for the element content to change.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="webElement">The web element.</param>
+            <param name="originalContentText">The original content text.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+            <returns>
+            Whether the element content has changed within timeout period.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.WaitToFindElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Waits to find element.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="by">The by.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.WaitToFindElements(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Waits to find elements.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="by">The by.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+            <returns>the read only collection of web elements.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.ReturnIfVisible(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Returns if visible.
+            </summary>
+            <param name="driver">The driver.</param>
+            <param name="by">The by.</param>
+            <param name="timeoutInSeconds">The timeout in seconds.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebDriverExtensions.ElementContentHasChanged(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Checks the element content has changed from the given content.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="originalContentText">The original content text.</param>
+            <returns>
+            Whether the element content has been changed.
+            </returns>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Utilities.IWebElementExtensions">
+            <summary>
+            The web element extensions.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.MoveAndClick(OpenQA.Selenium.IWebElement,System.Boolean)">
+            <summary>
+            An extension method on IWebElement to imitate a movement to an element and mouse click if radio button, otherwise imitate an enter key on it.
+            Keeps track of the previous URL everytime this method is used.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="isRadioButton">if set to <c>true</c> [is RadioButton].</param>
+            <returns>
+            Returns the element that was passed on to it.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.GotoPreviousUrl">
+            <summary>
+            A helper method that navigates to the last url that was visited.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.FindElementOrDefault(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By)">
+            <summary>
+            Finds the element or default.
+            </summary>
+            <param name="webElement">The web element.</param>
+            <param name="findBy">The find by.</param>
+            <returns>The found web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.DownloadLink(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Downloads the link.
+            </summary>
+            <param name="webElement">The web element.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns>The Download file.</returns>
+            <exception cref="T:System.Exception">The element doesn't have the a href attribute.</exception>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.GetCell(OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Gets the particular column content for a table row.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns>
+            The web element.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.GetCellByElementType(OpenQA.Selenium.IWebElement,System.Int32,System.String)">
+            <summary>
+            Gets the particular column content for a table row.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="columnNumber">The column number.</param>
+            <param name="tagName">Tag name to find by e.g. "td".</param>
+            <returns>
+            The element for specified row, column and tag name.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.GetHeaderLinkElement(OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Get the particular Header element of a table.
+            </summary>
+            <param name="table">The table.</param>
+            <param name="columnNumber">The column number.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.GetRow(OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Gets the particular row from a table.
+            </summary>
+            <param name="table">The table.</param>
+            <param name="rowNumber">The row number.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.GetNumberOfRows(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Returns the number of rows in the table.
+            </summary>
+            <param name="table">The table to act on.</param>
+            <returns>Number of rows.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.IsElementPresent(OpenQA.Selenium.By)">
+            <summary>
+            Check whether the element is rendered/present on the page.
+            </summary>
+            <param name="by">The parameter to find the control by. e.g. the id.</param>
+            <returns>
+            Returns a bool value indicating if the element exists on the page or not.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.ShouldHaveText(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Shoulds the have text.
+            </summary>
+            <param name="webElement">The web element.</param>
+            <param name="text">The text.</param>
+            <returns>The returned web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.ElementIfVisible(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Elements if visible.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.IWebElementExtensions.ElementIsVisible(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Elements the is visible.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>The web element.</returns>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.IWebElementExtensions.PreviousUrl">
+            <summary>
+            Gets or sets the previous URL.
+            </summary>
+            <value>
+            The previous URL.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Utilities.Navigation">
+            <summary>
+            The Navigation class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.GoToSettings">
+            <summary>
+            Goes to settings.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.GoToTermsAndConditions">
+            <summary>
+            Goes to terms and conditions.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.Signout">
+            <summary>
+            Signouts this instance.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.TrySignout">
+            <summary>
+            Tries the signout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.GotoBreadcrumb(System.String)">
+            <summary>
+            Gotoes the breadcrumb.
+            </summary>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.GoToSupport">
+            <summary>
+            Goes to support.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureSettingsLinkPresent">
+            <summary>
+            Ensures the settings link present.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureTermsAndConditionsLinkPresent">
+            <summary>
+            Ensures the terms and conditions link present.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsurePrivacyAndCookiesLinkPresent">
+            <summary>
+            Ensures the privacy and cookies link present.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureSupportLinkPresent">
+            <summary>
+            Ensures the support link present.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureSupportLinkIsNotPresent">
+            <summary>
+            Ensures the support link is not present.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureExternalDetails(System.String,System.String)">
+            <summary>
+            Ensures the external details.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <param name="ukprn">The ukprn.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureUserIsLoggedIn(System.String)">
+            <summary>
+            Ensures the user is logged in.
+            </summary>
+            <param name="username">The username.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Utilities.Navigation.EnsureInternalDetailsAsExternal(System.String,System.String)">
+            <summary>
+            Ensures the internal details as external.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <param name="ukprn">The ukprn.</param>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.BreadcrumbContainer">
+            <summary>
+            Gets the breadcrumb container.
+            </summary>
+            <value>
+            The breadcrumb container.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.UserSignOut">
+            <summary>
+            Gets the user sign out.
+            </summary>
+            <value>
+            The user sign out.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.UserDetails">
+            <summary>
+            Gets the user details.
+            </summary>
+            <value>
+            The user details.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.SettingsLInk">
+            <summary>
+            Gets the settings l ink.
+            </summary>
+            <value>
+            The settings l ink.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.SettingsLinkByLocator">
+            <summary>
+            Gets the settings link by locator.
+            </summary>
+            <value>
+            The settings link by locator.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.TermsAndConditionsLink">
+            <summary>
+            Gets the terms and conditions link.
+            </summary>
+            <value>
+            The terms and conditions link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.TermsAndConditionsLinkByLocator">
+            <summary>
+            Gets the terms and conditions link by locator.
+            </summary>
+            <value>
+            The terms and conditions link by locator.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.PrivacyAndCookiesLink">
+            <summary>
+            Gets the privacy and cookies link.
+            </summary>
+            <value>
+            The privacy and cookies link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.PrivacyAndCookiesLocator">
+            <summary>
+            Gets the privacy and cookies locator.
+            </summary>
+            <value>
+            The privacy and cookies locator.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.SignoutLink">
+            <summary>
+            Gets the signout link.
+            </summary>
+            <value>
+            The signout link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.SignoutLinkByLocator">
+            <summary>
+            Gets the signout link by locator.
+            </summary>
+            <value>
+            The signout link by locator.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.SupportLink">
+            <summary>
+            Gets the support link.
+            </summary>
+            <value>
+            The support link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Automation.Utilities.Navigation.SupportLinkByLocator">
+            <summary>
+            Gets the support link by locator.
+            </summary>
+            <value>
+            The support link by locator.
+            </value>
+        </member>
+    </members>
+</doc>

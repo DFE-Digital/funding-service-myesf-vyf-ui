@@ -1,0 +1,108 @@
+{
+  "name": "NMSS provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=AcademyTrust&GroupingReason=Infornation"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "$.totalValue",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "General/ProviderNameWithUrn"
+            },
+            {
+              "type": "Heading/Small",
+              "value": "Published: @statusChangedDateUiFormatted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "classname": "govuk-!-padding-left-6",
+      "groups": [
+        {
+          "type": "Heading/Small",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Tabs/LinkWithValue",
+          "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+          "datastyle": {
+            "numberFormat": "c0"
+          },
+          "groups": [
+            {
+              "type": "General/StandardLink",
+              "title": "High needs funding",
+              "value": "@loggedInProviderFundingBreakdownPathTabshigh-needs",
+              "classname": "govuk-heading-l"
+            }
+          ]
+        },
+        {
+          "type": "Tabs/LinkWithValue",
+          "selector": "$..fundingLines[?(@.templateLineId == 2)].value",
+          "datastyle": {
+            "numberFormat": "c0"
+          },
+          "groups": [
+            {
+              "type": "General/StandardLink",
+              "title": "16 to 19 discretionary bursary fund",
+              "value": "@loggedInProviderFundingBreakdownPathTabstab-16-19-discretionary-bursary-fund",
+              "classname": "govuk-heading-l"
+
+            }
+          ]
+        },
+        {
+          "type": "Block/AllocationHistory",
+          "classname": "heading-small heading-guidance"
+        },
+        {
+          "type": "Heading/Small",
+          "classname": "heading-small heading-guidance",
+          "title": "Explore the topic"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2021-to-2022/16-to-19-non-maintained-special-school-nmss-revenue-funding-allocation-guide-2021-to-2022",
+                  "title": "Non maintained special school funding allocation guides: 2021 to 2022 (opens in new tab)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+@using Newtonsoft.Json
+@using PDS.ViewYourFunding.Services.Constants
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Models
+@using PDS.ViewYourFunding.Web.Helpers
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using FundingPeriodHelper = PDS.ViewYourFunding.Services.Helper.FundingPeriodHelper
+@using SearchFilterConstants = PDS.ViewYourFunding.Services.Helper.SearchFilterConstants
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.FundingBreakdownViewModel
+@{
+    var fundingBreakdown = Model.FundingViewData.FundingSubData;
+    var configuration = Model.FundingStreamConfiguration;
+    var fundingStreamCode = configuration.FundingStreamCode;
+    var fundingStreamName = configuration.FundingStreamName;
+    var fundingStreamNameWithinSentence = configuration.FundingStreamNameWithinSentence;
+    var showNameAbbreviation = configuration.FundingStreamCodePubliclyKnown;
+    var yearType = FundingPeriodHelper.GetYearTypeNameFromCode(Model.FundingPeriodCode);
+    var latestYear = FundingPeriodHelper.GetYearsFromCode(Model.FundingPeriodCode);
+}
+
+<h1 class="heading-xlarge">
+    @Html.Raw(Model.ContentTitle)
+    <span class="heading-secondary">
+        This allocation:
+        <span class="bold-medium">@Model.FundingViewData.PublicationDate.ToDateDisplay()</span>
+
+        @if (Model.IsCurrentYear && Model.IsLatestOrFinalFundingForYear)
+        {
+            <strong class="govuk-tag govuk-tag-secondary-heading">Latest</strong>
+        }
+        else
+        {
+            <strong class="govuk-tag govuk-bggrey govuk-tag-secondary-heading">Not latest</strong>
+        }
+    </span>
+</h1>
+
+@await Html.PartialAsync("Partial/_SearchResultsFilters", Model.QueryFilterViewModel)
+
+<div class="column-document-list-two-thirds column-two-thirds document-list">
+    <fieldset>
+        <legend id="document-list" class="visuallyhidden">Search results</legend>
+        <div class="visuallyhidden" role="alert" aria-labelledby="filter-results">
+            <span id="filter-results" class="pager-summary">Showing 1 to @fundingBreakdown.Count of @fundingBreakdown.Count schools</span>
+        </div>
+
+        <div class="form-group">
+            <h2 id="psg-total-allocation" class="lede heading-large-tabs">
+                Total allocation for @yearType @Model.YearFrom to @Model.YearTo
+                <p id="heading-funding-summary" class="heading-large heading-funding-summary total-funding-amount">
+                    @Model.FundingViewData.TotalAmount.ToGBCurrencyWithoutTrailingZeroes()
+                </p>
+            </h2>
+        </div>
+
+        @{
+            var titleFundingStreamText = showNameAbbreviation ? fundingStreamCode : fundingStreamName;
+            var linkFundingStreamText = showNameAbbreviation
+                ? "<abbr title=\"" + fundingStreamName + "\">" + fundingStreamCode + "</abbr>"
+                : fundingStreamName;
+
+            await Html.RenderPartialAsync("Partial/_FundingDocumentLink", new FundingDocumentLinkViewModel
+            {
+                Document = Model.Document,
+                LinkTitleFormat = "Download " + titleFundingStreamText + " allocation for " + Model.LocalAuthorityName + " {0} to {1}",
+                LinkInnerHtmlFormat = "Download " + linkFundingStreamText + " allocation for " + Model.LocalAuthorityName + " {0} to {1}",
+                DocumentTitleFormat = fundingStreamName + " allocation for " + Model.LocalAuthorityName + " {0} to {1}"
+            });
+        }
+
+        <div class="form-group">
+            <p class="more-than-one-match" style="display: @(fundingBreakdown.Count != 1 ? "block" : "none")">We found <span class="resultCount">@fundingBreakdown.Count</span> schools</p>
+            <p class="one-match" style="display: @(fundingBreakdown.Count == 1 ? "block" : "none")">We found 1 school</p>
+            <table class="govuk-table funding-breakdown-pesg">
+                <caption class="govuk-table__caption visuallyhidden">
+                    Showing @fundingStreamNameWithinSentence funding allocation for '@Model.LocalAuthorityName'
+                </caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row first">
+                        <th class="govuk-table__header" scope="col">
+                            Local authority code
+                        </th>
+                        <th class="govuk-table__header" scope="col">
+                            Local authority name
+                        </th>
+                        <th class="govuk-table__header" scope="col">
+                            Local authority establishment number (at @Model.AsOfMonth @Model.AsOfYear)
+                        </th>
+                        <th class="govuk-table__header" scope="col">
+                            School name (at @Model.AsOfMonth @Model.AsOfYear)
+                        </th>
+                        <th class="govuk-table__header" scope="col">
+                            Total allocation
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    @foreach (var providerFunding in fundingBreakdown.OrderBy(x => x.OrganisationName))
+                    {
+                        var providerType = ProviderTypeInternal
+                            .FromExternal(providerFunding.ProviderType, providerFunding.ProviderSubType)
+                            .RemoveWhitespace();
+
+                        double totalAllocation = 0;
+                      
+                        if (@Model.YearFrom >= 2023)
+                        {
+                            var data = JsonConvert.DeserializeObject<FundingValueNested_1_2>(@providerFunding.FundingValue);
+                             totalAllocation = Convert.ToDouble(data.FundingLines[0].Value);
+                             
+                        }   
+                        else
+                        {
+                             totalAllocation = @providerFunding.TotalAmount;
+                        }
+
+                        <tr class="filterable govuk-table__row" @Html.DataAttribute(SearchFilterConstants.EstablishmentTypeFilterKey, providerType) @Html.DataAttribute(SearchFilterConstants.FundingAmountKey, totalAllocation.ToString())>
+                            <th class="table-header-normal" scope="row">@Model.LocalAuthorityCode</th>
+                            <td class="table-header-normal">@Model.LocalAuthorityName</td>
+                            <td class="table-header-normal">@providerFunding.OrganisationDfeNumber</td>
+                            <td class="table-header-normal">@providerFunding.OrganisationName</td>
+                            <td class="table-header-normal totalAllocation">@totalAllocation.ToGBCurrencyWithoutTrailingZeroes()</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @if (fundingBreakdown.Count > 24)
+        {
+            @await Html.PartialAsync("Partial/_BackToTopLink")
+        }
+
+        <div class="form-block">
+            <h3 id="psg-allocation-history" class="heading-medium heading-guidance">Allocation history</h3>
+            <p>
+                You can view all versions of this allocation for the @yearType @latestYear.yearFrom to @latestYear.yearTo
+                and previous years on the
+                @Html.RouteLink("allocation history", ViewYourFundingConstants.RouteName_LocalAuthorityHistory, new
+                {
+                    fundingStreamName = Model.FundingStreamConfiguration.FundingStreamName.ToUIPathComponent(),
+                    localAuthorityCode = Model.LocalAuthorityCode,
+                    searchTerm = Model.SearchTerm
+                })<text>.</text>
+            </p>
+            @await Html.PartialAsync("Partial/_GeneralPSGResources", new KeyValuePair<int, int>(Model.YearFrom, Model.YearTo))
+        </div>
+    </fieldset>
+</div>
+
+@using (Html.BeginScripts())
+{
+    <environment names="Development">
+        <script src="~/Scripts/filters-add-ons.js"></script>
+        <script src="~/Scripts/filters.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-filters-add-ons.min.js" asp-file-version="true" type="text/javascript"></script>
+        <script src="~/js/vyf-filters.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

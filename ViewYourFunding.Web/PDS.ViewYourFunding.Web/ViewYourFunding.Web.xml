@@ -1,0 +1,3331 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ViewYourFunding.Web</name>
+    </assembly>
+    <members>
+        <member name="T:ViewYourFunding.Services.Config.WebAutofacModule">
+            <summary>
+            The services autofac module.
+            </summary>
+            <seealso cref="T:Autofac.Module" />
+        </member>
+        <member name="M:ViewYourFunding.Services.Config.WebAutofacModule.Load(Autofac.ContainerBuilder)">
+            <summary>
+            Override to add registrations to the container.
+            </summary>
+            <param name="builder">The builder through which components can be
+            registered.</param>
+            <remarks>
+            Note that the ContainerBuilder parameter is unique to this module.
+            </remarks>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.FundingConstants">
+            <summary>
+            Constants that are used for funding documents etc..
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.RoutePrefix">
+            <summary>
+            The MVC route prefix for the controller.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.Route_GenerateFundingDocument">
+            <summary>
+            Route for generating a funding document (e.g. a spreadsheet).
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.RouteName_GenerateFundingDocument">
+            <summary>
+            Route name for generating a funding document (e.g. a spreadsheet).
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.Route_GenerateFundingDocumentToByteArray">
+            <summary>
+            Route for generating a funding document to a byte array (not storing it).
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.Route_GetFundingDocumentMetadata">
+            <summary>
+            Route for getting the path to a funding document (e.g. a spreadsheet).
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.RouteName_GetFundingDocumentMetadata">
+            <summary>
+            Route name for getting the path to a funding document (e.g. a spreadsheet).
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.Route_DownloadSpreadsheet">
+            <summary>
+            Route for downloading a spreadsheet.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.FundingConstants.RouteName_DownloadSpreadsheet">
+            <summary>
+            Route name for downloading a spreadsheet.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest">
+            <summary>
+            Request object for a local authority funding breakdown request.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.FundingStreamName">
+            <summary>
+            Gets or sets the funding stream code.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.YearFrom">
+            <summary>
+            Gets or sets year from (e.g. 2020).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.YearTo">
+            <summary>
+            Gets or sets year to (e.g. 2020).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.LocalAuthorityCode">
+            <summary>
+            Gets or sets local authority code (e.g. 203).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.PublishedDate">
+            <summary>
+            Gets or sets published date .e.g. 2020-01-01.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.SearchTerm">
+            <summary>
+            Gets or sets search term that was used to get to Breakdown page.
+            Null if exact search was found.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest.Tab">
+            <summary>
+            Gets or sets tab that was selected to come through to funding breakdown page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest">
+            <summary>
+            Request object for organisation spreadsheet download.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.FundingStreamName">
+            <summary>
+            Gets or sets funding stream code (e.g. DSG).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.YearFrom">
+            <summary>
+            Gets or sets year from (e.g. 2020).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.YearTo">
+            <summary>
+            Gets or sets year to (e.g. 2020).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.YearTypeCode">
+            <summary>
+            Gets or sets year type code (e.g. AY).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.Format">
+            <summary>
+            Gets or sets file format (e.g. ods).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.LocalAuthorityCode">
+            <summary>
+            Gets or sets local authority code (e.g. 203).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest.PublishedDate">
+            <summary>
+            Gets or sets the published date as a string parameter.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest">
+            <summary>
+            Request object for provider spreadsheet download.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.FundingStreamName">
+            <summary>
+            Gets or sets funding stream code (e.g. DSG).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.YearFrom">
+            <summary>
+            Gets or sets year from (e.g. 2020).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.YearTo">
+            <summary>
+            Gets or sets year to (e.g. 2020).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.YearTypeCode">
+            <summary>
+            Gets or sets year type code (e.g. AY).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.Format">
+            <summary>
+            Gets or sets file format (e.g. ods).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.Ukprn">
+            <summary>
+            Gets or sets uKPRN for the provider (e.g. 12345678).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest.PublishedDate">
+            <summary>
+            Gets or sets the published date parameter as a string.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.BasePageViewModel">
+            <summary>
+            The base class for all page view models.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.CurrentUser">
+            <summary>
+            Gets or sets the current user.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.IsProductionEnvironment">
+            <summary>
+            Gets or sets a value indicating whether whether or not it is the production environment.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.StyleBundlePath">
+            <summary>
+            Gets (Optional) If set, the path to the bundle containing stylesheets.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.BodyClass">
+            <summary>
+            Gets (Optional) An additional css class to inject into the html `body` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowHeaderTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the header bar.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.HeaderTitle">
+            <summary>
+            Gets the title to showin the header bar.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowBetaTag">
+            <summary>
+            Gets a value indicating whether whether or not to show the beta tag banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowFeedbackLink">
+            <summary>
+            Gets a value indicating whether whether or not to show the feedback link in the beta tag banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.FeedbackLink">
+            <summary>
+            Gets or sets the feedback link target to use in the beta tag banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowEsfaBanner">
+            <summary>
+            Gets a value indicating whether whether or not to show the ESFA banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.FinalBreadCrumbText">
+            <summary>
+            Gets override text for the final breadcrumb.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.LayoutClass">
+            <summary>
+            Gets the css class to use to style the column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowUkprnAndSchool">
+            <summary>
+            Gets a value indicating whether whether or not to show the UKPRN and school in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowFullUkprn">
+            <summary>
+            Gets a value indicating whether whether or not to show the full UKPRN in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ShowRelatedSections">
+            <summary>
+            Gets a value indicating whether whether or not to show the 'related' sections.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.RelatedSections">
+            <summary>
+            Gets the collection of 'related' sections to display.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BasePageViewModel.ContactUsLink">
+            <summary>
+            Gets or sets the 'contact us' link target to use in the page footer.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BasePageViewModel.AddHTMLExpansions(System.String)">
+            <summary>
+            Expand some known acronyms.
+            </summary>
+            <param name="inputString">The string coming in.</param>
+            <returns>The string with some replacemnts made.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.CurrentUserViewModel">
+            <summary>
+            View model for passing information about the current user.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.CurrentUserViewModel.IsLoggedIn">
+            <summary>
+            Gets or sets a value indicating whether indicates whether or not the current user is logged in.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.CurrentUserViewModel.IsExternalUser">
+            <summary>
+            Gets or sets a value indicating whether indicates whether or not the current user is an external user.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.CurrentUserViewModel.Ukprn">
+            <summary>
+            Gets or sets the current user's UKPRN.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.CurrentUserViewModel.ProviderName">
+            <summary>
+            Gets or sets the provider name of the current user.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.CurrentUserViewModel.ShowUkprnAndSchool">
+            <summary>
+            Gets or sets a value indicating whether...abcd.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.CurrentUserViewModel.CanImpersonate">
+            <summary>
+            Gets or sets a value indicating whether...abcde.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.BaseLinkViewModel">
+            <summary>
+            Base class for a view model representing a hyperlink.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseLinkViewModel.LinkText">
+            <summary>
+            Gets or sets the link text.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseLinkViewModel.Type">
+            <summary>
+            Gets or sets the type of link.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseLinkViewModel.LinkClasses">
+            <summary>
+            Gets or sets the css classes to apply to the generated tag.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.AnchorTagType">
+            <summary>
+            Defines the type of link that can be created for an anchor tag.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.AnchorTagType.Internal">
+            <summary>
+            Internal link.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.AnchorTagType.External">
+            <summary>
+            External link.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.AnchorTagType.License">
+            <summary>
+            Link to copyright information.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.AnchorTagType.Download">
+            <summary>
+            Link to a download file.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.AnchorTagType.Mailto">
+            <summary>
+            A mailto link.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.BaseMvcLinkViewModel">
+            <summary>
+            Base class for a view model representing a hyperlink to an MVC action.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseMvcLinkViewModel.Parameters">
+            <summary>
+            Gets or sets route parameters.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.MvcActionLinkViewModel">
+            <summary>
+            View model representing a hyperlink to an MVC action by name.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.MvcActionLinkViewModel.ActionName">
+            <summary>
+            Gets or sets the MVC action to link to.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.MvcActionLinkViewModel.ControllerName">
+            <summary>
+            Gets or sets the MVC controller to link to.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.MvcRouteLinkBreadCrumbViewModel">
+            <summary>
+            View model for a bread crumb link targeting an MVC route.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.MvcRouteLinkBreadCrumbViewModel.IsCurrentPage">
+            <summary>
+            Gets or sets a value indicating whether is this the current page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.MvcRouteLinkBreadCrumbViewModel.IsHidden">
+            <summary>
+            Gets or sets a value indicating whether is the breadcrumb hidden.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.MvcRouteLinkViewModel">
+            <summary>
+            View model representing a hyperlink to an MVC action by route.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.MvcRouteLinkViewModel.RouteName">
+            <summary>
+            Gets or sets the MVC route to link to.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.UrlLinkViewModel">
+            <summary>
+            Represents a hyperlink targeting a specific url.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.UrlLinkViewModel.Url">
+            <summary>
+            Gets or sets the link target.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.RelatedSectionViewModel">
+            <summary>
+            The view model for a 'related' section of a page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.RelatedSectionViewModel.Title">
+            <summary>
+            Gets or sets the title to use for this 'related' section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.RelatedSectionViewModel.Links">
+            <summary>
+            Gets or sets the list of links to show in this 'related' section.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.AlternativeFundingLinksViewModel">
+            <summary>
+            A model for the alternative funding links partial view.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.AlternativeFundingLinksViewModel.IsStartPage">
+            <summary>
+            Gets or sets a value indicating whether should clicking on a link open the url in a new tab?.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel">
+            <summary>
+            The base view model for all 'allocation history' pages.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.SecondaryContentTitle">
+            <summary>
+            Gets or sets the secondary title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.FundingStreamConfiguration">
+            <summary>
+            Gets or sets the configuration for the funding stream.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseAllocationHistoryViewModel.FundingPeriodPublications">
+            <summary>
+            Gets or sets a list of key-value pairs mapping the funding period years (e.g. "2020", "2021") to the list of the publications for that period.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel">
+            <summary>
+            The base class for all page view models in the View Your Funding area.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.BodyClass">
+            <summary>
+            Gets an additional css class to inject into the html `body` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowHeaderTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the header bar.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.HeaderTitle">
+            <summary>
+            Gets the title to showin the header bar.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowBetaTag">
+            <summary>
+            Gets a value indicating whether whether or not to show the beta tag banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowFeedbackLink">
+            <summary>
+            Gets a value indicating whether whether or not to show the feedback link in the beta tag banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowEsfaBanner">
+            <summary>
+            Gets a value indicating whether whether or not to show the ESFA banner.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowUkprnAndSchool">
+            <summary>
+            Gets a value indicating whether whether or not to show the UKPRN and school in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ShowRelatedSections">
+            <summary>
+            Gets a value indicating whether whether or not to show the 'related' sections.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.GenericCurrentPageBreadcrumb(System.String)">
+            <summary>
+            A generic method to get a current page breadcrumb with the given link text.
+            </summary>
+            <param name="linkText">The breadcrumb text.</param>
+            <returns>A current page breadcrumb with the given link text.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ViewingChoicePageBreadCrumb(System.Boolean)">
+            <summary>
+            Get the breadcrumb view model for the 'Choose how to view funding' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <returns>The breadcrumb view model for the 'Choose how to view funding' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.WhichAllocationPageBreadCrumb(System.Boolean)">
+            <summary>
+            Get the breadcrumb view model for the 'Select a funding type' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <returns>The breadcrumb view model for the 'Select a funding type' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.DSGDownloadPageBreadCrumb(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Get the breadcrumb view model for the 'Dedicated schools grant (DSG) {yearFrom} to {yearTo}' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="yearFrom">The start year of the funding period being displayed.</param>
+            <param name="yearTo">The end year of the funding period being displayed.</param>
+            <returns>The breadcrumb view model for the 'Dedicated schools grant (DSG) {yearFrom} to {yearTo}' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.PSGDownloadPageBreadCrumb(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Get the breadcrumb view model for the 'PE and sport premium {yearFrom} to {yearTo}' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="yearFrom">The start year of the funding period being displayed.</param>
+            <param name="yearTo">The end year of the funding period being displayed.</param>
+            <returns>The breadcrumb view model for the 'PE and sport premium {yearFrom} to {yearTo}' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.FindAnOrganisationPageBreadCrumb(System.Boolean)">
+            <summary>
+            Get the breadcrumb view model for the 'Find an organisation' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <returns>The breadcrumb view model for the 'Find an organisation' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ProviderPageBreadCrumb(System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Get the breadcrumb view model for the 'Provider details' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="providerLinkText">The provider link text.</param>
+            <param name="organisationUkprn">The organisation Ukprn.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The breadcrumb view model for the 'Provider Details' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ProviderPSGAllocationHistoryPageBreadCrumb(System.Boolean,System.String,System.String)">
+            <summary>
+            Get the breadcrumb view model for the 'PSG allocation history' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="organisationUkprn">The organisation ukprn.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The breadcrumb view model for the 'PSG allocation history' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ProviderPSGFundingBreakdownPageBreadCrumb(System.Boolean,System.String)">
+            <summary>
+            Get the breadcrumb view model for the 'PSG funding breakdown' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="linkText">The link text.</param>
+            <returns>The breadcrumb view model for the 'PSG funding breakdown' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.ProviderResultsPageBreadCrumb(System.Boolean,System.String)">
+            <summary>
+            Get the breadcrumb view model for the 'Provider Results' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The breadcrumb view model for the 'Provider results' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.LocalAuthorityDidYouMeanPageBreadCrumb(System.Boolean,System.String)">
+            <summary>
+            Get the breadcrumb view model for the local authority 'did you mean' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="searchTerm">The search term that was used.</param>
+            <returns>The breadcrumb view model for the local authority 'did you mean' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.LocalAuthorityStatementPageBreadCrumb(System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Get the breadcrumb view model for the local authority statement page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="localAuthorityName">The local authority name.</param>
+            <param name="searchTerm">The local authority search term.</param>
+            <returns>The breadcrumb view model for the local authority statement page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.LocalAuthorityAllocationHistoryPageBreadCrumb(System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Get the breadcrumb view model for the local authority 'allocation history' pages.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="routeName">The route name to link to.</param>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="searchTerm">The local authority search term.</param>
+            <returns>The breadcrumb view model for the local authority 'allocation history' pages.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.UnderConstructionBreadCrumb(System.Boolean)">
+            <summary>
+            Get the breadcrumb view model for the 'Under construction' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <returns>The breadcrumb view model for the 'Under construction' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.DSGFundingBreakdownPageBreadCrumb(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Get the breadcrumb view model for the 'Funding breakdown' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="yearFrom">The start year of the funding period being displayed.</param>
+            <param name="yearTo">The end year of the funding period being displayed.</param>
+            <returns>The breadcrumb view model for the 'Funding breakdown' page.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel.LocalAuthorityPSGBreakdownPageBreadCrumb(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Get the breadcrumb view model for the 'Funding breakdown' page.
+            </summary>
+            <param name="isCurrentPage">Whether or not it is the current page.</param>
+            <param name="yearFrom">The start year of the funding period being displayed.</param>
+            <param name="yearTo">The end year of the funding period being displayed.</param>
+            <returns>The breadcrumb view model for the 'Funding breakdown' page.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.DSGDownloadViewModel">
+            <summary>
+            The view model to use for the 'Dedicated schools grant (DSG) {year}' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.ShowRelatedSections">
+            <summary>
+            Gets a value indicating whether whether or not to show the 'related' sections.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.RelatedSections">
+            <summary>
+            Gets the collection of 'related' sections to display.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.YearFrom">
+            <summary>
+            Gets or sets the start year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.YearTo">
+            <summary>
+            Gets or sets the end year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.Spreadsheets">
+            <summary>
+            Gets or sets the collection of DSG spreadsheet documents, each of which should have a link on the page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.DSGDownloadViewModel.GuidanceLink">
+            <summary>
+            Gets the external gov.uk DSG guidance page link for the currently displayed funding period.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.DSGDownloadViewModel.GetExternalDSGLink(System.Int32,System.Int32)">
+            <summary>
+            Gets the external gov.uk DSG page link for the given year.
+            </summary>
+            <param name="yearFrom">The start year of the funding period.</param>
+            <param name="yearTo">The end year of the funding period.</param>
+            <returns>The external gov.uk DSG page link for the given year.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.DSGDownloadViewModel.GetInternalDSGLink(System.Int32,System.Int32)">
+            <summary>
+            Gets the internal DSG page action link for the given year.
+            </summary>
+            <param name="yearFrom">The start year of the funding period.</param>
+            <param name="yearTo">The end year of the funding period.</param>
+            <returns>The internal DSG page action link for the given year.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.DSGDownloadViewModel.GetHistoricAllocationLinks">
+            <summary>
+            Get the links to the historic allocations pages.
+            </summary>
+            <returns>A list of links.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.FilterableSearchResultsViewModel">
+            <summary>
+            The base filterable search results view model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FilterableSearchResultsViewModel.QueryFilterViewModel">
+            <summary>
+            Gets or sets the query filter view model.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.FindAnOrganisationViewModel">
+            <summary>
+            The find an organisation view model.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel" />
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FindAnOrganisationViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FindAnOrganisationViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FindAnOrganisationViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FindAnOrganisationViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FindAnOrganisationViewModel.ValidationErrorInputId">
+            <summary>
+            Gets or sets which search box has been submitted.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.FundingBreakdownViewModel">
+            <summary>
+            The view model to use for the 'View funding breakdown' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether use full column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.LocalAuthorityName">
+            <summary>
+            Gets or sets local authority name e.g. Camden.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.LocalAuthorityCode">
+            <summary>
+            Gets or sets local authority code e.g. 202.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.YearFrom">
+            <summary>
+            Gets or sets the start year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.YearTo">
+            <summary>
+            Gets or sets the end year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.IsLatestOrFinalFundingForYear">
+            <summary>
+            Gets or sets a value indicating whether is this the latest (or final) funding for the year being shown?.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.IsCurrentYear">
+            <summary>
+            Gets or sets a value indicating whether is the current year's funding being shown?.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.Document">
+            <summary>
+            Gets or sets the downloadable document for this funding breakdown.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.DocumentTitle">
+            <summary>
+            Gets get the downloadable document's title.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.FundingStreamConfiguration">
+            <summary>
+            Gets or sets the configuration for the funding stream.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.FundingViewData">
+            <summary>
+            Gets or sets the funding view data for this funding breakdown.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.Tab">
+            <summary>
+            Gets or sets tab that was selected to come through to funding breakdown page, if it has tabs.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.AsOfMonth">
+            <summary>
+            Gets or sets the 'as of' month of the provider data, if it is a breakdown of provider funding.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingBreakdownViewModel.AsOfYear">
+            <summary>
+            Gets or sets the 'as of' year of the provider data, if it is a breakdown of provider funding.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel">
+            <summary>
+            The view model containing the data required to render the '_FundingDocumentLink' partial view.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.DocumentId">
+            <summary>
+            Gets or sets a value that will be injected into the markup to ensure each document has a unique ID on the page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.Document">
+            <summary>
+            Gets or sets the funding document.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.IsLatestVersion">
+            <summary>
+            Gets or sets a value indicating whether whether or not this is the latest version of the document within the year.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.IsCurrentYear">
+            <summary>
+            Gets or sets a value indicating whether whether or not this document is for the current year.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.LinkTitleFormat">
+            <summary>
+            Gets or sets the title format string to use for the document link anchor tag. Parameters: {0} = Start Year, {1} = End Year.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.LinkTitle">
+            <summary>
+            Gets the title to use for the document link anchor tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.LinkInnerHtmlFormat">
+            <summary>
+            Gets or sets the inner HTML format string to use for the document link anchor tag. Parameters: {0} = Start Year, {1} = End Year.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.LinkInnerHtml">
+            <summary>
+            Gets the inner HTML to use for the document link anchor tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.DocumentTitleFormat">
+            <summary>
+            Gets or sets the document title format string. Parameters: {0} = Start Year, {1} = End Year.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.DocumentTitle">
+            <summary>
+            Gets the title of the document.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.PublishedDate">
+            <summary>
+            Gets the date the document was published, formatted as 'd MMMM yyyy'.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.FileSizeKB">
+            <summary>
+            Gets the file size of the document, rounded to the nearest 1KB.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.FundingDocumentLinkViewModel.ShowPublishedDateAndTag">
+            <summary>
+            Gets or sets a value indicating whether whether or not to show the document published date and (conditionally) the status tag.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel">
+            <summary>
+            View model for the local authority 'did you mean' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel.ResultCount">
+            <summary>
+            Gets the result count.
+            </summary>
+            <value>
+            The result count.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityDidYouMeanViewModel.LocalAuthorities">
+            <summary>
+            Gets or sets the list of local authorities that matched the search.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.LocalAuthorityHistoryViewModel">
+            <summary>
+            The shared view model for all local authority 'allocation history' pages.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityHistoryViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityHistoryViewModel.LocalAuthorityName">
+            <summary>
+            Gets or sets local authority name e.g. Camden.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityHistoryViewModel.LocalAuthorityCode">
+            <summary>
+            Gets or sets local authority code e.g. 202.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityHistoryViewModel.FundingBreakdownRouteName">
+            <summary>
+            Gets or sets the route name to use to build hyperlinks to the funding breakdown pages.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.LocalAuthorityNoResultsViewModel">
+            <summary>
+            View model for the local authority 'no results' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityNoResultsViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityNoResultsViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityNoResultsViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityNoResultsViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel">
+            <summary>
+            The Provider PSG Funding Breakdown 201819 view model.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel" />
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.RelatedSections">
+            <summary>
+            Gets the collection of 'related' sections to display.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.LocalAuthorityCode">
+            <summary>
+            Gets or sets the local authority code.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.LocalAuthorityName">
+            <summary>
+            Gets or sets the local authority name.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.FundingStreamName">
+            <summary>
+            Gets or sets the name of the funding stream.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.SearchTerm">
+            <summary>
+            Gets or sets the search term.
+            </summary>
+            <value>
+            The search term.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityPSGBreakdown201819ViewModel.PageTitle">
+            <summary>
+            Gets the page title.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel">
+            <summary>
+            View model for the local authority statement page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.LocalAuthorityCode">
+            <summary>
+            Gets or sets the local authority code.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.LocalAuthorityName">
+            <summary>
+            Gets or sets the local authority name.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.FundingStreamConfiguration">
+            <summary>
+            Gets or sets the funding stream configuration.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.FundingViewData">
+            <summary>
+            Gets or sets the funding view data for the local authority.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.FundingDocuments">
+            <summary>
+            Gets or sets the funding documents.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.GetFundingBlockRouteValues(System.String,System.String)">
+            <summary>
+            Get route values for selected funding stream code and funding block.
+            </summary>
+            <param name="fundingStreamCode">Funding stream e.g. DSG.</param>
+            <param name="fundingBlockName">The selected funding block.</param>
+            <returns>Route values for specified funding stream and block.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.LocalAuthorityStatementViewModel.GetNextPaymentDate(System.String)">
+            <summary>
+            Get the relevant next payment date.
+            </summary>
+            <param name="fundingStreamCode">Funding stream e.g. DSG.</param>
+            <returns>A datetime of the next payment date, or null.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderNoResultsViewModel">
+            <summary>
+            The Provider (School or Academy) Search Results View Model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderNoResultsViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderNoResultsViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderNoResultsViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderNoResultsViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderPSGAllocationHistoryViewModel">
+            <summary>
+            The Provider PSG Allocation History view model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGAllocationHistoryViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGAllocationHistoryViewModel.OrganisationName">
+            <summary>
+            Gets or sets the name of the organisation.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGAllocationHistoryViewModel.OrganisationUkprn">
+            <summary>
+            Gets or sets the organisation ukprn.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel">
+            <summary>
+            The Provider PSG Funding Breakdown 201819 view model.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Models.BaseViewYourFundingViewModel" />
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.RelatedSections">
+            <summary>
+            Gets the collection of 'related' sections to display.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.OrganisationUkprn">
+            <summary>
+            Gets or sets the organisation ukprn.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.OrganisationName">
+            <summary>
+            Gets or sets the name of the organisation.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.FundingStreamName">
+            <summary>
+            Gets or sets the name of the funding stream.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.SearchTerm">
+            <summary>
+            Gets or sets the search term.
+            </summary>
+            <value>
+            The search term.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdown201819ViewModel.PageTitle">
+            <summary>
+            Gets the page title.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel">
+            <summary>
+            The Provider PSG Funding breakdown view model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.ProviderStatementSection">
+            <summary>
+            Gets or sets the provider statement section.
+            </summary>
+            <value>
+            The provider statement section.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.YearFrom">
+            <summary>
+            Gets or sets the start year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.YearTo">
+            <summary>
+            Gets or sets the end year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.FundingStreamName">
+            <summary>
+            Gets or sets the name of the funding stream.
+            </summary>
+            <value>
+            The name of the funding stream.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.FundingStatus">
+            <summary>
+            Gets or sets the funding status.
+            </summary>
+            <value>
+            The funding status.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.SearchTerm">
+            <summary>
+            Gets or sets the search term.
+            </summary>
+            <value>
+            The search term.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.PublicationDate">
+            <summary>
+            Gets or sets the publication date.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel.PageTitle">
+            <summary>
+            Gets the page title.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderResultsViewModel">
+            <summary>
+            The Provider (School or Academy) Search Results View Model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderResultsViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderResultsViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderResultsViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderResultsViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderResultsViewModel.ResultCount">
+            <summary>
+            Gets the result count.
+            </summary>
+            <value>
+            The result count.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderResultsViewModel.ProviderResults">
+            <summary>
+            Gets or sets the provider results.
+            </summary>
+            <value>
+            The provider results.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel">
+            <summary>
+            A section of the provider statement page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.ProviderResult">
+            <summary>
+            Gets or sets the provider result.
+            </summary>
+            <value>
+            The provider result.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.CurrentYearStart">
+            <summary>
+            Gets or sets the current year start.
+            </summary>
+            <value>
+            The current year start.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.CurrentYearEnd">
+            <summary>
+            Gets or sets the current year end.
+            </summary>
+            <value>
+            The current year end.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.FundingStreamConfiguration">
+            <summary>
+            Gets or sets the funding stream configuration.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.CurrentAsOfMonth">
+            <summary>
+            Gets or sets the current 'as of' month of funding stream allocations that should be shown.
+            </summary>
+            <value>
+            The current as of month.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.CurrentAsOfYear">
+            <summary>
+            Gets or sets the current 'as of' year of funding stream allocations that should be shown.
+            </summary>
+            <value>
+            The current as of year.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.Document">
+            <summary>
+            Gets or sets the document.
+            </summary>
+            <value>
+            The document.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.SearchTerm">
+            <summary>
+            Gets or sets the search term.
+            </summary>
+            <value>
+            The search term.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.DocumentTitle">
+            <summary>
+            Gets the document title.
+            </summary>
+            <value>
+            The document title.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementSectionViewModel.NextPaymentDate">
+            <summary>
+            Gets or sets the next available payment date.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ProviderStatementViewModel">
+            <summary>
+             The view model to use for the 'Provider statement' page.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Models.SearchResultsViewModel" />
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementViewModel.IsTwoThirdsLayout">
+            <summary>
+            Gets a value indicating whether whether or not to use the two-thirds column layout.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ProviderStatementViewModel.Sections">
+            <summary>
+            Gets or sets sections on the page (e.g. DSG for 2020-2021).
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.PSGDownloadViewModel">
+            <summary>
+            The view model to use for the 'PE and sport premium {year}' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.ShowRelatedSections">
+            <summary>
+            Gets a value indicating whether whether or not to show the 'related' sections.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.RelatedSections">
+            <summary>
+            Gets the collection of 'related' sections to display.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.YearFrom">
+            <summary>
+            Gets or sets the start year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.YearTo">
+            <summary>
+            Gets or sets the end year of the funding period being displayed.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.LatestYearFrom">
+            <summary>
+            Gets or sets the start year of the current/latest funding period.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.LatestYearTo">
+            <summary>
+            Gets or sets the end year of the current/latest funding period.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.IsCurrentYear">
+            <summary>
+            <code>Gets a value indicating whether true</code> if displaying the current year's funding,. <code>false</code> for historic funding.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PSGDownloadViewModel.Spreadsheets">
+            <summary>
+            Gets or sets the collection of PSG spreadsheet documents, each of which should have a link on the page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.PSGDownloadViewModel.GetExternalPSGLink(System.Int32,System.Int32)">
+            <summary>
+            Gets the external gov.uk PSG page link for the given year.
+            </summary>
+            <param name="yearFrom">The start year of the funding period.</param>
+            <param name="yearTo">The end year of the funding period.</param>
+            <returns>The external gov.uk PSG page link for the given year.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.PSGDownloadViewModel.GetInternalPSGLink(System.Int32,System.Int32)">
+            <summary>
+            Gets the internal PSG page action link for the given year.
+            </summary>
+            <param name="yearFrom">The start year of the funding period.</param>
+            <param name="yearTo">The end year of the funding period.</param>
+            <returns>The internal PSG page action link for the given year.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.PSGDownloadViewModel.GetHistoricAllocationLinks">
+            <summary>
+            Gets the historic allocations links.
+            </summary>
+            <returns>The list of links to the historic allocations for the last N years.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.PupilNumbersViewModel">
+            <summary>
+            The pupil numbers view model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PupilNumbersViewModel.PupilNumber">
+            <summary>
+            Gets or sets number of pupils.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PupilNumbersViewModel.PupilNumberDisplayText">
+            <summary>
+            Gets or sets number of pupils display text e.g. "Number of Pupils".
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.PupilNumbersViewModel.ShowGovLink">
+            <summary>
+            Gets a value indicating whether determines if pupil numbers link is to be shown. If whole number then do not show link.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.QueryFilterViewModel">
+            <summary>
+            The query filter view model class.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.QueryFilterViewModel.RouteName">
+            <summary>
+            Gets or sets the route name to use to apply or reset the selected filters.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.QueryFilterViewModel.QueryFilter">
+            <summary>
+            Gets or sets the query filter.
+            </summary>
+            <value>
+            The query filter.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.QueryFilterViewModel.SearchTerm">
+            <summary>
+            Gets or sets the search term.
+            </summary>
+            <value>
+            The search term.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.SearchResultsViewModel">
+            <summary>
+            The base Search Results View Model.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.SearchResultsViewModel.SearchTerm">
+            <summary>
+            Gets or sets the search term.
+            </summary>
+            <value>
+            The search term.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.SearchResultsViewModel.ResultCount">
+            <summary>
+            Gets the result count.
+            </summary>
+            <value>
+            The result count.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.SearchResultsViewModel.BackToTopLinkMinimumCount">
+            <summary>
+            Gets or sets the back to top link minimum count.
+            </summary>
+            <value>
+            The back to top link minimum count.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.SearchResultsViewModel.ShowBackToTopLink">
+            <summary>
+            Gets a value indicating whether to the show back to top link.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.StartPageViewModel">
+            <summary>
+            The view model to use for the start page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.StartPageViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.StartPageViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.UnderConstructionViewModel">
+            <summary>
+            The view model for the 'under construction' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.UnderConstructionViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.UnderConstructionViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ViewingChoiceViewModel">
+            <summary>
+            The view model to use for the 'choose how to view your funding' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ViewingChoiceViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html `title` tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ViewingChoiceViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ViewingChoiceViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.ViewingChoiceViewModel.ValidationError">
+            <summary>
+            Gets or sets a value indicating whether whether or not there is a validation error on the page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.ViewYourFundingConstants">
+            <summary>
+            A class to store constants for the View Your Funding area.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ControllerName">
+            <summary>
+            The MVC controller name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RoutePrefix">
+            <summary>
+            The MVC route prefix for the controller.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_Start">
+            <summary>
+            The MVC route for the start page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_Start">
+            <summary>
+            The MVC route name for the start page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_Start">
+            <summary>
+            The page title for the start page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_Login">
+            <summary>
+            The MVC route for the login page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_Login">
+            <summary>
+            The MVC route name for the login page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_Logout">
+            <summary>
+            The MVC route for the logout page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_Logout">
+            <summary>
+            The MVC route name for the logout page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_PostLogout">
+            <summary>
+            The MVC route for the logout page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_PostLogout">
+            <summary>
+            The MVC route name for the logout page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_PostLogoutRedirect">
+            <summary>
+            The MVC route for the logout page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_PostLogoutRedirect">
+            <summary>
+            The MVC route name for the logout page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ViewingChoice">
+            <summary>
+            The MVC route for the 'Choose how to view funding' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ViewingChoice">
+            <summary>
+            The MVC route name for the 'Choose how to view funding' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_ViewingChoice">
+            <summary>
+            The page title for the 'Choose how to view funding' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ViewingChoiceChosen">
+            <summary>
+            The MVC route for the re-routing the result of the 'Choose how to view funding' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ViewingChoiceChosen">
+            <summary>
+            The MVC route name for the re-routing the result of the 'Choose how to view funding' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_ViewingChoice_FindAnOrganisation">
+            <summary>
+            The value of the radio input that should map to the 'View funding at organisation level' action.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_ViewingChoice_WhichAllocation">
+            <summary>
+            The value of the radio input that should map to the 'Select a funding type' action.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionMap_ViewingChoice">
+            <summary>
+            Maps the options on the 'Choose how to view funding' page to their respective target MVC actions.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_FindAnOrganisation">
+            <summary>
+            The MVC route for the 'View funding at organisation level' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_FindAnOrganisation">
+            <summary>
+            The MVC route name for the 'View funding at organisation level' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_FindAnOrganisation">
+            <summary>
+            The page title for the 'View funding at organisation level' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_FindAnOrganisation_Provider">
+            <summary>
+            The value of the radio input that should map to the Provider 'school or academy' results action.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_FindAnOrganisation_LocalAuthority">
+            <summary>
+            The value of the radio input that should map to the 'local authority name or code' action.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.LinkText_FindAnOrganisation">
+            <summary>
+            The display text for links back to the 'View funding at organisation level' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_SearchResults">
+            <summary>
+            The page title to use for search results pages.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_AllocationHistory">
+            <summary>
+            The page title to use for allocation history pages.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderResults">
+            <summary>
+            The MVC route for the 'Provider search results' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderResults">
+            <summary>
+            The MVC route name for the 'Provider search results' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderNoResults">
+            <summary>
+            The MVC route for the 'Provider no search results' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderNoResults">
+            <summary>
+            The MVC route name for the 'Provider no search results' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderStatement">
+            <summary>
+            The MVC route for the 'Provider statement' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderStatement">
+            <summary>
+            The MVC route name for the 'Provider statement' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.LinkText_ResetSearchFilter">
+            <summary>
+            The display text for resetting the search filters.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderPSGAllocationHistory">
+            <summary>
+            The MVC route for the 'PSG Allocation history' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderPSGAllocationHistory">
+            <summary>
+            The MVC route name for the 'Provider PSG Allocation History' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.NumberOfYearsOfHistoricAllocationsToShow">
+            <summary>
+            The number of years of historic allocations to show.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderPSGFundingBreakdown">
+            <summary>
+            The MVC route for the 'Provider PSG Funding Breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderPSGFundingBreakdown">
+            <summary>
+            The MVC route name for the 'Provider PSG Funding Breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderPSGFundingBreakdown201819">
+            <summary>
+            The MVC route for the 'Provider PSG Funding Breakdown 201819' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderPSGFundingBreakdown201819">
+            <summary>
+            The MVC route name for the 'Provider PSG Funding Breakdown 201819' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthoritySearch">
+            <summary>
+            The MVC route for the Local Authority search.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthoritySearch">
+            <summary>
+            The MVC route name for the Local Authority search.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityDidYouMean">
+            <summary>
+            The MVC route for the Local Authority 'did you mean' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityDidYouMean">
+            <summary>
+            The MVC route name for the Local Authority 'did you mean' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityStatement">
+            <summary>
+            The MVC route for the Local Authority 'statement' page for {localAuthorityCode}.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityStatement">
+            <summary>
+            The MVC route name for the Local Authority 'did you mean' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityNoResults">
+            <summary>
+            The MVC route for the Local Authority 'no results' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityNoResults">
+            <summary>
+            The MVC route name for the Local Authority 'no results' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityPSGBreakdown">
+            <summary>
+            The MVC route for the 'Local authority PSG breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityPSGBreakdown">
+            <summary>
+            The MVC route name for the 'Local authority PSG breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.DocumentTitleFormat_LocalAuthorityPSGBreakdown">
+            <summary>
+            The document title format for the downloadable document on the 'Local authority PSG breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityPSGBreakdown201819">
+            <summary>
+            The MVC route for the 'Local authority PSG breakdown' 2018-19 page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityPSGBreakdown201819">
+            <summary>
+            The MVC route name for the 'Local authority PSG breakdown' 2018-19 page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityPSGHistory">
+            <summary>
+            The MVC route for the Local Authority PSG 'allocation history' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityPSGHistory">
+            <summary>
+            The MVC route name for the Local Authority PSG 'allocation history' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_LocalAuthorityDSGHistory">
+            <summary>
+            The MVC route for the Local Authority DSG 'allocation history' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_LocalAuthorityDSGHistory">
+            <summary>
+            The MVC route name for the Local Authority DSG 'allocation history' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_WhichAllocation">
+            <summary>
+            The MVC route for the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_WhichAllocation">
+            <summary>
+            The MVC route name for the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_WhichAllocation">
+            <summary>
+            The page title for the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_WhichAllocationChosen">
+            <summary>
+            The MVC route for the re-routing the result of the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_WhichAllocationChosen">
+            <summary>
+            The MVC route for the re-routing the result of the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionMap_WhichAllocation(System.Tuple{System.Int32,System.Int32},System.Tuple{System.Int32,System.Int32})">
+            <summary>
+            Maps the options on the 'Select a funding type' page to their respective behaviours.
+            </summary>
+            <param name="latestYear_DSG">The latest/current year for DSG.</param>
+            <param name="latestYear_PSG">The latest/current year for PSG.</param>
+            <returns>A dictionary mapping the options to their respective behaviours.</returns>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_DSG">
+            <summary>
+            The value of the radio input for 'DSG'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_PSG">
+            <summary>
+            The value of the radio input for 'PE and sport'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_PupilPremium">
+            <summary>
+            The value of the radio input for 'Pupil premium'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_SchoolsImprovement">
+            <summary>
+            The value of the radio input for 'Schools improvement'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_TeachersPay">
+            <summary>
+            The value of the radio input for 'Teachers pay'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_SchoolMeal">
+            <summary>
+            The value of the radio input for 'School meal'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.OptionValue_WhichAllocation_Year7">
+            <summary>
+            The value of the radio input for 'Year 7'.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_DSGDownload">
+            <summary>
+            The MVC route for the 'Dedicated schools grant (DSG) {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_DSGDownload">
+            <summary>
+            The MVC route name for the 'Dedicated schools grant (DSG) {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.BreadCrumbTextFormat_DSGDownload">
+            <summary>
+            The breadcrumb text format string for the 'Dedicated schools grant (DSG) {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.LinkTextFormat_DSGDownload">
+            <summary>
+            The link text format string for the 'Dedicated schools grant (DSG) {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ExternalLinkUrlFormat_DSG_Common">
+            <summary>
+            The format string for the external link URL to the DSG page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ExternalLinkUrlTextFormat_DSG_Common">
+            <summary>
+            DSG Abbreviation with yearFrom and yearTo e.g. DSG: 2019 to 2020.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.BrowserTitleFormat_DSG_Common">
+            <summary>
+            The browser title format string for DSG pages.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ContentTitleFormat_DSG_Common">
+            <summary>
+            The content title format string for DSG pages including the years.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ContentTitle_DSG_Common_NoYears">
+            <summary>
+            The content title format string for DSG pages.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitleFormat_PSG_Common">
+            <summary>
+            The common title format string for all 'PE and sport premium {yearFrom} to {yearTo}' pages.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_PSG_Common_NoYears">
+            <summary>
+            The common title format string for all 'PE and sport premium' pages.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_PSGDownload">
+            <summary>
+            The MVC route for the 'PE and sport premium {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_PSGDownload">
+            <summary>
+            The MVC route name for the 'PE and sport premium {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.LinkTextFormat_PSGDownload">
+            <summary>
+            The link text format string for the 'PE and sport premium {yearFrom} to {yearTo}' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ExternalLinkUrl_2017_PSGDownload">
+            <summary>
+            The external link URL to the PSG page for 2017-18.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.ExternalLinkUrl_2016_PSGDownload">
+            <summary>
+            The external link URL to the PSG page for 2016-17.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_UnderConstruction">
+            <summary>
+            The MVC route for the 'Under construction' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_UnderConstruction">
+            <summary>
+            The MVC route name for the 'Under construction' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.PageTitle_UnderConstruction">
+            <summary>
+            The page title for the 'Under construction' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_DSGFundingBreakdown">
+            <summary>
+            The MVC route for the 'DSG Funding breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_DSGFundingBreakdown">
+            <summary>
+            The MVC route name for the 'DSG Funding breakdown' page.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.BreadcrumbFormat_DSGFundingBreakdown">
+            <summary>
+            The content title format string for the 'DSG Funding breakdown' page.
+            E.g. DSG 2019 to 2020.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.DocumentTitle_DSGFundingBreakdown">
+            <summary>
+            The page title for the 'DSG Funding breakdown' page.
+            Download DSG allocation for Camden 2019 to 2020.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_ProviderSpreadsheetDownload">
+            <summary>
+            The MVC route for a provider spreadsheet download.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_ProviderSpreadsheetDownload">
+            <summary>
+            The MVC route name for a provider spreadsheet download.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.Route_OrganisationSpreadsheetDownload">
+            <summary>
+            The MVC route for an organisation spreadsheet download.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Models.ViewYourFundingConstants.RouteName_OrganisationSpreadsheetDownload">
+            <summary>
+            The MVC route name for an organisation spreadsheet download.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.WhichAllocationOptionAction">
+            <summary>
+            Class containing information about the action to take based on the selection made on the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationOptionAction.RouteName">
+            <summary>
+            Gets or sets the route name to direct to.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationOptionAction.RouteValues">
+            <summary>
+            Gets or sets the route values to pass to the route.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationOptionAction.UseRouteValuesWhenScriptsEnabled">
+            <summary>
+            Gets or sets a value indicating whether whether or not to pass the route values when scripts are enabled. When scripts are disabled, the route values will always be passed.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Models.WhichAllocationViewModel">
+            <summary>
+            The view model to use for the 'Select a funding type' page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.BrowserTitle">
+            <summary>
+            Gets the title to use in the html 'title' tag.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.ShowContentTitle">
+            <summary>
+            Gets a value indicating whether whether or not to show the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.ContentTitle">
+            <summary>
+            Gets the title in the page's main content section.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.BreadCrumbItems">
+            <summary>
+            Gets the list of breadcrumbs to show.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.ValidationError">
+            <summary>
+            Gets or sets a value indicating whether whether or not there is a validation error on the page.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.LatestYear_DSG">
+            <summary>
+            Gets or sets the latest year for which to show allocations for DSG.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Models.WhichAllocationViewModel.LatestYear_PEAndSport">
+            <summary>
+            Gets or sets the latest year for which to show allocations for PE and Sport.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Controllers.BaseController">
+            <summary>
+            A base MVC controller.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.BaseController.#ctor(ViewYourFunding.Interfaces.IIdentityService,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Controllers.BaseController"/> class.
+            </summary>
+            <param name="securityService">The security service to use.</param>
+            <param name="isProductionEnvironment">Whether or not it is the production environment.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.BaseController.GetBasePageViewModel``1">
+            <summary>
+            Populates some base properties of the given view model.
+            </summary>
+            <typeparam name="T">The type of the view model to return.</typeparam>
+            <returns>A new view model of the given type.</returns>
+        </member>
+        <member name="P:ViewYourFunding.Web.Controllers.BaseController.await PreviewModeEnabled()">
+            <summary>
+            Gets a value indicating whether whether or not preview mode is enabled in the current context.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Controllers.CacheController">
+            <summary>
+            The Cache API Controller.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.CacheController._cachingService">
+            <summary>
+            The caching service.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.CacheController.#ctor(ViewYourFunding.Interfaces.ICacheService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Controllers.CacheController"/> class.
+            </summary>
+            <param name="cachingService">The caching service.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.CacheController.ClearCache">
+            <summary>
+            Clears the cache.
+            </summary>
+            <returns>The negotiated content result.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Controllers.PrivacyAndCookiesController">
+            <summary>
+            The Privacy and Cookies Controller.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Controllers.BaseController" />
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.PrivacyAndCookiesController.#ctor(ViewYourFunding.Interfaces.IIdentityService,Microsoft.Extensions.Options.IOptions{ViewYourFunding.Core.ApplicationConfiguration})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Controllers.PrivacyAndCookiesController"/> class.
+            </summary>
+            <param name="securityService">The security service.</param>
+            <param name="applicationConfig">The application configuration.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.PrivacyAndCookiesController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns>The View result.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.PrivacyAndCookiesController.Allocations">
+            <summary>
+            Allocationses this instance.
+            </summary>
+            <returns>The View result.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Controllers.TermsAndConditionsController">
+            <summary>
+            The Terms and Conditions controller.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Controllers.BaseController" />
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.TermsAndConditionsController.#ctor(ViewYourFunding.Interfaces.IIdentityService,Microsoft.Extensions.Options.IOptions{ViewYourFunding.Core.ApplicationConfiguration})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Controllers.TermsAndConditionsController"/> class.
+            </summary>
+            <param name="securityService">The security service.</param>
+            <param name="applicationConfig">The application configuration.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.TermsAndConditionsController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns>The View result.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Controllers.ViewYourFundingController">
+            <summary>
+            The MVC controller for the View Your Funding area of the service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController.LiveFundingStreams">
+            <summary>
+            The collection of funding streams that can be displayed.
+            Candidate for deriving from settings in future.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController._feedbackLink">
+            <summary>
+            The feedback link.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController._contactUsLink">
+            <summary>
+            The contact us link.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController._fundingDocumentService">
+            <summary>
+            The funding document service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController._fundingApiService">
+            <summary>
+            The funding Api service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController._userJourneyService">
+            <summary>
+            The settings service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Controllers.ViewYourFundingController._applicationConfiguration">
+            <summary>
+            The configuration service.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.#ctor(ViewYourFunding.Interfaces.IIdentityService,ViewYourFunding.Interfaces.IFundingDocumentService,ViewYourFunding.Interfaces.Interfaces.IFundingApiService,ViewYourFunding.Interfaces.IViewYourFundingSettingsService,ViewYourFunding.Interfaces.IFundingViewService,Microsoft.Extensions.Options.IOptions{ViewYourFunding.Core.ApplicationConfiguration})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Controllers.ViewYourFundingController"/> class.
+            </summary>
+            <param name="securityService">The security service to use.</param>
+            <param name="fundingDocumentService">The service to use for funding documents.</param>
+            <param name="fundingApiService">The API service to use for searching for funding.</param>
+            <param name="settingsService">The settings service to use.</param>
+            <param name="fundingViewService">The funding view service.</param>
+            <param name="applicationConfigurationOptions">The configuration service.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.Login">
+            <summary>
+            Login action - this in practise may not be used.
+            </summary>
+            <returns>The login page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.Logout">
+            <summary>
+            A logout action - this may or may not be used (perhaps the one in Sfs.Web would be used instead).
+            </summary>
+            <returns>The start page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.PostLogout">
+            <summary>
+            A required action to handle part of the logout flow.
+            </summary>
+            <returns>The start page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.PostLogoutRedirect">
+            <summary>
+            A required action to handle part of the logout flow.
+            </summary>
+            <returns>The start page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.Start">
+            <summary>
+            The MVC action for the start page.
+            </summary>
+            <returns>The start page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ViewingChoice(System.Boolean)">
+            <summary>
+            The MVC action for the 'Choose how to view funding' page.
+            </summary>
+            <param name="error">Whether or not to display the validation error messages.</param>
+            <returns>The 'Choose how to view funding' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ViewingChoiceChosen(System.String)">
+            <summary>
+            The MVC action for routing the selection made on the 'Choose how to view funding' page (used when JavaScript is disabled).
+            </summary>
+            <param name="choice">The choice selected on the previous page.</param>
+            <returns>A redirect to the relevant action based on the choice made.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.WhichAllocation(System.Boolean)">
+            <summary>
+            The MVC action for the 'Select a funding type' page.
+            </summary>
+            <param name="error">Whether or not to display the validation error messages.</param>
+            <returns>The 'Select a funding type' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.WhichAllocationChosen(System.String)">
+            <summary>
+            The MVC action for routing the selection made on the 'Select a funding type' page (used when JavaScript is disabled).
+            </summary>
+            <param name="fundingAllocationChoice">The choice selected on the previous page.</param>
+            <returns>A redirect to the relevant action based on the choice made.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.DSGDownload(System.Int32,System.Int32)">
+            <summary>
+            The MVC action for the 'Dedicated schools grant (DSG) {financial year}' page.
+            </summary>
+            <param name="yearFrom">The start year of the funding period being displayed.</param>
+            <param name="yearTo">The end year of the funding period being displayed.</param>
+            <returns>The 'Dedicated schools grant (DSG) {financial year}' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.PSGDownload(System.Int32,System.Int32)">
+            <summary>
+            The MVC action for the 'PE and sport premium {academic year}' page.
+            </summary>
+            <param name="yearFrom">The start year of the funding period being displayed.</param>
+            <param name="yearTo">The end year of the funding period being displayed.</param>
+            <returns>The 'PE and sport premium {academic year}' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderSpreadsheetDownload(ViewYourFunding.Web.Models.ProviderSpreadsheetDownloadRequest)">
+            <summary>
+            The MVC action to download a provider level document.
+            </summary>
+            <param name="request">The provider spreadsheet download request.</param>
+            <returns>A spreadsheet for a provider level document.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.UnderConstruction">
+            <summary>
+            The MVC action for the 'Under construction' page.
+            </summary>
+            <returns>The 'Under construction' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.FindAnOrganisation(System.String)">
+            <summary>
+            The MVC action for the 'View funding at organisation level' page.
+            </summary>
+            <param name="validationErrorInputId">Which search box has been submitted.</param>
+            <returns>The 'View funding at organisation level' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderResults(System.String,ViewYourFunding.Web.Models.QueryFilterViewModel)">
+            <summary>
+            The MVC Action for the Provider 'Schools or academy search results' page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="appliedFilterModel">The query filter view model.</param>
+            <returns>The 'Provider results' or 'Provider Details' view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderNoResults(System.String)">
+            <summary>
+            The MVC Action for the Provider 'Schools or academy no search results' page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'no provider search result' view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderStatement(System.String,System.String)">
+            <summary>
+            The MVC Action for the 'Provider details' page.
+            </summary>
+            <param name="organisationUkprn">The organisation Ukprn.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'Provider details' or 'Provider results' view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderPSGAllocationHistory(System.String,System.String)">
+            <summary>
+            The MVC Action for the 'Provider PSG Allocation History' page.
+            </summary>
+            <param name="organisationUkprn">The organisation Ukprn.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'Provider Allocation History' view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderPSGFundingBreakdown(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Providers the PSG funding breakdown.
+            </summary>
+            <param name="organisationUkprn">The organisation ukprn.</param>
+            <param name="publishDate">The publish date.</param>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The action result.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.ProviderPSGFundingBreakdown201819(System.String,System.String)">
+            <summary>
+            The MVC Action for the 'Provider PSG Funding Breakdown' page.
+            </summary>
+            <param name="organisationUkprn">The organisation ukprn.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'Provider PSG Funding Breakdown' view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthoritySearch(System.String)">
+            <summary>
+            The MVC Action for the Local Authority search. Result will redirect based on the number of search results found.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <returns>A conditional redirect to the relevant route.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityNoResults(System.String)">
+            <summary>
+            The MVC action for the 'no results' page following a local authority search.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'no results' view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityDidYouMean(System.String)">
+            <summary>
+            The MVC action for the local authority search 'did you mean' page.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'did you mean' view if >1 LAs match, otherwise a redirect based on the number of matches.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityStatement(System.String,System.String)">
+            <summary>
+            The MVC action for the local authority statement page.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="searchTerm">If arriving at this page via a search, the search term that was entered.</param>
+            <returns>The local authority statement page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityPSGBreakdown(ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest,ViewYourFunding.Web.Models.QueryFilterViewModel)">
+            <summary>
+            The MVC action for the local authority PSG breakdown page.
+            </summary>
+            <param name="request">Parameters of the current request.</param>
+            <param name="appliedFilters">A model representing the filters that have been applied.</param>
+            <returns>The local authority PSG breakdown page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityPSGBreakdown201819(System.String,System.String)">
+            <summary>
+            The MVC Action for the local authority 'PSG Funding Breakdown' page for 2018-19.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The 'Provider PSG Funding Breakdown' 2018-19 view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityPSGHistory(System.String,System.String)">
+            <summary>
+            The MVC Action for the local authority PSG allocation history page.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The local authority PSG allocation history page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityDSGHistory(System.String,System.String)">
+            <summary>
+            The MVC Action for the local authority DSG allocation history page.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The local authority DSG allocation history page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.LocalAuthorityHistory(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Shared action logic for the local authority 'allocation history' pages.
+            </summary>
+            <param name="localAuthorityCode">The local authority code.</param>
+            <param name="fundingStreamCode">The funding stream code.</param>
+            <param name="fundingBreakdownRouteName">The MVC route name for the relevant funding breakdown page.</param>
+            <param name="secondaryContentTitle">The secondary title to use in the page's main content section.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>A local authority 'allocation history' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.OrganisationSpreadsheetDownload(ViewYourFunding.Web.Models.OrganisationSpreadsheetDownloadRequest)">
+            <summary>
+            The MVC action to download an organisation level document.
+            </summary>
+            <param name="request">The spreadsheet download request.</param>
+            <returns>>A spreadsheet for an organisation level document.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.DSGFundingBreakdown(ViewYourFunding.Web.Models.LocalAuthorityFundingBreakdownRequest)">
+            <summary>
+            The MVC action for the 'View funding breakdown' page.
+            </summary>
+            <param name="request">Parameters that will be passed into action method.</param>
+            <returns>The 'View funding breakdown' page view.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.GetCurrentAndHistoricYears(System.Tuple{System.Int32,System.Int32})">
+            <summary>
+            Gets the current and historic years.
+            </summary>
+            <param name="currentYears">The current years.</param>
+            <returns>The current and historic years.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.DoProviderFundingSearch(System.String,System.String[],System.Collections.Generic.Dictionary{System.String,ViewYourFunding.Interfaces.DTOs.FundingStreamConfiguration},System.Tuple{System.Int32,System.Int32},System.Nullable{System.DateTime})">
+            <summary>
+            Does the provider funding search.
+            </summary>
+            <param name="searchTerm">The search term.</param>
+            <param name="fundingStreamCodes">The funding stream codes.</param>
+            <param name="fundingStreamConfiguration">The funding stream configuration.</param>
+            <param name="yearToRetrieve">The year to retrieve.</param>
+            <param name="publishedDate">The published date.</param>
+            <returns>The search provider result list.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">There are no publications for the date {publishedDate}.</exception>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.PopulateStreamDataForViewModel(ViewYourFunding.Web.Models.ProviderStatementSectionViewModel,System.String,System.String)">
+            <summary>
+            Gets the current stream data for view model.
+            </summary>
+            <param name="section">The model.</param>
+            <param name="fundingStreamCode">Funding stream code to use (e.g. DSG).</param>
+            <param name="fundingPeriodCode">Funding period code (e.g. AY-1920).</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.BuildQueryFilter(System.Collections.Generic.List{ViewYourFunding.Interfaces.Models.IFundingApiSearchProviderFunding},System.String)">
+            <summary>
+            Builds the query filter.
+            </summary>
+            <param name="viewModelProviderResults">The view model provider results.</param>
+            <param name="searchTerm">The search term.</param>
+            <returns>The query filter view model.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.GetSectionDocument(System.Int32,System.Int32,ViewYourFunding.Interfaces.Models.IFundingApiSearchProviderFunding,System.DateTime)">
+            <summary>
+            Gets the section document.
+            </summary>
+            <param name="yearFrom">The year start.</param>
+            <param name="yearTo">The year end.</param>
+            <param name="providerDetails">The provider details.</param>
+            <param name="publishedDate">The published date.</param>
+            <returns>The Funding Document.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.GetPSGDownloadViewModel``1(System.Int32,System.Int32)">
+            <summary>
+            Get the PSG Download view model.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <returns>The PSG Download or child view model. </returns>
+            <exception cref="T:System.Exception">Funding data not yet available for academic year {yearFrom} to {yearTo}.</exception>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.PopulateProviderPSGFundingViewModel(System.Int32,System.Int32,ViewYourFunding.Web.Models.ProviderStatementSectionViewModel,ViewYourFunding.Web.Models.ProviderPSGFundingBreakdownViewModel,System.DateTime,ViewYourFunding.Interfaces.DTOs.FundingStreamConfiguration)">
+            <summary>
+            Populates the provider PSG funding view model.
+            </summary>
+            <param name="yearFrom">The year from.</param>
+            <param name="yearTo">The year to.</param>
+            <param name="section">The section.</param>
+            <param name="viewModel">The view model.</param>
+            <param name="publishedDate">The published date.</param>
+            <param name="psgConfiguration">The PSG configuration.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.CreateOutputFilepaths(System.Collections.Generic.IReadOnlyCollection{ViewYourFunding.Interfaces.ResponseObjects.FundingDocument})">
+            <summary>
+            Change file UI filenames for the spreadsheets.
+            </summary>
+            <param name="spreadsheets">Spreadsheets to update the names for.</param>
+            <returns>The updated collection.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.GetProviderDownloadSizeInBytes(System.String)">
+            <summary>
+            Get the file size for the funding document.
+            </summary>
+            <param name="fundingStreamCode">Funding stream code to get the approximate file size for (e.g. DSG).</param>
+            <returns>Approximate file size in bytes.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingController.GetOrganisationDownloadSizeInBytes(System.String)">
+            <summary>
+            Get the file size for the funding document.
+            </summary>
+            <param name="fundingStreamCode">Funding stream code to get the approximate file size for (e.g. DSG).</param>
+            <returns>Approximate file size in bytes.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController">
+            <summary>
+            Funding controller.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.#ctor(ViewYourFunding.Interfaces.IFundingViewService,ViewYourFunding.Interfaces.IFundingDocumentStorageService,ViewYourFunding.Interfaces.IViewYourFundingSettingsService,ViewYourFunding.Interfaces.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController"/> class.
+            </summary>
+            <param name="generatorService">Service used to generate funding documents given a dataset.</param>
+            <param name="fundingDocumentStoreService">Service used to store funding documents.</param>
+            <param name="settingsService">The settings service to use to lookup values.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.DownloadSpreadsheet(System.String,System.DateTime)">
+            <summary>
+            Download a spreadsheet.
+            </summary>
+            <param name="fileName">The internal filename as it is in storage.</param>
+            <param name="publishedDate">The published date of the file.</param>
+            <returns>Downloads a file to the calling browser.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.GetFundingDocumentMetadata(System.String,System.String,System.DateTime,System.DateTime,System.Boolean,ViewYourFunding.Interfaces.Enums.FundingViewType,ViewYourFunding.Interfaces.Enums.FundingViewScope,System.String)">
+            <summary>
+            Gets the funding document metadata.
+            </summary>
+            <param name="fundingStreamCode">The funding stream code.</param>
+            <param name="fundingPeriodCode">The funding period code.</param>
+            <param name="cutoffDate">The cutoff date.</param>
+            <param name="publicationDate">The publication date.</param>
+            <param name="forceRegenerate">if set to <c>true</c> [force regenerate].</param>
+            <param name="fundingDocumentType">Type of the funding document.</param>
+            <param name="fundingDocumentScope">The funding document scope.</param>
+            <param name="filters">The filters.</param>
+            <returns>A list of URI and other meta data for the funding documents.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.GenerateFundingDocument(System.String,System.String,System.DateTime,System.DateTime,ViewYourFunding.Interfaces.Enums.FundingViewType,ViewYourFunding.Interfaces.Enums.FundingViewScope,System.String)">
+            <summary>
+            Generate funding document path for the newest publication of data for this stream + period (open format and not).
+            </summary>
+            <param name="fundingStreamCode">The funding stream code (e.g. DSG).</param>
+            <param name="fundingPeriodCode">The funding period code (e.g. AY-1920).</param>
+            <param name="cutoffDate">Only get funding data published before this date and time.</param>
+            <param name="publicationDate">The publication date.</param>
+            <param name="fundingDocumentType">The funding document type (e.g. Spreadsheet).</param>
+            <param name="fundingDocumentScope">The funding document scope (e.g. National).</param>
+            <param name="filters">Optional filters to use when fetching data.</param>
+            <returns>A URI for the funding document along with meta information.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.GenerateFundingDocumentToByteArray(System.String,System.String,System.DateTime,System.DateTime,System.Boolean,ViewYourFunding.Interfaces.Enums.FundingViewType,ViewYourFunding.Interfaces.Enums.FundingViewScope,System.String)">
+            <summary>
+            Generate the funding document to a byte array.
+            </summary>
+            <param name="fundingStreamCode">The funding stream code (e.g. DSG).</param>
+            <param name="fundingPeriodCode">The funding period code (e.g. AY-1920).</param>
+            <param name="cutoffDate">Only get funding data published before this date and time.</param>
+            <param name="publicationDate">The publication date.</param>
+            <param name="openDocumentFormat">Generate in open document format.</param>
+            <param name="fundingDocumentType">The funding document type (e.g. Spreadsheet).</param>
+            <param name="fundingDocumentScope">The funding document scope (e.g. National).</param>
+            <param name="filters">Optional filters to use when fetching data.</param>
+            <returns>A funding document as a byte array.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.GetFundingDocumentMetadata(System.Boolean,System.String,System.String,System.DateTime,System.DateTime,System.Boolean,ViewYourFunding.Interfaces.Enums.FundingViewType,ViewYourFunding.Interfaces.Enums.FundingViewScope,ViewYourFunding.Interfaces.DTOs.SearchFilter[])">
+            <summary>
+            Get the funding document path for the newest publication of data for this stream + period.
+            </summary>
+            <param name="openDocumentFormat">Generate in open document format.</param>
+            <param name="fundingStreamCode">The funding stream code (e.g. DSG).</param>
+            <param name="fundingPeriodCode">The funding period code (e.g. AY-1920).</param>
+            <param name="cutoffDate">Only get funding data published before this date and time.</param>
+            <param name="publicationDate">The publication date.</param>
+            <param name="forceRegenerate">If true, the funding document will be regenerated on the fly, otherwise it will be returned from storage
+            <param name="fundingDocumentType">The funding document type (e.g. Spreadsheet).</param>
+            <param name="fundingDocumentScope">The funding document scope (e.g. National).</param>
+            <param name="filters">Optional filters to use when fetching data.</param>
+            if it already exists.</param>
+            <returns>A list of URI and other meta data for the funding documents.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Controllers.ViewYourFundingDocumentController.GenerateFundingDocument(System.Boolean,System.String,System.String,System.DateTime,System.DateTime,ViewYourFunding.Interfaces.Enums.FundingViewType,ViewYourFunding.Interfaces.Enums.FundingViewScope,ViewYourFunding.Interfaces.DTOs.SearchFilter[])">
+            <summary>
+            Generate the funding document path for the newest publication of data for this stream + period.
+            </summary>
+            <param name="openDocumentFormat">Generate in open document format.</param>
+            <param name="fundingStreamCode">The funding stream code (e.g. DSG).</param>
+            <param name="fundingPeriodCode">The funding period code (e.g. AY-1920).</param>
+            <param name="cutoffDate">Only get funding data published before this date and time.</param>
+            <param name="publicationDate">The publication date.</param>
+            <param name="fundingDocumentType">The funding document type (e.g. Spreadsheet).</param>
+            <param name="fundingDocumentScope">The funding document scope (e.g. National).</param>
+            <param name="filters">Optional filters to use when fetching data.</param>
+            <returns>A URI for the funding document along with meta information.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Filters.RoleAuthorizeAttribute"></member>
+        <member name="T:ViewYourFunding.Web.EndpointConfiguration">
+            <summary>
+            Endpoint configuration for a webserver.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.Host">
+            <summary>
+            Gets or sets the host (e.g. myesf.local).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.Port">
+            <summary>
+            Gets or sets the port (e.g. null or 80).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.Scheme">
+            <summary>
+            Gets or sets the scheme (e.g. http or https).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.StoreName">
+            <summary>
+            Gets or sets the store name to lookup certs in (e.g. MY).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.StoreLocation">
+            <summary>
+            Gets or sets the store location (e.g. CurrentUser).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.FilePath">
+            <summary>
+            Gets or sets the file path to a cert (optional).
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.EndpointConfiguration.Password">
+            <summary>
+            Gets or sets the password for a cert (optional).
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Filters.VYFAuthorizeAttribute">
+            <summary>
+            The VYF user role based authorisation.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizeAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Filters.RoleAuthorizeAttribute"/> class.
+            </summary>
+            <param name="roleRequired">The role required.</param>
+        </member>
+        <member name="P:ViewYourFunding.Web.Filters.RoleAuthorizeAttribute.RoleRequired">
+            <summary>
+            Gets or sets the role required.
+            </summary>
+            <value>
+            The role required.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Web.Filters.RoleAuthorizeHandler">
+            <summary>
+            The Role Authorize handler.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Web.Filters.RoleAuthorizeRequirement" />
+        </member>
+        <member name="F:ViewYourFunding.Web.Filters.RoleAuthorizeHandler.SfsRolesClaimTypeName">
+            <summary>
+            The SFS roles claim type name.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizeHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,ViewYourFunding.Web.Filters.RoleAuthorizeRequirement)">
+            <summary>
+            Makes a decision if authorization is allowed based on a specific requirement.
+            </summary>
+            <param name="context">The authorization context.</param>
+            <param name="requirement">The requirement to evaluate.</param>
+            <returns>The result of requirement evaluation.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider">
+            <summary>
+            The RoleAuthorize Policy Provider.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider" />
+        </member>
+        <member name="P:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider.FallbackPolicyProvider">
+            <summary>
+            Gets the fallback policy provider.
+            </summary>
+            <value>
+            The fallback policy provider.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider.#ctor(Microsoft.Extensions.Options.IOptions{Microsoft.AspNetCore.Authorization.AuthorizationOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider"/> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider.GetDefaultPolicyAsync">
+            <summary>
+            Gets the default authorization policy.
+            </summary>
+            <returns>
+            The default authorization policy.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider.GetFallbackPolicyAsync">
+            <summary>
+            Gets the fallback authorization policy.
+            </summary>
+            <returns>
+            The fallback authorization policy.
+            </returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizePolicyProvider.GetPolicyAsync(System.String)">
+            <summary>
+            Gets a <see cref="T:Microsoft.AspNetCore.Authorization.AuthorizationPolicy" /> from the given <paramref name="policyName" />.
+            </summary>
+            <param name="policyName">The policy name to retrieve.</param>
+            <returns>
+            The named <see cref="T:Microsoft.AspNetCore.Authorization.AuthorizationPolicy" />.
+            </returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Filters.RoleAuthorizeRequirement">
+            <summary>
+            The toggle authorize requirement.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Web.Filters.RoleAuthorizeRequirement.RoleRequired">
+            <summary>
+            Gets or sets the role required.
+            </summary>
+            <value>
+            The role required.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Web.Filters.RoleAuthorizeRequirement.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Filters.RoleAuthorizeRequirement"/> class.
+            </summary>
+            <param name="roleRequired">The role required.</param>
+        </member>
+        <member name="T:ViewYourFunding.Web.Helpers.DateTimeExtensions">
+            <summary>
+            Extension class for DateTime related modifications.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DateTimeExtensions.ToDateDisplay(System.DateTime)">
+            <summary>
+            Extension method to convert a date time into a formatted date string.
+            </summary>
+            <param name="dateTime">The date time.</param>
+            <returns>The formatted date e.g. 4 October 2019.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DateTimeExtensions.ToRouteParameterString(System.DateTime)">
+            <summary>
+            Extension method to convert a DateTime to the format used in route parameters (d-M-yyyy).
+            </summary>
+            <param name="dateTime">The DateTime.</param>
+            <returns>The formatted date e.g. 31-1-2020.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Helpers.DecimalExtensions">
+            <summary>
+            Extension class for decimal related modifications.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DecimalExtensions.ToGBCurrency(System.Decimal)">
+            <summary>
+            Extension method to convert a decimal into a GB currency formatted string.
+            </summary>
+            <param name="decimalValue">The decimal value.</param>
+            <returns>A decimal as a GB currency formatted string.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DecimalExtensions.ToGBCurrencyWithoutDecimalPlace(System.Decimal)">
+            <summary>
+            Extension method to convert a decimal into a GB currency formatted string without a decimal place.
+            </summary>
+            <param name="decimalValue">The decimal value.</param>
+            <returns>A decimal as a GB currency formatted string without decimal places.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DecimalExtensions.ToGBCurrencyWithoutTrailingZeroes(System.Decimal)">
+            <summary>
+            Extension method to convert a decimal into a GB currency formatted string, that doesn't have trailing zeroes.
+            E.g. 10.00 will return £10 and 123456.99 will return £123,456.99.
+            </summary>
+            <param name="decimalValue">The decimal value.</param>
+            <returns>A decimal as a GB currency formatted string without trailing zeroes.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DecimalExtensions.To2DPWithoutTrailingZeroes(System.Decimal)">
+            <summary>
+            Extension method to convert a decimal into a 2 DP formatted string, that doesn't have trailing zeroes.
+            e.g 12.00 will return 12, 123456.01 will return 123,456.01.
+            </summary>
+            <param name="decimalValue">The decimal value.</param>
+            <returns>A decimal as a 2 DP formatted string without trailing zeroes.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DecimalExtensions.ToPercentageWith2DecimalPlaces(System.Decimal)">
+            <summary>
+            Extension method to convert a decimal into a 2 DP formatted percentage string, that doesn't have trailing zeroes.
+            </summary>
+            <param name="decimalValue">The decimal value.</param>
+            <returns>A decimal as a 2 DP formatted percentage string.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Helpers.DoubleExtensions">
+            <summary>
+            Extension class for double related modifications.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.DoubleExtensions.ToGBCurrency(System.Double)">
+            <summary>
+            Extension method to convert a double into a GB currency formatted string.
+            </summary>
+            <param name="doubleValue">The double value.</param>
+            <returns>The GB currency string value.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Helpers.HtmlHelperExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper"/>. (Copied from Sfs.Web).
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.HtmlHelperExtensions.Link(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,ViewYourFunding.Web.Models.AnchorTagType,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Renders an anchor tag.
+            </summary>
+            <param name="helper">The Html helper.</param>
+            <param name="type">The type of anchor tag.</param>
+            <param name="href">The href attribute.</param>
+            <param name="text">The text.</param>
+            <param name="title">The title attribute.</param>
+            <param name="id">The id attribute.</param>
+            <param name="classes">The CSS classes.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Html.IHtmlContent"/> containing the HTML of the anchor tag.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.HtmlHelperExtensions.Link(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,ViewYourFunding.Web.Models.AnchorTagType,System.String,Microsoft.AspNetCore.Html.IHtmlContent,System.String,System.String,System.String)">
+            <summary>
+            Renders an anchor tag.
+            </summary>
+            <param name="helper">The Html helper.</param>
+            <param name="type">The type of anchor tag.</param>
+            <param name="href">The href attribute.</param>
+            <param name="innerHtml">The HTML to inject inside the anchor tag.</param>
+            <param name="title">The title attribute.</param>
+            <param name="id">The id attribute.</param>
+            <param name="classes">The CSS classes.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Html.IHtmlContent"/> containing the HTML of the anchor tag.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.HtmlHelperExtensions.AccessibleDocumentFormatRequestMailtoLink(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,System.String,System.String,System.String,System.String,Microsoft.AspNetCore.Html.IHtmlContent,System.String,System.String,System.String)">
+            <summary>
+            Renders an anchor tag targeting a mailto url for requesting a document in an accessible format.
+            </summary>
+            <param name="helper">The Html helper.</param>
+            <param name="emailAddress">The target email address.</param>
+            <param name="originalFormat">The original format of the document being requested.</param>
+            <param name="documentTitle">The title of the document being requested.</param>
+            <param name="linkText">The anchor tag text to display .e.g. "Request an accessible format".</param>
+            <param name="innerHtml">The HTML to inject inside the anchor tag.</param>
+            <param name="tagTitle">The value to set for the anchor tag title attribute.</param>
+            <param name="id">The id attribute.</param>
+            <param name="classes">The CSS classes.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Html.IHtmlContent"/> containing the HTML of the anchor tag.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.HtmlHelperExtensions.DataAttribute(Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper,System.String,System.String)">
+            <summary>
+            Renders a data attribute with the given key and value.
+            </summary>
+            <param name="helper">The html helper.</param>
+            <param name="key">The key to use to build the attribute name.</param>
+            <param name="value">The string to use as the attribute value.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Html.IHtmlContent"/> containing the HTML data attribute.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.HtmlHelperExtensions.BuildAccessibleDocumentFormatRequestMailtoLinkUrl(System.String,System.String,System.String)">
+            <summary>
+            Builds the accessible document format request mailto link url.
+            </summary>
+            <param name="emailAddress">The email address.</param>
+            <param name="originalFormat">The original format of the document.</param>
+            <param name="documentTitle">The document title.</param>
+            <returns>The mailto link url.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Helpers.MailMessageExtensions">
+            <summary>
+            Extension methods for the class: <see cref="T:System.Net.Mail.MailMessage"/>.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.MailMessageExtensions.AsMailtoUrl(System.Net.Mail.MailMessage)">
+            <summary>
+            Converts the email message to a 'mailto' url.
+            </summary>
+            <param name="message">The email message to convert.</param>
+            <returns>The 'mailto' url representing the email message.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.MailMessageExtensions.Parameters(System.Net.Mail.MailMessage)">
+            <summary>
+            Gets the link parameters from the message.
+            </summary>
+            <param name="message">The message.</param>
+            <returns>The link parameters.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.MailMessageExtensions.Recipients(System.Net.Mail.MailAddressCollection)">
+            <summary>
+            Gets the recipients from the addresses.
+            </summary>
+            <param name="addresses">The addresses.</param>
+            <returns>A delimited string containing the recipients.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.Helpers.RouteConfigHelper">
+            <summary>
+            Class for enabling external projects to register the View Your Funding routes.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Helpers.RouteConfigHelper.RegisterRoutes(Microsoft.AspNetCore.Routing.RouteCollection)">
+            <summary>
+            Register the routes against the given route collection.
+            </summary>
+            <param name="routes">The route collection to register routes against.</param>
+        </member>
+        <member name="T:ViewYourFunding.Web.KestrelServerOptionsExtensions">
+            <summary>
+            Static extensions to set kestrel server options.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.KestrelServerOptionsExtensions.ConfigureEndpoints(Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions)">
+            <summary>
+            Configure endpoints for Kestrel.
+            See https://devblogs.microsoft.com/aspnet/configuring-https-in-asp-net-core-across-different-platforms/ .
+            </summary>
+            <param name="options">KestrelServerOptions config.</param>
+        </member>
+        <member name="T:ViewYourFunding.Web.Program">
+            <summary>
+            Entry point into the application.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Program.MicrosoftFilterName">
+            <summary>
+            The microsoft filter name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Program.LoggingLevelDefault">
+            <summary>
+            The logging level default.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.Program.MicrosoftLoggingLevelDefault">
+            <summary>
+            The microsoft logging level default.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>The host builder.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Web.ServiceConstants">
+            <summary>
+            A container class for constant values within the service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.ServiceConstants.OrganizationName">
+            <summary>
+            The name of the organisation.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.ServiceConstants.OrganizationNameAbbreviated">
+            <summary>
+            The abbreviated name of the organisation.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.ServiceConstants.DepartmentName">
+            <summary>
+            The name of the department.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.ServiceConstants.DepartmentNameAbbreviated">
+            <summary>
+            The abbreviated name of the department.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Web.ServiceConstants.PdfOpensInNewWindowText">
+            <summary>
+            Text to display to indicate that a PDF file will open in a new window.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Web.Startup">
+            <summary>
+            The startup Class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Web.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:ViewYourFunding.Web.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="M:ViewYourFunding.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            Configures the container.
+            </summary>
+            <param name="builder">The builder.</param>
+        </member>
+        <member name="M:ViewYourFunding.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

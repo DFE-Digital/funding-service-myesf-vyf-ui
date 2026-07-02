@@ -1,0 +1,17 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication.PublicationActionViewModel
+
+@Html.EditorFor(m => m.ActionMode)
+@{
+    using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminPublicationAction, null, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.FundingStreamId)
+        @Html.HiddenFor(m => m.ActionMode)
+        @Html.HiddenFor(m => m.FundingStreamName)
+        @Html.EditorFor(m => m.FundingPublication)
+        @Html.EditorFor(m => m.FundingPublication.UIModelMaxVersion)
+        @Html.EditorFor(m => m.FundingPublication.SpreadsheetModelMaxVersion)
+        <input type="submit" class="button" />
+    }
+}

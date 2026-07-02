@@ -1,0 +1,3303 @@
+{
+  "$schema": "https://fundingschemas.blob.core.windows.net/schemas/funding-template-schema-1.2.json",
+  "schemaVersion": "1.2",
+  "fundingTemplate": {
+    "fundingLines": [
+      {
+        "name": "Total Funding Allocation",
+        "fundingLineCode": null,
+        "value": 909457.08,
+        "templateLineId": 0,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Programme Funding",
+        "fundingLineCode": "1619-001",
+        "value": 803165.4,
+        "templateLineId": 1,
+        "type": "Payment",
+        "distributionPeriods": [
+          {
+            "value": 468512.94,
+            "distributionPeriodId": "FY-2122",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "September",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "October",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "November",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "December",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "January",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "February",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "March",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2122"
+              }
+            ]
+          },
+          {
+            "value": 334652.46,
+            "distributionPeriodId": "FY-2223",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "April",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "May",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "June",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "July",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.42,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "August",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 66930.78,
+                "distributionPeriodId": "FY-2223"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Total Care Standards Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 2,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Programme funding without care standards or condition of funding adjustment",
+        "fundingLineCode": null,
+        "value": 803165.4,
+        "templateLineId": 4,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Condition of funding adjustment",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 5,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Care Standards Student Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 6,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Care Standards institution lump sum funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 7,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Student Funding",
+        "fundingLineCode": null,
+        "value": 594180.58,
+        "templateLineId": 12,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Total Mainstream bands funding",
+        "fundingLineCode": null,
+        "value": 594180.58,
+        "templateLineId": 13,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Total T-Level bands funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 14,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Band 5 student funding",
+        "fundingLineCode": null,
+        "value": 572011,
+        "templateLineId": 15,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Band 4 student funding",
+        "fundingLineCode": null,
+        "value": 22169.58,
+        "templateLineId": 16,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Band 3 student funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 17,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Band 2 student funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 18,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Band 1 FTE student funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 19,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "T-Level Band 9 funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 21,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "T-Level Band 8 funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 22,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "T-Level Band 7 funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 23,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "T-Level band 6 funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 24,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Retention factor funding",
+        "fundingLineCode": null,
+        "value": -8770.11,
+        "templateLineId": 108,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Programme cost weighting funding",
+        "fundingLineCode": null,
+        "value": 187167.44,
+        "templateLineId": 109,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Level 3 Maths and English funding",
+        "fundingLineCode": null,
+        "value": 5499.78,
+        "templateLineId": 110,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Level 3 Maths and English One Year Funding",
+        "fundingLineCode": null,
+        "value": 2062.42,
+        "templateLineId": 122,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Level 3 Maths and English Two year Funding",
+        "fundingLineCode": null,
+        "value": 3437.36,
+        "templateLineId": 123,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage Funding",
+        "fundingLineCode": null,
+        "value": 25087.71,
+        "templateLineId": 134,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage block 1 and block 2 total",
+        "fundingLineCode": null,
+        "value": 25087.71,
+        "templateLineId": 136,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage Block 1 Total Funding",
+        "fundingLineCode": null,
+        "value": 13647.48,
+        "templateLineId": 137,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Economic Deprivation Funding",
+        "fundingLineCode": null,
+        "value": 13647.48,
+        "templateLineId": 138,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Care leaver funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 144,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage Block 2 total funding",
+        "fundingLineCode": null,
+        "value": 11440.23,
+        "templateLineId": 148,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage Block 2 lower funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 149,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage block 2 FTE funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 150,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage block 2 T-Level Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 151,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Minimum Top up Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 168,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Total Large programme  funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 173,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Large programme funding uplift at 20% National rate",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 174,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Large programme funding uplift at 10% National rate",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 179,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Programme Funding without area cost applied",
+        "fundingLineCode": null,
+        "value": 803165.4,
+        "templateLineId": 184,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Area cost allowance adjustment",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 236,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Student Financial Support Funding",
+        "fundingLineCode": null,
+        "value": 24781.68,
+        "templateLineId": 241,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Discretionary bursary fund total",
+        "fundingLineCode": "1619-002",
+        "value": 24781.68,
+        "templateLineId": 242,
+        "type": "Payment",
+        "distributionPeriods": [
+          {
+            "value": 16521.95,
+            "distributionPeriodId": "FY-2122",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "September",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 16521.95,
+                "distributionPeriodId": "FY-2122"
+              }
+            ]
+          },
+          {
+            "value": 8259.73,
+            "distributionPeriodId": "FY-2223",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "April",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 8259.73,
+                "distributionPeriodId": "FY-2223"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Discretionary Bursary Fund",
+        "fundingLineCode": null,
+        "value": 33221.68,
+        "templateLineId": 243,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Exceptional adjustment to Discretionary Bursary Fund",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 244,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Financial Disadvantage Funding",
+        "fundingLineCode": null,
+        "value": 3697.64,
+        "templateLineId": 246,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Student Costs Travel Funding",
+        "fundingLineCode": null,
+        "value": 26884.04,
+        "templateLineId": 247,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Student Costs Industry Placement Funding",
+        "fundingLineCode": null,
+        "value": 2640,
+        "templateLineId": 248,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Bursary adjustment in respect of Free meals",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 249,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Residential Funding Total",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 268,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Total Free meals funding",
+        "fundingLineCode": "1619-005",
+        "value": null,
+        "templateLineId": 271,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Free meals administration",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 272,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Free Meals Total Including Exception",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 276,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Free meals Higher Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 277,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Free Meals Lower Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 278,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Free Meals FTE Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 279,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Free Meals Exceptional Adjustment",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 287,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "High Needs Element 2 Student Funding",
+        "fundingLineCode": "1619-006",
+        "value": null,
+        "templateLineId": 299,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Industry Placements Funding",
+        "fundingLineCode": "1619-007",
+        "value": 19110,
+        "templateLineId": 300,
+        "type": "Payment",
+        "distributionPeriods": [
+          {
+            "value": 11147.5,
+            "distributionPeriodId": "FY-2122",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "September",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "October",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "November",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "December",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "January",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "February",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "March",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2122"
+              }
+            ]
+          },
+          {
+            "value": 7962.5,
+            "distributionPeriodId": "FY-2223",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "April",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "May",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "June",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "July",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "August",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 1592.5,
+                "distributionPeriodId": "FY-2223"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Advanced Maths Premium Funding",
+        "fundingLineCode": "1619-008",
+        "value": null,
+        "templateLineId": 301,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "High Value Courses Premium Funding",
+        "fundingLineCode": "1619-009",
+        "value": 62400,
+        "templateLineId": 302,
+        "type": "Payment",
+        "distributionPeriods": [
+          {
+            "value": 36400,
+            "distributionPeriodId": "FY-2122",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "September",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "October",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "November",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "December",
+                "year": 2021,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "January",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "February",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "March",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2122"
+              }
+            ]
+          },
+          {
+            "value": 26000,
+            "distributionPeriodId": "FY-2223",
+            "profilePeriods": [
+              {
+                "type": "CalendarMonth",
+                "typeValue": "April",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "May",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "June",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "July",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2223"
+              },
+              {
+                "type": "CalendarMonth",
+                "typeValue": "August",
+                "year": 2022,
+                "occurrence": 1,
+                "profiledValue": 5200,
+                "distributionPeriodId": "FY-2223"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Teachers Pension Scheme Grant",
+        "fundingLineCode": "1619-010",
+        "value": null,
+        "templateLineId": 303,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Alternative Completions Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 304,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Residential Bursary Fund",
+        "fundingLineCode": "1619-003",
+        "value": null,
+        "templateLineId": 309,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Residential Support Scheme",
+        "fundingLineCode": "1619-004",
+        "value": null,
+        "templateLineId": 310,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Industry Placements T-Level Funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 318,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage Accommodation costs",
+        "fundingLineCode": "1619-012",
+        "value": null,
+        "templateLineId": 353,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Disadvantage block 2 Higher Funding",
+        "fundingLineCode": null,
+        "value": 11440.23,
+        "templateLineId": 373,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Cummulative Programme Funding without Total Large Programme and Disadvantage Funding",
+        "fundingLineCode": null,
+        "value": 778077.69,
+        "templateLineId": 381,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Cummulative Programme Funding with Disadvantage Funding",
+        "fundingLineCode": null,
+        "value": 803165.4,
+        "templateLineId": 382,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Total Start Up and Post Opening Grant",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 389,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Post Opening Grant - Per Pupil Resources",
+        "fundingLineCode": "1619-017",
+        "value": null,
+        "templateLineId": 390,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Post Opening Grant - Leadership Diseconomies",
+        "fundingLineCode": "1619-018",
+        "value": null,
+        "templateLineId": 391,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Maths Top Up",
+        "fundingLineCode": "1619-019",
+        "value": null,
+        "templateLineId": 394,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "16 to 19 Tuition Funding",
+        "fundingLineCode": "1619-019",
+        "value": 2000,
+        "templateLineId": 453,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Industry Placements capacity and delivery Funding",
+        "fundingLineCode": null,
+        "value": 19110,
+        "templateLineId": 396,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Discretionary bursary transition adjustment",
+        "fundingLineCode": null,
+        "value": -8440,
+        "templateLineId": 408,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Alternative Completions - Sporting Excellence",
+        "fundingLineCode": "1619-011",
+        "value": null,
+        "templateLineId": 410,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Alternative Completions - Sea Fishing",
+        "fundingLineCode": "1619-020",
+        "value": null,
+        "templateLineId": 412,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Start Up Grant Part A",
+        "fundingLineCode": "1619-022",
+        "value": null,
+        "templateLineId": 419,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Start Up Grant Part B",
+        "fundingLineCode": "1619-023",
+        "value": null,
+        "templateLineId": 420,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Offset high value courses for school and college leavers in year programme funding",
+        "fundingLineCode": null,
+        "value": null,
+        "templateLineId": 423,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "High Value Courses for School and College Leavers Total",
+        "fundingLineCode": "1619-024",
+        "value": 500,
+        "templateLineId": 425,
+        "type": "Payment",
+        "distributionPeriods": null
+      },
+      {
+        "name": "Total Funding Allocation and LA MSS Bursary Funding",
+        "fundingLineCode": null,
+        "value": 909457.08,
+        "templateLineId": 438,
+        "type": "Information",
+        "distributionPeriods": null
+      },
+      {
+        "name": "LA Maintained Special School Bursary Funding",
+        "fundingLineCode": "1619-013",
+        "value": null,
+        "templateLineId": 439,
+        "type": "Payment",
+        "distributionPeriods": null
+      }
+    ],
+    "calculations": [
+      {
+        "name": "Care Standards Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 9,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Care Standards Lump Sum",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 10,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Care Standards Eligible Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 11,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Care Standards Eligible Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 12,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total T-Level Funded students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 25,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 26,
+        "value": 572011,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 5 students less T-Level students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 27,
+        "value": 136.58333333333334,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 28,
+        "value": 4188,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 5 Funded Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 30,
+        "value": 136.58333333333334,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total Funded Student number or Academy Estimates",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 33,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Student proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 34,
+        "value": 0.9551282051282052,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 35,
+        "value": 149,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 36,
+        "value": 156,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total Band 4 students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 38,
+        "value": 7,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4a students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 39,
+        "value": 7,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4b students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 40,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 3 students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 41,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 2 students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 42,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 43,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 students full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 44,
+        "value": 232,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Student Number Methodology Used",
+        "type": "Enum",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 50,
+        "value": "Census S02",
+        "valueFormat": "String",
+        "allowedEnumTypeValues": [
+          "Census S02",
+          "ILR R04 x R04 to 14 ratio",
+          "ILR R04 x R46 to 14 ratio",
+          "ILR R06",
+          "ILR rolling 12 months",
+          "ILR R04",
+          "ILR R14 full year",
+          "Academy estimates",
+          "ILR R46 x R04 to 14 ratio",
+          "ILR R46 x R46 to 14 ratio",
+          "Year 1 business case",
+          "Year 1 one third capacity",
+          "Year 2 business case",
+          "Year 2 double year 1",
+          "Phased closure",
+          "ILR hybrid R04 x R04 to 14 ratio",
+          "ILR hybrid R04 x R46 to 14 ratio",
+          "ILR hybrid R06",
+          "ILR hybrid R46 x R04 to 14 ratio",
+          "ILR hybrid R46 x R46 to 14 ratio",
+          "HNS specials"
+        ]
+      },
+      {
+        "name": "PNA Statement Methodology",
+        "type": "Enum",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 184,
+        "value": "Threshold Used",
+        "valueFormat": "String",
+        "allowedEnumTypeValues": [
+          "Standard",
+          "Dual Census No Threshold",
+          "Dual Census Using Threshold",
+          "Threshold Used",
+          "Guaranteed Pupil Numbers"
+        ]
+      },
+      {
+        "name": "ILR R14 Full Year Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 45,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "R04 Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 46,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total Baseline (lagged) Student Number",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 47,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "R04 to R14 Ratio",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 48,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Students R04 Total for RATIO",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 49,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "R46 to R14 Ratio",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 51,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Students R46 total for RATIO",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 53,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "R46 Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 54,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Autumn Census",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 55,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Exceptional Variations to Baseline Student Number",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 56,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "ILR Hybrid Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 57,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "ILR Rolling 12 months Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 58,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Year 1 Business Case Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 59,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Year 2 Business Case Students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 60,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4 rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 68,
+        "value": 3455,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 4a student proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 69,
+        "value": 0.04487179487179487,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4b student proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 72,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4 Funded Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 73,
+        "value": 6.416666666666667,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4 total proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 77,
+        "value": 0.04487179487179487,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 3 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 78,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 3 Funded students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 80,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 3 student proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 81,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 3 rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 82,
+        "value": 2827,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 2 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 83,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 2 Funded students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 84,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 2 rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 85,
+        "value": 2234,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 2 student proportion",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 86,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 FTE Student Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 87,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 1 FTE Funded students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 88,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 FTE full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 90,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 Funded Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 92,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 Student proportion",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 93,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "T-Level Band 9 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 94,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 9 Funded students current year",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 95,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 9 Rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 96,
+        "value": 6108,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "T-Level Band 8 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 97,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 8 Funded students current year",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 98,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 8 Rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 99,
+        "value": 5584,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "T-Level Band 7 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 101,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 7 Funded students current year",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 102,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 7 Rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 103,
+        "value": 5061,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "T-Level Band 6 Student funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 104,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 6 Funded students current year",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 105,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 6 Rate current year",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 106,
+        "value": 4363,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total Mainstream band funded students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 107,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Retention Factor Adjustment",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 111,
+        "value": -8770.1053608,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student Funding",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 113,
+        "value": 594180.58,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student Funding with retention factor applied",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 114,
+        "value": 585410.4746392,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Retention Factor",
+        "type": "Weighting",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 116,
+        "value": 0.98524,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Programme cost weighting funding adjustment",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 117,
+        "value": 187167.4354684,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student funding with retention factor and programme cost weighting applied",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 118,
+        "value": 772577.9101076,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Programme Cost Weighting",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 121,
+        "value": 1.31972,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Level 3 Maths and English One Year Funding Total",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 124,
+        "value": 2062.4175,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Level 3 Maths and English One Year number of instances",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 125,
+        "value": 5.49978,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Level 3 Maths and English One Year Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 126,
+        "value": 375,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Level 3 Maths and English One Year instances per student",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 127,
+        "value": 0.03846,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total Student Funded students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 129,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Level 3 Maths and English Two Year Funding Total",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 130,
+        "value": 3437.3625,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Level 3 Maths and English Two Year number of instances",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 131,
+        "value": 4.58315,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Level 3 Maths and English Two Year Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 132,
+        "value": 750,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Level 3 Maths and English Two Year instances per student",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 133,
+        "value": 0.03205,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Block 1 Funding payment",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 139,
+        "value": 13647.482684487304,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student funding with retention programme cost weighting and L3 Maths and English",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 141,
+        "value": 778077.6901076,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Block 1 Factor",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 143,
+        "value": 1.01754,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Care leaver funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 145,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Number of qualifying care leaver students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 146,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Care leaver rate per qualifying student",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 147,
+        "value": 480,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Disadvantage Block 2 lower funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 153,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student instances attracting the lower rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 154,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Disadvantage Block 2 funding lower rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 155,
+        "value": 292,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total funded instances current year",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 156,
+        "value": 23.83381,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Instances per student",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 158,
+        "value": 0.16667,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 Funded student instances",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 161,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Disadvantage Block 2 FTE Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 162,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Students attracting the disadvantage block 2 FTE Rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 164,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Disadvantage Block 2 T-Level Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 165,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Disadvantage Block 2 T-Level rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 166,
+        "value": 650,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Students attracting the T-Level rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 167,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Minimum Funding Top up",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 169,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Large programme funding uplift at 20% National rate",
+        "type": "Cash",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 174,
+        "value": 708721.27,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Large programme funding uplift at 20% National rate",
+        "type": "Cash",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 175,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Students meeting programme uplift 20% criteria",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 176,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Uplift per student at 20% national rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 177,
+        "value": 838,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Length of programme",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 178,
+        "value": 2,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Large programme funding uplift at 10% National rate",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 180,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Students meeting programme uplift 10% criteria",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 181,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Uplift per student at 10% national rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 182,
+        "value": 419,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Condition of funding adjustment",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 191,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Condition of funding adjustment above tolerance",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 192,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Condition of funding Reduced Rate",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 193,
+        "value": 0.5,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Total funding for CoF non compliant students",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 194,
+        "value": 8000,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Tolerance applied to Total Funding Full Year Students excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 195,
+        "value": 30955,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total Funding Full Year excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 196,
+        "value": 619100,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Condition of funding tolerance",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 197,
+        "value": 0.05,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Total Students Excluding 19+ Full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 198,
+        "value": 156,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Students excluding 19+ Full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 199,
+        "value": 149,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4 Students excluding 19+ full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 200,
+        "value": 7,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 3 Students excluding 19+ full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 201,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 2 Students excluding 19+ full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 202,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 Students excluding 19+ full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 203,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Funding Full Year Students excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 204,
+        "value": 596000,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 5 National Funding Lagged Rate ",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 205,
+        "value": 4000,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 4 Funding Full Year Students excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 207,
+        "value": 23100,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 3 Funding Full Year Students excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 208,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 2 Funding Full Year Students excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 209,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 1 FTE Funding Full Year Students excluding 19+",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 210,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 4 National Funding Lagged Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 211,
+        "value": 3300,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 3 National Funding Lagged Rate ",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 212,
+        "value": 2700,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 2 National Funding Lagged Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 213,
+        "value": 2133,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 1 FTE excluding 19+ full year data",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 214,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Total Students not meeting Condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 215,
+        "value": 2,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Students not meeting condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 216,
+        "value": 2,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4 Students not meeting condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 217,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 3 Students not meeting condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 218,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 2 Students not meeting condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 219,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 1 Students not meeting condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 220,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 5 Funding for CoF Non Compliant students",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 221,
+        "value": 8000,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 4 Funding for CoF Non Compliant students",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 222,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 3 Funding for CoF Non Compliant students",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 223,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 2 Funding for CoF Non Compliant students",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 224,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 1 FTE Funding for CoF non compliant students",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 225,
+        "value": 0,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Band 1 FTE not meeting condition of funding",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 235,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Area cost allowance",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 237,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Programme funding with area cost allowance applied",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 238,
+        "value": 803165.4,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Programme funding without area cost allowance applied",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 239,
+        "value": 778077.69,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Area cost factor",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 240,
+        "value": 1,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Exceptional adjustment to Discretionary Bursary Fund",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 245,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Bursary adjustment in respect of Free meals",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 250,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Financial Disadvantage Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 251,
+        "value": 3697.64109,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Financial Disadvantage Number of instances",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 252,
+        "value": 15.21663,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Financial Disadvantage instance Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 253,
+        "value": 243,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Financial Disadvantage instances per student",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 255,
+        "value": 0.10641,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Student Costs Travel Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 256,
+        "value": 26884.04004,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student Costs Travel Number of instances",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 257,
+        "value": 57.44453,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Student Costs Travel Funding instance Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 258,
+        "value": 468,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student Costs Travel Instances per student",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 260,
+        "value": 0.40171,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Student Costs Industry Placements funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 261,
+        "value": 2640,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Student Costs Industry placement Number of instances",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 262,
+        "value": 55,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Student Costs Industry Placements rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 264,
+        "value": 48,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Transition Lower Limit",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 265,
+        "value": 8260.56,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Transition upper limit",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 266,
+        "value": 24781.68,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Baseline for Discretionary bursary Transition fixed 2019 to 2020",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 267,
+        "value": 16521.12,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Residential Bursary Fund",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 269,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Residential Support Scheme",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 270,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Free meals administration cost",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 275,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Free meals Higher Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 281,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Free Meals Students attracting the Higher Rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 282,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Free Meals Higher Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 283,
+        "value": 358,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total Students Funded for Free Meals for Current Year ",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 286,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Proportion of students on Free Meals",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 289,
+        "value": 0,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Free Meals Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 290,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Free Meals Lower Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 291,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Free Meals Students attracting the Lower Rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 292,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Free Meals Lower Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 293,
+        "value": 179,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Free Meals FTE Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 295,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Free Meals Students attracting the FTE Rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 296,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Free Meals Exceptional Adjustment",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 298,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "High Value Course Premium Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 306,
+        "value": 62400,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Number of qualifying High Value Course Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 307,
+        "value": 156,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "High Value Course Premium Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 308,
+        "value": 400,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Advanced Maths Premium Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 311,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Advanced Maths Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 312,
+        "value": 600,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Advanced Maths Eligible Students minus baseline students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 313,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Advanced Maths Baseline Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 314,
+        "value": 98,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Advanced Maths Eligible Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 315,
+        "value": 54,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Alternative Completions - Sporting Excellence",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 316,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Industry Placements T-Level Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 319,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Industry placements T-Level Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 321,
+        "value": 275,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "High Needs Element 2 Student Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 327,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total High Needs Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 328,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "High Needs Rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 329,
+        "value": 6000,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "16-19 High needs students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 330,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "19-24 High Needs students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 331,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "16-19 High Needs Student Proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 332,
+        "value": null,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Total R06 High Needs Student Number",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 334,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "19-24 High Needs Student proportion",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 335,
+        "value": null,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Difference between Teachers Pension available FY payments and Revised Annual Cost",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 339,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Teachers Pension Annual Payments for previous full financial year",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 340,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Teachers Pension Revised Annual Cost",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 341,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Teachers Pension Annual payments including Employer contributions increase for previous year",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 343,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Teachers Pension uplift for previous FY OBR wage growth",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 344,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Teacher Pension uplift for current FY OBR wage growth",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 345,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Employer contribution rate included",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 347,
+        "value": 16.4,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Employer contribution rate previous FY",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 348,
+        "value": 23.6,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "OBR Wage growth forecast previous Year",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 349,
+        "value": 0.012,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Teachers Pension annual pay with increase with OBR previous year applied ",
+        "type": "Number",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 351,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "OBR Wage Growth Forecast current year",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 352,
+        "value": 0.021,
+        "valueFormat": "Percentage"
+      },
+      {
+        "name": "Disadvantage Accommodation Costs",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 354,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total Students full year data for use in free meals",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 363,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Care standards funding rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "Enter formula text",
+        "templateCalculationId": 372,
+        "value": 817,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Disadvantage block 2 Higher Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 374,
+        "value": 11440.2288,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Students attracting disadvantage block 2 higher rate",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 375,
+        "value": 23.83381,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Disadvantage block 2 higher rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 376,
+        "value": 480,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Total large programme students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 379,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Current year Total Programme funding per student - SPI",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 380,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Exceptional variations to High Needs student number",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 383,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Academy Estimates",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 384,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Ratio",
+        "type": "Weighting",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 385,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Lagged students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 386,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "R06 16-19 High needs students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 387,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "R06 19-24 High needs students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 388,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Post Opening Grant - Per Pupil Resources",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 392,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Post Opening Grant - Leadership Diseconomies",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 393,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Maths Top Up",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 395,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Industry Placements Capacity and Delivery Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 399,
+        "value": 19110,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Industry Placements Capacity and Delivery Qualifying Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 401,
+        "value": 91,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Industry Placements Capacity and Delivery rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 402,
+        "value": 210,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Discretionary bursary transition adjustment",
+        "type": "Cash",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 409,
+        "value": -8440,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Alternative Completions - Sea Fishing",
+        "type": "Cash",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 414,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "R06 Students",
+        "type": "PupilNumber",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 418,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Start Up Grant Part A",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 421,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Start Up Grant Part B",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 422,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Offset high value courses for school and college leavers in year programme funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 424,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "High value courses for school and college leavers uplift funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 426,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "High value courses for school and college leavers students above baseline",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 427,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "High value courses for school and college leavers rate",
+        "type": "Rate",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 428,
+        "value": 400,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "High value courses for school and college leavers eligible students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 430,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "High value courses for school and college leavers baseline",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 431,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Band 4 Student Funding",
+        "type": "Cash",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "templateCalculationId": 432,
+        "value": 22169.583333333332,
+        "valueFormat": "Currency"
+      },
+      {
+        "name": "Ratio Exception",
+        "type": "Number",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 433,
+        "value": null,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Data Source",
+        "type": "Enum",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 434,
+        "value": "Census",
+        "valueFormat": "String",
+        "allowedEnumTypeValues": [
+          "ILR",
+          "Census"
+        ]
+      },
+      {
+        "name": "High value courses for school and college leavers previously funded",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 435,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "High value courses for school and college leavers additional students",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 436,
+        "value": 0,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "Funded Students Lagged Or High Needs",
+        "type": "PupilNumber",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 437,
+        "value": 143,
+        "valueFormat": "Number"
+      },
+      {
+        "name": "LA Maintained Special School Bursary Funding",
+        "type": "Cash",
+        "aggregationType": "None",
+        "formulaText": "",
+        "templateCalculationId": 440,
+        "value": null,
+        "valueFormat": "Currency"
+      },
+      {
+        "templateCalculationId": 444,
+        "name": "Free School Early PNA Statement MYESF Identifier",
+        "type": "Enum",
+        "aggregationType": "None",
+        "formulaText": "",
+        "valueFormat": "String",
+        "value": null,
+        "allowedEnumTypeValues": [
+          "1"
+        ],
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": [
+        ]
+      }
+    ]
+  }
+}

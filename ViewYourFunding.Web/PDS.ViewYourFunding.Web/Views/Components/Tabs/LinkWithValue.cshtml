@@ -1,0 +1,26 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var linkComponent = Model.Components.Single(subcomponent => subcomponent.Type == ComponentType.General_StandardLink 
+        || subcomponent.Type == ComponentType.General_ExternalLink);
+
+    <div class="funding-block@(Model.ClassNames?.Any() == true ? $" {Model.ClassNames.First()}" : string.Empty)">
+        <div class="funding-left-container">
+            <p class="funding-left-text">
+                @{ await linkComponent.Render(Html, Model.PageData); }
+            </p>
+        </div>
+        <div class="funding-right-container">
+            <p class="funding-right-text">
+                @Html.Raw(Model.GetValueString())
+                @if (Model.EnableVariance)
+                {
+                    <br />
+                    await ComponentHelper.Render(Html, ComponentType.DesignComponents_Variance, Model, Model.PageData);
+                }
+            </p>
+        </div>
+    </div>
+}

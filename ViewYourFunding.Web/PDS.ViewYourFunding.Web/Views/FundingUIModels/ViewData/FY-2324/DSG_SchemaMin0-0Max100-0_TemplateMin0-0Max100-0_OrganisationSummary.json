@@ -1,0 +1,180 @@
+{
+  "name": "DSG LA accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerfunding",
+      "expression": "GroupingReason=Payment"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "$.totalValue"
+            },
+            {
+              "type": "Accordion/_RightSection",
+              "groups": [
+                {
+                  "type": "Conditional/Condition",
+                  "expression": "@DistributionPeriodMonthNumber=12",
+                  "groups": [
+                    {
+                      "type": "Conditional/TrueOutput",
+                      "groups": [
+                        {
+                          "type": "Html/Span",
+                          "classname": "variance-heading",
+                          "value": "after deductions"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Conditional/FalseOutput",
+                      "groups": [
+                        {
+                          "type": "Html/Span",
+                          "classname": "variance-heading",
+                          "value": "after recoupment and deductions"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "General/PublishedDate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "groups": [
+        {
+          "type": "Tabs/LinksToPage",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance",
+          "groups": [
+            {
+              "type": "Tabs/LinkWithValue",
+              "selector": "$..fundingLines[?(@.templateLineId == 12)].value",
+              "datastyle": {
+                "numberFormat": "C0"
+              },
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Schools block",
+                  "value": "@localAuthorityFundingBreakdownPathTabsschools"
+                }
+              ]
+            },
+            {
+              "type": "Tabs/LinkWithValue",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "datastyle": {
+                "numberFormat": "C0"
+              },
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Central school services block",
+                  "value": "@localAuthorityFundingBreakdownPathTabscss"
+                }
+              ]
+            },
+            {
+              "type": "Tabs/LinkWithValue",
+              "selector": "$..fundingLines[?(@.templateLineId == 11)].value",
+              "datastyle": {
+                "numberFormat": "C0"
+              },
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "High needs block",
+                  "value": "@localAuthorityFundingBreakdownPathTabshigh-needs"
+                }
+              ]
+            },
+            {
+              "type": "Tabs/LinkWithValue",
+              "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+              "classname": "funding-margin-bottom",
+              "datastyle": {
+                "numberFormat": "C0"
+              },
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Early years block",
+                  "value": "@localAuthorityFundingBreakdownPathTabsearly-years"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Block/DownloadADocument"
+        },
+        {
+          "type": "Block/PaymentDates",
+          "id": "next-payment-date",
+          "groups": [
+            {
+              "type": "General/ExternalLink",
+              "title": "@shortFundingStreamNameHtml: conditions of grant @year1 to @year2",
+              "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-conditions-of-grant-@year1-to-@year2#annex-a-dsg-payment-dates-for-financial-year-@year1-to-@year2"
+            }
+          ]
+        },
+        {
+          "type": "Block/AllocationHistory"
+        },
+        {
+          "type": "Heading/Small",
+          "classname": "heading-medium heading-guidance",
+          "title": "General @shortFundingStreamNameHtml resources"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "value": "Get more general guidance on "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2",
+                  "title": "@shortFundingStreamNameHtml: @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

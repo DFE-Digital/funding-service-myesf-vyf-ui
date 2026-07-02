@@ -1,0 +1,4722 @@
+{
+  "__comment": "Model Version 1 - December spreadsheet",
+  "name": "DSG Spreadsheet",
+  "type": "spreadsheet",
+  "classes": {
+    "bluenoborder": {
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "bold": true
+      }
+    },
+    "widewidthcolumn": {
+      "style": {
+        "widthInches": 3,
+        "alignment": "right"
+      }
+    },
+    "groupname": {
+      "style": {
+        "widthInches": 3,
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "alignment": "centered"
+      },
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "bold": true,
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "groupcode": {
+      "style": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "alignment": "centered"
+      },
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "bold": true
+      }
+    },
+    "grey": {
+      "style": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ]
+      }
+    },
+    "greywithborders": {
+      "style": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "bold": true,
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "leftrightbottomborder": {
+      "style": {
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "leftbottomborder": {
+      "style": {
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "topborderdata": {
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          }
+        ]
+      }
+    },
+    "toprightborderdata": {
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "rightborderdata": {
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "sum": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum0dp": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum2dp": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum4dp": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sumnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum0dpnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum2dpnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "###0.00",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum4dpnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "###0.0000",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "firstlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "alternatefirstlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "secondlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "widthInches": 1.5,
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "secondlevelheadercellnowidth": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "alternatesecondlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "widthInches": 1.5,
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "formuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "lastformuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "alternateformuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "alternatelastformuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "whitespacerbottom": {
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          255,
+          255,
+          255
+        ],
+        "borders": [
+          {
+            "edge": "TopBorder"
+          }
+        ]
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "information",
+      "title": "Information_@year1_to_@year2",
+      "groups": [
+        {
+          "__comment": "This is an empty column for the left hand side",
+          "rowspan": 25,
+          "image": "Images\\ESFALogo.png"
+        },
+        {
+          "__comment": "By having no output at this level, there is basically an empty row",
+          "style": {
+            "widthInches": 3
+          },
+          "groups": [
+            {
+              "__comment": "By having no output at this level, there is basically an empty row",
+              "detail": [
+                {
+                  "title": "Dedicated schools grant (DSG): @year1 to @year2 financial year allocations",
+                  "style": {
+                    "bold": true,
+                    "underline": true,
+                    "rowsAbove": 5
+                  }
+                },
+                {
+                  "title": "This file gives details of the @year1 to @year2 financial year allocations of the DSG. Please note that Isles of Scilly and City of London are not included within this file.",
+                  "style": {
+                    "rowsAbove": 1
+                  }
+                },
+                {
+                  "title": "This spreadsheet contains the following worksheets:",
+                  "style": {
+                    "rowsAbove": 1
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 Allocations Summary:",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 1
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 Schools block and CSSB:",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 High needs block:",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 High needs deductions:",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 Early years block",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "Publication date: ",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "Changes from previous version: ",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "detail": [
+                {
+                  "title": "This worksheet contains summary information on total DSG allocations for financial year @year1 to @year2 for each local authority in England.",
+                  "style": {
+                    "rowsAbove": 11,
+                    "widthInches": 14
+                  }
+                },
+                {
+                  "title": "This worksheet contains the calculations carried out to derive the @year1 to @year2 financial year schools block and central school services block (CSSB) allocations to each local authority. More information on the derivation of schools block and CSSB pupil counts used in the calculation can be found in the @year1 to @year2 DSG pupil number tool on the GOV.UK website.",
+                  "rowSpan": 2,
+                  "style": {
+                    "wrap": true
+                  }
+                },
+                {
+                  "title": "This worksheet shows how the provisional high needs block, before the import/export adjustment and deductions in @year1 to @year2 financial year, has been derived.",
+                  "style": {
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "This worksheet shows: (i) the number of high needs places in academic year @year0 to @year1 reported by local authorities; (ii) the deductions made to @year1 to @year2 financial year high needs block allocations for high needs places in recoupment academies, special and AP academies, Further Education (FE) and Independent Learning Providers (ILPs): place funding is instead provided to these institutions directly by the Education & Skills Funding Agency.",
+                  "rowSpan": 3,
+                  "style": {
+                    "wrap": true
+                  }
+                },
+                {
+                  "title": "This worksheet contains the calculations carried out to derive the 2020 to 2021 financial year early years block allocations to each local authority. More information on the derivation of early years block pupil counts used in the calculation can be found in the 2020 to 2021 DSG pupil number tool on the GOV.UK website. Part time equivalent pupil counts have been multiplied by 15 hours and 38 weeks to arrive at the total funded hours.",
+                  "rowSpan": 3,
+                  "style": {
+                    "wrap": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "@publicationdate",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "Not applicable",
+                  "rowSpan": 2,
+                  "style": {
+                    "wrap": true
+                  }
+                },
+                {
+                  "title": ""
+
+                },
+                {
+                  "title": "The information in this spreadsheet should be used with the:"
+
+                },
+                {
+                  "title": "DSG: technical note 2020 to 2021 - https://www.gov.uk/government/publications/dedicated-schools-grant-dsg-2020-to-2021/dsg-technical-note-2020-to-2021"
+
+                },
+                {
+                  "title": "DSG: pupil number tool 2020 to 2021 - https://www.gov.uk/government/publications/dedicated-schools-grant-dsg-2020-to-2021#attachment_3959058"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "title": "Allocations_summary",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "GroupingReason=Payment"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderBy": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "id": "Region1",
+          "prependRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderBy": "GroupName",
+          "id": "Region0",
+          "expression": "GroupName=Metropolitan Authorities|GroupName=Unitary Authorities|GroupName=Upper Tier Authorities"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderByDescending": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "prependRows": [
+            {
+
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName=East of England"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName!=East of England&GroupName!=London",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorderBottom"
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant: @year1 to @year2 allocations local authority summary",
+          "rowSpan": 2,
+          "rowSpanWithNewRows": false,
+          "value": "",
+          "classname": "grey",
+          "style": {
+            "bold": true,
+            "wrap": true
+          },
+          "groups": [
+            {
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "overrides": {
+                "Region0": {
+                  "selector": "$..groupName",
+                  "datastyle": {
+                    "uppercase": true
+                  },
+                  "classname": "bluenoborder"
+                },
+                "LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "$..groupName",
+                  "classname": "bluenoborder"
+                },
+                "Region1": {
+                  "datastyle": {
+                    "uppercase": true
+                  }
+                },
+                "SpacerWithBorder": {
+                  "classname": "bluenoborder topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                },
+                {
+                  "title": "ENGLAND",
+                  "classname": "greywithborders"
+                }
+              ]
+            },
+            {
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "overrides": {
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "",
+                  "classname": "bluenoborder rightborderdata"
+                },
+                "SpacerWithBorder": {
+                  "selector": "",
+                  "classname": "bluenoborder toprightborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "selector": "",
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "greywithborders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "@year1 to @year2 DSG allocations, before recoupment and deductions for direct funding of high needs places by Education and Skills Funding Agency (ESFA)",
+          "style": {
+            "heightInches": 0.45
+          },
+          "classname": "firstlevelheadercell",
+          "groups": [
+            {
+              "title": "Schools block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 4)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[A]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "style": {
+                "heightInches": 1.4
+              },
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Central school services block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[B]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "High needs block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 10)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[C]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Early years block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[D]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Total DSG allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 2)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[E]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = [A] + [B] + [C] + [D]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "title": "@year1 to @year2 DSG allocations, after deductions for direct funding of high needs places by ESFA",
+          "style": {
+            "widthInches": 1.5
+          },
+          "classname": "alternatefirstlevelheadercell",
+          "groups": [
+            {
+              "title": "Schools block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 4)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[F]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Central school services block allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[G]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "High needs block allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 11)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[H]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Early years block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[I]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Total DSG allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 3)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[J]",
+                  "classname": "alternateformuladetail leftrightbottomborder"
+                },
+                {
+                  "title": " = [F] + [G] + [H] + [I]",
+                  "classname": "alternateformuladetail leftrightbottomborder"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum leftrightbottomborder"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell leftrightbottomborder",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "toprightborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schoolsCssb",
+      "title": "Schools_block_and_CSSB",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "GroupingReason=Payment"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderBy": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "id": "Region1",
+          "prependRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "id": "Region0",
+          "orderBy": "GroupName",
+          "expression": "GroupName=Metropolitan Authorities|GroupName=Unitary Authorities|GroupName=Upper Tier Authorities"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderByDescending": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "prependRows": [
+            {
+
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName=East of England"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName!=East of England&GroupName!=London",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorderBottom"
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant (DSG): @year1 to @year2 schools block and central school services block",
+          "value": "",
+          "classname": "grey",
+          "rowSpan": 2,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "heightInches": 0.5,
+          "groups": [
+            {
+              "title": "",
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "overrides": {
+                "Region0": {
+                  "selector": "$..groupName",
+                  "datastyle": {
+                    "uppercase": true
+                  },
+                  "classname": "bluenoborder"
+                },
+                "LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "$..groupName",
+                  "classname": "bluenoborder"
+                },
+                "Region1": {
+                  "datastyle": {
+                    "uppercase": true
+                  }
+                },
+                "SpacerWithBorder": {
+                  "classname": "bluenoborder topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                },
+                {
+                  "title": "ENGLAND",
+                  "classname": "greywithborders"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "overrides": {
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "",
+                  "classname": "bluenoborder rightborderdata"
+                },
+                "SpacerWithBorder": {
+                  "selector": "",
+                  "classname": "bluenoborder toprightborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "selector": "",
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "greywithborders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Schools block",
+          "classname": "firstlevelheadercell",
+          "groups": [
+            {
+              "title": "Primary schools unit of funding (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 16)].value",
+              "detail": [
+                {
+                  "title": "[A]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUMPRODUCT(@thiscolumn@datanextrow:@thiscolumn@dataendrow,@thisplustwocolumn@datanextrow:@thisplustwocolumn@dataendrow)/SUM(@thisplustwocolumn@datanextrow:@thisplustwocolumn@dataendrow)",
+                  "classname": "sum2dp"
+                }
+              ],
+              "style": {
+                "heightInches": 1.6
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                },
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "formula": {
+                    "expression": "{0}/{1}",
+                    "decimalPlaces": 2,
+                    "selectors": [
+                      "$..calculations[?(@.templateCalculationId == 13)].value",
+                      "$..calculations[?(@.templateCalculationId == 15)].value"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "title": "Secondary schools unit of funding (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 18)].value",
+              "detail": [
+                {
+                  "title": "[B]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUMPRODUCT(@thiscolumn@datanextrow:@thiscolumn@dataendrow,@thisplustwocolumn@datanextrow:@thisplustwocolumn@dataendrow)/SUM(@thisplustwocolumn@datanextrow:@thisplustwocolumn@dataendrow)",
+                  "classname": "sum2dp"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                },
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "formula": {
+                    "expression": "{0}/{1}",
+                    "decimalPlaces": 2,
+                    "selectors": [
+                      "$..calculations[?(@.templateCalculationId == 14)].value",
+                      "$..calculations[?(@.templateCalculationId == 17)].value"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "title": "Number of pupils in primary schools",
+              "selector": "$..calculations[?(@.templateCalculationId == 15)].value",
+              "detail": [
+                {
+                  "title": "[C]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum0dp"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Number of pupils in secondary schools",
+              "selector": "$..calculations[?(@.templateCalculationId == 17)].value",
+              "detail": [
+                {
+                  "title": "[D]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum0dp"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Funding through the premises factor (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+              "detail": [
+                {
+                  "title": "[E]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total schools block (excluding growth) @year0 to @year1 (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 250)].value",
+              "detail": [
+                {
+                  "title": "[F]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Number of pupils @year0 to @year1",
+              "selector": "$..calculations[?(@.templateCalculationId == 249)].value",
+              "detail": [
+                {
+                  "title": "[G]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Funding per pupil (excluding growth) @year0 to @year1 (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 247)].value",
+              "detail": [
+                {
+                  "title": "[H]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = [F] / [G]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=H@datathisrow/I@datathisrow",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                },
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "formula": {
+                    "expression": "{0}/{1}",
+                    "decimalPlaces": 2,
+                    "selectors": [
+                      "$..calculations[?(@.templateCalculationId == 250)].value",
+                      "$..calculations[?(@.templateCalculationId == 249)].value"
+                    ]
+                  }
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total schools block (excluding growth) @year1 to @year2 (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 241)].value",
+              "detail": [
+                {
+                  "title": "[I]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = ( [A] * [C] ) + ( [B] * [D] ) + [E]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Number of pupils @year1 to @year2",
+              "selector": "$..calculations[?(@.templateCalculationId == 242)].value",
+              "detail": [
+                {
+                  "title": "[J]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = [C] + [D]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Funding per pupil (excluding growth) @year1 to @year2 (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 246)].value",
+              "detail": [
+                {
+                  "title": "[K]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = [I] / [J]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=K@datathisrow/L@datathisrow",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                },
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "formula": {
+                    "expression": "{0}/{1}",
+                    "decimalPlaces": 2,
+                    "selectors": [
+                      "$..calculations[?(@.templateCalculationId == 241)].value",
+                      "$..calculations[?(@.templateCalculationId == 242)].value"
+                    ]
+                  }
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Funding per pupil change",
+              "selector": "$..calculations[?(@.templateCalculationId == 244)].value",
+              "detail": [
+                {
+                  "title": "[L]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=((K@datathisrow+O@datathisrow)/L@datathisrow)/(H@datathisrow/I@datathisrow)-1",
+                  "classname": "sum",
+                  "style": {
+                    "numberFormat": "#,##0.00%"
+                  }
+                }
+              ],
+              "style": {
+                "numberFormat": "#,##0.00\\%"
+              },
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                },
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "formula": {
+                    "expression": "(({0})/{1}) / ({2}/{3}) - 1",
+                    "decimalPlaces": 4,
+                    "selectors": [
+                      "$..calculations[?(@.templateCalculationId == 241)].value",
+                      "$..calculations[?(@.templateCalculationId == 242)].value",
+                      "$..calculations[?(@.templateCalculationId == 250)].value",
+                      "$..calculations[?(@.templateCalculationId == 249)].value"
+                    ]
+                  },
+                  "datastyle": {
+                    "numberFormat": "#,##0.00%"
+                  }
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00\\%",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Protection funding @year1 to @year2 (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 243)].value",
+              "detail": [
+                {
+                  "title": "[M]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "Calculated to make sure the funding per pupil increases by at least 1.84%",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Growth funding (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 7)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[N]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum4dp"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Total schools block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 4)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[O]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = ( [A] * [C] ) + ( [B] * [D] ) + [E] + [M] + [N]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Central school services block (CSSB)",
+          "classname": "alternatefirstlevelheadercell",
+          "groups": [
+            {
+              "title": "CSSB unit of funding (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 25)].value",
+              "detail": [
+                {
+                  "title": "[P]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUMPRODUCT(@thiscolumn@datanextrow:@thiscolumn@dataendrow,@nextcolumn@datanextrow:@nextcolumn@dataendrow)/SUM(@nextcolumn@datanextrow:@nextcolumn@dataendrow)",
+                  "classname": "sum2dp"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                },
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "formula": {
+                    "expression": "{0}/{1}",
+                    "decimalPlaces": 2,
+                    "selectors": [
+                      "$..calculations[?(@.templateCalculationId == 24)].value",
+                      "$..calculations[?(@.templateCalculationId == 26)].value"
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "title": "CSSB number of pupils",
+              "selector": "$..calculations[?(@.templateCalculationId == 26)].value",
+              "detail": [
+                {
+                  "title": "[Q]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": " = [C] + [D]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum0dp"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              },
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              }
+            },
+            {
+              "title": "Funding for historic commitments (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 28)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[R]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total central school services block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[S]",
+                  "classname": "alternateformuladetail leftrightbottomborder"
+                },
+                {
+                  "title": " = ( [P] * [Q] ) + [R]",
+                  "classname": "alternatelastformuladetail leftrightbottomborder"
+                },
+                {
+                  "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                  "classname": "sum leftrightbottomborder"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell leftrightbottomborder",
+              "overrides": {
+                "SpacerWithBorder": {
+                  "classname": "toprightborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hn",
+      "title": "High_needs_block",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "GroupingReason=Payment"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderBy": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "id": "Region1",
+          "prependRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "id": "Region0",
+          "orderBy": "GroupName",
+          "expression": "GroupName=Metropolitan Authorities|GroupName=Unitary Authorities|GroupName=Upper Tier Authorities"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderByDescending": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "prependRows": [
+            {
+
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName=East of England"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName!=East of England&GroupName!=London",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorderBottom"
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant: @year1 to @year2 provisional high needs block allocations",
+          "value": "",
+          "colspan": 2,
+          "rowSpan": 2,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "bold": true,
+            "wrap": true,
+            "backgroundColor": [
+              0,
+              192,
+              192,
+              192
+            ],
+            "heightInches": 1.9
+          },
+          "groups": [
+            {
+              "title": "",
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "overrides": {
+                "Region0": {
+                  "selector": "$..groupName",
+                  "datastyle": {
+                    "uppercase": true
+                  },
+                  "classname": "bluenoborder"
+                },
+                "LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "$..groupName",
+                  "classname": "bluenoborder"
+                },
+                "Region1": {
+                  "datastyle": {
+                    "uppercase": true
+                  }
+                },
+                "SpacerWithBorder": {
+                  "classname": "bluenoborder topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "title": "ENGLAND",
+                  "classname": "greywithborders"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "overrides": {
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "",
+                  "classname": "bluenoborder rightborderdata"
+                },
+                "SpacerWithBorder": {
+                  "selector": "",
+                  "classname": "bluenoborder toprightborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "selector": "",
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "greywithborders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "National funding formula (NFF) allocations (excluding basic entitlement factor and import/export adjustments) (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 29)].value",
+          "scale": 1,
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ]
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "detail": [
+            {
+              "title": "[A]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Basic entitlement factor (area cost adjusted) unit of funding (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 31)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ]
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+              "formula": {
+                "expression": "{0}/{1}",
+                "decimalPlaces": 2,
+                "selectors": [
+                  "$..calculations[?(@.templateCalculationId == 30)].value",
+                  "$..calculations[?(@.templateCalculationId == 32)].value"
+                ]
+              }
+            }
+          },
+          "detail": [
+            {
+              "title": "[B]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUMPRODUCT(@thiscolumn@datanextrow:@thiscolumn@dataendrow,@nextcolumn@datanextrow:@nextcolumn@dataendrow)/SUM(@nextcolumn@datanextrow:@nextcolumn@dataendrow)",
+              "classname": "sum2dp"
+            }
+          ]
+        },
+        {
+          "title": "Number of pupils in special schools and academies",
+          "selector": "$..calculations[?(@.templateCalculationId == 32)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ]
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "detail": [
+            {
+              "title": "[C]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum0dp"
+            }
+          ]
+        },
+        {
+          "title": "Import/export adjustment (based on January @year0 school census and February R06 @year-1 to @year0short individualised learner record) (@britishCurrencySymbols)",
+          "scale": 1,
+          "selector": "$..calculations[?(@.templateCalculationId == 33)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "detail": [
+            {
+              "title": "[D]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Additional Funding for Special Free Schools (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 237)].value",
+          "scale": 1,
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "detail": [
+            {
+              "title": "[E]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Total high needs block before deductions (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 10)].value",
+          "absolute": true,
+          "classname": "secondlevelheadercell leftrightbottomborder",
+          "overrides": {
+            "SpacerWithBorder": {
+              "classname": "toprightborderdata"
+            },
+            "SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "detail": [
+            {
+              "title": "[F]",
+              "classname": "formuladetail leftrightbottomborder"
+            },
+            {
+              "title": " = [A] + ( [B] * [C] ) + [D] + [E]",
+              "classname": "lastformuladetail leftrightbottomborder"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum leftrightbottomborder"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hnPlacesAndDeductions",
+      "title": "High_needs_deductions",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorderBottom"
+            }
+          ],
+          "expression": "GroupingReason=Payment"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant: @year1 to @year2 high needs block deductions",
+          "value": "",
+          "colspan": 2,
+          "rowSpan": 3,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "bold": true,
+            "wrap": true,
+            "backgroundColor": [
+              0,
+              192,
+              192,
+              192
+            ]
+          },
+          "heightInches": 0.5,
+          "groups": [
+            {
+              "title": "",
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "overrides": {
+                "SpacerWithBorderBottom": {
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "title": "ENGLAND",
+                  "classname": "greywithborders"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "overrides": {
+                "SpacerWithBorderBottom": {
+                  "selector": "",
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "greywithborders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Mainstream academies (special educational needs (SEN) units and resourced provision)",
+          "style": {
+            "heightInches": 0.25
+          },
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN places funded at @britishCurrencySymbol6,000",
+              "style": {
+                "heightInches": 0.35
+              },
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "heightInches": 0.7,
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 65)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 66)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 64)].value",
+                  "absolute": true,
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 SEN places funded at @britishCurrencySymbol10,000",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 70)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 71)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 69)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 75)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 76)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 74)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 alternative provision (AP) places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 80)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 81)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 79)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Special academies",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 163)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 164)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "style": {
+                        "bold": true,
+                        "borders": [
+                          {
+                            "edge": "LeftBorder"
+                          },
+                          {
+                            "edge": "BottomBorder"
+                          }
+                        ]
+                      },
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 158)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 90)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 91)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 175)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 AP Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 95)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 96)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 94)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Special free schools",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 168)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 169)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 159)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 176)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 177)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 232)].value",
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 AP Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 182)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 183)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols) ",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 233)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Alternative provision (AP) academies and free schools ",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 189)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 190)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 185)].value",
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 AP Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 195)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 196)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols) ",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 191)].value",
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hospital Academies",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Hospital Academies funding",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "selector": "$..calculations[?(@.templateCalculationId == 214)].value",
+                  "absolute": true,
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 215)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "Total hospital education deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 213)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "16-19 academies and free schools",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Post-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 223)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum0dpnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 224)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 220)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Further education (FE) and independent learning provider (ILP)",
+          "classname": "secondlevelheadercellnowidth",
+          "style": {
+            "heightInches": 0.6
+          },
+          "groups": [
+            {
+              "title": "FE and ILP",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum2dp"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 128)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sum2dp"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 129)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                },
+                {
+                  "title": "Total FE and ILP deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "detail": [
+                    {
+                      "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+                      "classname": "sumnocomma"
+                    }
+                  ],
+                  "selector": "$..calculations[?(@.templateCalculationId == 227)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "SpacerWithBorderBottom": {
+                      "classname": "topborderdata"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Total deduction to high needs block for direct funding of places (@britishCurrencySymbols)",
+          "classname": "widewidthcolumn secondlevelheadercellnowidth leftrightbottomborder",
+          "detail": [
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "style": {
+                "bold": true
+              },
+              "classname": "sumnocomma leftrightbottomborder"
+            }
+          ],
+          "selector": "$..calculations[?(@.templateCalculationId == 40)].value",
+          "comment": "Not 100% sure this is the right column - 'HN Deductions'",
+          "rowspan": 3,
+          "absolute": true,
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          },
+          "overrides": {
+            "SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "early_years",
+      "title": "Early_years_block",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "GroupingReason=Payment"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderBy": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "id": "Region1",
+          "prependRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "id": "Region0",
+          "orderBy": "GroupName",
+          "expression": "GroupName=Metropolitan Authorities|GroupName=Unitary Authorities|GroupName=Upper Tier Authorities"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalGovernmentGroup",
+          "orderByDescending": "GroupCode",
+          "expression": "GroupName=LONDON",
+          "prependRows": [
+            {
+
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName=East of England"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "orderBy": "GroupName",
+          "expression": "GroupName!=East of England&GroupName!=London",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorderBottom"
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant: Indicative @year1 to @year2 Early years block allocations",
+          "rowSpan": 2,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "bold": true,
+            "backgroundColor": [
+              0,
+              192,
+              192,
+              192
+            ],
+            "wrap": true
+          },
+          "heightInches": 0.5,
+          "groups": [
+            {
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "overrides": {
+                "Region0": {
+                  "selector": "$..groupName",
+                  "datastyle": {
+                    "uppercase": true
+                  },
+                  "classname": "bluenoborder"
+                },
+                "LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "$..groupName",
+                  "classname": "bluenoborder"
+                },
+                "Region1": {
+                  "datastyle": {
+                    "uppercase": true
+                  }
+                },
+                "SpacerWithBorder": {
+                  "classname": "bluenoborder topborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "title": "ENGLAND",
+                  "classname": "greywithborders"
+                }
+              ]
+            },
+            {
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "overrides": {
+                "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+                  "selector": "",
+                  "classname": "bluenoborder rightborderdata"
+                },
+                "SpacerWithBorder": {
+                  "selector": "",
+                  "classname": "bluenoborder toprightborderdata"
+                },
+                "SpacerWithBorderBottom": {
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "greywithborders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hourly rate for 3 and 4 year olds from early years national funding formula (@britishCurrencySymbol / hr)",
+          "selector": "$..calculations[?(@.templateCalculationId == 132)].value",
+          "style": {
+            "heightInches": 1.6
+          },
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+              "formula": {
+                "expression": "{0}/({1}*15*38)",
+                "decimalPlaces": 2,
+                "selectors": [
+                  "$..calculations[?(@.templateCalculationId == 131)].value",
+                  "$..calculations[?(@.templateCalculationId == 133)].value"
+                ]
+              }
+            }
+          },
+          "detail": [
+            {
+              "title": "[A]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "style": {
+                "bold": true,
+                "borders": [
+                  {
+                    "edge": "LeftBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Number for 3 and 4 year old universal entitlement funding (part-time equivalent)",
+          "selector": "$..calculations[?(@.templateCalculationId == 133)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "LocalGovernmentGroup;GovernmentOfficeRegion;Region0": {
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          },
+          "detail": [
+            {
+              "title": "[B]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum0dp"
+            }
+          ]
+        },
+        {
+          "title": "Indicative funding allocation for universal entitlement for 3 and 4 year olds (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 131)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[C]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": " = [A] * [B] * 15 * 38",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Number for 3 and 4 year old additional 15 hours entitlement for eligible working parents (part-time equivalent)",
+          "selector": "$..calculations[?(@.templateCalculationId == 138)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "LocalGovernmentGroup;GovernmentOfficeRegion": {
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            },
+            "Region0": {
+              "datastyle": {
+                "numberFormat": "#,##0.00"
+              }
+            }
+          },
+          "detail": [
+            {
+              "title": "[D]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum0dp",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Indicative funding allocation for additional 15 hours entitlement for eligible working parents of 3 and 4 year olds (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 135)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[E]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": " = [A] * [D] * 15 * 38",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Hourly rate for 2 year old entitlement (@britishCurrencySymbol / hr)",
+          "selector": "$..calculations[?(@.templateCalculationId == 142)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "Region0;LocalGovernmentGroup;GovernmentOfficeRegion": {
+              "formula": {
+                "expression": "{0}/({1}*15*38)",
+                "decimalPlaces": 2,
+                "selectors": [
+                  "$..calculations[?(@.templateCalculationId == 141)].value",
+                  "$..calculations[?(@.templateCalculationId == 143)].value"
+                ]
+              }
+            }
+          },
+          "detail": [
+            {
+              "title": "[F]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Number for 2 year old entitlement funding (part-time equivalent)",
+          "selector": "$..calculations[?(@.templateCalculationId == 143)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          },
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "LocalGovernmentGroup;GovernmentOfficeRegion;Region0": {
+              "datastyle": {
+                "numberFormat": "###0.00"
+              }
+            }
+          },
+          "detail": [
+            {
+              "title": "[G]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum0dp",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Indicative funding allocation for 2 year old entitlement (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 140)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            },
+            "LocalGovernmentGroup;GovernmentOfficeRegion;Region0": {
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[H]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": " = [F] * [G] * 15 * 38",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Indicative funding allocation for early years pupil premium (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 145)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[I]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Funding allocation for disability access fund (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 155)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[J]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0"
+          }
+        },
+        {
+          "title": "@year1 to @year2 Indicative supplementary funding allocation for maintained nursery schools (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 150)].value",
+          "classname": "secondlevelheadercell",
+          "overrides": {
+            "SpacerWithBorder;SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[K]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum",
+              "datastyle": {
+                "numberFormat": "#,##0"
+              }
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Total early years block (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+          "classname": "secondlevelheadercell leftrightbottomborder",
+          "overrides": {
+            "SpacerWithBorder": {
+              "classname": "toprightborderdata"
+            },
+            "SpacerWithBorderBottom": {
+              "classname": "topborderdata"
+            }
+          },
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[L]",
+              "classname": "lastformuladetail leftrightbottomborder"
+            },
+            {
+              "title": " = [C] + [E] + [H] +[I] + [J] + [K]",
+              "classname": "lastformuladetail leftrightbottomborder"
+            },
+            {
+              "title": "=SUM(@thiscolumn@datanextrow:@thiscolumn@dataendrow)",
+              "classname": "sum leftrightbottomborder"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0"
+          }
+        }
+      ]
+    }
+  ]
+}

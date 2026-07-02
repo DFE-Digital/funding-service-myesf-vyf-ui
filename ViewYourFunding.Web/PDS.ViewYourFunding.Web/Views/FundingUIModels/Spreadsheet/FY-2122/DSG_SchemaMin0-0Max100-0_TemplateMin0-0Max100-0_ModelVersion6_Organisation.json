@@ -1,0 +1,3791 @@
+{
+  "__comment": "Model Version 6 - November spreadsheet",
+  "name": "DSG Spreadsheet",
+  "type": "spreadsheet",
+  "classes": {
+    "bluenoborder": {
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "bold": true
+      }
+    },
+    "widewidthcolumn": {
+      "style": {
+        "widthInches": 3
+      }
+    },
+    "mediumwidthcolumn": {
+      "style": {
+        "widthInches": 2
+      }
+    },
+    "groupname": {
+      "style": {
+        "widthInches": 3,
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "alignment": "centered"
+      },
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "bold": true,
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "groupcode": {
+      "style": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "alignment": "left"
+      },
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "alignment": "left",
+        "dataType": "Number",
+        "bold": true,
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "grey": {
+      "style": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ]
+      }
+    },
+    "greywithborders": {
+      "style": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ],
+        "bold": true,
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "leftrightbottomborder": {
+      "style": {
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "leftbottomborder": {
+      "style": {
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "topborderdata": {
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          }
+        ]
+      }
+    },
+    "toprightborderdata": {
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "rightborderdata": {
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "sum": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0.000",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum0dp": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum2dp": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0.00",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum4dp": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0.0000",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sumnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "###0.000",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum0dpnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "#,##0",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum2dpnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "###0.00",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "sum4dpnocomma": {
+      "style": {
+        "bold": true,
+        "numberFormat": "###0.0000",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "firstlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "alternatefirstlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "secondlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "widthInches": 1.5,
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "numberFormat": "#,##0.000",
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "secondlevelheadercellnowidth": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "numberFormat": "#,##0.000",
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "alternatesecondlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "widthInches": 1.5,
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "numberFormat": "#,##0.000",
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "formuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "lastformuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          246,
+          192,
+          94
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "alternateformuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "alternatelastformuladetail": {
+      "style": {
+        "bold": true,
+        "backgroundColor": [
+          0,
+          231,
+          158,
+          189
+        ],
+        "alignment": "centered",
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      }
+    },
+    "whitespacerbottom": {
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          255,
+          255,
+          255
+        ],
+        "borders": [
+          {
+            "edge": "TopBorder"
+          }
+        ]
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "information",
+      "title": "Information_@year1_to_@year2",
+      "groups": [
+        {
+          "__comment": "This is an empty column for the left hand side",
+          "rowspan": 25,
+          "image": "Images\\ESFALogo.png"
+        },
+        {
+          "__comment": "By having no output at this level, there is basically an empty row",
+          "style": {
+            "widthInches": 3
+          },
+          "groups": [
+            {
+              "__comment": "By having no output at this level, there is basically an empty row",
+              "detail": [
+                {
+                  "title": "Dedicated schools grant (DSG): @year1 to @year2 financial year allocations",
+                  "style": {
+                    "bold": true,
+                    "underline": true,
+                    "rowsAbove": 5
+                  }
+                },
+                {
+                  "title": "This file gives details of the @year1 to @year2 financial year allocations of the DSG. Please note that Isles of Scilly and City of London are not included within this file.",
+                  "style": {
+                    "rowsAbove": 1
+                  }
+                },
+                {
+                  "title": "This spreadsheet contains the following worksheets:",
+                  "style": {
+                    "rowsAbove": 1
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 Allocations Summary:",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 1
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 Schools block and CSSB:",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 High needs block:",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 High needs deductions:",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                {
+                  "title": "@year1 to @year2 Early years block",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "Publication date: ",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "Changes from previous version: ",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "detail": [
+                {
+                  "title": "This worksheet contains summary information on total DSG allocations for financial year @year1 to @year2 for each local authority in England.",
+                  "style": {
+                    "rowsAbove": 11,
+                    "widthInches": 14
+                  }
+                },
+                {
+                  "title": "This worksheet contains the calculations carried out to derive the @year1 to @year2 financial year schools block and central school services block (CSSB) allocations to each local authority. More information on the derivation of schools block and CSSB pupil counts used in the calculation can be found in the @year1 to @year2 DSG pupil number tool on the GOV.UK website.",
+                  "rowSpan": 2,
+                  "style": {
+                    "wrap": true
+                  }
+                },
+                {
+                  "title": "This worksheet shows how the high needs block, before deductions in @year1 to @year2 financial year, has been derived.",
+                  "style": {
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "This worksheet shows: (i) the number of high needs places in academic year @year0 to @year1 and @year1 to @year2 reported by local authorities; (ii) the deductions made to @year1 to @year2 financial year high needs block allocations for high needs places in recoupment academies, special and AP academies, Further Education (FE) and Independent Learning Providers (ILPs): place funding is instead provided to these institutions directly by the Education & Skills Funding Agency.",
+                  "rowSpan": 3,
+                  "style": {
+                    "wrap": true
+                  }
+                },
+                {
+                  "title": "This worksheet contains the calculations carried out to derive the @year1 to @year2 financial year early years block allocations to each local authority. More information on the derivation of early years block pupil counts used in the calculation can be found in the @year1 to @year2 DSG pupil number tool on the GOV.UK website. Part time equivalent pupil counts have been multiplied by 15 hours and 38 weeks to arrive at the total funded hours.",
+                  "rowSpan": 3,
+                  "style": {
+                    "wrap": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "@publicationdate",
+                  "style": {
+                    "bold": true,
+                    "rowsAbove": 2
+                  }
+                },
+                {
+                  "title": "Academic year @year0 to @year1 and @year1 to @year2 high needs places and financial year @year1 to @year2 recoupment data have been updated. ",
+                  "rowSpan": 2,
+                  "style": {
+                    "wrap": true
+                  }
+                },
+                {
+                  "title": ""
+
+                },
+                {
+                  "title": "The information in this spreadsheet should be used with the:"
+
+                },
+                {
+                  "title": "DSG: technical note @year1 to @year2 - https://www.gov.uk/government/publications/dedicated-schools-grant-dsg-@year1-to-@year2/dsg-technical-note-@year1-to-@year2"
+
+                },
+                {
+                  "title": "DSG: pupil number tool @year1 to @year2 - https://www.gov.uk/government/publications/dedicated-schools-grant-dsg-@year1-to-@year2#attachment_3959058"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "title": "Allocations_summary",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "expression": "GroupingReason=Payment"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant (DSG): @year1 to @year2 allocations local authority summary",
+          "value": "",
+          "classname": "grey",
+          "style": {
+            "bold": true,
+            "wrap": true
+          },
+          "groups": [
+            {
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                }
+              ]
+            },
+            {
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "@year1 to @year2 DSG allocations, before recoupment and deductions for direct funding of high needs places by Education and Skills Funding Agency (ESFA)",
+          "style": {
+            "heightInches": 0.45
+          },
+          "classname": "firstlevelheadercell",
+          "groups": [
+            {
+              "title": "Schools block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 4)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[A]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "style": {
+                "heightInches": 1.4
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Central school services block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[B]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "High needs block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 10)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[C]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Early years block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[D]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total DSG allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 2)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[E]",
+                  "classname": "formuladetail leftrightbottomborder"
+                },
+                {
+                  "title": " = [A] + [B] + [C] + [D]",
+                  "classname": "formuladetail leftrightbottomborder"
+                }
+              ],
+              "classname": "secondlevelheadercell leftrightbottomborder",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "@year1 to @year2 DSG allocations, after deductions for academies recoupment and direct funding of high needs places by ESFA",
+          "style": {
+            "widthInches": 1.5
+          },
+          "classname": "alternatefirstlevelheadercell",
+          "groups": [
+            {
+              "title": "Schools block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 12)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[F]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Central school services block allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[G]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "High needs block allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 11)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[H]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Early years block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[I]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total DSG allocation (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 3)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[J]",
+                  "classname": "alternateformuladetail leftrightbottomborder"
+                },
+                {
+                  "title": " = [F] + [G] + [H] + [I]",
+                  "classname": "alternateformuladetail leftrightbottomborder"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell leftrightbottomborder",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schoolsCssb",
+      "title": "Schools_block_and_CSSB",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "expression": "GroupingReason=Payment"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant (DSG): @year1 to @year2 schools block and central school services block",
+          "value": "",
+          "classname": "grey",
+          "rowSpan": 3,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "heightInches": 0.5,
+          "groups": [
+            {
+              "title": "",
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "detail": [
+                {
+                  "classname": "grey"
+                },
+                {
+                  "classname": "grey"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Schools block",
+          "classname": "firstlevelheadercell",
+          "groups": [
+            {
+              "title": "Primary schools unit of funding (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 16)].value",
+              "detail": [
+                {
+                  "title": "[A]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "style": {
+                "heightInches": 1.6
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Secondary schools unit of funding (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 18)].value",
+              "detail": [
+                {
+                  "title": "[B]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Number of pupils in primary schools",
+              "selector": "$..calculations[?(@.templateCalculationId == 15)].value",
+              "detail": [
+                {
+                  "title": "[C]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Number of pupils in secondary schools",
+              "selector": "$..calculations[?(@.templateCalculationId == 17)].value",
+              "detail": [
+                {
+                  "title": "[D]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Proportion of NFF funding (excluding premises and growth) that is protected through the teachers' pay and pensions grants",
+              "selector": "$..calculations[?(@.templateCalculationId == 266)].value",
+              "detail": [
+                {
+                  "title": "[E]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00%",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Protected schools block funding for the pay and pensions grants (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 263)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[F]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = ( [A] * [C] + [B] * [D] ) * [E]",
+                  "classname": "formuladetail"
+                }
+              ],
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Funding through the premises factor (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[G]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Growth funding (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 7)].value",
+              "absolute": true,
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[H]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Schools block before protected funding for the teachers' pay and pension grants (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 264)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[I]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = ( [A] * [C] +  [B] * [D] ) + [G] + [H] - [F]",
+                  "classname": "formuladetail"
+                }
+              ],
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total schools block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 4)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[J]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = [A] * [C] +  [B] * [D]  + [G] + [H]",
+                  "classname": "formuladetail"
+                }
+              ],
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Deductions to schools block for recoupment (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 21)].value",
+              "absolute": true,
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[K]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "classname": "formuladetail"
+                }
+              ],
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total schools block after deductions (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 12)].value",
+              "scale": 1,
+              "detail": [
+                {
+                  "title": "[L]",
+                  "classname": "formuladetail"
+                },
+                {
+                  "title": " = [J] - [K]",
+                  "classname": "formuladetail"
+                }
+              ],
+              "overrides": {
+                "SpacerWithBorder;SpacerWithBorderBottom": {
+                  "classname": "topborderdata"
+                }
+              },
+              "classname": "secondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Central school services block (CSSB)",
+          "classname": "alternatefirstlevelheadercell",
+          "groups": [
+            {
+              "title": "CSSB unit of funding (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 25)].value",
+              "detail": [
+                {
+                  "title": "[M]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "@year0 to @year1 Teachers' pension employer contributions funding for centrally employed teachers",
+              "selector": "$..calculations[?(@.templateCalculationId == 262)].value",
+              "detail": [
+                {
+                  "title": "[N]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "@year0 to @year1 CSSB pupil count",
+              "selector": "$..calculations[?(@.templateCalculationId == 261)].value",
+              "detail": [
+                {
+                  "title": "[O]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Additional unit of funding for centrally employed teachers",
+              "selector": "$..calculations[?(@.templateCalculationId == 260)].value",
+              "detail": [
+                {
+                  "title": "[P]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": " = [N] / [O]",
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Final CSSB unit of funding",
+              "selector": "$..calculations[?(@.templateCalculationId == 259)].value",
+              "detail": [
+                {
+                  "title": "[Q]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": " = [M] + [P]",
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "@year1 to @year2 CSSB pupil count",
+              "selector": "$..calculations[?(@.templateCalculationId == 26)].value",
+              "detail": [
+                {
+                  "title": "[R]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "title": " = [C] + [D]",
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Funding for historic commitments (@britishCurrencySymbols)",
+              "selector": "$..calculations[?(@.templateCalculationId == 28)].value",
+              "detail": [
+                {
+                  "title": "[S]",
+                  "classname": "alternateformuladetail"
+                },
+                {
+                  "classname": "alternateformuladetail"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell",
+              "datastyle": {
+                "numberFormat": "#,##0.00",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "Total central school services block (@britishCurrencySymbols)",
+              "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+              "detail": [
+                {
+                  "title": "[T]",
+                  "classname": "alternateformuladetail leftrightbottomborder"
+                },
+                {
+                  "title": " = ( [Q] * [R] ) + [S]",
+                  "classname": "alternatelastformuladetail leftrightbottomborder"
+                }
+              ],
+              "classname": "alternatesecondlevelheadercell leftrightbottomborder",
+              "datastyle": {
+                "numberFormat": "#,##0",
+                "borders": [
+                  {
+                    "edge": "RightBorder"
+                  },
+                  {
+                    "edge": "BottomBorder"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hn",
+      "title": "High_needs_block",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "expression": "GroupingReason=Payment"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant: @year1 to @year2 provisional high needs block allocations",
+          "value": "",
+          "colspan": 2,
+          "rowSpan": 3,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "bold": true,
+            "wrap": true,
+            "backgroundColor": [
+              0,
+              192,
+              192,
+              192
+            ],
+            "heightInches": 1.8
+          },
+          "groups": [
+            {
+              "title": "",
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "detail": [
+                {
+                  "classname": "grey"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "detail": [
+                {
+                  "classname": "grey"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Total high needs elements in the funding floor and gains calculation",
+          "selector": "$..calculations[?(@.templateCalculationId == 29)].value",
+          "scale": 1,
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          },
+          "detail": [
+            {
+              "title": "[A]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Basic entitlement factor (area cost adjusted) unit of funding (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 31)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          },
+          "detail": [
+            {
+              "title": "[B]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Number of pupils in special schools and academies",
+          "selector": "$..calculations[?(@.templateCalculationId == 32)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          },
+          "detail": [
+            {
+              "title": "[C]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Import/export adjustment (based on January @year1 school census and February R06 @year0 to @year1 individualised learner record) (@britishCurrencySymbols)",
+          "scale": 1,
+          "selector": "$..calculations[?(@.templateCalculationId == 33)].value",
+          "classname": "secondlevelheadercell",
+          "detail": [
+            {
+              "title": "[D]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Additional Funding for Special Free Schools (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 237)].value",
+          "scale": 1,
+          "classname": "secondlevelheadercell",
+          "detail": [
+            {
+              "title": "[E]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "dataType": "Number",
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Hospital education, AP teachers pay/pension and supplementary funding factor",
+          "selector": "$..calculations[?(@.templateCalculationId == 272)].value",
+          "scale": 1,
+          "classname": "secondlevelheadercell",
+          "detail": [
+            {
+              "title": "[F]",
+              "classname": "formuladetail"
+            },
+            {
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "dataType": "Number",
+            "numberFormat": "#,##0.00",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Total high needs block before deductions (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 10)].value",
+          "scale": 1,
+          "classname": "secondlevelheadercell leftrightbottomborder",
+          "detail": [
+            {
+              "title": "[G]",
+              "classname": "formuladetail leftrightbottomborder"
+            },
+            {
+              "title": " = [A] + ( [B] * [C] ) + [D] + [E] + [F]",
+              "classname": "lastformuladetail leftrightbottomborder"
+            }
+          ],
+          "datastyle": {
+            "numberFormat": "#,##0",
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hnPlacesAndDeductions",
+      "title": "High_needs_deductions",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "expression": "GroupingReason=Payment"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant (DSG): @year1 to @year2 high needs block deductions",
+          "value": "",
+          "colspan": 2,
+          "rowSpan": 3,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "bold": true,
+            "wrap": true,
+            "backgroundColor": [
+              0,
+              192,
+              192,
+              192
+            ]
+          },
+          "heightInches": 0.5,
+          "groups": [
+            {
+              "title": "",
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "detail": [
+                {
+                  "classname": "grey"
+                }
+              ]
+            },
+            {
+              "title": "",
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "overrides": {
+                "SpacerWithBorderBottom": {
+                  "selector": "",
+                  "classname": "whitespacerbottom"
+                }
+              },
+              "detail": [
+                {
+                  "classname": "grey"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Mainstream academies (special educational needs (SEN) units and resourced provision)",
+          "style": {
+            "heightInches": 0.25
+          },
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN places funded at @britishCurrencySymbol6,000",
+              "style": {
+                "heightInches": 0.35
+              },
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "heightInches": 0.7,
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 65)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 66)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 64)].value",
+                  "absolute": true,
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 SEN places funded at @britishCurrencySymbol10,000",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 70)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 71)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 69)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 75)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 76)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 74)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 alternative provision (AP) places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 80)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 81)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 79)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Special academies",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 163)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 164)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 158)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 90)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 91)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 175)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 AP Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 95)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 96)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 94)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Special free schools",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 168)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 169)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 159)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 176)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 177)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 232)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 AP Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 182)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 183)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols) ",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 233)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Alternative provision (AP) academies and free schools ",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Pre-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 189)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 190)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 185)].value",
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Post-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 255)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 256)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 253)].value",
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Pre-16 AP Places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 195)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 196)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "AP places deduction (@britishCurrencySymbols) ",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 191)].value",
+                  "scale": 1,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hospital Academies",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Hospital Academies funding",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to August @year1",
+                  "classname": "leftbottomborder",
+                  "selector": "$..calculations[?(@.templateCalculationId == 273)].value",
+                  "absolute": true,
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "September @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 274)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "Total hospital education deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 211)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "16-19 Academies and Free Schools",
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "Post-16 SEN places",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 223)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 224)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "SEN places deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 218)].value",
+                  "absolute": true,
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Further education (FE) and independent learning provider (ILP)",
+          "style": {
+            "heightInches": 0.6
+          },
+          "classname": "secondlevelheadercellnowidth",
+          "groups": [
+            {
+              "title": "FE and ILP",
+              "classname": "secondlevelheadercellnowidth",
+              "groups": [
+                {
+                  "title": "April @year1 to July @year1",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      190,
+                      221,
+                      230
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 128)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "August @year1 to March @year2",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      191,
+                      193,
+                      195
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 0.9
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 129)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "Total FE and ILP deduction (@britishCurrencySymbols)",
+                  "classname": "leftbottomborder",
+                  "style": {
+                    "bold": true,
+                    "backgroundColor": [
+                      0,
+                      231,
+                      158,
+                      189
+                    ],
+                    "alignment": "centered",
+                    "widthInches": 1.1
+                  },
+                  "selector": "$..calculations[?(@.templateCalculationId == 227)].value",
+                  "datastyle": {
+                    "borders": [
+                      {
+                        "edge": "RightBorder"
+                      },
+                      {
+                        "edge": "BottomBorder"
+                      }
+                    ],
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Total deduction to high needs block for direct funding of places (@britishCurrencySymbols)",
+          "classname": "secondlevelheadercellnowidth widewidthcolumn leftrightbottomborder",
+          "selector": "$..calculations[?(@.templateCalculationId == 40)].value",
+          "rowspan": 3,
+          "scale": 1,
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "early_years",
+      "title": "Early_years_block",
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "expression": "GroupingReason=Payment"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Dedicated schools grant: Indicative @year1 to @year2 Early years block allocations",
+          "rowSpan": 3,
+          "rowSpanWithNewRows": false,
+          "style": {
+            "bold": true,
+            "backgroundColor": [
+              0,
+              192,
+              192,
+              192
+            ],
+            "wrap": true
+          },
+          "heightInches": 0.5,
+          "groups": [
+            {
+              "selector": "$..organisationDfeNumber",
+              "classname": "groupcode",
+              "detail": [
+                {
+                  "classname": "grey"
+                }
+              ]
+            },
+            {
+              "selector": "$..parentName",
+              "classname": "groupname",
+              "detail": [
+                {
+                  "classname": "grey"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hourly rate for 3 and 4 year olds from early years national funding formula (@britishCurrencySymbol / hr)",
+          "selector": "$..calculations[?(@.templateCalculationId == 132)].value",
+          "style": {
+            "heightInches": 1.6
+          },
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          },
+          "detail": [
+            {
+              "title": "[A]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Number for 3 and 4 year old universal entitlement funding (part-time equivalent)",
+          "selector": "$..calculations[?(@.templateCalculationId == 133)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          },
+          "detail": [
+            {
+              "title": "[B]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Indicative funding allocation for universal entitlement for 3 and 4 year olds (@britishCurrencySymbols)",
+          "selector": "$..calculations[?(@.templateCalculationId == 131)].value",
+          "classname": "secondlevelheadercell",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[C]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": " = [A] * [B] * 15 * 38",
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Number for 3 and 4 year old additional 15 hours entitlement for eligible working parents (part-time equivalent)",
+          "selector": "$..calculations[?(@.templateCalculationId == 138)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          },
+          "detail": [
+            {
+              "title": "[D]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Indicative funding allocation for additional 15 hours entitlement for eligible working parents of 3 and 4 year olds (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 135)].value",
+          "classname": "secondlevelheadercell",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[E]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": " = [A] * [D] * 15 * 38",
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Hourly rate for 2 year old entitlement (@britishCurrencySymbol / hr)",
+          "selector": "$..calculations[?(@.templateCalculationId == 142)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          },
+          "detail": [
+            {
+              "title": "[F]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Number for 2 year old entitlement funding (part-time equivalent)",
+          "selector": "$..calculations[?(@.templateCalculationId == 143)].value",
+          "classname": "secondlevelheadercell",
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          },
+          "detail": [
+            {
+              "title": "[G]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ]
+        },
+        {
+          "title": "Indicative funding allocation for 2 year old entitlement (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 140)].value",
+          "classname": "secondlevelheadercell",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[H]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": " = [F] * [G] * 15 * 38",
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0"
+          }
+        },
+        {
+          "title": "Indicative funding allocation for early years pupil premium (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 145)].value",
+          "classname": "secondlevelheadercell",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[I]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0.00"
+          }
+        },
+        {
+          "title": "Funding allocation for disability access fund (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 155)].value",
+          "classname": "secondlevelheadercell",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[J]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0"
+          }
+        },
+        {
+          "title": "Indicative supplementary funding allocation for maintained nursery schools (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 150)].value",
+          "classname": "secondlevelheadercell mediumwidthcolumn",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[K]",
+              "classname": "formuladetail"
+            },
+            {
+              "title": "",
+              "classname": "formuladetail"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0"
+          }
+        },
+        {
+          "title": "Total early years block (@britishCurrencySymbols)",
+          "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+          "classname": "secondlevelheadercell leftrightbottomborder",
+          "scale": 1,
+          "detail": [
+            {
+              "title": "[L]",
+              "classname": "lastformuladetail leftrightbottomborder"
+            },
+            {
+              "title": " = [C] + [E] + [H] +[I] + [J] + [K]",
+              "classname": "lastformuladetail leftrightbottomborder"
+            }
+          ],
+          "datastyle": {
+            "borders": [
+              {
+                "edge": "RightBorder"
+              },
+              {
+                "edge": "BottomBorder"
+              }
+            ],
+            "numberFormat": "#,##0"
+          }
+        }
+      ]
+    }
+  ]
+}

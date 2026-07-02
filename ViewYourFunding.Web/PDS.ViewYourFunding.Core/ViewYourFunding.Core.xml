@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ViewYourFunding.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ViewYourFunding.Core.ApplicationConfiguration">
+            <summary>
+            The Application configuration class.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Core.ApplicationConfiguration.ReleaseEnvironment">
+            <summary>
+            The release environment.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.ApplicationInsightsKey">
+            <summary>
+            Gets or sets the applications insights key.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.Environment">
+            <summary>
+            Gets or sets the environment.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.BuildConfiguration">
+            <summary>
+            Gets or sets the build configuration.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.IsProductionEnvironment">
+            <summary>
+            Gets a value indicating whether the API should be secure using OAuth.
+            </summary>
+            <value>
+             Set to true if OAuth security is enabled on the API.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.GlobalCacheTimeToLive">
+            <summary>
+            Gets or sets the global cache time to live.
+            </summary>
+            <value>
+            The global cache time to live.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.FeedbackLink">
+            <summary>
+            Gets or sets the feedback link.
+            </summary>
+            <value>
+            The feedback link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.ContactUsLink">
+            <summary>
+            Gets or sets the contact us link.
+            </summary>
+            <value>
+            The contact us link.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.BackToTopLinkMinimumCount">
+            <summary>
+            Gets or sets the back to top link minimum count.
+            </summary>
+            <value>
+            The back to top link minimum count.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.FundingAPiv1Url">
+            <summary>
+            Gets or sets the funding a piv1 URL.
+            </summary>
+            <value>
+            The funding a piv1 URL.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.FundingAPiv2Url">
+            <summary>
+            Gets or sets the funding a piv2 URL.
+            </summary>
+            <value>
+            The funding a piv2 URL.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.FundingApiSecretKey">
+            <summary>
+            Gets or sets the funding API secret key.
+            </summary>
+            <value>
+            The funding API secret key.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.Logging">
+            <summary>
+            Gets or sets the logging configuration.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.ApplicationConfiguration.BlobStorage">
+            <summary>
+            Gets or sets the BLOB storage.
+            </summary>
+            <value>
+            The BLOB storage.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Core.Authentication">
+            <summary>
+            The Authentication configuration.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.Authentication.Instance">
+            <summary>
+            Gets or sets the instance.
+            </summary>
+            <value>
+            The instance.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.Authentication.ClientId">
+            <summary>
+            Gets or sets the client identifier.
+            </summary>
+            <value>
+            The client identifier.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.Authentication.TenantId">
+            <summary>
+            Gets or sets the tenant identifier.
+            </summary>
+            <value>
+            The tenant identifier.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.Authentication.Domain">
+            <summary>
+            Gets or sets the domain.
+            </summary>
+            <value>
+            The domain.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.Authentication.ClientSecret">
+            <summary>
+            Gets or sets the client secret.
+            </summary>
+            <value>
+            The client secret.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.Authentication.AppIdUrl">
+            <summary>
+            Gets or sets the application identifier URL.
+            </summary>
+            <value>
+            The application identifier URL.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Core.BlobStorageConfiguration">
+            <summary>
+            The class representing the Blob Storage Configuration.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.BlobStorageConfiguration.ServiceName">
+            <summary>
+            Gets or sets the name of the service.
+            </summary>
+            <value>
+            The name of the service.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.BlobStorageConfiguration.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.BlobStorageConfiguration.ContainerName">
+            <summary>
+            Gets or sets the name of the container.
+            </summary>
+            <value>
+            The name of the container.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Core.LoggingConfiguration">
+            <summary>
+            The Logging Class.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.LoggingConfiguration.ApplicationInsightsRoleName">
+            <summary>
+            Gets or sets the name of the application insights role.
+            </summary>
+            <value>
+            The name of the application insights role.
+            </value>
+        </member>
+        <member name="P:ViewYourFunding.Core.LoggingConfiguration.LogLevel">
+            <summary>
+            Gets or sets the log level.
+            </summary>
+            <value>
+            The log level.
+            </value>
+        </member>
+        <member name="T:ViewYourFunding.Core.LogLevel">
+            <summary>
+            The LogLevel class.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.LogLevel.Default">
+            <summary>
+            Gets or sets the default log level.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.LogLevel.Microsoft">
+            <summary>
+            Gets or sets the Microsoft default log level.
+            </summary>
+        </member>
+        <member name="P:ViewYourFunding.Core.LogLevel.MicrosoftHostingLifetime">
+            <summary>
+            Gets or sets the microsoft hosting lifetime.
+            </summary>
+            <value>
+            The microsoft hosting lifetime.
+            </value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,35 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.ProviderHistoryViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+@if (Model.DisplayUnauthorisedAccessErrorMessage)
+{
+    <script type="text/javascript">
+        var globalbreadcrumbLinks = document.getElementById("global-breadcrumb");
+        for (let i = 1; i < globalbreadcrumbLinks.getElementsByTagName("li").length; i++) {
+            globalbreadcrumbLinks.getElementsByTagName("li")[i].style.display = "none";
+        }
+    </script>
+
+    <h1 class="heading-xlarge">You do not have permission<br> to access this page</h1>
+
+    <h2>
+        If you think you should have access, contact the organisation or administrator who set up your permissions..
+    </h2>
+}
+
+@{
+    var components = Model?.FundingViewData?.Components;
+
+    if (components != null)
+    {
+        await components.Render(Html);
+    }
+}
+
+@section vyfScripts{ @Html.PageScripts() }

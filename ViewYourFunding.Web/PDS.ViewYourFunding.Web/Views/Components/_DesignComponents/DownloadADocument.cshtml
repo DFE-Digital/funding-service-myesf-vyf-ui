@@ -1,0 +1,127 @@
+@using PDS.ViewYourFunding.Services.Constants
+@using PDS.ViewYourFunding.Web.Helpers
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Services.ResponseObjects
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://esfstest.herokuapp.com/component-library/download-a-document
+
+    var componentConfiguration = Model.ComponentConfiguration;
+    var document = Model.GetValue() as FundingDocument ?? componentConfiguration.FundingDocument;
+
+    if (document == null)
+    {
+        Model.Title = "Error - No document has been generated";
+        await ComponentHelper.Render(Html, ComponentType.Error_Error, Model, Model.PageData);
+        return;
+    }
+
+    var DocumentId = ComponentHelper.GetAndIncreaseInstanceNumber("_DesignComponents/DownloadADocument", Context);
+    var FileExtension = document.FileExtension;
+    var FileSizeKB = document.FileSizeBytes.HasValue ? Math.Floor(document.FileSizeBytes.Value / 1024.0).ToString("#,#") : "--";
+    var IsLatestDocument = document.IsLatestDocument;
+    var IsFinal = document.IsFinal;
+
+    Model.ClassNames.Insert(0, "form-block");
+    Model.ClassNames.Insert(1, "attachment");
+    Model.ClassNames.Insert(2, "embedded");
+
+    var Classes = string.Join(" ", Model.ClassNames.ToArray());
+
+    if (string.IsNullOrEmpty(Model.Title))
+    {
+        var indicative = componentConfiguration.IsIndicativeFunding
+            ? "indicative "
+            : string.Empty;
+
+        var institutionName = componentConfiguration.IsLocalAuthority ?
+            componentConfiguration.LocalAuthorityNameOverride : componentConfiguration.ProviderName;
+
+        var nameOrCode = componentConfiguration.ShowNameAbbreviation ?
+            componentConfiguration.FundingStreamCode : componentConfiguration.FundingStreamNameWithinSentence;
+
+        Model.Title = $"Download {indicative}{nameOrCode} allocation for {institutionName} {document.YearFrom} to {document.YearTo}";
+    }
+
+    var DownloadLink = new Models.Component(componentConfiguration)
+    {
+        Type =  ComponentType.General_StandardLink,
+        Title = Model.Title,
+        Values = new List<object>
+        {
+            document.FilePath
+        },
+        Attributes = new Dictionary<string, object>
+        {
+            { "download", "" }
+        }
+    };
+
+    var ShowPublicationDate = Model.Variables?.ContainsKey("showPublicationDate") == true
+        && (bool)Model.Variables["showPublicationDate"] == true;
+
+    var PublicationDateModel = Model.Clone(newModel =>
+    {
+        newModel.Type = ComponentType.General_PublishedDate;
+        newModel.Values = new List<object>
+        {
+            document.DocumentPublishedDate
+        };
+    });
+}
+
+<section class="@Classes">
+    <div class="download-a-document-container">
+        <p class="download-a-document">
+            @{ await DownloadLink.Render(Html, Model.PageData); }<br>
+
+            <span class="download-a-document-content">
+                <span class="download-a-document-section-1">
+                    @if (ShowPublicationDate)
+                    {
+                        await PublicationDateModel.Render(Html, Model.PageData);
+                        await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+
+                        @if (IsLatestDocument && IsFinal.HasValue && !IsFinal.Value)
+                        {
+                            @:
+                            await ComponentHelper.Render(Html, ComponentType.Tag_Latest, PublicationDateModel, Model.PageData);
+                        }
+
+                        @if (!IsLatestDocument && IsFinal.HasValue && IsFinal.Value)
+                        {
+                            @:
+                            await ComponentHelper.Render(Html, ComponentType.Tag_Final, PublicationDateModel, Model.PageData);
+                        };
+                        @:<br />
+                    }
+                    else
+                    {
+                        await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+                    }
+
+                    @if (FundingDocumentFileType.Spreadsheet_OpenFormat.Equals(FileExtension, System.StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        @:OpenDocument Spreadsheet (<abbr title="OpenDocument Spreadsheet">ODS</abbr>),
+                    }
+                    else if (FundingDocumentFileType.Spreadsheet_CSVFormat.Equals(FileExtension, System.StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        @:Comma-Separated Values (<abbr title="Comma-Separated Values">CSV</abbr>),
+                    }
+                    @FileSizeKB<text>KB</text>
+                </span>
+                <span class="download-a-document-section-2">
+                    @if (FundingDocumentFileType.Spreadsheet_OpenFormat.Equals(FileExtension, System.StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        @:This file is in an <a title="This will open in a new tab or window" href="https://www.gov.uk/guidance/using-open-document-formats-odf-in-your-organisation" target="_blank" rel="external noopener noreferrer">OpenDocument</a> format.
+                    }
+
+                    You may need a different format if you're using assistive technology. <a class="expand-hidden-section" role="button" aria-expanded="true" aria-controls="attachment-@DocumentId-accessibility-request" href="#attachment-@DocumentId-accessibility-request" data-expanded="true" data-controls="attachment-@DocumentId-accessibility-request">Request an accessible format</a>.
+                    <span id="attachment-@DocumentId-accessibility-request" class="hidden-section js-hidden" aria-live="polite" role="region" aria-hidden="true">If you use assistive technology (such as a screen reader) and need a version of this document in a more accessible format, please contact the <a target="_blank" rel="external noopener noreferrer" href='https://customerhelpportal.education.gov.uk' title="This will open in a new tab or window">Customer Help Portal</a><text>. Please tell us what format you need. It will help us if you say what assistive technology you use.</text></span>
+                </span>
+            </span>
+        </p>
+    </div>
+</section>

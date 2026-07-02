@@ -1,0 +1,23 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.ActionMode
+@switch (Model)
+{
+    case ActionMode.Add:
+            <p>
+                <span class="heading-medium">Add Setting Type</span><br />
+            </p>
+        break;
+    case ActionMode.Delete:
+            <p>
+                <span class="heading-medium">Delete Setting Type</span><br />
+            </p>
+        break;
+    case ActionMode.Edit:
+            <p>
+                <span class="heading-medium">Edit Setting Type</span><br />
+            </p>
+            break;
+    }
+<p>
+    Please review the changes you have made carefully before clicking the submit button
+</p>

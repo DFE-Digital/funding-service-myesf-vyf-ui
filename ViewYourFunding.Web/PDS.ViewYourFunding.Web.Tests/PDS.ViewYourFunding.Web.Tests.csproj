@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+
+    <AssemblyName>PDS.ViewYourFunding.Web.Tests</AssemblyName>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <AdditionalFiles Include="..\..\SolutionItems\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.8.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.8.0" />
+    <PackageReference Include="FluentAssertions" Version="8.8.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.22" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.6.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.4" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4"/>
+    <PackageReference Include="Pds.Core.CodeAnalysis.StyleCop" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DfESignInModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PDS.ViewYourFunding.Core\PDS.ViewYourFunding.Core.csproj" />
+    <ProjectReference Include="..\PDS.ViewYourFunding.Repositories\PDS.ViewYourFunding.Repositories.csproj" />
+    <ProjectReference Include="..\PDS.ViewYourFunding.Services\PDS.ViewYourFunding.Services.csproj" />
+    <ProjectReference Include="..\PDS.ViewYourFunding.Web\PDS.ViewYourFunding.Web.csproj" />
+  </ItemGroup>
+
+</Project>

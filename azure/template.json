@@ -1,0 +1,988 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "resourceEnvironmentName": {
+      "type": "string",
+      "metadata": {
+        "description": "Short name of the environment. Used for the name of resources created."
+      }
+    },
+    "serviceName": {
+      "type": "string",
+      "metadata": {
+        "description": "Short name of the service. Used for the name of resources created."
+      }
+    },
+    "aspSize": {
+      "type": "string",
+      "defaultValue": "1"
+    },
+    "aspInstances": {
+      "type": "int",
+      "defaultValue": 1
+    },
+    "aspTier": {
+      "type": "string",
+      "defaultValue": "Standard"
+    },
+    "sharedResourceGroupName": {
+      "type": "string"
+    },
+    "sharedAppInsightsName": {
+      "type": "string"
+    },
+    "sharedStorageAccountName": {
+      "type": "string"
+    },
+    "sharedCosmosDbAccountName": {
+      "type": "string"
+    },
+    "sharedKeyVaultName": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "sharedSqlServerName": {
+      "type": "string"
+    },
+    "appServiceAllowedIps": {
+      "type": "array",
+      "defaultValue": [
+      ]
+    },
+    "customHostname": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "certificateName": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "databaseSkuName": {
+      "type": "string",
+      "defaultValue": "S0"
+    },
+    "databaseTier": {
+      "type": "string",
+      "defaultValue": "Standard"
+    },
+    "logAnalyticsWorkspaceName": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "dfeSignInLegacyCodeId": {
+      "type": "string"
+    },
+    "dfeSignInAuthority": {
+      "type": "string"
+    },
+    "dfeSigninClientId": {
+      "type": "string"
+    },
+    "dfeSigninPublicApiUrl": {
+      "type": "securestring"
+    },
+    "dfeSigninPublicApiClientId": {
+      "type": "string"
+    },    
+    "dfeSigninPublicApiAudience": {
+      "type": "string"
+    },
+    "dfeSigninPublicApiTokenIssuer": {
+      "type": "string"
+    },
+    "authenticationClientId": {
+      "type": "string"
+    },
+    "authenticationAppIdUrl": {
+      "type": "string"
+    },
+    "fundingApiV2Url": {
+      "type": "string"
+    },
+    "viewYourFundingApiBaseAddress": {
+      "type": "string"
+    },
+    "idamsMetadataAddress": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "idamsRealm": {
+      "type": "string",
+      "defaultValue": ""
+    },    
+    "organisationApiClientApiBaseAddress": {
+      "type": "string"
+    },
+    "organisationApiClientClientId": {
+      "type": "string"
+    },
+    "organisationApiClientClientSecret": {
+      "type": "securestring"
+    },
+    "organisationApiClientAppIdUrl": {
+      "type": "string"
+    },
+    "loggedInProviderHomeLink": {
+      "type": "string"
+    },
+    "adminApiClientId": {
+      "type": "string"
+    },
+    "adminApiAppUri": {
+      "type": "string"
+    },
+    "adminApiClientApiBaseAddress": {
+      "type": "string"
+    },
+    "HttpServerErrorAlertThreshhold": {
+      "type": "string",
+      "defaultValue": "50"
+    },
+    "AverageResponseTimeAlertThreshhold": {
+      "type": "string",
+      "defaultValue": "2"
+    },
+    "RequestCountAlertThreshhold": {
+      "type": "string",
+      "defaultValue": "1000"
+    },
+    "ActionGroupName": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "CPUPercentageAlertThreshhold": {
+      "type": "string",
+      "defaultValue": "75"
+    },
+    "MemoryPercentageAlertThreshhold": {
+      "type": "string",
+      "defaultValue": "75"
+    },
+    "WEBSITE_HEALTHCHECK_MAXPINGFAILURES": {
+      "type": "int",
+      "defaultValue": 5
+    },
+    "healthCheckPath": {
+      "type": "string",
+      "defaultValue": "/"
+    },
+    "hostingPlanMinAutoscaleInstances": {
+      "type": "int",
+      "defaultValue": 2
+    },
+    "hostingPlanMaxAutoscaleInstances": {
+      "type": "int",
+      "defaultValue": 4
+    },
+    "hostingPlanScaleUpCpuThreshhold": {
+      "type": "int",
+      "defaultValue": 60
+    },
+    "hostingPlanScaleDownCpuThreshhold": {
+      "type": "int",
+      "defaultValue": 40
+    },
+    "hostingPlanScaleUpMemThreshhold": {
+      "type": "int",
+      "defaultValue": 80
+    },
+    "hostingPlanScaleDownMemThreshhold": {
+      "type": "int",
+      "defaultValue": 50
+    },
+    "fuctionAppResourceGroup": {
+      "type": "string"
+    },
+    "functionAppName": {
+      "type": "string"
+    },
+    "functionName": {
+      "type": "string",
+      "defaultValue": "FundingFeedReaderFunctionHttp"
+    },
+    "documentGeneratorFunctionAppResourceGroup": {
+      "type": "string"
+    },
+    "documentGeneratorFunctionAppName": {
+      "type": "string"
+    },
+    "documentGeneratorFunctionName": {
+      "type": "string",
+      "defaultValue": "DocumentGeneratorFunctionHttp"
+    },
+    "documentGeneratorFundingReportsFunctionName": {
+      "type": "string",
+      "defaultValue": "DocumentGeneratorFunctionHttpFundingReports"
+    },
+    "documentGeneratorRerunFunctionName": {
+      "type": "string",
+      "defaultValue": "DocumentGeneratorFunctionHttpRerun"
+    },
+    "documentGeneratorPdfComparerFunctionName": {
+      "type": "string",
+      "defaultValue": "DocumentGeneratorFunctionHttpPdfComparer"
+    },
+    "MyesfLogoutUrl": {
+      "type": "string"
+    },
+    "DfeSignInUrl": {
+      "type": "string"
+    },
+	  "MSClarityId": {
+      "type": "string",
+      "defaultValue": "MSClarityTestId"
+    },
+    "keyVaultSecretName": {
+      "type": "string",
+      "defaultValue": "vyf-ui-svc-connection-string"
+    }
+  },
+  "variables": {
+    "deploymentUrlBase": "https://raw.githubusercontent.com/SkillsFundingAgency/funding-platform-building-blocks/master/templates/",
+    "resourceNamePrefix": "[toLower(concat('pds-', parameters('resourceEnvironmentName'),'-', parameters('serviceName')))]",
+    "appServiceName": "[concat(variables('resourceNamePrefix'), 'ui-as')]",
+    "appServicePlanName": "[concat(variables('resourceNamePrefix'), 'ui-asp')]",
+    "databaseName": "[concat(variables('resourceNamePrefix'), '-db')]",
+    "storageContainerName": "spreadsheets",
+    "EnableAlertsAndMetrics": "[equals(parameters('resourceEnvironmentName'), 'release')]",
+    "subscriptionId": "[subscription().id]",
+    "AppServiceMetricsToAlertUpon": [
+      {
+        "MetricName": "Http5xx",
+        "Operator": "GreaterThanOrEqual",
+        "Threshold": "[parameters('HttpServerErrorAlertThreshhold')]",
+        "TimeWindow": "PT5M",
+        "Aggregation": "Total"
+      },
+      {
+        "MetricName": "AverageResponseTime",
+        "Operator": "GreaterThanOrEqual",
+        "Threshold": "[parameters('AverageResponseTimeAlertThreshhold')]",
+        "TimeWindow": "PT5M",
+        "Aggregation": "Average"
+      },
+      {
+        "MetricName": "Requests",
+        "Operator": "GreaterThanOrEqual",
+        "Threshold": "[parameters('RequestCountAlertThreshhold')]",
+        "TimeWindow": "PT5M",
+        "Aggregation": "Average"
+      }
+    ],
+    "AppServicePlanMetricsToAlertUpon": [
+      {
+        "MetricName": "CpuPercentage",
+        "Operator": "GreaterThanOrEqual",
+        "Threshold": "[parameters('CPUPercentageAlertThreshhold')]",
+        "TimeWindow": "PT5M",
+        "Aggregation": "Average"
+      },
+      {
+        "MetricName": "MemoryPercentage",
+        "Operator": "GreaterThanOrEqual",
+        "Threshold": "[parameters('MemoryPercentageAlertThreshhold')]",
+        "TimeWindow": "PT5M",
+        "Aggregation": "Average"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "apiVersion": "2019-10-01",
+      "name": "app-service-plan",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'app-service-plan.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "appServicePlanName": {
+            "value": "[variables('appServicePlanName')]"
+          },
+          "aspSize": {
+            "value": "[parameters('aspSize')]"
+          },
+          "aspInstances": {
+            "value": "[parameters('aspInstances')]"
+          },
+          "nonASETier": {
+            "value": "[parameters('aspTier')]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2019-10-01",
+      "name": "app-service-certificate",
+      "type": "Microsoft.Resources/deployments",
+      "condition": "[greater(length(parameters('customHostName')), 0)]",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'app-service-certificate.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "keyVaultCertificateName": {
+            "value": "[parameters('certificateName')]"
+          },
+          "keyVaultName": {
+            "value": "[parameters('sharedKeyVaultName')]"
+          },
+          "keyVaultResourceGroup": {
+            "value": "[parameters('sharedResourceGroupName')]"
+          },
+          "serverFarmId": {
+            "value": "[resourceId('Microsoft.Web/serverFarms', variables('appServicePlanName'))]"
+          }
+        }
+      },
+      "dependsOn": [
+        "app-service-plan"
+      ]
+    },
+    {
+      "apiVersion": "2019-10-01",
+      "name": "app-service",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'app-service.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "appServiceName": {
+            "value": "[variables('appServiceName')]"
+          },
+          "appServicePlanName": {
+            "value": "[variables('appServicePlanName')]"
+          },
+          "appServicePlanResourceGroup": {
+            "value": "[resourceGroup().name]"
+          },
+          "healthCheckPath": {
+            "value": "[parameters('healthCheckPath')]"
+          },
+          "appServiceAppSettings": {
+            "value": [
+              {
+                "name": "ASPNETCORE_FORWARDEDHEADERS_ENABLED",
+                "value": true
+              },
+              {
+                "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                "value": "[reference(resourceId(parameters('sharedResourceGroupName'), 'microsoft.insights/components', parameters('sharedAppInsightsName')),'2015-05-01').InstrumentationKey]"
+              },
+              {
+                "name": "PdsApplicationInsights:InstrumentationKey",
+                "value": "[reference(resourceId(parameters('sharedResourceGroupName'), 'microsoft.insights/components', parameters('sharedAppInsightsName')),'2015-05-01').InstrumentationKey]"
+              },
+              {
+                "name": "PdsApplicationInsights:Environment",
+                "value": "[parameters('resourceEnvironmentName')]"
+              },
+              {
+                "name": "Environment",
+                "value": "[parameters('resourceEnvironmentName')]"
+              },
+              {
+                "name": "Authentication:AppIdUrl",
+                "value": "[parameters('authenticationAppIdUrl')]"
+              },
+              {
+                "name": "Authentication:ClientId",
+                "value": "[parameters('authenticationClientId')]"
+              },
+              {
+                "name": "Authentication:ClientSecret",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=FundingDataApiAuthClientSecret)')]"
+              },
+              {
+                "name": "Authentication:Instance",
+                "value": "https://login.microsoftonline.com/"
+              },
+              {
+                "name": "Authentication:TenantId",
+                "value": "[subscription().tenantId]"
+              },
+              {
+                "name": "BlobStorage:ContainerName",
+                "value": "[variables('storageContainerName')]"
+              },
+              {
+                "name": "BlobStorage:Key",
+                "value": "[listKeys(resourceId(parameters('sharedResourceGroupName'),'Microsoft.Storage/storageAccounts',parameters('sharedStorageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
+              },
+              {
+                "name": "BlobStorage:ServiceName",
+                "value": "[parameters('sharedStorageAccountName')]"
+              },
+              {
+                "name": "CookieName",
+                "value": ".Auth.MyEsf.Shared"
+              },
+              {
+                "name": "DfeSignIn:Cookie:Name",
+                "value": ".Auth.MyEsf.Vyf"
+              },
+              {
+                "name": "dfesignin:DfeLegacyCodeId",
+                "value": "[parameters('dfeSignInLegacyCodeId')]"
+              },
+              {
+                "name": "dfesignin:OpenIdConnect:Authority",
+                "value": "[parameters('dfeSignInAuthority')]"
+              },
+              {
+                "name":"dfesignin:OpenIDConnect:Clientid",
+                "value": "[parameters('dfeSigninClientId')]"
+              },
+              {
+                "name": "dfesignin:OpenIDConnect:ClientSecret",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=DfESignInVYFOpenIDConnectClientSecret)')]"
+              },
+              {
+                "name": "FundingDataApiEndPoint",
+                "value": "[parameters('fundingApiV2Url')]"
+              },
+              {
+                "name": "GlobalCacheTimeToLive",
+                "value": "5"
+              },
+              {
+                "name": "oidc:Authority",
+                "value": "[parameters('dfeSignInAuthority')]"
+              },
+              {
+                "name": "oidc:ClientId",
+                "value": "[parameters('dfeSigninClientId')]"
+              },
+              {
+                "name": "oidc:ClientSecret",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=DfESignInVYFOpenIDConnectClientSecret)')]"
+              },
+              {
+                "name": "oidc:PostLogOutUrl",
+                "value": "/account/postlogout/"
+              },
+              {
+                "name": "oidc:RedirectUrl",
+                "value": "/auth/cb"
+              },
+              {
+                 "name": "DfESignin:PublicApi:url",
+                 "value": "[parameters('DfESigninPublicApiUrl')]"
+              },
+              {
+                 "name": "DfESignin:PublicApi:clientid",
+                 "value": "[parameters('DfESigninPublicApiClientId')]"
+              },
+              {
+                "name": "DfESignin:PublicApi:ClientSecret",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=DfESigninPublicApiClientSecret)')]"
+              },
+              {
+                "name": "DfESignin:PublicApi:Tokenissuer",
+                "value": "MYESF"
+              },
+              {          
+                "name": "roleApi:ClientId",
+                "value": "[parameters('dfeSigninPublicApiClientId')]"
+              },
+              {
+                "name": "roleApi:ClientSecret",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=DfESigninPublicApiClientSecret)')]"
+              },
+              {
+                "name": "roleApi:TokenIssuer",
+                "value": "[parameters('dfeSigninPublicApiTokenIssuer')]"
+              },
+              {
+                "name": "roleApi:Url",
+                "value": "[parameters('dfeSigninPublicApiUrl')]"
+              },
+              {
+                "name": "ViewYourFundingApiBaseAddress",
+                "value": "[parameters('viewYourFundingApiBaseAddress')]"
+              },
+              {
+                "name": "CosmosDbConfiguration:ConnectionString",
+                "value": "[concat('AccountEndpoint=https://', parameters('sharedCosmosDbAccountName'), '.documents.azure.com:443/;AccountKey=', listKeys(resourceId(parameters('sharedResourceGroupName'),'Microsoft.DocumentDB/databaseAccounts', parameters('sharedCosmosDbAccountName')), '2015-04-08').primaryMasterKey, ';Database=Funding' )]"
+              },
+              {
+                "name": "CosmosDbConfiguration:AuditCollection",
+                "value": "audit"
+              },
+              {
+                "name": "CosmosDbConfiguration:ProviderFundingCollection",
+                "value": "providerfunding"
+              },
+              {
+                "name": "IdamsMetadataAddress",
+                "value": "[parameters('idamsMetadataAddress')]"
+              },
+              {
+                "name": "IdamsRealm",
+                "value": "[parameters('idamsRealm')]"
+              },
+              {
+                "name": "RequestAuthorisationKey",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=VyfUiApiConfigurationSecretKey)')]"
+              },
+              {
+                "name": "Services:OrganisationApiClient:ApiBaseAddress",
+                "value": "[parameters('organisationApiClientApiBaseAddress')]"
+              },
+              {
+                "name": "Services:OrganisationApiClient:Authority",
+                "value": "https://login.microsoftonline.com/"
+              },
+              {
+                "name": "Services:OrganisationApiClient:ClientId",
+                "value": "[parameters('organisationApiClientClientId')]"
+              },
+              {
+                "name": "Services:OrganisationApiClient:ClientSecret",
+                "value": "[parameters('organisationApiClientClientSecret')]"
+              },
+              {
+                "name": "Services:OrganisationApiClient:AppUri",
+                "value": "[parameters('organisationApiClientAppIdUrl')]"
+              },
+              {
+                "name": "Services:OrganisationApiClient:TenantId",
+                "value": "[subscription().tenantId]"
+              },
+              {
+                "name": "LoggedInProviderHomeLink",
+                "value": "[parameters('loggedInProviderHomeLink')]"
+              },
+              {
+                "name": "Services:AdminApiClient:ApiBaseAddress",
+                "value": "[parameters('adminApiClientApiBaseAddress')]"
+              },
+              {
+                "name": "Services:AdminApiClient:Authority",
+                "value": "https://login.microsoftonline.com/"
+              },
+              {
+                "name": "Services:AdminApiClient:ClientId",
+                "value": "[parameters('adminApiClientId')]"
+              },
+              {
+                "name": "Services:AdminApiClient:ClientSecret",
+                "value": "[concat('@Microsoft.KeyVault(VaultName=', parameters('sharedKeyVaultName'), ';SecretName=AdminApiClientSecret)')]"
+              },
+              {
+                "name": "Services:AdminApiClient:AppUri",
+                "value": "[parameters('adminApiAppUri')]"
+              },
+              {
+                "name": "Services:AdminApiClient:TenantId",
+                "value": "[subscription().tenantId]"
+              },
+              {
+                "name": "TerminatedLocalAuthority:LocalAuthorityCode",
+                "value": "928"
+              },
+              {
+                "name": "TerminatedLocalAuthority:FinalPublicationDate",
+                "value": "2021-02-25T00:00:00.000Z"
+              },
+              {
+                "name": "TerminatedLocalAuthority:FundingPeriodCode",
+                "value": "FY-2122"
+              },
+              {
+                "name": "RecentlyOpenedLocalAuthorities:LocalAuthorityCodeList",
+                "value": "940,941"
+              },
+              {
+                "name": "RecentlyOpenedLocalAuthorities:FundingPeriodCode",
+                "value": "AY-2021"
+              },
+              {
+                "name": "WEBSITE_HEALTHCHECK_MAXPINGFAILURES",
+                "value": "[parameters('WEBSITE_HEALTHCHECK_MAXPINGFAILURES')]"
+              },
+              {
+                "name": "FeedReaderUrl",
+                "value": "[concat('https://', parameters('functionAppName'), '.azurewebsites.net/api/', parameters('functionName'), '?code=', listkeys(resourceId(parameters('fuctionAppResourceGroup'),'Microsoft.Web/sites/functions', parameters('functionAppName'), parameters('functionName')),'2018-02-01').default)]"
+              },
+              {
+                "name": "DocumentGeneratorUrl",
+                "value": "[concat('https://', parameters('documentGeneratorFunctionAppName'), '.azurewebsites.net/api/', parameters('documentGeneratorFunctionName'), '?code=', listkeys(resourceId(parameters('documentGeneratorFunctionAppResourceGroup'),'Microsoft.Web/sites/functions', parameters('documentGeneratorFunctionAppName'), parameters('documentGeneratorFunctionName')),'2018-02-01').default)]"
+              },
+              {
+                "name": "DocumentGeneratorFundingReportsUrl",
+                "value": "[concat('https://', parameters('documentGeneratorFunctionAppName'), '.azurewebsites.net/api/', parameters('documentGeneratorFundingReportsFunctionName'), '?code=', listkeys(resourceId(parameters('documentGeneratorFunctionAppResourceGroup'),'Microsoft.Web/sites/functions', parameters('documentGeneratorFunctionAppName'), parameters('documentGeneratorFundingReportsFunctionName')),'2018-02-01').default)]"
+              },
+              {
+                "name": "DocumentGeneratorRerunUrl",
+                "value": "[concat('https://', parameters('documentGeneratorFunctionAppName'), '.azurewebsites.net/api/', parameters('documentGeneratorRerunFunctionName'), '?code=', listkeys(resourceId(parameters('documentGeneratorFunctionAppResourceGroup'),'Microsoft.Web/sites/functions', parameters('documentGeneratorFunctionAppName'), parameters('documentGeneratorRerunFunctionName')),'2018-02-01').default)]"
+              },
+              {
+                "name": "DocumentGeneratorPdfComparerUrl",
+                "value": "[concat('https://', parameters('documentGeneratorFunctionAppName'), '.azurewebsites.net/api/', parameters('documentGeneratorPdfComparerFunctionName'), '?code=', listkeys(resourceId(parameters('documentGeneratorFunctionAppResourceGroup'),'Microsoft.Web/sites/functions', parameters('documentGeneratorFunctionAppName'), parameters('documentGeneratorPdfComparerFunctionName')),'2018-02-01').default)]"
+              },
+              {
+                "name": "MyesfLogoutUrl",
+                "value": "[parameters('MyesfLogoutUrl')]"
+              },
+              {
+                "name": "DfeSignInUrl",
+                "value": "[parameters('DfeSignInUrl')]"
+              },
+			        {
+                "name": "MSClarityId",
+                "value": "[parameters('MSClarityId')]"
+              }
+            ]
+          },
+          "appServiceConnectionStrings": {
+            "value": [
+              {
+                "name": "vyf",
+                "connectionString": "[concat('@Microsoft.KeyVault(SecretUri=', reference(resourceId(parameters('sharedResourceGroupName'),'Microsoft.KeyVault/vaults/secrets', parameters('sharedKeyVaultName'),parameters('keyVaultSecretName')),'2018-02-14').secretUriWithVersion, ')')]",
+                "type": "SQLAzure"
+              }
+            ]
+          },
+          "customHostName": {
+            "value": "[parameters('customHostname')]"
+          },
+          "certificateThumbprint": {
+            "value": "[if(greater(length(parameters('customHostname')), 0), reference('app-service-certificate', '2018-11-01').outputs.certificateThumbprint.value, '')]"
+          },
+          "ipSecurityRestrictions": {
+            "value": "[parameters('appServiceAllowedIPs')]"
+          }
+        }
+      },
+      "dependsOn": [
+        "app-service-certificate"
+      ]
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2017-05-10",
+      "name": "HostingPlanAutoscaleOnCPURule",
+      "dependsOn": [
+        "app-service-plan"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'app-service-plan-autoscale.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "appServicePlanName": {
+            "value": "[variables('appServicePlanName')]"
+          },
+          "scalingRuleName": {
+            "value": "[concat(variables('appServicePlanName'), '-CPUScaleRule')]"
+          },
+          "defaultCapacity": {
+            "value": "[parameters('hostingPlanMinAutoscaleInstances')]"
+          },
+          "minimumCapacity": {
+            "value": "[parameters('hostingPlanMinAutoscaleInstances')]"
+          },
+          "maximumCapacity": {
+            "value": "[parameters('hostingPlanMaxAutoscaleInstances')]"
+          },
+          "scalingRules": {
+            "value": [
+              {
+                "metricTrigger": {
+                  "metricName": "CPUPercentage",
+                  "metricNamespace": "",
+                  "metricResourceUri": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
+                  "timeGrain": "PT5M",
+                  "statistic": "Average",
+                  "timeWindow": "PT10M",
+                  "timeAggregation": "Average",
+                  "operator": "GreaterThan",
+                  "threshold": "[parameters('hostingPlanScaleUpCpuThreshhold')]"
+                },
+                "scaleAction": {
+                  "direction": "Increase",
+                  "type": "ChangeCount",
+                  "value": "1",
+                  "cooldown": "PT10M"
+                }
+              },
+              {
+                "metricTrigger": {
+                  "metricName": "CPUPercentage",
+                  "metricNamespace": "",
+                  "metricResourceUri": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
+                  "timeGrain": "PT5M",
+                  "statistic": "Average",
+                  "timeWindow": "PT10M",
+                  "timeAggregation": "Average",
+                  "operator": "LessThan",
+                  "threshold": "[parameters('hostingPlanScaleDownCpuThreshhold')]"
+                },
+                "scaleAction": {
+                  "direction": "Decrease",
+                  "type": "ChangeCount",
+                  "value": "1",
+                  "cooldown": "PT10M"
+                }
+              },
+              {
+                "metricTrigger": {
+                  "metricName": "MemoryPercentage",
+                  "metricNamespace": "",
+                  "metricResourceUri": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
+                  "timeGrain": "PT5M",
+                  "statistic": "Average",
+                  "timeWindow": "PT10M",
+                  "timeAggregation": "Average",
+                  "operator": "GreaterThan",
+                  "threshold": "[parameters('hostingPlanScaleUpMemThreshhold')]"
+                },
+                "scaleAction": {
+                  "direction": "Increase",
+                  "type": "ChangeCount",
+                  "value": "1",
+                  "cooldown": "PT10M"
+                }
+              },
+              {
+                "metricTrigger": {
+                  "metricName": "MemoryPercentage",
+                  "metricNamespace": "",
+                  "metricResourceUri": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
+                  "timeGrain": "PT5M",
+                  "statistic": "Average",
+                  "timeWindow": "PT10M",
+                  "timeAggregation": "Average",
+                  "operator": "LessThan",
+                  "threshold": "[parameters('hostingPlanScaleDownMemThreshhold')]"
+                },
+                "scaleAction": {
+                  "direction": "Decrease",
+                  "type": "ChangeCount",
+                  "value": "1",
+                  "cooldown": "PT10M"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2019-10-01",
+      "name": "storage-container",
+      "type": "Microsoft.Resources/deployments",
+      "resourceGroup": "[parameters('sharedResourceGroupName')]",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'storage-container.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "storageAccountName": {
+            "value": "[parameters('sharedStorageAccountName')]"
+          },
+          "containerName": {
+            "value": "[variables('storageContainerName')]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2019-10-01",
+      "name": "sql-database",
+      "type": "Microsoft.Resources/deployments",
+      "resourceGroup": "[parameters('sharedResourceGroupName')]",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'sql-database.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "databaseName": {
+            "value": "[variables('databaseName')]"
+          },
+          "sqlServerName": {
+            "value": "[parameters('sharedSqlServerName')]"
+          },
+          "databaseSkuName": {
+            "value": "[parameters('databaseSkuName')]"
+          },
+          "databaseTier": {
+            "value": "[parameters('databaseTier')]"
+          },
+          "logAnalyticsSubscriptionId": {
+            "value": "[subscription().subscriptionId]"
+          },
+          "logAnalyticsResourceGroup": {
+            "value": "[parameters('sharedResourceGroupName')]"
+          },
+          "logAnalyticsWorkspaceName": {
+            "value": "[parameters('logAnalyticsWorkspaceName')]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2019-10-01",
+      "name": "sql-server-firewall-rules",
+      "resourceGroup": "[parameters('sharedResourceGroupName')]",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'),'sql-server-firewall-rules.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "firewallRuleNamePrefix": {
+            "value": "AZURE_IP-"
+          },
+          "ipAddresses": {
+            "value" : "[union(reference('app-service').outputs.possibleOutboundIpAddresses.value, reference('app-service').outputs.possibleOutboundIpAddresses.value)]"
+          },
+          "serverName": {
+            "value": "[parameters('sharedSQLServerName')]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2017-05-10",
+      "name": "[concat(variables('AppServicePlanName'), '-metric-', tolower(variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].MetricName))]",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'), 'alert-rules.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "enabled": {
+            "value": "[variables('EnableAlertsAndMetrics')]"
+          },
+          "alertName": {
+            "value": "[concat(variables('AppServicePlanName'), '-metric-', tolower(variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].MetricName))]"
+          },
+          "alertSeverity": {
+            "value": 3
+          },
+          "metricName": {
+            "value": "[variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].MetricName]"
+          },
+          "operator": {
+            "value": "[variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].Operator]"
+          },
+          "threshold": {
+            "value": "[variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].Threshold]"
+          },
+          "aggregation": {
+            "value": "[variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].Aggregation]"
+          },
+          "windowSize": {
+            "value": "[variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].TimeWindow]"
+          },
+          "evaluationFrequency": {
+            "value": "PT1M"
+          },
+          "actionGroupName": {
+            "value": "[parameters('ActionGroupName')]"
+          },
+          "actionGroupResourceGroup": {
+            "value": "[parameters('sharedResourceGroupName')]"
+          },
+          "resourceId": {
+            "value": "[resourceId('Microsoft.Web/serverfarms', variables('AppServicePlanName'))]"
+          }
+        }
+      },
+      "copy": {
+        "name": "AppServicePlanMetricCopy",
+        "count": "[length(variables('AppServicePlanMetricsToAlertUpon'))]"
+      },
+      "dependsOn": [
+        "app-service-plan"
+      ]
+    },
+    {
+      "apiVersion": "2017-05-10",
+      "name": "[concat(variables('AppServiceName'), '-metric-', tolower(variables('AppServiceMetricsToAlertUpon')[copyIndex()].MetricName))]",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('deploymentUrlBase'), 'alert-rules.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "enabled": {
+            "value": "[variables('EnableAlertsAndMetrics')]"
+          },
+          "alertName": {
+            "value": "[concat(variables('AppServiceName'), '-metric-', tolower(variables('AppServiceMetricsToAlertUpon')[copyIndex()].MetricName))]"
+          },
+          "alertSeverity": {
+            "value": 3
+          },
+          "metricName": {
+            "value": "[variables('AppServiceMetricsToAlertUpon')[copyIndex()].MetricName]"
+          },
+          "operator": {
+            "value": "[variables('AppServiceMetricsToAlertUpon')[copyIndex()].Operator]"
+          },
+          "threshold": {
+            "value": "[variables('AppServiceMetricsToAlertUpon')[copyIndex()].Threshold]"
+          },
+          "aggregation": {
+            "value": "[variables('AppServiceMetricsToAlertUpon')[copyIndex()].Aggregation]"
+          },
+          "windowSize": {
+            "value": "[variables('AppServiceMetricsToAlertUpon')[copyIndex()].TimeWindow]"
+          },
+          "evaluationFrequency": {
+            "value": "PT1M"
+          },
+          "actionGroupName": {
+            "value": "[parameters('ActionGroupName')]"
+          },
+          "actionGroupResourceGroup": {
+            "value": "[parameters('sharedResourceGroupName')]"
+          },
+          "resourceId": {
+            "value": "[resourceId('Microsoft.Web/sites', variables('AppServiceName'))]"
+          }
+        }
+      },
+      "copy": {
+        "name": "AppServiceMetricCopy",
+        "count": "[length(variables('AppServiceMetricsToAlertUpon'))]"
+      },
+      "dependsOn": [
+        "app-service"
+      ]
+    }
+  ],
+  "outputs": {
+    "AppServiceName": {
+      "type": "string",
+      "value": "[variables('appServiceName')]"
+    },
+    "DatabaseName": {
+      "type": "string",
+      "value": "[variables('databaseName')]"
+    }
+  }
+}

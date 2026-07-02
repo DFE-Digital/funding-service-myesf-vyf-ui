@@ -1,0 +1,47 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.SearchByProviderDataResultViewModel
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.Route_BusinessAllocationsSearchByProviderDataResult, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    <h1 class="govuk-heading-xl">Search result</h1>
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+
+        <div class="" style="">
+            <div class="">
+                <p>
+                    <span class="bold-medium">@Model.ProviderFunding?.Provider?.Name (UKPRN: @Model.ProviderFunding?.PartitionKey)</span>
+                </p>
+            </div>
+        </div>
+        <div class="table-layout-row">
+            <div id="memory-cache-content" class="table-layout-column">
+                <div class="table-layout-column-border scroll-content-column">
+                    <div>@Model.ProviderFunding?.Provider?.Name (@Model.ProviderFunding?.PartitionKey)</div>
+                    <div>@Model.FundingStreamBusinessAllocationName</div>
+                    <div>@Model.FormattedFundingPeriodCode</div>
+                    <div>Created on @Model.ProviderFunding?.CreatedDate.ToString("dd MMMM yyyy") - Version @(Model.ProviderFunding?.DisplayStatementVersion)</div>                    
+                </div>
+            </div>
+        </div>
+        <div class="table-layout-row">
+            <div id="memory-cache-content" class="table-layout-column">
+                <div class="table-layout-column-border scroll-content-column">
+                    <pre>@Html.Raw(Model.FormattedDataValue)</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RouteLink("Back", ViewYourFundingConstants.RouteName_BusinessAllocationsSearchByProviderAndYearDetails,new
+            {
+                fundingStreamCode = @Model.ProviderFunding?.FundingStreamCode,
+                ukprn = @Model.ProviderFunding?.PartitionKey,
+                fundingPeriodCode = @Model.ProviderFunding?.FundingPeriodId
+            })
+    </div>
+
+    <script src="~/Scripts/Customisation.js" defer></script>
+    <link href="~/css/internal-screens-overrides.css" rel="stylesheet" />
+}

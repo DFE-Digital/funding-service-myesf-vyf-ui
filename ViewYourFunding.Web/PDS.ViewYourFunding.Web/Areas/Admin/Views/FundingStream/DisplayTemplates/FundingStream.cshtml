@@ -1,0 +1,106 @@
+@using PDS.ViewYourFunding.Services.Helper
+
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream.FundingStream
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingStreamCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FundingStreamCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingStreamCodePubliclyKnown)
+        </dt>
+        <dd>
+            @Model.FundingStreamCodePubliclyKnown.ToBooleanYesOrNo()<br />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingStreamName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FundingStreamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingStreamNameWithinSentence)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FundingStreamNameWithinSentence)<br />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingStreamBusinessAllocationName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FundingStreamBusinessAllocationName)<br />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelevantForOrganisations_Public)
+        </dt>
+        <dd>
+            @Model.RelevantForOrganisations_Public.ToBooleanYesOrNo()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelevantForProviders_Public)
+        </dt>
+        <dd>
+            @Model.RelevantForProviders_Public.ToBooleanYesOrNo()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelevantForNational)
+        </dt>
+        <dd>
+            @Model.RelevantForNational.ToBooleanYesOrNo()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelevantForProviders_LoggedIn)
+        </dt>
+        <dd>
+            @Model.RelevantForProviders_LoggedIn.ToBooleanYesOrNo()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelevantForOrganisations_LoggedIn)
+        </dt>
+        <dd>
+            @Model.RelevantForOrganisations_LoggedIn.ToBooleanYesOrNo()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoryIndependentOfPublications)
+        </dt>
+        <dd>
+            @Model.HistoryIndependentOfPublications.ToBooleanYesOrNo()<br />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+        <dd>
+            @Model.Active.ToBooleanYesOrNo()
+        </dd>
+    </dl>
+</div>
+
+@Html.HiddenFor(model => model.FundingStreamCode)
+@Html.HiddenFor(model => model.FundingStreamName)
+@Html.HiddenFor(model => model.FundingStreamNameWithinSentence)
+@Html.HiddenFor(model => model.FundingStreamBusinessAllocationName)
+@Html.HiddenFor(model => model.FundingStreamCodePubliclyKnown)
+@Html.HiddenFor(model => model.RelevantForOrganisations_LoggedIn)
+@Html.HiddenFor(model => model.RelevantForOrganisations_Public)
+@Html.HiddenFor(model => model.RelevantForProviders_LoggedIn)
+@Html.HiddenFor(model => model.RelevantForProviders_Public)
+@Html.HiddenFor(model => model.RelevantForNational)
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.Active)
+@Html.HiddenFor(model => model.LastUpdatedBy)
+@Html.HiddenFor(model => model.HistoryIndependentOfPublications)

@@ -1,0 +1,196 @@
+@using PDS.ViewYourFunding.Services.Enums
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication.PublicationViewModel
+
+<div class="form-horizontal">
+
+    <div class="form-group required">
+        @Html.LabelFor(model => model.PublishedDate, new { @class = "control-label col-md-2" })
+
+        <div class="group gds-datepicker">
+            @Html.ValidationMessageFor(model => model.PublishedDateDay, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.PublishedDateMonth, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.PublishedDateYear, "", new { @class = "text-danger" })
+            <div class="form-group-day">
+                <label class="form-label">
+                    Day
+                    @Html.EditorFor(model => model.PublishedDateDay, new { htmlAttributes = new { @class = "form-control" } })
+                </label>
+            </div>
+            <div class="form-group-month">
+                <label class="form-label">
+                    Month
+                    @Html.EditorFor(model => model.PublishedDateMonth, new { htmlAttributes = new { @class = "form-control" } })
+
+                </label>
+            </div>
+            <div class="form-group-year">
+                <label class="form-label">
+                    Year
+                    @Html.EditorFor(model => model.PublishedDateYear, new { htmlAttributes = new { @class = "form-control" } })
+                </label>
+            </div>
+        </div>
+        <div class="col-md-10">
+            @Html.ValidationMessageFor(model => model.PublishedDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select asp-for="Status" asp-items="Html.GetEnumSelectList<PublicationStatus>()">
+            </select>
+         
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CutOffDate, new { @class = "control-label col-md-2" })
+
+        <div class="group gds-datepicker">
+            @Html.ValidationMessageFor(model => model.CutOffDateDay, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.CutOffDateMonth, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.CutOffDateYear, "", new { @class = "text-danger" })
+            <div class="form-group-day">
+                <label class="form-label">
+                    Day
+                    @Html.EditorFor(model => model.CutOffDateDay, new { htmlAttributes = new { @class = "form-control" } })
+                </label>
+            </div>
+            <div class="form-group-month">
+                <label class="form-label">
+                    Month
+                    @Html.EditorFor(model => model.CutOffDateMonth, new { htmlAttributes = new { @class = "form-control" } })
+
+                </label>
+            </div>
+            <div class="form-group-year">
+                <label class="form-label">
+                    Year
+                    @Html.EditorFor(model => model.CutOffDateYear, new { htmlAttributes = new { @class = "form-control" } })
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group required">
+        @Html.LabelFor(model => model.FundingPeriodCode, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FundingPeriodCode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FundingPeriodCode, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.UIModelVersion, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UIModelVersion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UIModelVersion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SpreadsheetModelVersion, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SpreadsheetModelVersion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SpreadsheetModelVersion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <table class="govuk-table">
+        <caption class="govuk-table__caption tableCaption">Local Authority View</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthoritySummaryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthorityFundingBreakdownLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthorityHistoryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthorityHistorySingleYearLayoutId)</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+                <select asp-for="LocalAuthoritySummaryLayoutId" asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.OrganisationSummary)">
+                </select>
+            </th>
+            <td class="govuk-table__cell">
+                <select asp-for="LocalAuthorityFundingBreakdownLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.Organisation)">
+                </select>
+            </td>
+            <td class="govuk-table__cell">
+                <select asp-for="LocalAuthorityHistoryLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.OrganisationHistory)">
+                </select>
+            </td>
+            <td class="govuk-table__cell">
+                <select asp-for="LocalAuthorityHistorySingleYearLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.OrganisationHistorySingleYear)">
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+    <table class="govuk-table">
+        <caption class="govuk-table__caption tableCaption">Provider View</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderSummaryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderFundingBreakdownLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderHistoryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderHistorySingleYearLayoutId)</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+                <select asp-for="ProviderSummaryLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.ProviderSummary)">
+                </select>
+            </th>
+            <td class="govuk-table__cell">
+                <select asp-for="ProviderFundingBreakdownLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.Provider)">
+                </select>
+            </td>
+            <td class="govuk-table__cell">
+                <select asp-for="ProviderHistoryLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.ProviderHistory)">
+                </select>
+            </td>
+            <td class="govuk-table__cell">
+                <select asp-for="ProviderHistorySingleYearLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.ViewData, FundingViewScope.ProviderHistorySingleYear)">
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+    <table class="govuk-table">
+        <caption class="govuk-table__caption tableCaption">Spreadsheets</caption>
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthoritySpreadsheetLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderSpreadsheetLayoutId)</th> 
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+                <select asp-for="LocalAuthoritySpreadsheetLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.Spreadsheet, FundingViewScope.Organisation)">
+                </select>
+            </th>
+            <td class="govuk-table__cell">
+                <select asp-for="ProviderSpreadsheetLayoutId"  asp-items="Model.GetLayoutsAvailable(FundingViewType.Spreadsheet, FundingViewScope.Provider)">
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.FundingStreamId)
+@Html.HiddenFor(model => model.FundingStreamName)

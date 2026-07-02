@@ -1,0 +1,29 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://esfstest.herokuapp.com/component-library/links
+
+    if (!Model.Components.Any(component => component.Type == ComponentType.Tabs_LinkWithValue 
+        || component.Type == ComponentType.Conditional_Condition || component.Type == ComponentType.Conditional_Switch))
+    {
+        throw new Exception("No links with values (or conditionals) are included");
+    }
+
+    if (Model.Components.Any(component => component.Type != ComponentType.Tabs_LinkWithValue 
+        && component.Type != ComponentType.Conditional_Condition && component.Type != ComponentType.Conditional_Switch))
+    {
+        throw new Exception("A component other than 'Tabs/LinkWithValue' or 'Conditional/Condition' was included as child");
+    }
+
+    var smallHeadingModel = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.Heading_Small,
+        Title = Model.Title,
+        ClassNames = Model.ClassNames
+    };
+
+    await smallHeadingModel.Render(Html, Model.PageData);
+    await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+}

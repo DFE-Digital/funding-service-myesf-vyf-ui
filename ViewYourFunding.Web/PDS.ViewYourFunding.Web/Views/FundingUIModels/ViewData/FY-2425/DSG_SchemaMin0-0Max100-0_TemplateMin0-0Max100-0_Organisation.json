@@ -1,0 +1,3937 @@
+{
+  "name": "DSG LA funding breakdown",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerfunding",
+      "expression": "GroupingReason=Payment"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithDate",
+      "value": "@publicationdate-dd_MMMM_yyyy",
+      "groups": [
+        {
+          "type": "Tag/LatestNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "id": "allocation-amount",
+          "title": "Total allocation for @yearTypeName @year1 to @year2",
+          "selector": "$.totalValue"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Block/DownloadADocument"
+        }
+      ]
+    },
+    {
+      "type": "Tabs/Tabs",
+      "groups": [
+        {
+          "id": "schools",
+          "type": "Tabs/Tab",
+          "title": "Schools",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "title": "Total schools block@AfterRecoupmentOrDeductions",
+                      "id": "school-block-total",
+                      "expression": "@schoolsAllocation",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "General/PrintThisPage"
+                }
+              ]
+            },
+            {
+              "id": "primary-school-table",
+              "type": "Table/Table",
+              "classname": "first-table-below-tab",
+              "title": "Primary schools",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Primary schools"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Unit of funding",
+                      "expression": "@schoolBlockPrimarySchoolUnitOfFunding",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number of pupils",
+                          "groups": [
+                            {
+                              "type": "Block/PartialPupilNumbers",
+                              "expression": "@schoolBlockPrimarySchoolNumberOfPupils",
+                              "title": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#pupil-number-information"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@schoolBlockPrimarySchoolNumberOfPupils",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total primary schools",
+                      "expression": "@schoolBlockPrimarySchoolTotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "secondary-school-table",
+              "type": "Table/Table",
+              "title": "Secondary schools",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Secondary schools"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Unit of funding",
+                      "expression": "@schoolBlockSecondarySchoolUnitOfFunding",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number of pupils",
+                          "groups": [
+                            {
+                              "type": "Block/PartialPupilNumbers",
+                              "expression": "@schoolBlockSecondarySchoolNumberOfPupils",
+                              "title": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#pupil-number-information"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@schoolBlockSecondarySchoolNumberOfPupils",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total secondary schools",
+                      "expression": "@schoolBlockSecondarySchoolTotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "premises-mobility-table",
+              "type": "Table/Table",
+              "title": "Premises factor",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Premises factor including national non-domestic rates (NNDR)",
+                      "expression": "@schoolBlockPremisesAndMobility",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "growth-table",
+              "type": "Table/Table",
+              "title": "Growth",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Growth"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Total growth funding",
+                      "expression": "@schoolBlockGrowth",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@IsAfterRecoupment=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "Total/GrandTotal",
+                      "title": "Total schools block before recoupment",
+                      "classname": "zero-bottom-padding",
+                      "expression": "@schoolBlockTotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    },
+                    {
+                      "type": "Total/SubTotal",
+                      "classname": "limited-bottom-padding",
+                      "title": "Deductions to schools block for recoupment",
+                      "expression": "@schoolBlockTotalRecoupment",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    },
+                    {
+                      "type": "Total/SubTotal",
+                      "classname": "limited-bottom-padding",
+                      "title": "Deductions for DfE payments to billing authorities for NNDR",
+                      "selector": "C281",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      },
+                      "groups": [
+                        {
+                          "type": "GDS/Detail",
+                          "title": "More information on NNDR",
+                          "id": "school-tab-how-we-calculate-this",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "Get more information on NNDR from the "
+                            },
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#schools-block-allocations",
+                              "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                            },
+                            {
+                              "type": "General/Literal",
+                              "title": "."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Conditional/FalseOutput",
+                  "groups": [
+                    {
+                      "type": "Total/GrandTotal",
+                      "title": "Total schools block before deductions",
+                      "classname": "zero-bottom-padding",
+                      "expression": "@schoolBlockTotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    },
+                    {
+                      "type": "Total/SubTotal",
+                      "classname": "limited-bottom-padding",
+                      "title": "Deductions for DfE payments to billing authorities for NNDR",
+                      "selector": "C281",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      },
+                      "groups": [
+                        {
+                          "type": "GDS/Detail",
+                          "title": "More information on NNDR",
+                          "id": "school-tab-how-we-calculate-this",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "Get more information on NNDR from the "
+                            },
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#schools-block-allocations",
+                              "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                            },
+                            {
+                              "type": "General/Literal",
+                              "title": "."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/GrandTotal",
+              "title": "Total schools block @AfterRecoupmentOrDeductions",
+              "classname": "zero-bottom-padding",
+              "expression": "@schoolsAllocation",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              },
+              "groups": [
+                {
+                  "type": "GDS/Detail",
+                  "title": "How we calculate this",
+                  "id": "school-tab-how-we-calculate-this",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "title": "Get more information on these calculations from the "
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#calculating-the-@year1-to-@year2-@fundingStreamNamePathPart",
+                      "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                    },
+                    {
+                      "type": "General/Literal",
+                      "title": "."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/SubTotal",
+              "visibilityCondition": "false",
+              "classname": "zero-bottom-padding",
+              "title": "Funding protected from being transferred to other blocks through teachers' pay and pension grants",
+              "expression": "@schoolBlockFundingProtectedForPayAndPension",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              }
+            },
+            {
+              "type": "Total/SubTotal",
+              "visibilityCondition": "false",
+              "classname": "form-group",
+              "title": "Total schools block of which a percentage can be transferred to other blocks",
+              "expression": "@schoolBlockTotalThatCanBeTransferredToOtherBlocks",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              }
+            },
+            {
+              "type": "Heading/Small",
+              "title": "Detailed funding block resources",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "Pattern/UnorderedList",
+              "classname": "list guidance-items",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "National funding formula tables for schools and high needs: @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/national-funding-formula-tables-for-schools-and-high-needs-@year1-to-@year2"
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "title": "Pre-16 schools funding: guidance for @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/pre-16-schools-funding-local-authority-guidance-for-@year1-to-@year2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "css",
+          "type": "Tabs/Tab",
+          "title": "Central school services",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "title": "Total central school services block",
+                      "id": "css-block-total",
+                      "expression": "@cssBlockTotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "General/PrintThisPage"
+                }
+              ]
+            },
+            {
+              "id": "central-school-services-table",
+              "type": "Table/Table",
+              "title": "Central school services",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Central school services"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Unit of funding",
+                      "expression": "@cssUnitOfFunding",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number of pupils",
+                          "groups": [
+                            {
+                              "type": "Block/PartialPupilNumbers",
+                              "expression": "@cssNumberOfPupils",
+                              "title": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#pupil-number-information"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@cssNumberOfPupils",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total central school services",
+                      "expression": "@cssSubtotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "historic-commitments",
+              "type": "Table/Table",
+              "title": "Historic commitments",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Total funding for historic commitments",
+                      "expression": "@cssHistoricCommitments",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/GrandTotal",
+              "title": "Total central school services block",
+              "classname": "zero-bottom-padding",
+              "expression": "@cssBlockTotal",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              },
+              "groups": [
+                {
+                  "type": "GDS/Detail",
+                  "title": "How we calculate this",
+                  "id": "css-tab-how-we-calculate-this",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "title": "Get more information on these calculations from the "
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#central-school-services-block",
+                      "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                    },
+                    {
+                      "type": "General/Literal",
+                      "title": "."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Heading/Small",
+              "title": "Detailed funding block guidance",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "Pattern/UnorderedList",
+              "classname": "list guidance-items",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "National funding formula tables for schools and high needs: @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/national-funding-formula-tables-for-schools-and-high-needs-@year1-to-@year2"
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "title": "Pre-16 schools funding: guidance for @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/pre-16-schools-funding-local-authority-guidance-for-@year1-to-@year2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "high-needs",
+          "type": "Tabs/Tab",
+          "title": "High needs",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "title": "Total high needs block after deductions",
+                      "classname": "limited-bottom-padding zero-margin-bottom",
+                      "expression": "@highNeedsAllocation",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "General/PrintThisPage"
+                }
+              ]
+            },
+            {
+              "id": "nff",
+              "type": "Table/Table",
+              "classname": "first-table-below-tab",
+              "title": "Total high needs block national funding formula allocations breakdown",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "National funding formula (NFF) allocations"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Total high needs elements in the funding floor and gains calculation",
+                      "selector": "$..calculations[?(@.templateCalculationId == 29)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "basicEntitlement",
+              "type": "Table/Table",
+              "title": "Total high needs block basic entitlement (area cost adjusted) breakdown",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Basic entitlement (area cost adjusted)"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total",
+                      "visuallyhidden": true
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Unit of funding",
+                      "selector": "$..calculations[?(@.templateCalculationId == 31)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number of pupils (in special schools and academies)",
+                          "groups": [
+                            {
+                              "type": "Block/PartialPupilNumbers",
+                              "expression": "@cssNumberOfPupilsInSpecialSchoolAcademies",
+                              "title": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#pupil-number-information"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@cssNumberOfPupilsInSpecialSchoolAcademies",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total basic entitlement",
+                      "selector": "$..calculations[?(@.templateCalculationId == 30)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "importExportAdjustments",
+              "type": "Table/Table",
+              "title": "Total high needs block import/export adjustments breakdown",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Import/export adjustments"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total",
+                      "visuallyhidden": true
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Number of pupils (net amount imported/exported)",
+                      "selector": "$..calculations[?(@.templateCalculationId == 34)].value",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total import/export adjustment (based on January @censusYear school census and February R06 @R06Year1 to @R06Year2 individualised learner record)",
+                      "selector": "$..calculations[?(@.templateCalculationId == 33)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about import/export adjustments",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#import-and-export-adjustments",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "additionalFundingFreeSchools",
+              "type": "Table/Table",
+              "title": "Total high needs block additional funding for special free schools breakdown",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Additional funding for special free schools"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total",
+                      "visuallyhidden": true
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Total additional funding for special free schools",
+                      "selector": "$..calculations[?(@.templateCalculationId == 237)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about additional funding for special free schools",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#high-needs-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "hospitalEducationTeachersPayPension",
+              "type": "Table/Table",
+              "title": "Total high needs block hospital education and teachers' pay and pension breakdown",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Hospital education and teachers' pay and pension"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total",
+                      "visuallyhidden": true
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Total hospital education and teachers' pay and pension",
+                      "selector": "$..calculations[?(@.templateCalculationId == 272)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about hospital education and teachers' pay and pension funding",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#high-needs-block-allocations",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },            
+            {
+              "type": "Total/GrandTotal",
+              "title": "Total high needs block before deductions",
+              "id": "total-before-deductions",
+              "classname": "limited-bottom-padding zero-margin-bottom",
+              "expression": "@hn_totalbeforedeductions",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              }
+            },
+            {
+              "type": "Heading/Medium",
+              "title": "High needs deductions",
+              "classname": "heading-medium padding-top-heading-total"
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasMainstreamDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "mainstreamAcademies",
+                      "type": "Table/Table",
+                      "title": "Mainstream academies (special educational needs units and resourced provision) Pre-16 places",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Mainstream academies (special educational needs units and resourced provision)"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />August @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "September @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 special educational needs places funded at &pound;6,000"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_6k_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_6k_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_6k_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 special educational needs places funded at &pound;10,000"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_10k_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_10k_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_10k_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 alternative provision places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_pre16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasMainstreamDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "mainstreamAcademies",
+                      "type": "Table/Table",
+                      "title": "Mainstream academies (special educational needs units and resourced provision) Post-16 places",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": ""
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />July @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "August @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Post-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_post16_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_post16_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_post16_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasSpecialAcademiesDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "specialAcademiesDeductions",
+                      "type": "Table/Table",
+                      "title": "Special academies",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Special academies"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />August @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "September @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_pre16_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_pre16_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_pre16_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 alternative provision places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_pre16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_pre16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_pre16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasSpecialAcademiesDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "specialAcademiesDeductions",
+                      "type": "Table/Table",
+                      "title": "Special academies",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": ""
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />July @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "August @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Post-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_post16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_post16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_special_post16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasSpecialFreeSchoolsDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "specialFreeSchoolsDeductions",
+                      "type": "Table/Table",
+                      "title": "Special free schools",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Special free schools"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />August @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "September @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_pre16_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_pre16_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_pre16_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 alternative provision places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_pre16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_pre16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_pre16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasSpecialFreeSchoolsDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "specialFreeSchoolsDeductions",
+                      "type": "Table/Table",
+                      "title": "Special free schools",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": ""
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />July @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "August @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Post-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_post16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_post16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_specialfreeschools_post16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasAPDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "alternativeProvisionAcademiesAndFreeSchools",
+                      "type": "Table/Table",
+                      "title": "Alternative provision academies and free schools",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Alternative provision academies and free schools"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />August @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "September @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_alt_pre16_special_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_alt_pre16_special_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_alt_pre16_special_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Pre-16 alternative provision places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_alt_pre16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_alt_pre16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_alt_pre16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasAPDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "apSpecialFreeSchoolsDeductions",
+                      "type": "Table/Table",
+                      "title": "AP Special free schools",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": ""
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />July @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "August @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Post-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_apspecialfreeschools_post16_alt_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_apspecialfreeschools_post16_alt_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_apspecialfreeschools_post16_alt_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@has1619Deductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "1619Deductions",
+                      "type": "Table/Table",
+                      "title": "16 to 19 academies and free schools",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "16 to 19 academies and free schools"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />July @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "August @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Post-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_1619_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_1619_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_1619_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasHospitalDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "hospitalDeductions",
+                      "type": "Table/Table",
+                      "title": "Hospital academies",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Hospital academies"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />August @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "September @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Post-16 special educational needs places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_hospital_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_hospital_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_hospital_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasFEAndILPDeductions=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "id": "fePlaces",
+                      "type": "Table/Table",
+                      "title": "Further education (<abbr title=\"Further Education\">FE </abbr>) and independent learning provider(<abbr title=\"Independent Learning Provider\">ILP</abbr>) places",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Further education (<abbr title=\"Further Education\">FE </abbr>) and independent learning provider(<abbr title=\"Independent Learning Provider\">ILP</abbr>) places"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "April @year1 to<br />July @year1"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "August @year1 to<br />March @year2"
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@FirstUsageCounter++=0",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Conditional/FalseOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Table/Column",
+                                      "title": "Total deduction",
+                                      "visuallyhidden": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "FE and ILP places"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_fe_1",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_fe_2",
+                                  "datastyle": {
+                                    "numberFormat": "TwoDPWithoutTrailingZeroes"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "expression": "@hn_deductions_fe_total",
+                                  "datastyle": {
+                                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@hasMainstreamDeductions=false|@hasSpecialAcademiesDeductions=false|@hasSpecialFreeSchoolsDeductions=false|@hasAPDeductions=false|@has1619Deductions=false|@hasHospitalDeductions=false|@hasFEAndILPDeductions=false",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "GDS/Detail",
+                      "title": "View funding factors with no deductions",
+                      "value": "There are no deductions for: ",
+                      "groups": [
+                        {
+                          "type": "Pattern/UnorderedList",
+                          "classname": "list list-bullet",
+                          "variables": [
+                            {
+                              "name": "implictLIs",
+                              "value": false
+                            }
+                          ],
+                          "groups": [
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@hasMainstreamDeductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "mainstream academies (special educational needs units and resourced provision) Pre-16 places"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@hasSpecialAcademiesDeductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "special academies"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@hasSpecialFreeSchoolsDeductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "special free schools"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@hasAPDeductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "alternative provision academies and free schools"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@has1619Deductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "16 to 19 academies and free schools places"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@hasHospitalDeductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "hospital academies"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Conditional/Condition",
+                              "expression": "@hasFEAndILPDeductions=false",
+                              "groups": [
+                                {
+                                  "type": "Conditional/TrueOutput",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "value": "further education (FE) and independent learning provider (ILP) places"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/SubTotal",
+              "classname": "dsg-direct-funding-total",
+              "title": "Deductions to high needs block due to direct funding of places",
+              "expression": "@hn_deductions_directfunding",
+              "id": "direct-funding-total",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+              }
+            },
+            {
+              "type": "Total/GrandTotal",
+              "title": "Total high needs block after deductions",
+              "classname": "zero-bottom-padding",
+              "expression": "@hn_deductions_totalafterdeductions",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              },
+              "groups": [
+                {
+                  "type": "GDS/Detail",
+                  "title": "How we calculate this",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "title": "Get more information on these calculations from the "
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#high-needs-block",
+                      "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                    },
+                    {
+                      "type": "General/Literal",
+                      "title": ". If you would like more information on the deductions, visit the "
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#high-needs-place-funding-deductions",
+                      "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                    },
+                    {
+                      "type": "General/Literal",
+                      "title": "."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Heading/Small",
+              "title": "Detailed funding block guidance",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "Pattern/UnorderedList",
+              "classname": "list",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "High needs funding arrangements: @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/high-needs-funding-arrangements-@year1-to-@year2"
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "title": "National funding formula tables for schools and high needs: @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/national-funding-formula-tables-for-schools-and-high-needs-@year1-to-@year2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "early-years",
+          "type": "Tabs/Tab",
+          "title": "Early years",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "title": "Total early years block",
+                      "expression": "@earlyYearsAllocation",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutDecimalPlace"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "General/PrintThisPage"
+                }
+              ]
+            },
+            {
+              "id": "universalEntitlement",
+              "type": "Table/Table",
+              "title": "Universal entitlement for 3 and 4 year olds",
+              "visuallyhidden": "true",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Universal entitlement for 3 and 4 year olds"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for 3 and 4 year olds",
+                      "expression": "@eyf_3and4rate",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number for universal entitlement for 3 and 4 year olds",
+                          "groups": [
+                            {
+                              "type": "Block/PartialPupilNumbers",
+                              "expression": "@eyf_pte3and4",
+                              "title": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#pupil-number-information"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@eyf_pte3and4",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for universal entitlement for 3 and 4 year olds",
+                      "expression": "@eyf_pte3and4total",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about universal entitlement for 3 and 4 year olds",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "additional15",
+              "type": "Table/Table",
+              "title": "Additional 15 hours entitlement for eligible working parents of 3 and 4 year olds",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for 3 and 4 year olds",
+                      "expression": "@eyf_laHourlyRate3and4",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number for additional 15 hours entitlement for eligible working parents of 3 and 4 year olds (part-time equivalent)",
+                          "groups": [
+                            {
+                              "type": "Block/PartialPupilNumbers",
+                              "expression": "@eyf_pte15hours",
+                              "title": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#pupil-number-information"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@eyf_pte15hours",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for additional 15 hours entitlement for eligible working parents of 3 and 4 year olds",
+                      "expression": "@eyf_pte15hoursTotal",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about additional 15 hours entitlement",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "2year",
+              "type": "Table/Table",
+              "title": "2 year old disadvantaged entitlement",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for 2 year olds",
+                      "expression": "@eyf_laHourlyRate2",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Number for 2 year old disadvantaged entitlement (part-time equivalent)",
+                      "expression": "@eyf_2yearChildNumber",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for 2 year old disadvantaged entitlement",
+                      "expression": "@eyf_2yearEntitilement",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about 2 year old disadvantaged entitlement",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            //2024-25 Code Changes - Started
+            {
+              "id": "WP2s",
+              "type": "Table/Table",
+              "title": "2 year old entitlement for working parents",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for 2 year olds",
+                      "selector": "C142",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Number for 2 year old entitlement for working parents (part-time equivalent)",
+                      "selector": "C298",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for 2 year old working parent entitlement",
+                      "selector": "L294",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about 2 year old entitlement for working parents",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "Under2s",
+              "type": "Table/Table",
+              "title": "Under 2s entitlement",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for under 2s",
+                      "selector": "C302",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Number for under 2s entitlement (part-time equivalent)",
+                      "selector": "C304",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year (entitlement starts from September @year1)",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for under 2s entitlement",
+                      "selector": "L300",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about under 2s entitlement",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "EYPP3abd4",
+              "type": "Table/Table",
+              "title": "Early years pupil premium for 3 and 4 year olds",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Number for 3 and 4 year olds early years pupil premium (part-time equivalent)",
+                      "selector": "C148",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for early years pupil premium",
+                      "expression": "@eypp_hourlyRate",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for early years pupil premium for 3 and 4 year olds",
+                      "selector": "L145",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "EYPP2s",
+              "type": "Table/Table",
+              "title": "Early years pupil premium for 2 year olds",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Number for 2 year olds early years pupil premium (part-time equivalent)",
+                      "selector": "C310",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for early years pupil premium ",
+                      "expression": "@eypp_hourlyRate",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for early years pupil premium for 2 year olds",
+                      "selector": "L306",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "EYPPUnder2",
+              "type": "Table/Table",
+              "title": "Early years pupil premium for under 2s",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Number for under 2s early years pupil premium (part-time equivalent)",
+                      "selector": "C314",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hourly rate for early years pupil premium ",
+                      "expression": "@eypp_hourlyRate",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Hours entitled per week",
+                      "expression": "@eyf_hoursEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Weeks entitled per year (entitlement starts from September @year1)",
+                      "expression": "@eyf_weeksEntitled",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total @InitialIndicativeOrEmpty funding allocation for early years pupil premium for under 2s",
+                      "selector": "L307",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about early years pupil premium",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            {
+              "id": "DAF3And4",
+              "type": "Table/Table",
+              "title": "Disability access fund for 3 and 4 year olds",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Estimated number for 3 and 4 year olds disability access fund (part-time equivalent)",
+                      "selector": "C285",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Yearly rate for disability access fund",
+                      "expression": "@eyf_yearlyRateForDAF",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total funding allocation for disability access fund for 3 and 4 year olds",
+                      "selector": "L155",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "DAF2s",
+              "type": "Table/Table",
+              "title": "Disability access fund for 2 year olds",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Estimated number for 2 year olds disability access fund (part-time equivalent)",
+                      "selector": "C289",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Yearly rate for disability access fund",
+                      "expression": "@eyf_yearlyRateForDAF",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total funding allocation for disability access funding for 2 year olds",
+                      "selector": "L286",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "DAFUnder2",
+              "type": "Table/Table",
+              "title": "Disability access fund for under 2s",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "title": "Estimated number for under 2s for disability access fund (part-time equivalent)",
+                      "selector": "C293",
+                      "datastyle": {
+                        "numberFormat": "TwoDPWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Yearly rate for disability access fund",
+                      "expression": "@eyf_yearlyRateForDAF",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    },
+                    {
+                      "type": "Table/Row",
+                      "title": "Total funding allocation for disability access fund for under 2s (entitlement starts from September @year1)",
+                      "selector": "L290",
+                      "datastyle": {
+                        "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about disability access funding",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on these calculations from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            },
+            //2024-25 Code Changes - Ended
+            {
+              "id": "nursery",
+              "type": "Table/Table",
+              "title": "Maintained nursery school supplementary funding",
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "visuallyhidden": "true",
+                  "groups": [
+                    {
+                      "type": "Table/Column"
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Current total"
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Hourly rate for supplementary funding for mainatined nursery schools",
+                          "useDefaultClasses": false,
+                          "classname": "table-header-normal table-header-normal"
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "selector": "C152",
+                          "datastyle": {
+                            "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Number for supplementary funding for maintained nursery schools (part-time equivalent)",
+                          "useDefaultClasses": false,
+                          "classname": "table-header-normal table-header-normal"
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "selector": "C153",
+                          "datastyle": {
+                            "numberFormat": "TwoDPWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Hours entitled per week",
+                          "useDefaultClasses": false,
+                          "classname": "table-header-normal table-header-normal"
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@eyf_hoursEntitled"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Weeks entitled per year",
+                          "useDefaultClasses": false,
+                          "classname": "table-header-normal table-header-normal"
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@eyf_weeksEntitled"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Total @InitialIndicativeOrEmpty supplementary funding allocation for maintained nursery schools",
+                          "useDefaultClasses": false,
+                          "classname": "table-header-normal table-header-normal"
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "expression": "@eyf_nursery",
+                          "datastyle": {
+                            "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about supplementary funding",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more information on the @InitialIndicativeOrEmpty supplementary funding allocation from the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-supplementary-funding-for-maintained-nursery-schools",
+                  "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                }
+              ]
+            },
+            {
+              "type": "Total/GrandTotal",
+              "title": "Total early years block",
+              "classname": "zero-bottom-padding",
+              "expression": "@eyf_total",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutDecimalPlace"
+              },
+              "groups": [
+                {
+                  "type": "GDS/Detail",
+                  "title": "How we calculate this",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "title": "Get more information on these calculations from the "
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2/@fundingStreamCodeLowercase-technical-note-@year1-to-@year2#early-years-block",
+                      "title": "@shortFundingStreamNameHtml: technical note @year1 to @year2"
+                    },
+                    {
+                      "type": "General/Literal",
+                      "title": ". If you would like more detailed information, visit the "
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/early-years-funding-@year1-to-@year2",
+                      "title": "early years national funding formula: funding rates and guidance"
+                    },
+                    {
+                      "type": "General/Literal",
+                      "title": "."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Heading/Small",
+              "title": "Detailed funding block guidance",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "Pattern/UnorderedList",
+              "classname": "list",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "Early years national funding formula: funding rates and guidance",
+                  "value": "https://www.gov.uk/government/publications/early-years-funding-@year1-to-@year2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Block/AllocationHistory"
+        },
+        {
+          "type": "Heading/Small",
+          "title": "General @shortFundingStreamNameHtml guidance",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list",
+          "groups": [
+            {
+              "type": "General/Section",
+              "id": "guidance-link",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "Get more general guidance on "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "title": "@shortFundingStreamNameHtml: @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Script",
+      "value": "@basePath/Scripts/dsg.js"
+    }
+  ],
+  "variables": [
+    {
+      "_________________________comment": "Top level totals"
+    },
+    {
+      "name": "schoolsAllocation",
+      "selector": "$..fundingLines[?(@.templateLineId == 12)].value"
+    },
+    {
+      "name": "cssAllocation",
+      "selector": "$..fundingLines[?(@.templateLineId == 8)].value"
+    },
+    {
+      "name": "highNeedsAllocation",
+      "selector": "$..fundingLines[?(@.templateLineId == 11)].value"
+    },
+    {
+      "name": "earlyYearsAllocation",
+      "selector": "$..fundingLines[?(@.templateLineId == 9)].value"
+    },
+    {
+      "_________________________comment": "School Services Block"
+    },
+    {
+      "name": "schoolBlockTotal",
+      "selector": "$..fundingLines[?(@.templateLineId == 4)].value"
+    },
+    {
+      "name": "schoolBlockPrimarySchoolUnitOfFunding",
+      "selector": "$..calculations[?(@.templateCalculationId == 16)].value"
+    },
+    {
+      "name": "schoolBlockPrimarySchoolNumberOfPupils",
+      "selector": "$..calculations[?(@.templateCalculationId == 15)].value"
+    },
+    {
+      "name": "schoolBlockPrimarySchoolTotal",
+      "selector": "$..calculations[?(@.templateCalculationId == 13)].value"
+    },
+    {
+      "name": "schoolBlockSecondarySchoolUnitOfFunding",
+      "selector": "$..calculations[?(@.templateCalculationId == 18)].value"
+    },
+    {
+      "name": "schoolBlockSecondarySchoolNumberOfPupils",
+      "selector": "$..calculations[?(@.templateCalculationId == 17)].value"
+    },
+    {
+      "name": "schoolBlockSecondarySchoolTotal",
+      "selector": "$..calculations[?(@.templateCalculationId == 14)].value"
+    },
+    {
+      "name": "schoolBlockPremisesAndMobility",
+      "selector": "$..fundingLines[?(@.templateLineId == 6)].value"
+    },
+    {
+      "name": "schoolBlockLaProtectionCurrentFundingPerPupil",
+      "selector": "$..calculations[?(@.templateCalculationId == 246)].value"
+    },
+    {
+      "name": "schoolBlockLaProtectionPreviousFundingPerPupil",
+      "selector": "$..calculations[?(@.templateCalculationId == 247)].value"
+    },
+    {
+      "name": "schoolBlockLaProtectionPercentageChangeForFundingPerPupil",
+      "selector": "$..calculations[?(@.templateCalculationId == 244)].value"
+    },
+    {
+      "name": "schoolBlockTotalLaProtectionFunding",
+      "selector": "$..calculations[?(@.templateCalculationId == 243)].value"
+    },
+    {
+      "name": "schoolBlockGrowth",
+      "selector": "$..fundingLines[?(@.templateLineId == 7)].value"
+    },
+    {
+      "name": "schoolBlockTotalRecoupment",
+      "selector": "$..calculations[?(@.templateCalculationId == 21)].value"
+    },
+    {
+      "name": "schoolBlockFundingProtectedForPayAndPension",
+      "selector": "$..calculations[?(@.templateCalculationId == 263)].value"
+    },
+    {
+      "name": "schoolBlockTotalThatCanBeTransferredToOtherBlocks",
+      "selector": "$..calculations[?(@.templateCalculationId == 264)].value"
+    },
+    {
+      "_________________________comment": "Central School Services Block"
+    },
+    {
+      "name": "cssBlockTotal",
+      "selector": "$..fundingLines[?(@.templateLineId == 8)].value"
+    },
+    {
+      "name": "cssSubtotal",
+      "selector": "$..calculations[?(@.templateCalculationId == 24)].value"
+    },
+    {
+      "name": "cssUnitOfFunding",
+      "selector": "$..calculations[?(@.templateCalculationId == 259)].value"
+    },
+    {
+      "name": "cssNumberOfPupils",
+      "selector": "$..calculations[?(@.templateCalculationId == 26)].value"
+    },
+    {
+      "name": "cssHistoricCommitments",
+      "selector": "$..calculations[?(@.templateCalculationId == 28)].value"
+    },
+    {
+      "name": "cssNumberOfPupilsInSpecialSchoolAcademies",
+      "selector": "$..calculations[?(@.templateCalculationId == 32)].value"
+    },
+    {
+      "_________________________comment": "High Needs Funding Info"
+    },
+    {
+      "name": "hn_deductions_pre16_6k_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 65)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_6k_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 66)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_6k_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 64)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_10k_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 70)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_10k_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 71)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_10k_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 69)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 80)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 81)].value"
+    },
+    {
+      "name": "hn_deductions_pre16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 79)].value"
+    },
+    {
+      "name": "hn_deductions_post16_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 75)].value"
+    },
+    {
+      "name": "hn_deductions_post16_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 76)].value"
+    },
+    {
+      "name": "hn_deductions_post16_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 74)].value"
+    },
+    {
+      "name": "hn_deductions_special_pre16_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 163)].value"
+    },
+    {
+      "name": "hn_deductions_special_pre16_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 164)].value"
+    },
+    {
+      "name": "hn_deductions_special_pre16_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 158)].value"
+    },
+    {
+      "name": "hn_deductions_special_pre16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 95)].value"
+    },
+    {
+      "name": "hn_deductions_special_pre16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 96)].value"
+    },
+    {
+      "name": "hn_deductions_special_pre16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 94)].value"
+    },
+    {
+      "name": "hn_deductions_special_post16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 90)].value"
+    },
+    {
+      "name": "hn_deductions_special_post16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 91)].value"
+    },
+    {
+      "name": "hn_deductions_special_post16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 175)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_pre16_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 168)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_pre16_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 169)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_pre16_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 159)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_pre16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 182)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_pre16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 183)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_pre16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 233)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_post16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 176)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_post16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 177)].value"
+    },
+    {
+      "name": "hn_deductions_specialfreeschools_post16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 232)].value"
+    },
+    {
+      "name": "hn_deductions_apspecialfreeschools_post16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 255)].value"
+    },
+    {
+      "name": "hn_deductions_apspecialfreeschools_post16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 256)].value"
+    },
+    {
+      "name": "hn_deductions_apspecialfreeschools_post16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 253)].value"
+    },
+    {
+      "name": "hn_deductions_maintainedspecial_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 202)].value"
+    },
+    {
+      "name": "hn_deductions_maintainedspecial_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 203)].value"
+    },
+    {
+      "name": "hn_deductions_maintainedmainstream_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 209)].value"
+    },
+    {
+      "name": "hn_deductions_maintainedmainstream_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 210)].value"
+    },
+    {
+      "name": "hn_deductions_maintainedmainstream_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 205)].value"
+    },
+    {
+      "name": "hn_deductions_1619_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 223)].value"
+    },
+    {
+      "name": "hn_deductions_1619_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 224)].value"
+    },
+    {
+      "name": "hn_deductions_1619_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 218)].value"
+    },
+    {
+      "name": "hn_deductions_hospital_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 273)].value"
+    },
+    {
+      "name": "hn_deductions_hospital_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 274)].value"
+    },
+    {
+      "name": "hn_deductions_hospital_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 211)].value"
+    },
+    {
+      "name": "hn_deductions_fe_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 128)].value"
+    },
+    {
+      "name": "hn_deductions_fe_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 129)].value"
+    },
+    {
+      "name": "hn_deductions_fe_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 227)].value"
+    },
+    {
+      "name": "hn_deductions_directfunding",
+      "selector": "$..calculations[?(@.templateCalculationId == 40)].value"
+    },
+    {
+      "name": "hn_deductions_totalafterdeductions",
+      "selector": "$..fundingLines[?(@.templateLineId == 11)].value"
+    },
+    {
+      "name": "hn_deductions_alt_pre16_special_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 189)].value"
+    },
+    {
+      "name": "hn_deductions_alt_pre16_special_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 190)].value"
+    },
+    {
+      "name": "hn_deductions_alt_pre16_special_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 185)].value"
+    },
+    {
+      "name": "hn_deductions_alt_pre16_alt_1",
+      "selector": "$..calculations[?(@.templateCalculationId == 195)].value"
+    },
+    {
+      "name": "hn_deductions_alt_pre16_alt_2",
+      "selector": "$..calculations[?(@.templateCalculationId == 196)].value"
+    },
+    {
+      "name": "hn_deductions_alt_pre16_alt_total",
+      "selector": "$..calculations[?(@.templateCalculationId == 191)].value"
+    },
+    {
+      "name": "hn_totalbeforedeductions",
+      "selector": "$..fundingLines[?(@.templateLineId == 10)].value"
+    },
+    {
+      "_________________________comment": "Early Years Block"
+    },
+    {
+      "name": "eyf_3and4rate",
+      "selector": "$..calculations[?(@.templateCalculationId == 132)].value"
+    },
+    {
+      "name": "eyf_laHourlyRate3and4",
+      "selector": "$..calculations[?(@.templateCalculationId == 137)].value"
+    },
+    {
+      "name": "eyf_pte3and4",
+      "selector": "$..calculations[?(@.templateCalculationId == 133)].value"
+    },
+    {
+      "name": "eyf_hoursEntitled",
+      "value": "15"
+    },
+    {
+      "name": "eyf_weeksEntitled",
+      "value": "38"
+    },
+    {
+      "name": "eyf_pte3and4total",
+      "selector": "$..fundingLines[?(@.templateLineId == 130)].value"
+    },
+    {
+      "name": "eyf_pte15hours",
+      "selector": "$..calculations[?(@.templateCalculationId == 138)].value"
+    },
+    {
+      "name": "eyf_pte15hoursTotal",
+      "selector": "$..fundingLines[?(@.templateLineId == 135)].value"
+    },
+    {
+      "name": "eyf_laHourlyRate2",
+      "selector": "$..calculations[?(@.templateCalculationId == 142)].value"
+    },
+    {
+      "name": "eyf_2yearChildNumber",
+      "selector": "$..calculations[?(@.templateCalculationId == 143)].value"
+    },
+    {
+      "name": "eyf_2yearEntitilement",
+      "selector": "$..fundingLines[?(@.templateLineId == 140)].value"
+    },
+    {
+      "name": "eyf_pupilPremium",
+      "selector": "$..fundingLines[?(@.templateLineId == 145)].value"
+    },
+    {
+      "name": "eyf_disabilityFund",
+      "selector": "$..fundingLines[?(@.templateLineId == 155)].value"
+    },
+    {
+      "name": "eyf_nursery",
+      "selector": "$..fundingLines[?(@.templateLineId == 150)].value"
+    },
+    {
+      "name": "eyf_total",
+      "selector": "$..fundingLines[?(@.templateLineId == 9)].value"
+    },
+    {
+      "name": "eypp_hourlyRate",
+      "value": "0.68"
+    },
+    {
+      "name": "eyf_yearlyRateForDAF",
+      "value": "910"
+    },
+    {
+      "_________________________comment": "High Needs Show/Hide"
+    },
+    {
+      "name": "hasMainstreamDeductions",
+      "expression": "@hn_deductions_pre16_6k_1!=0|@hn_deductions_pre16_6k_2!=0|@hn_deductions_pre16_6k_total!=0|@hn_deductions_pre16_10k_1!=0|@hn_deductions_pre16_10k_2!=0|@hn_deductions_pre16_10k_total!=0|@hn_deductions_pre16_alt_1!=0|@hn_deductions_pre16_alt_2!=0|@hn_deductions_pre16_alt_total!=0|@hn_deductions_post16_1!=0|@hn_deductions_post16_2!=0|@hn_deductions_post16_total!=0"
+    },
+    {
+      "name": "hasSpecialAcademiesDeductions",
+      "expression": "@hn_deductions_special_pre16_1!=0|@hn_deductions_special_pre16_2!=0|@hn_deductions_special_pre16_total!=0|@hn_deductions_special_pre16_alt_1!=0|@hn_deductions_special_pre16_alt_2!=0|@hn_deductions_special_pre16_alt_total!=0|@hn_deductions_special_post16_alt_1!=0|@hn_deductions_special_post16_alt_2!=0|@hn_deductions_special_post16_alt_total!=0"
+    },
+    {
+      "name": "hasSpecialFreeSchoolsDeductions",
+      "expression": "@hn_deductions_specialfreeschools_pre16_1!=0|@hn_deductions_specialfreeschools_pre16_2!=0|@hn_deductions_specialfreeschools_pre16_total!=0|@hn_deductions_specialfreeschools_pre16_alt_1!=0|@hn_deductions_specialfreeschools_pre16_alt_2!=0|@hn_deductions_specialfreeschools_pre16_alt_total!=0|@hn_deductions_specialfreeschools_post16_alt_1!=0|@hn_deductions_specialfreeschools_post16_alt_2!=0|@hn_deductions_specialfreeschools_post16_alt_total!=0"
+    },
+    {
+      "name": "hasAPDeductions",
+      "expression": "@hn_deductions_alt_pre16_special_1!=0|@hn_deductions_alt_pre16_special_2!=0|@hn_deductions_alt_pre16_special_total!=0|@hn_deductions_alt_pre16_alt_1!=0|@hn_deductions_alt_pre16_alt_2!=0|@hn_deductions_alt_pre16_alt_total!=0|@hn_deductions_apspecialfreeschools_post16_alt_1!=0|@hn_deductions_apspecialfreeschools_post16_alt_2!=0|@hn_deductions_apspecialfreeschools_post16_alt_total!=0"
+    },
+    {
+      "name": "has1619Deductions",
+      "expression": "@hn_deductions_1619_1!=0|@hn_deductions_1619_2!=0|@hn_deductions_1619_total!=0"
+    },
+    {
+      "name": "hasHospitalDeductions",
+      "expression": "@hn_deductions_hospital_1!=0|@hn_deductions_hospital_2!=0|@hn_deductions_hospital_total!=0"
+    },
+    {
+      "name": "hasFEAndILPDeductions",
+      "expression": "@hn_deductions_fe_1!=0|@hn_deductions_fe_2!=0|@hn_deductions_fe_total!=0"
+    },
+    {
+      "_____________________Others": ""
+    },
+    {
+      "name": "IsAfterRecoupment",
+      "expression": "@PublicationUiModelVersion>1"
+    },
+    {
+      "name": "AfterRecoupmentOrDeductions",
+      "expression": "@IsAfterRecoupment=true",
+      "trueResponse": " after recoupment:",
+      "falseResponse": " after deductions:"
+    },
+    {
+      "name": "laProtectionIncrease",
+      "expression": "@schoolBlockLaProtectionCurrentFundingPerPupil>@schoolBlockLaProtectionPreviousFundingPerPupil"
+    },
+    {
+      "name": "UIModelVersion1234",
+      "expression": "@PublicationUiModelVersion=1|@PublicationUiModelVersion=2|@PublicationUiModelVersion=3|@PublicationUiModelVersion=4",
+      "trueResponse": "indicative",
+      "falseResponse": "initial"
+    },
+    {
+      "name": "_InitialIndicativeOrEmpty_FalseResponses",
+      "expression": "@PublicationUiModelVersion=9",
+      "trueResponse": "",
+      "falseResponse": "@UIModelVersion1234"
+    },
+    {
+      "name": "InitialIndicativeOrEmpty",
+      "expression": "@PublicationUiModelVersion=5|@PublicationUiModelVersion=6|@PublicationUiModelVersion=7|@PublicationUiModelVersion=8",
+      "trueResponse": "initial",
+      "falseResponse": "@_InitialIndicativeOrEmpty_FalseResponses"
+    },
+    {
+      "name": "FirstUsageCounter",
+      "value": 0
+    }
+  ]
+}

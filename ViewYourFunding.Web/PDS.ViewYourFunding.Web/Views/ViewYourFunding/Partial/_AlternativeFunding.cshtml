@@ -1,0 +1,23 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@* This is a quick dirty fix to a bug with the GOV.UK Design System's tabs component breaking the first details link within each section. The quick fix, is for me to apply this hidden details link. *@
+<details style="display: none;">
+    <summary>
+        <span class="summary"></span>
+    </summary>
+
+    <div class="panel panel-border-narrow">
+        <p></p>
+    </div>
+</details>
+<div class="form-group">
+    <details>
+        <summary>
+            <span name="alternativeFunding" class="summary">I'm looking for another funding type</span>
+        </summary>
+        <div id="details-content-1" class="panel panel-border-narrow">
+            <p>All users can view the funding types above. There are more funding types that only the organisation that receives them can view.</p>
+            @await Html.PartialAsync("Partial/_AlternativeFundingLinks",
+           new AlternativeFundingLinksViewModel { IsStartPage = false })
+        </div>
+    </details>
+</div>

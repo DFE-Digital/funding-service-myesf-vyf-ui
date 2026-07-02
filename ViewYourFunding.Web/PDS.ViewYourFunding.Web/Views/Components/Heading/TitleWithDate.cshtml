@@ -1,0 +1,21 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (string.IsNullOrEmpty(Model.Title))
+    {
+        var componentConfiguration = Model.ComponentConfiguration;
+        Model.Title = $"{componentConfiguration.ExpandedFundingStreamNameHtml} {componentConfiguration.Year1}" +
+            $" to {componentConfiguration.Year2}";
+    }
+}
+
+<h1 class="heading-xlarge">
+    @Html.Raw(@Model.Title)
+
+    <span class="heading-secondary">
+        This allocation: <span class="bold-medium">@Html.Raw(Model.GetValueString())</span>
+        @{ await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData); }
+    </span>
+</h1>

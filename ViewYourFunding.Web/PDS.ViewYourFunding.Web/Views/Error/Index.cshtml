@@ -1,0 +1,30 @@
+﻿@model PDS.ViewYourFunding.Web.Models.Error.ErrorPageViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/adminscreens.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/css/vyf-print.min.css" media="print" />
+    <link rel="stylesheet" href="~/css/vyf-screen.min.css" media="screen" />
+    <link rel="stylesheet" href="~/_content/Pds.Core.Web/css/screen.min.css" media="screen" />
+</head>
+<body>
+    <partial name="_LayoutGovUkHeader" />
+    <main role="main" id="content">
+        <partial name="_AccountHeader" />
+        <div class="grid-row">
+            <div class="column-full">
+                <partial name="_BreadCrumbs" />
+            </div>
+            <div class="column-two-thirds">
+                <partial name="@Model.ErrorPartialViewName" />
+            </div>
+        </div>
+    </main>
+    <partial name="_Footer" />
+</body>
+</html>

@@ -1,0 +1,15 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+    {
+        Model.Components.Add(new Models.Component(Model.ComponentConfiguration) { Type = ComponentType.Data_Size, Values = new List<object> { "large" } });
+    }
+    else
+    {
+        Model.Components.Add(new Models.Component(Model.ComponentConfiguration) { Type = ComponentType.Data_Size, Values = new List<object> { "medium" } });
+    }
+    await ComponentHelper.Render(Html, ComponentType.DesignComponents_FundingTotals, Model, Model.PageData);
+}

@@ -1,0 +1,96 @@
+{
+  "name": "LAREC provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "funding"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "title": "Recoupment from the dedicated schools grant (DSG) @year1 to @year2",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "L1",
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        },
+        {
+          "type": "General/Literal",
+          "value": "Published: @publicationdate-d_MMMM_yyyy "
+        },
+        {
+          "type": "Tag/LatestNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "classname": "govuk-!-padding-left-6",
+      "groups": [
+        {
+          "type": "Tabs/LinkWithValue",
+          "groups": [
+            {
+              "type": "General/StandardLink",
+              "title": "Recoupment calculations",
+              "value": "@laRecoupmentDetailsPathTabsrecoupment-calculations"
+            }
+          ]
+        },
+        {
+          "type": "Tabs/LinkWithValue",
+          "groups": [
+            {
+              "type": "General/StandardLink",
+              "title": "Anomalies",
+              "value": "@laRecoupmentDetailsPathTabsanomalies"
+            }
+          ]
+        },
+        {
+          "type": "Tabs/LinkWithValue",
+          "groups": [
+            {
+              "type": "General/StandardLink",
+              "title": "Phase totals",
+              "value": "@laRecoupmentDetailsPathTabsphase-totals"
+            }
+          ]
+        },
+        {
+          "type": "Block/RecoupmentHistory"
+        },
+        {
+          "type": "Heading/Small",
+          "classname": "heading-small heading-guidance",
+          "title": "Explore the topic"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/academies-and-dedicated-schools-grant-recoupment/academies-and-dedicated-schools-grant-2021-to-2022-calculation-of-recoupment",
+                  "title": "Calculation of recoupment (opens in new tab)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "name": "LAREC Spreadsheet",
+  "type": "spreadsheetWithMultiDataWorkSheet",
+  "classes": {
+    "secondlevelheadercell": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "widthInches": 1.2,
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "secondlevelheadercellwide": {
+      "style": {
+        "bold": true,
+        "alignment": "centered",
+        "widthInches": 2.5,
+        "borders": [
+          {
+            "edge": "LeftBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "RightBorder"
+          }
+        ]
+      }
+    },
+    "grey": {
+      "datastyle": {
+        "backgroundColor": [
+          0,
+          192,
+          192,
+          192
+        ]
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "recoupmentExternalReport",
+      "title": "2223_Recoupment_External_Report",
+      "autofilter": true,
+      "autoFilterStartRow": 3,
+      "dataset": [
+        {
+          "datasetName": "providerFunding",
+          "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information",
+          "limitedTo": "Dataset2_First_LaCode",
+          "orderByDescending": "DateOpened",
+          "thenBy": "OrganisationName",
+          "position": 2
+        },
+        {
+          "datasetName": "funding",
+          "expression": "GroupingReason=Information",
+          "groupingType": "LocalAuthority",
+          "position": 1
+        }
+      ],
+      "groups": [
+        {
+          "__comment": "By having no output at this level, there is basically an empty row",
+          "detail": [
+            {
+              "image": "Images\\ESFALogo.png",
+              "rowspan": 1,
+              "colspan": 2,
+              "style": {
+                "widthInches": 1.2,
+                "heightInches": 1.2
+              }
+            }
+          ],
+          "groups": [
+            {
+              "title": "Recoupment report for @currentMonth \n @localAuthorityName",
+              "colspan": 4,
+              "style": {
+                "wrap": true
+              },
+              "groups": [
+                {
+                  "title": "LAEstab",
+                  "selector": "$..organisationDfeNumber",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "dataType": "Number",
+                    "alignment": "left"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": "$..totalRecoupable",
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Provider name",
+                  "selector": "$..organisationName",
+                  "classname": "secondlevelheadercellwide",
+                  "datastyle": {
+                    "alignment": "left"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": "",
+                      "datastyle": {
+                        "borders": [
+                          {
+                            "edge": "Horizontal"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Phase of education",
+                  "selector": "C16",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "alignment": "left"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": "",
+                      "datastyle": {
+                        "borders": [
+                          {
+                            "edge": "Horizontal"
+                          }
+                        ],
+                        "backgroundColor": [
+                          0,
+                          192,
+                          192,
+                          192
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Opening date (from Get information about schools (GIAS))",
+                  "selector": "$..openingShortDateFormat",
+                  "classname": "secondlevelheadercell",
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": "",
+                      "datastyle": {
+                        "borders": [
+                          {
+                            "edge": "Horizontal"
+                          }
+                        ],
+                        "backgroundColor": [
+                          0,
+                          192,
+                          192,
+                          192
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Days open for in-year conversions",
+                  "selector": "$.inYearAcademyConversions",
+                  "HideForNotApplicableValues": "true",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "dataType": "Number",
+                    "backgroundColor": [
+                      0,
+                      192,
+                      192,
+                      192
+                    ]
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": "",
+                      "datastyle": {
+                        "backgroundColor": [
+                          0,
+                          192,
+                          192,
+                          192
+                        ],
+                        "borders": [
+                          {
+                            "edge": "Horizontal"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Post MFG budget (@britishCurrencySymbol)",
+                  "selector": "C6",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true,
+                        "borders": [
+                          {
+                            "edge": "LeftBorder"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Post dedelegation budget (@britishCurrencySymbol)",
+                  "selector": "C11",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Rates liability (@britishCurrencySymbol)",
+                  "selector": "C8",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  },
+                  "superScript": 1
+                },
+                {
+                  "title": "Positive anomaly (@britishCurrencySymbol)",
+                  "selector": "C3",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  },
+                  "superScript": 2
+                },
+                {
+                  "title": "Reason for positive anomaly",
+                  "selector": "C12",
+                  "showBlanksForNullOrZero": true,
+                  "classname": "secondlevelheadercellwide",
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": ""
+                    }
+                  }
+                },
+                {
+                  "title": "Negative anomaly (@britishCurrencySymbol)",
+                  "selector": "C5",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "dataType": "Number",
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  },
+                  "superScript": 3
+                },
+                {
+                  "title": "Reason for negative anomaly",
+                  "selector": "C13",
+                  "showBlanksForNullOrZero": true,
+                  "classname": "secondlevelheadercellwide",
+                  "overrides": {
+                    "LocalAuthority": {
+                      "selector": ""
+                    }
+                  }
+                },
+                {
+                  "title": "7 months dedelegation (@britishCurrencySymbol)",
+                  "selector": "C14",
+                  "classname": "secondlevelheadercellwide",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  },
+                  "superScript": 4
+                },
+                {
+                  "title": "Growth fund (@britishCurrencySymbol)",
+                  "selector": "C7",
+                  "classname": "secondlevelheadercell",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  },
+                  "superScript": 5
+                },
+                {
+                  "title": "Total recoupment (Pro rata for in-year conversions) (@britishCurrencySymbol)",
+                  "selector": "L1",
+                  "classname": "secondlevelheadercellwide",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  },
+                  "overrides": {
+                    "LocalAuthority": {
+                      "datastyle": {
+                        "bold": true
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "footer": [
+        "Notes",
+        " 1. Rates liability - this figure is taken from column BY ('22-23 NFF NNDR allocation') in the 'New ISB' tab of the APT.",
+        " 2. Positive anomaly - this is any adjustment to increase the recoupment amount in respect of an individual academy and will have previously been agreed with the local authority.",
+        " 3. Negative anomaly - this is any adjustment to decrease the recoupment amount in respect of an individual academy and will have previously been agreed with the local authority.",
+        " 4. 7 months dedelegation - this is 7/12ths of the total taken from column BU of the 'New ISB' tab of the APT. Where a recoupable academy opens during 2nd April to 1st September 2022, the local authority will be able to retain the de-delegated budget for the period April to August.",
+        " 5. Growth fund - where growth funding has been provided to an academy from September 2021, there is a requirement for the local authority to continue this payment until August 2022. To provide the authority with appropriate funding to continue these payments, the ESFA will make a recoupment adjustment using Column I of the 'Recoupment' tab of the APT."
+      ]
+    }
+  ]
+}

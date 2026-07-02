@@ -1,0 +1,34 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPaymentType.NextPaymentTypesIndexViewModel
+<h2 class="bold-medium">@Model.FundingStreamName - Next Payment Types</h2>
+
+<table class="touch-table">
+    <tr>
+        <th>Type Code</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var nextPaymentType in Model.NextPaymentTypes)
+    {
+        <tr>
+            <td>
+                @nextPaymentType.TypeCode
+            </td>
+            <td>
+                @nextPaymentType.Description
+            </td>
+            <td>
+                @Html.RouteLink("Edit",ViewYourFundingConstants.RouteName_AdminNextPaymentTypeAction, new { nextPaymentType.FundingStreamId, nextPaymentTypeId = nextPaymentType.Id, ActionMode = ActionMode.Edit }, new { })
+            </td>
+            <td>
+                @if (!nextPaymentType.IsNextPaymentTypeInUse)
+                {
+                    @Html.RouteLink("Delete",ViewYourFundingConstants.RouteName_AdminNextPaymentTypeAction, new { nextPaymentType.FundingStreamId, nextPaymentTypeId = nextPaymentType.Id, ActionMode = ActionMode.Delete }, new { })
+                }
+            </td>
+        </tr>
+    }
+</table>
+@Html.RouteLink("Add a Next Payment Type", ViewYourFundingConstants.RouteName_AdminNextPaymentTypeAction, new { Model.FundingStreamId, nextPaymentTypeId = 0, ActionMode = ActionMode.Add }, new { id = "add-next-payment-type-link" })

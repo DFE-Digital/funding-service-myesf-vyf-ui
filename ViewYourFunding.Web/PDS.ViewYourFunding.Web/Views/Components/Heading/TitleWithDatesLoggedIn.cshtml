@@ -1,0 +1,31 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    string DisplayText = string.Empty;
+    
+    if (Model.ComponentConfiguration.IsIndicativeFunding == true)
+    {
+        DisplayText = "Opening date:";
+    }
+    else
+    {
+        DisplayText = "Date opened:";
+    }
+    <h1 class="govuk-caption-m govuk-!-padding-top-8  govuk-!-margin-bottom-0">
+        This allocation: <span class="govuk-!-font-weight-bold">Published @Html.Raw(Model.ComponentConfiguration.StatusChangedDateUiFormatted).</span>
+        
+        @if (Model.ComponentConfiguration.InYearOpener == true)
+        {
+            @DisplayText <span class="govuk-!-font-weight-bold">@Html.Raw(Model.ComponentConfiguration.ProviderOpenDateddMMMMyyyy)</span>
+        }
+
+        @{
+            await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+        }
+    </h1>
+    <h1 class="govuk-heading-l">
+        @Html.Raw(@Model.Title)
+    </h1>
+}

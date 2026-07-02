@@ -1,0 +1,55 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.PdfGenerationActionsListViewModel
+
+<h1 class="govuk-heading-xl">Document Generation Actions List</h1>
+
+<table class="touch-table">
+    <tr>
+        <td>
+            Run Feed Reader
+        </td>
+        <td>
+            @Html.RouteLink("Proceed", ViewYourFundingConstants.RouteName_PdfGenerationActionsRunFeedReader)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Feed Reader Last Run Status
+        </td>
+        <td>
+            @Html.RouteLink("View status", ViewYourFundingConstants.RouteName_PdfGenerationActionsFeedReaderLastRun)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Run PDF Comparison
+        </td>
+        <td>
+            @Html.RouteLink("Proceed", ViewYourFundingConstants.RouteName_PdfGenerationActionsRunPdfComparison)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Generate Single Document
+        </td>
+        <td>
+            @Html.RouteLink("Proceed", ViewYourFundingConstants.RouteName_PdfGenerationActionsGenerateSinglePdf)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Generate Funding Reports
+        </td>
+        <td>
+            @Html.RouteLink("Proceed", ViewYourFundingConstants.RouteName_PdfGenerationActionsGenerateFundingReports)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ReRun Document Generation
+        </td>
+        <td>
+            @Html.RouteLink("Proceed", ViewYourFundingConstants.RouteName_PdfGenerationActionsRerunPdfGeneration)
+        </td>
+    </tr>
+</table>

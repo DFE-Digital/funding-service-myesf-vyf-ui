@@ -1,0 +1,49 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.DataTypeEdit.DateTimeTypeEdit
+
+<div class="form-horizontal">
+    <div class="form-group required">
+        <div class="group gds-datepicker">
+            @Html.ValidationMessageFor(model => model.Day, null, new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.Month, null, new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.Year, null, new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.Hour, null, new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.Minute, null, new { @class = "text-danger" })
+            <div class="form-group-day">
+                <label class="form-label">
+                    Day
+                    @Html.EditorFor(model => model.Day, new { htmlAttributes = new { @class = "form-control" } })
+                </label>
+            </div>
+            <div class="form-group-month">
+                <label class="form-label">
+                    Month
+                    @Html.EditorFor(model => model.Month, new { htmlAttributes = new { @class = "form-control" } })
+
+                </label>
+            </div>
+            <div class="form-group-year">
+                <label class="form-label">
+                    Year
+                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+                </label>
+            </div>
+            <div class="form-group-day">
+                <label class="form-label">
+                    Hour
+                    @Html.EditorFor(model => model.Hour, new {htmlAttributes = new {@class = "form-control"}})
+                </label>
+            </div>
+            <div class="form-group-month">
+                <label class="form-label">
+                    Minutes
+                    @Html.EditorFor(model => model.Minute, new {htmlAttributes = new {@class = "form-control"}})
+
+                </label>
+            </div>
+        </div>
+  
+        <div class="col-md-10">
+            @Html.ValidationMessageFor(model => model.Date, null, new { @class = "text-danger" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,328 @@
+{
+  "name": "GAG indicative provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=AcademyTrust&GroupingReason=Indicative"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "$..fundingLines[?(@.templateLineId == 718)].value",
+              "datastyle": {
+                "numberFormat": "GBCurrency"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "General/Literal",
+              "value": "Published: @statusChangedDateUiFormatted."
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@InYearOpener=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "value": " Opening date: @providerOpenDateddMMMMyyyy "
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "groups": [
+        {
+          "type": "Tabs/LinksToPage",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance",
+          "groups": [
+            {
+              "type": "Conditional/Condition",
+              "expression": "@IsMainstreamFreeSchool=false",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "Tabs/LinkWithValue",
+                      "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                      "visibilityCondition": "@FundingBasisIsPlace=false",
+                      "datastyle": {
+                        "numberFormat": "GBCurrency"
+                      },
+                      "groups": [
+                        {
+                          "type": "General/StandardLink",
+                          "title": "School budget share (excluding de-delegation)",
+                          "visibilityCondition": "@FundingBasisIsPlace=false",
+                          "class": "funding-block",
+                          "value": "@loggedInProviderFundingBreakdownPathTabsschool-budget-share"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Conditional/FalseOutput",
+                  "groups": [
+                    {
+                      "type": "Tabs/LinkWithValue",
+                      "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                      "visibilityCondition": "@FundingBasisIsPlace=false",
+                      "datastyle": {
+                        "numberFormat": "GBCurrency"
+                      },
+                      "groups": [
+                        {
+                          "type": "General/StandardLink",
+                          "title": "School budget share",
+                          "visibilityCondition": "@FundingBasisIsPlace=false",
+                          "class": "funding-block",
+                          "value": "@loggedInProviderFundingBreakdownPathTabsschool-budget-share"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Tabs/LinkWithValue",
+              "selector": "$..fundingLines[?(@.templateLineId == 297)].value",
+              "visibilityCondition": "@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=false",
+              "datastyle": {
+                "numberFormat": "GBCurrency"
+              },
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Minimum funding guarantee",
+                  "class": "funding-block",
+                  "value": "@loggedInProviderFundingBreakdownPathTabsminimum-funding-guarantee"
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@IsPost2425=false&@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "Tabs/LinkWithValue",
+                      "selector": "$..fundingLines[?(@.templateLineId == 300)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrency"
+                      },
+                      "groups": [
+                        {
+                          "type": "General/StandardLink",
+                          "title": "Protection funding",
+                          "class": "funding-block",
+                          "value": "@loggedInProviderFundingBreakdownPathTabsprotection-funding"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@ReceivesHighNeedsFunding=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "Tabs/LinkWithValue",
+                      "selector": "$..fundingLines[?(@.templateLineId == 299)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrency"
+                      },
+                      "groups": [
+                        {
+                          "type": "General/StandardLink",
+                          "title": "High needs",
+                          "class": "funding-block",
+                          "value": "@loggedInProviderFundingBreakdownPathTabshigh-needs"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Tabs/LinkWithValue",
+              "visibilityCondition": "@IsMainstreamAcademySponsored=true&@ReceivesSUGPOG=true",
+              "selector": "$..fundingLines[?(@.templateLineId == 298)].value",
+              "datastyle": {
+                "numberFormat": "GBCurrency"
+              },
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Start-up grant",
+                  "class": "funding-block",
+                  "value": "@loggedInProviderFundingBreakdownPathTabsstart-up-grant"
+                }
+              ]
+            },
+            {
+              "type": "Conditional/Condition",
+              "expression": "@ReceivesSUGPOG=true&@IsFreeSchool=true",
+              "groups": [
+                {
+                  "type": "Conditional/TrueOutput",
+                  "groups": [
+                    {
+                      "type": "Tabs/LinkWithValue",
+                      "selector": "$..fundingLines[?(@.templateLineId == 298)].value",
+                      "datastyle": {
+                        "numberFormat": "GBCurrency"
+                      },
+                      "groups": [
+                        {
+                          "type": "General/StandardLink",
+                          "title": "Post-opening grant",
+                          "class": "funding-block",
+                          "value": "@loggedInProviderFundingBreakdownPathTabspost-opening-grant"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Html/Div",
+          "classname": "funding-margin-bottom"
+        },
+        {
+          "type": "Block/AllocationHistory"
+        },
+        {
+            "type": "Heading/Small",
+            "classname": "heading-medium heading-guidance",
+            "title": "Explore the topic"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "Conditional/Condition",
+                  "expression": "@OpeningYear=@year2",
+                  "groups": [
+                    {
+                      "type": "Conditional/TrueOutput",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@shortFundingStreamNameHtml allocation guide: @year2 to @year3 (opens in new tab)",
+                          "value": "@openingYearGuidanceUrl"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Conditional/FalseOutput",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@shortFundingStreamNameHtml allocation guide: @year1 to @year2 (opens in new tab)",
+                          "value": "@fundingYearGuidanceUrl"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "totalPostOpeningGrant",
+      "selector": "$..fundingLines[?(@.templateLineId == 298)].value"
+    },
+    {
+      "name": "hasNullTotalPostOpeningGrant",
+      "expression": "@totalPostOpeningGrant=nullValue"
+    },
+    {
+      "name": "FundingBasis",
+      "selector": "$..calculations[?(@.templateCalculationId == 710)].value"
+    },
+    {
+      "name": "FundingBasisIsPlace",
+      "expression": "@FundingBasis=Place"
+    },
+    {
+      "name": "HighNeedsFunding",
+      "selector": "$..fundingLines[?(@.templateLineId == 299)].value"
+    },
+    {
+      "name": "ReceivesHighNeedsFunding",
+      "expression": "@HighNeedsFunding!=nullvalue&@HighNeedsFunding!=0"
+    },
+    {
+      "name": "ProtectionFunding",
+      "selector": "$..fundingLines[?(@.templateLineId == 300)].value"
+    },
+    {
+      "name": "ReceivesProtectionFunding",
+      "expression": "@ProtectionFunding!=nullvalue&@ProtectionFunding!=0"
+    },
+    {
+      "name": "ReceivesSUGPOG",
+      "expression": "@totalPostOpeningGrant!=nullvalue&@totalPostOpeningGrant!=0"
+    },
+    {
+      "name": "IsFreeSchool",
+      "expression": "@IsMainstreamFreeSchool=true|@IsSpecialFreeSchool=true"
+    },
+    {
+      "name": "IsPost2425",
+      "expression": "@year1>2024"
+    },
+    {
+      "name": "fundingYearGuidanceUrl",
+      "value": "https://www.gov.uk/government/publications/academies-general-annual-grant-allocation-guides-@year1-to-@year2/academy-general-annual-grant-allocation-guide-@year1-to-@year2-academic-year"
+    },
+    {
+      "name": "openingYearGuidanceUrl",
+      "value": "https://www.gov.uk/government/publications/academies-general-annual-grant-allocation-guides-@year2-to-@year3/academy-general-annual-grant-allocation-guide-@year2-to-@year3-academic-year"
+    }
+  ]
+}

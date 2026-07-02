@@ -1,0 +1,14 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@if (Model.Components?.Any() == true)
+{
+    var components = Model.Components.Where(component => component.Type != ComponentType.Data_Size
+        && component.Type != ComponentType.Data_Value);
+
+    foreach (var component in components)
+    {
+        await component.Render(Html, Model.PageData);
+    }
+}

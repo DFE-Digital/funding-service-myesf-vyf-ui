@@ -1,0 +1,17 @@
+﻿@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@using Pds.Core.Web.Models.Hyperlinks
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.LoggedInErrorPageViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+<h1 class="heading-xlarge">Sorry, there is a problem with the service</h1>
+<h1 class="heading-large">Please try again later</h1>
+<p class="lede">If the problem continues, you can @Html.Link(AnchorTagType.External, Model.ContactUsLink, "submit an enquiry")</p>
+
+@section vyfScripts {
+    @Html.PageScripts()
+}

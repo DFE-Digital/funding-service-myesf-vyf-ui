@@ -1,0 +1,51 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Web.Helpers
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (!Model.Components.Any(component => component.Type == ComponentType.Tabs_Tab
+        || component.Type == ComponentType.Conditional_Condition || component.Type == ComponentType.Conditional_Switch))
+    {
+        throw new Exception("No tab(s) (or conditionals) are included");
+    }
+
+    if (Model.Components.Any(component => component.Type != ComponentType.Tabs_Tab
+        && component.Type != ComponentType.Conditional_Condition && component.Type != ComponentType.Conditional_Switch))
+    {
+        throw new Exception("A component other than 'Tabs/Tab' or 'Conditional/Condition' was included as child");
+    }
+
+    if (Model.VisibleComponents().Any())
+    {
+        <div class="govuk-tabs clearfix" data-module="tabs">
+            <h3 class="govuk-tabs__title">Contents</h3>
+            <ul class="govuk-tabs__list">
+                @foreach (var component in Model.VisibleComponents())
+                {
+                    <li class="govuk-tabs__list-item">
+                        <a id="@component.Id-tab" class="govuk-tabs__tab govuk-tabs__tab--selected print-trigger" href="#@component.Id">@component.Title</a>
+                    </li>
+                }
+            </ul>
+
+            @foreach (var component in Model.VisibleComponents())
+            {
+                await component.Render(Html, Model.PageData);
+            }
+        </div>
+
+        @Html.Hidden("selectedTab", !string.IsNullOrEmpty(Model.ComponentConfiguration.InitialTab)
+            ? Model.ComponentConfiguration.InitialTab : Model.VisibleComponents().FirstOrDefault()?.Id)
+    }
+}
+
+@using (Html.BeginScripts())
+{
+    <environment names="Development">
+        <script src="~/Scripts/tabs.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-tabs.min.js"></script>
+    </environment>
+}

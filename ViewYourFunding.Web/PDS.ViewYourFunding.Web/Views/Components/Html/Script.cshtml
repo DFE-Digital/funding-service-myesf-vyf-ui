@@ -1,0 +1,23 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Web.Helpers
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    Model.SubType = "Script";
+
+    if (Model.Attributes == null)
+    {
+        Model.Attributes = new Dictionary<string, object>();
+    }
+
+    Model.Attributes.TryAdd("src", Model.GetTitleOrValue());
+    Model.Attributes.TryAdd("type", "text/javascript");
+
+    Model.ClearTitleAndValues();
+
+    using (Html.BeginScripts())
+    {
+        await ComponentHelper.Render(Html, ComponentType.Html_Element, Model, Model.PageData);
+    }
+}

@@ -1,0 +1,31 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var increaseDecrease = Model.VarianceValue > 0 ? "increase" : "decrease";
+    var caretClassName = Model.VarianceValue > 0 ? "fa-caret-up" : "fa-caret-down";
+    var varianceValue = !string.IsNullOrWhiteSpace(Model.VarianceValueFormatted)
+        ? Model.VarianceValueFormatted : Model.VarianceValue.ToString();
+}
+@{
+    string varianceClass = Model.Type == PDS.ViewYourFunding.Services.Enums.ComponentType.Total_GrandTotal ? "variance-text-grandtotal" : "variance-summary-text";
+}
+@if (Model.VarianceValue != 0)
+{
+    string style = @increaseDecrease == "increase" ? "#00703c" : "#d4351c";
+    string rotationstyle = @increaseDecrease == "decrease" ? "transform: rotate(180deg);" : null;
+    string inceasetooltip = @increaseDecrease == "increase" ? "Increased by" : "Decreased by";
+    <span class=@varianceClass style="float: inline-end">
+        @* <i class="fas @caretClassName fa-lg @increaseDecrease" title="@increaseDecrease" aria-hidden="true"></i>*@
+            <svg class="app-c-back-to-top__icon" style="@rotationstyle">
+                <path fill=@style d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>
+       
+        @if (!Model.HideVarianceValue)
+        {
+                <span id="varianceSpan" style="color:@style">@varianceValue</span>
+        }
+        <div class="tooltip">
+            <span class="tooltiptext">@inceasetooltip</span>
+        </div>
+    </span>
+}

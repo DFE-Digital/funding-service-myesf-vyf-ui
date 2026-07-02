@@ -1,0 +1,38 @@
+@model PDS.ViewYourFunding.Services.Models.SearchResultsFilter
+<fieldset class="filter" data-filterKey="@Model.Key">
+    <legend class="visuallyhidden">Filter by @Model.Title</legend>
+    <div class="js-filter-collapsible-collections @(Model.Key)Filter">
+        <section id="@Model.Key-link-filter" class="js-filter-collapsible js-open">
+            <input type="hidden" name="queryFilterOpen@(Model.Key)Link" id="queryFilterOpen@(Model.Key)Link" aria-expanded="true" aria-controls="filter-by-@Model.Key-link" value="true">
+            <a href="#" id="filter-keyboard-@Model.Key-link" class="filter-keyboard" type="button" aria-expanded="true" aria-controls="filter-by-@Model.Key-link">
+                <header id="@Model.Key-link" class="js-filter-collapsible-header">
+                    <h2 class="filters-headings heading-small">Filter by @Model.Title</h2>
+                </header>
+            </a>
+            @if (Model.SearchEnabled)
+            {
+                <div class="search-field-wrap" aria-hidden="false" style="display: none">
+                    <label class="filter-searchwithin-label">
+                        <span class="visuallyhidden">Search within this filter</span>
+                        <input type="text" class="filter-search"><button class="field-clear hidden">
+                            <span class="visuallyhidden">Clear</span>
+                        </button>
+                    </label>
+                </div>
+            }
+            <div id="filter-by-@Model.Key-link" class="js-filter-collapsible-content" aria-labelledby="@Model.Key-link">
+                <section class="toggled-adult-funding-content group">
+                    <ul>
+                        @if (Model.Values != null)
+                        {
+                            foreach (var searchFilterValue in Model.Values.OrderBy(x => x.Title))
+                            {
+                                await Html.RenderPartialAsync("Partial/_SearchFilterValue", searchFilterValue);
+                            }
+                        }
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </div>
+</fieldset>

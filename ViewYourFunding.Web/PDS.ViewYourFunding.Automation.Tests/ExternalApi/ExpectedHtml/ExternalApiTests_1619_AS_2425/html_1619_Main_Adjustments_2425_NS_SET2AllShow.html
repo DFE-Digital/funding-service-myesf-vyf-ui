@@ -1,0 +1,516 @@
+<html><head></head><body><div style='float: left; width: 170px; margin-left: 5px; margin-top: -5px; height: 150px;'>   <img style='height: 75px' src='data:image/jpeg;base64,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' /><br /><br /></div><h2>16 to 19 revenue funding allocation statement: 2024 to 2025</h2><span style='font-size: 10px;'>Please download our <a href='https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2024-to-2025'>supporting guides</a> to help you understand your revenue funding allocation statement.</span><br><br>
+<table class="styleTable bold left" style="width: 73%; text-align: center !important; border: 2px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="width: 20%;">Name</td><td>Truro and Penwith College</td></tr>
+<tr>
+<td>UKPRN</td><td>10007063</td></tr>
+<tr>
+<td>Local authority</td><td>Cornwall</td></tr></tbody></table><br>
+<table class="styleTable" style="width: 100%; border: 2px solid #000;">
+
+
+<thead>
+    <tr>
+<th colspan="2" scope="col">Summary of 2024 to 2025 funding allocation</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="width: 50%;">Core programme funding</td><td style="width: 50%;" class="right">&pound;15,037,730</td></tr>
+<tr>
+<td>Condition of funding adjustment</td><td class="right">&pound;25,005</td></tr>
+<tr>
+<td>Advanced maths premium</td><td class="right">&pound;12,301</td></tr>
+<tr>
+<td>Core maths premium</td><td class="right">&pound;200,526</td></tr>
+<tr>
+<td>High value courses premium</td><td class="right">&pound;90,600</td></tr>
+<tr>
+<td>T Level industry placements</td><td class="right">&pound;13,200</td></tr>
+<tr>
+<td>Care standards</td><td class="right">&pound;0</td></tr>
+<tr>
+<td style="width: 50%;">High needs student</td><td style="width: 50%;" class="right">&pound;1,236,000</td></tr>
+<tr>
+<td style="width: 50%;">Student financial support</td><td style="width: 50%;" class="right">&pound;470,678</td></tr>
+<tr>
+<td style="width: 50%;">Further Education Teachers' Pension Scheme Employer Contribution Grant</td><td style="width: 50%;" class="right">&pound;70,303</td></tr>
+<tr class="greyBold">
+<td style="font-weight: bold">Total funding allocation</td><td class="right">&pound;17,516,867</td></tr></tbody></table><div style='font-weight: bold; font-size: 14px; margin-top: 5px'>Core programme funding</div>
+<table id="formulaTables" class="">
+
+
+<tbody>
+
+<tr>
+<td><img style='height: 200px' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAF/CAIAAAAQCqQSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAADiSURBVGhD7dsxioQwGEDhmGJBEYLiDQIeYgsL72XvmfZyrsuEhYfjzJTj8L5Kfh6SvwuCYXvmr1iW5ftcWNc1pRQe6LquPJ35L35OlKKqqtu5jizoo4phGPYixlgGBxfaxQIsyIIsyIIsyIIsyIIsyIIsyIIsyIIsyIIsyIIsKOSc67pOKZXBwYV2sQALsiALsiALsqDQ9/1FTmoBFmRBFmRBFmRBb1OM49i27X5PKYODC+1iARZkQRb0UUXOuWkav1oXFvRmxe7rRJimKcZ4i+7b3zPPc+nvee2/k8eeFdv2C7C2ttUtLoinAAAAAElFTkSuQmCC' /></td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">Student&nbsp;<br>numbers&nbsp;for<br>2024 to 2025</td></tr>
+<tr>
+<td style="font-size: 11px; height: 51px;">See&nbsp;student&nbsp;numbers<br>table<br><br></td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">2,584</td></tr>
+<tr class="greyBold">
+<td style="height: 25px;">&nbsp;</td></tr></tbody></table></td><td style="font-size: 16px;" class="bold">X</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">National funding<br>rate per student<br>(dependent on<br>band)</td></tr>
+<tr>
+<td style="font-size: 11px; height: 51px;">See&nbsp;breakdown&nbsp;of<br>funding&nbsp;by&nbsp;band&nbsp;table<br><br></td></tr>
+<tr class="greyBold">
+<td style="height: 25px;"></td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;11,501,043</td></tr></tbody></table></td><td style="font-size: 16px;" class="bold">X</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">Retention&nbsp;factor</td></tr>
+<tr>
+<td style="text-align: right; height: 51px;">0.95570</td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">-&pound;509,496</td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">&pound;10,991,547</td></tr></tbody></table></td><td style="font-size: 16px;" class="bold">X</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">Programme&nbsp;cost<br>weighting</td></tr>
+<tr>
+<td style="text-align: right; height: 51px;">1.21187</td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">&pound;2,328,779</td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;13,320,326</td></tr></tbody></table></td><td style="font-size: 24px;" class="bold">+</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">English and maths<br>funding</td></tr>
+<tr>
+<td style="font-size: 11px; height: 51px;">See&nbsp;English&nbsp;and&nbsp;maths<br>funding&nbsp;table<br><br></td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">&pound;880,509</td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;134,382</td></tr></tbody></table></td><td style="font-size: 24px;" class="bold">+</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">Disadvantage<br>funding</td></tr>
+<tr>
+<td style="font-size: 11px; height: 51px;">See&nbsp;distribution&nbsp;of<br>disadvantage&nbsp;funding<br>table<br><br></td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">&pound;1,626,231</td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;15,037,730</td></tr></tbody></table></td><td style="font-size: 24px;" class="bold">+</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">Large<br>programme<br>funding</td></tr>
+<tr>
+<td style="font-size: 11px; height: 51px;">See&nbsp;large<br>programmes&nbsp;uplift<br>table<br><br></td></tr>
+<tr>
+<td style="text-align: right; height: 25px;">&pound;0</td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;15,037,730</td></tr></tbody></table></td><td><img style='height: 200px' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAF/CAIAAAAQCqQSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAEKSURBVGhD7dvNaoQwGEZhoyAoEongzYgrBS/MldfkpQliv6GhcJimsyjUMrzPIpiZg2Qgi8Efd11X9iM3DEM8fDLP87qucfKttm23bYuTlBCC2/c9zmhZFhsfRWqleZ7bV1bk8YM0FfQGhXPOxqIoksXnvjnP8+aVflFBKkgFqSAVpIJUkApSQSpIBakgFaSCVJAKUkEqSAWpoGThva+qqus63SsgFaSCVJAKUkEq6G0K59yLwv4+/IuVGhWkglSQClJBKkgF3VyEEJqm6fteVzdIBakgFaSCbi6893Vd66r1ExX0N4UryzIe0nEcNtoufDxwn2JbdRzHzM6RMk2TbebX7538/rdk2QcWtDy+yWdeMAAAAABJRU5ErkJggg==' /></td><td style="font-size: 16px;" class="bold">X</td><td>
+<table class="styleTable" style="width: 115px; border: 1px solid #000;">
+
+
+<tbody>
+
+<tr>
+<td style="text-align: center; height: 85px">Area&nbsp;cost<br>allowance</td></tr>
+<tr>
+<td style="text-align: right; height: 51px;">1.00000</td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;0</td></tr>
+<tr>
+<td style="text-align: right; height: 25px">&pound;15,037,730</td></tr></tbody></table></td></tr></tbody></table><div style="page-break-before: always"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="3" scope="col">Student numbers</th>    </tr>
+</thead>
+<tbody>
+
+<tr style="width: 100%;">
+<td colspan="2" style="width: 80%">2023 to 2024 ILR R06 students</td><td style="width: 20%; text-align: right">2,584</td></tr>
+<tr>
+<td colspan="2">Exceptional variations to lagged student number</td><td style="width: 15%; text-align: right">0</td></tr>
+<tr class="greyBold">
+<td colspan="2" class="bold">Total student numbers for 2024 to 2025</td><td style="width: 20%; text-align: right">2,584</td></tr>
+<tr style="width: 100%;">
+<td style="width: 65%;">Student number methodology used</td><td colspan="2" style="width: 35%;">2023 to 2024 R06 return</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="7" scope="col">Breakdown of funding by band</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td colspan="2" style="width: 30%">Funding band<br><br></td><td>Student&nbsp;numbers<br>2022 to 2023</td><td>Proportions&nbsp;used&nbsp;in<br>2024 to 2025 allocation</td><td>Number&nbsp;of&nbsp;students<br>allocated in 2024 to 2025</td><td>National&nbsp;funding&nbsp;rate</td><td style="width: 20%">Student&nbsp;funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 9</td><td class="greyBold"></td><td class="greyBold"></td><td>0</td><td>&pound;7,523</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 8</td><td class="greyBold"></td><td class="greyBold"></td><td>0</td><td>&pound;6,897</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 7</td><td class="greyBold"></td><td class="greyBold"></td><td>20</td><td>&pound;6,272</td><td>&pound;125,440</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 6</td><td class="greyBold"></td><td class="greyBold"></td><td>28</td><td>&pound;5,438</td><td>&pound;152,264</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="2" class="bold">Total T Level bands</td><td></td><td></td><td>48</td><td></td><td>&pound;277,704</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 5</td><td>1,811</td><td>70.99%</td><td>1,786</td><td>&pound;4,753</td><td>&pound;8,490,889</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 4 (Sum of bands 4a and 4b)</td><td>609</td><td>23.87%</td><td>617</td><td>&pound;3,932</td><td>&pound;2,425,565</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 4a</td><td>483</td><td>18.93%</td><td colspan="3" class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 4b</td><td>126</td><td>4.94%</td><td colspan="3" class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 3</td><td>53</td><td>2.08%</td><td>54</td><td>&pound;3,198</td><td>&pound;171,687</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 2</td><td>24</td><td>0.94%</td><td>24</td><td>&pound;2,528</td><td>&pound;61,457</td></tr>
+<tr class="columns3OnwardsRightAlign">
+<td rowspan="2">Band 1</td><td>Students</td><td>54</td><td>2.12%</td><td>55</td><td colspan="2" class="greyBold"></td></tr>
+<tr class="columns3OnwardsRightAlign">
+<td>FTEs</td><td class="right">15.32</td><td class="greyBold"></td><td>15.51</td><td>&pound;4,753</td><td>&pound;73,742</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="2" class="bold">Total mainstream bands</td><td>2,551</td><td>100%</td><td>2,536</td><td></td><td>&pound;11,223,339</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="2" class="bold">Total student funding</td><td></td><td></td><td>2,584</td><td></td><td>&pound;11,501,043</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+<caption class="">Level 3 programme maths and English payment</caption>
+
+
+<thead class="whiteBackground">
+    <tr>
+<th style="width: 42%;" scope="col"></th><th style="width: 14%;" scope="col">Instances per student</th><th style="width: 14%;" scope="col">Number of instances</th><th style="width: 10%;" scope="col">Rate</th><th style="width: 20%;" scope="col">Funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr class="columns2OnwardsRightAlign">
+<td>Level 3 programme maths and English payment - 1 year programme</td><td>0.07605</td><td>196.51</td><td>&pound;375</td><td>&pound;73,692</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Level 3 programme maths and English payment - 2 year programme</td><td>0.00902</td><td>23.31</td><td>&pound;750</td><td>&pound;17,481</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="4" class="bold">Level 3 programme maths and English payment funding total</td><td>&pound;91,173</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="5" scope="col">English and maths funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td colspan="4" rowspan="2" style="width: 80%;">Total funded instances per student</td><td>Instances per Student</td></tr>
+<tr class="column1OnwardsRightAlign">
+<td>10,523.00000</td></tr>
+<tr>
+<td colspan="3" style="width: 55%;" class="right">Number of instances in each band</td><td>Rate</td><td>Funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Total funded instances</td><td>50,522.00</td><td colspan="2" class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Students attracting the higher rate (bands 4 to 9)</td><td>90,517.00</td><td>&pound;50,518</td><td>&pound;410,512</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Students attracting the lower rate (bands 2 and 3)</td><td>10,520.00</td><td>&pound;30,521</td><td>&pound;300,510</td></tr>
+<tr class="columns3OnwardsRightAlign">
+<td rowspan="2" style="width: 25%;">Students attracting the FTE rate<br>(Band 1)</td><td style="width: 10%;">Students</td><td>70,513.00</td><td colspan="2" class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>FTEs</td><td>80,515.00</td><td>&pound;50,518</td><td>&pound;420,512</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="4" class="bold">Total English and maths funding</td><td>&pound;880,509</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="5" scope="col">Distribution of disadvantage funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td colspan="5" style="font-weight: bold">Disadvantage block 1</td></tr>
+<tr style="width: 100%;">
+<td colspan="2" rowspan="2">Economic deprivation funding</td><td>Block 1 factor</td><td>Funding including programme costs</td><td style="width: 20%;">Block 1 funding</td></tr>
+<tr class="column1OnwardsRightAlign">
+<td>1.02787</td><td>&pound;13,411,499</td><td>&pound;373,778</td></tr>
+<tr>
+<td colspan="2" rowspan="2">Care leavers</td><td>Number of qualifying students</td><td>Rate per qualifying student</td><td>Care leaver funding</td></tr>
+<tr class="column1OnwardsRightAlign">
+<td>102</td><td>&pound;559</td><td>&pound;57,018</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="4" class="bold">Total block 1 funding</td><td>&pound;430,796</td></tr>
+<tr>
+<td colspan="5" style="font-weight: bold">Disadvantage block 2</td></tr>
+<tr>
+<td colspan="4" rowspan="2">Total instances attracting funding per student</td><td>Instances per Student</td></tr>
+<tr class="column1OnwardsRightAlign">
+<td>0.84477</td></tr>
+<tr>
+<td colspan="3" class="right">Number of instances in each band</td><td>Block 2 funding rates</td><td>Block 2 funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Total funded instances</td><td>2,182.89</td><td colspan="2" class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Students attracting the higher rate (bands 4 and 5)</td><td>2,030.24</td><td>&pound;559</td><td>&pound;1,134,904</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Students attracting the lower rate (bands 2 and 3)</td><td>65.89</td><td>&pound;341</td><td>&pound;22,468</td></tr>
+<tr class="columns3OnwardsRightAlign">
+<td rowspan="2">Students attracting the FTE rate<br>(Band 1)</td><td>Students</td><td>46.21</td><td colspan="2" class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>FTEs</td><td>13.11</td><td>&pound;559</td><td>&pound;7,326</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Students attracting the T level rate</td><td>40.55</td><td>&pound;758</td><td>&pound;30,736</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="4" class="bold">Total block 2 funding including T Levels</td><td>&pound;1,195,435</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="4">Minimum top up if applicable</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="4" class="bold">Total disadvantage funding (sum of block 1, block 2 and minimum top up)</td><td>&pound;1,626,231</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="4" scope="col">Large programme uplift (based on 2021 to 2022 students)</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="width: 40%;"></td><td style="width: 15%;">Students meeting large programme uplift criteria</td><td style="width: 25%;">Funding uplift per student per year</td><td style="width: 20%;">Total large programme uplift (2 years)</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Large programme uplift at 20% of national rate</td><td>0</td><td>&pound;951</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Large programme uplift at 10% of national rate</td><td>0</td><td>&pound;475</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td class="bold">Total large programme funding</td><td>0</td><td></td><td>&pound;0</td></tr></tbody></table><div style="page-break-before: always"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="7" scope="col">Condition of funding (CoF)</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td colspan="2" style="width: 25%">Funding band<br><br></td><td>National funding rate<br>in 2022 to 2023</td><td>Total students <br> (2022 to 2023 R14)</td><td>National funding rate<br>applied to total students <br>(2022 to 2023 R14)</td><td>Students not meeting<br>CoF (2022 to 2023 R14)</td><td style="width: 20%">National funding rate applied to<br>CoF non-compliant students</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 9</td><td>&pound;6,534</td><td>9</td><td>&pound;58,806</td><td>4</td><td>&pound;26,136</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 8</td><td>&pound;5,991</td><td>8</td><td>&pound;47,928</td><td>3</td><td>&pound;17,973</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 7</td><td>&pound;5,448</td><td>7</td><td>&pound;38,136</td><td>2</td><td>&pound;10,896</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">T Level band 6</td><td>&pound;4,723</td><td>6</td><td>&pound;28,338</td><td>1</td><td>&pound;4,723</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 5</td><td>&pound;4,188</td><td>1,811</td><td>&pound;7,584,468</td><td>33</td><td>&pound;138,204</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 4</td><td>&pound;3,455</td><td>557</td><td>&pound;1,924,435</td><td>21</td><td>&pound;72,555</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 3</td><td>&pound;2,827</td><td>53</td><td>&pound;149,831</td><td>6</td><td>&pound;16,962</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Band 2</td><td>&pound;2,234</td><td>24</td><td>&pound;53,616</td><td>7</td><td>&pound;15,638</td></tr>
+<tr class="columns3OnwardsRightAlign">
+<td rowspan="2" style="width: 20%">Band 1</td><td>Students</td><td class="greyBold"></td><td>50</td><td class="greyBold"></td><td>7</td><td class="greyBold"></td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>FTEs</td><td>&pound;4,188</td><td>14.85</td><td>&pound;62,171</td><td>2.39</td><td>&pound;10,009</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="3" class="bold">Total</td><td>2,525</td><td>&pound;9,947,729</td><td>84</td><td>&pound;313,096</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="6">5% of national rate funding for total 2022 to 2023 R14 students</td><td>&pound;497,386</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="6">Funding for non-compliant students less 5% of funding</td><td>&pound;0</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="6" class="bold">Final condition of funding adjustment (at 50% of the per student funding rate)</td><td>&pound;25,005</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+<caption class="">Advanced maths premium</caption>
+
+
+<thead class="whiteBackground top">
+    <tr>
+<th style="width: 24%;" scope="col"></th><th style="width: 13%;" scope="col">Baseline students</th><th style="width: 14%;" scope="col">Eligible students</th><th style="width: 14%;" scope="col">Eligible minus<br>baseline</th><th style="width: 15%;" scope="col">Rate</th><th style="width: 20%;" scope="col">Funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr class="columns2OnwardsRightAlign">
+<td>Advanced maths premium funding</td><td>15</td><td>0</td><td>0</td><td>&pound;600</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="5">Adjusted 2022 to 2023 advanced maths premium funding</td><td>&pound;70,524</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="5">Advanced maths premium transition funding</td><td>&pound;30,525</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="5" class="bold">Advanced maths premium total</td><td class="bold">&pound;12,301</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+<caption class="">Core maths premium</caption>
+
+
+<thead class="whiteBackground">
+    <tr>
+<th style="width: 51%;" scope="col"></th><th style="width: 14%;" scope="col">Eligible students</th><th style="width: 15%;" scope="col">Rate</th><th style="width: 20%;" scope="col">Funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr class="columns2OnwardsRightAlign">
+<td>Core maths premium</td><td>60,528</td><td>&pound;80,529</td><td>&pound;20,527</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="3">Core maths premium adjustment by exception</td><td>&pound;90,530</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="3">Core maths premium audit adjustment</td><td>&pound;20,531</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="3" class="bold">Core maths premium total</td><td class="bold">&pound;200,526</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+<caption class="">High value courses premium</caption>
+
+
+<thead class="whiteBackground">
+    <tr>
+<th style="width: 51%;" scope="col"></th><th style="width: 14%;" scope="col">Qualifying students</th><th style="width: 15%;" scope="col">Rate</th><th style="width: 20%;" scope="col">Funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr class="columns2OnwardsRightAlign">
+<td>High value courses premium funding</td><td>151</td><td>&pound;600</td><td class="bold">&pound;90,600</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="4" scope="col">T Level industry placements funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="width: 51%;"></td><td style="width: 14%;">Number of funded <br>T Level students</td><td style="width: 15%;">Rate</td><td style="width: 20%;">Funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>T Level industry placements funding</td><td>48</td><td>&pound;275</td><td>&pound;13,200</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="3" class="bold">T Level industry placements funding total</td><td>&pound;13,200</td></tr></tbody></table><div style="page-break-before: always"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="4" scope="col">Care standards funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td></td><td>Eligible students</td><td style="width: 15%;">Rate</td><td style="width: 20%;" class="right">Funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Care standards student funding</td><td>0</td><td>&pound;817</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="3">Care standards institution lump sum funding</td><td>&pound;0</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<td colspan="3" class="bold">Total care standards funding</td><td>&pound;0</td></tr></tbody></table><div class="smallBr"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="6" scope="col">High needs funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="width: 20%"></td><td style="width: 15%">16 to 19 students</td><td style="width: 15%">19 to 24 students</td><td style="width: 15%">Total students</td><td style="width: 15%">Rate</td><td style="width: 20%">Funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>High needs element 2</td><td>115</td><td>91</td><td>206</td><td>&pound;6,000</td><td style="font-weight: bold">&pound;1,236,000</td></tr></tbody></table><div style="page-break-before: always"></div>
+<table class="styleTable" style="width: 100%;">
+
+
+<thead>
+    <tr>
+<th colspan="6" scope="col">Student financial support funding</th>    </tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="width: 20%"></td><td style="width: 15%">Number of funded students</td><td style="width: 15%">Instances per student</td><td style="width: 15%">Number of instances</td><td style="width: 15%">Rate</td><td style="width: 20%">Funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Element 1: Financial disadvantage</td><td>2,584</td><td>0.16927</td><td>437.39</td><td>&pound;284</td><td>&pound;124,220</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Element 2a: Student costs - travel</td><td>2,584</td><td>0.12801</td><td>330.78</td><td>&pound;542</td><td>&pound;179,282</td></tr>
+<tr>
+<td></td><td>Number of funded T Level students</td><td>Proportion of students from 60% most deprived areas</td><td>Number of instances</td><td>Rate</td><td>Funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Element 2b: Student costs - T Level industry placements</td><td>48</td><td>61.00%</td><td>29</td><td>&pound;51</td><td>&pound;1,493</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="5">Bursary adjustment in respect of free meals</td><td>-&pound;53,553</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="5" class="bold">Discretionary bursary fund sub-total</td><td>&pound;251,442</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="5">Bursary adjustment by exception</td><td>&pound;0</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="5" class="bold">Discretionary bursary fund total</td><td>&pound;251,442</td></tr>
+<tr style="height: 50px">
+<td colspan="2" style="font-weight: bold"></td><td style="vertical-align: bottom">Total students</td><td style="vertical-align: bottom">Free meals<br>students</td><td style="vertical-align: bottom">Proportion of students<br>on free meals</td><td style="vertical-align: bottom">Total students in 2024 to 2025 funded for free meals</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Free meals students</td><td>2,551</td><td>564</td><td>22.11%</td><td>571.30</td></tr>
+<tr>
+<td colspan="3"></td><td>Free meals students</td><td style="vertical-align: bottom">Free meals rates</td><td style="vertical-align: bottom">Free meals funding</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Free meals higher rate</td><td class="greyBold"></td><td>541.96</td><td>&pound;376</td><td>&pound;203,776</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Free meals lower rate</td><td class="greyBold"></td><td>17.24</td><td>&pound;186</td><td>&pound;3,207</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="2">Free meals FTE rate </td><td class="greyBold"></td><td>3.43</td><td>&pound;376</td><td>&pound;1,290</td></tr>
+<tr class="greyBold columns2OnwardsRightAlign">
+<th colspan="5" style="text-align: left;" scope="row">Free meals sub-total</th><td>&pound;208,274</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td>Free meals administration</td><td colspan="4" class="greyBold"></td><td>&pound;10,962</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="5" class="bold">Total free meals funding</td><td>&pound;219,236</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="5" class="bold">Total student support funding</td><td>&pound;470,678</td></tr></tbody></table><div class="smallBr"></div><div style="page-break-before: always"></div>
+<table class="styleTable" style="width: 100%;">
+<caption class="">Further Education Teachers' Pension Scheme Employer Contribution Grant (FE TPSECG)</caption>
+
+
+<thead class="whiteBackground">
+    <tr>
+<th style="width: 20%;" scope="col"></th><th style="vertical-align: top; width: 15%;" scope="col">2022 to 2023 financial year annual payments reduced to 16.4% for the full year</th><th style="vertical-align: top; width: 15%;" scope="col">Payments made to Capita for TPS, financial year 2022 to 2023 at 23.6% for the full year</th><th style="vertical-align: top; width: 15%;" scope="col">5.9% uplift for 2023 to 2024</th><th style="vertical-align: top; width: 15%;" scope="col">4.2% uplift for 2024 to 2025</th><th style="vertical-align: top; width: 20%;" scope="col">Revised annual cost</th>    </tr>
+</thead>
+<tbody>
+
+<tr class="columns2OnwardsRightAlign">
+<td>Funding</td><td>&pound;1,137,308</td><td>&pound;1,636,613</td><td>&pound;96,560</td><td>&pound;72,793</td><td>&pound;1,805,967</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="5">FE TPSECG (difference between payments at 16.4% and the revised annual cost)</td><td>&pound;60,339</td></tr>
+<tr class="columns2OnwardsRightAlign">
+<td colspan="5">FE TPSECG adjustment by exception</td><td>-&pound;40,452</td></tr>
+<tr class="columns2OnwardsRightAlign greyBold">
+<td colspan="5" style="font-weight: bold">FE TPSECG Total</td><td>&pound;70,303</td></tr></tbody></table><div style='font-size: 10px; margin-top: 5px'>The values on your statement are shown rounded to various numbers of decimal places.<br> The calculation of your funding however is done using un-rounded values. This may result in some slight differences when you work through the calculation yourselves.</div><style>body { font-family: Arial; } h2 { font-size: 20px; font-weight: normal; } h3 { font-size: 16px; margin: 20px 0; } table td, table th, table caption { font-size: 13px; padding: 3px; } #formulaTables th, #formulaTables td { padding: 1px; } table.styleTable caption, table.styleTable thead th, .greyBold, .greyBold td { text-align: left; font-weight: bold; } .greyBold > td:nth-child(1) { font-weight: normal; } table.styleTable { border-collapse: collapse; } table.styleTable tbody td, .top { vertical-align: top; } table.styleTable, table.styleTable th, table.styleTable td { border: 2px solid #000; } table.styleTable thead th, .greyBold, table caption { background-color: #CCC; } .noStyle, .noStyle * { background-color: #FFF !important; } .noBold, .noBold * { font-weight: normal !important; } .bold, .bold * { font-weight: bold !important; } .center, .center * { text-align: center !important; } .right, .right * { text-align: right !important; }.left, .left * { text-align: left !important; } #page2FirstTable td { width: 25%; } table caption { border: 2px solid #000; border-bottom: 0; } .whiteBackground td, .whiteBackground th { background-color: #FFF !important; font-weight: normal !important; } .column1OnwardsRightAlign > td:nth-child(1), .column1OnwardsRightAlign > td:nth-child(2), .column1OnwardsRightAlign > td:nth-child(3), .column1OnwardsRightAlign > td:nth-child(4), .column1OnwardsRightAlign > td:nth-child(5), .column1OnwardsRightAlign > td:nth-child(6), .column1OnwardsRightAlign > td:nth-child(7) { text-align: right }.columns2OnwardsRightAlign > td:nth-child(2), .columns2OnwardsRightAlign > td:nth-child(3), .columns2OnwardsRightAlign > td:nth-child(4), .columns2OnwardsRightAlign > td:nth-child(5), .columns2OnwardsRightAlign > td:nth-child(6), .columns2OnwardsRightAlign > td:nth-child(7) { text-align: right }.columns3OnwardsRightAlign > td:nth-child(3), .columns3OnwardsRightAlign > td:nth-child(4), .columns3OnwardsRightAlign > td:nth-child(5), .columns3OnwardsRightAlign > td:nth-child(6), .columns3OnwardsRightAlign > td:nth-child(7) { text-align: right } .columns4OnwardsRightAlign > td:nth-child(4), .columns4OnwardsRightAlign > td:nth-child(5), .columns4OnwardsRightAlign > td:nth-child(6), .columns4OnwardsRightAlign > td:nth-child(7) { text-align: right } .smallBr { height: 10px; }</style></body></html>

@@ -1,0 +1,61 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var componentConfiguration = Model.ComponentConfiguration;
+    var isLa = componentConfiguration.IsLocalAuthority;
+    var ukprn = isLa ? componentConfiguration.EntityGroupUkprn : componentConfiguration.PrimaryIdentifier;
+
+    var classNames = new List<string>();
+
+    if (Model.ClassNames?.Any() == true)
+    {
+        classNames.AddRange(Model.ClassNames);
+    }
+    else
+    {
+        classNames.Add("heading-small heading-guidance");
+    }
+
+    var classes = string.Join(" ", classNames);
+}
+
+<h3 class="@classes">Allocation history</h3>
+
+@if (Model.ComponentConfiguration.IsALoggedInView)
+{
+    <p>
+        @Html.RouteLink("View history of allocated funding", isLa
+            ? LoggedInConstants.RouteName_LocalAuthorityHistory
+            : LoggedInConstants.RouteName_ProviderHistory,
+            new
+            {
+                ukprn = ukprn,
+                fundingStreamNamePathPart = componentConfiguration.FundingStreamPathPart,
+                viaChoicePage = componentConfiguration.ViaChoicePage ? true : (bool?)null
+            }
+        )
+    </p>
+}
+else
+{
+    <ul class="list">
+        <li id="allocation-history-link-@componentConfiguration.FundingStreamCode.ToLower()">
+            You can view all versions of this allocation for the @componentConfiguration.YearType
+            @componentConfiguration.Year1 to @componentConfiguration.Year2
+            and previous years on the
+            @Html.RouteLink("allocation history", isLa
+                ? ViewYourFundingConstants.RouteName_LocalAuthorityHistory
+                : ViewYourFundingConstants.RouteName_ProviderHistory,
+                new
+                {
+                    fundingStreamName = componentConfiguration.FundingStreamPathPart,
+                    localAuthorityCode = isLa ? componentConfiguration.LocalAuthorityCode : null,
+                    organisationUkprn = !isLa ? componentConfiguration.PrimaryIdentifier : null,
+                    searchTerm = componentConfiguration.SearchTerm
+                }
+            )<text>.</text>
+        </li>
+    </ul>
+}

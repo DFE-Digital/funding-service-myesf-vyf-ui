@@ -1,0 +1,32 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var classNames = new List<string>
+    {
+        "govuk-accordion__section-heading"
+    };
+
+    if (Model.ClassNames?.Any() == true)
+    {
+        classNames.AddRange(Model.ClassNames);
+    }
+
+    var h2Model = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.Heading_Medium,
+        ClassNames = classNames,
+        Components = new List<Models.Component>
+{
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.Accordion_ButtonSpan,
+                Components = Model.Components,
+                Title = Model.Title
+            },
+        }
+    };
+
+    await h2Model.Render(Html, Model.PageData);
+}

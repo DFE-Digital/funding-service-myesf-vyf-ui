@@ -1,0 +1,44 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.SettingType
+
+<div class="form-horizontal">
+    <div class="form-group required">
+        @Html.LabelFor(model => model.SettingName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SettingName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SettingName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group required">
+        @Html.LabelFor(model => model.SettingDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SettingDescription, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SettingDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group required">
+        @Html.LabelFor(model => model.ValuesAreEditable, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select asp-for="ValuesAreEditable" asp-items="@Model.ValuesList" id="NewValue">
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ValueDataType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (@Model.IsSettingTypeInUse)
+            {
+                @Html.DropDownListFor(m => m.ValueDataType, new SelectList(Enum.GetValues(typeof(SettingValueDataType))), new { disabled = "disabled" })
+            }
+            else
+            {
+                @Html.DropDownListFor(m => m.ValueDataType, new SelectList(Enum.GetValues(typeof(SettingValueDataType))))
+            }
+        </div>
+    </div>
+    <hr/>
+
+</div>
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.SettingName)

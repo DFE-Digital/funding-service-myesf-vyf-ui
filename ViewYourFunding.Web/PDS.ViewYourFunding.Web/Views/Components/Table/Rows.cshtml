@@ -1,0 +1,30 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{ 
+    var tbodyClasses = new List<string>();
+
+    if (Model.UseDefaultClasses)
+    {
+        tbodyClasses.Add("govuk-table__body");
+    }
+    else
+    {
+        Model.DisableDefaultClassesAllDescendants();
+    }
+
+    if (Model.ClassNames != null)
+    {
+        tbodyClasses.AddRange(Model.ClassNames);
+    }
+
+    var tbodyClassesAttribute = Model.UseDefaultClasses ?
+        $" class=\"{string.Join(" ", tbodyClasses.ToArray())}\"" : string.Empty;
+}
+
+<tbody@(Html.Raw(tbodyClassesAttribute))>
+@{
+    await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+}
+</tbody>

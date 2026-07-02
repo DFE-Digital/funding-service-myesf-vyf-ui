@@ -1,0 +1,71 @@
+{
+  "name": "PE + Sports Provider",
+  "type": "spreadsheet",
+  "classes": {
+    "bold": {
+      "style": {
+        "bold": true
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "searchresults",
+      "title": "SearchResults",
+      "dataset": [
+        {
+          "datasetName": "providerFunding",
+          "expression": "ParentPrimaryIdentifier!=928&ParentProviderType=LocalAuthority&GroupingReason=Information"
+        }
+      ],
+      "groups": [
+        {
+          "title": "PE and sport premium allocation for @[$..organisationName]",
+          "classname": "bold",
+          "style": {
+            "fontSize": 16
+          },
+          "colspan": 10,
+          "groups": [
+            {
+              "title": "Local authority code",
+              "selector": "$..parentPrimaryIdentifier",
+              "classname": "bold",
+              "datastyle": {
+                "dataType": "Number",
+                "alignment": "left"
+              }
+            },
+            {
+              "title": "Local authority name",
+              "selector": "$..parentName",
+              "classname": "bold"
+            },
+            {
+              "title": "Local authority establishment number (at @asofmonth @asofyear)",
+              "selector": "$..organisationDfeNumber",
+              "classname": "bold",
+              "datastyle": {
+                "dataType": "Number",
+                "alignment": "left"
+              }
+            },
+            {
+              "title": "School name (at @asofmonth @asofyear)",
+              "selector": "$..organisationName",
+              "classname": "bold"
+            },
+            {
+              "title": "Total allocation",
+              "selector": "$..fundingValue.totalValue",
+              "classname": "bold",
+              "datastyle": {
+                "numberFormat": "£#,##0"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

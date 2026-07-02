@@ -1,0 +1,25 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream.FundingStreamViewModel
+
+<p>
+    <span class="heading-large">Are You Sure?</span>
+</p>
+
+@Html.DisplayFor(m => m.ActionMode)
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminFundingStreamSaveChanges, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.DisplayFor(m => m.FundingStream)
+    @Html.HiddenFor(m => m.ActionMode)
+    <input type="submit" class="button" value="Save" />
+    @if (Model.ActionMode == ActionMode.Edit)
+    {
+        @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminFundingStreamAction, new { fundingStreamId = Model?.FundingStream?.Id , ActionMode.Edit}, null);
+    }
+    else
+    {
+        @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminSettingsHome, null, null);
+    }
+}

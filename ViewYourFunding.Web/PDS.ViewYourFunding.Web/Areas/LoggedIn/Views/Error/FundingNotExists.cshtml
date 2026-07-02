@@ -1,0 +1,23 @@
+﻿@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.LoggedInBasePageViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+
+<h1 class="heading-xlarge">Allocation statements</h1>
+
+<h2>
+    You do not have any digital allocation statements yet. You will be notified when they are available.
+</h2>
+
+<h2>
+    If you believe this is incorrect, contact the <a href='https://customerhelpportal.education.gov.uk' target="_blank" rel="external noopener noreferrer">Customer Help Portal (opens in a new tab)</a>.
+</h2>
+
+@section vyfScripts {
+    @Html.PageScripts()
+}

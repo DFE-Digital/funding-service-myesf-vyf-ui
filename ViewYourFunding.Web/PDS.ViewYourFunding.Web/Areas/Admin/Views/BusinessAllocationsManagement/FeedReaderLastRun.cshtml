@@ -1,0 +1,102 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.FeedReaderLastRunViewModel
+
+@{
+    var fundingStreamCodes = Model.FundingStreamCodes.ToList();
+    var inProgress = "In progress";
+}
+
+@if (Model.ShowAllFundingStreams)
+{
+    <h1 class="govuk-heading-xl">Check status</h1>
+    <p>Most recent @(Model.Audit.Count > 1 ? "requests" :"request") of data from Calculate Funding Service (CFS).</p>
+}
+else
+{
+    <h1 class="govuk-heading-xl">Confirm data request</h1>
+    <p>You are about to pull the latest allocations data for the following funding @(fundingStreamCodes.Count > 1 ? "streams" :"stream").</p>
+    <p>This will create allocation statements for any new data.</p>
+}
+
+@using (Html.BeginForm("SubmitRequest", "BusinessAllocationsManagement", null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    <div>
+        <table class="table-halves">
+            @foreach (var audit in Model.Audit)
+            {
+                <tr>
+                    <td colspan="2">
+                        <h2>@audit.Key</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        @if (audit.Value.Status == "Started")
+                        {
+                            @inProgress
+                        }
+                        else
+                        {
+                            @audit.Value.Status
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Started
+                    </td>
+                    <td>
+                        @audit.Value.StartDateTime
+                    </td>
+                </tr>
+                @if (@audit.Value.EndDateTime != null)
+                {
+                    <tr>
+                        <td>
+                            Finished
+                        </td>
+                        <td>
+                            @audit.Value.EndDateTime
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td>
+                        Environment
+                    </td>
+                    <td>
+                        @Model.Environment(audit.Value.FundingUri)
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+
+        @if (Model.ShowAllFundingStreams == false)
+        {
+            if (Model.DisableFeedReaderRun)
+            {
+                <p>Data request already in progress</p>
+            }
+            else
+            {
+                <input type="submit" class="button" value="Request latest data" />
+            }
+            @Html.RouteLink("Back", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminRunFeedReader)
+        }
+        else
+        {
+            @Html.RouteLink("Back", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminHome)
+
+        }
+    </div>
+
+    @for (int i = 0; i < fundingStreamCodes.Count(); i++)
+    {
+        @Html.HiddenFor(model => fundingStreamCodes[i])
+    }
+}

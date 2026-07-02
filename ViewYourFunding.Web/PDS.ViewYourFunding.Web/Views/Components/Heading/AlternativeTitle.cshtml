@@ -1,0 +1,7 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+<h1 class="heading-xlarge">
+    <span class="heading-secondary">@Html.Raw(Model.AlternativeTitle)</span>
+    @Html.Raw(@Model.Title)
+</h1>

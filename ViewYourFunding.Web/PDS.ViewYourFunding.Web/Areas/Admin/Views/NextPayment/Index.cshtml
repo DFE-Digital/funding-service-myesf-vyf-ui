@@ -1,0 +1,44 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment.NextPaymentsIndexViewModel
+
+<h2 class="bold-medium">@Model.FundingStreamName - Next Payments</h2>
+
+<table class="touch-table">
+    <tr>
+        <th>Next Payment Date</th>
+        <th>Funding Period Code</th>
+        <th>Payment Type Code</th>
+        <th>Payment Type Description</th>
+        <th>Active</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var nextPayment in Model.NextPayments)
+    {
+<tr>
+    <td>
+        @nextPayment.NextPaymentDate.ToShortDateString()
+    </td>
+    <td>
+        @nextPayment.FundingPeriodCode
+    </td>
+    <td>
+        @nextPayment.NextPaymentTypeCode
+    </td>
+    <td>
+        @nextPayment.NextPaymentTypeDescription
+    </td>
+    <td>
+        @nextPayment.Active
+    </td>
+    <td>
+        @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminNextPaymentAction, new { nextPayment.FundingStreamId, nextPaymentId = nextPayment.Id, ActionMode = ActionMode.Edit }, new { })
+    </td>
+    <td>
+        @Html.RouteLink("Delete", ViewYourFundingConstants.RouteName_AdminNextPaymentAction, new { nextPayment.FundingStreamId, nextPaymentId = nextPayment.Id, ActionMode = ActionMode.Delete }, new { })
+    </td>
+</tr>
+    }
+</table>
+@Html.RouteLink("Add a Next Payment",  ViewYourFundingConstants.RouteName_AdminNextPaymentAction, new { Model.FundingStreamId, nextPaymentId = 0, ActionMode = ActionMode.Add }, new { id = "add-next-payment-type-link" })

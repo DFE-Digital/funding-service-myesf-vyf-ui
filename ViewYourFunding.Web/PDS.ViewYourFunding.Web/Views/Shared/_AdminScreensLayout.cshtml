@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/adminscreens.min.css" type="text/css" media="screen" />
+}
+
+@RenderBody()
+
+
+@section _AdminScreensLayout_Scripts
+{
+    @RenderSection("adminScripts", false)
+}

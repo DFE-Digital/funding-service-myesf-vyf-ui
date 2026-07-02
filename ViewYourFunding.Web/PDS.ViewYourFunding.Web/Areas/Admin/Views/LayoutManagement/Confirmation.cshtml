@@ -1,0 +1,54 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement.LayoutConfirmationViewModel
+@if (Model.ChangesSaved)
+{
+    <div class="govuk-box-highlight">
+        @if (Model.LayoutAction == LayoutAction.Add)
+        {
+            <h1 class="bold-large">@Model.LayoutUiModel.LayoutName layout file was imported successfully</h1>
+        }
+        else if (Model.LayoutAction == LayoutAction.Update)
+        {
+            <h1 class="bold-large">@Model.LayoutUiModel.LayoutName layout file was updated successfully</h1>
+        }
+        else
+        {
+            <h1 class="bold-large">@Model.LayoutUiModel.LayoutName layout file was deleted successfully</h1>
+        }
+        <br />
+        <p id="submission-details">Submitted by @Model.CurrentUser?.FullName on @Model.SubmittedDisplayDate</p>
+    </div>
+}
+else
+{
+    <div>
+        @if (Model.LayoutAction == LayoutAction.Add)
+        {
+            <h1 class="bold-large">There was a problem importing the layout file.</h1>
+        }
+        else if (Model.LayoutAction == LayoutAction.Update)
+        {
+            <h1 class="bold-large">There was a problem updating the layout file.</h1>
+        }
+        else
+        {
+            <h1 class="bold-large">There was a problem deleting the layout file.</h1>
+        }
+    </div>
+}
+<div id="signed-success-section" class="column-two-thirds">
+    <div>
+        <div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view the Layout Management page.</p>
+            <p>@Html.RouteLink("Layout Management page", ViewYourFundingConstants.RouteName_AdminLayoutManagementHome, null, new { }) </p>
+        </div>
+        <div>
+            <p class="bold-small">
+                Or you may want to:
+            </p>
+            <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminHome, null, new { Id = "back-to-homepage" }) </p>
+        </div>
+    </div>
+</div>

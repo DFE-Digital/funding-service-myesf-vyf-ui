@@ -1,0 +1,90 @@
+{
+  "name": "PSG provider history for single year",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/Large",
+      "classname": "heading-xlarge",
+      "title": "@expandedFundingStreamNameHtml @year1 to @year2",
+      "groups": [
+        {
+          "type": "Conditional/Condition",
+          "expression": "@isCurrentYear=false",
+          "groups": [
+            {
+              "type": "Conditional/TrueOutput",
+              "groups": [
+                {
+                  "type": "Html/Span",
+                  "classname": "heading-secondary",
+                  "groups": [
+                    {
+                      "type": "Tag/NotLatest"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Paragraph",
+      "title": "Find out about PE and sport premium funding allocations for academic year @year1 to @year2.",
+      "classname": "lede"
+    },
+    {
+      "type": "Heading/Medium",
+      "title": "Allocations",
+      "classname": "heading-medium heading-guidance"
+    },
+    {
+      "type": "General/Repeater",
+      "expression": "@Spreadsheets",
+      "groups": [
+        {
+          "type": "Block/DownloadADocument",
+          "title": "Download PE and sport premium allocations @year1 to @year2",
+          "value": "@RepeaterItem",
+          "variables": [
+            {
+              "name": "showPublicationDate",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Block/AllocationHistorySingleYear"
+    },
+    {
+      "type": "Heading/Small",
+      "classname": "heading-medium heading-guidance",
+      "title": "General @fundingStreamNameWithinSentence resources"
+    },
+    {
+      "type": "Pattern/UnorderedList",
+      "classname": "list footer-guidance",
+      "groups": [
+        {
+          "type": "General/ExternalLink",
+          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-conditions-of-grant-@year1-to-@year2",
+          "title": "@fundingStreamName: conditions of grant @year1 to @year2"
+        },
+        {
+          "type": "General/ExternalLink",
+          "value": "https://www.gov.uk/guidance/@fundingStreamNamePathPart-for-primary-schools",
+          "title": "@fundingStreamName for primary schools"
+        }
+      ]
+    }
+  ]
+}

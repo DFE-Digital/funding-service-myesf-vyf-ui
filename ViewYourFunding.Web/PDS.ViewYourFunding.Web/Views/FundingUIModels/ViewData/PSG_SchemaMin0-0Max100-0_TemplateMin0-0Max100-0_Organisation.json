@@ -1,0 +1,25 @@
+{
+  "name": "PSG LA funding breakdown",
+  "type": "viewdata",
+  "groups": [
+    {
+      "dataset": [
+        {
+          "datasetName": "funding",
+          "expression": "GroupingReason=Information"
+        }
+      ],
+      "groups": [
+        {
+          "dataset": [
+            {
+              "datasetName": "providerFunding",
+              "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+            }
+          ],
+          "groups": []
+        }
+      ]
+    }
+  ]
+}

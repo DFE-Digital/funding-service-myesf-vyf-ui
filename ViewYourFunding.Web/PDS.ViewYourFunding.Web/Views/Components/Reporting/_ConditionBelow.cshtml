@@ -1,0 +1,41 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var components = Model.Components.SingleOrDefault(component => component.Type == ComponentType.Conditional_TrueOutput)?.Components;
+    var childIsRowColumn = components?.FirstOrDefault().Type == ComponentType.Table_RowColumn;
+    var parentType = ComponentHelper.GetGroupParent(Model.OriginalGroup, Model.ComponentConfiguration.OriginalModel.ToUiModelGroup())?.Type;
+    var outerTag = parentType == ComponentType.Table_Row.ToString().Replace("_", "/") ? "td" : "div";
+
+    if (!childIsRowColumn)
+    {
+        @Html.Raw("</td>")
+    }
+
+    var counterpart = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.General_Section,
+        Components = Model.Components.SingleOrDefault(component => component.Type == ComponentType.Conditional_FalseOutput)?.Components
+    };
+
+    if (counterpart?.Components?.Any() == true)
+    {
+        childIsRowColumn = counterpart?.Components?.FirstOrDefault().Type == ComponentType.Table_RowColumn;
+
+        if (!childIsRowColumn)
+        {
+            @Html.Raw("<td style='border: 1px solid #000'>")
+        }
+
+        await counterpart.Render(Html, Model.PageData);
+    }
+
+    if (!childIsRowColumn)
+    {
+        @Html.Raw("</td>")
+    }
+
+    @Html.Raw("</tr></table>")
+    @Html.Raw("</" + outerTag + ">")
+}

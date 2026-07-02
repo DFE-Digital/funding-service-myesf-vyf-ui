@@ -1,0 +1,124 @@
+{
+  "name": "14 to 16 provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerFunding"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "title": "@fundingStreamName: @yearTypeName @year1 to @year2",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "L1",
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "Html/Span",
+              "classname": "hidden-sub-section",
+              "selector": "L1",
+              "datastyle": {
+                "numberFormat": "c0"
+              },
+              "groups": [
+                {
+                  "type": "Html/Element",
+                  "subtype": "br"
+                }
+              ]
+            },
+            {
+              "type": "General/Literal",
+              "value": "Published: @statusChangedDateUiFormatted "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "classname": "govuk-!-padding-left-6",
+      "groups": [
+        {
+          "type": "Tabs/LinksToPage",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance",
+          "groups": [
+            {
+                "type": "Tabs/LinkWithValue",
+                "selector": "L2",
+                "datastyle": {
+                    "numberFormat": "c0"
+                },
+                "groups": [
+                    {
+                        "type": "General/StandardLink",
+                        "title": "Core programme",
+                        "value": "@loggedInProviderFundingBreakdownPathTabscore-programme",
+                        "classname": "govuk-heading-l govuk-!-margin-bottom-0"
+                    }
+                ]
+            },
+            {
+                "type": "Tabs/LinkWithValue",
+                "selector": "L3",
+                "datastyle": {
+                    "numberFormat": "c0"
+                },
+                "groups": [
+                    {
+                        "type": "General/StandardLink",
+                        "title": "Pupil premium",
+                        "value": "@loggedInProviderFundingBreakdownPathTabspupil-premium",
+                        "classname": "govuk-heading-l govuk-!-margin-bottom-0"
+
+                    }
+                ]
+            }
+          ]
+        },
+        {
+          "type": "Html/Div",
+          "classname": "funding-margin-bottom"
+        },
+        {
+          "type": "Block/AllocationHistory"
+        },
+        {
+          "type": "Heading/Small",
+          "classname": "heading-small heading-guidance",
+          "title": "Explore the topic"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/guidance/full-time-enrolment-of-14-to-16-year-olds-in-further-education-and-sixth-form-colleges",
+                  "title": "@shortFundingStreamNameHtml allocation guides: @year1 to @year2 (opens in a new tab)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

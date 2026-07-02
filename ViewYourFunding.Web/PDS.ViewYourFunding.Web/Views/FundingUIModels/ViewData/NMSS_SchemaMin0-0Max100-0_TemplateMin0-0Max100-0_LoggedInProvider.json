@@ -1,0 +1,1557 @@
+{
+    "name": "NMSS Logged In Provider funding breakdown",
+    "type": "Page",
+    "dataset": [
+        {
+            "datasetName": "providerFunding",
+            "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+        }
+    ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithDate",
+      "title": "Non maintained special school funding: @year1 to @year2",
+      "value": "@statusChangedDateUiFormatted",
+      "groups": [
+        {
+          "type": "Tag/LatestFinalOrNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Block/VarianceMessage"
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group pfb-total-allocation",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "classname": "govuk-!-margin-bottom-6",
+          "enableVariance": true,
+          "id": "allocation-amount",
+          "title": "Total allocation",
+          "selector": "L0",
+          "datastyle": {
+            "numberFormat": "c0"
+          }
+        },
+        {
+          "type": "Heading/FundingHeader",
+          "classname": "govuk-!-margin-bottom-6",
+          "id": "total-students",
+          "title": "Students",
+          "selector": "C17",
+          "datastyle": {
+            "numberFormat": "ThousandsSeperatedNoTrailingZeroes"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Html/Section",
+          "classname": "form-block attachment embedded",
+          "groups": [
+            {
+              "type": "Block/PrintOrSaveStatement"
+            },
+            {
+              "type": "Block/LoggedInDownloadADocument"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Tabs/Tabs",
+      "groups": [
+        {
+          "id": "high-needs",
+          "type": "Tabs/Tab",
+          "title": "High needs",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "enableVariance": true,
+                      "title": "Total high needs",
+                      "id": "css-block-total",
+                      "selector": "L1",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "id": "pfCalculationOfIncreaseTable",
+                  "type": "Table/Table",
+                  "title": "Calculation of @LowerIncreaseOrDifference",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Calculation of @LowerIncreaseOrDifference",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Calculation",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Funded pupils from spring @year0 census",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C24",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Funded pupils from autumn @year-1 census",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Minus"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C23",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "@IncreaseOrDifference in funded pupils",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "groups": [
+                                {
+                                  "type": "Conditional/Condition",
+                                  "expression": "@IsDifference=True",
+                                  "groups": [
+                                    {
+                                      "type": "Conditional/TrueOutput",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Paragraph",
+                                          "id": "reduced-pupil-numbers-guidance",
+                                          "title": "Any reduction in pupil numbers is set to zero.<br>This ensures no school is funded below its autumn @year-1 census pupil numbers.",
+                                          "classname": "table-row-embed-text govuk-!-padding-bottom-0 govuk-!-margin-bottom-0"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "groups": [
+                                {
+                                  "type": "Symbols/Equals"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "@IncreaseOrZero",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "id": "pfFundedPupilsTable",
+                  "type": "Table/Table",
+                  "title": "Funded pupils @year1 to @year2",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Funded pupils @year1 to @year2",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Calculation",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Funded pupils from autumn @year0 census",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C12",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "@IncreaseOrDifference (calculated above)",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Plus"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "@IncreaseOrZero",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Total funded pupils @year1 to @year2",
+                              "classname": "table-header-normal govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "groups": [
+                                {
+                                  "type": "Symbols/Equals"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C17",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "type": "General/Section",
+                  "id": "pupil-numbers-link",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "More about pupil numbers (opens in new tab)",
+                      "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2021-to-2022/16-to-19-non-maintained-special-school-nmss-revenue-funding-allocation-guide-2021-to-2022#non-maintained-special-school-funding-allocation"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "id": "pfFundedPlacesTable",
+                  "type": "Table/Table",
+                  "title": "Funded places in @year1 to @year2 allocation",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Funded places in @year1 to @year2 allocation",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Calculation",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Pre-16 sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Post-16 sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Total pupils from autumn @year0 census",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C18",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C20",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "All high needs pupils from autumn @year0 census",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Divide"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C12",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C12",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Proportion of pupils",
+                              "classname": "table-header-normal govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Equals"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C11",
+                              "datastyle": {
+                                "numberFormat": "0.00"
+                              },
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C25",
+                              "datastyle": {
+                                "numberFormat": "0.00"
+                              },
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "All funded pupils @year1 to @year2",
+                              "classname": "table-header-normal govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Times"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C17",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C17",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Total funded pupils @year1 to @year2",
+                              "classname": "table-header-normal govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Equals"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C8",
+                              "enableVariance": true,
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C14",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "id": "high-needs-rounding",
+              "title": "Rounding differences in your calculations",
+              "groups": [
+                {
+                  "type": "Html/Paragraph",
+                  "id": "hnr-desc",
+                  "title": "The values in this statement may not add up precisely to the totals provided due to rounding. The calculation of your funding is done using exact figures."
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "id": "pfHighNeedsTable",
+                  "type": "Table/Table",
+                  "title": "High needs",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "High needs",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Places",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Rate",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Pre-16",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C8",
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C9",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "L3",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Post-16",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C14",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "$..calculations[?(@.templateCalculationId == 9)].value",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "L4",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Total high needs",
+                              "classname": "table-header-normal govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C17",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric table-column-default calc-letter"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "L1",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "table-header-normal govuk-!-width-one-sixth govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "type": "General/Section",
+                  "id": "where-places-comes-from-link",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "Where places comes from (opens in new tab)",
+                      "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2021-to-2022/16-to-19-non-maintained-special-school-nmss-revenue-funding-allocation-guide-2021-to-2022#funded-places"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "type": "General/Section",
+                  "id": "more-about-amendments-link",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "More about amendments to high needs places (opens in new tab)",
+                      "value": "https://www.gov.uk/government/publications/high-needs-funding-arrangements-2021-to-2022/high-needs-place-change-process-academic-year-2021-to-2022"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/GrandTotal",
+              "enableVariance": true,
+              "title": "Total high needs",
+              "classname": "bottomTab-total",
+              "selector": "L1",
+              "id": "total-high-needs-total",
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        },
+        {
+          "id": "tab-16-19-discretionary-bursary-fund",
+          "type": "Tabs/Tab",
+          "title": "16 to 19 discretionary bursary fund",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "enableVariance": true,
+                      "title": "Total 16 to 19 discretionary bursary fund",
+                      "id": "css-block-total",
+                      "selector": "L2",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 first-element-in-tab",
+              "groups": [
+                {
+                  "id": "discretionaryBursaryBreakdownTable",
+                  "type": "Table/Table",
+                  "title": "Discretionary bursary breakdown",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Discretionary bursary breakdown",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Total funded <br>students",
+                          "classname": "govuk-table__header govuk-table__header--numeric table-column-default",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Instances<br> per student",
+                          "classname": "govuk-table__header govuk-table__header--numeric table-column-default",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Number of <br>instances",
+                          "classname": "govuk-table__header govuk-table__header--numeric table-column-default",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Rate",
+                          "classname": "govuk-table__header govuk-table__header--numeric table-column-default govuk-!-padding-left-6",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "classname": "govuk-table__header govuk-table__header--numeric table-column-default",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Financial disadvantage",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C14",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C31",
+                              "datastyle": {
+                                "numberFormat": "0.00"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C30",
+                              "datastyle": {
+                                "numberFormat": "0.00"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C32",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "L26",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Travel",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C14",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C37",
+                              "datastyle": {
+                                "numberFormat": "0.00"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C35",
+                              "datastyle": {
+                                "numberFormat": "0.00"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C36",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "L27",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Industry placement",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C39",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "C40",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "L28",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Discretionary bursary fund @year1 to @year2",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "selector": "L5",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about this table",
+              "id": "dbf-more-about",
+              "groups": [
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-more-about-subtotal",
+                  "classname": "govuk-!-padding-bottom-0 govuk-!-margin-bottom-0",
+                  "title": "The sub-total for each discretionary bursary element is calculated by multiplying the number of students by the instances per student to get the number of instances:"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-more-about-totalfunded",
+                  "classname": "govuk-!-font-weight-bold",
+                  "title": "Total funded students × Instances per student = Number of instances"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-more-about-noof",
+                  "classname": "govuk-!-padding-bottom-0 govuk-!-margin-bottom-0",
+                  "title": "The number of instances is then multiplied by the rate:"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-more-about-noofFormula",
+                  "classname": "govuk-!-font-weight-bold",
+                  "title": "Number of instances × Rate = Sub-total"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-more-about-subTotalsHelp",
+                  "title": "The sub-totals are then added together to make your discretionary bursary fund total. This figure is then used in the next calculation. It is compared with your total discretionary bursary fund from @year-1 to @year0. It will be adjusted if it falls outside the limits set for this year."
+                },
+                {
+                  "type": "Pattern/UnorderedList",
+                  "classname": "list",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "How instances are calculated (opens in new tab)",
+                      "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2021-to-2022/16-to-19-further-education-revenue-funding-allocation-guide-2021-to-2022#instances-per-student-1"
+                    },
+                    {
+                      "type": "General/ExternalLink",
+                      "title": "More about the 16 to 19 bursary fund (opens in new tab)",
+                      "value": "https://www.gov.uk/guidance/16-to-19-bursary-fund-guide-@year1-to-@year2-academic-year"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "Rounding differences in your calculations",
+              "id": "dbf-rounding",
+              "groups": [
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-rounding-desc",
+                  "title": "The values in this statement may not add up precisely to the totals provided due to rounding. The calculation of your funding is done using exact figures."
+                }
+              ]
+            },
+            {
+              "type": "Heading/Medium",
+              "classname": "heading-medium govuk-!-margin-bottom-6",
+              "title": "Adjusted discretionary bursary fund @year1 to @year2"
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "groups": [
+                {
+                  "id": "adjDiscretionaryBursaryFundTable",
+                  "type": "Table/Table",
+                  "title": "Adjusted discretionary bursary fund @year1 to @year2",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Adjusted discretionary bursary fund",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "@year-1 to @year0 Discretionary bursary fund (baseline for transition)",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C43",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Transition lower limit (50%)",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C45",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Transition upper limit (150%)",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C44",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Discretionary bursary fund @year1 to @year2",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "L5",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Adjusted discretionary bursary fund",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-row-embed-text",
+                                  "id": "adjusted-bursary-fund-message",
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "@DiscretionaryBursaryFundInLimit @DiscretionaryBursaryFundOutsideLimit @DiscretionaryBursaryFundBelow500"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "L2",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "More about the transition limits",
+              "id": "dbf-transitionlimits",
+              "groups": [
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-transitionlimits-methodology",
+                  "title": "From @year0 to @year1, we moved to a new methodology to calculate your discretionary bursary fund."
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "id": "dbf-transitionlimits-goingforward",
+                  "title": "In @year-1 to @year0, you received the amount shown in the first row of the adjusted discretionary bursary fund table. Going forward:"
+                },
+                {
+                  "type": "Pattern/UnorderedList",
+                  "classname": "list list-bullet",
+                  "variables": [
+                    {
+                      "name": "implictLIs",
+                      "value": false
+                    }
+                  ],
+                  "groups": [
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "id": "dbf-transitionlimits-capped",
+                      "title": "In @year0 to @year1, you received an amount capped between +/- 25% of the @year-1 to @year0 total"
+                    },
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "id": "dbf-transitionlimits-thisYear",
+                      "title": "This year, you will receive an amount capped between +/- 50% of the @year-1 to @year0 total"
+                    },
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "id": "dbf-transitionlimits-nextyear",
+                      "title": "In @year2 to 2023, you will receive an amount capped between +/- 75% of the @year-1 to @year0 total"
+                    },
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "id": "dbf-transitionlimits-future",
+                      "title": "2023 to 2024 onward - you receive the amount with no cap applied"
+                    }
+                  ]
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "title": "More about the 16 to 19 bursary fund (opens in new tab)",
+                  "value": "https://www.gov.uk/guidance/16-to-19-bursary-fund-guide-@year1-to-@year2-academic-year"
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "groups": [
+                {
+                  "id": "exceptionalAdjustmentTable",
+                  "type": "Table/Table",
+                  "title": "Exceptional adjustment",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Exceptional adjustment",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Exceptional adjustment",
+                              "classname": "table-header-normal",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "enableVariance": true,
+                              "selector": "C33",
+                              "datastyle": {
+                                "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                              },
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "General/ExternalLink",
+              "title": "More about exceptional adjustments (opens in new tab)",
+              "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2021-to-2022/16-to-19-further-education-revenue-funding-allocation-guide-2021-to-2022#exceptional-adjustment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "form-group govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "type": "Block/AllocationHistory"
+            }
+          ]
+        },
+        {
+          "type": "Heading/Small",
+          "title": "@shortFundingStreamNameHtml resources",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list",
+          "groups": [
+            {
+              "type": "General/Section",
+              "id": "guidance-link",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "@shortFundingStreamNameHtml allocation guide: @year1 to @year2 (opens in new tab)",
+                  "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-2021-to-2022/16-to-19-non-maintained-special-school-nmss-revenue-funding-allocation-guide-2021-to-2022"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Script",
+      "value": "@basePath/Scripts/myesftab.js"
+    }
+  ],
+    "variables": [
+        {
+            "name": "YearZeroStudents",
+            "selector": "$..calculations[?(@.templateCalculationId == 24)].value"
+        },
+        {
+            "name": "YearZeroMinusOneStudents",
+            "selector": "$..calculations[?(@.templateCalculationId == 23)].value"
+        },
+        {
+            "name": "IncreaseOrDifference",
+            "expression": "@YearZeroStudents>@YearZeroMinusOneStudents|@YearZeroStudents=@YearZeroMinusOneStudents",
+            "trueResponse": "Increase",
+            "falseResponse": "Difference"
+        },
+        {
+            "name": "LowerIncreaseOrDifference",
+            "expression": "@YearZeroStudents>@YearZeroMinusOneStudents|@YearZeroStudents=@YearZeroMinusOneStudents",
+            "trueResponse": "increase",
+            "falseResponse": "difference"
+        },
+        {
+            "name": "IsDifference",
+            "expression": "@IncreaseOrDifference=Difference"
+        },
+        {
+            "name": "CalculatedIncreaseValue",
+            "selector": "$..calculations[?(@.templateCalculationId == 22)].value"
+        },
+        {
+            "name": "IncreaseOrZero",
+            "expression": "@CalculatedIncreaseValue>0",
+            "trueResponse": "@CalculatedIncreaseValue",
+            "falseResponse": "0"
+        },
+        {
+            "name": "LowerLimitValue",
+            "selector": "C45"
+        },
+        {
+            "name": "UpperLimitValue",
+            "selector": "C44"
+        },
+        {
+            "name": "AdjustedDiscretionaryBursaryFundValue",
+            "selector": "L2"
+        },
+        {
+            "name": "DiscretionaryBursaryFundValue",
+            "selector": "L5"
+        },
+        {
+            "name": "DiscretionaryBursaryFundInLimit",
+            "expression": "@DiscretionaryBursaryFundValue=@AdjustedDiscretionaryBursaryFundValue",
+            "trueResponse": "The bursary has not been adjusted because this year's discretionary bursary fund figure is between the transition limits.",
+            "falseResponse": ""
+        },
+        {
+            "name": "DiscretionaryBursaryFundOutSideLimitValue",
+            "expression": "@LowerLimitValue>@DiscretionaryBursaryFundValue|@DiscretionaryBursaryFundValue>@UpperLimitValue"
+        },
+        {
+            "name": "DiscretionaryBursaryFundOutsideLimit",
+            "expression": "@DiscretionaryBursaryFundOutSideLimitValue=true&@DiscretionaryBursaryFundValue>499.99",
+            "trueResponse": "The bursary has been adjusted because this year's discretionary bursary fund figure is outside the transition limits.",
+            "falseResponse": ""
+        },
+        {
+            "name": "DiscretionaryBursaryFundBelow500",
+            "expression": "500>@DiscretionaryBursaryFundValue",
+            "trueResponse": "The bursary figure has been adjusted to the &#163;500 minimum allocation.",
+            "falseResponse": ""
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.SettingTypeViewModel
+
+@Html.EditorFor(m => m.ActionMode)
+
+@{
+    using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminSettingTypeAction, null, FormMethod.Post))
+    {   
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.SettingType.Id)
+        @Html.HiddenFor(m => m.ActionMode)
+        @Html.EditorFor(m => m.SettingType)
+        <input type="submit" class="button" />
+    }
+}

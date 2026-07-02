@@ -1,0 +1,30 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement.LayoutAreYouSureViewModel
+    <span class="heading-large">Are You Sure?</span>
+    <p>
+        <span class="heading-medium">Delete Layout</span><br />
+    </p>
+
+    <p>
+        Please review the changes you have made carefully before clicking the Delete button
+    </p>
+
+@{
+    var statusClass = Model.LayoutUiModel.Status == LayoutStatus.Disabled ? "grey-background" : string.Empty;
+}
+
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminDeleteLayout, new { layoutId = Model.LayoutUiModel.LayoutId }, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    
+        <p><span>Name: @Model.LayoutUiModel.LayoutName</span> </p>
+        <p><span>Funding Stream: @Model.LayoutUiModel.FundingStreamName</span></p>
+        <p> <span>Funding view type: @Html.DisplayFor(model => model.LayoutUiModel.FundingViewType)</span></p>
+        <p> <span>Layout type: @Html.DisplayFor(model => model.LayoutUiModel.FundingViewScope)</span></p>
+        <p> <span>Status: <strong class="govuk-tag govuk-bgred @statusClass">@Model.LayoutUiModel.Status</strong></span></p>
+    
+    <input type="submit" class="button" value="Delete" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminLayoutManagementHome, null, null)
+}

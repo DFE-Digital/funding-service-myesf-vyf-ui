@@ -1,0 +1,53 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment.NextPayment
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NextPaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextPaymentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NextPaymentTypeCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextPaymentTypeCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextPaymentTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextPaymentTypeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingPeriodCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FundingPeriodCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+    </dl>
+</div>
+
+@Html.HiddenFor(model => model.NextPaymentDateDay)
+@Html.HiddenFor(model => model.NextPaymentDateMonth)
+@Html.HiddenFor(model => model.NextPaymentDateYear)
+@Html.HiddenFor(model => model.Active)
+@Html.HiddenFor(model => model.NextPaymentTypeId)
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.FundingStreamId)
+@Html.HiddenFor(model => model.FundingPeriodCode)

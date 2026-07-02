@@ -1,0 +1,58 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement.LayoutImportViewModel
+<div class="column-two-thirds">
+    @using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminLayoutImport, null, FormMethod.Post, null, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset class="">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="heading-xlarge">Import Layout details</h1>
+            </legend>
+            <div class="govuk-form-group">
+                @Html.LabelFor(model => model.LayoutName, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.LayoutName)
+                @Html.ValidationMessageFor(model => model.LayoutName, "", new { @class = "text-danger" })
+            </div>
+            <div class="govuk-form-group">
+                @Html.LabelFor(model => model.FundingStreamId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.FundingStreamId, Model.FundingStreams, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                @Html.LabelFor(model => model.FundingViewType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select asp-for="FundingViewType" asp-items="Model.FundingViewTypeSelectItems()" id="funding-view-type">
+                    </select>
+                </div>
+            </div>
+            <div class="govuk-form-group">
+                @Html.LabelFor(model => model.FundingViewScope, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select asp-for="FundingViewScope" id="funding-view-scope">
+                        @foreach (var fundingViewScopeSelectItem in Model.FundingViewScopeSelectItems())
+                        {
+                            <option value="@fundingViewScopeSelectItem.ID"
+                                data-applicable-for-types="@fundingViewScopeSelectItem.ApplicableForTypesString"
+                                data-names-for-types="@fundingViewScopeSelectItem.NamesForTypes">
+                                    @fundingViewScopeSelectItem.Title
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="button">Continue</button>
+        </div>
+    }
+</div>
+
+@section adminScripts
+{
+    <environment names="Development">
+        <script src="~/Scripts/import-layout.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/import-layout.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

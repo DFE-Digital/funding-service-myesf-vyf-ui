@@ -1,0 +1,34 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://esfstest.herokuapp.com/component-library/funding-header
+
+    var classNameList = new List<string>
+    {
+        "heading-large",
+        "heading-funding-summary"
+    };
+
+    if (Model.EnableVariance)
+    {
+        classNameList.Add("variance-heading-no-margin");
+    }
+
+    var p = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.Html_Paragraph,
+        ClassNames = classNameList,
+        Title = Model.GetValueString(),
+        Id = Model.Id
+    };
+
+    Model.Components.Add(p);
+    Model.Values.Clear();
+    Model.Id = null;
+
+    Model.ClassNames.Insert(0, "lede");
+
+    await ComponentHelper.Render(Html, ComponentType.Heading_Medium, Model, Model.PageData);
+}

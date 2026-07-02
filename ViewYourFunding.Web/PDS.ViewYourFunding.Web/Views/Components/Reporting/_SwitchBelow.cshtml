@@ -1,0 +1,10 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var parentType = ComponentHelper.GetGroupParent(Model.OriginalGroup, Model.ComponentConfiguration.OriginalModel.ToUiModelGroup())?.Type;
+    var outerTag = parentType == ComponentType.Table_Row.ToString().Replace("_", "/") ? "td" : "div";
+
+    @Html.Raw("</" + outerTag + ">")
+}

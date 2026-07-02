@@ -1,0 +1,33 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.RunPdfComparisonViewModel
+
+<h1 class="govuk-heading-xl">Compare statements</h1>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_BusinessAllocationsRunPdfComparison, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group required">
+        @Html.LabelFor(model => model.FundingStreamCodeAndPeriodCode, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.FundingStreamCodeAndPeriodCode, Model.FundingStreamCodesAndPeriodCodes, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(model => model.SourceFolder, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SourceFolder, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SourceFolder, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(model => model.TargetFolder, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TargetFolder, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TargetFolder, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <input type="submit" class="button" value="Continue" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminHome)
+}

@@ -1,0 +1,23 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream.FundingStreamViewModel
+
+@Html.EditorFor(m => m.ActionMode)
+@{
+    using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminFundingStreamAction, null, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(m => m.ActionMode)
+        @Html.EditorFor(m => m.FundingStream)
+        <input type="submit" class="button" />
+        @if (Model.ActionMode == ActionMode.Edit)
+        {
+            @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminSettingsFundingStream, new { fundingStreamId = Model?.FundingStream?.Id }, null);
+        }
+        else
+        {
+            @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminSettingsHome, null, null);
+        }
+    }
+}

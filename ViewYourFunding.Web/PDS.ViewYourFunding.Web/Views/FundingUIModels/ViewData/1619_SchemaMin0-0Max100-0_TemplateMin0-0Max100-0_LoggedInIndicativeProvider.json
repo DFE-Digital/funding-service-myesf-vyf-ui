@@ -1,0 +1,644 @@
+{
+  "name": "16 to 19 Logged In Provider funding breakdown",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=LocalAuthority&GroupingReason=Indicative"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithDate",
+      "title": "Indicative 16 to 19 funding: @yearTypeName @year1 to @year2",
+      "value": "@statusChangedDateUiFormatted",
+      "groups": [
+        {
+          "type": "Tag/LatestFinalOrNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Block/VarianceMessage"
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group govuk-!-margin-bottom-9 pfb-total-allocation",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "enableVariance": true,
+          "id": "allocation-amount",
+          "title": "Total allocation",
+          "selector": "L0",
+          "datastyle": {
+            "numberFormat": "c0"
+          },
+          "classname": "lede govuk-!-margin-bottom-6"
+        },
+        {
+          "type": "Heading/Medium",
+          "title": "Open date",
+          "classname": "lede"
+        },
+        {
+          "type": "Html/Paragraph",
+          "classname": "heading-large heading-funding-summary variance-heading-no-margin",
+          "title": "@providerOpenDateddMMMMyyyy"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Html/Section",
+          "classname": "form-block attachment embedded",
+          "groups": [
+            {
+              "type": "Block/PrintOrSaveStatement"
+            },
+            {
+              "type": "Block/LoggedInDownloadADocument"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "id": "indicative1619",
+      "classname": "govuk-!-margin-bottom-8 govuk-!-margin-top-8",
+      "groups": [
+        {
+          "type": "Heading/Medium",
+          "title": "Summary of @year1 to @year2 funding allocation",
+          "classname": "heading-medium govuk-!-margin-top-8 govuk-!-margin-bottom-4 govuk-!-padding-top-4"
+        },
+        {
+          "id": "summaryTable",
+          "type": "Table/Table",
+          "groups": [
+            {
+              "type": "Table/Columns",
+              "groups": [
+                {
+                  "type": "Table/Column",
+                  "title": "Funding allocation",
+                  "classname": "govuk-table__header govuk-!-width-one-third",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/Column",
+                  "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                  "useDefaultClasses": false,
+                  "title": "Sub-total"
+                }
+              ]
+            },
+            {
+              "type": "Table/Rows",
+              "groups": [
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Core programme"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L4",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "subtype": "th",
+                      "classname": "table-header-normal",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "Condition of funding deduction"
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-row-embed-text",
+                          "id": "more-about-condition-funding",
+                          "groups": [
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2/16-to-19-special-post-16-institution-spi-revenue-funding-allocation-guide-@year1-to-@year2#maths-and-english-condition-of-funding-cof",
+                              "title": "More about condition of funding reduction (opens in new tab)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-column-mobile",
+                          "groups": [
+                            {
+                              "type": "Html/Element",
+                              "subtype": "br"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L110",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "subtype": "th",
+                      "classname": "table-header-normal",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "Advanced maths premium"
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-row-embed-text",
+                          "id": "more-about-maths-premium",
+                          "groups": [
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/guidance/16-to-19-funding-advanced-maths-premium",
+                              "title": "More about advanced maths premium (opens in new tab)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-column-mobile",
+                          "groups": [
+                            {
+                              "type": "Html/Element",
+                              "subtype": "br"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L301",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "subtype": "th",
+                      "classname": "table-header-normal",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "High value courses premium"
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-row-embed-text",
+                          "id": "more-about-high-value",
+                          "groups": [
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/guidance/16-to-19-funding-high-value-courses-premium",
+                              "title": "More about high value courses premium (opens in new tab)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-column-mobile",
+                          "groups": [
+                            {
+                              "type": "Html/Element",
+                              "subtype": "br"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L302",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "subtype": "th",
+                      "classname": "table-header-normal",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "Industry placements"
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-row-embed-text",
+                          "id": "more-about-industry-placements",
+                          "groups": [
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/guidance/applying-for-and-delivering-industry-placements-capacity-and-delivery-fund-cdf-for-the-@year1-to-@year2-academic-year#funding-calculations",
+                              "title": "More about industry placements (opens in new tab)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-column-mobile",
+                          "groups": [
+                            {
+                              "type": "Html/Element",
+                              "subtype": "br"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L300",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "High needs"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L299",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "subtype": "th",
+                      "classname": "table-header-normal",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "Student financial support"
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-row-embed-text",
+                          "id": "more-about-student-financial",
+                          "groups": [
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2/16-to-19-further-education-revenue-funding-allocation-guide-@year1-to-@year2#student-financial-support-funding",
+                              "title": "More about student financial support (opens in new tab)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Span",
+                          "classname": "table-column-mobile",
+                          "groups": [
+                            {
+                              "type": "Html/Element",
+                              "subtype": "br"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L241",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Alternative completion"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L304",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "visibilityCondition": "@ShowHighValueSchoolCollegeLeavers=true",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "High value courses for school and college leavers"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L302",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "visibilityCondition": "@ShowOffsetHighValueSchoolCollegeLeavers=true",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Offset high value courses for school and college leavers in-year programme funding for @year1/@year2short"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L425",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Start-up and post-opening grant"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L389",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Maths top up"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L394",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Total funding allocation"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "comment": "This is wrong selector",
+                      "selector": "L0",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Heading/Medium",
+          "title": "Start-up and post-opening grant breakdown",
+          "classname": "heading-medium govuk-!-margin-top-8 govuk-!-margin-bottom-4 govuk-!-padding-top-4"
+        },
+        {
+          "id": "sugTable",
+          "type": "Table/Table",
+          "classname": "heading-medium govuk-!-margin-top-8 govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "type": "Table/Columns",
+              "groups": [
+                {
+                  "type": "Table/Column",
+                  "title": "Start-up",
+                  "classname": "govuk-table__header govuk-!-width-one-third",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/Column",
+                  "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                  "useDefaultClasses": false,
+                  "title": "Funding"
+                }
+              ]
+            },
+            {
+              "type": "Table/Rows",
+              "groups": [
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Part A"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L419",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Part B"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L420",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pogTable",
+          "type": "Table/Table",
+          "classname": "heading-medium govuk-!-margin-top-8 govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "type": "Table/Columns",
+              "groups": [
+                {
+                  "type": "Table/Column",
+                  "title": "Post-opening",
+                  "classname": "govuk-table__header govuk-!-width-one-third",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/Column",
+                  "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                  "useDefaultClasses": false,
+                  "title": "Funding"
+                }
+              ]
+            },
+            {
+              "type": "Table/Rows",
+              "groups": [
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Per pupil resourses"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L390",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Row",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Leadership diseconomies"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "selector": "L391",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "form-group govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "type": "Block/AllocationHistory"
+            }
+          ]
+        },
+        {
+          "type": "Heading/Small",
+          "title": "Explore the topic",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list",
+          "groups": [
+            {
+              "type": "General/Section",
+              "id": "guidance-link",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "@shortFundingStreamNameHtml allocations supporting documents: @year1 to @year2 (opens in new tab)",
+                  "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "IsPost2122",
+      "expression": "@year1>2021"
+    },
+    {
+      "name": "ShowHighValueSchoolCollegeLeavers",
+      "expression": "@IsPost2122=false"
+    },
+    {
+      "name": "ShowOffsetHighValueSchoolCollegeLeavers",
+      "expression": "@IsPost2122=false"
+    }
+  ]
+}

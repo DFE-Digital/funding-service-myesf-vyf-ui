@@ -1,0 +1,61 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment.NextPaymentViewModel
+@if (Model.ChangesSaved)
+{
+    var submittedOnText = Model.ActionMode != ActionMode.Delete ? "on " + Model.SubmittedAtDisplayDate : string.Empty;
+
+    <div class="govuk-box-highlight">
+        @switch (Model.ActionMode)
+        {
+            case ActionMode.Delete:
+                <h1 class="bold-large">@Model.FundingStreamName Next Payment has been deleted successfully</h1>
+
+                break;
+            case ActionMode.Add:
+                <h1 class="bold-large">@Model.FundingStreamName Next Payment has been added successfully</h1>
+                break;
+            case ActionMode.Edit:
+                <h1 class="bold-large">@Model.FundingStreamName Next Payment has been updated successfully</h1>
+                break;
+        }
+
+        <br />
+        <p id="submission-details">Submitted by @Model.CurrentUser?.FullName on @submittedOnText</p>
+
+    </div>
+}
+else
+{
+    <div>
+        @switch (Model.ActionMode)
+        {
+            case ActionMode.Delete:
+                <h1 class="bold-large">There was a problem deleting the @Model.FundingStreamName Next Payment.</h1>
+
+                break;
+            case ActionMode.Add:
+                <h1 class="bold-large">There was a problem adding the @Model.FundingStreamName Next Payment.</h1>
+                break;
+            default:
+                <h1 class="bold-large">There was a problem updating the @Model.FundingStreamName Next Payment.</h1>
+                break;
+        }
+    </div>
+}
+
+<div id="signed-success-section" class="column-two-thirds">
+    <div>
+        <div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view the @Model.FundingStreamName settings.</p>
+            <p>@Html.RouteLink(string.Format("Go to the {0} funding stream page", Model.FundingStreamName), ViewYourFundingConstants.RouteName_AdminNextPaymentIndex, new { FundingStreamId = Model.FundingStreamId }, new { }) </p>
+        </div>
+        <div>
+            <p class="bold-small">
+                Or you may want to:
+            </p>
+            <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminHome) </p>
+        </div>
+    </div>
+</div>

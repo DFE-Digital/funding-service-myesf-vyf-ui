@@ -1,0 +1,8 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    Model.SubType = "H3";
+    await ComponentHelper.Render(Html, ComponentType.Html_Element, Model, Model.PageData);
+}

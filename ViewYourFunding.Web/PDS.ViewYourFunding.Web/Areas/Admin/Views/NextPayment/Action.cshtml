@@ -1,0 +1,15 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment.NextPaymentViewModel
+
+@Html.EditorFor(m => m.ActionMode)
+@{
+    using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminNextPaymentAction, null, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.FundingStreamId)
+        @Html.HiddenFor( m => m.FundingStreamName)
+        @Html.HiddenFor(m => m.ActionMode)
+        @Html.EditorFor(m => m.NextPayment)
+        <input type="submit" class="button" />
+    }
+}

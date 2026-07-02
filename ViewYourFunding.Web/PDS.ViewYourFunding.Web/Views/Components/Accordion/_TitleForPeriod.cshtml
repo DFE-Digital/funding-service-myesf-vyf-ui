@@ -1,0 +1,16 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    string Text = Model.Title;
+
+    if (string.IsNullOrEmpty(Text))
+    {
+        var componentConfiguration = Model.ComponentConfiguration;
+        Text = $"{componentConfiguration.ExpandedFundingStreamNameHtml} allocation for {componentConfiguration.YearType}"
+            + $" {componentConfiguration.Year1} to {componentConfiguration.Year2}";
+    }
+}
+
+<span class="govuk-accordion__heading-text-left">
+    @Html.Raw(Text)
+</span>

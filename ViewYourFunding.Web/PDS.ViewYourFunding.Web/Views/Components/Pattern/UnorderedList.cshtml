@@ -1,0 +1,38 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var OpenTag = "<ul";
+    var implictLIs = Model.Variables?.ContainsKey("implictLIs") == true ? (bool)Model.Variables["implictLIs"] : true;
+
+    if (Model.ClassNames?.Any() == true)
+    {
+        var classesString = string.Join(" ", Model.ClassNames.ToArray());
+        OpenTag += $" class=\"{classesString}\"";
+    }
+
+    OpenTag += ">";
+    var CloseTag = "</ul>";
+}
+
+@Html.Raw(OpenTag)
+@foreach (var component in Model.Components)
+{
+    var listItem = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = implictLIs ? ComponentType.Html_Element : ComponentType.General_Section,
+        SubType = implictLIs ? "li" : null,
+        Id = implictLIs ? component.Id : null,
+        ClassNames = component.ClassNames.ToList(),
+        Components = new List<Models.Component>
+{
+            component
+        }
+    };
+
+    component.ClassNames.Clear();
+
+    await listItem.Render(Html, Model.PageData);
+}
+@Html.Raw(@CloseTag)

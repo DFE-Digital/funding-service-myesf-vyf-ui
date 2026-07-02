@@ -1,0 +1,29 @@
+@model PDS.ViewYourFunding.Web.Models.Shared.BaseViewYourFundingPageViewModel
+
+<header id="global-header" class=" with-proposition">
+    <div class="header-wrapper">
+        <div class="header-global">
+            <div class="header-logo">
+                <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+                    <img alt="Crown logo" src="@string.Format("{0}_content/Pds.Core.Web/content/images/logos/gov.uk_logotype_crown_invert_trans.png", Model.BasePath)" width="35" height="31"> GOV.UK
+                </a>
+            </div>
+
+        </div>
+
+        <div class="header-proposition">
+            <div class="content">
+                <div class="header-logo" style="margin: 5px 0 2px;">
+                    <a href="@Model.HeaderLink" id="proposition-name">@Model.HeaderTitle </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--end header-->
+
+<div id="global-header-bar">
+    <div class="inner-block">
+        <div class="header-bar"></div>
+    </div>
+</div>

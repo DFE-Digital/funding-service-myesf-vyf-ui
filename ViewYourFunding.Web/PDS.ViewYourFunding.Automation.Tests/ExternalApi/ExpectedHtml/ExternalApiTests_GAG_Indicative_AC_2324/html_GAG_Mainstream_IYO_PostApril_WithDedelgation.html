@@ -1,0 +1,43 @@
+System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.TokenRefreshRetries[T](Func`1 action, HttpResponseMessage response) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 256
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.GetResponse(String url) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 147
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.TokenRefreshRetries[T](Func`1 action, HttpResponseMessage response) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 253
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.GetResponse(String url) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 147
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.TokenRefreshRetries[T](Func`1 action, HttpResponseMessage response) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 253
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.GetResponse(String url) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 147
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.TokenRefreshRetries[T](Func`1 action, HttpResponseMessage response) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 253
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.GetResponse(String url) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 147
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiHttpClient.GetRequestSingleResult[T](String queryStringParams) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiHttpClient.cs:line 121
+   at PDS.ViewYourFunding.Services.Implementations.FundingApiService.GetProviderFunding(String id) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Services\Implementations\FundingApiService.cs:line 317
+   at PDS.ViewYourFunding.Web.Controllers.BaseFundingController.GetProviderFunding(String id, String fundingStreamCode, Boolean useStaticData) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Web\Controllers\BaseFundingController.cs:line 861
+   at PDS.ViewYourFunding.Web.Controllers.ExternalApiController.RenderHtml(RenderHtmlRequest request) in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Web\Controllers\ExternalApiController.cs:line 112
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at PDS.ViewYourFunding.Web.Startup.<>c.<<PreventDefaultNoCachingCacheHeaders>b__29_0>d.MoveNext() in C:\Users\kdesai\source\repos\DSI\pds-app-fundingui\ViewYourFunding.Web\PDS.ViewYourFunding.Web\Startup.cs:line 384
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Pds.Core.SecurityAssurances.Middlewares.SecurityHeadersMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+HEADERS
+=======
+Host: myesf.local:44375
+x-secret-key: DEBEC23EEB4F3F578DE64CA764AB5

@@ -1,0 +1,30 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.DataTypeEdit.DataTypeBaseEdit
+
+<p>
+    <span class="heading-large">Are You Sure?</span>
+</p>
+
+<p>
+    <span class="heading-medium">Edit General setting</span><br />
+</p>
+
+<p>
+    <span class="heading-medium">@Model.Description</span>
+</p>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminGeneralSettingSaveChanges, null, FormMethod.Post, null,  new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.DisplayFor(m => m)
+ 
+    <input type="submit" class="button" value="Save" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminGeneralSettingHome)
+
+    @Html.HiddenFor(model => model.EditTemplateName)
+    @Html.HiddenFor(model => model.Description)
+    @Html.HiddenFor(model => model.SettingEditType)
+    @Html.HiddenFor(model => model.NewValueString)
+    @Html.HiddenFor(model => model.CurrentValue)
+    @Html.HiddenFor(model => model.DataTypeId)
+}

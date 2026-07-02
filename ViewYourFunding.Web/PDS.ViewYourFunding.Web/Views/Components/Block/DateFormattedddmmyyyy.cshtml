@@ -1,0 +1,12 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using  System
+@using  System.Globalization
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+@{
+    var date = Model.GetValue();
+    System.DateTime.TryParse(date?.ToString(), out var result);    
+}
+<span>@result.ToString("dd/MM/yyyy")</span>

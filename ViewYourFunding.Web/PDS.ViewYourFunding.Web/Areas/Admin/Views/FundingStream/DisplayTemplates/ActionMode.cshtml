@@ -1,0 +1,27 @@
+﻿@using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream.ActionMode
+@{
+    ViewData["Title"] = "ActionMode";
+}
+
+@switch (Model)
+{
+    case ActionMode.Add:
+        <p>
+            <span class="heading-medium">Add Funding Stream</span><br />
+        </p>
+        break;
+    case ActionMode.Delete:
+        <p>
+            <span class="heading-medium">Delete Funding Stream</span><br />
+        </p>
+        break;
+    case ActionMode.Edit:
+        <p>
+            <span class="heading-medium">Edit Funding Stream</span><br />
+        </p>
+        break;
+}
+<p>
+    Please review the changes you have made carefully before clicking the save button
+</p>

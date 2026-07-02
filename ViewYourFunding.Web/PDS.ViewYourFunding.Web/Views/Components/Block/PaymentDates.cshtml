@@ -1,0 +1,62 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var pModel = Model.Clone(component =>
+    {
+        component.Type = ComponentType.Html_Paragraph;
+        component.Components = null;
+        component.Title = null;
+    });
+
+    var componentConfiguration = Model.ComponentConfiguration;
+}
+<h3 class="heading-medium heading-guidance">Payment dates</h3>
+
+@if (componentConfiguration.OrganisationClosed)
+{
+    pModel.Title = componentConfiguration.NoNextPaymentForOrganisationText;
+}
+else if (!componentConfiguration.NextPaymentDate.HasValue)
+{
+    pModel.Title = componentConfiguration.NoNextPaymentForTheYearText;
+}
+else
+{
+    pModel.Components = new List<Models.Component>
+    {
+        new Models.Component(componentConfiguration)
+        {
+            Type = ComponentType.General_Literal,
+            Title = "Next allocation payment: "
+        },
+        new Models.Component(componentConfiguration)
+        {
+            Type = ComponentType.Html_Span,
+            ClassNames = new List<string> { "bold-small" },
+            Title = componentConfiguration.NextPaymentDate.Value.ToDateDisplay()
+        },
+        new Models.Component(componentConfiguration)
+        {
+            Type = ComponentType.General_Literal,
+            Title = "."
+        }
+    };
+}
+
+@{ await pModel.Render(Html, Model.PageData); }
+
+<p>
+    You can view more information on payments on
+    @{
+        if (Model.Components.Count > 0)
+        {
+            await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+        }
+        else
+        {
+            Html.Raw(Model.GetValue());
+        }
+    }
+</p>

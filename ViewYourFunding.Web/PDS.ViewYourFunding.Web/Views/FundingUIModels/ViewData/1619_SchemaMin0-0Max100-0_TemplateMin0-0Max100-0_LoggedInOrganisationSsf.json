@@ -1,0 +1,978 @@
+{
+  "name": "16 to 19 sixth form accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "_type": "Contract - Represents 'Maintained Sixth Forms'",
+      "datasetName": "funding",
+      "groupingType": "LocalAuthoritySsf"
+    },
+    {
+      "datasetName": "providerFunding",
+      "limitedTo": "Dataset1_First_GroupName",
+      "expression": "ParentProviderType=LocalAuthoritySsf",
+      "orderBy": "OrganisationName",
+      "groupByOrganisationUkprn": "true"
+    },
+    {
+      "_type": "Contract - Represents 'Maintained Special Schools'",
+      "datasetName": "funding",
+      "expression": "GroupingReason=Contracting",
+      "groupingType": "LocalAuthority",
+      "fundingStreamMappings": [ "1619-MSS" ],
+      "limitedTo": "Dataset1_First_GroupName"
+    }
+  ],
+  "additionalFundingStreams": [
+    {
+      "id": "1619-MSS",
+      "code": "1619"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithDate",
+      "title": "School sixth form funding: @year1 to @year2",
+      "value": "@statusChangedDateUiFormatted",
+      "groups": [
+        {
+          "type": "Tag/LatestFinalOrNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group govuk-!-margin-bottom-9 pfb-total-allocation",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "enableVariance": true,
+          "id": "allocation-amount",
+          "title": "Total allocation",
+          "selector": "L0",
+          "datastyle": {
+            "numberFormat": "c0"
+          },
+          "classname": "lede govuk-!-margin-bottom-6"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Html/Section",
+          "classname": "form-block attachment embedded",
+          "groups": [
+            {
+              "type": "Block/PrintOrSaveStatement"
+            },
+            {
+              "type": "Block/LoggedInDownloadADocument"
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-inset-text",
+              "groups": [
+                {
+                  "type": "Heading/Medium",
+                  "classname": "heading-small rounding-text",
+                  "title": "The values on your statement are shown rounded to various numbers of decimal places. The calculation of your funding however is done using un-rounded values. This may result in some slight differences when you work through the calculation yourselves."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Tabs/Tabs",
+      "groups": [
+        {
+          "id": "academic-year",
+          "type": "Tabs/Tab",
+          "title": "Academic year",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "enableVariance": true,
+                      "title": "Total local authority academic year funding",
+                      "id": "css-block-total",
+                      "selector": "L0",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "local-authority-funding",
+                  "useDefaultClasses": true,
+                  "classname": "first-element-in-tab",
+                  "title": "Local authority funding",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "title": "Local authority funding",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-table__header--numeric"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "title": "Total mainstream schools funding",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "L0",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal govuk-!-width-two-thirds",
+                              "useDefaultClasses": false,
+                              "title": "Maintained special schools funding - including student financial support"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "L439",
+                              "context": "@(dataset3[0].FundingValue)",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "title": "Total local authority academic year funding"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "formula": {
+                                "expression": "{0}+{1}",
+                                "decimalPlaces": 2,
+                                "selectors": [
+                                  "L0",
+                                  "L439"
+                                ],
+                                "contexts": [
+                                  "@(dataset1[0].FundingValue)",
+                                  "@(dataset3[0].FundingValue)"
+                                ]
+                              },
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "mainstream-schools-section",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "mainstream-schools",
+                  "useDefaultClasses": true,
+                  "title": "Mainstream school funding breakdown",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Mainstream schools",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-third"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Core programme",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Student financial support",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Industry placements",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Advanced maths premium",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "High value courses",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset2",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName)"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L1",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L241",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L300",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L301",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L302",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L0",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Total mainstream schools funding"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L1",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L241",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L300",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L301",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L302",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L0",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "id": "disadvantaged-funding-section",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Table/Table",
+                      "id": "maintained-special-schools-breakdown",
+                      "useDefaultClasses": true,
+                      "title": "Maintained special schools funding",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header",
+                              "title": "Maintained special schools funding"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                              "title": "Sub-total"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "title": "Maintained special schools funding - including student financial support"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "L439",
+                                  "context": "@(dataset3[0].FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "GDS/Detail",
+                      "title": "More about maintained special schools funding",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "This funding is aggregated and paid as a lump sum. Local Authorities should distribute it across all maintained special schools, according to need."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/GrandTotal",
+              "enableVariance": true,
+              "title": "Total local authority academic year funding",
+              "classname": "bottomTab-total",
+              "formula": {
+                "expression": "{0}+{1}",
+                "decimalPlaces": 2,
+                "selectors": [
+                  "L0",
+                  "L439"
+                ],
+                "contexts": [
+                  "@(dataset1[0].FundingValue)",
+                  "@(dataset3[0].FundingValue)"
+                ]
+              },
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        },
+        {
+          "id": "split-years",
+          "type": "Tabs/Tab",
+          "title": "Split across financial years",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "enableVariance": true,
+                      "title": "Total funding split across financial years",
+                      "id": "css-block-total",
+                      "selector": "L0",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "local-authority-funding-two",
+                  "useDefaultClasses": true,
+                  "classname": "first-element-in-tab",
+                  "title": "Local authority funding",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "title": "Local authority funding",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric",
+                          "title": "8 months in @year1 to @year2"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric",
+                          "title": "4 months in @year2 to @year3"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "title": "Total mainstream schools funding",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "D@FY1",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "D@FY2",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "title": "Maintained special schools funding - including student financial support"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-!-width-one-quarter govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value",
+                              "context": "@(dataset3[0].FundingValue)",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-!-width-one-quarter govuk-table__cell--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value",
+                              "context": "@(dataset3[0].FundingValue)",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "title": "Total local authority funding"
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "formula": {
+                                "expression": "{0}+{1}",
+                                "decimalPlaces": 2,
+                                "selectors": [
+                                  "D@FY1",
+                                  "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value"
+                                ],
+                                "contexts": [
+                                  "@(dataset1[0].FundingValue)",
+                                  "@(dataset3[0].FundingValue)"
+                                ]
+                              },
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "formula": {
+                                "expression": "{0}+{1}",
+                                "decimalPlaces": 2,
+                                "selectors": [
+                                  "D@FY2",
+                                  "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value"
+                                ],
+                                "contexts": [
+                                  "@(dataset1[0].FundingValue)",
+                                  "@(dataset3[0].FundingValue)"
+                                ]
+                              },
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "mainstream-schools-section-two",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "mainstream-schools-two",
+                  "useDefaultClasses": true,
+                  "title": "Mainstream school funding breakdown",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Mainstream schools",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-third"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric",
+                          "title": "8 months in @year1 to @year2"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric",
+                          "title": "4 months in @year2 to @year3"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset2",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName)"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "D@FY1",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "D@FY2",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Mainstream schools funding"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "D@FY1",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "D@FY2",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "disadvantaged-funding-section",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Table/Table",
+                      "id": "maintained-special-schools-breakdown-two",
+                      "useDefaultClasses": true,
+                      "title": "Maintained special schools funding",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header",
+                              "title": "Maintained special schools funding"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric",
+                              "title": "8 months in @year1 to @year2"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric",
+                              "title": "4 months in @year2 to @year3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "title": "Maintained special schools funding - including student financial support"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-quarter govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value",
+                                  "context": "@(dataset3[0].FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-quarter govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value",
+                                  "context": "@(dataset3[0].FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Total/GrandTotal",
+              "enableVariance": true,
+              "title": "Total funding split across financial years",
+              "classname": "bottomTab-total",
+              "formula": {
+                "expression": "{0}+{1}",
+                "decimalPlaces": 2,
+                "selectors": [
+                  "L0",
+                  "L439"
+                ],
+                "contexts": [
+                  "@(dataset1[0].FundingValue)",
+                  "@(dataset3[0].FundingValue)"
+                ]
+              },
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "form-group govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "type": "Block/AllocationHistory"
+            }
+          ]
+        },
+        {
+          "type": "Heading/Small",
+          "title": "School sixth form funding resources",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list",
+          "groups": [
+            {
+              "type": "General/Section",
+              "id": "guidance-link",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "School sixth form funding guides: @year1 to @year2",
+                  "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2/16-to-19-further-education-revenue-funding-allocation-guide-@year1-to-@year2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Script",
+      "value": "@basePath/Scripts/myesftab.js"
+    }
+  ],
+  "variables": [
+  ]
+}

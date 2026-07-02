@@ -1,0 +1,24 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.QueryFilterViewModel
+<div id="filterContent" class="column-filter-one-third column-third filters">
+    @using (Html.BeginRouteForm(Model.RouteName, null, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        if (Model != null && Model.QueryFilter != null && Model.QueryFilter.Filters != null)
+        {
+            <div>
+                @foreach (var filter in Model.QueryFilter.Filters)
+                {
+                    await Html.RenderPartialAsync("Partial/_SearchFilter", filter);
+                }
+            </div>
+            <div id="UpdateResults" class="form-group">
+                <button class="button">Update results</button>
+            </div>
+            <div id="clearAllFilters" class="form-group">
+                @Html.RouteLink(ViewYourFundingConstants.LinkText_ResetSearchFilter, Model.RouteName, new { Model.SearchTerm }, new { id = "ResetSearch" })
+            </div>
+            @Html.HiddenFor(x => x.SearchTerm)
+        }
+    }
+</div>

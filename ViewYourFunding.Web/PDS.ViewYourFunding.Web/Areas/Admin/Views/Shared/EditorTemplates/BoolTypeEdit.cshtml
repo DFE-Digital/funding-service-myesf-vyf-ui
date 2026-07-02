@@ -1,0 +1,14 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.DataTypeEdit.BoolTypeEdit
+
+<div class="form-horizontal">
+     <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.NewValue)
+        </dt>
+
+        <dd>
+            <select asp-for="NewValue" asp-items="@Model.ValuesList" id="NewValue">
+            </select>
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,105 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Areas.Admin.Helpers
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using SettingValueDataType = PDS.ViewYourFunding.Web.Areas.Admin.Enums.SettingValueDataType
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting.FundingStreamSettingActionViewModel
+
+<p>
+    <span class="heading-large">@Model.ActionMode @Model.SettingName setting</span><br />
+    @Model.SettingDescription
+</p>
+@if (Model.ActionMode == FundingStreamSettingAction.Edit)
+{
+    <p>
+        <span class="heading-small">Current value</span><br />
+        @Model.CurrentValue
+    </p>
+}
+
+@{
+    @using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminFundingStreamSettingAction, new{ Model.FundingStreamId, Model.SettingValueId, Model.ActionMode }, FormMethod.Post, null, new { @class = "submitDisable" }))
+    {
+        @Html.AntiForgeryToken()
+        <div id="setting-editor" style="margin-bottom: 20px;">
+
+            @switch (Model.SettingValueDataType)
+            {
+                case SettingValueDataType.String:
+                    {
+                        @Html.LabelFor(m => m.NewStringValue, new { @class = "heading-small" })
+                        @Html.EditorFor(m => m.NewStringValue, new { htmlAttributes = new { required = "", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(m => m.NewDateValue)
+                    }
+                    break;
+                case SettingValueDataType.Int:
+                    {
+                        @Html.LabelFor(m => m.NewIntValue, new { @class = "heading-small" })
+                        @Html.EditorFor(m => m.NewIntValue, new { htmlAttributes = new { type = "number", min = int.MinValue, max = int.MaxValue, required = "", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(m => m.NewDateValue)
+                    }
+                    break;
+                case SettingValueDataType.Date:
+                    {
+                        @Html.LabelFor(m => m.NewDateValue, new { @class = "heading-small" })
+                        @Html.EditorFor(m => m.NewDateValue)
+                        @Html.ValidationMessageFor(m => m.NewDateValue)
+                    }
+                    break;
+                case SettingValueDataType.Bool:
+                    {
+                        @Html.LabelFor(m => m.NewBoolValue, new { @class = "heading-small" })
+                        @Html.DropDownListFor(m => m.NewBoolValue, new[] { new SelectListItem { Value = "true", Text = "True" }, new SelectListItem { Value = "false", Text = "False" } })
+                    }
+                    break;
+                case SettingValueDataType.Time:
+                    {
+                        @Html.LabelFor(m => m.NewTimeValue, new { @class = "heading-small" })
+                        @Html.EditorFor(m => m.NewTimeValue, new { htmlAttributes = new { required = "" } })
+                        @Html.ValidationMessageFor(m => m.NewTimeValue)
+                    }
+                    break;
+                case SettingValueDataType.DateTime:
+                    {
+                        @Html.LabelFor(m => m.NewDateValue, new { @class = "heading-small" })
+                        @Html.EditorFor(m => m.NewDateValue)
+                        <div style="margin-top: 10px; width: 80px;">
+                            @Html.LabelFor(m => m.NewTimeValue, "Time")
+                            @Html.EditorFor(m => m.NewTimeValue, new { htmlAttributes = new { required = "" } })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.NewDateValue)
+                        @Html.ValidationMessageFor(m => m.NewTimeValue)
+                    }
+                    break;
+                case SettingValueDataType.NationalLayout:
+                {
+                    @Html.LabelFor(m => m.NewNationalLayoutIdValue, new { @class = "heading-small" })
+                    <select asp-for="NewNationalLayoutIdValue" asp-items="Model.LayoutUiModels.GetLayoutsAvailable(PDS.ViewYourFunding.Services.Enums.FundingViewType.ViewData, PDS.ViewYourFunding.Services.Enums.FundingViewScope.National)">
+                    </select>
+                     
+                    @Html.ValidationMessageFor(m => m.NewNationalLayoutIdValue) 
+                }
+                    break;
+                case SettingValueDataType.NationalSpreadsheetLayout:
+                {
+                    @Html.LabelFor(m => m.NewNationalSpreadsheetLayoutIdValue, new { @class = "heading-small" })
+                    <select asp-for="NewNationalSpreadsheetLayoutIdValue" asp-items="Model.LayoutUiModels.GetLayoutsAvailable(PDS.ViewYourFunding.Services.Enums.FundingViewType.Spreadsheet, PDS.ViewYourFunding.Services.Enums.FundingViewScope.National)">
+                    </select>
+                     
+                    @Html.ValidationMessageFor(m => m.NewNationalSpreadsheetLayoutIdValue) 
+                }
+                    break;
+            }
+        </div>
+        <input type="submit" class="button" />
+
+        @Html.HiddenFor(model => model.SettingValueDataType)
+        @Html.HiddenFor(x => x.FundingStreamId)
+        @Html.HiddenFor(x => x.FundingStreamName)
+        @Html.HiddenFor(x => x.SettingName)
+        @Html.HiddenFor(x => x.SettingDescription)
+        @Html.HiddenFor(x => x.SettingId)
+        @Html.HiddenFor(x => x.ActionMode)
+        @Html.HiddenFor(x => x.SettingValueId)
+        @Html.HiddenFor(x => x.CurrentValue)
+    }
+}

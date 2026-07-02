@@ -1,0 +1,26 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting.SetSettingTypeViewModel
+
+<p>
+    <span class="heading-large">Set setting type</span><br />
+</p>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminFundingStreamSettingAdd, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div id="setting-editor" style="margin-bottom: 20px;">
+
+        @Html.LabelFor(model => model.SettingTypeId, new { @class = "heading-small" })
+
+        <select asp-for="SettingTypeId"
+                asp-items="Model.SettingTypes">
+        </select>
+
+    </div>
+    <div class="form-group">
+        <button class="button">Continue</button>
+    </div>
+
+    @Html.HiddenFor(x => x.FundingStreamId)
+}

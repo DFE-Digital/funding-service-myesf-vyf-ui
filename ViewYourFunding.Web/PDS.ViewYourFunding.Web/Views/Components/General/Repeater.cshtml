@@ -1,0 +1,43 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        await Html.RenderPartialAsync("~/Views/Components/Reporting/_RepeaterAbove.cshtml", Model);
+    }
+
+    if (!(Model.GetValue() is System.Collections.IEnumerable repeaterItems))
+    {
+        throw new Exception("Data is not enumerable");
+    }
+
+    var loopIndex = 0;
+    var repeaterList = repeaterItems.Cast<object>().ToList();
+
+    foreach (var repeaterItem in repeaterItems)
+    {
+        if (!Model.ComponentConfiguration.ShowData && loopIndex > 0)
+        {
+            break;
+        }
+
+        var clonedModel = Model.Clone(true);
+
+        await ComponentHelper.Render(Html, ComponentType.General_Section, clonedModel,
+            new Dictionary<string, object> {
+                { "RepeaterList", repeaterList },
+                { "RepeaterItem", repeaterItem },
+                { "LoopIndex_1Indexed", loopIndex+1 },
+                { "LoopIndex", loopIndex }
+            });
+
+        loopIndex += 1;
+    }
+
+    if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        await Html.RenderPartialAsync("~/Views/Components/Reporting/_RepeaterBelow.cshtml", Model);
+    }
+}

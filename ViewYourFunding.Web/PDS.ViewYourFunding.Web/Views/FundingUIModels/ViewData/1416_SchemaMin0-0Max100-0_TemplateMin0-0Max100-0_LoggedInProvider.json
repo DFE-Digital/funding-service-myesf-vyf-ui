@@ -1,0 +1,2067 @@
+{
+  "name": "14 to 16 Logged In Provider funding breakdown",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerFunding"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithDate",
+      "title": "14 to 16 funding: @year1 to @year2",
+      "value": "@statusChangedDateUiFormatted",
+      "groups": [
+        {
+          "type": "Tag/LatestFinalOrNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Block/VarianceMessage"
+    },
+    {
+      "type": "Html/Div",
+      "id": "providername-for-print",
+      "classname": "hidden show-on-print",
+      "groups": [
+        {
+          "type": "Heading/Large",
+          "classname": "heading-large govuk-!-margin-bottom-6",
+          "title": "@providerName (UKPRN: @providerUkprn)"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group govuk-!-margin-bottom-9 pfb-total-allocation",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "enableVariance": true,
+          "id": "allocation-amount",
+          "title": "Total allocation",
+          "selector": "L1",
+          "datastyle": {
+            "numberFormat": "c0"
+          },
+          "classname": "lede govuk-!-margin-bottom-6"
+        },
+        {
+          "type": "Heading/Medium",
+          "title": "Students",
+          "classname": "lede"
+        },
+        {
+          "type": "Html/Paragraph",
+          "enableVariance": true,
+          "classname": "heading-large heading-funding-summary variance-heading-no-margin",
+          "selector": "C6",
+          "datastyle": {
+            "numberFormat": "ThousandsSeperatedNoTrailingZeroes"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Html/Section",
+          "classname": "form-block attachment embedded",
+          "groups": [
+            {
+              "type": "Block/PrintOrSaveStatement"
+            },
+            {
+              "type": "Block/LoggedInDownloadADocument",
+              "classname": "alternative-download-text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Tabs/Tabs",
+      "groups": [
+        {
+          "id": "core-programme",
+          "type": "Tabs/Tab",
+          "title": "Core programme",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "enableVariance": true,
+                      "title": "Total core programme",
+                      "id": "css-block-total",
+                      "selector": "L2",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "total-core-programme-breakdown",
+                  "useDefaultClasses": true,
+                  "classname": "first-element-in-tab",
+                  "title": "Total core programme",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Core programme",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-third"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Calculation",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/StandardLink",
+                                  "title": "Student funding",
+                                  "value": "#student-funding-section"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "C5",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/StandardLink",
+                                  "title": "Retention factor",
+                                  "value": "#retention-factor-section"
+                                },
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-column-mobile",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Calculation: "
+                                    },
+                                    {
+                                      "type": "Symbols/Plus"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Plus"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "C9",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/StandardLink",
+                                  "title": "Programme cost weighting",
+                                  "value": "#programme-cost-weighting-section"
+                                },
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-column-mobile",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Calculation: "
+                                    },
+                                    {
+                                      "type": "Symbols/Plus"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Plus"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "C15",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/StandardLink",
+                                  "title": "Disadvantage funding",
+                                  "value": "#disadvantaged-funding-section"
+                                },
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-column-mobile",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Calculation: "
+                                    },
+                                    {
+                                      "type": "Symbols/Plus"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Plus"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "L18",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/Literal",
+                                  "title": "Area cost allowance"
+                                },
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-column-mobile",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Calculation: "
+                                    },
+                                    {
+                                      "type": "Symbols/Times"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Times"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "C30",
+                              "datastyle": {
+                                "numberFormat": "#,0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/Literal",
+                                  "title": "Total core programme"
+                                },
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-column-mobile",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Calculation: "
+                                    },
+                                    {
+                                      "type": "Symbols/Equals"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "groups": [
+                                {
+                                  "type": "Symbols/Equals"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "L2",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "id": "core-programme-section",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "total-allocation-wrapper",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "total-allocation-label",
+                      "groups": [
+                        {
+                          "type": "Heading/Medium",
+                          "classname": "heading-small no-margin-top",
+                          "title": "Total core programme"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Div",
+                      "classname": "total-allocation-amount",
+                      "groups": [
+                        {
+                          "type": "Heading/Medium",
+                          "enableVariance": true,
+                          "classname": "heading-small no-margin-top",
+                          "selector": "L2",
+                          "datastyle": {
+                            "numberFormat": "c0"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "student-funding-section",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "total-student-funding-breakdown",
+                  "useDefaultClasses": true,
+                  "title": "Total student funding breakdown",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Student funding",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-third"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "14 to 16 students",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "National rate",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Sub-total",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/Literal",
+                                  "title": "Student funding"
+                                },
+                                {
+                                  "type": "Html/Span",
+                                  "classname": "table-column-mobile",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "14 to 16 students: "
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "selector": "C6"
+                                    },
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Rate: "
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "selector": "C7",
+                                      "datastyle": {
+                                        "numberFormat": "c0"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "selector": "C6",
+                              "enableVariance": true
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                              "selector": "C7",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "selector": "C5",
+                              "enableVariance": true,
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "retention-factor-section",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Heading/Small",
+                      "classname": "heading-medium",
+                      "title": "Retention adjustment"
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "panel panel-border-narrow",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "The retention factor is always 1 because it is not applicable to pre-16 students. The adjustment is always @britishCurrencySymbol0."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "total-allocation-wrapper",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "total-allocation-label",
+                      "groups": [
+                        {
+                          "type": "Heading/Medium",
+                          "classname": "heading-small no-margin-top",
+                          "title": "Total retention adjustment"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Div",
+                      "classname": "total-allocation-amount",
+                      "groups": [
+                        {
+                          "type": "Heading/Medium",
+                          "classname": "heading-small no-margin-top",
+                          "selector": "C12",
+                          "datastyle": {
+                            "numberFormat": "c0"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "programme-cost-weighting-section",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Heading/Small",
+                      "classname": "heading-medium",
+                      "title": "Programme cost weighting uplift"
+                    },
+                    {
+                      "type": "Table/Table",
+                      "id": "programme-cost-weighting-breakdown",
+                      "useDefaultClasses": true,
+                      "title": "Total programme cost weighting breakdown",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Programme cost weighting uplift",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Calculation",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Sub-total",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "useDefaultClasses": false,
+                                  "classname": "table-header-normal govuk-!-width-one-third",
+                                  "title": "Student funding after retention adjustment"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "useDefaultClasses": false,
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default"
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "useDefaultClasses": false,
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric",
+                                  "selector": "C5",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal govuk-!-width-one-third",
+                                  "useDefaultClasses": false,
+                                  "title": "Programme cost weighting for subjects that cost more to deliver",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Calculation: "
+                                        },
+                                        {
+                                          "type": "Symbols/Times"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "Symbols/Times"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric",
+                                  "useDefaultClasses": false,
+                                  "selector": "C16",
+                                  "datastyle": {
+                                    "numberFormat": "#,0.00"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal govuk-!-width-one-third",
+                                  "useDefaultClasses": false,
+                                  "title": "Core programme up to programme cost weighting",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Calculation: "
+                                        },
+                                        {
+                                          "type": "Symbols/Equals"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "Symbols/Equals"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric",
+                                  "useDefaultClasses": false,
+                                  "selector": "C17",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "GDS/Detail",
+                      "title": "Where programme cost weighting comes from",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "title": "For directly funded 14 to 16 year old students, we apply a weighting of 1.04 to the student funding rate."
+                        },
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": " More about "
+                            },
+                            {
+                              "type": "General/ExternalLink",
+                              "value": "https://www.gov.uk/guidance/full-time-enrolment-of-14-to-16-year-olds-in-further-education-and-sixth-form-colleges#funding-arrangements-for-the-@year0-to-@year1-academic-year",
+                              "title": "Funding rates and formula (opens in new tab)"
+                            },
+                            {
+                              "type": "General/Literal",
+                              "title": "."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "id": "disadvantaged-funding-section",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Heading/Small",
+                      "classname": "heading-medium",
+                      "title": "Disadvantage funding"
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Table/Table",
+                      "id": "total-deprivation-breakdown",
+                      "useDefaultClasses": true,
+                      "title": "Total deprivation breakdown",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-third",
+                              "title": "Deprivation (block 1)"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                              "title": "Proportion of students"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                              "title": "Student funding and programme cost uplift"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                              "title": "Sub-total"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal govuk-!-width-one-third",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Deprivation",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Span",
+                                          "classname": "table-column-mobile",
+                                          "groups": [
+                                            {
+                                              "type": "Html/Element",
+                                              "subtype": "br"
+                                            },
+                                            {
+                                              "type": "General/Literal",
+                                              "title": "Proportion of students: "
+                                            },
+                                            {
+                                              "type": "General/Literal",
+                                              "selector": "C22",
+                                              "datastyle": {
+                                                "numberFormat": "#,0.00000"
+                                              }
+                                            },
+                                            {
+                                              "type": "Html/Element",
+                                              "subtype": "br"
+                                            },
+                                            {
+                                              "type": "General/Literal",
+                                              "title": "Student funding and programme cost uplift: "
+                                            },
+                                            {
+                                              "type": "General/Literal",
+                                              "selector": "C17",
+                                              "datastyle": {
+                                                "numberFormat": "c0"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C22",
+                                  "datastyle": {
+                                    "numberFormat": "#,0.00000"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C17",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C21",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "value": "https://www.gov.uk/guidance/full-time-enrolment-of-14-to-16-year-olds-in-further-education-and-sixth-form-colleges#disadvantage-funding",
+                          "title": "More about proportion of students (opens in new tab)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Table/Table",
+                      "id": "total-low-prior-attainment-breakdown",
+                      "useDefaultClasses": true,
+                      "title": "Total low prior attainment in maths or English breakdown",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-third",
+                              "title": "Low prior attainment (block 2)"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "title": "14 to 16 students"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "title": "Proportion of students"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default",
+                              "useDefaultClasses": false,
+                              "title": "Rate"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "subtype": "th",
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric",
+                              "useDefaultClasses": false,
+                              "title": "Sub-total"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal govuk-!-width-one-third",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Low prior attainment in maths or English"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "14 to 16 students: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C6"
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Proportion of students: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C24",
+                                          "datastyle": {
+                                            "numberFormat": "#,0.00000"
+                                          }
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Rate: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C26",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C6",
+                                  "enableVariance": true
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C24",
+                                  "datastyle": {
+                                    "numberFormat": "#,0.00000"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C26",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-!-width-one-sixth govuk-table__cell--numeric",
+                                  "useDefaultClasses": false,
+                                  "selector": "C23",
+                                  "enableVariance": true,
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "value": "https://www.gov.uk/guidance/full-time-enrolment-of-14-to-16-year-olds-in-further-education-and-sixth-form-colleges#disadvantage-funding",
+                          "title": "More about proportion of students (opens in new tab)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "total-allocation-wrapper",
+                      "groups": [
+                        {
+                          "type": "Html/Div",
+                          "classname": "total-allocation-label",
+                          "groups": [
+                            {
+                              "type": "Heading/Medium",
+                              "classname": "heading-small no-margin-top",
+                              "title": "Total disadvantage funding"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Div",
+                          "classname": "total-allocation-amount",
+                          "groups": [
+                            {
+                              "type": "Heading/Medium",
+                              "classname": "heading-small no-margin-top",
+                              "enableVariance": true,
+                              "selector": "L18",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-9",
+                  "groups": [
+                    {
+                      "type": "Total/GrandTotal",
+                      "enableVariance": true,
+                      "title": "Total additional funding",
+                      "classname": "bottomTab-total",
+                      "selector": "L2",
+                      "id": "total-additional-funding-total",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "General/BackToTopLink",
+                  "classname": "govuk-!-margin-bottom-6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pupil-premium",
+          "type": "Tabs/Tab",
+          "title": "Pupil premium",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total",
+                  "groups": [
+                    {
+                      "type": "Heading/FundingHeader",
+                      "enableVariance": true,
+                      "title": "Total additional funding",
+                      "id": "css-block-total",
+                      "selector": "L3",
+                      "datastyle": {
+                        "numberFormat": "c0"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Html/Div",
+                  "classname": "govuk-!-margin-bottom-8 govuk-!-margin-4",
+                  "groups": [
+                    {
+                      "type": "Table/Table",
+                      "id": "pupil-premium-breakdown",
+                      "useDefaultClasses": true,
+                      "classname": "first-element-in-tab",
+                      "title": "Total pupil premiumn breakdown",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Pupil premium",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Eligible pupils",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Rate",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Sub-total",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Free meals"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Eligible pupils: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C38"
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Rate: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C39",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C38",
+                                  "enableVariance": true
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C39",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric",
+                                  "useDefaultClasses": false,
+                                  "enableVariance": true,
+                                  "selector": "C35",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Pupils in or recently left care"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Eligible pupils: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C40"
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Rate: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C41",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "Table/RowColumn",
+                                      "subtype": "td",
+                                      "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                      "useDefaultClasses": false,
+                                      "selector": "C40",
+                                      "enableVariance": true
+                                    },
+                                    {
+                                      "type": "Table/RowColumn",
+                                      "subtype": "td",
+                                      "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                      "useDefaultClasses": false,
+                                      "selector": "C41",
+                                      "datastyle": {
+                                        "numberFormat": "c0"
+                                      }
+                                    },
+                                    {
+                                      "type": "Table/RowColumn",
+                                      "subtype": "td",
+                                      "classname": "govuk-table__cell govuk-table__cell--numeric",
+                                      "useDefaultClasses": false,
+                                      "enableVariance": true,
+                                      "selector": "C36",
+                                      "datastyle": {
+                                        "numberFormat": "c0"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Total pupil premium"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Eligible pupils: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C45"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C45",
+                                  "enableVariance": true
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "title": ""
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric",
+                                  "useDefaultClasses": false,
+                                  "enableVariance": true,
+                                  "selector": "L4",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "value": "https://www.gov.uk/guidance/full-time-enrolment-of-14-to-16-year-olds-in-further-education-and-sixth-form-colleges#meal-provision",
+                          "title": "More about free meals (opens in new tab)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Table",
+                      "id": "service-pupil-premium-breakdown",
+                      "useDefaultClasses": true,
+                      "classname": "first-element-in-tab",
+                      "title": "Service pupil premium",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Service pupil premium",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Eligible pupils",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Rate",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Sub-total",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Children of service personnel"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Eligible pupils: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C42"
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Rate: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C43",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C42",
+                                  "enableVariance": true
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "selector": "C43",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric",
+                                  "useDefaultClasses": false,
+                                  "enableVariance": true,
+                                  "selector": "C37",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "value": "https://www.gov.uk/government/publications/the-service-pupil-premium/service-pupil-premium-what-you-need-to-know",
+                          "title": "More about service pupil premium (opens in new tab)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Table",
+                      "id": "total-pupil-premium-breakdown",
+                      "useDefaultClasses": true,
+                      "classname": "first-element-in-tab",
+                      "title": "Total pupil premium",
+                      "visuallyhidden": true,
+                      "groups": [
+                        {
+                          "type": "Table/Columns",
+                          "useDefaultClasses": true,
+                          "groups": [
+                            {
+                              "type": "Table/Column",
+                              "title": "Total pupil premium",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-third"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Calculation",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default"
+                            },
+                            {
+                              "type": "Table/Column",
+                              "title": "Sub-total",
+                              "useDefaultClasses": false,
+                              "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Rows",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Pupil premium"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Calculation: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "value": ""
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Sub-total: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "L4",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "value": ""
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "enableVariance": true,
+                                  "selector": "L4",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Service pupil premium"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Calculation: "
+                                        },
+                                        {
+                                          "type": "Symbols/Plus"
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Sub-total: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "C37",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "Symbols/Plus"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "enableVariance": true,
+                                  "selector": "C37",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "th",
+                                  "classname": "table-header-normal",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "Total"
+                                    },
+                                    {
+                                      "type": "Html/Span",
+                                      "classname": "table-column-mobile",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Calculation: "
+                                        },
+                                        {
+                                          "type": "Symbols/Equals"
+                                        },
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "br"
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "title": "Sub-total: "
+                                        },
+                                        {
+                                          "type": "General/Literal",
+                                          "selector": "L3",
+                                          "datastyle": {
+                                            "numberFormat": "c0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "groups": [
+                                    {
+                                      "type": "Symbols/Equals"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "classname": "govuk-table__cell govuk-table__cell--numeric table-column-default",
+                                  "useDefaultClasses": false,
+                                  "enableVariance": true,
+                                  "selector": "L3",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "form-group govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "classname": "heading-medium heading-guidance-final-section hide-on-print",
+              "type": "Block/AllocationHistory"
+            }
+          ]
+        },
+        {
+          "type": "Heading/Small",
+          "title": "Explore the topic",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list",
+          "groups": [
+            {
+              "type": "General/Section",
+              "id": "guidance-link",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "title": "@shortFundingStreamNameHtml guide: @year1 to @year2 (opens in new tab)",
+                  "value": "https://www.gov.uk/guidance/full-time-enrolment-of-14-to-16-year-olds-in-further-education-and-sixth-form-colleges"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Script",
+      "value": "@basePath/Scripts/myesftab.js"
+    }
+  ],
+  "variables": [
+  ]
+}

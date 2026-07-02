@@ -1,0 +1,96 @@
+@using PDS.ViewYourFunding.Services.Constants
+@using PDS.ViewYourFunding.Web.Helpers
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Services.ResponseObjects
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var componentConfiguration = Model.ComponentConfiguration;
+    var document = Model.GetValue() as FundingDocument ?? componentConfiguration.FundingDocument;
+
+    if (document == null)
+    {
+        Model.Title = "Error - No document has been generated";
+        await ComponentHelper.Render(Html, ComponentType.Error_Error, Model, Model.PageData);
+        return;
+    }
+
+    var DocumentId = ComponentHelper.GetAndIncreaseInstanceNumber("Block/LoggedInDownloadADocument", Context);
+    var FileExtension = document.FileExtension.ToUpper();
+    var FileSizeKB = document.FileSizeBytes.HasValue ? Math.Floor(document.FileSizeBytes.Value / 1024.0).ToString("#,#") : "--";
+    var IsLatestDocument = document.IsLatestDocument;
+    var IsFinal = document.IsFinal;
+    var fundingStreamName = componentConfiguration.IsIndicativeFunding && componentConfiguration.FundingStreamCode == "GAG" ? "Indicative " + componentConfiguration.FundingStreamNameWithinSentence : componentConfiguration.ExpandedFundingStreamNameHtml;
+    var documentTitle = $"{fundingStreamName} report for {componentConfiguration.ProviderName} {componentConfiguration.Year1} to {componentConfiguration.Year2}";
+
+    Model.ClassNames.Insert(0, "form-block");
+    Model.ClassNames.Insert(1, "attachment");
+    Model.ClassNames.Insert(2, "embedded");
+
+    var Classes = string.Join(" ", Model.ClassNames.ToArray());
+
+    if (string.IsNullOrEmpty(Model.Title))
+    {
+        var institutionName = componentConfiguration.IsLocalAuthority ?
+            componentConfiguration.LocalAuthorityName : componentConfiguration.ProviderName;
+
+        var nameOrCode = componentConfiguration.ShowNameAbbreviation ?
+            componentConfiguration.FundingStreamCode : componentConfiguration.FundingStreamNameWithinSentence;
+
+        if (Model.ClassNames.Contains("alternative-download-text"))
+        {
+            Model.Title = $"Download {FileExtension} of this statement, {FileSizeKB}KB";
+        }
+        else
+        {
+            Model.Title = $"Download the raw data for this statement ({FileExtension}, {FileSizeKB}KB)";
+        }
+    }
+
+    var DownloadLink = new Models.Component(componentConfiguration)
+    {
+        Type = ComponentType.General_StandardLink,
+        Title = Model.Title,
+        Values = new List<object>
+{
+            document.FilePath
+        },
+        Attributes = new Dictionary<string, object>
+{
+            { "download", "" }
+        }
+    };
+
+    var ShowPublicationDate = Model.Variables?.ContainsKey("showPublicationDate") == true
+        && (bool)Model.Variables["showPublicationDate"] == true;
+
+    var PublicationDateModel = Model.Clone(newModel =>
+    {
+        newModel.Type = ComponentType.General_PublishedDate;
+        newModel.Values = new List<object>
+        {
+            document.DocumentPublishedDate
+                };
+    });
+}
+
+<section class="@Classes">
+    <div class="download-a-document-container-new">
+        <div class="download-icon">
+            <i class="fa fa-file" title="Document" aria-hidden="true"></i>
+            <span class="sr-only">Document</span>
+        </div>
+
+        <div class="download-a-document-new">
+            @{ await DownloadLink.Render(Html, Model.PageData); }<br>
+
+            <span class="download-a-document-content">
+                <span class="download-a-document-section-2">
+                    You may need a different format if you're using assistive technology. <a class="expand-hidden-section" role="button" aria-expanded="true" aria-controls="attachment-@DocumentId-accessibility-request" href="#attachment-@DocumentId-accessibility-request" data-expanded="true" data-controls="attachment-@DocumentId-accessibility-request">Request an accessible format</a>.
+                    <span id="attachment-@DocumentId-accessibility-request" class="hidden-section js-hidden" aria-live="polite" role="region" aria-hidden="true">If you use assistive technology (such as a screen reader) and need a version of this document in a more accessible format, please contact the <a target="_blank" rel="external noopener noreferrer" href='https://customerhelpportal.education.gov.uk' title="This will open in a new tab or window">Customer Help Portal</a><text>. Please tell us what format you need. It will help us if you say what assistive technology you use.</text></span>
+                </span>
+            </span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,119 @@
+{
+  "name": "14 to 16 provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "title": "@fundingStreamName: @yearTypeName @year1 to @year2",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "$.totalValue",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "Html/Span",
+              "classname": "hidden-sub-section",
+              "selector": "$.totalValue",
+              "datastyle": {
+                "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+              },
+              "groups": [
+                {
+                  "type": "Html/Element",
+                  "subtype": "br"
+                }
+              ]
+            },
+            {
+              "type": "General/Literal",
+              "value": "Published: @statusChangedDateUiFormatted "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "groups": [
+        {
+          "type": "Tabs/LinksToPage",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance",
+          "groups": [
+            {
+              "type": "Tabs/LinkWithValue",
+              "title": "&pound;342,720",
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Core programme",
+                  "value": "@loggedInProviderFundingBreakdownPathTabscore-programme"
+                }
+              ]
+            },
+            {
+              "type": "Tabs/LinkWithValue",
+              "title": "&pound;17,990",
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "Additional funding",
+                  "value": "@loggedInProviderFundingBreakdownPathTabspupil-premium"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Html/Div",
+          "classname": "funding-margin-bottom"
+        },
+        {
+          "type": "Block/LoggedInDownloadADocument"
+        },
+        {
+          "type": "Block/AllocationHistory",
+          "classname": "heading-small heading-guidance"
+        },
+        {
+          "type": "Heading/Small",
+          "classname": "heading-small heading-guidance",
+          "title": "Explore the topic"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2/16-to-19-further-education-revenue-funding-allocation-guide-@year1-to-@year2",
+                  "title": "@shortFundingStreamNameHtml allocation guides: @year1 to @year2 (opens in new tab)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

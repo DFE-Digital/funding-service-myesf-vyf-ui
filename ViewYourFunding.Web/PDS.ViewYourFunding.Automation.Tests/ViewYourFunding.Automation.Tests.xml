@@ -1,0 +1,1488 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ViewYourFunding.Automation.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:ViewYourFunding.Automation.Tests.Config.ConfigHelper">
+            <summary>
+            The Config helper.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.Config.ConfigHelper.GetIConfigurationRoot">
+            <summary>
+            Gets the i configuration root.
+            </summary>
+            <returns>The configuration.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.Config.ConfigHelper.GetApplicationConfiguration">
+            <summary>
+            Gets the application configuration.
+            </summary>
+            <returns>The Application configuration.</returns>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.Shared.AssemblyTestSetup">
+            <summary>
+            The AssemblyTestSetup class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.Shared.AssemblyTestSetup.SetUpTestSuite(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)">
+            <summary>
+            Sets up test suite.
+            </summary>
+            <param name="testContext">The test context.</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.Shared.AssemblyTestSetup.TeardownTestSuite">
+            <summary>
+            Teardowns the test suite.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.DSGDownloadPageTests">
+            <summary>
+            The DSGDownloadPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.DSGDownloadPageTests"/> class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPageTests_BasicLayout">
+            <summary>
+            DSGDownloadPage tests basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            DSGDownloadPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasBreadcrumbLinkingToWhichAllocationPage">
+            <summary>
+            DSGDownloadPage has breadcrumb linking to which allocation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasHistoricAllocations">
+            <summary>
+            DSGDownloadPage has historic allocations.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasGuidanceLink">
+            <summary>
+            DSGDownloadPage has guidance link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasFundingBlockResourceLinks">
+            <summary>
+            DSGDownloadPage has funding block resource links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasSpreadsheetLinks">
+            <summary>
+            DSGDownloadPage has spreadsheet links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.DSGDownloadPageTests.DSGDownloadPage_HasFormatRequestEmailLinks">
+            <summary>
+            DSGDownloadPage has format request email links.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests">
+            <summary>
+            The FindAnOrganisationPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Testing.BaseRegressionTest" />
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests"/> class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.BasicLayout">
+            <summary>
+            Basics the layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.FindAnOrganisationPage_ClickProviderChoice">
+            <summary>
+            FindAnOrganisationPage click provider choice.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.FindAnOrganisationPage_ClickLaCodeChoice">
+            <summary>
+            FindAnOrganisationPage click la code choice.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.FindAnOrganisationPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            FindAnOrganisationPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.FindAnOrganisationPage_DisplaysErrorMessage_WhereNoProviderIsEntered">
+            <summary>
+            FindAnOrganisationPage displays error message where no provider is entered.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.FindAnOrganisationPage_DisplaysErrorMessage_WhereNoLaIsEntered">
+            <summary>
+            FindAnOrganisationPage displays error message where no la is entered.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FindAnOrganisationPageTests.FindAnOrganisationPage_ErrorMessageCleared_WhenOptionChangedAfterErrorMessage">
+            <summary>
+            FindAnOrganisationPage error message cleared when option changed after error message.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase">
+            <summary>
+            The FundingStreamRegressionTestBase class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Testing.BaseRegressionTest" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGCurrentYearFrom">
+            <summary>
+            The PSG current year from.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGCurrentYearTo">
+            <summary>
+            The PSG current year from.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.DSGCurrentYearFrom">
+            <summary>
+            The DSG current year from.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.DSGCurrentYearTo">
+            <summary>
+            The DSG current year from.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGNextPaymentDateMaintainedParsed">
+            <summary>
+            The PSG next payment date maintained parsed.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGNextPaymentDateAcademiesParsed">
+            <summary>
+            The PSG next payment date academies parsed.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGNextPaymentDateNMSSParsed">
+            <summary>
+            The PSG next payment date NMSS parsed.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.DSGNextPaymentDateParsed">
+            <summary>
+            The DSG next payment date parsed.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.SearchResultsLinkText">
+            <summary>
+            The search results link text.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.ViewFundingAtOrganisationLinkText">
+            <summary>
+            The view funding at organisation link text.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.ChooseHowToViewFundingLinkText">
+            <summary>
+            The choose how to view funding link text.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.ProviderDetailsPageMainProviderName">
+            <summary>
+            The provider details page main provider name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGNextPaymentDateMaintained">
+            <summary>
+            The PSG next payment date maintained.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGNextPaymentDateAcademies">
+            <summary>
+            The PSG next payment date academies.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.PSGNextPaymentDateNMSS">
+            <summary>
+            The PSG next payment date NMSS.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.DSGNextPaymentDate">
+            <summary>
+            The DSG next payment date.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._documentDependentTest">
+            <summary>
+            The document dependent test.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._userJourneyService">
+            <summary>
+            The settings service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._settingsUpdateService">
+            <summary>
+            The settings update service.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._documentFilenamePSG">
+            <summary>
+            The document filename PSG.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._documentFilenamePreviousYearPSG">
+            <summary>
+            The document filename PSG.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._documentFilenameDSG">
+            <summary>
+            The document filename DSG.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._documentFilenamePreviousYearDSG">
+            <summary>
+            The document filename DSG.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase._documentService">
+            <summary>
+            The document service.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase"/> class.
+            </summary>
+            <param name="documentDependentTest">if set to <c>true</c> [document dependent test].</param>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.SetUp">
+            <summary>
+            Sets up.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.TearDown">
+            <summary>
+            Tears down.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.SetUpEachTest">
+            <summary>
+            Sets up each test.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.TearDownEachTest">
+            <summary>
+            Tears down each test.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase.RemoveDocuments">
+            <summary>
+            Removes the documents.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests">
+            <summary>
+            The LocalAuthorityDidYouMeanPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.BackToTopLinkResultsSearchTerm">
+            <summary>
+            The back to top link results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.LocalAuthorityDidYouMeanPage_BasicLayout">
+            <summary>
+            LocalAuthorityDidYouMeanPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.LocalAuthorityDidYouMeanPage_HasExpectedResults">
+            <summary>
+            LocalAuthorityDidYouMeanPage has expected results.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.LocalAuthorityDidYouMeanPage_WhenMoreThanNResults_BackToTopLink_IsDisplayed">
+            <summary>
+            LocalAuthorityDidYouMeanPage when more than n results back to top link is displayed.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.LocalAuthorityDidYouMeanPage_WhenLessThanNResults_BackToTopLink_IsNotDisplayed">
+            <summary>
+            LocalAuthorityDidYouMeanPage when less than n results back to top link is not displayed.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.LocalAuthorityDidYouMeanPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityDidYouMeanPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDidYouMeanPageTests.LocalAuthorityNoResultsPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            Locals the authority no results page has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests">
+            <summary>
+            The LocalAuthorityDSGFundingBreakdownPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.EarlyYearsBlockName">
+            <summary>
+            The early years block name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.HighNeedsBlockName">
+            <summary>
+            The high needs block name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.SchoolsBlockName">
+            <summary>
+            The schools block name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.CSSBlockName">
+            <summary>
+            The CSS block name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.PreviousYearFrom">
+            <summary>
+            The previous year from.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.PreviousYearTo">
+            <summary>
+            The previous year from.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.FundingTypeName">
+            <summary>
+            The funding type name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.SearchTerm">
+            <summary>
+            The search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityName">
+            <summary>
+            The local authority name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityNameWithSpecialFreeSchoolsDeductions">
+            <summary>
+            The local authority name with special free schools deductions.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityCode">
+            <summary>
+            The local authority code.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureCurrentPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure current page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureGuidanceLink">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure guidance link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureSpreadsheetLink">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure spreadsheet link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureAllocationHistoryLink">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure allocation history link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickHistoryLinkAndEnsureOnCorrectPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click history link and ensure on correct page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYearsTotalIsCorrect">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years total is correct.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYearsUniversalEntitlement">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years universal entitlement.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYearsAdditional15">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years additional15.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYears2YearEntitlement">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years2 year entitlement.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYearsPupilPremium">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years pupil premium.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYearsDisabilityAccess">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years disability access.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEarlyYearsMaintainedNursery">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure early years maintained nursery.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsDisabilityAccessFundShows">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs disability access fund shows.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsHospitalDoesNotShow">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs hospital does not show.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsNFFAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs NFF amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsBasicEntitlementAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs basic entitlement amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsImportExportAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs import export amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsAdditionalFundingSpecialAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs additional funding special amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedTotalBeforeDeductions">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high need total before deductions.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_HighNeedsTab_EnsurePost16SpecialEducationalNeedsPlaceValuesMatch">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage high needs tab ensure post16 special educational needs place values match.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedAPAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high need ap amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedMaintainedSpecialAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high need maintained special amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedFEILPAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high need feilp amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedDeductionsDirectFundingAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high need deductions direct funding amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickSchoolsTabAndEnsureTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click schools tab and ensure tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickCentralSchoolServicesTabAndEnsureTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click central school services tab and ensure tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickHighNeedsTabAndEnsureTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click high needs tab and ensure tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureHighNeedsTotalIsCorrect">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure high needs total is correct.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureAllocationAmount">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure allocation amount.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureAllocationFinancialYear">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure allocation financial year.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureFormatRequestLinks">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure format request links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureFormatRequestEmailLinkNotShown">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure format request email link not shown.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_EnsureEnsureOpenDocumentLink">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage ensure ensure open document link.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenEarlyYearsLinkClickedOnSummaryPage_EnsureCorrectTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when early years link clicked on summary page ensure correct tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickEarlyYearsTabAndEnsureTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click early years tab and ensure tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickEarlyYearsBlockLinkOnStatementPageAndEnsureCorrectTabIsSelectedOnSummaryPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click early years block link on statement page and ensure correct tab is selected on summary page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenSchoolsLinkClickedOnSummaryPage_EnsureCorrectTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when schools link clicked on summary page ensure correct tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickSchoolBlockLinkOnStatementPageAndEnsureCorrectTabIsSelectedOnSummaryPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click school block link on statement page and ensure correct tab is selected on summary page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickSchoolsTabAndWholePupilNumber_EnsureTabIsSelectedAndAllLinksOnTabAreAsExpected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click schools tab and whole pupil number ensure tab is selected and all links on tab are as expected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickSchoolsTabAndPupilNumberHasDecimalValue_EnsureTabIsSelectedAndAllLinksOnTabAreAsExpected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click schools tab and pupil number has decimal value ensure tab is selected and all links on tab are as expected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickSchoolsTab_EnsureAllDataIsAsExpectedOnTab">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click schools tab ensure all data is as expected on tab.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenCentralSchoolServicesLinkClickedOnSummaryPage_EnsureCorrectTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when central school services link clicked on summary page ensure correct tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickCentralSchoolServicesTab_EnsureTabIsSelectedAndAllLinksOnTabAreAsExpected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click central school services tab ensure tab is selected and all links on tab are as expected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickCentralSchoolServicesTab_EnsureAllDataIsAsExpectedOnTab">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click central school services tab ensure all data is as expected on tab.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickCSSBlockLinkOnStatementPageAndEnsureCorrectTabIsSelectedOnSummaryPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click CSS block link on statement page and ensure correct tab is selected on summary page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenHighNeedsBlockLinkClickedOnSummaryPage_EnsureCorrectTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when high needs block link clicked on summary page ensure correct tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickHigNeedsTabAndEnsureTabIsSelected">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click hig needs tab and ensure tab is selected.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_ClickHighNeedsBlockLinkOnStatementPageAndEnsureCorrectTabIsSelectedOnSummaryPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage click high needs block link on statement page and ensure correct tab is selected on summary page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenExactSearchFound_EnsureThereIsNoBreadcrumbLinkingToSearchResultsAndGoBackToSummaryPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when exact search found ensure there is no breadcrumb linking to search results and go back to summary page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenMoreThanOneSearchResultFound_EnsureThereIsABreadcrumbLinkingToSearchResultsPageAndGoToSearchPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when more than one search result found ensure there is a breadcrumb linking to search results page and go to search page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGFundingBreakdownPageTests.LocalAuthorityDSGFundingBreakdownPage_WhenMoreThanOneSearchResultFound_EnsureThereIsABreadcrumbLinkingToSearchResultsPageAndGoBackToSummaryPage">
+            <summary>
+            LocalAuthorityDSGFundingBreakdownPage when more than one search result found ensure there is a breadcrumb linking to search results page and go back to summary page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests">
+            <summary>
+            The LocalAuthorityDSGHistoryPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityName">
+            <summary>
+            The local authority name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityCode">
+            <summary>
+            The local authority code.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_BasicLayout">
+            <summary>
+            LocalAuthorityDSGHistoryPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_HasDataForCurrentAndPreviousThreeYears">
+            <summary>
+            LocalAuthorityDSGHistoryPage has data for current and previous three years.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via did you mean has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via did you mean has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via did you mean has breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToStatementPage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via did you mean has breadcrumb linking to statement page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaExactSearch_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via exact search has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaExactSearch_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via exact search has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaExactSearch_DoesNotHaveBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via exact search does not have breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityDSGHistoryPageTests.LocalAuthorityDSGHistoryPage_WhenViaExactSearch_HasBreadcrumbLinkingToStatementPage">
+            <summary>
+            LocalAuthorityDSGHistoryPage when via exact search has breadcrumb linking to statement page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests">
+            <summary>
+            The LocalAuthorityNoResultsPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests.NoResultsSearchTerm">
+            <summary>
+            The no results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests.LocalAuthorityNoResultsPage_BasicLayout">
+            <summary>
+            LocalAuthorityNoResultsPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests.LocalAuthorityNoResultsPage_BasicLayout_WhereSpecialCharcterEntered">
+            <summary>
+            LocalAuthorityNoResultsPage basic layout where special charcter entered.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests.LocalAuthorityNoResultsPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityNoResultsPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests.LocalAuthorityNoResultsPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityNoResultsPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityNoResultsPageTests.LocalAuthorityNoResultsPage_HasWorkingLinkToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityNoResultsPage has working link to find an organisation page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests">
+            <summary>
+            The LocalAuthorityPSGBreakdown201819PageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityName">
+            <summary>
+            The local authority name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityCode">
+            <summary>
+            The local authority code.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityPSGBreakdown201819Page_BasicLayout">
+            <summary>
+            LocalAuthorityPSGBreakdown201819Page page basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityPSGBreakdown201819Page_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityPSGBreakdown201819Page page has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityPSGBreakdown201819Page_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityPSGBreakdown201819Page page has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityPSGBreakdown201819Page_HasBreadcrumbLinkingToStatementPage">
+            <summary>
+            LocalAuthorityPSGBreakdown201819Page page has breadcrumb linking to statement page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityPSGBreakdown201819Page_ViaDidYouMean_HasBreadcrumbLinkingToDidYouMeanPage">
+            <summary>
+            LocalAuthorityPSGBreakdown201819Page page via did you mean has breadcrumb linking to did you mean page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGBreakdown201819PageTests.LocalAuthorityPSGBreakdown201819Page_ViaExactMatch_DoesNotHaveBreadcrumbLinkingToDidYouMeanPage">
+            <summary>
+            LocalAuthorityPSGBreakdown201819Page page via exact match does not have breadcrumb linking to did you mean page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests">
+            <summary>
+            The LocalAuthorityPSGFundingBreakdownPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityName">
+            <summary>
+            The local authority name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityCode">
+            <summary>
+            The local authority code.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.EstablishmentFilterSearchTerm">
+            <summary>
+            The establishment filter search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.EstablishmentFilterLocalAuthorityName">
+            <summary>
+            The establishment filter local authority name.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_BasicLayout">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_ApplyFilter_TopLink_IsNotDisplayed">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage apply filter top link is not displayed.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_ApplyFilter_ProviderTotalAllocationAmount_IsUpdated">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage apply filter provider total allocation amount is updated.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_ApplyFilter_TotalCountText_IsUpdated">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage apply filter total count text is updated.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaDidYouMean_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via did you mean has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaDidYouMean_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via did you mean has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaDidYouMean_HasBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via did you mean has breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaDidYouMean_HasBreadcrumbLinkingStatementPage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via did you mean has breadcrumb linking statement page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaExactSearch_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via exact search has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaExactSearch_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via exact search has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaExactSearch_DoesNotHaveBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via exact search does not have breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGFundingBreakdownPageTests.LocalAuthorityPSGFundingBreakdownPage_WhenViaExactSearch_HasBreadcrumbLinkingStatementPage">
+            <summary>
+            LocalAuthorityPSGFundingBreakdownPage when via exact search has breadcrumb linking statement page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests">
+            <summary>
+            The LocalAuthorityPSGHistoryPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityName">
+            <summary>
+            The local authority name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityCode">
+            <summary>
+            The local authority code.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_BasicLayout">
+            <summary>
+            LocalAuthorityPSGHistoryPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_HasDataForCurrentAndPreviousThreeYears">
+            <summary>
+            LocalAuthorityPSGHistoryPage has data for current and previous three years.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via did you mean has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via did you mean has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via did you mean has breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaDidYouMean_HasBreadcrumbLinkingToStatementPage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via did you mean has breadcrumb linking to statement page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaExactSearch_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via exact search has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaExactSearch_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via exact search has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaExactSearch_DoesNotHaveBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via exact search does not have breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityPSGHistoryPageTests.LocalAuthorityPSGHistoryPage_WhenViaExactSearch_HasBreadcrumbLinkingToStatementPage">
+            <summary>
+            LocalAuthorityPSGHistoryPage when via exact search has breadcrumb linking to statement page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests">
+            <summary>
+            The LocalAuthorityStatementPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityName">
+            <summary>
+            The local authority name.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityCode">
+            <summary>
+            The local authority code.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_BasicLayout">
+            <summary>
+            LocalAuthorityStatementPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_EnsureDSGSection">
+            <summary>
+            LocalAuthorityStatementPage ensure DSG section.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_EnsurePSGSection">
+            <summary>
+            LocalAuthorityStatementPage ensure PSG section.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_WhenViaDidYouMean_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityStatementPage when via did you mean has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_WhenViaDidYouMean_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityStatementPage when via did you mean has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_WhenViaDidYouMean_HasBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityStatementPage when via did you mean has breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_WhenViaExactSearch_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            LocalAuthorityStatementPage when via exact search has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_WhenViaExactSearch_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            LocalAuthorityStatementPage when via exact search has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.LocalAuthorityStatementPageTests.LocalAuthorityStatementPage_WhenViaExactSearch_DoesNotHaveBreadcrumbLinkingToSearchResultsPage">
+            <summary>
+            LocalAuthorityStatementPage when via exact search does not have breadcrumb linking to search results page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderDetailPageTests">
+            <summary>
+            The ProviderDetailPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailsPage_BasicLayout">
+            <summary>
+            ProviderDetailsPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderDetailsPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_CheckAvailablePaymentDate_Maintained">
+            <summary>
+            ProviderDetailsPage check available payment date maintained.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_CheckAvailablePaymentDate_Academies">
+            <summary>
+            ProviderDetailsPage check available payment date academies.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_CheckAvailablePaymentDate_NMSS">
+            <summary>
+            ProviderDetailsPage check available payment date NMSS.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderDetailsPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_ViaDidYouMean_HasBreadcrumbLinkingProviderDidYouMeanPage">
+            <summary>
+            ProviderDetailsPage via did you mean has breadcrumb linking provider did you mean page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderDetailPageTests.ProviderDetailPage_AllSectionsExpanded">
+            <summary>
+            ProviderDetailsPage all sections expanded.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests">
+            <summary>
+            The ProviderFilterResultsPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.LessThan25ResultsSearchTerm">
+            <summary>
+            The less than25 results search term.
+            </summary>
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.LocalAuthorityFilterTerm">
+            <summary>
+            The local authority filter term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_BasicLayout">
+            <summary>
+            ProviderFilterResultsPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderFilterResultsPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderFilterResultsPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_EnsureSearchResults">
+            <summary>
+            ProviderFilterResultsPage ensure search results.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_EnsureLocalAuthorityFilterSearchBox_IsNotDisplayed">
+            <summary>
+            ProviderFilterResultsPage ensure local authority filter search box is not displayed.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_Filter_LocalAuthorities">
+            <summary>
+            ProviderFilterResultsPage filter local authorities.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_ApplyLa_EnsureFilterResults">
+            <summary>
+            ProviderFilterResultsPage apply la ensure filter results.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_ApplyEstablishment_EnsureFilterResults">
+            <summary>
+            ProviderFilterResultsPage apply establishment ensure filter results.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_ApplyAllFilters_EnsureAllResults">
+            <summary>
+            ProviderFilterResultsPage apply all filters ensure all results.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_ApplySomeFilters_EnsureNoResults">
+            <summary>
+            ProviderFilterResultsPage apply some filters ensure no results.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderFilterResultsPageTests.ProviderFilterResultsPage_EnsureResetFilters">
+            <summary>
+            ProviderFilterResultsPage ensure reset filters.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderNoResultsPageTests">
+            <summary>
+            The ProviderNoResultsPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderNoResultsPageTests.NoResultsSearchTerm">
+            <summary>
+            The no results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderNoResultsPageTests.ProviderNoResultsPage_BasicLayout">
+            <summary>
+            ProviderNoResultsPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderNoResultsPageTests.ProviderNoResultsPage_BasicLayout_WhereSpecialCharacterEntered">
+            <summary>
+            ProviderNoResultsPage basic layout where special character entered.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderNoResultsPageTests.ProviderNoResultsPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderNoResultsPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderNoResultsPageTests.ProviderNoResultsPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderNoResultsPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests">
+            <summary>
+            The ProviderPSGAllocationHistoryPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests.ProviderPSGAllocationHistoryPage_BasicLayout">
+            <summary>
+            ProviderPSGAllocationHistoryPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests.ProviderPSGAllocationHistoryPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderPSGAllocationHistoryPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests.ProviderPSGAllocationHistoryPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderPSGAllocationHistoryPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests.ProviderPSGAllocationHistoryPage_HasBreadcrumbLinkingToProviderDetailsPage">
+            <summary>
+            ProviderPSGAllocationHistoryPage has breadcrumb linking to provider details page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGAllocationHistoryPageTests.ProviderPSGAllocationHistoryPage_ViaDidYouMean_HasBreadcrumbLinkingProviderDidYouMeanPage">
+            <summary>
+            ProviderPSGAllocationHistoryPage via did you mean has breadcrumb linking provider did you mean page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests">
+            <summary>
+            The ProviderPSGFundingBreakdownPage201819PageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests.ProviderPSGFundingBreakdownPage201819Page_BasicLayout">
+            <summary>
+            ProviderPSGFundingBreakdownPage201819Page basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests.ProviderPSGFundingBreakdownPage201819Page_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderPSGFundingBreakdownPage201819Page has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests.ProviderPSGFundingBreakdownPage201819Page_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderPSGFundingBreakdownPage201819Page has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests.ProviderPSGFundingBreakdownPage201819Page_HasBreadcrumbLinkingToProviderDetailsPage">
+            <summary>
+            ProviderPSGFundingBreakdownPage201819Page has breadcrumb linking to provider details page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPage201819PageTests.ProviderPSGFundingBreakdownPage201819Page__ViaDidYouMean_HasBreadcrumbLinkingProviderDidYouMeanPage">
+            <summary>
+            ProviderPSGFundingBreakdownPage201819Page via did you mean has breadcrumb linking provider did you mean page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests">
+            <summary>
+            The ProviderPSGFundingBreakdownPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests.ProviderPSGFundingBreakdownPage_BasicLayout">
+            <summary>
+            ProviderPSGFundingBreakdownPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests.ProviderPSGFundingBreakdownPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderPSGFundingBreakdownPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests.ProviderPSGFundingBreakdownPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderPSGFundingBreakdownPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests.ProviderPSGFundingBreakdownPage_HasBreadcrumbLinkingToProviderDetailsPage">
+            <summary>
+            ProviderPSGFundingBreakdownPage has breadcrumb linking to provider details page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderPSGFundingBreakdownPageTests.ProviderPSGFundingBreakdownPage_ViaDidYouMean_HasBreadcrumbLinkingProviderDidYouMeanPage">
+            <summary>
+            ProviderPSGFundingBreakdownPage via did you mean has breadcrumb linking provider did you mean page.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ProviderResultsPageTests">
+            <summary>
+            The ProviderResultsPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="F:ViewYourFunding.Automation.Tests.ProviderResultsPageTests.MultipleResultsSearchTerm">
+            <summary>
+            The multiple results search term.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderResultsPageTests.ProviderResultsPage_BasicLayout">
+            <summary>
+            ProviderResultsPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderResultsPageTests.ProviderResultsPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            ProviderResultsPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderResultsPageTests.ProviderResultsPage_HasBreadcrumbLinkingToFindAnOrganisationPage">
+            <summary>
+            ProviderResultsPage has breadcrumb linking to find an organisation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ProviderResultsPageTests.ProviderResultsPage_EnsureSearchResults">
+            <summary>
+            ProviderResultsPage ensure search results.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.PSGDownloadPageTests">
+            <summary>
+            The PSGDownloadPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Tests.FundingStreamRegressionTestBase" />
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.PSGDownloadPageTests"/> class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_ForLatestYear_BasicLayout">
+            <summary>
+            PSGDownloadPage for latest year basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_ForPreviousYear_BasicLayout">
+            <summary>
+            PSGDownloadPage for previous year basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            PSGDownloadPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_HasBreadcrumbLinkingToWhichAllocationPage">
+            <summary>
+            PSGDownloadPage has breadcrumb linking to which allocation page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_ForLatestYear_HasHistoricAllocations">
+            <summary>
+            PSGDownloadPage for latest year has historic allocations.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_ForPreviousYear_HasLatestAndHistoricAllocations">
+            <summary>
+            PSGDownloadPage for previous year has latest and historic allocations.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_ForLatestYear_HasSpreadsheetLinks">
+            <summary>
+            PSGDownloadPage for latest year has spreadsheet links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_ForPreviousYear_HasSpreadsheetLinks">
+            <summary>
+            PSGDownloadPage for previous year has spreadsheet links.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.PSGDownloadPageTests.PSGDownloadPage_HasFormatRequestEmailLinks">
+            <summary>
+            PSGDownloadPage has format request email links.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.StartPageTests">
+            <summary>
+            The StartPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Testing.BaseRegressionTest" />
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.StartPageTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.StartPageTests"/> class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.StartPageTests.StartPage_CorrectHeaderText">
+            <summary>
+            StartPage correct header text.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.ViewingChoicePageTests">
+            <summary>
+            The ViewingChoicePageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Testing.BaseRegressionTest" />
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ViewingChoicePageTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.ViewingChoicePageTests"/> class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ViewingChoicePageTests.ViewingChoicePage_CorrectHeaderText">
+            <summary>
+            ViewingChoicePage correct header text.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ViewingChoicePageTests.ViewingChoicePage_ErrorsHiddenOnFirstLoad">
+            <summary>
+            ViewingChoicePage errors hidden on first load.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.ViewingChoicePageTests.ViewingChoicePage_ErrorsShownAfterClickingContinueWithoutSelectingAnOption">
+            <summary>
+            ViewingChoicePage errors shown after clicking continue without selecting an option.
+            </summary>
+        </member>
+        <member name="T:ViewYourFunding.Automation.Tests.WhichAllocationPageTests">
+            <summary>
+            The WhichAllocationPageTests class.
+            </summary>
+            <seealso cref="T:ViewYourFunding.Automation.Testing.BaseRegressionTest" />
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ViewYourFunding.Automation.Tests.WhichAllocationPageTests"/> class.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_BasicLayout">
+            <summary>
+            WhichAllocationPage basic layout.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_HasBreadcrumbLinkingToViewingChoicePage">
+            <summary>
+            WhichAllocationPage has breadcrumb linking to viewing choice page.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_ErrorsHiddenOnFirstLoad">
+            <summary>
+            WhichAllocationPage errors hidden on first load.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_ErrorsShownAfterClickingContinueWithoutSelectingAnOption">
+            <summary>
+            WhichAllocationPage errors shown after clicking continue without selecting an option.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_ProgressiveDisclosureHiddenOnLoad">
+            <summary>
+            WhichAllocationPage progressive disclosure hidden on load.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_ProgressiveDisclosureShownOnButtonClick">
+            <summary>
+            WhichAllocationPage progressive disclosure shown on button click.
+            </summary>
+        </member>
+        <member name="M:ViewYourFunding.Automation.Tests.WhichAllocationPageTests.WhichAllocationPage_ProgressiveDisclosureHiddenOnSecondButtonClick">
+            <summary>
+            WhichAllocationPage progressive disclosure hidden on second button click.
+            </summary>
+        </member>
+    </members>
+</doc>

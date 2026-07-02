@@ -1,0 +1,19 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.LocalAuthorityBreakdownViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+@{
+    var components = Model?.FundingViewData?.Components;
+
+    if (components != null)
+    {
+        await components.Render(Html);
+    }
+}
+
+@section vyfScripts{ @Html.PageScripts() }

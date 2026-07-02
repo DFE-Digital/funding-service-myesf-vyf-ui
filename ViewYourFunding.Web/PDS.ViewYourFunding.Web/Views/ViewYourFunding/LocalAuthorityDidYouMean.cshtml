@@ -1,0 +1,17 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.LocalAuthorityDidYouMeanViewModel
+
+<div class="form-block local-authority-statement-links">
+    <p id="search-result-count">Searching on <span class="bold">'@Model.SearchTerm'</span> we found @Model.LocalAuthorities.Count local authorities. Did you mean:</p>
+    @foreach (var localAuthority in Model.LocalAuthorities)
+    {
+        <div class="form-block">
+            @Html.RouteLink(localAuthority.Value, ViewYourFundingConstants.RouteName_LocalAuthorityStatement, new { localAuthorityCode = localAuthority.Key, searchTerm = Model.SearchTerm })
+        </div>
+    }
+
+    @if (Model.ShowBackToTopLink)
+    {
+        @await Html.PartialAsync("Partial/_BackToTopLink")
+    }
+</div>

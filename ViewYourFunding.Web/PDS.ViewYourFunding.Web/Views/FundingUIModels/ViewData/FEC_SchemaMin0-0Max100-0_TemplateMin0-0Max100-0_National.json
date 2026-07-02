@@ -1,0 +1,51 @@
+{
+  "name": "@fundingStreamCode national funding allocation",
+  "type": "Page",
+  "groups": [
+    {
+      "type": "Html/Div",
+      "classname": "govuk-grid-row",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "column-two-thirds",
+          "groups": [
+            {
+              "type": "Html/Element",
+              "subtype": "H1",
+              "value": "@expandedFundingStreamNameHtml @year1 to @year2",
+              "classname": "heading-xlarge public"
+            },
+            {
+              "type": "Html/Paragraph",
+              "classname": "lede",
+              "title": "Download @shortFundingStreamNameHtml funding allocations for @yearTypeName @year1 to @year2."
+            },
+            {
+              "type": "Heading/Medium",
+              "title": "Allocations",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "General/Repeater",
+              "expression": "@Spreadsheets",
+              "groups": [
+                {
+                  "type": "Block/DownloadADocument",
+                  "title": "Download @shortFundingStreamNameHtml allocations @year1 to @year2",
+                  "value": "@RepeaterItem",
+                  "variables": [
+                    {
+                      "name": "showPublicationDate",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

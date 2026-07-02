@@ -1,0 +1,9 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@if (Model.EnableVariance && Model.HideVarianceValue)
+{
+    await ComponentHelper.Render(Html, ComponentType.DesignComponents_Variance, Model, Model.PageData);
+}
+@Html.Raw(Model.GetTitleOrValue())

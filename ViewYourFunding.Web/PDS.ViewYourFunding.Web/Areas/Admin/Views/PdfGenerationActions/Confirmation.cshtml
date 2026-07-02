@@ -1,0 +1,102 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.PdfGenerationOperationConfirmationViewModel
+
+@switch (Model.PdfGenerationAction)
+{
+    case PdfGenerationAction.RunFeedReader:
+        @if (Model.Success)
+        {
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">Feed reader has been triggered successfully.</h1>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h1 class="bold-large">There was a problem running the feed reader.</h1>
+            </div>
+        }
+        break;
+    case PdfGenerationAction.PdfComparison:
+
+        @if (Model.Success)
+        {
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">Document Comparison has been triggered successfully.</h1>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h1 class="bold-large">There was a problem running the Document comparison.</h1>
+            </div>
+        }
+        break; 
+    case PdfGenerationAction.GenerateSinglePdf:
+
+        @if (Model.Success)
+        {
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">Generate Single Document has been triggered successfully</h1>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h1 class="bold-large">There was a problem running the Generate Single Document.</h1>
+            </div>
+        }
+        break;
+    case PdfGenerationAction.PdfGenerateFundingReport:
+
+        @if (Model.Success)
+        {
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">Document Funding report has been triggered successfully.</h1>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h1 class="bold-large">There was a problem running the Document funding report.</h1>
+            </div>
+        }
+        break;
+    case PdfGenerationAction.RerunPdfGeneration:
+
+        @if (Model.Success)
+        {
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">The rerun of Document generation has been triggered successfully</h1>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h1 class="bold-large">There was a problem executing the Rerun for Document generation.</h1>
+            </div>
+        }
+        break;
+    default:
+        throw new ArgumentOutOfRangeException();
+}
+
+
+
+
+<div id="signed-success-section" class="column-two-thirds">
+    <div>
+        <div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view the document generation actions.</p>
+            <p>@Html.RouteLink("Go back to document generation actions home", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome) </p>
+        </div>
+        <div>
+            <p class="bold-small">
+                Or you may want to:
+            </p>
+            <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminHome) </p>
+        </div>
+    </div>
+</div>

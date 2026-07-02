@@ -1,0 +1,31 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var type = Model.Type;
+    if (type == ComponentType.DesignComponents_FundingTable)
+    {
+        return;
+    }
+
+    var topLevelGroup = Model.ComponentConfiguration.OriginalModel.ToUiModelGroup();
+    var level = ComponentHelper.GetVisibilityConditionLevel(Model.OriginalGroup, topLevelGroup);
+    var colour = level switch
+    {
+        0 => "#32cd32",
+        1 => "#2aad2a",
+        2 => "#238e23",
+        3 => "#1b6e1b",
+        _ => "#175f17"
+    };
+
+    string output = "</div>";
+
+    if (type == ComponentType.Table_Row)
+    {
+        output = $"<tr style='background-color: {colour}'><td colspan='100' style='height: 5px; font-size: 1px'>&nbsp;</td></tr>";
+    }
+}
+
+@Html.Raw(output)

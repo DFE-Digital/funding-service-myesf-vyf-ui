@@ -1,0 +1,22 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://esfstest.herokuapp.com/component-library/links
+
+    var linkModel = Model.Clone(component =>
+    {
+        component.Type = ComponentType.Html_Element;
+        component.SubType = "A";
+    });
+
+    var href = linkModel.GetValueString();
+    linkModel.Attributes.Add("href", href);
+
+    linkModel.Attributes.Add("rel", "external noopener noreferrer");
+    linkModel.Attributes.Add("target", "_blank");
+    linkModel.Attributes.Add("title", "This will open in a new tab or window");
+    linkModel.ClassNames.Add("guidance-link-highlight");
+    await linkModel.Render(Html, linkModel.PageData);
+}

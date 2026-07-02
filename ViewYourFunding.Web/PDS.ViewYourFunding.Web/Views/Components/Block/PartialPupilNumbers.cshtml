@@ -1,0 +1,38 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (!double.TryParse(Model.GetValueString("0"), out var value))
+    {
+        return;
+    }
+
+    var relevantToShow = value % 1 != 0;
+
+    if (!relevantToShow)
+    {
+        return;
+    }
+
+    if (string.IsNullOrEmpty(Model.Id))
+    {
+        var defaultId = "why-pupil-nos";
+        Model.Id = defaultId;
+    }
+
+    var externalLink = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.General_ExternalLink,
+        Title = "Find out why partial pupil numbers are used",
+        Values = new List<object>
+{
+            Model.Title
+        }
+    };
+}
+
+<br>
+<span id="@Model.Id" class="decimal">
+    @{ await externalLink.Render(Html, Model.PageData); }
+</span>

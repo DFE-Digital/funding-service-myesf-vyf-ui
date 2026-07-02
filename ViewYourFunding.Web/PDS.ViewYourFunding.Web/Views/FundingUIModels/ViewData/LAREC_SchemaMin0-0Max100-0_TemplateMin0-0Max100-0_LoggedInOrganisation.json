@@ -1,0 +1,1892 @@
+﻿{
+  "name": "LA Recoupment accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "funding",
+      "expression": "GroupingReason=Information",
+      "groupingType": "LocalAuthority",
+      "position": 1
+    },
+    {
+      "datasetName": "providerFunding",
+      "expressions": [
+        {
+          "propertyName": "ProviderType",
+          "Operation": "Equals",
+          "value": "Academies"
+        },
+        {
+          "propertyName": "ParentProviderType",
+          "Operation": "Equals",
+          "value": "LocalAuthority"
+        },
+        {
+          "propertyName": "GroupingReason",
+          "Operation": "Equals",
+          "value": "Information"
+        },
+        {
+          "propertyName": "DateOpened",
+          "Operation": "GreaterThan",
+          "value": "2022-01-11"
+        }
+      ],
+      "ExpressionSeparator": "&",
+      "limitedTo": "Dataset2_First_LaCode",
+      "orderBy": "ProviderSubTypeName",
+      "thenBy": "OrganisationName",
+      "position": 2
+    },
+    {
+      "datasetName": "providerFunding",
+      "expressions": [
+        {
+          "propertyName": "ProviderType",
+          "Operation": "Equals",
+          "value": "Free Schools"
+        },
+        {
+          "propertyName": "ParentProviderType",
+          "Operation": "Equals",
+          "value": "LocalAuthority"
+        },
+        {
+          "propertyName": "GroupingReason",
+          "Operation": "Equals",
+          "value": "Information"
+        },
+        {
+          "propertyName": "DateOpened",
+          "Operation": "GreaterThan",
+          "value": "2022-09-01"
+        }
+      ],
+      "ExpressionSeparator": "&",
+      "limitedTo": "Dataset2_First_LaCode",
+      "orderBy": "ProviderSubTypeName",
+      "thenBy": "OrganisationName",
+      "position": 3
+    },
+    {
+      "datasetName": "providerFunding",
+      "expressions": [
+        {
+          "propertyName": "ProviderType",
+          "Operation": "Equals",
+          "value": "Academies"
+        },
+        {
+          "propertyName": "ParentProviderType",
+          "Operation": "Equals",
+          "value": "LocalAuthority"
+        },
+        {
+          "propertyName": "GroupingReason",
+          "Operation": "Equals",
+          "value": "Information"
+        },
+        {
+          "propertyName": "DateOpened",
+          "Operation": "LessThan",
+          "value": "2022-01-11"
+        }
+      ],
+      "ExpressionSeparator": "&",
+      "limitedTo": "Dataset2_First_LaCode",
+      "orderBy": "ProviderSubTypeName",
+      "thenBy": "OrganisationName",
+      "position": 4
+    },
+    {
+      "datasetName": "providerFunding",
+      "expressions": [
+        {
+          "propertyName": "ProviderType",
+          "Operation": "Equals",
+          "value": "Free Schools"
+        },
+        {
+          "propertyName": "ParentProviderType",
+          "Operation": "Equals",
+          "value": "LocalAuthority"
+        },
+        {
+          "propertyName": "GroupingReason",
+          "Operation": "Equals",
+          "value": "Information"
+        },
+        {
+          "propertyName": "DateOpened",
+          "Operation": "LessThan",
+          "value": "2021-09-02"
+        }
+      ],
+      "ExpressionSeparator": "&",
+      "limitedTo": "Dataset2_First_LaCode",
+      "orderBy": "ProviderSubTypeName",
+      "thenBy": "OrganisationName",
+      "position": 5
+    },
+    {
+      "datasetName": "providerFunding",
+      "limitedTo": "Dataset2_First_LaCode",
+      "orderBy": "ProviderSubTypeName",
+      "thenBy": "OrganisationName",
+      "position": 6
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithOnlyDate",
+      "title": "Recoupment from the dedicated schools grant (DSG) @year1 to @year2",
+      "value": "@publicationdate-dd_MMMM_yyyy",
+      "groups": [
+        {
+          "type": "Tag/LatestNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group govuk-!-margin-bottom-9 pfb-total-allocation",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "enableVariance": true,
+          "id": "recoupment-total",
+          "title": "Total recoupment from the DSG",
+          "selector": "L1",
+          "datastyle": {
+            "numberFormat": "c0"
+          },
+          "classname": "lede govuk-!-margin-bottom-6"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Html/Section",
+          "classname": "form-block attachment embedded",
+          "groups": [
+            {
+              "type": "Block/PrintOrSaveStatement"
+            },
+            {
+              "type": "Block/LoggedInDownloadADocumentLAREC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Tabs/Tabs",
+      "groups": [
+        {
+          "id": "recoupment-calculations",
+          "type": "Tabs/Tab",
+          "title": "Recoupment calculations",
+          "groups": [
+            {
+              "type": "Heading/Medium",
+              "classname": "heading-medium heading-guidance",
+              "value": "Total recoupment"
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "id": "local-authority-funding",
+                  "useDefaultClasses": true,
+                  "classname": "first-element-in-tab",
+                  "title": "Local authority funding",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "subtype": "th",
+                          "title": "Academies and free schools",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Recoupment",
+                          "useDefaultClasses": false,
+                          "classname": "govuk-table__header govuk-table__header--numeric"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "groups": [
+                                {
+                                  "type": "General/StandardLink",
+                                  "title": "After the authority proforma tool (APT) submission",
+                                  "value": "#after-apt-submission"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "L0",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal govuk-!-width-two-thirds",
+                              "groups": [
+                                {
+                                  "type": "General/StandardLink",
+                                  "title": "Before the authority proforma tool (APT) submission",
+                                  "value": "#before-apt-submission"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "enableVariance": true,
+                              "selector": "L439",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "th",
+                              "classname": "table-header-normal",
+                              "title": " Total recoupment "
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "subtype": "td",
+                              "selector": "L439",
+                              "datastyle": {
+                                "numberFormat": "c0"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Heading/Medium",
+              "id": "after-apt-submission",
+              "classname": "heading-medium heading-guidance",
+              "value": "After the authority proforma tool (APT) submission"
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-4 govuk-!-padding-bottom-3",
+              "id": "academies-open-from-11-january-2022",
+              "groups": [
+                {
+                  "type": "Heading/Medium",
+                  "classname": "heading-small heading-guidance",
+                  "value": "Academies opened from 11 January @year1"
+                },
+                {
+                  "type": "Html/Div",
+                  "visibilityCondition": "@[$dataset2.Count]=0",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "panel panel-border-narrow",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "No academies opened from 11 January @year1."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Table",
+                  "id": "1stTable",
+                  "useDefaultClasses": false,
+                  "classname": "styleTable table3",
+                  "attributes": {
+                    "style": "width: 100%; text-align: center !important;"
+                  },
+                  "title": "Academies opened from 11 January @year1",
+                  "visuallyhidden": true,
+                  "visibilityCondition": "@[$dataset2.Count]>0",
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Academy",
+                          "subtype": "td"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Phase"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Opening date"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Post de-delegation budget"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Rates liability"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Net anomalies"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Total recoupment"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset2",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName) <br/>(@(RepeaterItem.OrganisationDfeNumber))",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.PhaseOfEducation)",
+                                  "attributes": {
+                                    "style": "text-align: left",
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "groups": [
+                                    {
+                                      "type": "Block/DateFormattedddmmyyyy",
+                                      "value": "@(RepeaterItem.DateOpened)",
+                                      "attributes": {
+                                        "style": "text-align: left",
+                                        "avoidPageBreaks": true
+                                      }
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": "</br >Open "
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+                                      "attributes": {
+                                        "avoidPageBreaks": true
+                                      }
+                                    },
+                                    {
+                                      "type": "General/Literal",
+                                      "title": " days"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 11)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 241)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Total recoupment",
+                                  "subtype": "td",
+                                  "classname": "bold",
+                                  "attributes": {
+                                    "colspan": 6
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "classname": "right",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "How recoupment for this opening period is calculated",
+              "groups": [
+                {
+                  "type": "Html/Paragraph",
+                  "title": "Recoupment is calculated using the following equation:"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "title": "(Post de-delegation budget <span class=\"calc-symbol\">−</span> Rates liability) <span class=\"calc-symbol\">=</span> Full year recoupment",
+                  "classname": "govuk-!-font-weight-bold"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "title": "We then pro-rata this for the days the academy has been open:"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "title": "(Full year recoupment <span class=\"calc-symbol\">÷</span> 365) <span class=\"calc-symbol\">x</span> Days open <span class=\"calc-symbol\">+/−</span> Net anomalies <span class=\"calc-symbol\">=</span> Total recoupment",
+                  "classname": "govuk-!-font-weight-bold"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/academies-and-dedicated-schools-grant-recoupment/academies-and-dedicated-schools-grant-2021-to-2022-calculation-of-recoupment#example-5-for-academies-opening-from-2-september-2021-up-to-31-march-2022",
+                      "title": "More about this recoupment calculation (opens in new tab)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "title": "<br/>"
+            },
+            {
+              "type": "General/StandardLink",
+              "value": "@laRecoupmentDetailsPathTabsanomalies",
+              "title": "View breakdown of anomalies"
+            },
+            {
+              "type": "Html/Div",
+              "title": "<br/>"
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "free-schools-after-2-september-2021",
+              "groups": [
+                {
+                  "type": "Heading/Medium",
+                  "classname": "heading-medium heading-guidance",
+                  "value": "New free schools opening on 1 September 2022"
+                },
+                {
+                  "type": "Html/Div",
+                  "visibilityCondition": "@[$dataset3.Count]=0",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "panel panel-border-narrow",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "No new free schools opening on 1 September 2022."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Table",
+                  "id": "2ndTable",
+                  "useDefaultClasses": false,
+                  "classname": "styleTable table3",
+                  "attributes": {
+                    "style": "width: 100%; text-align: center !important;"
+                  },
+                  "title": "Academies opened before 11 January @year1",
+                  "visuallyhidden": true,
+                  "visibilityCondition": "@[$dataset3.Count]>0",
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Free School",
+                          "subtype": "td",
+                          "attributes": {
+                            "style": "width: 25%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Phase"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Post MFG budget"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Net anomalies"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Total recoupment"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset3",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName) <br/>(@(RepeaterItem.OrganisationDfeNumber))",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.PhaseOfEducation)",
+                                  "attributes": {
+                                    "style": "text-align: left",
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 241)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Total recoupment",
+                                  "subtype": "td",
+                                  "attributes": {
+                                    "colspan": 4
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "classname": "right",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Heading/Medium",
+              "id": "before-apt-submission",
+              "classname": "heading-medium heading-guidance",
+              "value": "Before the authority proforma tool (APT) submission"
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8 govuk-!-padding-bottom-3",
+              "id": "academies-open-before-11-january-2022",
+              "groups": [
+                {
+                  "type": "Heading/Medium",
+                  "classname": "heading-medium heading-guidance",
+                  "value": "Academies opened before 11 January @year1"
+                },
+                {
+                  "type": "Html/Div",
+                  "visibilityCondition": "@[$dataset4.Count]=0",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "panel panel-border-narrow",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "No academies opened before 11 January @year1."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Table",
+                  "id": "5thTable",
+                  "useDefaultClasses": false,
+                  "classname": "styleTable table3",
+                  "attributes": {
+                    "style": "width: 100%; text-align: center !important;"
+                  },
+                  "title": "Academies opened before 11 January @year1",
+                  "visuallyhidden": true,
+                  "visibilityCondition": "@[$dataset4.Count]>0",
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Academy",
+                          "subtype": "td"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Phase",
+                          "attributes": {
+                            "style": "width: 15%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Post MFG budget"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Growth fund"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Net anomalies"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Total recoupment"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset4",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName) <br/>(@(RepeaterItem.OrganisationDfeNumber))",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.PhaseOfEducation)",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 7)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 241)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Total recoupment",
+                                  "subtype": "td",
+                                  "attributes": {
+                                    "colspan": 5
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "classname": "right",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "GDS/Detail",
+              "title": "How recoupment for this opening period is calculated",
+              "groups": [
+                {
+                  "type": "Html/Paragraph",
+                  "title": "Recoupment is calculated using the following equation:"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "title": "(Post MFG budget <span class=\"calc-symbol\">−</span> Growth fund) <span class=\"calc-symbol\">+/−</span> Net anomalies <span class=\"calc-symbol\">=</span> Total recoupment",
+                  "classname": "govuk-!-font-weight-bold"
+                },
+                {
+                  "type": "Html/Paragraph",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/academies-and-dedicated-schools-grant-recoupment/academies-and-dedicated-schools-grant-2021-to-2022-calculation-of-recoupment#example-2-for-academies-open-up-to-11-january-2021-inclusive",
+                      "title": "More about this recoupment calculation (opens in new tab)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-4 govuk-!-padding-bottom-3",
+              "id": "free-schools-before-2-september-2021",
+              "groups": [
+                {
+                  "type": "Heading/Medium",
+                  "classname": "heading-medium heading-guidance",
+                  "value": "Free schools open before 2 September 2021"
+                },
+                {
+                  "type": "Html/Div",
+                  "visibilityCondition": "@[$dataset5.Count]=0",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "panel panel-border-narrow",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "No free schools open before 2 September @year1."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Table",
+                  "id": "4thTable",
+                  "useDefaultClasses": false,
+                  "classname": "styleTable table3",
+                  "attributes": {
+                    "style": "width: 100%; text-align: center !important;"
+                  },
+                  "title": "Academies opened before 11 January @year1",
+                  "visuallyhidden": true,
+                  "visibilityCondition": "@[$dataset5.Count]>0",
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Free school",
+                          "subtype": "td",
+                          "attributes": {
+                            "style": "width: 25%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Phase"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Post MFG budget"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Net anomalies"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "classname": "right",
+                          "title": "Total recoupment"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset5",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName) <br/>(@(RepeaterItem.OrganisationDfeNumber))",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.PhaseOfEducation)",
+                                  "attributes": {
+                                    "style": "text-align: left",
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 241)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  },
+                                  "classname": "right",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Total recoupment",
+                                  "subtype": "td",
+                                  "attributes": {
+                                    "colspan": 4
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                                  "classname": "right",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "panel panel-border-narrow",
+                  "groups": [
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "We will recoup the full post MFG budget after anomalies."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "General/ExternalLink",
+              "value": "https://www.gov.uk/government/publications/academies-and-dedicated-schools-grant-recoupment/academies-and-dedicated-schools-grant-2021-to-2022-calculation-of-recoupment#example-1-for-free-schools-open-by-september-2020",
+              "title": "More about this recoupment calculation (opens in new tab)"
+            }
+          ]
+        },
+        {
+          "id": "anomalies",
+          "type": "Tabs/Tab",
+          "title": "Anomalies",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total heading-medium",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "enableVariance": true,
+                      "title": "Anomalies",
+                      "id": "css-block-total"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "panel panel-border-narrow",
+                  "groups": [
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/Literal",
+                          "title": "Anomalies increase or decrease the recoupment amount we calculated from your APT. You will have contacted us to agree the amounts and reasons."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Paragraph",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "More about anomalies (opens in new tab)",
+                          "value": "https://www.gov.uk/government/publications/academies-and-dedicated-schools-grant-recoupment/academies-and-dedicated-schools-grant-2021-to-2022-calculation-of-recoupment#recoupment-adjustments"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-8",
+              "id": "anomalies-table",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "visibilityCondition": "$..fundingLines[?(@.templateLineId == 1)].value=0",
+                  "classname": "govuk-!-margin-bottom-6",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "panel panel-border-narrow",
+                      "groups": [
+                        {
+                          "type": "Html/Paragraph",
+                          "groups": [
+                            {
+                              "type": "General/Literal",
+                              "title": "There are no anomalies in your recoupment report"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Table",
+                  "id": "anomaliesTable",
+                  "useDefaultClasses": false,
+                  "classname": "styleTable table3",
+                  "attributes": {
+                    "style": "width: 100%; text-align: center !important"
+                  },
+                  "title": "Anomalies",
+                  "visuallyhidden": true,
+                  "visibilityCondition": "$..fundingLines[?(@.templateLineId == 1)].value!=0",
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "useDefaultClasses": true,
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Academy",
+                          "attributes": {
+                            "style": "width: 40%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Positive anomaly",
+                          "attributes": {
+                            "style": "width: 10%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Reason for anomaly",
+                          "attributes": {
+                            "style": "width: 15%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Negative anomaly",
+                          "attributes": {
+                            "style": "width: 10%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Reason for anomaly",
+                          "attributes": {
+                            "style": "width: 15%"
+                          }
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Net anomalies",
+                          "attributes": {
+                            "style": "width: 15%"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@dataset6",
+                          "visibilityCondition": "L1!=0",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.OrganisationName) <br/>(@(RepeaterItem.OrganisationDfeNumber))",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "avoidPageBreaks": true
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "selector": "C3",
+                                  "datastyle": {
+                                    "numberFormat": "c2"
+                                  }
+                                },
+                                {
+                                  "type": "Conditional/Condition",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "selector": "C12",
+                                  "expression": "C12!=null",
+                                  "groups": [
+                                    {
+                                      "type": "Conditional/TrueOutput",
+                                      "groups": [
+                                        {
+                                          "type": "Table/RowColumn",
+                                          "context": "@(RepeaterItem.FundingValue)",
+                                          "selector": "C12"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "Conditional/FalseOutput",
+                                      "groups": [
+                                        {
+                                          "type": "Table/RowColumn",
+                                          "title": "N/A"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "selector": "C5",
+                                  "datastyle": {
+                                    "numberFormat": "c2"
+                                  }
+                                },
+                                {
+                                  "type": "Conditional/Condition",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "expression": "C13!=null",
+                                  "groups": [
+                                    {
+                                      "type": "Conditional/TrueOutput",
+                                      "groups": [
+                                        {
+                                          "type": "Table/RowColumn",
+                                          "context": "@(RepeaterItem.FundingValue)",
+                                          "selector": "C13"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "Conditional/FalseOutput",
+                                      "groups": [
+                                        {
+                                          "type": "Table/RowColumn",
+                                          "title": "N/A"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "context": "@(RepeaterItem.FundingValue)",
+                                  "selector": "L1",
+                                  "datastyle": {
+                                    "numberFormat": "c2"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "visibilityCondition": "@LoopIndex_1Indexed=@(RepeaterList.Count)&L1!=0",
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "Total net anomalies",
+                                  "subtype": "td",
+                                  "classname": "left",
+                                  "attributes": {
+                                    "colspan": 5
+                                  }
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "selector": "L1",
+                                  "datastyle": {
+                                    "numberFormat": "c0"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "phase-totals",
+          "type": "Tabs/Tab",
+          "title": "Phase totals",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "grid-row",
+              "groups": [
+                {
+                  "type": "Html/Div",
+                  "classname": "block-header-total heading-medium",
+                  "groups": [
+                    {
+                      "type": "General/Literal",
+                      "enableVariance": true,
+                      "title": "Phase totals",
+                      "id": "phase-totals-title"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "heading-medium recoupment-subheader govuk-!-margin-bottom-4",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "enableVariance": true,
+                  "title": "After the authority proforma tool (APT) submission",
+                  "id": "after-apt-submission"
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "govuk-!-margin-bottom-6",
+              "groups": [
+                {
+                  "id": "after-apt-submission-table",
+                  "type": "Table/Table",
+                  "title": "After the authority proforma tool (APT) submission",
+                  "visuallyhidden": true,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Phase",
+                          "classname": "govuk-table__header govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Recoupment",
+                          "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                          "useDefaultClasses": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Primary academies and free schools",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "0",
+                              "datastyle": {
+                                "numberFormat": "c2"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Secondary academies and free schools",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "0",
+                              "datastyle": {
+                                "numberFormat": "c2"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "All-through schools",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "0",
+                              "datastyle": {
+                                "numberFormat": "c2"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Table/Row",
+                          "groups": [
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "Total recoupment",
+                              "classname": "table-header-normal govuk-!-width-one-third",
+                              "useDefaultClasses": false
+                            },
+                            {
+                              "type": "Table/RowColumn",
+                              "title": "",
+                              "classname": "govuk-table__cell govuk-table__cell--numeric",
+                              "useDefaultClasses": false,
+                              "selector": "0",
+                              "datastyle": {
+                                "numberFormat": "c2"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "heading-medium recoupment-subheader govuk-!-margin-bottom-4",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "enableVariance": true,
+                  "title": "Before the authority proforma tool (APT) submission",
+                  "id": "before-apt-submission"
+                }
+              ]
+            },
+            {
+              "id": "before-apt-submission-table",
+              "type": "Table/Table",
+              "title": "Before the authority proforma tool (APT) submission",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Phase",
+                      "classname": "govuk-table__header govuk-!-width-one-third",
+                      "useDefaultClasses": false
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Recoupment",
+                      "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                      "useDefaultClasses": false
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Primary academies and free schools",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Secondary academies and free schools",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "All-through schools",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Total recoupment",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "heading-medium recoupment-subheader govuk-!-margin-bottom-4",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "enableVariance": true,
+                  "title": "Total recoupment by phase",
+                  "id": "total-by-phase"
+                }
+              ]
+            },
+            {
+              "id": "total-by-phase-table",
+              "type": "Table/Table",
+              "title": "Total recoupment by phase",
+              "visuallyhidden": true,
+              "groups": [
+                {
+                  "type": "Table/Columns",
+                  "groups": [
+                    {
+                      "type": "Table/Column",
+                      "title": "Phase",
+                      "classname": "govuk-table__header govuk-!-width-one-third",
+                      "useDefaultClasses": false
+                    },
+                    {
+                      "type": "Table/Column",
+                      "title": "Recoupment",
+                      "classname": "govuk-table__header govuk-!-width-one-sixth govuk-table__header--numeric table-column-default calc-letter",
+                      "useDefaultClasses": false
+                    }
+                  ]
+                },
+                {
+                  "type": "Table/Rows",
+                  "groups": [
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Primary academies and free schools",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Secondary academies and free schools",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "All-through schools",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Row",
+                      "groups": [
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "Total recoupment",
+                          "classname": "table-header-normal govuk-!-width-one-third",
+                          "useDefaultClasses": false
+                        },
+                        {
+                          "type": "Table/RowColumn",
+                          "title": "",
+                          "classname": "govuk-table__cell govuk-table__cell--numeric",
+                          "useDefaultClasses": false,
+                          "selector": "0",
+                          "datastyle": {
+                            "numberFormat": "c2"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "form-group govuk-!-margin-bottom-4",
+          "groups": [
+            {
+              "type": "Block/RecoupmentHistory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Script",
+      "value": "@basePath/Scripts/myesftab.js"
+    },
+    {
+      "type": "Html/Element",
+      "subtype": "style",
+      "title": [
+        ".center, .center * { text-align: center !important; } ",
+        ".right, .right * { text-align: right !important; }",
+        ".left, .left * { text-align: left !important; } "
+      ]
+    }
+  ],
+  "variables": [
+  ]
+}

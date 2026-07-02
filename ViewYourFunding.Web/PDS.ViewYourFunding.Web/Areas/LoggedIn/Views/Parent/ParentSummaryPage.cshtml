@@ -1,0 +1,50 @@
+﻿@using PDS.ViewYourFunding.Web.Helpers
+
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.Parent.ParentSummaryPageViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+<h1 class="heading-xlarge">Allocation statements</h1>
+
+<form method="post" class="form">
+    <partial name="~/Areas/Lists/Views/_Options.cshtml" />
+    <partial name="~/Areas/Lists/Views/_FilterResultsUpdatedAlert.cshtml" />
+    <partial name="~/Areas/Lists/Views/_Filters.cshtml" />
+    <div id="allocation-statements-content" class="column-two-thirds">
+        <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+            <fieldset>
+                <legend class="visuallyhidden">Allocation statements.</legend>
+                <partial name="~/Areas/Lists/Views/_FilterResultsAlert.cshtml" />
+                <partial name="~/Areas/Lists/Views/_List.cshtml" />
+            </fieldset>
+        </div>
+    </div>
+</form>
+
+@if (Model.ListItems.Count() >= Model.BackToTopLinkMinimumCount)
+{
+    <div class="form-group direction-rtl">
+        <a class="app-c-back-to-top dont-print back-to-top-link" href="#content">
+            <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>
+            Back to top
+        </a>
+    </div>
+}
+
+
+@section vyfScripts
+{
+    @Html.PageScripts()
+
+    <environment names="Development">
+        <script src="~/Scripts/vyf-mat-filters.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-mat-filters.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

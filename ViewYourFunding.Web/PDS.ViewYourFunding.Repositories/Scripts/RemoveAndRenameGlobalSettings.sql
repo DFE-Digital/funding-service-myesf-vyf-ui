@@ -1,0 +1,5 @@
+BEGIN TRAN T1;
+
+TRUNCATE TABLE [dbo].[GlobalSettings]
+
+COMMIT TRAN T1;

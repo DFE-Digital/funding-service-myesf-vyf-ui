@@ -1,0 +1,633 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>		
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+		<UserSecretsId>966cebe3-b68e-493a-a5fe-b7c7e0cb35b7</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Models\Shared\CurrentUserViewModel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="Views\FundingUIModels\ViewData\FY-2021\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderHistory.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\.editorconfig" Link=".editorconfig" />
+		<None Include="Views\Components\Accordion\Button.cshtml" />
+		<None Include="Views\Components\Accordion\SubTitle.cshtml" />
+		<None Include="Views\Components\Accordion\Title.cshtml" />
+		<None Include="Views\Components\Accordion\Total.cshtml" />
+		<None Include="Views\Components\Accordion\_ButtonSpan.cshtml" />
+		<None Include="Views\Components\Accordion\_RightSection.cshtml" />
+		<None Include="Views\Components\Accordion\_TitleForPeriod.cshtml" />
+		<None Include="Views\Components\Block\AllocationHistory.cshtml" />
+		<None Include="Views\Components\Block\DownloadADocument.cshtml" />
+		<None Include="Views\Components\Block\PaymentDates.cshtml" />
+		<None Include="Views\Components\Conditional\Condition.cshtml" />
+		<None Include="Views\Components\Conditional\FalseOutput.cshtml" />
+		<None Include="Views\Components\Conditional\TrueOutput.cshtml" />
+		<None Include="Views\Components\Data\Value.cshtml" />
+		<None Include="Views\Components\Error\ComponentNotFound.cshtml" />
+		<None Include="Views\Components\Error\ShouldNotDisplay.cshtml" />
+		<None Include="Views\Components\GDS\Detail.cshtml" />
+		<None Include="Views\Components\General\ExternalLink.cshtml" />
+		<None Include="Views\Components\General\Literal.cshtml" />
+		<None Include="Views\Components\General\PrintThisPage.cshtml" />
+		<None Include="Views\Components\General\PublishedDate.cshtml" />
+		<None Include="Views\Components\General\Section.cshtml" />
+		<None Include="Views\Components\Heading\Medium.cshtml" />
+		<None Include="Views\Components\Heading\FundingHeader.cshtml" />
+		<None Include="Views\Components\Heading\Small.cshtml" />
+		<None Include="Views\Components\Heading\TitleWithDate.cshtml" />
+		<None Include="Views\Components\Heading\TitleWithDatesLoggedIn.cshtml" />
+		<None Include="Views\Components\Html\Div.cshtml" />
+		<None Include="Views\Components\Html\Span.cshtml" />
+		<None Include="Views\Components\Html\Element.cshtml" />
+		<None Include="Views\Components\Tabs\LinksToPage.cshtml" />
+		<None Include="Views\Components\Pattern\UnorderedList.cshtml" />
+		<None Include="Views\Components\Table\Column.cshtml" />
+		<None Include="Views\Components\Table\Columns.cshtml" />
+		<None Include="Views\Components\Table\Row.cshtml" />
+		<None Include="Views\Components\Table\Rows.cshtml" />
+		<None Include="Views\Components\Table\Table.cshtml" />
+		<None Include="Views\Components\Tabs\Tab.cshtml" />
+		<None Include="Views\Components\Tabs\Tabs.cshtml" />
+		<None Include="Views\Components\Tag\LatestNotLatest.cshtml" />
+		<None Include="Views\Components\Tag\Latest.cshtml" />
+		<None Include="Views\Components\Tag\Tag.cshtml" />
+		<None Include="Views\Components\Total\GrandTotal.cshtml" />
+		<None Include="Views\Components\Total\SubTotal.cshtml" />
+
+		<None Include="wwwroot\Scripts\accordion.js" />
+		<None Include="wwwroot\Scripts\custom-global-behaviour.js" />
+		<None Include="wwwroot\Scripts\dsg.js" />
+		<None Include="wwwroot\Scripts\filters-add-ons.js" />
+		<None Include="wwwroot\Scripts\filters.js" />
+		<None Include="wwwroot\Scripts\multi-form-custom-validation.js" />
+		<None Include="wwwroot\Scripts\multiple-choice-required-validation.js" />
+		<None Include="wwwroot\Scripts\search-results.js" />
+		<None Include="wwwroot\Scripts\show-hide-content.js" />
+		<None Include="wwwroot\Scripts\tabs.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="8.4.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="8.0.0" />
+		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.WsFederation" Version="8.0.22" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="8.0.22" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.55.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.22">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.22" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.22" />
+		<PackageReference Include="Pds.Core.CodeAnalysis.StyleCop" Version="2.0.0" />
+		<PackageReference Include="Pds.Core.Common" Version="2.0.0" />
+		<PackageReference Include="Pds.Core.SecurityAssurance" Version="2.1.0" />
+		<PackageReference Include="Pds.Core.Telemetry.ApplicationInsights" Version="3.0.0" />
+		<PackageReference Include="Pds.Core.Utils" Version="3.0.0" />
+		<PackageReference Include="Pds.Core.Web" Version="5.0.14" />
+		<PackageReference Include="Pds.Core.Web.Components" Version="5.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\PDS.ViewYourFunding.Core\PDS.ViewYourFunding.Core.csproj" />
+		<ProjectReference Include="..\PDS.ViewYourFunding.Services\PDS.ViewYourFunding.Services.csproj" />
+		<ProjectReference Include="..\PDS.VYF.Services\PDS.VYF.Services.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="Areas\LoggedIn\Data\1619_Static_Adjustments_2425_NS_SET2AllShow.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="Areas\LoggedIn\Data\NMSS_Static_IdenticalStudentNumbers.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2223\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2223\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3_Organisation.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2223\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3_Provider.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2324\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2324\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2324\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2425\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2425\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2425\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2526\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2526\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\AY-2526\UIFSM_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2324\PP_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\PP_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\PP_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\PP_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\PP_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2425\PP_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2526\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion1_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion2_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion3_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion4_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion5_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion6_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion7_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion8_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\Spreadsheet\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ModelVersion9_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInMatProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisationMss.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2021\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2122\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2223\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2223\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2324\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2425\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2627\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>		
+		<Content Update="Views\FundingUIModels\ViewData\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInIndicativeProvider.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisationSsf.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInIndicativeProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2122\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2122\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2122\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2122\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2223\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2223\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2223\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2223\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInOrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInIndicativeProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInMatProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2021\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2021\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2021\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FY-2021\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInMatProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FEC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInMatProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInMatProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_National.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\DSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Organisation.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationHistorySingleYear.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_OrganisationSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_Provider.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ProviderHistory.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ProviderHistorySingleYear.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\FEC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Views\FundingUIModels\ViewData\PSG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_ProviderSummary.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Views\FundingUIModels\Spreadsheet\Images\ESFALogo.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<None Update="Views\FundingUIModels\Spreadsheet\Images\DfELogo.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Error\Models\" />
+    <Folder Include="Areas\Error\Views\" />
+    <Folder Include="Areas\LoggedIn\Models\ViewModel\" />
+  </ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio><UserProperties views_4fundinguimodels_4viewdata_4gag_3schemamin0-0max100-0_3templatemin0-0max100-0_3loggedinindicativeprovider_1json__JsonSchema="https://deta.space/assets/spacefile.schema.json" /></VisualStudio>
+	</ProjectExtensions>
+
+</Project>

@@ -1,0 +1,14 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+<span class="govuk-accordion__section-button" id="accordion-default-heading-@Model.GetAccordionInstanceNumber()">
+@{  
+    var titleType = Model.ComponentConfiguration.IsALoggedInView ?
+        ComponentType.Accordion_TitleForPeriodLoggedIn : ComponentType.Accordion_TitleForPeriod;
+
+    await ComponentHelper.Render(Html, titleType, Model, Model.PageData);
+    await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+}
+</span>

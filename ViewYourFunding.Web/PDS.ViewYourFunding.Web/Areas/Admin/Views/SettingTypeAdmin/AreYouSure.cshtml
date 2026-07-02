@@ -1,0 +1,24 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.SettingTypeViewModel
+<p>
+    <span class="heading-large">Are You Sure?</span>
+</p>
+@Html.DisplayFor(m => m.ActionMode)
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminSettingTypeSaveChanges, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.DisplayFor(m => m.SettingType)
+
+    @Html.HiddenFor(m => m.SettingType.Id)
+    @Html.HiddenFor(m => m.SettingType.SettingName)
+    @Html.HiddenFor(m => m.ActionMode)
+    @Html.HiddenFor(m => m.SettingTypeName)
+    @Html.HiddenFor(m => m.SettingType.ValueDataType)
+    @Html.HiddenFor(m => m.SettingType.ValuesAreEditable)
+    @Html.HiddenFor(m => m.SettingType.IsSettingTypeInUse)
+
+    <input type="submit" class="button" value="Save" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminSettingTypesHome, null, null)
+}

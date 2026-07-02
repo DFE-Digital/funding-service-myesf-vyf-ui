@@ -1,0 +1,48 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.StartPageViewModel
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_ViewingChoice, FormMethod.Post, new { @class = "transaction" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <p class="lede">
+            View current and previous allocations by organisation or funding type.
+            This information is available to all - you do not need to be signed in.
+        </p>
+
+        <div class="form-block">
+            <h2 class="heading-medium">Organisation</h2>
+            <p>You can view funding for:</p>
+            <ul class="list list-bullet">
+                <li>academies and free schools</li>
+                <li>city technology colleges</li>
+                <li>general hospitals</li>
+                <li>local authorities</li>
+                <li>local authority maintained schools</li>
+                <li>non-maintained special schools</li>
+                <li>pupil referral units</li>
+            </ul>
+        </div>
+
+        <div class="form-block">
+            <h2 class="heading-medium">Funding type</h2>
+            <p>You can view figures for:</p>
+            <ul class="list list-bullet">
+                @foreach (var fundingStream in Model.FundingStreams)
+                {
+                    <li> @fundingStream.FundingStreamName</li>
+                }
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="form-group get-started">
+        <button class="button button-start" type="submit">Start now</button>
+    </div>
+
+    <div class="form-block">
+        @await Html.PartialAsync("Partial/_AlternativeFundingLinks",
+            new AlternativeFundingLinksViewModel { IsStartPage = true })
+    </div>
+}

@@ -1,0 +1,53 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Web.Helpers
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+
+@if (Model.Components.Count > 1)
+{
+    @if (Model.Components[0].Type == ComponentType.Accordion_MATTitle)
+    {
+        <div class="govuk-accordion__section-header govuk-accordion__single-funding-statement-header MATPadding">
+            @{
+                await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+            }
+        </div>
+    }
+    else
+    {
+        <div class="govuk-accordion__section-header govuk-accordion__single-funding-statement-header">
+            @{
+                await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+            }
+        </div>
+    }
+}
+
+@using (Html.BeginScripts())
+{
+    @if (Model.Components.Count > 1)
+    {
+
+        if (Model.ComponentConfiguration.FundingStreamCode == "GAG" || Model.Components[0].Type == ComponentType.Accordion_MATTitle)
+        {
+            <environment names="Development">
+                <script src="~/Scripts/IYOaccordion.js" type="text/javascript"></script>
+            </environment>
+            <environment names="Staging,Production">
+                <script src="~/js/vyf-IYOaccordion.min.js" asp-file-version="true" type="text/javascript"></script>
+            </environment>
+        }
+        else
+        {
+            <environment names="Development">
+                <script src="~/Scripts/accordion.js" type="text/javascript"></script>
+            </environment>
+            <environment names="Staging,Production">
+                <script src="~/js/vyf-accordion.min.js" asp-file-version="true" type="text/javascript"></script>
+            </environment>
+        }
+    }
+
+}

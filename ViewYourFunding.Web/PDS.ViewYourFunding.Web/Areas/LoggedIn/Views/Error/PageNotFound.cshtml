@@ -1,0 +1,23 @@
+﻿@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.LoggedInErrorPageViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+<h1 class="heading-xlarge">Page not found</h1>
+<h2>
+    If you typed the web address, check it is correct.
+</h2>
+<h2>
+    If you pasted the web address, check you copied the entire address.
+</h2>
+<h2>
+    If the web address is correct or you selected a link or button, contact the <a href='https://customerhelpportal.education.gov.uk' target="_blank" rel="external noopener noreferrer">Customer Help Portal (opens in a new tab)</a>.
+</h2>
+
+@section vyfScripts {
+    @Html.PageScripts()
+}

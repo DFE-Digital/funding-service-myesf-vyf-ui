@@ -1,0 +1,35 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var componentConfiguration = Model.ComponentConfiguration;
+    var isLa = componentConfiguration.IsLocalAuthority;
+    var ukprn = isLa ? componentConfiguration.EntityGroupUkprn : componentConfiguration.PrimaryIdentifier;
+
+    var classNames = new List<string>();
+
+    if (Model.ClassNames?.Any() == true)
+    {
+        classNames.AddRange(Model.ClassNames);
+    }
+    else
+    {
+        classNames.Add("heading-small heading-guidance");
+    }
+
+    var classes = string.Join(" ", classNames);
+}
+
+<h3 class="@classes">Recoupment history</h3>
+
+<p>
+    @Html.RouteLink("View history of recoupment", LoggedInConstants.RouteName_LARecoupmentHistory,
+        new
+        {
+            ukprn = ukprn,
+            fundingStreamNamePathPart = componentConfiguration.FundingStreamPathPart,
+            viaChoicePage = componentConfiguration.ViaChoicePage ? true : (bool?)null
+        }
+    )
+</p>

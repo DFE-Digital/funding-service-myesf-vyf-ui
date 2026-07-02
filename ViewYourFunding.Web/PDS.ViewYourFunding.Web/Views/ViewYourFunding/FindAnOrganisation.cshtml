@@ -1,0 +1,75 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.FindAnOrganisationViewModel
+
+<div class="error-summary @(Model.ValidationErrorInputId != null ? "" : "hidden")" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
+    <ul class="error-summary-list">
+        <li><a href="#@Model.ValidationErrorInputId" id="errorLink">Enter a term to search for an organisation</a></li>
+    </ul>
+</div>
+
+<fieldset class=@(Model.ValidationErrorInputId != null ? "after-error-summary" : "after-hidden-error-summary") id="findOrganisation">
+
+    <legend id="viewingChoice" class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="heading-xlarge">@Model.ContentTitle</h1>
+    </legend>
+
+    <p>Select a school, academy, college or local authority to view the latest funding for this financial or academic year.</p>
+
+    <div class="form-group multiple-form">
+
+        <div class="multiple-choice" data-target="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_Provider">
+            <input id="radio-1" type="radio" name="searchScope" value="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_Provider" aria-controls="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_Provider" aria-expanded="false" @(Model.ValidationErrorInputId == "provider" ? "checked" : "")>
+            <label for="radio-1">School name, academy name, college name or local authority establishment number</label>
+        </div>
+
+        @using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_ProviderSearch, FormMethod.Post, new { @class = "transaction" }))
+        {
+            <div class="panel panel-border-narrow @(Model.ValidationErrorInputId == "provider" ? "form-group-error" : "js-hidden")" id="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_Provider" aria-hidden="true">
+                <div class="search-field search-field-darker">
+                    <div class="search-input search-input-with-button">
+                        <label class="form-label form-hint" for="provider">For example, Lickhill Primary School or 3832470</label>
+                        <span class="error-message @(Model.ValidationErrorInputId == "provider" ? "" : "hidden")">Enter a term to search for an organisation </span>
+                        <input autocomplete="off" class="form-control" name="searchTerm" id="provider" type="text" value="">
+                    </div>
+                    <div class="search-submit">
+                        <button id="school-or-academy-submit" class="button" type="submit" name="providerSubmit" value="Search for school name, academy name, or local authority establishment number">Search for school name, academy name, or local authority establishment number</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="multiple-choice" data-target="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_LocalAuthority">
+            <input id="radio-2" type="radio" name="searchScope" value="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_LocalAuthority" aria-controls="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_LocalAuthority" aria-expanded="false" @(Model.ValidationErrorInputId == "laSearch" ? "checked" : "")>
+            <label for="radio-2">Local authority name or code</label>
+        </div>
+
+        @using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_LocalAuthoritySearch, FormMethod.Post, new { @class = "transaction" }))
+        {
+            <div class="panel panel-border-narrow  @(Model.ValidationErrorInputId == "laSearch" ? "form-group-error" : "js-hidden")" id="@ViewYourFundingConstants.OptionValue_FindAnOrganisation_LocalAuthority" aria-hidden="true">
+                <div class="search-field search-field-darker">
+                    <div class="search-input search-input-with-button">
+                        <label class="form-label form-hint" for="laSearch">For example, Camden or 202</label>
+                        <span class="error-message@(Model.ValidationErrorInputId == "laSearch" ? "" : " hidden")">Enter a term to search for an organisation </span>
+                        <input autocomplete="off" class="form-control" name="searchTerm" id="laSearch" type="text" value="">
+                    </div>
+                    <div class="search-submit">
+                        <button id="la-submit" class="button" type="submit" name="laSubmit" value="Search for local authority name or code">Search for local authority name or code</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</fieldset>
+
+@section vyfScripts {
+    <environment names="Development">
+        <script src="~/Scripts/show-hide-content.js"></script>
+        <script src="~/Scripts/multi-form-custom-validation.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-custom-multi-form-validation.min.js" asp-file-version="true" type="text/javascript"></script>
+        <script src="~/js/vyf-show-hide-content.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

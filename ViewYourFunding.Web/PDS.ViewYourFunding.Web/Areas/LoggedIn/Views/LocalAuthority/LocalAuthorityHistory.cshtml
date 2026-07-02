@@ -1,0 +1,14 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.LocalAuthorityHistoryViewModel
+
+@section _AdminScreensLayout_Styles
+{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+
+@{
+    await Model.FundingViewData?.Components.Render(Html);
+}
+
+@section vyfScripts{ @Html.PageScripts() }

@@ -1,0 +1,91 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.GenerateSinglePdfViewModel
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_PdfGenerationActionsConfirmGenerateSinglePdf, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <dl class="dl-horizontal-halves">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProviderFundingId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProviderFundingId)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FundingStreamCodeAndPeriodCode)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FundingStreamCodeAndPeriodCode)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ukprn)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ukprn)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CutOffDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CutOffDate)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProviderType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProviderType)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProviderSubType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProviderSubType)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+        </dl>
+    </div>
+
+    @Html.HiddenFor(m => m.ProviderFundingId)
+    @Html.HiddenFor(m => m.FundingStreamCodeAndPeriodCode)
+    @Html.HiddenFor(m => m.Ukprn)
+    @Html.HiddenFor(m => m.CutOffDate)
+    @Html.HiddenFor(m => m.ProviderType)
+    @Html.HiddenFor(m => m.ProviderSubType) 
+    <input type="submit" class="button" value="Submit" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome)
+}

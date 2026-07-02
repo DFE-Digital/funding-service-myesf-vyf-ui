@@ -1,0 +1,60 @@
+﻿@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@model PDS.ViewYourFunding.Web.Areas.Admin.Enums.FundingStreamSettingAction
+@{
+    var newValue = ViewBag.IsNationalLayoutSetting ? ViewBag.NationalLayoutFriendlyName : ViewBag.NewValue;
+    var currentValue = ViewBag.IsNationalLayoutSetting ? ViewBag.NationalLayoutFriendlyName : ViewBag.CurrentValue;
+
+}
+@switch (Model)
+{
+    case FundingStreamSettingAction.Add:
+        <p>
+            <span class="heading-large">Add @ViewBag.FundingStreamName setting</span><br/>
+        </p>
+
+        <p>
+            Please review the changes you have made carefully before clicking the submit button
+        </p>
+
+        <p>
+            You have chosen to add the below setting:
+        </p>
+        <p>
+            @ViewBag.SettingName setting as <span class="bold-small">@newValue</span> <span class="hint"> @ViewBag.SettingDescription</span>
+        </p>
+        break;
+    case FundingStreamSettingAction.Delete:
+        <p>
+            <span class="heading-large">Delete @ViewBag.FundingStreamName setting</span><br/>
+        </p>
+
+        <p>
+            Please review the changes you have made carefully before clicking the submit button
+        </p>
+
+        <p>
+            You have chosen to delete:
+        </p>
+        <p>
+            @ViewBag.SettingName setting <span class="bold-small"> @currentValue</span> <span class="hint"> @ViewBag.SettingDescription</span>
+        </p>
+        break;
+    case FundingStreamSettingAction.Edit:
+        <p>
+            <span class="heading-large">Edit @ViewBag.FundingStreamName setting(s)</span><br/>
+        </p>
+
+        <p>
+            Please review the changes you have made carefully before clicking the submit button
+        </p>
+
+        <p>
+            You have chosen to update:
+        </p>
+        <p>
+            @ViewBag.SettingName setting from <span class="bold-small"> @currentValue</span> to <span class="bold-small">@newValue</span> <span class="hint"> @ViewBag.SettingDescription</span>
+        </p>
+        break;
+    default:
+        throw new ArgumentOutOfRangeException();
+}

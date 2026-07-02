@@ -1,0 +1,33 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.GlobalSettingAdmin.GlobalSettingConfirmationViewModel
+@if (Model.ChangesSaved)
+{
+    <div class="govuk-box-highlight">
+        <h1 class="bold-large">@Model.GlobalSetting.Description general setting has been updated successfully</h1>
+            <br />
+            <p id="submission-details">Submitted by @Model.CurrentUser?.FullName on @Model.SubmittedAtDisplayDate</p>
+    </div>
+}
+else
+{
+    <div>
+        <h1 class="bold-large">There was a problem updating the @Model.GlobalSetting.Description general setting.</h1>
+    </div>
+}
+
+
+<div id="signed-success-section" class="column-two-thirds">
+    <div>
+        <div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view the general settings.</p>
+            <p>@Html.RouteLink("Go back to general settings home", ViewYourFundingConstants.RouteName_AdminGeneralSettingHome) </p>
+        </div>
+        <div>
+            <p class="bold-small">
+                Or you may want to:
+            </p>
+            <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminSettingsHome) </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.LocalAuthorityHistorySingleYearViewModel
+
+@{
+    await Model.FundingViewData?.Components.Render(Html);
+}
+@section vyfScripts{ @Html.PageScripts() }

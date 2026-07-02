@@ -1,0 +1,72 @@
+@using InterfaceModels = PDS.ViewYourFunding.Services.Interfaces.Models
+@using Models = PDS.ViewYourFunding.Services.Models
+@model InterfaceModels.Component
+@{
+    var configuration = Model.ComponentConfiguration;
+    var originalModel = configuration.OriginalModel;
+
+    var outputSb = new System.Text.StringBuilder();
+    outputSb.Append("<hr/><h2>Datasets</h2>");
+
+    outputSb.Append("<table style='width: 100%' class='debugOutputTable'>");
+    outputSb.Append("<thead><tr>");
+    outputSb.Append("<td style='width: 9%'>Name</td>");
+    outputSb.Append("<td style='width: 9%'>Id</td>");
+    outputSb.Append("<td style='width: 9%'>Funding stream</td>");
+    outputSb.Append("<td style='width: 9%'>Grouping type</td>");
+    outputSb.Append("<td style='width: 9%'>Expression</td>");
+    outputSb.Append("<td style='width: 9%'>Order by</td>");
+    outputSb.Append("<td style='width: 9%'>Order by descending</td>");
+    outputSb.Append("<td style='width: 9%'>Parent grouping type</td>");
+    outputSb.Append("<td style='width: 9%'>Take</td>");
+
+    if (configuration.ShowData)
+    {
+        outputSb.Append("<td style='width: 9%'>Evaluated count</td>");
+        outputSb.Append("<td style='width: 10%'>Evaluated names</td>");
+    }
+
+    outputSb.Append("</tr></thead><tbody>");
+
+    var count = 0;
+
+    foreach (var dataset in originalModel.Dataset)
+    {
+        var bgColor = (count % 2) == 0 ? "#FFF" : "#DDD";
+
+        outputSb.AppendLine($"<tr style='background-color: {bgColor}'>");
+        outputSb.AppendLine($"<td>{dataset.DatasetName}</td><td>{dataset.Id ?? "--"}</td><td>{string.Join(", ", (dataset.FundingStreamMappings ?? new string[] { }).ToArray() ?? new string[] { })}</td>");
+        outputSb.AppendLine($"<td>{dataset.GroupingType ?? "--"}</td><td>{dataset.Expression ?? "--"}</td><td>{dataset.OrderBy ?? "--"}</td>");
+        outputSb.AppendLine($"<td>{dataset.OrderByDescending ?? "--"}</td><td>{dataset.ParentGroupingType ?? "--"}</td><td>{dataset.Take?.ToString() ?? "--"}</td>");
+
+        var datasetValues = configuration.AllDatasetsData[count++];
+        var datasetValueNames = new List<string>();
+
+        foreach (var datasetValue in datasetValues)
+        {
+            if (datasetValue is Models.FundingApiSearchProviderFunding providerFunding)
+            {
+                datasetValueNames.Add(providerFunding.OrganisationName);
+            }
+            else if (datasetValue is Models.FundingApiSearchFunding funding)
+            {
+                datasetValueNames.Add(funding.GroupName);
+            }
+            else
+            {
+                datasetValueNames.Add("TYPE NOT RECOGNISED");
+            }
+        }
+
+        if (configuration.ShowData)
+        {
+            outputSb.AppendLine($"<td>{datasetValues.Count}</td><td>{string.Join("<br>", datasetValueNames.ToArray())}</td>");
+        }
+
+        outputSb.AppendLine("</tr>");
+    }
+
+    outputSb.Append("</tbody></table>");
+}
+
+@Html.Raw(outputSb.ToString())

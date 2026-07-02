@@ -1,0 +1,426 @@
+{
+  "$schema": "https://fundingschemas.blob.core.windows.net/schemas/funding-template-schema-1.2.json",
+  "schemaVersion": "1.2",
+  "fundingTemplate": {
+    "fundingLines": [
+      {
+        "templateLineId": 1,
+        "type": "Payment",
+        "name": "Total LA Recoupment",
+        "fundingLineCode": "LAREC-001",
+        "value": 9000
+      }
+    ],
+        "calculations": [
+          {
+            "templateCalculationId": 2,
+            "name": "Total Recoupment",
+            "type": "Cash",
+            "aggregationType": "Sum",
+            "formulaText": "",
+            "valueFormat": "Currency",
+            "value": 1000,
+            "groupRate": null,
+            "percentageChangeBetweenAandB": null,
+            "calculations": [
+              {
+                "templateCalculationId": 3,
+                "name": "Positive Anomalies",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "value": 900,
+                "valueFormat": "Currency",
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": [
+                  {
+                    "templateCalculationId": 12,
+                    "name": "Reason for Positive Anomaly",
+                    "type": "Enum",
+                    "aggregationType": "None",
+                    "formulaText": "",
+                    "value": "we will came back to this",
+                    "valueFormat": "String",
+                    "allowedEnumTypeValues": [
+                      "We will come back to this"
+                    ],
+                    "groupRate": null,
+                    "percentageChangeBetweenAandB": null,
+                    "calculations": []
+                  }
+                ]
+              },
+              {
+                "templateCalculationId": 5,
+                "name": "Negative Anomalies",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "value": "500",
+                "formulaText": "",
+                "valueFormat": "Currency",
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": [
+                  {
+                    "templateCalculationId": 13,
+                    "name": "Reason for Negative Anomaly",
+                    "type": "Enum",
+                    "aggregationType": "None",
+                    "value": "we will came back to this",
+                    "formulaText": "",
+                    "valueFormat": "String",
+                    "allowedEnumTypeValues": [
+                      "we will came back to this"
+                    ],
+                    "groupRate": null,
+                    "percentageChangeBetweenAandB": null,
+                    "calculations": []
+                  }
+                ]
+              },
+              {
+                "templateCalculationId": 6,
+                "name": "Post MFG Budget",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "valueFormat": "Currency",
+                "value": 60,
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": []
+              },
+              {
+                "templateCalculationId": 7,
+                "name": "Growth Adjustment",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "valueFormat": "Currency",
+                "value": 40,
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": []
+              },
+              {
+                "templateCalculationId": 8,
+                "name": "Rates 100%",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "valueFormat": "Currency",
+                "value": 100,
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": []
+              },
+              {
+                "templateCalculationId": 9,
+                "name": "Rates 20%",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "value": 20,
+                "valueFormat": "Currency",
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": []
+              },
+              {
+                "templateCalculationId": 10,
+                "name": "Pro Rated SBS In Year Open",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "valueFormat": "Currency",
+                "value": 100,
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": [
+                  {
+                    "templateCalculationId": 11,
+                    "name": "Post DeDelegation",
+                    "type": "Rate",
+                    "aggregationType": "Sum",
+                    "value": 100,
+                    "formulaText": "",
+                    "valueFormat": "Currency",
+                    "groupRate": null,
+                    "percentageChangeBetweenAandB": null,
+                    "calculations": []
+                  }
+                ]
+              },
+              {
+                "templateCalculationId": 14,
+                "name": "Pro Rated DeDelegation Amount",
+                "type": "Rate",
+                "aggregationType": "Sum",
+                "formulaText": "",
+                "valueFormat": "Currency",
+                "value": 200,
+                "groupRate": null,
+                "percentageChangeBetweenAandB": null,
+                "calculations": [
+                  {
+                    "templateCalculationId": 15,
+                    "name": "DeDelegation Amount",
+                    "type": "Rate",
+                    "aggregationType": "Sum",
+                    "formulaText": "",
+                    "value": 200,
+                    "valueFormat": "Currency",
+                    "groupRate": null,
+                    "percentageChangeBetweenAandB": null,
+                    "calculations": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+        "templateCalculationId": 12,
+        "name": "Reason for Positive Anomaly",
+        "type": "Enum",
+        "aggregationType": "None",
+        "formulaText": "",
+        "value": "we will came back to this",
+        "valueFormat": "String",
+        "allowedEnumTypeValues": [
+          "We will come back to this"
+        ],
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+            "templateCalculationId": 4,
+            "name": "Open Date Flag",
+            "type": "Enum",
+            "aggregationType": "None",
+            "formulaText": "",
+            "value": "2",
+            "valueFormat": "String",
+            "allowedEnumTypeValues": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "groupRate": null,
+            "percentageChangeBetweenAandB": null,
+            "calculations": []
+      },
+      {
+        "templateCalculationId": 3,
+        "name": "Positive Anomalies",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "value": 900,
+        "valueFormat": "Currency",
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": [
+          {
+            "templateCalculationId": 12,
+            "name": "Reason for Positive Anomaly",
+            "type": "Enum",
+            "aggregationType": "None",
+            "formulaText": "",
+            "value": "we will came back to this",
+            "valueFormat": "String",
+            "allowedEnumTypeValues": [
+              "We will come back to this"
+            ],
+            "groupRate": null,
+            "percentageChangeBetweenAandB": null,
+            "calculations": []
+          }
+        ]
+      },
+      {
+        "templateCalculationId": 12,
+        "name": "Reason for Positive Anomaly",
+        "type": "Enum",
+        "aggregationType": "None",
+        "formulaText": "",
+        "value": "we will came back to this",
+        "valueFormat": "String",
+        "allowedEnumTypeValues": [
+          "We will come back to this"
+        ],
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 5,
+        "name": "Negative Anomalies",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "value": "500",
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": [
+          {
+            "templateCalculationId": 13,
+            "name": "Reason for Negative Anomaly",
+            "type": "Enum",
+            "aggregationType": "None",
+            "value": "we will came back to this",
+            "formulaText": "",
+            "valueFormat": "String",
+            "allowedEnumTypeValues": [
+              "we will came back to this"
+            ],
+            "groupRate": null,
+            "percentageChangeBetweenAandB": null,
+            "calculations": []
+          }
+        ]
+      },
+      {
+        "templateCalculationId": 13,
+        "name": "Reason for Negative Anomaly",
+        "type": "Enum",
+        "aggregationType": "None",
+        "value": "we will came back to this",
+        "formulaText": "",
+        "valueFormat": "String",
+        "allowedEnumTypeValues": [
+          "we will came back to this"
+        ],
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 6,
+        "name": "Post MFG Budget",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "value": 60,
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 7,
+        "name": "Growth Adjustment",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "value": 40,
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 8,
+        "name": "Rates 100%",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "value": 100,
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 9,
+        "name": "Rates 20%",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "value": 20,
+        "valueFormat": "Currency",
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 10,
+        "name": "Pro Rated SBS In Year Open",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "value": 100,
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": [
+          {
+            "templateCalculationId": 11,
+            "name": "Post DeDelegation",
+            "type": "Rate",
+            "aggregationType": "Sum",
+            "value": 100,
+            "formulaText": "",
+            "valueFormat": "Currency",
+            "groupRate": null,
+            "percentageChangeBetweenAandB": null,
+            "calculations": []
+          }
+        ]
+      },
+      {
+        "templateCalculationId": 11,
+        "name": "Post DeDelegation",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "value": 100,
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      },
+      {
+        "templateCalculationId": 14,
+        "name": "Pro Rated DeDelegation Amount",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "valueFormat": "Currency",
+        "value": 200,
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": [
+          {
+            "templateCalculationId": 15,
+            "name": "DeDelegation Amount",
+            "type": "Rate",
+            "aggregationType": "Sum",
+            "formulaText": "",
+            "value": 200,
+            "valueFormat": "Currency",
+            "groupRate": null,
+            "percentageChangeBetweenAandB": null,
+            "calculations": []
+          }
+        ]
+      },
+      {
+        "templateCalculationId": 15,
+        "name": "DeDelegation Amount",
+        "type": "Rate",
+        "aggregationType": "Sum",
+        "formulaText": "",
+        "value": 200,
+        "valueFormat": "Currency",
+        "groupRate": null,
+        "percentageChangeBetweenAandB": null,
+        "calculations": []
+      }
+    ]
+  }
+}

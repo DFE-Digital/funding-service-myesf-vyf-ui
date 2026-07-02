@@ -1,0 +1,537 @@
+{
+  "name": "16-19 Logged In LA sixth form - MSS Only ",
+  "type": "PDF",
+  "version": 1,
+  "versionNotes": "",
+  "dataset": [
+    {
+      "_type": "Contract - Represents 'Maintained Special Schools'",
+      "datasetName": "funding",
+      "expression": "GroupingReason=Contracting",
+      "groupingType": "LocalAuthority"
+    },
+    {
+      "datasetName": "providerFunding",
+      "limitedTo": "Dataset1_First_GroupName",
+      "expression": "ParentProviderType=LocalAuthoritySsf",
+      "orderBy": "OrganisationName"
+    },
+    {
+      "_type": "Contract - Represents 'LA Informational'",
+      "datasetName": "funding",
+      "expression": "GroupingReason=Information",
+      "groupingType": "LocalAuthority",
+      "fundingStreamMappings": [ "1619-ForName" ],
+      "limitedTo": "Dataset2_First_LaName"
+    }
+  ],
+  "additionalFundingStreams": [
+    {
+      "id": "1619-ForName",
+      "code": "1619"
+    }
+  ],
+  "groups": [
+    {
+      "type": "General/Literal",
+      "title": "<html><head></head><body>"
+    },
+    {
+      "id": "logo",
+      "type": "General/Literal",
+      "title": [
+        "<div style='float: left; width: 170px; margin-left: 5px; margin-top: -5px; height: 100px;'>",
+        "   <img style='height: 75px' src='@ESFALogo' /><br /><br />",
+        "</div>"
+      ]
+    },
+    {
+      "type": "Heading/Medium",
+      "title": "Local Authority summary of school sixth form<br>revenue funding allocations: @year1 to @year2",
+      "attributes": {
+        "style": "width: 75%; font-size: 1.6em;"
+      }
+    },
+    {
+      "id": "topTable",
+      "type": "Table/Table",
+      "useDefaultClasses": false,
+      "classname": "bold left",
+      "attributes": {
+        "style": "width: 73%; text-align: center !important;"
+      },
+      "groups": [
+        {
+          "type": "Table/Rows",
+          "groups": [
+            {
+              "type": "Table/Row",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "subtype": "td",
+                  "title": "Local Authority",
+                  "attributes": {
+                    "style": "width: 20%;"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@(dataset3[0].GroupName)"
+                }
+              ]
+            },
+            {
+              "type": "Table/Row",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "subtype": "td",
+                  "title": "Local Authority Code"
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@(dataset3[0].GroupCode)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "attributes": {
+        "style": "clear: both"
+      }
+    },
+    {
+      "id": "2ndTable",
+      "type": "Table/Table",
+      "useDefaultClasses": false,
+      "classname": "styleTable",
+      "attributes": {
+        "style": "width: 100%; text-align: center !important; border: 0 !important;"
+      },
+      "groups": [
+        {
+          "type": "Table/Rows",
+          "groups": [
+            {
+              "type": "Table/Row",
+              "classname": "bold",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "title": "",
+                  "attributes": {
+                    "style": "width: 60%; border: 0;"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "<br>Total<br>Academic<br>Year Funding",
+                  "classname": "greyBold",
+                  "attributes": {
+                    "rowspan": 2,
+                    "style": "text-align: right; vertical-align: middle;"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "Financial Year (FY) split",
+                  "classname": "greyBold",
+                  "attributes": {
+                    "colspan": 2
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Table/Row",
+              "classname": "bold",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "title": "",
+                  "attributes": {
+                    "style": "border: 0;"
+                  }
+                },
+                {
+                  "type": "General/Literal",
+                  "title": ""
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "classname": "greyBold",
+                  "title": "8&nbsp;Months<br>in&nbsp;@year1-@year2short&nbsp;FY",
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "classname": "greyBold",
+                  "title": "4&nbsp;Months<br>in&nbsp;@year2-@year3short&nbsp;FY",
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Table/Row",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "title": "Programme and Student Financial Support Funding - Mainstream School Sixth Forms",
+                  "classname": "left bold"
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@britishCurrencySymbol0",
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@britishCurrencySymbol0",
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@britishCurrencySymbol0",
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Table/Row",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "title": "Student Financial Support Funding - Maintained Special Schools",
+                  "classname": "left bold"
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$..fundingLines[?(@.templateLineId == 439)].value",
+                  "datastyle": {
+                    "numberFormat": "c0"
+                  },
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value",
+                  "datastyle": {
+                    "numberFormat": "c0"
+                  },
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value",
+                  "datastyle": {
+                    "numberFormat": "c0"
+                  },
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Table/Row",
+              "classname": "greyBold",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "title": "Total LA Funding",
+                  "subtype": "td",
+                  "classname": "bold"
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$..fundingLines[?(@.templateLineId == 439)].value",
+                  "datastyle": {
+                    "numberFormat": "c0"
+                  },
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value",
+                  "datastyle": {
+                    "numberFormat": "c0"
+                  },
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value",
+                  "datastyle": {
+                    "numberFormat": "c0"
+                  },
+                  "attributes": {
+                    "style": "text-align: right"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "smallBr"
+    },
+    {
+      "id": "3rdTable",
+      "type": "Table/Table",
+      "useDefaultClasses": false,
+      "classname": "styleTable table3",
+      "attributes": {
+        "style": "width: 100%; text-align: center !important;"
+      },
+      "groups": [
+        {
+          "type": "Table/Columns",
+          "groups": [
+            {
+              "type": "Table/ColumnRow",
+              "classname": "greyBold",
+              "groups": [
+                {
+                  "type": "Table/Column",
+                  "title": "School Sixth Form Institutions",
+                  "attributes": {
+                    "colspan": 13,
+                    "style": "font-size: 1.3em"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Table/ColumnRow",
+              "classname": "greyBold",
+              "groups": [
+                {
+                  "type": "Table/Column",
+                  "title": "School Sixth Form details",
+                  "attributes": {
+                    "colspan": 3
+                  }
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Academic Year (AY) Allocation Information (August @year1 to July @year2)",
+                  "attributes": {
+                    "colspan": 6
+                  }
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "FY&nbsp;split&nbsp;of&nbsp;total&nbsp;AY&nbsp;allocation",
+                  "attributes": {
+                    "colspan": 2
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Table/ColumnRow",
+              "classname": "whiteBackgroundBold topAlign",
+              "groups": [
+                {
+                  "type": "Table/Column",
+                  "title": "UKPRN",
+                  "subtype": "td"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Institution&nbsp;Name",
+                  "attributes": {
+                    "style": "width: 15%"
+                  }
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "LAEstab<br>Number"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Programme<br>Funding"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Student<br>Financial<br>Support<br>Funding"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Industry<br>Placements<br>Funding"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Advanced<br>Maths&nbsp;Premium<br>Funding"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "High&nbsp;Value<br>Courses<br>Premium"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "Total<br>AY Funding"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "8 Months<br>in @year1-@year2short FY<br><span style='font-size: 0.7em'>(August @year1short-March @year2short)</span>"
+                },
+                {
+                  "type": "Table/Column",
+                  "title": "4 Months<br>in @year2-@year3short FY<br><span style='font-size: 0.7em'>(April @year2short-July @year2short)</span>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Table/Rows",
+              "groups": [
+                {
+                  "type": "Table/Row",
+                  "classname": "greyBold columns2OnwardsRightAlign",
+                  "groups": [
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "Total",
+                      "subtype": "td",
+                      "classname": "bold",
+                      "attributes": {
+                        "colspan": 3
+                      }
+                    },
+                    {
+                      "type": "Table/RowColumn"
+                    },
+                    {
+                      "type": "Table/RowColumn"
+                    },
+                    {
+                      "type": "Table/RowColumn"
+                    },
+                    {
+                      "type": "Table/RowColumn"
+                    },
+                    {
+                      "type": "Table/RowColumn"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "classname": "right"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "@britishCurrencySymbol0",
+                      "classname": "right"
+                    },
+                    {
+                      "type": "Table/RowColumn",
+                      "title": "@britishCurrencySymbol0",
+                      "classname": "right"
+                    }
+                  ]
+                }
+              ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Element",
+      "subtype": "style",
+      "title": [
+        "body { font-family: Arial; } ",
+        "h2 { font-size: 20px; font-weight: normal; } ",
+        "h3 { font-size: 16px; margin: 20px 0; } ",
+        "table td, table th, table caption { font-size: 12px; padding: 3px; } ",
+        "#formulaTables th, #formulaTables td { padding: 1px; } ",
+        "table.styleTable caption, table.styleTable thead th, .greyBold, .greyBold td { text-align: left; font-weight: bold; } ",
+        ".greyBold > td:nth-child(1) { font-weight: normal; } ",
+        "table.styleTable { border-collapse: collapse; } ",
+        "table.styleTable tbody td, .topAlign { vertical-align: top; } ",
+        "table.styleTable, table.styleTable th, table.styleTable td { border: 2px solid #000; } ",
+        "table.styleTable thead th, .greyBold, table caption { background-color: #CCC; } ",
+        ".noStyle, .noStyle * { background-color: #FFF !important; } ",
+        ".darkGrey, .darkGrey * { background-color: #666 !important; } ",
+        ".noBold, .noBold * { font-weight: normal !important; } ",
+        ".bold, .bold * { font-weight: bold !important; } ",
+        ".center, .center * { text-align: center !important; } ",
+        ".right, .right * { text-align: right !important; }",
+        ".left, .left * { text-align: left !important; } ",
+        "#page2FirstTable td { width: 25%; } ",
+        "table caption { border: 1px solid #000; border-bottom: 0; } ",
+        ".whiteBackground td, .whiteBackground th { background-color: #FFF !important; font-weight: normal !important; } ",
+        ".whiteBackgroundBold td, .whiteBackgroundBold th { background-color: #FFF !important; font-weight: bold !important; } ",
+        ".column1OnwardsRightAlign > td:nth-child(1), .column1OnwardsRightAlign > td:nth-child(2), .column1OnwardsRightAlign > td:nth-child(3), .column1OnwardsRightAlign > td:nth-child(4), .column1OnwardsRightAlign > td:nth-child(5), ",
+        ".column1OnwardsRightAlign > td:nth-child(6), .column1OnwardsRightAlign > td:nth-child(7) { text-align: right }",
+        ".columns2OnwardsRightAlign > td:nth-child(2), .columns2OnwardsRightAlign > td:nth-child(3), .columns2OnwardsRightAlign > td:nth-child(4), .columns2OnwardsRightAlign > td:nth-child(5), ",
+        ".columns2OnwardsRightAlign > td:nth-child(6), .columns2OnwardsRightAlign > td:nth-child(7) { text-align: right }",
+        ".columns3OnwardsRightAlign > td:nth-child(3), .columns3OnwardsRightAlign > td:nth-child(4), .columns3OnwardsRightAlign > td:nth-child(5), ",
+        ".columns3OnwardsRightAlign > td:nth-child(6), .columns3OnwardsRightAlign > td:nth-child(7) { text-align: right } ",
+        ".columns4OnwardsRightAlign > td:nth-child(4), .columns4OnwardsRightAlign > td:nth-child(5), ",
+        ".columns4OnwardsRightAlign > td:nth-child(6), .columns4OnwardsRightAlign > td:nth-child(7) { text-align: right } ",
+        ".smallBr { height: 10px; } "
+      ]
+    },
+    {
+      "type": "General/Literal",
+      "title": "</body></html>"
+    }
+  ],
+  "variables": [
+    {
+      "name": "ESFALogo",
+      "value": "data:image/jpeg;base64,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",
+      "neverShowSelector": true
+    },
+    {
+      "name": "widthMM",
+      "value": 296.926
+    },
+    {
+      "name": "heightMM",
+      "value": 210.058
+    },
+    {
+      "name": "topMarginMM",
+      "value": 7.62
+    },
+    {
+      "name": "rightMarginMM",
+      "value": 8.89
+    },
+    {
+      "name": "bottomMarginMM",
+      "value": 2.54
+    },
+    {
+      "name": "leftMarginMM",
+      "value": 8.89
+    }
+  ]
+}

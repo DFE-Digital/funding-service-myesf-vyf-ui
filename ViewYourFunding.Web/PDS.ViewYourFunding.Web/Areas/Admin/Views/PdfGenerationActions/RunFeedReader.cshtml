@@ -1,0 +1,43 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.RunFeedReaderViewModel
+@{ var booleanSelectList = new[]
+   {
+       new SelectListItem {Value = "true", Text = "Yes"},
+       new SelectListItem {Value = "false", Text = "No"}
+   };
+}
+<h1 class="govuk-heading-xl">Run Feed Reader</h1>
+
+<h2>Select funding stream code(s) to import</h2>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_PdfGenerationActionsRunFeedReader, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-group">
+        <dl class="col-md-12">
+            <dt class="col-md-8">
+                @Html.LabelFor(model => model.ByPassBookmark, new { @class = "control-label col-md-2" })
+            </dt>
+
+            <dd class="col-md-4">
+                @Html.DropDownListFor(m => m.ByPassBookmark, booleanSelectList)
+            </dd>
+            @foreach(var fundingStreamCode in Model.FundingStreamCodesSource)
+            {
+                <dt class="col-md-8">
+                    @fundingStreamCode.Text
+                </dt>
+
+                <dd class="col-md-4">
+                    <input class="form-check-input" type="checkbox" value="@fundingStreamCode.Value" name="fundingStreamCodes">
+                </dd>
+            }
+          
+        </dl>
+        @Html.ValidationMessageFor(model => model.SelectedFundingStreamCodes, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" class="button" value="Start Import" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome)
+}

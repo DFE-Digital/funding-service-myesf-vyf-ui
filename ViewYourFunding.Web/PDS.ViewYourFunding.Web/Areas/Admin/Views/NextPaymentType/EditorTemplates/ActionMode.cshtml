@@ -1,0 +1,17 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication.ActionMode
+@switch (Model)
+    {
+        case ActionMode.Add:
+            <p>
+                <span class="heading-large">Add Next Payment Type</span>
+            </p>
+            break;
+        case ActionMode.Delete:
+            break;
+        case ActionMode.Edit:
+            <p>
+                <span class="heading-large">Edit Next Payment Type</span>
+</p>
+        break;
+    }

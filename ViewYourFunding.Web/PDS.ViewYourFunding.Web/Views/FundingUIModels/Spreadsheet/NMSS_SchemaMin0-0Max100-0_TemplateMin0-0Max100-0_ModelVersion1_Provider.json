@@ -1,0 +1,1476 @@
+{
+  "name": "Non Maintained Special School Funding Provider",
+  "type": "spreadsheet",
+  "classes": {
+    "bold": {
+      "style": {
+        "bold": true
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "NMSSProvider",
+      "title": "NMSS_@year1-to-@year2_published",
+      "RenderGroupsAsRows": true,
+      "dataset": [
+        {
+          "datasetName": "providerFunding",
+          "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+        }
+      ],
+      "groups": [
+        {
+          "groups": [
+            {
+              "title": "Organisation"
+            },
+            {
+              "title": "Allocation"
+            },
+            {
+              "title": "Block"
+            },
+            {
+              "title": "Factor"
+            },
+            {
+              "title": "Description"
+            },
+            {
+              "title": "Students"
+            },
+            {
+              "title": "Instances per student"
+            },
+            {
+              "title": "Number of instances"
+            },
+            {
+              "title": "Pre-16"
+            },
+            {
+              "title": "Post-16"
+            },
+            {
+              "title": "Places"
+            },
+            {
+              "title": "Rate"
+            },
+            {
+              "title": "Sub-total"
+            },
+            {
+              "title": "Total"
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@TreatAsSpecialAcademy=False",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": "Total allocation"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "L0",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": "Students"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "C17"
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Total high needs"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Calculation of @LowerIncreaseOrDifference"
+                },
+                {
+                  "title": "Funded pupils from spring @year0 census"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 24)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Calculation of @LowerIncreaseOrDifference"
+                },
+                {
+                  "title": "Funded pupils from autmn @year-1 census"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 23)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Calculation of @LowerIncreaseOrDifference"
+                },
+                {
+                  "title": "@IncreaseOrDifference in funded pupils"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 22)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded pupils @year1 to @year2"
+                },
+                {
+                  "title": "Funded pupils from autumn @year0 census"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 12)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded pupils @year1 to @year2"
+                },
+                {
+                  "title": "@IncreaseOrDifference (calculated above)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 22)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded pupils @year1 to @year2"
+                },
+                {
+                  "title": "Total funded pupils @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 17)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded places in @year1 to @year2 allocation"
+                },
+                {
+                  "title": "Total pupils from autumn @year0 census"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 18)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 20)].value"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded places in @year1 to @year2 allocation"
+                },
+                {
+                  "title": "All high needs pupils from autumn @year0 census"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 12)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 12)].value"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded places in @year1 to @year2 allocation"
+                },
+                {
+                  "title": "Proportion of pupils"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 11)].value",
+                  "datastyle": {
+                    "numberFormat": "TwoDPWithoutTrailingZeroes",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 25)].value",
+                  "datastyle": {
+                    "numberFormat": "TwoDPWithoutTrailingZeroes",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded places in @year1 to @year2 allocation"
+                },
+                {
+                  "title": "All funded pupils @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 17)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 17)].value"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Funded places in @year1 to @year2 allocation"
+                },
+                {
+                  "title": "Total funded pupils @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 8)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 14)].value"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Pre-16"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 8)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 9)].value"
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 3)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Post-16"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 14)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 9)].value"
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 4)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Total high needs"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 17)].value"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 1)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Total 16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 2)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Discretionary bursary breakdown"
+                },
+                {
+                  "title": "Financial disadvantage"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 14)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 31)].value",
+                  "datastyle": {
+                    "numberFormat": "TwoDPWithoutTrailingZeroes",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 30)].value",
+                  "datastyle": {
+                    "numberFormat": "TwoDPWithoutTrailingZeroes",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 32)].value"
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 26)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Discretionary bursary breakdown"
+                },
+                {
+                  "title": "Travel"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 14)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 37)].value",
+                  "datastyle": {
+                    "numberFormat": "TwoDPWithoutTrailingZeroes",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 35)].value",
+                  "datastyle": {
+                    "numberFormat": "TwoDPWithoutTrailingZeroes",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 36)].value"
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 27)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Discretionary bursary breakdown"
+                },
+                {
+                  "title": "Industry placement"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 39)].value"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 40)].value"
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 28)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Discretionary bursary breakdown"
+                },
+                {
+                  "title": "Discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 5)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Adjusted discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": "@year-1 to @year0 Discretionary bursary fund (baseline for transition)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 43)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Adjusted discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": "Transition lower limit (50%)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 45)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Adjusted discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": "Transition upper limit (150%)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 44)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Adjusted discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": "Discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 5)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Adjusted discretionary bursary fund @year1 to @year2"
+                },
+                {
+                  "title": "Adjusted discretionary bursary fund"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 2)].value",
+                  "datastyle": {
+                    "numberFormat": "ZeroDecimalPlaces",
+                    "SpreadsheetNumberFormat": true
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Non maintained special school funding @year1 to @year2"
+                },
+                {
+                  "title": "16 to 19 discretionary bursary fund"
+                },
+                {
+                  "title": "Exceptional adjustment"
+                },
+                {
+                  "title": "Exceptional adjustment"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 33)].value"
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "Methodology",
+      "selector": "$..calculations[?(@.templateCalculationId == 44)].value",
+      "neverShowSelector": true
+    },
+    {
+      "name": "TreatAsSpecialAcademy",
+      "expression": "@Methodology=HNS specials"
+    },
+    {
+      "name": "YearZeroStudents",
+      "selector": "$..calculations[?(@.templateCalculationId == 24)].value"
+    },
+    {
+      "name": "YearZeroMinusOneStudents",
+      "selector": "$..calculations[?(@.templateCalculationId == 22)].value"
+    },
+    {
+      "name": "IncreaseOrDifference",
+      "expression": "@YearZeroStudents>@YearZeroMinusOneStudents",
+      "trueResponse": "Increase",
+      "falseResponse": "Difference"
+    },
+    {
+      "name": "LowerIncreaseOrDifference",
+      "expression": "@YearZeroStudents>@YearZeroMinusOneStudents",
+      "trueResponse": "increase",
+      "falseResponse": "difference"
+    },
+    {
+      "name": "IsDifference",
+      "expression": "@IncreaseOrDifference=Difference"
+    }
+  ]
+}

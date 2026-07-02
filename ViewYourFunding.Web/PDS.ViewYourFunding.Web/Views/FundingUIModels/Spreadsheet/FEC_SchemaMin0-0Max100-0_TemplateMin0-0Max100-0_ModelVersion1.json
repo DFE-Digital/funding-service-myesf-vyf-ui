@@ -1,0 +1,88 @@
+{
+  "name": "FEC Spreadsheet",
+  "type": "spreadsheet",
+  "classes": {
+    "borderBottom": {
+      "style": {
+        "borders": [
+          {
+            "edge": "BottomBorder"
+          }
+        ],
+        "widthInches": 1.0
+      }
+    },
+    "tallHeader": {
+      "style": {
+        "heightInches": 1
+      }
+    },
+    "mediumHeader": {
+      "style": {
+        "heightInches": 0.6
+      }
+    },
+    "mediumHeightRow": {
+      "style": {
+        "heightInches": 0.5
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "all",
+      "title": "All colleges",
+      "autofilter": true,
+      "dataset": [
+        {
+          "orderBy": "OrganisationDfeNumber",
+          "datasetName": "providerFunding",
+          "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+        }
+      ],
+      "groups": [
+        {
+          "title": "LA No.",
+          "selector": "$..parentPrimaryIdentifier",
+          "classname": "tallHeader",
+          "style": {
+            "widthInches": "0.8",
+            "frozen": true
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..parentName",
+          "style": {
+            "widthInches": "3.5"
+          }
+        },
+        {
+          "title": "LAEstab (at @asofmonth @asofyear)",
+          "selector": "$..organisationDfeNumber",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          }
+        },
+        {
+          "title": "School Name (at @asofmonth @asofyear)",
+          "selector": "$..organisationName",
+          "style": {
+            "widthInches": "5.5"
+          }
+        },
+        {
+          "title": "Total Allocation",
+          "selector": "$..fundingValue.totalValue",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.1"
+          }
+        }
+      ]
+    }
+  ]
+}

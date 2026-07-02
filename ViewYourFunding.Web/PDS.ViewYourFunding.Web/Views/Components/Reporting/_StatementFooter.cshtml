@@ -1,0 +1,10 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+@{
+    await Html.RenderPartialAsync("~/Views/Components/Reporting/_Dataset.cshtml", Model);
+    await Html.RenderPartialAsync("~/Views/Components/Reporting/_AdditionalFundingStreams.cshtml", Model);
+    await Html.RenderPartialAsync("~/Views/Components/Reporting/_Variables.cshtml", Model);
+    await Html.RenderPartialAsync("~/Views/Components/Reporting/_Bookmarks.cshtml", Model);
+    await Html.RenderPartialAsync("~/Views/Components/Reporting/_DebugStyles.cshtml", Model);
+}

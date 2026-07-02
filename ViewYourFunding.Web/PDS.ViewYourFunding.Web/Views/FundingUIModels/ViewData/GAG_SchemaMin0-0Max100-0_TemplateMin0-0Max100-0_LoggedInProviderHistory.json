@@ -1,0 +1,169 @@
+{
+  "name": "GAG provider history",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=AcademyTrust"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithFundingStream",
+      "title": "Allocation history"
+    },
+    {
+      "type": "Html/Paragraph",
+      "classname": "lede-loggedin",
+      "title": "Find detailed breakdowns of @fundingStreamNameWithinSentence for @providerName for each @yearTypeName."
+    },
+    {
+      "type": "General/Repeater",
+      "expression": "@FundingPeriodProviderFundings",
+      "groups": [
+        {
+          "type": "Heading/Medium",
+          "classname": "heading-medium heading-guidance",
+          "title": "@yearTypeCode @(RepeaterItem.Key.Item1) to @(RepeaterItem.Key.Item2)",
+          "attributes": {
+            "style": "padding-top:30px"
+          }
+        },
+        {
+          "type": "Conditional/Condition",
+          "expression": "@(RepeaterItem.Key.Item1)>0",
+          "groups": [
+            {
+              "type": "Conditional/TrueOutput",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "useDefaultClasses": false,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "attributes": {
+                            "style": "width:42%"
+                          },
+                          "title": "Publication date"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Description"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@(RepeaterItem.Value)",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "groups": [
+                                    {
+                                      "type": "General/StandardLink",
+                                      "title": "@(RepeaterItem.StatusChangedDateUiFormatted)",
+                                      "value": "@basePath/pre-16-16-19-statements/@providerUkprn/@fundingStreamNamePathPart/@(RepeaterItem.StatusChangedDatePathFormatted)/@(RepeaterItem.Year1)-to-@(RepeaterItem.Year2)@searchTermPart?@includeHistoryParam"
+                                    },
+                                    {
+                                      "type": "Tag/LatestOrNothing",
+                                      "visibilityCondition": "@(RepeaterItem.IsLatest)=true",
+                                      "expression": "@(RepeaterItem.IsLatest)"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.VariationReason)"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/FalseOutput",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "To find allocations for this period, go to "
+                },
+                {
+                  "type": "Conditional/Condition",
+                  "expression": "@(RepeaterItem.Key.Item1)=2016",
+                  "groups": [
+                    {
+                      "type": "Conditional/TrueOutput",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@fundingStreamName: funding allocations for @(RepeaterItem.Key.Item1) to @(RepeaterItem.Key.Item2)",
+                          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-conditions-for-@(RepeaterItem.Key.Item1)-to-@(RepeaterItem.Key.Item2)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Conditional/FalseOutput",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@fundingStreamName: funding allocations for @(RepeaterItem.Key.Item1) to @(RepeaterItem.Key.Item2)",
+                          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-allocations-for-@(RepeaterItem.Key.Item1)-to-@(RepeaterItem.Key.Item2)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Element",
+      "subtype": "H1",
+      "value": "Previous years",
+      "classname": "heading-medium public",
+      "attributes": {
+        "style": "padding-top:30px"
+      }
+    },
+    {
+      "type": "Html/Span",
+      "title": "You can view older allocations in "
+    },
+    {
+      "type": "General/ExternalLink",
+      "title": "Document exchange (opens in a new tab).",
+      "value": "@LoggedInProviderHomeLink/document-exchange"
+    }
+  ],
+  "variables": [
+    {
+      "name": "includeHistoryParam",
+      "expression": "@searchTermPart?=nullValue",
+      "trueResponse": "?includeHistory=true",
+      "falseResponse": "&includeHistory=true"
+    }
+  ]
+}

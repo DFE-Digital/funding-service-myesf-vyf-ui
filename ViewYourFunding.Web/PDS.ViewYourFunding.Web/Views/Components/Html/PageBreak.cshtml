@@ -1,0 +1,20 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    @if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        @Html.Raw("<span style='background-color: aqua'>Page break</span>")
+    }
+
+    Model.SubType = "Div";
+
+    if (Model.Attributes == null)
+    {
+        Model.Attributes = new Dictionary<string, object>();
+    }
+
+    Model.Attributes.TryAdd("style", "page-break-before: always");
+    await ComponentHelper.Render(Html, ComponentType.Html_Element, Model, Model.PageData);
+}

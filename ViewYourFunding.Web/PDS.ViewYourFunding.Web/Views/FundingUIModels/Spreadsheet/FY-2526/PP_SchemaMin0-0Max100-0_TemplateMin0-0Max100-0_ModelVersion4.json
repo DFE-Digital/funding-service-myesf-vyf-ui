@@ -1,0 +1,1853 @@
+{
+  "name": "Pupil Premium Spreadsheet",
+  "type": "spreadsheet",
+  "classes": {
+    "borderAllSides": {
+      "style": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "LeftBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "LeftBorder"
+          }
+        ]
+      }
+    },
+    "wideHeaderBold": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "2.5",
+        "wrap": true,
+        "bold": true
+      },
+      "datastyle": {
+        "bold": true
+      }
+    },
+    "wideHeader": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "2.5",
+        "wrap": true
+      }
+    },
+    "schoolHeader": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "3.5",
+        "wrap": true
+      }
+    },
+    "narrowHeader": {
+      "style": {
+        "alignment": "centered",
+        "heightInches": 1,
+        "widthInches": "1",
+        "wrap": true
+      }
+    },
+    "mediumHeader": {
+      "style": {
+        "heightInches": 1.2,
+        "alignment": "centered",
+        "widthInches": "1.4",
+        "wrap": true
+      }
+    },
+    "headerRow": {
+      "style": {
+        "alignment": "centered",
+        "bold": true
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "listofallschools",
+      "title": "All_Schools",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "(GroupingReason=Information)&(ProviderUrn!=0)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Pupil Premium allocations for @year1-@year2short",
+          "visibilityCondition": "@[$..calculations[?(@.templateCalculationId == 108)].value]=0|@[$..calculations[?(@.templateCalculationId == 108)].value]=true",
+          "colspan": 5,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Unique Reference Number (URN)",
+                      "selector": "$..providerUrn",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Establishment Number (LAEstab)",
+                      "selector": "$..organisationDfeNumber",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..parentPrimaryIdentifier",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Name",
+                      "selector": "$..parentName",
+                      "classname": "mediumHeader borderAllSides"
+                    },
+                    {
+                      "title": "Establishment Number",
+                      "selector": "$..estabNumber",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "School Name",
+                      "selector": "$..organisationName",
+                      "classname": "schoolHeader borderAllSides"
+                    },
+                    {
+                      "title": "School Type",
+                      "selector": "C65",
+                      "classname": "wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "Parliamentary Constituency",
+                      "selector": "$..parliamentaryConstituencyName",
+                      "classname": "wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "Number of pupils on roll",
+                      "selector": "C64",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Deprivation Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Pupils in Primary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Primary pupils on roll",
+                      "selector": "C30",
+                      "classname": "mediumHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Number of Primary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C34",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Percentage of Primary pupils eligible for the Deprivation Pupil Premium (%)",
+                      "selector": "C32",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Deprivation Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C99",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides"
+                    }
+                  ]
+                },
+                {
+                  "title": "Pupils in Secondary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Secondary pupils on roll",
+                      "selector": "C45",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Number of Secondary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C49",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Percentage of Secondary pupils eligible for the Deprivation Pupil Premium (%)",
+                      "selector": "C47",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Deprivation Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C97",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Total Deprivation Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total number of pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C80",
+                      "classname": "wideHeaderBold borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total allocation for the Deprivation Pupil Premium (@britishCurrencySymbol)",
+                      "selector": "C106",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeaderBold borderAllSides"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schoolType",
+      "title": "School_Type",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "funding",
+          "groupingType": "AlternativeProvision",
+          "id": "AlternativeProvision"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "AcademyAlternativeProvision",
+          "id": "AcademyAlternativeProvision"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "Mainstream",
+          "id": "Mainstream"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalAuthorityMss",
+          "id": "LocalAuthorityMss"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "NonMaintainedSpecialSchools",
+          "id": "Special"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "PupilReferralUnit",
+          "id": "PupilReferralUnit"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "SpecialAcademies",
+          "id": "SpecialAcademies"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "Country",
+          "id": "Country"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Pupil Premium allocations for @year1-@year2short by school type",
+          "colspan": 5,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "School Type",
+                      "selector": "$..schoolType",
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "selector": "$..totalText",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of pupils on roll",
+                      "selector": "C64",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Deprivation Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Pupils in Primary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Primary pupils on roll",
+                      "selector": "C30",
+                      "classname": "mediumHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of Primary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C34",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Percentage of Primary pupils eligible for the Deprivation Pupil Premium (%)",
+                      "selector": "C32",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C99",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "Pupils in Secondary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Secondary pupils on roll",
+                      "selector": "C45",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of Secondary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C49",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Percentage of Secondary pupils eligible for the Deprivation Pupil Premium (%)",
+                      "selector": "C47",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C97",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Service Child Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of pupils eligible for the Service Child Pupil Premium",
+                      "selector": "C51",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Percentage of pupils eligible for the Service Child Pupil Premium (%)",
+                      "selector": "C52",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C98",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Post-LAC",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of pupils eligible for the Post-LAC Pupil Premium",
+                      "selector": "C55",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Percentage of pupils eligible for the Post-LAC Pupil Premium (%)",
+                      "selector": "C56",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C100",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Pupil Premium Plus for Looked After Children",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of children eligible for the Pupil Premium Plus for Looked After Children",
+                      "selector": "",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "selector": "C59",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Percentage of children eligible for the Pupil Premium Plus  for Looked After Children (%)",
+                      "selector": "",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "selector": "C60",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "selector": "C101",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Totals",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total Number of children eligible for the Pupil Premium",
+                      "selector": "",
+                      "classname": "wideHeaderBold borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "selector": "C63",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Percentage of children eligible for the Pupil Premium (%)",
+                      "selector": "",
+                      "scale": 0.01,
+                      "classname": "wideHeaderBold borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "selector": "C9",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeaderBold borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "selector": "L7",
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "local_authority",
+      "title": "Local_Authority",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "funding",
+          "groupingType": "Country",
+          "id": "Country"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalAuthority",
+          "orderBy": "GroupCode",
+          "expression": "GroupingReason=Information",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "id": "Region0",
+          "orderBy": "GroupName",
+          "expression": "GroupName=East Midlands|GroupName=East of England",
+          "prependRows": [
+            {
+              "id": "SpacerWithBorderBottom"
+            }
+          ]
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "LondonRegion",
+          "id": "Region1",
+          "orderBy": "GroupName",
+          "expression": "GroupName=London - Inner|GroupName=London - Outer"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "GovernmentOfficeRegion",
+          "id": "Region2",
+          "orderBy": "GroupName",
+          "expression": "GroupName!=East Midlands&GroupName!=East of England"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Pupil Premium allocations for @year1-@year2short  by Local Authority area and region",
+          "colspan": 5,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..groupCode",
+                      "classname": "narrowHeader borderAllSides",
+                      "overrides": {
+                        "Region0;Region1;Region2;Country": {
+                          "selector": "$..notApplicableText"
+                        }
+                      },
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Name",
+                      "selector": "$..governmentOfficeRegion",
+                      "classname": "mediumHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "uppercase": true,
+                            "bold": true,
+                            "borders": [
+                              {
+                                "edge": "RightBorder"
+                              },
+                              {
+                                "edge": "BottomBorder"
+                              },
+                              {
+                                "edge": "TopBorder"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of pupils on roll",
+                      "selector": "C64",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Deprivation Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Pupils in Primary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Primary pupils on roll",
+                      "selector": "C30",
+                      "classname": "mediumHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of Primary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C34",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Percentage of Primary pupils eligible for the Deprivation Pupil Premium (%)",
+                      "selector": "C32",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C99",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "Pupils in Secondary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Secondary pupils on roll",
+                      "selector": "C45",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of Secondary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C49",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Percentage of Secondary pupils eligible for the Deprivation Pupil Premium (%)",
+                      "selector": "C47",
+                      "scale": 0.01,
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C97",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Service Child Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of pupils eligible for the Service Child Pupil Premium",
+                      "selector": "C51",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C98",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C51",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Pupil Premium Plus for Post-LAC",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of pupils eligible for the Post-LAC Pupil Premium",
+                      "selector": "C55",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C100",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C55",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Pupil Premium Plus for Looked After Children",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of children eligible for the Pupil Premium Plus for Looked After Children",
+                      "selector": "C59",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C101",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C59",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Total Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total pupils eligible for the Pupil Premium",
+                      "selector": "C63",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C51|C55|C59",
+                      "classname": "wideHeaderBold borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "L7",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C51|C55|C59",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeaderBold borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parliamentary_consituency",
+      "title": "Parliamentary_Constituency",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "funding",
+          "groupingType": "Country",
+          "id": "Country"
+        },
+        {
+          "datasetName": "funding",
+          "groupingType": "ParliamentaryConstituency"
+        }
+      ],
+      "groups": [
+        {
+          "title": "Pupil Premium allocations for @year1-@year2short by Parliamentary Constituency",
+          "colspan": 5,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Parliamentary Constituency",
+                      "selector": "$..groupName",
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "selector": "$..country",
+                          "datastyle": {
+                            "uppercase": true,
+                            "bold": true,
+                            "borders": [
+                              {
+                                "edge": "RightBorder"
+                              },
+                              {
+                                "edge": "BottomBorder"
+                              },
+                              {
+                                "edge": "TopBorder"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of pupils on roll",
+                      "selector": "C81",
+                      "classname": "narrowHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Deprivation Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Pupils in Primary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Primary pupils on roll",
+                      "selector": "C86",
+                      "classname": "mediumHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of Primary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C87",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C88",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "Pupils in Secondary year groups",
+                  "classname": "headerRow borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of Secondary pupils on roll",
+                      "selector": "C89",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Number of Secondary pupils eligible for the Deprivation Pupil Premium",
+                      "selector": "C90",
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C91",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Service Child Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of pupils eligible for the Service Child Pupil Premium",
+                      "selector": "C82",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C83",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C82",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Post-LAC",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Number of pupils eligible for the Post-LAC Pupil Premium",
+                      "selector": "C84",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Pupil Premium Allocation (@britishCurrencySymbol)",
+                      "selector": "C85",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C84",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeader borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Total Pupil Premium",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total pupils eligible for the Pupil Premium",
+                      "selector": "C92",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C84|C82",
+                      "classname": "wideHeaderBold borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "right"
+                      },
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "",
+                  "classname": "borderAllSides",
+                  "groups": [
+                    {
+                      "title": "Total allocation for the Pupil Premium (@britishCurrencySymbol)",
+                      "selector": "C93",
+                      "notApplicableForValueWithinRange": {
+                        "maximum": 6,
+                        "minimum": 0
+                      },
+                      "dependentSelectors": "C84|C82",
+                      "datastyle": {
+                        "numberFormat": "#,##0",
+                        "alignment": "right"
+                      },
+                      "classname": "wideHeaderBold borderAllSides",
+                      "overrides": {
+                        "Country": {
+                          "datastyle": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "title": "Notes",
+      "groups": [
+        {
+          "style": {
+            "widthInches": 10,
+            "wrap": true
+          },
+          "detail": [
+            {
+              "title": "Notes",
+              "style": {
+                "bold": true
+              }
+            },
+            {
+              "title": "x - Local Authorities with 5 or less than 5 pupils or a percentage based on less than 5 pupils or an allocation amount based on less than 5 pupils for Service Child Pupil Premium, LAC or Post LAC have had their figures suppressed for data protection.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Data includes Academies and Free Schools as at 01/11/@year1.",
+              "classname": "borderAllSides"
+            },
+            {
+              "title": "Mainstream Schools include Mainstream Academies, Free Schools and City Technology Colleges (CTC).",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Pupil numbers in Pupil Referral Units (PRU) and Alternative Provision (AP) academies which were formerly PRUs are based on January @year1 school census data.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Data includes Non-maintained Special Schools (NMSS).",
+              "classname": "borderAllSides"
+            },
+            {
+              "title": "Deprivation pupil numbers are full time equivalent (FTE) number of pupils aged 4 and over as at 31 August @year0 in Reception to Year 11 (pupils aged 4 to 15 where National Curriculum year groups do not apply), as recorded on the October @year0 School Census or January @year1 census for PRUs and APs who are known to have been eligible for Free School Meals (FSM) in the previous six years. FSM eligibility in the previous six years will be determined by those pupils recorded on the October @year0 School Census who were recorded as known to be eligible for FSM on the School Census since Spring 2019, known as Ever 6. FTEs are calculated on the same basis as the Dedicated Schools Grant. Eligible FSM Ever 6 pupils as recorded on the AP Census are based on the January @year1 AP census.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Service Children are full time equivalent (FTE) number of pupils aged 4 and over as at 31 August @year0 in Reception to Year 11 (pupils aged 4 to 15 where National Curriculum year groups do not apply) as recorded on the October @year0 School Census who are either: \n @bullet recorded as a Service Child at any point since January 2019 (known as Ever 6); or \n @bullet in receipt of a War Pension Scheme (WPS) or Armed Forces and Reserve Forces Compensation Scheme (AFCS) pension from the Ministry of Defence (MoD) as a result of injury, illness or death caused by Service. FTEs are calculated on the same basis as the Dedicated Schools Grant. Eligible Ever 6 service children as recorded on the AP Census are based on the January @year1 AP census.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Post Looked after Children are Full time equivalent (FTE) number of pupils aged 4 and over as at 31 August @year0 in Reception to Year 11 (pupils aged 4 to 15 where National Curriculum year groups do not apply) as recorded on the October @year0 School Census or on the January @year1 school census for PRUs and APs who are known to be adopted from care, or are ceased to be looked after through a child arrangement order or who leave care under a special guardianship order or residence order. Post looked after children as recorded on the AP Census are based on the January @year1 AP census.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Looked after Children (LAC) include children aged 4 to 15 (at 31 August @year-1) who have been looked after for at least 1 day in the year ending 31 March @year1. This excludes children whose only episode(s) of care during the year was as a result of respite, or were on remand/committed for trial or sentence and accommodated by the local authority. This data has been collected from the @year0-@year1short Looked After Children Return from local authorities (SSDA903).",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Primary pupils include pupils in National Curriculum year groups Reception to 6 and pupils not following the National Curriculum aged 4 to 10 as at August @year0.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Secondary pupils include pupils in National Curriculum year groups 7 to 11 and pupils not following the National Curriculum aged 11 to 15 as at August @year0.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Each primary FSM Ever 6 eligible pupil will attract @britishCurrencySymbol1,455 through the Pupil Premium. For pupils in maintained primary schools, maintained secondary schools, maintained special schools and non-maintained special schools (NMSS), funding will be passed on via the local authorities. For pupils in academies and special academies, the DfE will pass funding directly to the setting.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Each secondary FSM Ever 6 eligible pupil will attract @britishCurrencySymbol1,035 through the Pupil Premium. For pupils in maintained primary schools, maintained secondary schools, maintained special schools and NMSS, funding will be passed on via the local authorities. For pupils in academies and special academies, the DfE will pass funding directly to the setting.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Each Service Child will attract @britishCurrencySymbol335 through the Pupil Premium. For pupils in maintained primary schools, maintained secondary schools, maintained special schools and NMSS, funding will be passed on via the local authorities. For pupils in academies and special academies, the DfE will pass funding directly to the setting. Service child pupil premium allocations will be based on pupils recorded on the October @year0 School Census or January @year1 school census for PRUs and APs who are either: \n @bullet recorded as a Service Child eligible for the service child premium since the January 2019 Census; or \n @bullet in receipt of a War Pension Scheme (WPS) or Armed Forces and Reserve Forces Compensation Scheme (AFCS) pension from the Ministry of Defence (MoD) as a result of injury, illness or death caused by Service.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Each pupil adopted from care, those who leave care under a special guardianship order or residence order will attract @britishCurrencySymbol2,530 through the Pupil Premium Plus. For pupils in maintained primary schools, maintained secondary schools, maintained special schools and NMSS, funding will be passed on via the local authorities. For pupils in academies and special academies, the DfE will pass funding directly to the setting.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Each Looked After Child will attract @britishCurrencySymbol2,530 through the Pupil Premium Plus and the funding for all looked after children will be allocated via the local authority's Virtual School Head. Allocations are based on @year0-@year1short SSDA903 data (till March @year1), but the funding may be used by Virtual School Heads to provide support for any child who is looked after for one day or more during the @year0-@year1short financial year.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Each Post-LAC or Looked After Child will attract @britishCurrencySymbol2,530 through the Pupil Premium Plus. However, they will not be eligible to also receive the Deprivation element of Pupil Premium, regardless of whether they are also flagged as an FSM Ever 6 eligible pupil. Therefore, these allocations include the removal of FSM Ever 6 funding for pupils identified as being a Post-LAC or Looked After Child.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Data includes General hospital schools based on the January @year1 SLASC data.",
+              "classname": "borderAllSides",
+              "style": {
+                "wrap": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

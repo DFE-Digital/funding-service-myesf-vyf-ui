@@ -1,0 +1,107 @@
+{
+  "name": "PSG provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=AcademyTrust&GroupingReason=Information"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "$.totalValue"
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "General/ProviderNameWithUrn"
+            },
+            {
+              "type": "General/PublishedDate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "classname": "govuk-!-padding-left-6",
+      "groups": [
+        {
+          "type": "Heading/Small",
+          "classname": "heading-medium",
+          "title": "Funding breakdown"
+        },
+        {
+          "type": "Html/Div",
+          "classname": "govuk-!-margin-bottom-8",
+          "groups": [
+            {
+              "type": "General/ExternalLink",
+              "value": "https://esfstest.herokuapp.com/beta/v112-0-0/signed-in/external/allocation-statements/general-annual-grant/child/allocation-statements#",
+              "title": "View funding breakdown"
+            }
+          ]
+        },
+        {
+          "type": "Block/PaymentDates",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": " the "
+                },
+                {
+                  "type": "General/ExternalLink",
+                  "title": "@fundingStreamName for primary schools",
+                  "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-for-primary-schools/@fundingStreamNamePathPart-guidance-for-primary-schools#payment-dates-for-@year1-to-@year2"
+                },
+                {
+                  "type": "General/Literal",
+                  "title": " page."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Block/AllocationHistory",
+          "classname": "heading-small heading-guidance"
+        },
+        {
+          "type": "Heading/Small",
+          "classname": "heading-small heading-guidance",
+          "title": "General @fundingStreamNameWithinSentence resources"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/ExternalLink",
+              "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-conditions-of-grant-@year1-to-@year2",
+              "title": "@fundingStreamName: conditions of grant @year1 to @year2"
+            },
+            {
+              "type": "General/ExternalLink",
+              "value": "https://www.gov.uk/guidance/@fundingStreamNamePathPart-for-primary-schools",
+              "title": "@fundingStreamName for primary schools"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

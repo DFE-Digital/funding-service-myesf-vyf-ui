@@ -1,0 +1,31 @@
+﻿@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.RunFeedReaderViewModel
+
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_PdfGenerationActionsConfirmRunFeedReader, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <dl class="dl-horizontal-halves">
+            <dt>
+                @Html.DisplayNameFor(model => model.ByPassBookmark)
+            </dt>
+            <dd>
+                @Model.ByPassBookmark.ToBooleanYesOrNo()<br />  
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SelectedFundingStreamCodes)
+            </dt>
+            <dd>
+                @Model.SelectedFundingStreamCodes<br />  
+            </dd>
+        </dl>
+    </div>
+
+    <input type="submit" class="button" value="Run Feed Reader" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome)
+    @Html.HiddenFor(m => m.SelectedFundingStreamCodes)
+    @Html.HiddenFor(m => m.ByPassBookmark)
+}

@@ -1,0 +1,36 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var type = Model.Type;
+    if (type == ComponentType.DesignComponents_FundingTable)
+    {
+        return;
+    }
+
+    var typeLowercase = type.ToString().Split('_')[^1].ToLower();
+    var topLevelGroup = Model.ComponentConfiguration.OriginalModel.ToUiModelGroup();
+    var level = ComponentHelper.GetVisibilityConditionLevel(Model.OriginalGroup, topLevelGroup);
+    var colour = level switch
+    {
+        0 => "#32cd32",
+        1 => "#2aad2a",
+        2 => "#238e23",
+        3 => "#1b6e1b",
+        _ => "#175f17"
+    };
+
+    string output;
+
+    if (type == ComponentType.Table_Row)
+    {
+        output = $"<tr style='background-color: {colour}'><td colspan='100' style='font-weight: bold'>Visibility {typeLowercase}: '{Model.VisibilityCondition}'</td></tr>";
+    }
+    else
+    {
+        output = $"<div style='background-color: {colour}; border: 1px dotted #666; margin: 10px 0;'><span style='font-weight: bold;'>Visibility {typeLowercase}: '{Model.VisibilityCondition}'</span>";
+    }
+}
+
+@Html.Raw(output)

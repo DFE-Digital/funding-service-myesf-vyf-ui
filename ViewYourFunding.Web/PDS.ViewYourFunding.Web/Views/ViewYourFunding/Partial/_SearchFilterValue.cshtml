@@ -1,0 +1,8 @@
+@using PDS.ViewYourFunding.Services.Helper
+@model PDS.ViewYourFunding.Services.Models.SearchFilterValue
+<li class="gds-multiple-choice multiple-choice myesf-filter">
+    <input id="@Model.Id" name="QueryFilter.Filters.@(Model.ParentKey)" type="checkbox" value="@Model.Value.RemoveWhitespace()"  @{if (Model.Selected) { <text> checked="checked" </text> } }>
+    <label class="block" for="@Model.Id">
+        @Model.Title (@Model.Count)
+    </label>
+</li>

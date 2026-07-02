@@ -1,0 +1,16 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var linkModel = Model.Clone(component =>
+    {
+        component.Type = ComponentType.Html_Element;
+        component.SubType = "A";
+    });
+
+    var href = Model.GetValueString();
+    linkModel.Attributes.Add("href", href);
+
+    await linkModel.Render(Html, Model.PageData);
+}

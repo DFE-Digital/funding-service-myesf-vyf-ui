@@ -1,0 +1,17 @@
+﻿@using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream.ActionMode
+@switch (Model)
+{
+    case ActionMode.Add:
+        <p>
+            <span class="heading-large">Add Funding Stream</span>
+        </p>
+        break;
+    case ActionMode.Delete:
+        break;
+    case ActionMode.Edit:
+        <p>
+            <span class="heading-large">Edit Funding Stream</span>
+        </p>
+        break;
+}

@@ -1,0 +1,55 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.ViewingChoiceViewModel
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_ViewingChoiceChosen, FormMethod.Post, new { @class = "transaction" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="error-summary@(Model.ValidationError ? "" : " hidden")" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
+        <ul class="error-summary-list">
+            <li><a href="#viewingChoice">Select how you would like to view funding</a></li>
+        </ul>
+    </div>
+
+    <fieldset class=@(Model.ValidationError ? "after-error-summary" : "after-hidden-error-summary")>
+        <legend id="viewingChoice" class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="heading-xlarge">@Model.ContentTitle</h1>
+        </legend>
+
+        <div class="form-group@(Model.ValidationError ? " form-group-error" : " form-group-no-error")">
+            <span class="error-message@(Model.ValidationError ? "" : " hidden")">Select how you would like to view funding</span>
+
+            <div class="multiple-choice choice-required">
+                <input id="radio-1" type="radio" name="choice" value="@ViewYourFundingConstants.OptionValue_ViewingChoice_FindAnOrganisation">
+                <label class="form-label-bold" for="radio-1">At individual organisation level</label>
+                <span class="form-hint">Choose a learning provider or local authority to view the funding it receives.</span>
+            </div>
+
+            <div class="multiple-choice choice-required">
+                <input id="radio-2" type="radio" name="choice" value="@ViewYourFundingConstants.OptionValue_ViewingChoice_WhichAllocation">
+                <label class="form-label-bold" for="radio-2">At national level</label>
+                <span class="form-hint">Choose a funding type to find out how it's allocated across England.</span>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <button class="button" type="submit">Continue</button>
+    </div>
+}
+
+@section vyfScripts {
+    <script>
+        var actionMap = {};
+        @foreach(var key in ViewYourFundingConstants.OptionMap_ViewingChoice.Keys)
+        {
+            @:actionMap["@key"] = "@Url.RouteUrl(ViewYourFundingConstants.OptionMap_ViewingChoice[key])";
+        }
+    </script>
+    <environment names="Development">
+        <script src="~/Scripts/multiple-choice-required-validation.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-multiple-choice-required-validation.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

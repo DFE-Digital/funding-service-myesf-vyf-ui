@@ -1,0 +1,11 @@
+@using PDS.ViewYourFunding.Services.Helper
+@model PDS.ViewYourFunding.Web.Models.RenderHtmlViewModel
+@{
+    Layout = string.Empty;
+    var components = Model?.FundingViewData?.Components;
+
+    if (components != null)
+    {
+        await components.Render(Html);
+    }
+}

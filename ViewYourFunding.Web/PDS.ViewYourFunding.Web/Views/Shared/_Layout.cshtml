@@ -1,0 +1,33 @@
+@using PDS.ViewYourFunding.Web.Models.Shared
+@model BaseViewYourFundingPageViewModel
+
+@{
+    var currentUserIsLoggedIn = Model.CurrentUser != null && Model.CurrentUser.IsLoggedIn;
+}
+
+@{
+    Layout = "_CoreLayout";
+}
+
+@RenderBody()
+
+@section styles {
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/vyf-print.min.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="~/css/vyf-screen.min.css" type="text/css" media="screen" />
+
+    @RenderSection("_AdminScreensLayout_Styles", false)
+}
+
+@section scripts {
+    <environment names="Development">
+        <script src="~/Scripts/custom-global-behaviour.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-custom-global-behaviour.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+
+    @RenderSection("_AdminScreensLayout_Scripts", false)
+
+    @RenderSection("vyfScripts", false)
+}

@@ -1,0 +1,11 @@
+@model DateTime?
+
+@{
+    var date = string.Empty;
+    if (Model != null)
+    {
+         date = Model.Value.ToShortDateString();
+    }
+}
+
+@date

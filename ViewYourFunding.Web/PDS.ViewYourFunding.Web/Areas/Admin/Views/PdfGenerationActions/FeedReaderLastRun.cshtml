@@ -1,0 +1,43 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.FeedReaderLastRunViewModel
+
+<h1 class="govuk-heading-xl">Latest Feed Reader Status</h1>
+
+<table class="touch-table table-halves">
+    <tr>
+        <td>
+            Run Status
+        </td>
+        <td>
+            @Model.Audit.Status
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Start date and time
+        </td>
+        <td>
+            @Model.Audit.StartDateTime
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Feed Reader API Url
+        </td>
+        <td>
+            @Model.Audit.FundingUri
+        </td>
+    </tr>
+    @if (Model.Audit.EndDateTime != null)
+    {
+        <tr>
+            <td>
+                End date and time
+            </td>
+            <td>
+                @Model.Audit.EndDateTime
+            </td>
+        </tr>
+    }
+
+</table>

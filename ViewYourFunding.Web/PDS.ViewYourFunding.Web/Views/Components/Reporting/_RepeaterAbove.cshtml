@@ -1,0 +1,18 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var parent = ComponentHelper.GetGroupParent(Model.OriginalGroup, Model.ComponentConfiguration.OriginalModel.ToUiModelGroup());
+
+    if (parent.Type == "Table/Rows")
+    {
+        @Html.Raw("<tr><td style='background-color: cyan' colspan='100'>")
+    }
+
+    <span>(<strong><i>Repeater start '@Model.OriginalGroup.Expression'</i></strong>)</span>
+
+    if (parent.Type == "Table/Rows")
+    {
+        @Html.Raw("</td></tr>")
+    }
+}

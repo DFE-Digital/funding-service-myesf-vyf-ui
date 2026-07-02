@@ -1,0 +1,51 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (Model.Components?.Any() != true)
+    {
+        throw new Exception("Conditional/Switch needs to have some cases");
+    }
+
+    if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        await Html.RenderPartialAsync("~/Views/Components/Reporting/_SwitchAbove.cshtml", Model);
+    }
+
+    var caseId = Model.GetValue()?.ToString();
+    var component = Model.Components.SingleOrDefault(component => component.Id == caseId || component.SubType == caseId);
+
+    if (component == null)
+    {
+        component = Model.Components.SingleOrDefault(component =>
+            component.Id.Equals("default", StringComparison.InvariantCultureIgnoreCase));
+
+        if (component == null)
+        {
+            return;
+        }
+    }
+
+    if(!string.IsNullOrWhiteSpace(component.Id))
+    {
+        component.SubType = component.Id;
+    }
+
+    component.Id = null;
+
+    if (Model.ClassNames.Any() == true)
+    {
+        component.ClassNames.AddRange(Model.ClassNames);
+    }
+
+    if (component.ComponentConfiguration.ShowData)
+    {
+        await component.Render(Html, Model.PageData);
+    }
+
+    if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        await Html.RenderPartialAsync("~/Views/Components/Reporting/_SwitchBelow.cshtml", Model);
+    }
+}

@@ -1,0 +1,837 @@
+{
+    "$schema": "https:\/\/fundingschemas.blob.core.windows.net\/schemas\/funding-template-schema-1.2.json",
+    "schemaVersion": "1.2",
+    "fundingTemplate": {
+        "fundingLines": [
+            {
+                "templateLineId": 44,
+                "type": "Information",
+                "name": "Total UIFSM",
+                "fundingLineCode": null,
+                "fundingLines": [
+                    {
+                        "templateLineId": 2,
+                        "type": "Payment",
+                        "name": "Provisional Allocation",
+                        "fundingLineCode": "UIFSM-001",
+                        "fundingLines": [],
+                        "calculations": [
+                            {
+                                "templateCalculationId": 49,
+                                "name": "Provisional Allocation Cash",
+                                "type": "Cash",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Currency",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": [
+                                    {
+                                        "templateCalculationId": 1,
+                                        "name": "PY Final Allocation",
+                                        "type": "Number",
+                                        "aggregationType": "None",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": [
+                                            {
+                                                "templateCalculationId": 17,
+                                                "name": "PY Eligible Pupil Number",
+                                                "type": "PupilNumber",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Number",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": [
+                                                    {
+                                                        "templateCalculationId": 15,
+                                                        "name": "PY Eligible Reception Pupils",
+                                                        "type": "PupilNumber",
+                                                        "aggregationType": "None",
+                                                        "formulaText": "",
+                                                        "valueFormat": "Number",
+                                                        "groupRate": null,
+                                                        "percentageChangeBetweenAandB": null,
+                                                        "calculations": [
+                                                            {
+                                                                "templateCalculationId": 5,
+                                                                "name": "PY Eligible Reception Pupils October",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 3,
+                                                                        "name": "PY Reception Meals October",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 4,
+                                                                        "name": "PY Reception FSM Meals October",
+                                                                        "type": "Cash",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Currency",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "templateCalculationId": 11,
+                                                                "name": "PY Eligible Reception Pupils January",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 9,
+                                                                        "name": "PY Reception Meals January",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 10,
+                                                                        "name": "PY Reception FSM Meals January",
+                                                                        "type": "Cash",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Currency",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "templateCalculationId": 16,
+                                                        "name": "PY Eligible Y1 &Y2 Pupils",
+                                                        "type": "PupilNumber",
+                                                        "aggregationType": "None",
+                                                        "formulaText": "",
+                                                        "valueFormat": "Number",
+                                                        "groupRate": null,
+                                                        "percentageChangeBetweenAandB": null,
+                                                        "calculations": [
+                                                            {
+                                                                "templateCalculationId": 8,
+                                                                "name": "PY Eligible Y1 & Y2 Pupils October",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 6,
+                                                                        "name": "PY Y1 & Y2 Meals October",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 7,
+                                                                        "name": "PY Y1 & Y2 FSM Meals October",
+                                                                        "type": "Cash",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Currency",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "templateCalculationId": 14,
+                                                                "name": "PY Eligible Y1 & Y2 Pupils January",
+                                                                "type": "Cash",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Currency",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 12,
+                                                                        "name": "PY Y1 & Y2 Meals January",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 13,
+                                                                        "name": "PY Y1 & Y2 FSM Meals January",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "templateCalculationId": 37,
+                                                "name": "PY Rate",
+                                                "type": "Rate",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Currency",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            },
+                                            {
+                                                "templateCalculationId": 38,
+                                                "name": "PY Funded Days",
+                                                "type": "Number",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Number",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "templateCalculationId": 39,
+                                        "name": "New Opener Provisional Allocation",
+                                        "type": "Number",
+                                        "aggregationType": "None",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": [
+                                            {
+                                                "templateCalculationId": 42,
+                                                "name": "New Opener Eligible Pupil Number",
+                                                "type": "PupilNumber",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Number",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": [
+                                                    {
+                                                        "templateCalculationId": 40,
+                                                        "name": "New Opener Estimated Reception Pupils",
+                                                        "type": "PupilNumber",
+                                                        "aggregationType": "None",
+                                                        "formulaText": "",
+                                                        "valueFormat": "Number",
+                                                        "groupRate": null,
+                                                        "percentageChangeBetweenAandB": null,
+                                                        "calculations": []
+                                                    },
+                                                    {
+                                                        "templateCalculationId": 41,
+                                                        "name": "LA Primary FSM Percentage",
+                                                        "type": "Weighting",
+                                                        "aggregationType": "None",
+                                                        "formulaText": "",
+                                                        "valueFormat": "Percentage",
+                                                        "groupRate": null,
+                                                        "percentageChangeBetweenAandB": null,
+                                                        "calculations": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "templateCalculationId": 38,
+                                                "name": "PY Funded Days",
+                                                "type": "Number",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Number",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            },
+                                            {
+                                                "templateCalculationId": 37,
+                                                "name": "PY Rate",
+                                                "type": "Rate",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Currency",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            },
+                                            {
+                                                "templateCalculationId": 43,
+                                                "name": "LA Meal Take Up Rate",
+                                                "type": "Weighting",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Percentage",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "templateCalculationId": 51,
+                                        "name": "PY Final Allocation Maintained Schools",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 52,
+                                        "name": "PY Final Allocation Academies",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 53,
+                                        "name": "PY Final Allocation NMSS",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 71,
+                                        "name": "PY Final Allocation AP",
+                                        "type": "Cash",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Currency",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    }
+                                ]
+                            },
+                            {
+                                "templateCalculationId": 54,
+                                "name": "PY Provisional Allocation Maintained Schools",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 55,
+                                "name": "PY Provisional Allocation Academies",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 56,
+                                "name": "PY Provisional Allocation NMSS",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 60,
+                                "name": "PY Provisional Allocation LA Payment",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 72,
+                                "name": "PY Provisional Allocation AP",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 73,
+                                "name": "Provisional Allocation School Type",
+                                "type": "Enum",
+                                "aggregationType": "None",
+                                "formulaText": "",
+                                "valueFormat": "String",
+                                "allowedEnumTypeValues": [
+                                    "Maintained School",
+                                    "Academy",
+                                    "Non-Maintained Special School",
+                                    "LA Alternative Provision"
+                                ],
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            }
+                        ]
+                    },
+                    {
+                        "templateLineId": 19,
+                        "type": "Payment",
+                        "name": "Balancing Payment",
+                        "fundingLineCode": "UIFSM-002",
+                        "fundingLines": [],
+                        "calculations": [
+                            {
+                                "templateCalculationId": 46,
+                                "name": "Balancing Payment",
+                                "type": "Cash",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Currency",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": [
+                                    {
+                                        "templateCalculationId": 18,
+                                        "name": "Final Allocation",
+                                        "type": "Number",
+                                        "aggregationType": "None",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": [
+                                            {
+                                                "templateCalculationId": 34,
+                                                "name": "Eligible Pupil Number",
+                                                "type": "PupilNumber",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Number",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": [
+                                                    {
+                                                        "templateCalculationId": 32,
+                                                        "name": "Eligible Reception Pupils",
+                                                        "type": "PupilNumber",
+                                                        "aggregationType": "None",
+                                                        "formulaText": "",
+                                                        "valueFormat": "Number",
+                                                        "groupRate": null,
+                                                        "percentageChangeBetweenAandB": null,
+                                                        "calculations": [
+                                                            {
+                                                                "templateCalculationId": 22,
+                                                                "name": "Eligible Reception Pupils October",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 20,
+                                                                        "name": "Reception Meals October",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 21,
+                                                                        "name": "Reception FSM Meals October",
+                                                                        "type": "Cash",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Currency",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "templateCalculationId": 28,
+                                                                "name": "Eligible Reception Pupils January",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 26,
+                                                                        "name": "Reception Meals January",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 27,
+                                                                        "name": "Reception FSM Meals January",
+                                                                        "type": "Cash",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Currency",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "templateCalculationId": 33,
+                                                        "name": "Eligible Y1 & Y2 Pupils",
+                                                        "type": "Number",
+                                                        "aggregationType": "None",
+                                                        "formulaText": "",
+                                                        "valueFormat": "Number",
+                                                        "groupRate": null,
+                                                        "percentageChangeBetweenAandB": null,
+                                                        "calculations": [
+                                                            {
+                                                                "templateCalculationId": 25,
+                                                                "name": "Eligible Y1 & Y2 Pupils October",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 23,
+                                                                        "name": "Y1 & Y2 Meals October",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 24,
+                                                                        "name": "Y1 & Y2 FSM Meals October",
+                                                                        "type": "Cash",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Currency",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "templateCalculationId": 31,
+                                                                "name": "Eligible Y1 & Y2 Pupils January",
+                                                                "type": "PupilNumber",
+                                                                "aggregationType": "None",
+                                                                "formulaText": "",
+                                                                "valueFormat": "Number",
+                                                                "groupRate": null,
+                                                                "percentageChangeBetweenAandB": null,
+                                                                "calculations": [
+                                                                    {
+                                                                        "templateCalculationId": 29,
+                                                                        "name": "Y1 & Y2 Meals January",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    },
+                                                                    {
+                                                                        "templateCalculationId": 30,
+                                                                        "name": "Y1 & Y2 FSM Meals January",
+                                                                        "type": "PupilNumber",
+                                                                        "aggregationType": "None",
+                                                                        "formulaText": "",
+                                                                        "valueFormat": "Number",
+                                                                        "groupRate": null,
+                                                                        "percentageChangeBetweenAandB": null,
+                                                                        "calculations": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "templateCalculationId": 47,
+                                                "name": "Funded Days",
+                                                "type": "Cash",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Currency",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            },
+                                            {
+                                                "templateCalculationId": 48,
+                                                "name": "Rate",
+                                                "type": "Cash",
+                                                "aggregationType": "None",
+                                                "formulaText": "",
+                                                "valueFormat": "Currency",
+                                                "groupRate": null,
+                                                "percentageChangeBetweenAandB": null,
+                                                "calculations": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "templateCalculationId": 45,
+                                        "name": "Aggregated Predecessor Provisional Allocations",
+                                        "type": "Number",
+                                        "aggregationType": "None",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 62,
+                                        "name": "Aggregated Predecessor Provisional Allocations Maintained Schools",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 63,
+                                        "name": "Aggregated Predecessor Provisional Allocations Academies",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 64,
+                                        "name": "Aggregated Predecessor Provisional Allocations NMSS",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 65,
+                                        "name": "Final Allocation Maintained Schools",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 66,
+                                        "name": "Final Allocation Academies",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 67,
+                                        "name": "Final Allocation NMSS",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 69,
+                                        "name": "Final Allocation AP",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    },
+                                    {
+                                        "templateCalculationId": 68,
+                                        "name": "Aggregated Predecessor Provisional Allocations AP",
+                                        "type": "Number",
+                                        "aggregationType": "Sum",
+                                        "formulaText": "",
+                                        "valueFormat": "Number",
+                                        "groupRate": null,
+                                        "percentageChangeBetweenAandB": null,
+                                        "calculations": []
+                                    }
+                                ]
+                            },
+                            {
+                                "templateCalculationId": 57,
+                                "name": "Balancing Payment Maintained Schools",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 58,
+                                "name": "Balancing Payment Academies",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 59,
+                                "name": "Balancing Payment NMSS",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 61,
+                                "name": "Balancing Payment LA Payment",
+                                "type": "Number",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Number",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 70,
+                                "name": "Balancing Payment AP",
+                                "type": "Cash",
+                                "aggregationType": "Sum",
+                                "formulaText": "",
+                                "valueFormat": "Currency",
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            },
+                            {
+                                "templateCalculationId": 74,
+                                "name": "Final Allocation School Type",
+                                "type": "Enum",
+                                "aggregationType": "None",
+                                "formulaText": "",
+                                "valueFormat": "String",
+                                "allowedEnumTypeValues": [
+                                    "Maintained School",
+                                    "Academy",
+                                    "Non-Maintained Special School",
+                                    "LA Alternative Provision"
+                                ],
+                                "groupRate": null,
+                                "percentageChangeBetweenAandB": null,
+                                "calculations": []
+                            }
+                        ]
+                    }
+                ],
+                "calculations": []
+            }
+        ]
+    }
+}

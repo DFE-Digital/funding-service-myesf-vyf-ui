@@ -1,0 +1,22 @@
+﻿[*.cs]
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1401: Fields should be private
+dotnet_diagnostic.SA1401.severity = none
+
+# SA1203: Constants should appear before fields
+dotnet_diagnostic.SA1203.severity = none
+
+# CS0659: Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+dotnet_diagnostic.CS0659.severity = none
+
+# CS0618: Type or member is obsolete
+dotnet_diagnostic.CS0618.severity = suggestion
+
+# SA1606: Element documentation should have summary text
+dotnet_diagnostic.SA1606.severity = suggestion
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = suggestion

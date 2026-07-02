@@ -1,0 +1,20 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment.NextPaymentViewModel
+
+<p>
+    <span class="heading-large">Are You Sure?</span>
+</p>
+
+@Html.DisplayFor(m => m.ActionMode)
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminNextPaymentSaveChanges, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+        @Html.AntiForgeryToken()
+        @Html.DisplayFor(m => m.NextPayment)
+        @Html.HiddenFor(m => m.FundingStreamId)
+        @Html.HiddenFor(m => m.FundingStreamName)
+        @Html.HiddenFor(m => m.ActionMode)
+        <input type="submit" class="button" value="Save" />
+        @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminSettingsFundingStream, new { Model.FundingStreamId }, null);
+    }
+

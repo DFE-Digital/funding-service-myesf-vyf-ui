@@ -1,0 +1,31 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting.FundingStreamSettingAreYouSureViewModel
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminSettingSaveChanges, null, FormMethod.Post, null, new {@class = "submitDisable"}))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.DisplayFor(model => model.ActionMode, new
+    {
+        Model.NewValue,
+        Model.SettingName,
+        Model.SettingDescription,
+        Model.CurrentValue,
+        Model.FundingStreamName,
+        Model.NationalLayoutFriendlyName,
+        Model.IsNationalLayoutSetting
+    })
+
+    <input type="submit" class="button" value="Save"/>
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminSettingsFundingStream, new { Model.FundingStreamId }, new {})
+
+    @Html.HiddenFor(x => x.SettingId)
+    @Html.HiddenFor(x => x.SettingName)
+    @Html.HiddenFor(x => x.CurrentValue)
+    @Html.HiddenFor(x => x.NewValue)
+    @Html.HiddenFor(x => x.SettingDescription)
+    @Html.HiddenFor(x => x.FundingStreamId)
+    @Html.HiddenFor(x => x.FundingStreamName)
+    @Html.HiddenFor(x => x.SettingValueId)
+    @Html.HiddenFor(x => x.ActionMode)
+}

@@ -1,0 +1,29 @@
+﻿@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Home.HomeViewModel
+
+<div class="grid-row">
+    @if (Model.Tiles.Any())
+    {
+
+        <ul>
+            @{
+                foreach (var tile in Model.Tiles)
+                {
+                    if (tile.IsAdminTile)
+                    {
+                        <partial name="Partial/_AdminTile" model="@tile" />
+                    }
+                    else
+                    {
+                        <partial name="Partial/_Tile" model="@tile" />
+                    }
+                }
+            }
+        </ul>
+    }
+    else
+    {
+        <div class="column-full" id="no-tiles">
+            <p class="lede">No actions available.</p>
+        </div>
+    }
+</div>

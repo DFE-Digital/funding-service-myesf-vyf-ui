@@ -1,0 +1,12 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+
+
+<div class="govuk-accordion__section-summary-IYO" id="accordion-with-summary-sections-summary-@Model.GetAccordionInstanceNumber()">
+    @{
+        await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+    }
+</div>

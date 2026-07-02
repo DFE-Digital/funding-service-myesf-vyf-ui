@@ -1,0 +1,38 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.SettingType
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SettingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SettingName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SettingDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SettingDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValuesAreEditable)
+        </dt>
+
+        <dd>
+            @Model.ValuesAreEditable.ToString()
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValueDataType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValueDataType)
+        </dd>
+    </dl>
+</div>
+
+@Html.HiddenFor(model => model.SettingName)
+@Html.HiddenFor(model => model.SettingDescription)
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.ValuesAreEditable)

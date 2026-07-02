@@ -1,0 +1,27 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.GlobalSettingAdmin.GlobalSettingListViewModel
+
+    <h1 class="govuk-heading-xl"> General Settings List </h1>
+<table class="touch-table">
+    <tr>
+        <th>Description</th>
+        <th>Value</th>
+        <th></th>
+    </tr>
+    @foreach (var setting in Model.GlobalSettings.Where(s => !s.ReadOnly))
+    {
+        <tr>
+            <td>
+                @setting.Description
+            </td>
+
+            <td>
+                @setting.Value
+            </td>
+
+            <td>
+                @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminGeneralSettingEdit, new { GlobalSettingId = setting.Id })
+            </td>
+        </tr>
+    }
+</table>

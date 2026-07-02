@@ -1,0 +1,37 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement.PreviewLayoutViewModel
+
+    <div class="column-two-thirds">
+
+        @using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminPreviewLayout, null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <fieldset class="">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="heading-xlarge">Preview Layout</h1>
+                </legend>
+                <div class="govuk-form-group">
+                    @if (Model.IsOrganisationViewScope)
+                    {
+                        @Html.LabelFor(model => model.LocalAuthorityCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.LocalAuthorityCode, additionalViewData: new { @class = "govuk-file-upload" })
+                        @Html.ValidationMessageFor(model => model.LocalAuthorityCode, "", new { @class = "text-danger" })
+                    }
+                    else
+                    {
+                        @Html.LabelFor(model => model.OrganisationUkprn, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.OrganisationUkprn, additionalViewData: new { @class = "govuk-file-upload" })
+                        @Html.ValidationMessageFor(model => model.OrganisationUkprn, "", new { @class = "text-danger" })
+                    }
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="button">Preview Layout</button>
+                @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminLayoutManagementHome)
+            </div>
+
+            @Html.HiddenFor(model => model.FundingStreamId)
+            @Html.HiddenFor(model => model.LayoutId)
+            @Html.HiddenFor(model => model.FundingViewScope)
+        }
+    </div>

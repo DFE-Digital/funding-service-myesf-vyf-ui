@@ -1,0 +1,392 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<NuGetAudit>false</NuGetAudit>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Remove="Migrations\20200206013651_Setup.cs" />
+    <Compile Remove="Migrations\20200206013651_Setup.Designer.cs" />
+    <Compile Remove="Migrations\20200421133702_UpdateNextPaymentFundingPeriodCodev2.cs" />
+    <Compile Remove="Migrations\20200421133702_UpdateNextPaymentFundingPeriodCodev2.Designer.cs" />
+    <Compile Remove="Migrations\20200930081658_ALterFundingStreamAddColumnHistoryBasedOnPublications.cs" />
+    <Compile Remove="Migrations\20200930081658_ALterFundingStreamAddColumnHistoryBasedOnPublications.Designer.cs" />
+    <Compile Remove="Migrations\20200930082209_AlterFundingStreamTable_AddColumnHistoryBasedOnPublications.cs" />
+    <Compile Remove="Migrations\20200930082209_AlterFundingStreamTable_AddColumnHistoryBasedOnPublications.Designer.cs" />
+    <Compile Remove="Migrations\20200930090229_UpdateFundingStream_HistoryBasedOnPublications.cs" />
+    <Compile Remove="Migrations\20200930090229_UpdateFundingStream_HistoryBasedOnPublications.Designer.cs" />
+    <Compile Remove="Migrations\20201005110152_UpdateMATurlV2.cs" />
+    <Compile Remove="Migrations\20201005110152_UpdateMATurlV2.Designer.cs" />
+    <Compile Remove="Migrations\20210422193918_Update1619RelevantForLocalAuthorityLoggedIn.cs" />
+    <Compile Remove="Migrations\20210422193918_Update1619RelevantForLocalAuthorityLoggedIn.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\AddPSGPaymentDatesForAY202021.sql" />
+    <None Remove="Scripts\AddPSGPaymentDatesForAY202021_ROLLBACK.sql" />
+    <None Remove="Scripts\DeleteDataInSettingValues_UIFSMFinancialYear.sql" />
+    <None Remove="Scripts\DeleteDataInSettingValues_UIFSMFinancialYear_ROLLBACK.sql" />
+    <None Remove="Scripts\DeleteDuplicateSettingsAndPublications.sql" />
+    <None Remove="Scripts\DeletePnaacSettingsAndPublications.sql" />
+    <None Remove="Scripts\DeletePnaacSettingsAndPublicationsROLLBACK.sql" />
+    <None Remove="Scripts\DeletePpgSettingsAndPublications.sql" />
+    <None Remove="Scripts\DeletePpgSettingsAndPublicationsROLLBACK.sql" />
+    <None Remove="Scripts\DeleteRedundantFundingStreamSettings.sql" />
+    <None Remove="Scripts\DeleteRedundantFundingStreamSettings_ROLLBACK.sql" />
+    <None Remove="Scripts\DeleteRedundantUseSecureApiSetting.sql" />
+    <None Remove="Scripts\DeleteRedundantUseSecureApiSetting_ROLLBACK.sql" />
+    <None Remove="Scripts\Ensure1416FundingStreamSetup.sql" />
+    <None Remove="Scripts\Ensure1416FundingStreamSetup_ROLLBACK.sql" />
+    <None Remove="Scripts\InsertDataInSettingsTable_AutoPull.sql" />
+    <None Remove="Scripts\InsertDataInSettingsTable_AutoPull_ROLLBACK.sql" />
+    <None Remove="Scripts\RemoveAndRenameGlobalSettings.sql" />
+    <None Remove="Scripts\RemoveAndRenameGlobalSettings_ROLLBACK.sql" />
+    <None Remove="Scripts\RemoveDuplicatesFromSettingsTable.sql" />
+    <None Remove="Scripts\RemoveDuplicatesFromSettingsTable_ROLLBACK.sql" />
+    <None Remove="Scripts\ResetsomeGlobalSettingpaths.sql" />
+    <None Remove="Scripts\ResetsomeGlobalSettingpaths_ROLLBACK.sql" />
+    <None Remove="Scripts\SeedFundingStreamBusinessAllocationName.sql" />
+    <None Remove="Scripts\SeedFundingStreamBusinessAllocationNamePP.sql" />
+    <None Remove="Scripts\SeedFundingStreamBusinessAllocationNamePP_ROLLBACK.sql" />
+    <None Remove="Scripts\SeedFundingStreamBusinessAllocationName_ROLLBACK.sql" />
+    <None Remove="Scripts\SeedNextPaymentTypesAndFundingStreams.sql" />
+    <None Remove="Scripts\SeedNextPaymentTypesAndFundingStreams_ROLLBACK.sql" />
+    <None Remove="Scripts\SetHistoryIndependentOfPublications.sql" />
+    <None Remove="Scripts\SetHistoryIndependentOfPublications_ROLLBACK.sql" />
+    <None Remove="Scripts\SetRelevantForFields.sql" />
+    <None Remove="Scripts\SetRelevantForFields_ROLLBACK.sql" />
+    <None Remove="Scripts\Update1416CsvSettings.sql" />
+    <None Remove="Scripts\Update1416CsvSettings_ROLLBACK.sql" />
+    <None Remove="Scripts\Update1416FundingStreamSettings.sql" />
+    <None Remove="Scripts\Update1416FundingStreamSettings_ROLLBACK.sql" />
+    <None Remove="Scripts\Update1416ParentProviderTypeAndAcademicSettings.sql" />
+    <None Remove="Scripts\Update1416ParentProviderTypeAndAcademicSettings_ROLLBACK.sql" />
+    <None Remove="Scripts\Update1619CsvSettings.sql" />
+    <None Remove="Scripts\Update1619CsvSettings_ROLLBACK.sql" />
+    <None Remove="Scripts\Update1619FundingStreamName.sql" />
+    <None Remove="Scripts\Update1619FundingStreamName_ROLLBACK.sql" />
+    <None Remove="Scripts\Update1619RelevantForOrganisationsLoggedIn.sql" />
+    <None Remove="Scripts\Update1619RelevantForOrganisationsLoggedIn_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateAcademicFinancialYearDataTypes.sql" />
+    <None Remove="Scripts\UpdateAcademicFinancialYearDataTypes_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateBasePathToNewUrl.sql" />
+    <None Remove="Scripts\UpdateBasePathToNewUrl_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateDSGFinancialYearSettingValueAppend202122.sql" />
+    <None Remove="Scripts\UpdateDSGFinancialYearSettingValueAppend202122_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateDSGNextPaymentFundingPeriodCodes.sql" />
+    <None Remove="Scripts\UpdateDSGNextPaymentFundingPeriodCodes_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateFundingStreamRelevantForProvidersLoggedIn.sql" />
+    <None Remove="Scripts\UpdateFundingStreamRelevantForProvidersLoggedIn_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateGeneralSettingText.sql" />
+    <None Remove="Scripts\UpdateGeneralSettingText_Rollback.sql" />
+    <None Remove="Scripts\UpdateIsActiveStatusForFundingStream.sql" />
+    <None Remove="Scripts\UpdateIsActiveStatusForFundingStream_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateLARECShowOnOrganisationLoggedInView.sql" />
+    <None Remove="Scripts\UpdateLARECShowOnOrganisationLoggedInView_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateLoggedInProviderUrl.sql" />
+    <None Remove="Scripts\UpdateLoggedInProviderUrl_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateMATUrlSettingText.sql" />
+    <None Remove="Scripts\UpdateMATUrlSettingText_Rollback.sql" />
+    <None Remove="Scripts\UpdateNextPaymentFundingPeriodCodes.sql" />
+    <None Remove="Scripts\UpdateNextPaymentFundingPeriodCodes_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateNextPaymentPSG.sql" />
+    <None Remove="Scripts\UpdateNextPaymentPSG_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateNMSSHistoryIndependentOfPublications.sql" />
+    <None Remove="Scripts\UpdateNMSSHistoryIndependentOfPublications_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateNMSSNameAndOtherAttributes.sql" />
+    <None Remove="Scripts\UpdateNMSSNameAndOtherAttributes_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateNMSSNameInSentence.sql" />
+    <None Remove="Scripts\UpdateNMSSNameInSentence_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateNMSSParentProviderType.sql" />
+    <None Remove="Scripts\UpdateNMSSParentProviderType_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdatePNAShowOnOrganisationLoggedInView.sql" />
+    <None Remove="Scripts\UpdatePNAShowOnOrganisationLoggedInView_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdatePNAShowOnProviderLoggedInView.sql" />
+    <None Remove="Scripts\UpdatePNAShowOnProviderLoggedInView_ROLLBACK.sql" />
+    <None Remove="Scripts\UpdateUIFSMPeriodSettings.sql" />
+    <None Remove="Scripts\UpdateUIFSMPeriodSettings_ROLLBACK.sql" />
+    <None Remove="ViewYourFunding.Repositories.csproj.transform" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\DeleteDataInSettingValues_UIFSMFinancialYear.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeleteDataInSettingValues_UIFSMFinancialYear_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeleteDuplicateSettingsAndPublications.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeletePnaacSettingsAndPublications.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeletePnaacSettingsAndPublicationsROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeletePpgSettingsAndPublications.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeletePpgSettingsAndPublicationsROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\InsertDataInSettingsTable_AutoPull.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\InsertDataInSettingsTable_AutoPull_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateUIFSMPeriodSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateUIFSMPeriodSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1416ParentProviderTypeAndAcademicSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1416ParentProviderTypeAndAcademicSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SeedFundingStreamBusinessAllocationNamePP.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SeedFundingStreamBusinessAllocationNamePP_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SeedFundingStreamBusinessAllocationName_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SeedFundingStreamBusinessAllocationName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNextPaymentPSG.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNextPaymentPSG_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateLARECShowOnOrganisationLoggedInView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdatePNAShowOnOrganisationLoggedInView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdatePNAShowOnOrganisationLoggedInView_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdatePNAShowOnProviderLoggedInView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSHistoryIndependentOfPublications.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateLARECShowOnOrganisationLoggedInView_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdatePNAShowOnProviderLoggedInView_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSHistoryIndependentOfPublications_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSNameAndOtherAttributes_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+ 
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Ensure1416FundingStreamSetup_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SeedNextPaymentTypesAndFundingStreams_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SeedNextPaymentTypesAndFundingStreams.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\AddPSGPaymentDatesForAY202021.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\AddPSGPaymentDatesForAY202021_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\RemoveDuplicatesFromSettingsTable.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\RemoveDuplicatesFromSettingsTable_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SetHistoryIndependentOfPublications.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SetHistoryIndependentOfPublications_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Ensure1416FundingStreamSetup.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1416CsvSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1416CsvSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1619CsvSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1619CsvSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1416FundingStreamSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1416FundingStreamSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1619FundingStreamName_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1619RelevantForOrganisationsLoggedIn.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1619RelevantForOrganisationsLoggedIn_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateAcademicFinancialYearDataTypes.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateBasePathToNewUrl.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateAcademicFinancialYearDataTypes_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateBasePathToNewUrl_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateDSGFinancialYearSettingValueAppend202122.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateDSGFinancialYearSettingValueAppend202122_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Update1619FundingStreamName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateFundingStreamRelevantForProvidersLoggedIn.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateFundingStreamRelevantForProvidersLoggedIn_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateMATUrlSettingText.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateMATUrlSettingText_Rollback.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateLoggedInProviderUrl.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateLoggedInProviderUrl_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\ResetsomeGlobalSettingpaths_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SetRelevantForFields_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\SetRelevantForFields.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeleteRedundantUseSecureApiSetting.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeleteRedundantFundingStreamSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeleteRedundantUseSecureApiSetting_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DeleteRedundantFundingStreamSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateGeneralSettingText.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateGeneralSettingText_Rollback.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateIsActiveStatusForFundingStream.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateIsActiveStatusForFundingStream_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\ResetsomeGlobalSettingpaths.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\RemoveAndRenameGlobalSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateDSGNextPaymentFundingPeriodCodes.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNextPaymentFundingPeriodCodes.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\RemoveAndRenameGlobalSettings_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateDSGNextPaymentFundingPeriodCodes_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNextPaymentFundingPeriodCodes_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSNameAndOtherAttributes.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSNameInSentence.sql">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSNameInSentence_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>      
+    <EmbeddedResource Include="Scripts\UpdateNMSSParentProviderType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\UpdateNMSSParentProviderType_ROLLBACK.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.4.0" />
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Pds.Core.CodeAnalysis.StyleCop" Version="2.0.0" />
+    <PackageReference Include="Pds.Core.Logging" Version="3.0.0" />
+  </ItemGroup>
+    
+</Project>

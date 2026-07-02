@@ -1,0 +1,33 @@
+﻿@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.NationalFundingAllocationViewModel
+
+<div class="error-summary@(Model.ValidationError ? "" : " hidden")" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading">@Model.ValidationErrorMessage</h2>
+</div>
+
+
+@{
+    var components = Model.FundingViewData?.Components;
+    var meta = components?.FirstOrDefault()?.ComponentConfiguration;
+
+    var pageData = components?.FirstOrDefault()?.PageData;
+    if (pageData == null)
+    {
+        pageData = new Dictionary<string, object>();
+    }
+
+    pageData.Add("Spreadsheets", Model.Spreadsheets);
+
+    var modelToUse = new Models.Component(meta)
+    {
+        Components = components,
+        PageData = pageData
+    };
+
+    await ComponentHelper.Render(Html, ComponentType.General_Section,
+        modelToUse,
+        modelToUse.PageData
+    );
+}

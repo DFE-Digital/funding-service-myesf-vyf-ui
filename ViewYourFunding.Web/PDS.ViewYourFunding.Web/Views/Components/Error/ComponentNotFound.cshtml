@@ -1,0 +1,9 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var type = Model.Type == ComponentType.Error_ComponentNotFound ? Model.SubType : Model.Type.ToString();
+    Model.UnevaluatedTitle = $"ERROR - COMPONENT NOT FOUND - '{type}'";
+    await ComponentHelper.Render(Html, ComponentType.Error_Error, Model, Model.PageData);
+}

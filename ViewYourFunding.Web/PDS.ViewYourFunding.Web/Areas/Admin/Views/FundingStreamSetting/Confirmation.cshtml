@@ -1,0 +1,56 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting.FundingStreamSettingConfirmationViewModel
+
+    @if (Model.ChangesSaved)
+    {
+        <div class="govuk-box-highlight">
+            @if (Model.ActionMode == FundingStreamSettingAction.Edit)
+            {
+                <h1 class="bold-large">@Model.FundingStreamName setting has been submitted</h1>
+            }
+            else if (Model.ActionMode == FundingStreamSettingAction.Delete)
+            {
+                <h1 class="bold-large">@Model.FundingStreamName setting has been deleted</h1>
+            }
+            else
+            {
+                <h1 class="bold-large">@Model.FundingStreamName setting has been added</h1>
+            }
+            <br />
+            <p id="submission-details">Submitted by @Model.CurrentUser?.FullName on @Model.SubmittedAtDisplayDate</p>
+        </div>
+    }
+    else
+    {
+        <div>
+            @if (Model.ActionMode == FundingStreamSettingAction.Edit)
+            {
+                <h1 class="bold-large">There was a problem submitting the @Model.FundingStreamName settings</h1>
+            }
+            else if (Model.ActionMode == FundingStreamSettingAction.Delete)
+            {
+                <h1 class="bold-large">There was a problem deleting the @Model.FundingStreamName settings</h1>
+            }
+            else
+            {
+                <h1 class="bold-large">There was a problem adding the @Model.FundingStreamName settings</h1>
+            }
+        </div>
+    }
+
+    <div id="signed-success-section" class="column-two-thirds">
+        <div>
+            <div>
+                <h2 class="heading-medium">What happens next?</h2>
+                <p>You can view the @Model.FundingStreamName settings.</p>
+                <p>@Html.RouteLink(string.Format("Go to the {0} funding stream page", Model.FundingStreamName), ViewYourFundingConstants.RouteName_AdminSettingsFundingStream, new { FundingStreamId = Model.FundingStreamId }, new { }) </p>
+            </div>
+            <div>
+                <p class="bold-small">
+                    Or you may want to:
+                </p>
+                <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminHome, null, new { Id = "back-to-homepage" }) </p>
+            </div>
+        </div>
+    </div>

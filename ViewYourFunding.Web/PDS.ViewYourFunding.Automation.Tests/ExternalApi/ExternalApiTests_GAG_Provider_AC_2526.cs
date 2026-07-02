@@ -1,0 +1,72 @@
+using CsvHelper;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PDS.ViewYourFunding.Automation.Tests.ExternalApi;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
+{
+    [TestClass]
+    public class ExternalApiTests_GAG_Provider_AC_2526 : BaseExternalApiTests
+    {
+        private const string CurrentClassName = nameof(ExternalApiTests_GAG_Provider_AC_2526);
+        private const string LayoutId = "788bda59-c57e-4463-8d7e-040ab99d41e4";
+        private const string Schema = "GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2526.json";
+        private const string DefaultFundingPeriodCode = "AC-2526";
+        private const string DefaultFundingStreamCode = "GAG";
+
+        [ClassInitialize]
+        public static void InitalizeTest(TestContext testContext)
+        {
+            DeleteUriCsv(CurrentClassName);
+        }
+
+
+        [DataRow("html_GAG_MainstreamExisting_WithSparsity_Standard", "GAG-FY-2021-10039385-1_0")]
+        [DataRow("html_GAG_MainstreamExisting_WithSparsity_Adjusted", "GAG-FY-2021-10040622-1_0")]
+        [DataRow("html_GAG_Special_IYO_PostApril_Year2", "GAG-FY-2324-10040623-2_0")]
+        [DataRow("html_GAG_Static_IYO_Special_PostSept_SecondYear", "GAG-AC-2223-10086304-1_0")]
+        [DataRow("html_GAG_Mainstream_IYO_PostApril", "GAG-FY-2021-10086304-2_0")]
+        [DataRow("html_GAG_Mainstream_IYO_PostSept", "GAG-FY-2021-10045706-1_0")]
+        [DataRow("html_GAG_Mainstream_IYO_PostSept_WithDedelgation", "GAG-FY-2021-10034574-2_0")]
+        [DataRow("html_GAG_Mainstream_Calculation_Baseline_MFG_ScalingCapping", "GAG-FY-2526-10040622-1_0")]
+
+        [TestMethod, TestCategory("Regression"), TestCategory("CoreRegression")]
+        public async Task General_ExternalApi_RenderHtml(string expectedHtmlFileName, string providerFundingId)
+        {
+            // Arrange
+            var strExpectedHtml = await GetExpectedHtmlAsync(CurrentClassName, expectedHtmlFileName);
+
+            // Act
+            var actualHtml = await GetHtml(
+                providerFundingId,
+                LayoutId,
+                Schema,
+                DefaultFundingPeriodCode,
+                DefaultFundingStreamCode);
+
+            //Please set CanWriteExpectedHtml appsettings.json as true if you want to rewrite the Regression testing results in output folder.
+            if (CanWriteExpectedHtml)
+            {
+                await WriteExpectedHtmlAsync(
+                                CurrentClassName,
+                                expectedHtmlFileName,
+                                actualHtml,
+                                providerFundingId,
+                                LayoutId,
+                                Schema,
+                                DefaultFundingPeriodCode,
+                                DefaultFundingStreamCode);
+            }
+
+            // Assert
+            actualHtml.Should().Be(ReplaceCurrentDate(strExpectedHtml));
+        }
+    }
+}

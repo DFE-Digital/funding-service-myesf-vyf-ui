@@ -1,0 +1,12 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.SearchResultsViewModel
+
+<div class="form-block">
+    <h2 class="heading-medium">No results for '@Model.SearchTerm'</h2>
+    <p>This is because either:</p>
+    <ul class="list list-bullet">
+        <li>there are no funding allocations for this organisation</li>
+        <li>there is a misspelling</li>
+    </ul>
+    <p>@Html.RouteLink(ViewYourFundingConstants.LinkText_FindAnOrganisation, ViewYourFundingConstants.RouteName_FindAnOrganisation)</p>
+</div>

@@ -1,0 +1,7 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+<div class="panel panel-border-narrow">
+    <p>@Html.Raw(Model.GetTitleOrValue()).</p>
+</div>

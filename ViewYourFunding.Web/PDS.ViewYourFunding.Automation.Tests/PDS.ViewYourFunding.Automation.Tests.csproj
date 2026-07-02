@@ -1,0 +1,791 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+    <None Remove="CSVResources\general-annual-grant_2021-to-2022_published-01-06-2021_wombourne-high-school.csv" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_MainstreamExisting.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_MainstreamExisting_WithSparsity.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostApril.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostSept.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_SpecialExisting.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Special_IYO_PostApril.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Special_IYO_PostSept.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting_WithSparsity.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_SpecialExisting.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostApril.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostSept.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_MainstreamExisting_WithSparsity_Standard.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostApril.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostSept.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Special_IYO_PostApril_Year2.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Static_IYO_Special_PostSept_SecondYear.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Standard.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostApril.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Special_IYO_PostApril_Year2.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Static_IYO_Special_PostSept_SecondYear.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_No_AgreedChangeToHighNeedsPlaces.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_AgreedChangeToHighNeedsPlaces.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_BaselineForTransition.html" />
+    <None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html" />
+	<None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_No_AgreedChangeToHighNeedsPlaces.html" />
+	<None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_AgreedChangeToHighNeedsPlaces.html" />
+	<None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_BaselineForTransition.html" />
+	<None Remove="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html" />		
+    <None Remove="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
+	<None Remove="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2324.json" />
+	<None Remove="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2425.json" />
+	<None Remove="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json" />
+    <None Remove="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
+    <None Remove="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2425.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2425.json" />
+	<None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2526.json" />		
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_MSS_Only.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_MSS_Only_AS_2425.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_MSS_Only_AS_2526.json" />		
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_StudentNumber.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_StudentNumber_2526.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2122_DO_NOT_USE_YET.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2223.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2324.json" />
+	<None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2425.json" />
+	<None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2526.json" />
+    <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2627.json" />
+    <None Remove="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2627.json" />
+    <None Remove="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
+    <None Remove="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2223.json" />
+    <None Remove="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2324.json" />
+    <None Remove="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2425.json" />
+	<None Remove="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2526.json" />
+    <None Remove="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2223.json" />
+    <None Remove="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2324.json" />
+    <None Remove="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2425.json" />
+	<None Remove="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2526.json" />
+    <None Remove="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_Mainstream.json" />
+    <None Remove="FundingUiModels\PDF\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA.json" />
+    <None Remove="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
+    <None Remove="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2223.json" />
+    <None Remove="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2324.json" />
+	<None Remove="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2425.json" />
+	<None Remove="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json" />
+    <None Remove="FundingUiModels\PDF\PNA_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
+	<None Remove="FundingUiModels\PDF\PNA_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2425.json" />		
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\SolutionItems\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_MainstreamExisting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_MainstreamExisting_WithSparsity.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_SpecialExisting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Special_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Special_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting_WithSparsity.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_SpecialExisting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Special_IYO_PostApril_Year2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Special_IYO_PostApril_Year2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_No_AgreedChangeToHighNeedsPlaces.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_AgreedChangeToHighNeedsPlaces.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_BaselineForTransition.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_No_AgreedChangeToHighNeedsPlaces.html">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_AgreedChangeToHighNeedsPlaces.html">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_BaselineForTransition.html">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+    <Content Include="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2425.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2425.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2526.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_MSS_Only_AS_2425.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_MSS_Only_AS_2526.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_StudentNumber_2526.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2324.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2425.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+	<Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2627.json">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+	<Content Include="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2627.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>	  
+	<Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2526.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2223.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2425.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2526.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2425.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2526.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2324.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2425.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>		
+	</Content>
+	<Content Include="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2324.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2324.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\PNA_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\PNA_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2425.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</Content>	  
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_MSS_Only.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="CSVResources\general-annual-grant_2021-to-2022_published-01-06-2021_wombourne-high-school.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FundingUiModels\Spreadsheet\LAREC_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_StudentNumber.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+	<Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2324.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+	<Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2425.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2122_DO_NOT_USE_YET.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2223.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\GAG_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AC_2223.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2223.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\NMSS_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\GAG_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_Mainstream.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.22.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.22" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.6.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.4" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="Pds.Core.CodeAnalysis.StyleCop" Version="2.0.0" />
+    <PackageReference Include="Pds.Core.Utils" Version="3.0.0" />
+    <PackageReference Include="Pds.Core.Web" Version="5.0.14" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="142.0.7444.17500" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PDS.ViewYourFunding.Automation\PDS.ViewYourFunding.Automation.csproj" />
+    <ProjectReference Include="..\PDS.ViewYourFunding.Core\PDS.ViewYourFunding.Core.csproj" />
+    <ProjectReference Include="..\PDS.ViewYourFunding.Services\PDS.ViewYourFunding.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.local.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>	  
+	</None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Academies_with_PhasedClosure.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Static_2425_Residential_Support_Scheme.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting_WithSparsity.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_SpecialExisting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostApril.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostSept.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_MainstreamExisting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_MainstreamExisting_WithSparsity.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_SpecialExisting.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Special_IYO_PostApril.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Special_IYO_PostSept.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Special_IYO_PostApril_Year2.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Adjustments_Show_None_0.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Adjustments_Show_None_null.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_BringTableUp_MathsTopUpAndTuitionFunding_Neg1.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_BringTableUp_MathsTopUpAndTuitionFunding_Neg2.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_BringTableUp_MathsTopUpAndTuitionFunding_Pos.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_NonSpecialAcca_HasValues.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_NonSpecialAcca_HasZero.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_SpecialAcca_HasValues.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndustryPlacements_SpecialAcca_HasZero.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Provider_Indicative_WithHighValueCourses.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_Provider_Indicative_WithoutHighValueCourses_2223.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IndicativeStatement.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Adjustments_Show_All.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Adjustments_Show_None.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_No_HighValueCoursesForSchoolAndCollegeLeavers_Post2122.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_WithDisadvantagedFunding_2223.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_with.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_AcademyConverterInYearOpener.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SpecialPost16.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SpecialAcademies.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_without.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_withFreeMealsLine.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_withHighValueCoursesForSchoolAndCollegeLeavers_And_SUP_AND_POG.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_TuitionFunding_Without_MathsTop.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_TuitionFunding_With_MathsTop.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Academies_with.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_FE_with.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Academies_without.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_FE_without.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_Show_None_0.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_Show_None_null.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_BringTableUp_MathsTopUpAndTuitionFunding_Neg1.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_BringTableUp_MathsTopUpAndTuitionFunding_Neg2.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_BringTableUp_MathsTopUpAndTuitionFunding_Pos.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_NonSpecialAcca_HasValues.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_NonSpecialAcca_HasZero.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_SpecialAcca_HasValues.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndustryPlacements_SpecialAcca_HasZero.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Provider_Indicative_WithHighValueCourses.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_Provider_Indicative_WithoutHighValueCourses_2223.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IndicativeStatement.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_Show_All.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_Show_None.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_No_HighValueCoursesForSchoolAndCollegeLeavers_Post2122.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_WithDisadvantagedFunding_2223.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_with.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_AcademyConverterInYearOpener.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SpecialPost16.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SpecialAcademies.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_without.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_withFreeMealsLine.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_withHighValueCoursesForSchoolAndCollegeLeavers_And_SUP_AND_POG.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_TuitionFunding_Without_MathsTop.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_TuitionFunding_With_MathsTop.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Academies_with.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_FE_with.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Academies_without.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_FE_without.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_LA_SixthForm_2526.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_SixthForm_Mss_2526.html">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>	  
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Mainstream_IYO_PostApril.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Mainstream_IYO_PostSept.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Special_IYO_PostApril_Year2.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_dual_census_no_threshold.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_dual_census_using_threshold.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_guaranteed_pupil_numbers.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_standard.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_threshold_used.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_dual_census_no_threshold.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_dual_census_using_threshold.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_free_schools.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_guaranteed_pupil_numbers.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_standard.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_threshold_used.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_dual_census_no_threshold.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_dual_census_using_threshold.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_free_schools.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_guaranteed_pupil_numbers.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_standard.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_threshold_used.html">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>	  
+  </ItemGroup>
+
+  <ItemGroup>
+	<Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\" />  
+    <Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\" />
+    <Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\" />
+    <Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\" />
+  </ItemGroup>
+
+</Project>

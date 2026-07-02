@@ -1,0 +1,35 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    string Text = Model.Title;
+
+    if (string.IsNullOrEmpty(Text))
+    {
+        var componentConfiguration = Model.ComponentConfiguration;
+
+        @if (Model.ComponentConfiguration.IsIndicativeFunding == true)
+        {
+            Text = $"Indicative {componentConfiguration.FundingStreamNameWithinSentence} ({componentConfiguration.FundingStreamCode}): {componentConfiguration.YearType} ({componentConfiguration.YearTypeCode}) "
+                + $" {componentConfiguration.Year1} to {componentConfiguration.Year2}";
+            <span class="govuk-accordion__heading-text-left-Loggedin">
+                @Html.Raw(Text)
+            </span>
+        }
+        else if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+        {
+            Text = $"{componentConfiguration.ExpandedFundingStreamNameHtml} ({componentConfiguration.FundingStreamCode}): {componentConfiguration.YearType} ({componentConfiguration.YearTypeCode}) "
+                + $" {componentConfiguration.Year1} to {componentConfiguration.Year2}";
+            <span class="govuk-accordion__heading-text-left-Loggedin">
+                @Html.Raw(Text)
+            </span>
+        }
+        else
+        {
+            Text = $"{componentConfiguration.ExpandedFundingStreamNameHtml}: {componentConfiguration.YearType}"
+                + $" {componentConfiguration.Year1} to {componentConfiguration.Year2}";
+            <span class="govuk-accordion__heading-text-left">
+                @Html.Raw(Text)
+            </span>
+        }
+    }
+}

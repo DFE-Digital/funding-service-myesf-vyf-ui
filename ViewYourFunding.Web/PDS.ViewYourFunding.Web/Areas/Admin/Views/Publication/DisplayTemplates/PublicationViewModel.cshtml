@@ -1,0 +1,163 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Helpers
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication.PublicationViewModel
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CutOffDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CutOffDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FundingPeriodCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FundingPeriodCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UIModelVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UIModelVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpreadsheetModelVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpreadsheetModelVersion)
+        </dd>
+
+    </dl>
+</div>
+
+<table class="govuk-table">
+    <caption class="govuk-table__caption tableCaption">Local Authority View</caption>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthoritySummaryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthorityFundingBreakdownLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthorityHistoryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthorityHistorySingleYearLayoutId)</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.LocalAuthoritySummaryLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.LocalAuthorityFundingBreakdownLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.LocalAuthorityHistoryLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.GetLayoutName(Model.LocalAuthorityHistorySingleYearLayoutId)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="govuk-table">
+    <caption class="govuk-table__caption tableCaption">Provider View</caption>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderSummaryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderFundingBreakdownLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderHistoryLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderHistorySingleYearLayoutId)</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.ProviderSummaryLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.ProviderFundingBreakdownLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.ProviderHistoryLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.GetLayoutName(Model.ProviderHistorySingleYearLayoutId)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="govuk-table">
+    <caption class="govuk-table__caption tableCaption">Spreadsheets</caption>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.LocalAuthoritySpreadsheetLayoutId)</th>
+            <th scope="col" class="govuk-table__header">@Html.LabelFor(model => model.ProviderSpreadsheetLayoutId)</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.LocalAuthoritySpreadsheetLayoutId)
+            </td>
+            <td class="govuk-table__cell">
+                @Model.LayoutUiModels.GetLayoutName(Model.ProviderSpreadsheetLayoutId)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@Html.HiddenFor(model => model.PublishedDateDay)
+@Html.HiddenFor(model => model.PublishedDateMonth)
+@Html.HiddenFor(model => model.PublishedDateYear)
+@Html.HiddenFor(model => model.Status)
+@Html.HiddenFor(model => model.CutOffDateDay)
+@Html.HiddenFor(model => model.CutOffDateMonth)
+@Html.HiddenFor(model => model.CutOffDateYear)
+@Html.HiddenFor(model => model.FundingPeriodCode)
+@Html.HiddenFor(model => model.Description)
+@Html.HiddenFor(model => model.UIModelVersion)
+@Html.HiddenFor(model => model.SpreadsheetModelVersion)
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.FundingStreamId)
+@Html.HiddenFor(model => model.FundingStreamName)
+@Html.HiddenFor(model => model.LocalAuthoritySummaryLayoutId)
+@Html.HiddenFor(model => model.LocalAuthorityFundingBreakdownLayoutId)
+@Html.HiddenFor(model => model.LocalAuthorityHistoryLayoutId)
+@Html.HiddenFor(model => model.LocalAuthorityHistorySingleYearLayoutId)
+@Html.HiddenFor(model => model.ProviderSummaryLayoutId)
+@Html.HiddenFor(model => model.ProviderHistoryLayoutId)
+@Html.HiddenFor(model => model.ProviderHistorySingleYearLayoutId)
+@Html.HiddenFor(model => model.ProviderFundingBreakdownLayoutId)
+@Html.HiddenFor(model => model.LocalAuthoritySpreadsheetLayoutId)
+@Html.HiddenFor(model => model.ProviderSpreadsheetLayoutId)

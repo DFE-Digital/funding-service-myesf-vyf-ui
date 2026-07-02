@@ -1,0 +1,9 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var type = Model.ComponentConfiguration.IsLatestOrFinalFundingForYear ? 
+        ComponentType.Tag_Latest : ComponentType.Tag_NotLatest;
+    await ComponentHelper.Render(Html, type, Model, Model.PageData);
+}

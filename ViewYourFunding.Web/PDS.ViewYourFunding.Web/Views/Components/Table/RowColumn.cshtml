@@ -1,0 +1,51 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var tElement = Model;
+
+    if (string.IsNullOrEmpty(tElement.SubType))
+    {
+        tElement.SubType = "td";
+    }
+
+    if (tElement.UseDefaultClasses && tElement.SubType.Equals("td", StringComparison.InvariantCultureIgnoreCase))
+    {
+       
+        if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+        {
+            tElement.ClassNames.Insert(0, "govuk-table__cell-loggedin");
+            tElement.ClassNames.Insert(1, "govuk-table__cell--numeric");
+        }
+        else {
+            tElement.ClassNames.Insert(0, "govuk-table__cell");
+            tElement.ClassNames.Insert(1, "govuk-table__cell--numeric");
+            tElement.ClassNames.Insert(2, "govuk-!-width-one-quarter");
+        }
+    }
+
+    var avoidPageBreaks = Model.Attributes.ContainsKey("avoidPageBreaks") && (bool)Model.Attributes["avoidPageBreaks"];
+
+    if (avoidPageBreaks)
+    {
+        Model.Attributes.Remove("avoidPageBreaks");
+
+        var div = Model.Clone();
+        div.Type = ComponentType.Html_Div;
+        div.ClassNames?.Clear();
+
+        if (div.Attributes.ContainsKey("style"))
+        {
+            div.Attributes.Remove("style");
+        }
+
+        div.Attributes.Add("style", "page-break-inside: avoid;");
+
+        tElement.ClearTitleAndValues();
+        tElement.Components.Clear();
+        tElement.Components.Add(div);
+    }
+
+    await ComponentHelper.Render(Html, ComponentType.Html_Element, tElement, tElement.PageData);
+}

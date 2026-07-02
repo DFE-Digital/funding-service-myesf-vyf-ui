@@ -1,0 +1,159 @@
+{
+  "name": "PSG provider funding breakdown",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithDate",
+      "value": "@publicationdate-dd_MMMM_yyyy",
+      "groups": [
+        {
+          "type": "Tag/LatestNotLatest"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group",
+      "groups": [
+        {
+          "type": "Heading/FundingHeader",
+          "id": "allocation-amount",
+          "title": "Total allocation for @yearTypeName @year1 to @year2",
+          "selector": "$.totalValue"
+        }
+      ]
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-group zero-bottom-padding",
+      "groups": [
+        {
+          "type": "Block/DownloadADocument"
+        }
+      ]
+    },
+    {
+      "type": "Table/Table",
+      "classname": "funding-breakdown-pesg",
+      "title": "Showing PE and sport premium for '@providerName'",
+      "visuallyhidden": true,
+      "groups": [
+        {
+          "type": "Table/Columns",
+          "groups": [
+            {
+              "type": "Table/Column",
+              "title": "Local authority code",
+              "classname": "govuk-table__header",
+              "useDefaultClasses": false
+            },
+            {
+              "type": "Table/Column",
+              "title": "Local authority name",
+              "classname": "govuk-table__header",
+              "useDefaultClasses": false
+            },
+            {
+              "type": "Table/Column",
+              "title": "Local authority establishment number (at @asofmonth @asofyear)",
+              "classname": "govuk-table__header",
+              "useDefaultClasses": false
+            },
+            {
+              "type": "Table/Column",
+              "title": "School name (at @asofmonth @asofyear)",
+              "classname": "govuk-table__header",
+              "useDefaultClasses": false
+            },
+            {
+              "type": "Table/Column",
+              "title": "Total allocation",
+              "classname": "govuk-table__header",
+              "useDefaultClasses": false
+            }
+          ]
+        },
+        {
+          "type": "Table/Rows",
+          "groups": [
+            {
+              "type": "Table/Row",
+              "title": "Unit of funding",
+              "groups": [
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@laCode",
+                  "classname": "table-header-normal",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@localAuthorityName",
+                  "classname": "table-header-normal",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "expression": "@providerEstablishmentNumber",
+                  "classname": "table-header-normal",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "title": "@providerName",
+                  "classname": "table-header-normal",
+                  "useDefaultClasses": false
+                },
+                {
+                  "type": "Table/RowColumn",
+                  "selector": "$.totalValue",
+                  "classname": "table-header-normal",
+                  "useDefaultClasses": false,
+                  "datastyle": {
+                    "numberFormat": "GBCurrencyWithoutTrailingZeroes"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Block/AllocationHistory"
+    },
+    {
+      "type": "Html/Div",
+      "classname": "form-block",
+      "groups": [
+        {
+          "type": "Heading/Small",
+          "title": "General @shortFundingStreamNameHtml resources",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list",
+          "groups": [
+            {
+              "type": "General/ExternalLink",
+              "title": "PE and sport premium: conditions of grant @year1 to @year2",
+              "value": "https://www.gov.uk/government/publications/pe-and-sport-premium-conditions-of-grant-@year1-to-@year2"
+            },
+            {
+              "type": "General/ExternalLink",
+              "title": "PE and sport premium for primary schools",
+              "value": "https://www.gov.uk/guidance/pe-and-sport-premium-for-primary-schools"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

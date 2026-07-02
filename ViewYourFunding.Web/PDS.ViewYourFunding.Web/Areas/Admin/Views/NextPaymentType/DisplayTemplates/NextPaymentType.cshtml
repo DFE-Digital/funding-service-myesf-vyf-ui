@@ -1,0 +1,28 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPaymentType.NextPaymentType
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+       
+
+    </dl>
+</div>
+
+@Html.HiddenFor(model => model.Description)
+@Html.HiddenFor(model => model.TypeCode)
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.FundingStreamId)

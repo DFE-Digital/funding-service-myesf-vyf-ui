@@ -1,0 +1,36 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.BusinessAllocationsManagementHomeViewModel
+
+<h1 class="govuk-heading-xl">Manage allocations data</h1>
+
+<table class="touch-table">
+    <tr>
+        <td>
+          @Html.RouteLink("Request data", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminRunFeedReader, null, new { @class="strong"}) 
+            <br />
+           <span class="content"> Request allocations data from Calculate Funding Service (CFS)</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.RouteLink("Check status", ViewYourFundingConstants.RouteName_BusinessAllocationsFeedReaderLastRun, null, new { @class="strong"})  
+            <br />
+           <span class="content"> Check the status of the most recent data requests from CFS</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.RouteLink("Compare statements", ViewYourFundingConstants.RouteName_BusinessAllocationsRunPdfComparison, null, new { @class="strong"})  
+            <br />
+           <span class="content"> Compare allocation statements between production and pre-production</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.RouteLink("Search provider data", ViewYourFundingConstants.RouteName_BusinessAllocationsSelectFundingStream, null, new { @class="strong"})  
+            <br />
+           <span class="content"> Validate the data from CFS being used to create allocation statements</span>
+        </td>
+    </tr>
+</table>

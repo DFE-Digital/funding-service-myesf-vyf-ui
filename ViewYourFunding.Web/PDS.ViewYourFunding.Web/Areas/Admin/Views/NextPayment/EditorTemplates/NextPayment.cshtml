@@ -1,0 +1,56 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment.NextPayment
+
+    <div class="form-horizontal">
+        <div class="form-group required">
+            @Html.LabelFor(model => model.NextPaymentDate, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="group gds-datepicker">
+                @Html.ValidationMessageFor(model => model.NextPaymentDateDay, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.NextPaymentDateMonth, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.NextPaymentDateYear, "", new { @class = "text-danger" })
+                <div class="form-group-day">
+                    <label class="form-label">
+                        Day
+                        @Html.EditorFor(model => model.NextPaymentDateDay, new { htmlAttributes = new { @class = "form-control" } })
+                    </label>
+                </div>
+                <div class="form-group-month">
+                    <label class="form-label">
+                        Month
+                        @Html.EditorFor(model => model.NextPaymentDateMonth, new { htmlAttributes = new { @class = "form-control" } })
+
+                    </label>
+                </div>
+                <div class="form-group-year">
+                    <label class="form-label">
+                        Year
+                        @Html.EditorFor(model => model.NextPaymentDateYear, new { htmlAttributes = new { @class = "form-control" } })
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.NextPaymentDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NextPaymentTypeId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.NextPaymentTypeId, Model.NextPaymentTypes, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group required">
+            @Html.LabelFor(model => model.FundingPeriodCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FundingPeriodCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FundingPeriodCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group required">
+            @Html.LabelFor(model => model.Active, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.Active, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.FundingStreamId)

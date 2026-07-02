@@ -1,0 +1,234 @@
+﻿/* Filters */
+.gds-multiple-choice {
+    padding: 0 0 0 30px;
+    float: none;
+}
+
+.myesf-filter-group {
+    padding-bottom: 20px;
+}
+
+    .myesf-filter-group h2 {
+        font-size: 19px;
+        font-weight: 700;
+        padding: 0 0 10px 0;
+        background: none;
+    }
+
+    .myesf-filter-group:last-child {
+        padding-bottom: 0;
+    }
+
+.date-filter {
+    max-height: none;
+}
+
+.date-filter-input {
+    background: none;
+    padding: 0px 0px 20px 0px;
+}
+
+    .date-filter-input h2 {
+        background: none;
+        padding: 0px 0px 5px 0px;
+    }
+
+.date-filter-form-group {
+    margin-bottom: 0px;
+}
+
+.date-filter-input-item {
+    display: inline-block;
+    padding: 0px 15px 0px 0px;
+}
+
+    .date-filter-input-item input {
+        background-image: none;
+        box-sizing: content-box;
+        width: 100%;
+    }
+
+.date-filter-input-item-width-2 {
+    max-width: 5.4ex;
+}
+
+.date-filter-input-item-width-4 {
+    max-width: 9ex;
+}
+
+.text-filter-input {
+    display: inline-block;
+    padding: 10px 0px 20px 0px;
+}
+
+.text-filter-input-validation-invalid {
+    border-left: 5px solid #d4351c;
+    padding-left: 10px;
+}
+
+.text-filter-value-input {
+    background-image: none !important;
+    box-sizing: border-box;
+    width: 100%;
+    border-color: grey;
+    border-width: 2px;
+}
+
+.date-filter-input h3 {
+    background: none;
+    color: #505a5f;
+    padding: 0px 0px 5px 0px;
+}
+
+.text-filter-hint {
+    background: none;
+    color: #505a5f;
+    padding: 0px 0px 5px 0px;
+    font-size: 16px;
+}
+
+.text-filter-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-button, .filter-button:focus {
+    color: #0b0c0c;
+    background-color: #f3f2f1;
+    box-shadow: 0 2px 0 #929191;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .filter-button:hover {
+        color: #0b0c0c;
+        background-color: #dbdad9;
+        box-shadow: 0 2px 0 #929191;
+    }
+
+.delete-button, .delete-button:focus {
+    color: #fff;
+    background-color: #f21b30;
+    box-shadow: 0 2px 0 #929191;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+    .delete-button:hover {
+        color: #fff;
+        background-color: #c21526;
+        box-shadow: 0 2px 0 #929191;
+    }
+
+link-button {
+    font-family: "Verdana" sans-serif;
+    font-size: 1em;
+    text-align: left;
+    color: blue;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+    link-button span {
+        text-decoration: underline;
+    }
+
+    link-button:hover span,
+    link-button:focus span {
+        color: black;
+    }
+
+.input-error {
+    border: 2px solid #d4351c;
+}
+
+.error-message {
+    display: none;
+}
+
+.error-message-visible {
+    color: #d4351c;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.gds-multiple-choice [type=radio] + label::before {
+    content: "";
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+}
+
+.gds-multiple-choice [type=radio] + label::after {
+    top: 5px;
+    left: 5px;
+    border-width: 5px;
+}
+
+.text-filter-clear {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.date-filter-clear {
+    display: inline-block;
+    margin-top: 15px;
+}
+/* END Filters */
+
+/* Tables*/
+.table-header-width-one-quarter {
+    width: 25%;
+}
+
+.table-header-width-one-third {
+    width: 33.33%;
+}
+
+.table-header-width-one-half {
+    width: 50%;
+}
+/* END Tables*/
+
+.link-text {
+    color: #005ea5;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.table-layout-row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+}
+
+.table-layout-column-border {
+    border: 2px groove;
+    padding: 5px;
+    max-height: 500px;
+}
+
+.table-layout-column{
+    display: table-cell;
+}
+
+.scroll-content-column {
+    overflow-x: scroll;
+}
+
+.form-group-text-input {
+    display: block;
+    margin-block-end: 20px;
+}
+
+    .form-group-text-input label {
+        display: block;
+        font-weight: bold
+    }

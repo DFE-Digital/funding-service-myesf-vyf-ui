@@ -1,0 +1,59 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.BusinessAllocationsConfirmationViewModel
+
+@switch (Model.BusinessAllocationsAction)
+{
+    case BusinessAllocationsAction.RunFeedReader:
+        <div class="govuk-box-highlight @(Model.Success ? "govuk-box-highlight-pass" :"govuk-box-highlight-fail")">
+            <h1 class="bold-large">Your request for the latest allocations data for @Model.FundingStreamCodeAndPeriodCode has @(Model.Success ? "" :" not ") been submitted.</h1>
+            <p>Submitted by @Model.CurrentUser?.FullName @(DateTime.Now.ToString("dd MMM yyyy") ) at @(DateTime.Now.ToString("hh:mm tt") )</p>
+        </div>
+
+        <div id="signed-success-section">
+            <div>
+                <div>
+                    <h2 class="heading-medium">What happens next?</h2>
+                    @if (Model.Success)
+                    {
+                        <p>Your allocation statements will start to be created when your request has been successful.</p>
+                        <p>You can @Html.RouteLink("check the status", ViewYourFundingConstants.RouteName_BusinessAllocationsFeedReaderLastRun) of your request.</p>
+                    }
+                    else
+                    {
+                        <p>Please @Html.RouteLink("try again",ViewYourFundingConstants.RouteName_BusinessAllocationsAdminRunFeedReader).</p>
+                        <p>If you continue to experience problems, please raise a query on <a href="@Model.ContactUsLink" title="Service Now">Service Now</a>.</p>
+                    }
+                    <p>@Html.RouteLink("Back to manage allocations data", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminHome) </p>
+                </div>
+            </div>
+        </div>
+        break;
+    case BusinessAllocationsAction.PdfComparison:
+
+        <div class="govuk-box-highlight @(Model.Success ? "govuk-box-highlight-pass" :"govuk-box-highlight-fail")">
+            <h1 class="bold-large">Your request to run a comparison check for @Model.FundingStreamCodeAndPeriodCode has @(Model.Success ? "" :" not ") been submitted.</h1>
+            <p>Submitted by @Model.CurrentUser?.FullName @(DateTime.Now.ToString("dd MMM yyyy") ) at @(DateTime.Now.ToString("hh:mm tt") )</p>
+        </div>
+
+        <div id="signed-success-section">
+            <div>
+                <div>
+                    <h2 class="heading-medium">What happens next?</h2>
+                    @if (Model.Success)
+                    {
+                        <p>A CSV file showing the results of your check will be available soon in the source folder you specified.</p>
+                    }
+                    else
+                    {
+                        <p>Please @Html.RouteLink("try again",ViewYourFundingConstants.RouteName_BusinessAllocationsRunPdfComparison).</p>
+                        <p>If you continue to experience problems, please raise a query on <a href="@Model.ContactUsLink" title="Service Now">Service Now</a>.</p>
+                    }
+                    <p>@Html.RouteLink("Back to manage allocations data", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminHome) </p>
+                </div>
+            </div>
+        </div>
+        break;
+    default:
+        throw new ArgumentOutOfRangeException();
+}

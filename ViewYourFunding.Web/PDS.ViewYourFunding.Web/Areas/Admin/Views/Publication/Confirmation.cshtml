@@ -1,0 +1,91 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication.PublicationActionViewModel
+@if (Model.ChangesSaved)
+{
+    var submittedOnText = Model.ActionMode != ActionMode.Delete ? "on " + Model.SubmittedAtDisplayDate : string.Empty;
+
+    <div class="govuk-box-highlight">
+        @switch (Model.ActionMode)
+        {
+            case ActionMode.Delete:
+                <h1 class="bold-large">@Model.FundingStreamName Publication has been deleted successfully</h1>
+
+                break;
+            case ActionMode.Add:
+                <h1 class="bold-large">@Model.FundingStreamName Publication has been added successfully</h1>
+                break;
+            case ActionMode.Edit:
+                <h1 class="bold-large">@Model.FundingStreamName Publication has been updated successfully</h1>
+                break;
+            case ActionMode.GenerateSpreadSheet:
+                <h1 class="bold-large">The spreadsheet has been requested for the @Model.FundingStreamName Publication</h1>
+                break;
+        }
+
+        @if (Model.ActionMode != ActionMode.GenerateSpreadSheet)
+        {
+            <br />
+            <p id="submission-details">Submitted by @Model.CurrentUser?.FullName on @submittedOnText</p>
+        }
+    </div>
+
+    if (Model.ActionMode == ActionMode.GenerateSpreadSheet)
+    {
+        <script>
+            var fundingStreamCode = "@Model.FundingStreamCode";
+            var fundingPeriodCode = "@Model.FundingPublication.FundingPeriodCode";
+            var publishedDate = "@Model.FundingPublication.PublishedDate.ToString("dd-MM-yyyy")";
+        </script>
+        <environment names="Development">
+            <script src="~/Scripts/publicationConfirmation.js" type="text/javascript"></script>
+        </environment>
+        <environment names="Staging,Production">
+            <script src="~/js/publicationconfirmation.min.js" asp-file-version="true" type="text/javascript"></script>
+        </environment>
+        <dl>
+            <dt>Status:</dt>
+            <dd id="status">Generating</dd>
+            <dt>Last checked:</dt>
+            <dd id="updated">@DateTime.Now.ToString()</dd>
+        </dl>
+    }
+}
+else
+{
+    <div>
+        @switch (Model.ActionMode)
+        {
+            case ActionMode.Delete:
+                <h1 class="bold-large">There was a problem deleting the @Model.FundingStreamName Publication.</h1>
+
+                break;
+            case ActionMode.Add:
+                <h1 class="bold-large">There was a problem adding the @Model.FundingStreamName Publication.</h1>
+                break;
+            case ActionMode.GenerateSpreadSheet:
+                <h1 class="bold-large">There was a problem generating a spreadsheet for the @Model.FundingStreamName Publication.</h1>
+                break;
+            default:
+                <h1 class="bold-large">There was a problem updating the @Model.FundingStreamName Publication.</h1>
+                break;
+        }
+    </div>
+}
+
+
+<div id="signed-success-section" class="column-two-thirds">
+    <div>
+        <div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view the @Model.FundingStreamName settings.</p>
+            <p>@Html.RouteLink(string.Format("Go to the {0} funding stream page", Model.FundingStreamName), ViewYourFundingConstants.RouteName_AdminSettingsFundingStream, new { Model.FundingStreamId }) </p>
+        </div>
+        <div>
+            <p class="bold-small">
+                Or you may want to:
+            </p>
+            <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminSettingsHome) </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var htmlTag = Model.SubType?.ToLower();
+
+    if (string.IsNullOrEmpty(htmlTag))
+    {
+        throw new Exception("Html tag not set");
+    }
+
+    var htmlOpenTagSb = new System.Text.StringBuilder($"<{htmlTag}");
+    var attributes = Model.Attributes?.ToDictionary(entry => entry.Key, entry => entry.Value) ?? new Dictionary<string, object>();
+
+    if (Model.ClassNames?.Any() == true)
+    {
+        var classesString = string.Join(" ", Model.ClassNames.ToArray());
+        attributes.Add("class", classesString);
+    }
+
+    if (attributes.Any())
+    {
+        foreach (var attribute in attributes)
+        {
+            htmlOpenTagSb.Append($" {attribute.Key}=\"{attribute.Value}\"");
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.Id))
+    {
+        htmlOpenTagSb.Append($" id=\"{Model.Id}\"");
+    }
+
+    htmlOpenTagSb.Append(">");
+
+    var htmlOpenTag = htmlOpenTagSb.ToString();
+    var htmlCloseTag = $"</{htmlTag}>";
+
+    if (htmlTag == "br")
+    {
+        htmlCloseTag = string.Empty;
+    }
+}
+@Html.Raw(htmlOpenTag)@{
+    await ComponentHelper.Render(Html, ComponentType.General_Literal, Model, Model.PageData);
+    await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+    @if (Model.EnableVariance && !Model.HideVarianceValue)
+    {
+        if (Model.SubType.Equals("td", StringComparison.InvariantCultureIgnoreCase))
+        {
+            <br />
+        }
+        await ComponentHelper.Render(Html, ComponentType.DesignComponents_Variance, Model, Model.PageData);
+    }
+}@Html.Raw(htmlCloseTag)

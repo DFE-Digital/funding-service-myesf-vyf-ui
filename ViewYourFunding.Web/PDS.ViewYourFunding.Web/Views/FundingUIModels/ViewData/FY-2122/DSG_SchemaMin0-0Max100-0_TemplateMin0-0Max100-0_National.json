@@ -1,0 +1,268 @@
+{
+  "name": "@fundingStreamName national funding allocation",
+  "type": "Page",
+  "groups": [
+    {
+      "type": "Html/Div",
+      "classname": "govuk-grid-row",
+      "groups": [
+        {
+          "type": "Html/Div",
+          "classname": "column-two-thirds",
+          "groups": [
+            {
+              "type": "Html/Element",
+              "subtype": "H1",
+              "value": "@expandedFundingStreamNameHtml @year1 to @year2",
+              "classname": "heading-xlarge public"
+            },
+            {
+              "type": "Html/Paragraph",
+              "classname": "lede",
+              "title": "Find out about @shortFundingStreamNameHtml funding allocations for local authorities for @yearTypeName @year1 to @year2."
+            },
+            {
+              "type": "Heading/Medium",
+              "title": "Allocations",
+              "classname": "heading-medium heading-guidance"
+            },
+            {
+              "type": "General/Repeater",
+              "expression": "@Spreadsheets",
+              "groups": [
+                {
+                  "type": "Block/DownloadADocument",
+                  "title": "Download @shortFundingStreamNameHtml allocations for all local authorities and regions @year1 to @year2",
+                  "value": "@RepeaterItem",
+                  "variables": [
+                    {
+                      "name": "showPublicationDate",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "form-block",
+              "groups": [
+                {
+                  "type": "Heading/Small",
+                  "title": "General @fundingStreamCode resources",
+                  "classname": "heading-medium heading-guidance"
+                },
+                {
+                  "type": "Html/Element",
+                  "subtype": "ul",
+                  "classname": "list",
+                  "groups": [
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "id": "guidance-link",
+                      "title": "Get more general guidance on ",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@fundingStreamCode: @year1 to @year2.",
+                          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@year1-to-@year2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Html/Div",
+              "classname": "form-block",
+              "groups": [
+                {
+                  "type": "Heading/Small",
+                  "title": "Detailed funding block resources",
+                  "classname": "heading-medium heading-guidance"
+                },
+                {
+                  "type": "Html/Element",
+                  "subtype": "ul",
+                  "classname": "list",
+                  "id": "funding-block-resources",
+                  "groups": [
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "Early years national funding formula: funding rates and guidance",
+                          "value": "https://www.gov.uk/government/publications/early-years-funding-@year1-@year2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "High needs funding arrangements: @year1 to @year2",
+                          "value": "https://www.gov.uk/government/publications/high-needs-funding-arrangements-@year1-to-@year2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "National funding formula tables for schools and high needs: @year1 to @year2",
+                          "value": "https://www.gov.uk/government/publications/national-funding-formula-tables-for-schools-and-high-needs-@year1-to-@year2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Html/Element",
+                      "subtype": "li",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "Pre-16 schools funding: guidance for @year1 to @year2",
+                          "value": "https://www.gov.uk/government/publications/pre-16-schools-funding-local-authority-guidance-for-@year1-to-@year2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Html/Div",
+          "classname": "one-third",
+          "groups": [
+            {
+              "type": "Html/Div",
+              "classname": "related-container",
+              "groups": [
+                {
+                  "type": "Html/Element",
+                  "subtype": "Aside",
+                  "classname": "related",
+                  "id": "related",
+                  "groups": [
+                    {
+                      "type": "Html/Div",
+                      "classname": "inner group related-subsection",
+                      "groups": [
+                        {
+                          "type": "Conditional/Condition",
+                          "expression": "@(FutureYears.Count)>0",
+                          "groups": [
+                            {
+                              "type": "Conditional/TrueOutput",
+                              "groups": [
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "H2",
+                                  "id": "parent-subsection--1",
+                                  "title": "Latest funding allocations"
+                                },
+                                {
+                                  "type": "Html/Element",
+                                  "subtype": "ul",
+                                  "classname": "list",
+                                  "groups": [
+                                    {
+                                      "type": "General/Repeater",
+                                      "expression": "@FutureYears",
+                                      "groups": [
+                                        {
+                                          "type": "Html/Element",
+                                          "subtype": "li",
+                                          "groups": [
+                                            {
+                                              "type": "General/StandardLink",
+                                              "title": "@shortFundingStreamNameHtml: @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                              "classname": "related-links",
+                                              "value": "@basePath/national-funding-allocations/@fundingStreamCode/@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Html/Element",
+                          "subtype": "H2",
+                          "id": "parent-subsection-0",
+                          "title": "Historic funding allocations"
+                        },
+                        {
+                          "type": "Html/Element",
+                          "subtype": "Nav role=\"navigation\" aria-labelledby=\"parent-subsection-0\"",
+                          "groups": [
+                            {
+                              "type": "Html/Element",
+                              "subtype": "ul",
+                              "classname": "list",
+                              "groups": [
+                                {
+                                  "type": "General/Repeater",
+                                  "expression": "@CurrentYearsBeforeThisYear",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "groups": [
+                                        {
+                                          "type": "General/StandardLink",
+                                          "title": "@shortFundingStreamNameHtml: @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                          "classname": "related-links",
+                                          "value": "@basePath/national-funding-allocations/@fundingStreamCode/@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "General/Repeater",
+                                  "expression": "@HistoricYears",
+                                  "groups": [
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "li",
+                                      "groups": [
+                                        {
+                                          "type": "General/ExternalLink",
+                                          "title": "@shortFundingStreamNameHtml: @(RepeaterItem.Item1) to @(RepeaterItem.Item2)",
+                                          "classname": "related-links",
+                                          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-@fundingStreamCodeLowercase-@(RepeaterItem.Item1)-to-@(RepeaterItem.Item2)"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

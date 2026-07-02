@@ -1,0 +1,32 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.RunFeedReaderViewModel
+@{ var booleanSelectList = new[]
+      {
+       new SelectListItem {Value = "true", Text = "Yes"},
+       new SelectListItem {Value = "false", Text = "No"}
+   };
+}
+<h1 class="govuk-heading-xl">Request allocations data</h1>
+@Html.ValidationMessageFor(model => model.FundingStreamCodes, "", new { @class = "text-danger" })
+
+<p>Choose funding @(Model.FundingStreamCodesSource.Count() > 1 ? "streams" : "stream")</p>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_BusinessAllocationsFeedReaderLastRun, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-group">
+        <ul class="col-md-12">
+            @foreach (var fundingStreamCode in Model.FundingStreamCodesSource)
+            {
+                <li class="multiple-choice">   
+                    <input class="form-check-input" type="checkbox" value="@fundingStreamCode.Value" name="fundingStreamCodes" id="check-@fundingStreamCode.Value">          
+                    <label class="block" for="check-@fundingStreamCode.Value">@fundingStreamCode.Text</label>
+                </li>
+            }
+        </ul>
+    </div>
+    <input type="submit" class="button" value="Continue" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_BusinessAllocationsAdminHome)
+}

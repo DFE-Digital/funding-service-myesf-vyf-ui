@@ -1,0 +1,17 @@
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.Home.Tiles.Interfaces.ITile
+
+<li class="service-transaction">
+    <div class="column-third margin-top">
+        <a id="@Model.Id" class="dashboard-links" href=@Model.Href>
+            <span id="@Model.Id-service" class="service-name">@Model.HeadingText</span>
+            @if (Model.HasAlert())
+            {
+                <span id="@Model.Id-alert" class="alert alert-name-red">@Model.Alert.AlertText</span>
+            }
+            else
+            {
+                <span id="@Model.Id-alert" class="alert alert-name-@Model.ClassName">@Model.BodyText</span>
+            }
+        </a>
+    </div>
+</li>

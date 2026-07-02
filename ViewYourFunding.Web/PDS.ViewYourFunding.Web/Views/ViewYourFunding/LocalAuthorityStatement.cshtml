@@ -1,0 +1,34 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.LocalAuthorityStatementViewModel
+
+@{
+    var instanceNumber = 1;
+}
+<div class="form-group">
+    <h1 class="heading-xlarge">@Model.ContentTitle</h1>
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+        @foreach (var fundingStreamCode in Model.FundingViewData.Keys)
+        {
+            var fundingStreamData = Model.FundingViewData[fundingStreamCode];
+            var header = fundingStreamData.Components?.SingleOrDefault(c => c.Type == ComponentType.Accordion_Button);
+            var body = fundingStreamData.Components?.SingleOrDefault(c => c.Type == ComponentType.Accordion_Panel);
+            var sharedData = fundingStreamData.Components.FirstOrDefault()?.PageData;
+
+            var data = sharedData != null ? sharedData.ToDictionary(entry => entry.Key, entry => entry.Value) : new Dictionary<string, object>();
+            data.Add("AccordionInstanceNumber", instanceNumber++);
+
+            <div class="govuk-accordion__section">
+                @{
+                    await header.Render(Html, data);
+                    await body.Render(Html, data);
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@await Html.PartialAsync("Partial/_AlternativeFunding")
+
+@section vyfScripts{ @Html.PageScripts() }

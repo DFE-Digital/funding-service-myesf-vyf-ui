@@ -1,0 +1,21 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var parentType = ComponentHelper.GetGroupParent(Model.OriginalGroup, Model.ComponentConfiguration.OriginalModel.ToUiModelGroup())?.Type;
+    var outerTag = parentType == ComponentType.Table_Row.ToString().Replace("_", "/") ? "td" : "div";
+
+    @Html.Raw("<" + outerTag + " style='background-color: orange'>")
+    <span>(<strong><i>Switch '@Model.OriginalGroup.Expression'</i></strong>)</span>
+
+    foreach (var component in Model.Components)
+    {
+        <div style="margin-left: 30px">
+            <strong>case '@component.Id':</strong>
+            <div style="margin-left: 30px">
+                @{ await component.Render(Html, Model.PageData); }
+            </div>
+        </div>
+    }
+}

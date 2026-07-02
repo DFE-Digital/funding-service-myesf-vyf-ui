@@ -1,0 +1,19 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    Model.Title = "Not latest";    
+
+    @if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+    {
+        Model.ClassNames.Add("govuk-LoggedIn-notlatest");
+    }
+    else
+    {
+        Model.ClassNames.Add("govuk-tag-secondary-heading");
+        Model.ClassNames.Add("govuk-bggrey");
+    }
+
+    await ComponentHelper.Render(Html, ComponentType.Tag_Tag, Model, Model.PageData);
+}

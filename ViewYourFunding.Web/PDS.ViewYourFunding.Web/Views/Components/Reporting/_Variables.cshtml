@@ -1,0 +1,60 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var outputSb = new System.Text.StringBuilder();
+
+    var configuration = Model.ComponentConfiguration;
+    var originalModel = configuration.OriginalModel;
+    var variables = originalModel.Variables;
+    var count = 0;
+
+    outputSb.Append("<h2>Variables</h2>");
+
+    outputSb.Append("<table style='width: 100%' class='debugOutputTable'>");
+    outputSb.Append("<thead><tr>");
+    outputSb.Append("<td style='width: 10%'>Name</td>");
+    outputSb.Append("<td style='width: 10%'>Never show</td>");
+    outputSb.Append("<td style='width: 20%'>Value</td>");
+    outputSb.Append("<td style='width: 20%'>Selector</td>");
+    outputSb.Append("<td style='width: 20%'>Expression</td>");
+
+    if (configuration.ShowData)
+    {
+        outputSb.Append("<td style='width: 20%'>Evaluated result</td>");
+    }
+
+    outputSb.Append("</tr></thead><tbody>");
+
+    if (variables != null)
+    {
+        foreach (var variable in variables)
+        {
+            if (string.IsNullOrEmpty(variable?.Name))
+            {
+                continue;
+            }
+
+            var evaluatedVariable = configuration.Variables[variable.Name]?.ToString();
+            var bgColor = (count++ % 2) == 0 ? "#FFF" : "#DDD";
+
+            outputSb.AppendLine($"<tr style='background-color: {bgColor}'>");
+            outputSb.AppendLine($"<td>{variable.Name}</td><td>{variable.NeverShowSelector}</td><td>{variable.Value ?? "--"}</td><td>{variable.Selector ?? "--"}</td>");
+            outputSb.AppendLine($"<td>{variable.Expression ?? "--"}</td>");
+            outputSb.AppendLine($"<td>{evaluatedVariable ?? "--"}</td>");
+            outputSb.AppendLine("</tr>");
+        }
+    }
+
+    foreach (var variable in configuration.ConstantDefinedVariables)
+    {
+        var bgColor = (count++ % 2) == 0 ? "#FFF" : "#DDD";
+
+        outputSb.AppendLine($"<tr style='background-color: {bgColor}'>");
+        outputSb.AppendLine($"<td>{variable.Key}</td><td>--</td><td>--</td><td>--</td><td>--</td><td>{variable.Value ?? "--"}</td>");
+        outputSb.AppendLine("</tr>");
+    }
+
+    outputSb.Append("</tbody></table>");
+}
+
+@Html.Raw(outputSb.ToString())

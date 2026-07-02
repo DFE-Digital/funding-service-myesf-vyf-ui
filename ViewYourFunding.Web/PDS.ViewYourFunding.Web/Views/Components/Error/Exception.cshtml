@@ -1,0 +1,16 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // Important that this uses unevaluated values, so that we don't get into a loop if some replacement fails.
+    var value = Model.UnevaluatedValues?.FirstOrDefault();
+
+    var exception = value != null ? (Exception)value : null;
+    var exceptionString = exception?.ToString();
+
+    // Unevaluated by design
+    Model.UnevaluatedTitle = exceptionString.Replace("\n", "<br />");
+
+    await ComponentHelper.Render(Html, ComponentType.Error_Error, Model, Model.PageData);
+}

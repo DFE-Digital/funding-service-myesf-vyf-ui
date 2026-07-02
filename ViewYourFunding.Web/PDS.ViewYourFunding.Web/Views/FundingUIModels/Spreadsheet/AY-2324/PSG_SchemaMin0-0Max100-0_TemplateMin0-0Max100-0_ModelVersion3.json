@@ -1,0 +1,736 @@
+{
+  "name": "PE + Sports Spreadsheet April 2023",
+  "type": "spreadsheet",
+  "__COMMENT__": "This spreadsheet layout is for PSG April 2023. Omit Cumbria LA - 909 in spreadsheet data as it is splitting into two new LAs",
+  "classes": {
+    "borderBottom": {
+      "style": {
+        "borders": [
+          {
+            "edge": "BottomBorder"
+          }
+        ],
+        "widthInches": 1.0
+      }
+    },
+    "tallHeader": {
+      "style": {
+        "heightInches": 1
+      }
+    },
+    "mediumHeader": {
+      "style": {
+        "heightInches": 0.6
+      }
+    },
+    "mediumHeightRow": {
+      "style": {
+        "heightInches": 0.5
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "contents",
+      "title": "Contents",
+      "__COMMENT__": "The reason the below has a data set is so it can control if the 'Closures' text shows or not",
+      "dataset": [
+        {
+          "groupingType": "all",
+          "orderBy": "OrganisationDfeNumber",
+          "datasetName": "providerFunding",
+          "expression": "ProviderStatus=Closed&GroupingReason=Information&CloseReason=Closure"
+        }
+      ],
+      "groups": [
+        {
+          "title": "LA (maintained only)",
+          "style": {
+            "widthInches": 3.0
+          },
+          "classname": "mediumHeightRow",
+          "detail": [
+            {
+              "title": "Maintained Schools",
+              "classname": "mediumHeightRow"
+            },
+            {
+              "title": "Academies",
+              "classname": "mediumHeightRow"
+            },
+            {
+              "title": "NMSS",
+              "classname": "mediumHeightRow"
+            },
+            {
+              "title": "LA (all schools)",
+              "classname": "mediumHeightRow"
+            },
+            {
+              "title": "Closures",
+              "classname": "mediumHeightRow",
+              "onlyshowifdata": true
+            }
+          ]
+        },
+        {
+          "title": "This summarises the total amount paid in October/February and April to each local authority for their maintained schools (not academies or Non-maintained special schools).",
+          "style": {
+            "widthInches": 6.0,
+            "wrap": true
+          },
+          "detail": [
+            {
+              "title": "This contains the amount paid to each maintained school in October/February and in April, along with the total amount to be paid and the number of eligible pupils.",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "This contains the amount paid to each academy in October/February and in April, along with the total amount to be paid and the number of eligible pupils.",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "This contains the amount to be paid to each non-maintained special school in October/February and April.",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "This summarises the total amount paid in October/February and April in each local authority for all schools including academies and Non-maintained special schools (for information only).",
+              "style": {
+                "wrap": true
+              }
+            },
+            {
+              "title": "Schools that have completely closed since October and are due no further payment (for information only).",
+              "style": {
+                "wrap": true
+              },
+              "onlyshowifdata": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "la",
+      "title": "LA (maintained only)",
+      "dataset": [
+        {
+          "groupingType": "LocalAuthority",
+          "orderBy": "GroupCode",
+          "expression": "GroupingReason=Payment&GroupCode!=909"
+        }
+      ],
+      "groups": [
+        {
+          "title": "LA No.",
+          "selector": "$..groupCode",
+          "classname": "borderBottom",
+          "style": {
+            "alignment": "right",
+            "frozen": true
+          },
+          "datastyle": {
+            "alignment": "left",
+            "dataType": "Number"
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..groupName",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": 3.0
+          }
+        },
+        {
+          "title": "Total",
+          "selector": "$..fundingLines..[?(@.templateLineId==0)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          }
+        },
+        {
+          "title": "October payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==1)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        },
+        {
+          "title": "April payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==2)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "maintained",
+      "title": "Maintained Schools",
+      "autofilter": true,
+      "dataset": [
+        {
+          "groupingType": "Local authority maintained schools,Special schools",
+          "orderBy": "ParentPrimaryIdentifier",
+          "thenBy": "OrganisationDfeNumber",
+          "datasetName": "providerFunding",
+          "expression": "ParentPrimaryIdentifier!=909&ParentProviderType=LocalAuthority&GroupingReason=Payment&ProviderSubType!=Non-maintained special school&(ProviderStatus!=Closed|CloseReason!=Closure)&(ProviderStatus!=Closed|TotalAmount!=0)"
+        }
+      ],
+      "groups": [
+
+        {
+          "title": "UKPRN",
+          "selector": "$..organisationUkprn",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "URN",
+          "selector": "$..providerUrn",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LAEstab (at @asofmonth @asofyear)",
+          "selector": "$..organisationDfeNumber",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA No.",
+          "selector": "$..parentPrimaryIdentifier",
+          "classname": "tallHeader",
+          "style": {
+            "widthInches": "0.8",
+            "frozen": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..localAuthorityName",
+          "style": {
+            "widthInches": "3.5"
+          }
+        },
+
+        {
+          "title": "School Name (at @asofmonth @asofyear)",
+          "selector": "$..organisationName",
+          "style": {
+            "widthInches": "5.5"
+          }
+        },
+        {
+          "title": "Eligible Pupils",
+          "selector": "$..calculations..[?(@.templateCalculationId==3)].value",
+          "style": {
+            "widthInches": "1.0"
+          },
+          "datastyle": {
+            "dataType": "Number"
+          }
+        },
+        {
+          "title": "Total Allocation",
+          "selector": "$..fundingLines..[?(@.templateLineId==0)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.1"
+          }
+        },
+        {
+          "title": "October / February payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==1)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.0",
+            "wrap": true
+          }
+        },
+        {
+          "title": "April payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==2)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "academies",
+      "title": "Academies",
+      "autofilter": true,
+      "dataset": [
+        {
+          "groupingType": "Academies,Free schools",
+          "orderBy": "OrganisationDfeNumber",
+          "datasetName": "providerFunding",
+          "expression": "ParentPrimaryIdentifier!=909&ParentProviderType=LocalAuthority&GroupingReason=Information&(ProviderStatus!=Closed|CloseReason!=Closure)&(ProviderStatus!=Closed|TotalAmount!=0)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UKPRN",
+          "selector": "$..organisationUkprn",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "URN",
+          "selector": "$..providerUrn",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LAEstab (at @asofmonth @asofyear)",
+          "selector": "$..organisationDfeNumber",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA No.",
+          "selector": "$..parentPrimaryIdentifier",
+          "classname": "tallHeader",
+          "style": {
+            "widthInches": "0.8",
+            "frozen": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..localAuthorityName",
+          "style": {
+            "widthInches": "3.5"
+          }
+        },
+
+        {
+          "title": "School Name (at @asofmonth @asofyear)",
+          "selector": "$..organisationName",
+          "style": {
+            "widthInches": "5.5"
+          }
+        },
+        {
+          "title": "Eligible Pupils",
+          "selector": "$..calculations..[?(@.templateCalculationId==3)].value",
+          "style": {
+            "widthInches": "1.0"
+          },
+          "datastyle": {
+            "dataType": "Number"
+          }
+        },
+        {
+          "title": "Total Allocation",
+          "selector": "$..fundingLines..[?(@.templateLineId==0)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.1"
+          }
+        },
+        {
+          "title": "October / February payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==1)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.0",
+            "wrap": true
+          }
+        },
+        {
+          "title": "April payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==2)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nmss",
+      "title": "NMSS",
+      "autofilter": true,
+      "dataset": [
+        {
+          "groupingType": "Special schools",
+          "orderBy": "OrganisationDfeNumber",
+          "datasetName": "providerFunding",
+          "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information&ProviderSubType=Non-maintained special school&(ProviderStatus!=Closed|CloseReason!=Closure)&(ProviderStatus!=Closed|TotalAmount!=0)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UKPRN",
+          "selector": "$..organisationUkprn",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "URN",
+          "selector": "$..providerUrn",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LAEstab (at @asofmonth @asofyear)",
+          "selector": "$..organisationDfeNumber",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA No.",
+          "selector": "$..parentPrimaryIdentifier",
+          "classname": "tallHeader",
+          "style": {
+            "widthInches": "0.8",
+            "frozen": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..localAuthorityName",
+          "style": {
+            "widthInches": "3.5"
+          }
+        },
+
+        {
+          "title": "School Name (at @asofmonth @asofyear)",
+          "selector": "$..organisationName",
+          "style": {
+            "widthInches": "5.5"
+          }
+        },
+        {
+          "title": "Eligible Pupils",
+          "selector": "$..calculations..[?(@.templateCalculationId==3)].value",
+          "style": {
+            "widthInches": "1.0"
+          },
+          "datastyle": {
+            "dataType": "Number"
+          }
+        },
+        {
+          "title": "Total Allocation",
+          "selector": "$..fundingLines..[?(@.templateLineId==0)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.1"
+          }
+        },
+        {
+          "title": "October / February payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==1)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.0",
+            "wrap": true
+          }
+        },
+        {
+          "title": "April payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==2)].value",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "la-allschools",
+      "title": "LA (all schools)",
+      "dataset": [
+        {
+          "groupingType": "LocalAuthority",
+          "orderBy": "GroupCode",
+          "expression": "GroupingReason=Information&GroupCode!=909"
+        }
+      ],
+      "groups": [
+        {
+          "title": "LA No.",
+          "selector": "$..groupCode",
+          "classname": "tallHeader borderBottom",
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..groupName",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": 3.0,
+            "frozen": true
+          }
+        },
+        {
+          "title": "Total",
+          "selector": "$..fundingLines..[?(@.templateLineId==0)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          }
+        },
+        {
+          "title": "October payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==1)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        },
+        {
+          "title": "April payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==2)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "closures",
+      "title": "Closures",
+      "onlyshowifdata": true,
+      "dataset": [
+        {
+          "groupingType": "all",
+          "orderBy": "OrganisationDfeNumber",
+          "datasetName": "providerFunding",
+          "expression": "ProviderStatus=Closed&GroupingReason=Information&CloseReason=Closure"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UKPRN",
+          "selector": "$..organisationUkprn",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "URN",
+          "selector": "$..providerUrn",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LAEstab (at @asofmonth @asofyear)",
+          "selector": "$..organisationDfeNumber",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": "0.8",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA No.",
+          "selector": "$..parentPrimaryIdentifier",
+          "classname": "borderBottom mediumHeader",
+          "style": {
+            "widthInches": "0.8"
+          },
+          "datastyle": {
+            "dataType": "Number",
+            "alignment": "left"
+          }
+        },
+        {
+          "title": "LA Name",
+          "selector": "$..localAuthorityName",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": "3.5"
+          }
+        },
+
+        {
+          "title": "School Name (at @asofmonth @asofyear)",
+          "selector": "$..organisationName",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": "5.5"
+          }
+        },
+        {
+          "title": "Eligible Pupils",
+          "selector": "$..calculations..[?(@.templateCalculationId==3)].value",
+          "classname": "borderBottom",
+          "style": {
+            "widthInches": "1.0",
+            "wrap": true
+          },
+          "datastyle": {
+            "dataType": "Number"
+          }
+        },
+        {
+          "title": "Total Allocation",
+          "selector": "$..fundingLines..[?(@.templateLineId==0)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.1"
+          }
+        },
+        {
+          "title": "October payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==1)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2",
+            "wrap": true
+          }
+        },
+        {
+          "title": "April payment",
+          "selector": "$..fundingLines..[?(@.templateLineId==2)].value",
+          "classname": "borderBottom",
+          "datastyle": {
+            "numberFormat": "£#,##0"
+          },
+          "style": {
+            "widthInches": "1.2",
+            "wrap": true
+          }
+        }
+      ]
+    }
+  ]
+}

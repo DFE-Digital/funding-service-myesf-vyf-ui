@@ -1,0 +1,1075 @@
+{
+    "name": "16 to 19 Funding Provider",
+    "type": "spreadsheet",
+    "classes": {
+        "bold": {
+            "style": {
+                "bold": true
+            }
+        }
+    },
+    "groups": [
+        {
+            "id": "1619Provider",
+            "title": "1619_@year1-to-@year2_published",
+            "RenderGroupsAsRows": true,
+            "dataset": [
+                {
+                    "datasetName": "providerFunding",
+                    "expression": "ParentProviderType=LocalAuthority&GroupingReason=Information"
+                }
+            ],
+            "groups": [
+                {
+                    "groups": [
+                        {
+                            "title": "Organisation"
+                        },
+                        {
+                            "title": "Allocation"
+                        },
+                        {
+                            "title": "Block"
+                        },
+                        {
+                            "title": "Description"
+                        },
+                        {
+                            "title": "Students"
+                        },
+                        {
+                            "title": "Places"
+                        },
+                        {
+                            "title": "Proportion of students"
+                        },
+                        {
+                            "title": "Programme cost uplift"
+                        },
+                        {
+                            "title": "Rate"
+                        },
+                        {
+                            "title": "Sub-total"
+                        },
+                        {
+                            "title": "Total"
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Student funding"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C5",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Retention factor"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C9",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Programme cost weighting"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C15",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Disadvantage funding"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L18",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Area cost allowance"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C30"
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Total core programme"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L2",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Total core programme"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L2",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Student funding"
+                        },
+                        {
+                            "title": "Student funding"
+                        },
+                        {
+                            "selector": "C6"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C7",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "selector": "C5",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Retention adjustment"
+                        },
+                        {
+                            "title": "Total retention adjustment"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C12",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Programme cost weighting uplift"
+                        },
+                        {
+                            "title": "Student funding after retention adjustment"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C5",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Programme cost weighting uplift"
+                        },
+                        {
+                            "title": "Programme cost weighting for subjects that cost more to deliver"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C16",
+                            "datastyle": {
+                                "numberFormat": "#,0.00"
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Programme cost weighting uplift"
+                        },
+                        {
+                            "title": "Core programme up to programme cost weighting"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C17",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Disadvantage funding - Deprivation (block 1)"
+                        },
+                        {
+                            "title": "Deprivation"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C22",
+                            "datastyle": {
+                                "numberFormat": "#,0.00000"
+                            }
+                        },
+                        {
+                            "selector": "C17",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C21",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Disadvantage funding - Low prior attainment (block 2)"
+                        },
+                        {
+                            "title": "Low prior attainment in maths or English"
+                        },
+                        {
+                            "selector": "C6"
+                        },
+                        {
+                            "selector": "C24",
+                            "datastyle": {
+                                "numberFormat": "#,0.00000"
+                            }
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C26",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "selector": "C23",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Total disadvantage funding"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L18",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Core programme"
+                        },
+                        {
+                            "title": "Total additional funding"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L2",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Total additional funding"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L3",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Free meals"
+                        },
+                        {
+                            "selector": "C38"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C39",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "selector": "C35",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Pupils in or recently left care"
+                        },
+                        {
+                            "selector": "C40"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C41",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "selector": "C36",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Total pupil premium"
+                        },
+                        {
+                            "selector": "C45"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L4",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Service pupil premium"
+                        },
+                        {
+                            "title": "Children of service personnel"
+                        },
+                        {
+                            "selector": "C42"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C43",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "selector": "C37",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Total pupil premium"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L4",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Total pupil premium"
+                        },
+                        {
+                            "title": "Service pupil premium"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "C37",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                },
+                {
+                    "groups": [
+                        {
+                            "title": "@providerName"
+                        },
+                        {
+                            "title": "14 to 16 funding: @year1 to @year2"
+                        },
+                        {
+                            "title": "Pupil premium"
+                        },
+                        {
+                            "title": "Total pupil premium"
+                        },
+                        {
+                            "title": "Total"
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "title": ""
+                        },
+                        {
+                            "selector": "L3",
+                            "datastyle": {
+                                "numberFormat": "ZeroDecimalPlaces",
+                                "SpreadsheetNumberFormat": true
+                            }
+                        },
+                        {
+                            "title": ""
+                        }
+                    ]
+                }
+
+            ],
+            "variables": [
+            ]
+        }
+    ]
+}

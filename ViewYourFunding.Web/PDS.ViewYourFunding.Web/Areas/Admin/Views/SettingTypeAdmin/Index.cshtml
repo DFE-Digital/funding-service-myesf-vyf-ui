@@ -1,0 +1,40 @@
+﻿@using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.SettingTypesIndexViewModel
+<h2 class="bold-medium">Setting Types</h2>
+
+<table class="touch-table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+    </tr>
+    @foreach (var settingType in Model.SettingTypes)
+    {
+        <tr>
+            <td>
+                @settingType.SettingName
+            </td>
+            <td>
+                @settingType.SettingDescription
+            </td>
+            <td>
+                @settingType.ValueDataType
+            </td>
+            <td>
+                @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminSettingTypeAction, new { SettingTypeId = settingType.Id, IsSettingTypeInUse = settingType.IsSettingTypeInUse, ActionMode = ActionMode.Edit }, new { @class = "edit-setting" })
+            </td>
+            <td>
+                @if (!settingType.IsSettingTypeInUse)
+                {
+                @Html.RouteLink("Delete", ViewYourFundingConstants.RouteName_AdminSettingTypeAction, new { SettingTypeId = settingType.Id, IsSettingTypeInUse = settingType.IsSettingTypeInUse, ActionMode = ActionMode.Delete }, new { @class = "delete-setting" })
+                }
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <p>
+        @Html.RouteLink("Add a Setting Type", ViewYourFundingConstants.RouteName_AdminSettingTypeAction, new { SettingTypeId = 0, IsSettingTypeInUse = false, ActionMode = ActionMode.Add }, new { id = "add-setting-type-link" })
+    </p>
+</div>

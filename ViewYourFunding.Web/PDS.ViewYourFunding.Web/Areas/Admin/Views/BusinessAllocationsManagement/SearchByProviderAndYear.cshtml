@@ -1,0 +1,34 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.SearchByProviderAndYearViewModel
+
+<h1 class="govuk-heading-xl">Search by provider and year</h1>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.Route_BusinessAllocationsSearchByProviderAndYear, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset class="after-error-summary">
+        <div class="form-group">
+            <p class="heading-small">Enter the UKPRN of a provider and select a year</p>
+            <span class="error-message@(Model.ValidationError ? "" : " hidden")">Please select a funding year</span>
+            <div class="form-group required">
+                @Html.LabelFor(model => model.Ukprn, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ukprn, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ukprn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @foreach (var fundingPeriodCode in Model.FundingStreamPeriodCodes)
+            {
+
+                <div class="multiple-choice choice-required">
+                    <input id="radio-@fundingPeriodCode.Value" type="radio" name="SelectedFundingPeriodCode" value="@fundingPeriodCode.Value">
+                    <label class="form-label" for="radio-1">@fundingPeriodCode.Text</label>
+                </div>
+            }
+        </div>
+    </fieldset>
+    @Html.HiddenFor(model => model.FundingStreamCode)
+    <input type="submit" class="button" value="Search" />
+}

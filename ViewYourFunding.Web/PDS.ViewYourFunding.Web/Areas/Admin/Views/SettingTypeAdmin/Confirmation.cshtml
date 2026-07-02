@@ -1,0 +1,64 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType.SettingTypeViewModel
+
+@{
+    var settingTypeName = @Model.SettingTypeName;
+}
+
+@if (Model.ChangesSaved)
+{
+    var submittedOnText = Model.ActionMode != ActionMode.Delete ? "on " + Model.SubmittedAtDisplayDate : string.Empty;
+    <div class="govuk-box-highlight">
+        @switch (Model.ActionMode)
+        {
+            case ActionMode.Delete:
+                <h1 class="bold-large"> Setting Type has been deleted successfully.</h1>
+                break;
+            case ActionMode.Add:
+                <h1 class="bold-large">Setting Type has been added successfully.</h1>
+                break;
+            case ActionMode.Edit:
+                <h1 class="bold-large">Setting Type has been updated successfully.</h1>
+                break;
+        }
+
+        <br />
+        <p id="submission-details">Submitted by @Model.CurrentUser?.FullName on @submittedOnText</p>
+
+    </div>
+}
+else
+{
+    <div>
+        @switch (Model.ActionMode)
+        {
+            case ActionMode.Delete:
+                <h1 class="bold-large">There was a problem deleting setting type @settingTypeName.</h1>
+                break;
+            case ActionMode.Add:
+                <h1 class="bold-large">There was a problem adding setting type @settingTypeName  .</h1>
+                break;
+            default:
+                <h1 class="bold-large">There was a problem updating setting type @settingTypeName.</h1>
+                break;
+        }
+    </div>
+}
+
+<div id="signed-success-section" class="column-two-thirds">
+    <div>
+        <div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view the settings.</p>
+            <p>@Html.RouteLink("Go to the setting type page", ViewYourFundingConstants.RouteName_AdminSettingTypesHome)</p>
+        </div>
+        <div>
+            <p class="bold-small">
+                Or you may want to:
+            </p>
+            <p>@Html.RouteLink("Go back to home", ViewYourFundingConstants.RouteName_AdminHome)</p>
+        </div>
+    </div>
+</div>
+<br />

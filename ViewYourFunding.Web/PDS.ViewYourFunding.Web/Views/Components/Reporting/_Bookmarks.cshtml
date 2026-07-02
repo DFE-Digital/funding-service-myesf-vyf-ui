@@ -1,0 +1,42 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var outputSb = new System.Text.StringBuilder();
+
+    var configuration = Model.ComponentConfiguration;
+    var originalModel = configuration.OriginalModel;
+    var bookmarks = originalModel.Bookmarks;
+    var count = 0;
+
+    outputSb.Append("<h2>Bookmarks</h2>");
+
+    outputSb.Append("<table style='width: 100%' class='debugOutputTable'>");
+    outputSb.Append("<thead><tr>");
+    outputSb.Append("<td style='width: 40%'>Title</td>");
+    outputSb.Append("<td style='width: 40%'>Text to find</td>");
+    outputSb.Append("<td style='width: 20%'>Instance to match</td>");
+    outputSb.Append("</tr></thead><tbody>");
+
+    if (bookmarks != null)
+    {
+        foreach (var bookmark in bookmarks)
+        {
+            if (string.IsNullOrEmpty(bookmark?.Title))
+            {
+                continue;
+            }
+
+            var bgColor = (count++ % 2) == 0 ? "#FFF" : "#DDD";
+
+            outputSb.AppendLine($"<tr style='background-color: {bgColor}'>");
+            outputSb.AppendLine($"<td>{bookmark.Title}</td>");
+            outputSb.AppendLine($"<td>{bookmark.TextToFind ?? "--"}</td>");
+            outputSb.AppendLine($"<td>{bookmark.InstanceToMatch}</td>");
+            outputSb.AppendLine("</tr>");
+        }
+    }
+
+    outputSb.Append("</tbody></table>");
+}
+
+@Html.Raw(outputSb.ToString())

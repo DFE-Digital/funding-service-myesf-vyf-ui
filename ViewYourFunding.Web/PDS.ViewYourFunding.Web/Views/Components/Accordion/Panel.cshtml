@@ -1,0 +1,25 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+@{ 
+    var classNames = new List<string>
+    {
+        "govuk-accordion__section-content"
+    };
+
+    if (Model.ClassNames?.Any() == true)
+    {
+        classNames.AddRange(Model.ClassNames);
+    }
+
+    var classes = string.Join(" ", classNames);
+}
+
+<div id="accordion-default-content-@Model.GetAccordionInstanceNumber()" class="@classes"
+     aria-labelledby="accordion-default-heading-@Model.GetAccordionInstanceNumber()">
+    @{
+        await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+    }
+</div>

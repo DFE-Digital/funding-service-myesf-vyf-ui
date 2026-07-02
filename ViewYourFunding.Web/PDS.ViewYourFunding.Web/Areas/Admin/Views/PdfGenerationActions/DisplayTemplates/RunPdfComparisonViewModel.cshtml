@@ -1,0 +1,38 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.RunPdfComparisonViewModel
+
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_PdfGenerationActionsConfirmRunPdfComparison, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <table class="table-halves">
+            <tr>
+                <td width="45%" class="first">
+                    <h2>@Html.DisplayNameFor(model => model.FundingStreamCodeAndPeriodCode)</h2>
+                </td>
+                <td class="first">@Html.DisplayFor(model => model.FundingStreamCodeAndPeriodCode)</td>
+            </tr>
+            <tr>
+                <td width="45%">
+                    <h2>@Html.DisplayNameFor(model => model.SourceFolder)</h2>
+                </td>
+                <td>@Html.DisplayFor(model => model.SourceFolder)</td>
+            </tr>
+            <tr>
+                <td width="45%">
+                    <h2>@Html.DisplayNameFor(model => model.DestinationFolder)</h2>
+                </td>
+                <td>@Html.DisplayFor(model => model.DestinationFolder)</td>
+            </tr>
+        </table>
+        <br />
+    </div>
+
+    @Html.HiddenFor(m => m.DestinationFolder)
+    @Html.HiddenFor(m => m.SourceFolder)
+    @Html.HiddenFor(m => m.FundingStreamCodeAndPeriodCode)
+    <input type="submit" class="button" value="Run Comparison" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome)
+}

@@ -1,0 +1,13 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var PublishedDate = Model.ComponentConfiguration.PublishedDate;
+
+    if (Model.GetValue() is DateTime passedDate)
+    {
+        PublishedDate = passedDate;
+    }
+}
+
+Published: @PublishedDate.ToUIDateFormat()

@@ -1,0 +1,71 @@
+﻿@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement.LayoutFileImportViewModel
+
+    <div class="column-two-thirds">
+
+        @using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_AdminLayoutFileImportUpload, null, FormMethod.Post, null, new { enctype = "multipart/form-data" }))
+        {
+            <fieldset class="">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="heading-xlarge">Upload Layout File</h1>
+                </legend>
+
+                @if (Model.LayoutAction == LayoutAction.Update)
+                {
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-warning-text__assistive">Warning</span>
+                            Based on the name you have chosen, you are about to update an existing layout.
+                        </strong>
+                    </div>
+                }
+
+                <dl>
+                    <dt class="column-half">
+                        @Html.DisplayNameFor(model => model.LayoutName)
+                    </dt>
+                    <dd class="column-half">
+                        @Html.DisplayFor(model => model.LayoutName)
+                    </dd>
+                    <dt class="column-half">
+                        @Html.DisplayNameFor(model => model.FundingStreamName)
+                    </dt>
+                    <dd class="column-half">
+                        @Html.DisplayFor(model => model.FundingStreamName)
+                    </dd>
+                    <dt class="column-half">
+                        @Html.DisplayNameFor(model => model.FundingViewType)
+                    </dt>
+                    <dd class="column-half">
+                        @Html.DisplayFor(model => model.FundingViewType)
+                    </dd>
+                    <dt class="column-half">
+                        @Html.DisplayNameFor(model => model.FundingViewScope)
+                    </dt>
+                    <dd class="column-half">
+                        @Html.DisplayFor(model => model.FundingViewScope)
+                    </dd>
+                </dl>
+
+                <div class="govuk-form-group">
+                    @Html.LabelFor(model => model.FileUpload, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.FileUpload, additionalViewData: new { @class = "govuk-file-upload" })
+                    @Html.ValidationMessageFor(model => model.FileUpload, "", new { @class = "text-danger" })
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="button">Submit</button>
+                @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_AdminLayoutImport)
+            </div>
+
+            @Html.HiddenFor(model => model.FundingStreamId)
+            @Html.HiddenFor(model => model.FundingViewType)
+            @Html.HiddenFor(model => model.FundingViewScope)
+            @Html.HiddenFor(model => model.LayoutModelId)
+            @Html.HiddenFor(model => model.LayoutName)
+            @Html.HiddenFor(model => model.FundingStreamName)
+            @Html.HiddenFor(model => model.LayoutAction)
+        }
+    </div>

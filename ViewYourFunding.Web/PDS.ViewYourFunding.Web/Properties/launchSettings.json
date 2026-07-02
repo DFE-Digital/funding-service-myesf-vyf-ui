@@ -1,0 +1,41 @@
+{
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "view-latest-funding",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "ViewYourFunding.Web": {
+      "commandName": "Project",
+      "launchUrl": "view-latest-funding",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:44375"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://myesf.local:{ServicePort}/view-latest-funding",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORTS": "44375",
+        "ASPNETCORE_HTTP_PORTS": "49278"
+      },
+      "publishAllPorts": true,
+      "useSSL": true,
+      "httpPort": 49278,
+      "sslPort": 44375
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://myesf.local:49278/",
+      "sslPort": 44375
+    }
+  }
+}

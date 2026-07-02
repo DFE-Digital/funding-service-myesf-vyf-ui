@@ -1,0 +1,36 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var components = Model.Components.SingleOrDefault(component => component.Type == ComponentType.Conditional_TrueOutput)?.Components;
+    var childIsRowColumn = components?.FirstOrDefault().Type == ComponentType.Table_RowColumn;
+    var topLevelGroup = Model.ComponentConfiguration.OriginalModel.ToUiModelGroup();
+    var parentType = ComponentHelper.GetGroupParent(Model.OriginalGroup, topLevelGroup)?.Type;
+    var outerTag = parentType == ComponentType.Table_Row.ToString().Replace("_", "/") ? "td" : "div";
+
+    var level = ComponentHelper.GetLevel(Model.OriginalGroup, topLevelGroup, "Conditional/Condition");
+    var colour = level switch
+    {
+        1 => "#DDDD00",
+        2 => "#BBBB00",
+        3 => "#999900",
+        4 => "#777700",
+        5 => "#550000",
+        6 => "#330000",
+        7 => "#110000",
+        _ => "#FFFF00"
+    };
+
+    @Html.Raw("<" + outerTag + " style='background-color: " + colour + "; margin-bottom: 10px;'>")
+    <span>(<strong><i>If/else '@Model.OriginalGroup.Expression'</i></strong>)</span>
+
+    @Html.Raw("<table><tr>")
+
+    if (childIsRowColumn)
+    {
+        return;
+    }
+}
+
+@Html.Raw("<td style='border: 1px solid #000;'>")

@@ -1,0 +1,8 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    Model.UnevaluatedTitle = "ERROR - JSON LAYOUT MODEL NOT FOUND";
+    await ComponentHelper.Render(Html, ComponentType.Error_Error, Model, Model.PageData);
+}

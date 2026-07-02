@@ -1,0 +1,93 @@
+{
+  "name": "16 to 19 sixth form accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "_type": "Contract - Represents 'Maintained Sixth Forms'",
+      "datasetName": "funding"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "title": "School sixth form funding: @yearTypeName @year1 to @year2",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "$..fundingLines[?(@.templateLineId == 0)].value",
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "Heading/Small",
+              "value": "Published: @statusChangedDateUiFormatted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "groups": [
+        {
+          "type": "Heading/Small",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Html/Div",
+          "classname": "funding-block funding-margin-bottom",
+          "groups": [
+            {
+              "type": "Heading/Medium",
+              "classname": "govuk-heading-l",
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "View schools' individual allocations",
+                  "value": "@loggedInLocalAuthorityFundingBreakdownPath"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Block/LoggedInDownloadADocument"
+        },
+        {
+          "type": "Block/AllocationHistory"
+        },
+        {
+            "type": "Heading/Small",
+            "classname": "heading-medium heading-guidance",
+            "title": "Explore the topic"
+        },
+        {
+          "type": "Pattern/UnorderedList",
+          "classname": "list footer-guidance",
+          "groups": [
+            {
+              "type": "General/Section",
+              "groups": [
+                {
+                  "type": "General/ExternalLink",
+                  "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2/16-to-19-further-education-revenue-funding-allocation-guide-@year1-to-@year2",
+                  "title": "School sixth form funding guides: @year1 to @year2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

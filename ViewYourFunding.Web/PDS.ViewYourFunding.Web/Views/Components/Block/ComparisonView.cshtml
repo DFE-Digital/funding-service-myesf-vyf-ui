@@ -1,0 +1,59 @@
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Services.Helper
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var pageData = Model.PageData;
+    pageData.TryGetValue("ComparisonOptions", out object comparisonOptionsObj);
+    pageData.TryGetValue("SelectedVarianceOption", out object selectedVarianceOptionObj);
+    VarianceSelectionOption selectedVarianceOption = (VarianceSelectionOption)selectedVarianceOptionObj;
+}
+@if (comparisonOptionsObj is Dictionary<VarianceSelectionOption, DateTime> comparisonOptions && comparisonOptions.Count > 0)
+{
+
+    <div class="govuk-form-group" id="comparisonViews">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Select a radio button to compare this statement
+                </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="nocomparison" name="radioComparison" type="radio" value="nocomparison" @if (selectedVarianceOption == VarianceSelectionOption.NoComparison) {
+                <text> checked="checked" </text>
+                }/>
+                    <label class="govuk-label govuk-radios__label" for="nocomparison">
+                        No Comparison
+                    </label>
+                </div>
+
+                @if (comparisonOptions.ContainsKey(VarianceSelectionOption.PreviousStatementCurrentYear))
+                {
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="PreviousstatementcurrentYear" name="radioComparison" type="radio" value="PreviousstatementcurrentYear" @if (selectedVarianceOption == VarianceSelectionOption.PreviousStatementCurrentYear) {
+                <text> checked="checked" </text>
+                }/>
+                        <label class="govuk-label govuk-radios__label" for="PreviousstatementcurrentYear">
+                            Compare to previous GAG statement, published @comparisonOptions.GetValueOrDefault(VarianceSelectionOption.PreviousStatementCurrentYear).ToDateDisplay()
+                        </label>
+                    </div>
+                }
+
+                @if (comparisonOptions.ContainsKey(VarianceSelectionOption.FinalStatementPreviousYear))
+                {
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Finalstatementpreviousyear" name="radioComparison" type="radio" value="Finalstatementpreviousyear" @if (selectedVarianceOption == VarianceSelectionOption.FinalStatementPreviousYear) {
+                <text> checked="checked" </text>
+                }/>
+                        <label class="govuk-label govuk-radios__label" for="Finalstatementpreviousyear">
+                            Compare to last year's final statement, published @comparisonOptions.GetValueOrDefault(VarianceSelectionOption.FinalStatementPreviousYear).ToDateDisplay()
+                        </label>
+                    </div>
+                }
+
+            </div>
+        </fieldset>
+    </div>
+}

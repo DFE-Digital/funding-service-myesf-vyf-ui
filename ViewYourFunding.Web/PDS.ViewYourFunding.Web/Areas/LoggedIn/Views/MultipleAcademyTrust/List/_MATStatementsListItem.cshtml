@@ -1,0 +1,15 @@
+﻿@using PDS.ViewYourFunding.Services.Helper
+
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.MatStatementListItem
+@{
+    var header = Model.Header;
+    var body = Model.Body;
+    var data = Model.Data;
+}
+
+<div class="govuk-accordion__section" data-academy="@Model.FundingViewData.EntityName" data-fundingtype="@Model.FundingViewData.FundingStreamCode" data-localauthority="@Model.FundingViewData.LocalAuthorityName">
+    @{ 
+        await header.Render(Html, data);
+        await body.Render(Html, data); 
+     }
+</div>

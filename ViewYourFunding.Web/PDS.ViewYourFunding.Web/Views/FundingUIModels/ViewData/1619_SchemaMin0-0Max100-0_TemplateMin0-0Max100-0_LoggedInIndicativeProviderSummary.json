@@ -1,0 +1,91 @@
+{
+  "name": "1619 indicative provider accordion section",
+  "type": "AccordionSection",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "ParentProviderType=LocalAuthority&GroupingReason=Indicative"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Accordion/Button",
+      "groups": [
+        {
+          "type": "Accordion/Title",
+          "title": "Indicative 16 to 19 funding: @yearTypeName @year1 to @year2",
+          "groups": [
+            {
+              "type": "Accordion/Total",
+              "selector": "L718",
+              "datastyle": {
+                "numberFormat": "c0"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Accordion/SubTitle",
+          "groups": [
+            {
+              "type": "General/Literal",
+              "value": "Published: @statusChangedDateUiFormatted "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Accordion/Panel",
+      "classname": "govuk-!-padding-left-6",
+      "groups": [
+        {
+          "type": "Heading/Small",
+          "title": "Funding breakdown",
+          "classname": "heading-medium heading-guidance"
+        },
+        {
+          "type": "Html/Div",
+          "classname": "funding-block funding-margin-bottom",
+          "groups": [
+            {
+              "type": "Heading/Medium",
+              "classname": "govuk-heading-l",
+              "groups": [
+                {
+                  "type": "General/StandardLink",
+                  "title": "View funding breakdown for @providerName",
+                  "value": "@loggedInProviderFundingBreakdownPath"
+                }
+              ]
+            },
+            {
+              "type": "Block/AllocationHistory"
+            },
+            {
+              "type": "Heading/Small",
+              "classname": "heading-medium heading-guidance",
+              "title": "Explore the topic"
+            },
+            {
+              "type": "Pattern/UnorderedList",
+              "classname": "list footer-guidance",
+              "groups": [
+                {
+                  "type": "General/Section",
+                  "groups": [
+                    {
+                      "type": "General/ExternalLink",
+                      "value": "https://www.gov.uk/government/publications/16-to-19-funding-allocations-supporting-documents-for-@year1-to-@year2",
+                      "title": "@shortFundingStreamNameHtml allocations supporting documents: @year1 to @year2 (opens in new tab)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

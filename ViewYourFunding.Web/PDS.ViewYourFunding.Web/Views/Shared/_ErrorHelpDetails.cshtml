@@ -1,0 +1,7 @@
+﻿@using PDS.ViewYourFunding.Web.Helpers
+@using Pds.Core.Web.Models.Hyperlinks
+@model PDS.ViewYourFunding.Web.Models.Shared.BaseViewYourFundingPageViewModel
+
+<h1 class="heading-xlarge">Sorry, there is a problem with the service</h1>
+<h1 class="heading-large">Please try again later</h1>
+<p class="lede">If the problem continues, you can @Html.Link(AnchorTagType.External, Model.ContactUsLink, "submit an enquiry")</p>

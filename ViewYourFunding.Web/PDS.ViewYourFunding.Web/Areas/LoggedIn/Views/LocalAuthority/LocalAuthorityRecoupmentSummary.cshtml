@@ -1,0 +1,46 @@
+﻿@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.LocalAuthorityRecoupmentSummaryViewModel
+
+@{
+    <link rel="stylesheet" href="~/css/loggedin.min.css" type="text/css" media="screen" />
+}
+@{
+    var instanceNumber = 1;
+}
+
+<h1 class="heading-xlarge">Recoupment reports</h1>
+
+@{
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+
+        @foreach (var fundingStreamCode in Model.FundingViewData.Keys)
+        {
+            var fundingStreamData = Model.FundingViewData[fundingStreamCode];
+            var header = fundingStreamData.Components?.SingleOrDefault(c => c.Type == ComponentType.Accordion_Button);
+            var body = fundingStreamData.Components?.SingleOrDefault(c => c.Type == ComponentType.Accordion_Panel);
+            var sharedData = fundingStreamData.Components.FirstOrDefault()?.PageData;
+
+            var data = sharedData != null ? sharedData.ToDictionary(entry => entry.Key, entry => entry.Value) : new Dictionary<string, object>();
+
+            var instance = instanceNumber++;
+            if (data.ContainsKey(instance.ToString()))
+            {
+                data.Add("AccordionInstanceNumber", instance);
+            }
+
+
+            <div class="govuk-accordion__section for-funding-@fundingStreamCode">
+                @{
+                    await header.Render(Html, data);
+                    await body.Render(Html, data);
+                }
+            </div>
+        }
+    </div>
+}
+
+@section vyfScripts {   
+    @Html.PageScripts()
+}

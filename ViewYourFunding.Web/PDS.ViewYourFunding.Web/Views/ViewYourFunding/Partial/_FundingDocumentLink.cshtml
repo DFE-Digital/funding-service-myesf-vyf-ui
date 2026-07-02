@@ -1,0 +1,44 @@
+@using PDS.ViewYourFunding.Services.Constants
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.FundingDocumentLinkViewModel
+<section class="@(Model.ShowPublishedDateAndTag ? string.Empty : "form-block ")attachment embedded">
+    <div class="download-a-document-container">
+        <p class="download-a-document">
+            <a href="@Model.Document.FilePath" title="@Model.LinkTitle" download="">@Html.Raw(Model.LinkInnerHtml)</a>
+            <br>
+            <span class="download-a-document-content">
+                <span class="download-a-document-section-1">
+                    @if (Model.ShowPublishedDateAndTag)
+                    {
+                        <text>Published: </text> @Model.PublishedDate
+                        if (Model.IsLatestVersion)
+                        {
+                            if (Model.IsCurrentYear)
+                            {
+                                <strong class="govuk-tag">Latest</strong>
+                            }
+                            else
+                            {
+                                <strong class="govuk-tag govuk-bggrey">Final</strong>
+                            }
+                        }
+                        <br>
+                    }
+
+                    @if (Model.Document.FileExtension.Equals(FundingDocumentFileType.Spreadsheet_OpenFormat, System.StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        @:OpenDocument Spreadsheet (<abbr title="OpenDocument Spreadsheet">ODS</abbr>),
+                    }
+                    @Model.FileSizeKB<text>KB</text>
+                </span>
+                <span class="download-a-document-section-2">
+                    @if (Model.Document.FileExtension.Equals(FundingDocumentFileType.Spreadsheet_OpenFormat, System.StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        @:This file is in an <a title="This will open in a new tab or window" href="https://www.gov.uk/guidance/using-open-document-formats-odf-in-your-organisation" target="_blank" rel="external noopener noreferrer">OpenDocument</a> format. You may need a different format if you're using assistive technology. <a class="expand-hidden-section" role="button" aria-expanded="true" aria-controls="attachment-@Model.DocumentId-accessibility-request" href="#attachment-@Model.DocumentId-accessibility-request" data-expanded="true" data-controls="attachment-@Model.DocumentId-accessibility-request">Request an accessible format</a>.
+                        @:<span class="hidden-section" id="attachment-@Model.DocumentId-accessibility-request" role="region" aria-hidden="false" aria-live="polite" style="display:inline-block">If you use assistive technology (such as a screen reader) and need a version of this document in a more accessible format, please contact the <a target="_blank" rel="external noopener noreferrer" href='https://customerhelpportal.education.gov.uk' title="This will open in a new tab or window">Customer Help Portal</a><text>. Please tell us what format you need. It will help us if you say what assistive technology you use.</text></span>
+                    }
+                </span>
+            </span>
+        </p>
+    </div>
+</section>

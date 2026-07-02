@@ -1,0 +1,62 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var result = Model.GetTitleOrValue();
+    var Value = Model.Values?.Count > 1 ? Model.Values.ElementAt(1)?.ToString() : string.Empty;
+
+    var increase = "true".Equals(result, StringComparison.InvariantCultureIgnoreCase);
+    var changeText = increase ? "Increased" : "Decreased";
+
+    var decreaseClasses = new List<string>
+{
+        "fas",
+        "fa-caret-down",
+        "fa-lg",
+        "decrease"
+    };
+
+    var increaseClasses = new List<string>
+{
+        "fas",
+        "fa-caret-up",
+        "fa-lg",
+        "increase"
+    };
+
+    var span = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.Html_Span,
+        Components = new List<Models.Component>
+{
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.Html_Element,
+                SubType = "i",
+                ClassNames = increase ? increaseClasses : decreaseClasses,
+                Attributes = new Dictionary<string, object>
+{
+                    { "title", changeText },
+                    { "aria-hidden", "true" }
+                }
+            },
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.Html_Span,
+                ClassNames = new List<string>
+{
+                    "sr-only"
+                },
+                Title = changeText.TrimEnd('d')
+            },
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.General_Literal,
+                Title = Value
+            }
+        }
+    };
+
+    await span.Render(Html, Model.PageData);
+}

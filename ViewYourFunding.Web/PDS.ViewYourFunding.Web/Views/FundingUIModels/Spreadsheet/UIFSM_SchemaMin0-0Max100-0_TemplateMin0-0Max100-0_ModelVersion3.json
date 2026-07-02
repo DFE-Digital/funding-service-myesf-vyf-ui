@@ -1,0 +1,250 @@
+{
+  "name": "UIFSM New Openers Spreadsheet",
+  "type": "spreadsheet",
+  "classes": {
+    "borderAllSides": {
+      "style": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "LeftBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "LeftBorder"
+          }
+        ]
+      }
+    },
+    "wideHeaderBold": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "2.5",
+        "wrap": true,
+        "bold": true
+      },
+      "datastyle": {
+        "bold": true
+      }
+    },
+    "headerRow": {
+      "style": {
+        "alignment": "centered",
+        "bold": true
+      }
+    },
+    "wideHeader": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "2.5",
+        "wrap": true
+      }
+    },
+    "schoolHeader": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "3.5",
+        "wrap": true
+      }
+    },
+    "narrowHeader": {
+      "style": {
+        "alignment": "centered",
+        "heightInches": 1,
+        "widthInches": "1",
+        "wrap": true
+      }
+    },
+    "mediumHeader": {
+      "style": {
+        "heightInches": 1.2,
+        "alignment": "centered",
+        "widthInches": "1.4",
+        "wrap": true
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "new openers",
+      "title": "New Openers",
+      "autofilter": true,
+      "autoFilterStartRow": 6,
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "ProviderUrn",
+          "expression": "(IsNewOpener=True)&(GroupingReason=Information)&(ProviderUrn!=0)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - NEW OPENER PROVISIONAL REVENUE FUNDING ALLOCATIONS FOR ACADEMIC YEAR @year1/@year2",
+          "colspan": 8,
+          "style": {
+            "wrap": true,
+            "bold": true
+          },
+          "groups": [
+            {
+              "title": "1. Total Eligible Headcount is the estimated number of Infant pupils (Reception, Year 1 and Year 2) less the estimated number of FSM Infant pupils (col K multiplied by col L)",
+              "colspan": 8,
+              "style": {
+                "wrap": true
+              },
+              "groups": [
+                {
+                  "title": "2. Provision revenue allocation (Col I) is calculated by multiplying the eligible pupil headcount (col M) by the LA meal take-up rate (col N) by £2.41 by 190 days. This total is then apportioned by 7/12ths (Col J) for the provisional revenue payment.",
+                  "colspan": 8,
+                  "style": {
+                    "wrap": true,
+                    "heightInches": 0.46
+                  },
+                  "groups": [
+                    {
+                      "title": "",
+                      "groups": [
+                        {
+                          "title": "Unique Reference Number (URN)",
+                          "selector": "$..providerUrn",
+                          "classname": "headerRow narrowHeader borderAllSides",
+                          "datastyle": {
+                            "dataType": "Number",
+                            "alignment": "left"
+                          }
+                        },
+                        {
+                          "title": "UK Provider Reference Number (UKPRN)",
+                          "selector": "$..organisationUkprn",
+                          "classname": "headerRow narrowHeader borderAllSides",
+                          "datastyle": {
+                            "dataType": "Number",
+                            "alignment": "left"
+                          }
+                        },
+                        {
+                          "title": "Local Authority Establishment Number (LAEstab)",
+                          "selector": "$..organisationDfeNumber",
+                          "classname": "headerRow narrowHeader borderAllSides",
+                          "datastyle": {
+                            "dataType": "Number",
+                            "alignment": "left"
+                          }
+                        },
+                        {
+                          "title": "Local Authority Code",
+                          "selector": "$..parentPrimaryIdentifier",
+                          "classname": "headerRow narrowHeader borderAllSides",
+                          "datastyle": {
+                            "dataType": "Number",
+                            "alignment": "left"
+                          }
+                        },
+                        {
+                          "title": "Local Authority Name",
+                          "selector": "$..parentName",
+                          "classname": "headerRow mediumHeader borderAllSides"
+                        },
+                        {
+                          "title": "Establishment Number",
+                          "selector": "$..estabNumber",
+                          "classname": "headerRow narrowHeader borderAllSides",
+                          "datastyle": {
+                            "dataType": "Number",
+                            "alignment": "left"
+                          }
+                        },
+                        {
+                          "title": "School Name",
+                          "selector": "$..organisationName",
+                          "classname": "headerRow schoolHeader borderAllSides"
+                        },
+                        {
+                          "title": "School Type",
+                          "selector": "$..providerSubTypeValue",
+                          "classname": "headerRow schoolHeader borderAllSides"
+                        },
+                        {
+                          "title": "Provisional revenue allocation for @year1/@year2short (@britishCurrencySymbols)",
+                          "selector": "C39",
+                          "classname": "headerRow wideHeader borderAllSides",
+                          "datastyle": {
+                            "numberFormat": "#,##0"
+                          }
+                        },
+                        {
+                          "title": "Provisional revenue payment for @year1/@year2short (@britishCurrencySymbols) (7/12ths of Col I)",
+                          "selector": "L2",
+                          "classname": "headerRow wideHeader borderAllSides",
+                          "datastyle": {
+                            "numberFormat": "#,##0"
+                          }
+                        },
+                        {
+                          "title": "Estimated Infant Headcount",
+                          "selector": "C40",
+                          "classname": "headerRow wideHeader borderAllSides",
+                          "datastyle": {
+                            "numberFormat": "#,##0"
+                          }
+                        },
+                        {
+                          "title": "Local Authority Primary FSM Percentage",
+                          "selector": "C41",
+                          "classname": "headerRow wideHeader borderAllSides",
+                          "datastyle": {
+                            "numberFormat": "#,0.00%"
+                          }
+                        },
+                        {
+                          "title": "Total Eligible Headcount Used",
+                          "selector": "C42",
+                          "classname": "headerRow wideHeader borderAllSides",
+                          "datastyle": {
+                            "numberFormat": "#,##0"
+                          }
+                        },
+                        {
+                          "title": "LA Meal Take-up Rate Used",
+                          "selector": "C43",
+                          "classname": "headerRow wideHeader borderAllSides",
+                          "datastyle": {
+                            "numberFormat": "#,0.00%"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "name": "16 to 19 provider history",
+  "type": "Page",
+  "dataset": [
+    {
+      "datasetName": "providerFunding",
+      "expression": "(ParentProviderType=LocalAuthority|ParentProviderType=Provider)&(GroupingReason=Information|GroupingReason=Indicative)"
+    }
+  ],
+  "groups": [
+    {
+      "type": "Heading/TitleWithFundingStream",
+      "title": "Allocation history"
+    },
+    {
+      "type": "Html/Paragraph",
+      "classname": "lede",
+      "title": "Find detailed breakdowns of @fundingStreamNameWithinSentence for @providerName for each @yearTypeName."
+    },
+    {
+      "type": "General/Repeater",
+      "expression": "@FundingPeriodProviderFundings",
+      "groups": [
+        {
+          "type": "Heading/Medium",
+          "classname": "heading-large heading-guidance",
+          "title": "@(RepeaterItem.Key.Item1) to @(RepeaterItem.Key.Item2)"
+        },
+        {
+          "type": "Conditional/Condition",
+          "expression": "@(RepeaterItem.Key.Item1)>0",
+          "groups": [
+            {
+              "type": "Conditional/TrueOutput",
+              "groups": [
+                {
+                  "type": "Table/Table",
+                  "useDefaultClasses": false,
+                  "groups": [
+                    {
+                      "type": "Table/Columns",
+                      "groups": [
+                        {
+                          "type": "Table/Column",
+                          "title": "Published date"
+                        },
+                        {
+                          "type": "Table/Column",
+                          "title": "Action"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Table/Rows",
+                      "groups": [
+                        {
+                          "type": "General/Repeater",
+                          "expression": "@(RepeaterItem.Value)",
+                          "groups": [
+                            {
+                              "type": "Table/Row",
+                              "visibilityCondition": "@(RepeaterItem.GroupingReason)=Information|@(RepeaterItem.GroupingReason)=Indicative",
+                              "groups": [
+                                {
+                                  "type": "Table/RowColumn",
+                                  "subtype": "td",
+                                  "groups": [
+                                    {
+                                      "type": "General/StandardLink",
+                                      "title": "@(RepeaterItem.StatusChangedDateUiFormatted)",
+                                      "value": "@basePath/pre-16-16-19-statements/@providerUkprn/@fundingStreamNamePathPart/@(RepeaterItem.StatusChangedDatePathFormatted)/@(RepeaterItem.Year1)-to-@(RepeaterItem.Year2)@searchTermPart?@includeHistoryParam"
+                                    },
+                                    {
+                                      "type": "Html/Element",
+                                      "subtype": "br"
+                                    },
+                                    {
+                                      "type": "Tag/LatestOrNothing",
+                                      "visibilityCondition": "@(RepeaterItem.IsLatest)=true",
+                                      "expression": "@(RepeaterItem.IsLatest)"
+                                    },
+                                    {
+                                      "type": "Tag/FinalOrNothing",
+                                      "visibilityCondition": "@(RepeaterItem.IsFinal)=true",
+                                      "expression": "@(RepeaterItem.IsFinal)"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Table/RowColumn",
+                                  "title": "@(RepeaterItem.VariationReason)"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Conditional/FalseOutput",
+              "groups": [
+                {
+                  "type": "General/Literal",
+                  "title": "To find allocations for this period, go to "
+                },
+                {
+                  "type": "Conditional/Condition",
+                  "expression": "@(RepeaterItem.Key.Item1)=2016",
+                  "groups": [
+                    {
+                      "type": "Conditional/TrueOutput",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@fundingStreamName: funding allocations for @(RepeaterItem.Key.Item1) to @(RepeaterItem.Key.Item2)",
+                          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-conditions-for-@(RepeaterItem.Key.Item1)-to-@(RepeaterItem.Key.Item2)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Conditional/FalseOutput",
+                      "groups": [
+                        {
+                          "type": "General/ExternalLink",
+                          "title": "@fundingStreamName: funding allocations for @(RepeaterItem.Key.Item1) to @(RepeaterItem.Key.Item2)",
+                          "value": "https://www.gov.uk/government/publications/@fundingStreamNamePathPart-funding-allocations-for-@(RepeaterItem.Key.Item1)-to-@(RepeaterItem.Key.Item2)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "General/Literal",
+                  "title": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Html/Element",
+      "subtype": "H1",
+      "value": "Previous years",
+      "classname": "heading-large public"
+    },
+    {
+      "type": "Html/Span",
+      "title": "You can view previous allocations in "
+    },
+    {
+      "type": "General/ExternalLink",
+      "title": "Information Exchange (opens in a new tab).",
+      "value": "https://www.gov.uk/government/publications/efa-information-exchange"
+    }
+  ],
+  "variables": [
+    {
+      "name": "includeHistoryParam",
+      "expression": "@searchTermPart?=nullValue",
+      "trueResponse": "?includeHistory=true",
+      "falseResponse": "&includeHistory=true"
+    }
+  ]
+}

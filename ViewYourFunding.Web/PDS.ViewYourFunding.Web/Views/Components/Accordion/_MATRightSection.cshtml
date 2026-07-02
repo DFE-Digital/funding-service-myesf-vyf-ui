@@ -1,0 +1,21 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+@if (Model.ComponentConfiguration.IsIndicativeFunding == true)
+{
+    <span class="govuk-accordion__heading-number-right-Ind">
+        @{
+            await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+        }
+    </span>
+}
+else
+    {
+    <span class="govuk-accordion__heading-number-right-LoggedIn">
+        @{ 
+            await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData); 
+        }
+    </span>
+}

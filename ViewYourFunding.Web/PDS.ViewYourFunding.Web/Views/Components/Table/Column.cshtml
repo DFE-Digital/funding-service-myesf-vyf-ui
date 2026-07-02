@@ -1,0 +1,43 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    Model.SubType = "th";
+    if (!Model.Attributes.ContainsKey("scope"))
+    {
+        Model.Attributes.Add("scope", "col");
+    }
+
+    if (Model.VisuallyHidden)
+    {
+        var spanModel = new Models.Component(Model.ComponentConfiguration)
+        {
+            Type = ComponentType.Html_Span,
+            ClassNames = new List<string>
+            {
+                "visuallyhidden"
+            },
+            Title = Model.Title,
+            Values = Model.Values?.ToList()
+        };
+
+        Model.Title = null;
+        Model.Values = null;
+
+        Model.Components.Add(spanModel);
+    }
+    else if (Model.UseDefaultClasses)
+    {
+        if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+        {
+            Model.ClassNames.Insert(0, "govuk-table__header-loggedin");
+        }
+        else {
+            Model.ClassNames.Insert(0, "govuk-table__header");
+            Model.ClassNames.Insert(1, "govuk-!-width-one-quarter");
+        }
+    }
+
+    await ComponentHelper.Render(Html, ComponentType.Html_Element, Model, Model.PageData);
+}

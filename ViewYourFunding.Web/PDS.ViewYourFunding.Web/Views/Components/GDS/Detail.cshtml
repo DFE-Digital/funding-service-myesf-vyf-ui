@@ -1,0 +1,38 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using PDS.ViewYourFunding.Web.Helpers
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://design-system.service.gov.uk/components/details/
+    var idAttr = Html.Raw(!string.IsNullOrEmpty(Model.Id) ? $" id=\"{Model.Id}\"" : string.Empty);
+
+    var classNames = "govuk-details detailsSizeFix";
+
+    if (!Model.UseDefaultClasses)
+    {
+        classNames = "detailsSizeFix";
+    }
+}
+
+<details class="@classNames" data-module="govuk-details">
+    <summary class="govuk-details__summary" @idAttr>
+        <span class="govuk-details__summary-text">
+            @Html.Raw(Model.Title)
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        @Html.Raw(Model.GetValueString())
+        @{ await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData); }
+    </div>
+</details>
+
+@using (Html.BeginScripts())
+{
+    <environment names="Development">
+        <script src="~/Scripts/detail.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/detail.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

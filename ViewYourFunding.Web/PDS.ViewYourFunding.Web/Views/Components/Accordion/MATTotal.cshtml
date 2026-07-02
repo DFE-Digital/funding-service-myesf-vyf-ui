@@ -1,0 +1,26 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var totalModel = new Models.Component(Model.ComponentConfiguration)
+    {
+        Type = ComponentType.Accordion_MATRightSection,
+        Components = new List<Models.Component>
+{
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.General_Literal,
+                Values = new List<object>
+{
+                    Model.GetValueString()
+                },
+                EnableVariance = Model.EnableVariance,
+                VarianceValue = Model.VarianceValue,
+                HideVarianceValue = Model.HideVarianceValue
+            }
+        }
+    };
+
+    await totalModel.Render(Html, Model.PageData);
+}

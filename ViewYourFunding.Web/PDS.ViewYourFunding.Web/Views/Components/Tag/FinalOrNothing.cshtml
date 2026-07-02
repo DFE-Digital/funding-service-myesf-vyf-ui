@@ -1,0 +1,12 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var isFinal = Model.GetValue() is bool valueBool ? valueBool : Model.ComponentConfiguration.IsLatestOrFinalFundingForYear;
+
+    if (isFinal)
+    {
+        await ComponentHelper.Render(Html, ComponentType.Tag_Final, Model, Model.PageData);
+    }
+}

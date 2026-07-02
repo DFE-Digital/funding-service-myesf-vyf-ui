@@ -1,0 +1,53 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement.LayoutUiModel
+@{
+    var statusClass = string.Empty;
+
+    switch (Model.Status)
+    {
+        case LayoutStatus.Disabled:
+            statusClass = "grey-background";
+            break;
+        case LayoutStatus.Published:
+            statusClass = "red-background";
+            break;
+    }
+    var fundingViewScopeName = Html.DisplayFor(model => model.FundingViewType).ToString();
+}
+<tr>
+    <td class="no-border-bottom no-padding-bottom">
+        <div class="parent-wrapper">
+            <p><span>Layout Name: @Model.LayoutName</span> </p>
+            <p><span>Funding stream: @Model.FundingStreamName</span></p>
+            <p><span>Funding view type: @Model.FundingViewTypeName</span></p>
+            <p><span>Layout type: @Model.FundingViewScopeName</span></p>
+            
+        </div>
+    </td> 
+    <td class="no-border-bottom no-padding-bottom">
+        <div class="parent-wrapper">
+            <span> @Model.LastModifiedDateTime.ToDateTimeDisplayWithAt()</span>
+        </div>
+    </td>
+    <td class="no-border-bottom no-padding-bottom">
+        <p class="parent-wrapper">
+            @Html.RouteLink("Export", ViewYourFundingConstants.RouteName_AdminLayoutDownloadFile, new { layoutId = Model.LayoutId }, new { })
+        </p>
+
+        @if (Model.ShowPreviewLink)
+        {
+            <p class="parent-wrapper">
+                @Html.RouteLink("Preview", ViewYourFundingConstants.RouteName_AdminPreviewLayout, new { Model.LayoutId, Model.FundingViewScope, Model.FundingStreamId, Model.FundingViewType }, new { target = "_blank", rel = "external noopener noreferrer" })
+            </p>
+        }
+
+        <p class="parent-wrapper">
+            @Html.RouteLink("Delete", ViewYourFundingConstants.RouteName_AdminLayoutAreYouSure, new { layoutId = Model.LayoutId }, new { @class = Model.Status == LayoutStatus.Published ? "hidden" : "" })
+        </p>
+    </td>
+</tr> 
+<tr>
+    <td class="no-padding-top" colspan="3"><p><span>Status: <strong class="govuk-tag govuk-bgred @statusClass">@Model.StatusName</strong></span></p></td>
+</tr>

@@ -1,0 +1,26 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    var configuration = Model.ComponentConfiguration;
+    var originalModel = configuration.OriginalModel;
+    var outputSb = new System.Text.StringBuilder();
+
+   if (originalModel.AdditionalFundingStreams?.Length > 0)
+   {
+        outputSb.Append("<h2>Additional funding streams</h2>");
+
+        outputSb.Append("<table style='width: 100%' class='debugOutputTable'>");
+        outputSb.Append("<thead><tr>");
+        outputSb.Append("<td style='width: 100%'>Code</td>");
+        outputSb.Append("</tr></thead><tbody>");
+
+        foreach (var addFundingStream in originalModel.AdditionalFundingStreams)
+        {
+            outputSb.Append($"<tr><td>{addFundingStream}</td></tr>");
+        }
+
+        outputSb.Append("</tbody></table>");
+    }
+}
+
+@Html.Raw(outputSb.ToString())

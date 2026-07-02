@@ -1,0 +1,146 @@
+{
+  "$schema": "https://fundingschemas.blob.core.windows.net/schemas/funding-template-schema-1.1.json",
+  "schemaVersion": "1.2",
+  "fundingTemplate": {
+    "calculations": [
+      {      
+        "templateCalculationId": 8,
+        "value": 42
+      },
+      {       
+        "templateCalculationId": 9,
+        "value": 10000
+      },
+      {       
+        "templateCalculationId": 11,
+        "value": 0.6964
+      },
+      {       
+        "templateCalculationId": 12,
+        "value": 56
+      },
+      {       
+        "templateCalculationId": 17,
+        "value": 60
+      },
+      {       
+        "templateCalculationId": 18,
+        "value": 39
+      },
+      {       
+        "templateCalculationId": 22,
+        "value": 4
+      },
+      {       
+        "templateCalculationId": 23,
+        "value": 48
+      },
+      {       
+        "templateCalculationId": 24,
+        "value": 52
+      },
+      {       
+        "templateCalculationId": 20,
+        "value": 17
+      },
+      {       
+        "templateCalculationId": 25,
+        "value": 0.3036
+      },
+      {       
+        "templateCalculationId": 14,
+        "value": 18
+      },
+      {       
+        "templateCalculationId": 31,
+        "value": 0.280
+      },
+      {       
+        "templateCalculationId": 30,
+        "value": 5.04
+      },
+      {       
+        "templateCalculationId": 32,
+        "value": 242
+      },      
+      {       
+        "templateCalculationId": 37,
+        "value": 0.040
+      },
+      {       
+        "templateCalculationId": 35,
+        "value": 0.72
+      },
+      {       
+        "templateCalculationId": 36,
+        "value": 483
+      },
+      {       
+        "templateCalculationId": 39,
+        "value": 0
+      },
+      {       
+        "templateCalculationId": 40,
+        "value": 49
+      },
+      {       
+        "templateCalculationId": 43,
+        "value": 1140
+      },
+      {       
+        "templateCalculationId": 44,
+        "value": 1425
+      },
+      {
+        "templateCalculationId": 45,
+        "value": 855
+      },
+      {
+        "templateCalculationId": 69,
+        "value": 60
+      }
+    ],
+    "fundingLines": [
+      {       
+        "templateLineId": 0,
+        "value": 601425
+      },
+      {       
+        "templateLineId": 1,
+        "value": 600000
+      },
+      {       
+        "templateLineId": 2,
+        "value": 1425
+      },
+      {       
+        "templateLineId": 3,
+        "value": 420000
+      },
+      {       
+        "templateLineId": 4,
+        "value": 180000
+      },
+      {       
+        "templateLineId": 27,
+        "value": 350
+      },
+      {       
+        "templateLineId": 28,
+        "value": 0
+      },
+      {       
+        "templateLineId": 5,
+        "value": 1570
+      },
+      {       
+        "templateLineId": 26,
+        "value": 1220
+      },
+      {       
+        "templateLineId": 33,
+        "value": 0
+      }
+    ]
+  }
+}

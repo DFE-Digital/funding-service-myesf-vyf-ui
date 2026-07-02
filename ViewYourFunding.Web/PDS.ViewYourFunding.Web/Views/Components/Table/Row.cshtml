@@ -1,0 +1,75 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (Model.Components?.Any() != true)
+    {
+        // Add components for the values (2 cols)
+        Model.Components = new List<Models.Component>
+{
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.Table_RowColumn,
+                Title = Model.Title
+            },
+            new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.Table_RowColumn,
+                Values = Model.Values
+            }
+        };
+    }
+
+    var trClasses = new List<string>();
+    if (Model.UseDefaultClasses)
+    {
+        trClasses.Add("govuk-table__row");
+    }
+    else
+    {
+        Model.DisableDefaultClassesAllDescendants();
+    }
+
+    if (Model.ClassNames != null)
+    {
+        trClasses.AddRange(Model.ClassNames);
+    }
+
+    var attributes = Model.Attributes?.ToDictionary(entry => entry.Key, entry => entry.Value) ?? new Dictionary<string, object>();
+    var trAttributes = trClasses.Any() ? $" class=\"{string.Join(" ", trClasses.ToArray())}\"" : string.Empty;
+
+    if (attributes.Any())
+    {
+        foreach (var attribute in attributes)
+        {
+            trAttributes += $" {attribute.Key}=\"{attribute.Value}\"";
+        }
+    }
+
+    if (!string.IsNullOrEmpty(Model.Id))
+    {
+        trAttributes += $" id=\"{Model.Id}\"";
+    }
+
+    var firstCol = Model.Components.First();
+
+    if (string.IsNullOrEmpty(firstCol.SubType))
+    {
+        firstCol.SubType = "th";
+        if (!firstCol.Attributes.ContainsKey("scope"))
+        {
+            firstCol.Attributes.Add("scope", "row");
+        }
+    }
+
+    if (firstCol.UseDefaultClasses)
+    {
+        firstCol.ClassNames.Insert(0, "govuk-!-width-one-quarter");
+        firstCol.ClassNames.Insert(1, "table-header-normal");
+    }
+}
+
+<tr@(Html.Raw(trAttributes))>
+    @{ await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData); }
+</tr>

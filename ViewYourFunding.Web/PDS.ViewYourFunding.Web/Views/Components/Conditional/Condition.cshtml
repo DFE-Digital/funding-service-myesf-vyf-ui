@@ -1,0 +1,60 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    if (!Model.Components.Any(component => component.Type == ComponentType.Conditional_TrueOutput
+        || component.Type == ComponentType.Conditional_FalseOutput))
+    {
+        throw new Exception("Neither any True or False component declared");
+    }
+
+    if (Model.Components.Any(component => component.Type != ComponentType.Conditional_TrueOutput
+        && component.Type != ComponentType.Conditional_FalseOutput))
+    {
+        throw new Exception("Conditional/Condition can only contain Conditional/TrueOutput and Conditional/FalseOutputout as direct children");
+    }
+
+    var value = Model.GetValue();
+
+    if (!(value is bool evaluationResult))
+    {
+        throw new Exception("Conditional evaluation not completed");
+    }
+
+    var resultType = evaluationResult ? ComponentType.Conditional_TrueOutput : ComponentType.Conditional_FalseOutput;
+
+    if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        // Switch the output so true always comes first on a statement spec.
+        resultType = ComponentType.Conditional_TrueOutput;
+
+        await Html.RenderPartialAsync("~/Views/Components/Reporting/_ConditionAbove.cshtml", Model);
+    }
+
+    var components = Model.Components.SingleOrDefault(component => component.Type == resultType)?.Components;
+
+    if (components?.Any() == true)
+    {
+        if (Model.ClassNames.Any() == true)
+        {
+            foreach (var component in components)
+            {
+                component.ClassNames.AddRange(Model.ClassNames);
+            }
+        }
+
+        var section = new Models.Component(Model.ComponentConfiguration)
+        {
+            Type = ComponentType.General_Section,
+            Components = components
+        };
+
+        await section.Render(Html, Model.PageData);
+    }
+
+    if (Model.ComponentConfiguration.ShowStatementSpecification)
+    {
+        await Html.RenderPartialAsync("~/Views/Components/Reporting/_ConditionBelow.cshtml", Model);
+    }
+}

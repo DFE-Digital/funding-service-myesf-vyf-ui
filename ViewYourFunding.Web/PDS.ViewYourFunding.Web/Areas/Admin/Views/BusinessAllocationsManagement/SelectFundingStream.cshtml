@@ -1,0 +1,22 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.SelectFundingStreamViewModel
+
+<h1 class="govuk-heading-xl">Select a funding stream</h1>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.Route_BusinessAllocationsSelectFundingStream, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+    <fieldset class="after-error-summary">
+        <div class="form-group">
+            <span class="error-message@(Model.ValidationError ? "" : " hidden")">Please select a funding stream</span>
+            @foreach (var fundingStreamCode in Model.FundingStreams)
+            {
+                <div class="multiple-choice choice-required">
+                    <input id="radio-@fundingStreamCode.Value" type="radio" name="SelectedfundingStreamCode" value="@fundingStreamCode.Value">
+                    <label class="form-label-bold" for="radio-@fundingStreamCode.Value">@fundingStreamCode.Text</label>
+                </div>
+            }
+        </div>
+    </fieldset>
+    <input type="submit" class="button" value="Continue" />
+}

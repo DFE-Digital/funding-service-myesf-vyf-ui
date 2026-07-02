@@ -1,0 +1,64 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://esfstest.herokuapp.com/component-library/funding-totals
+
+    var size = Model.Components?.FirstOrDefault(component => component.Type == ComponentType.Data_Size)?
+        .Values?.FirstOrDefault() ?? "medium";
+    var optionalIdAttribute = !string.IsNullOrEmpty(Model.Id) ? $" id='{Model.Id}'" : string.Empty; ;
+
+    var classes = new List<string>(Model.ClassNames);
+
+
+    var classNames = string.Join(" ", classes.ToArray());
+
+    var lastTabTotal = Model.ClassNames?
+        .Any(
+            className =>
+                className.Equals("bottomTab-total", StringComparison.InvariantCultureIgnoreCase)) == true;
+
+    if (!lastTabTotal && Model.UseDefaultClasses)
+    {
+        classes.Insert(0, "total-allocation-container");
+    }
+
+    var varianceHeaderClassName = Model.EnableVariance ? "variance-heading-no-margin" : string.Empty;
+}
+
+
+@if (lastTabTotal)
+{
+    <div class="total-allocation-wrapper last-table-below-tab @classNames">
+        <div class="total-allocation-label">
+            <h2 class="heading-@size">@Html.Raw(Model.Title)</h2>
+        </div>
+        <div class="total-allocation-amount">
+            <h2 class="heading-@size @varianceHeaderClassName" @Html.Raw(optionalIdAttribute)>@Model.GetValueString()</h2>
+            @if (Model.EnableVariance)
+            {
+                await ComponentHelper.Render(Html, ComponentType.DesignComponents_Variance, Model, Model.PageData);
+            }
+        </div>
+    </div>
+    await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData);
+}
+else
+{
+    <div class="@classNames">
+        <div class="total-allocation-wrapper">
+            <div class="total-allocation-label">
+                <h2 class="heading-@size">@Html.Raw(Model.Title)</h2>
+            </div>
+            <div class="total-allocation-amount">
+                <h2 class="heading-@size @varianceHeaderClassName" @Html.Raw(optionalIdAttribute)>@Model.GetValueString()</h2>
+                @if (Model.EnableVariance)
+                {
+                    await ComponentHelper.Render(Html, ComponentType.DesignComponents_Variance, Model, Model.PageData);
+                }
+            </div>
+        </div>
+        @{ await ComponentHelper.Render(Html, ComponentType.General_Section, Model, Model.PageData); }
+    </div>
+}

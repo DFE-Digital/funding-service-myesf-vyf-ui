@@ -1,0 +1,1507 @@
+.clearer {
+    clear: both;
+}
+
+.column-left {
+    padding-left: 0;
+}
+
+.column-right {
+    padding-right: 0;
+}
+
+.controls {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+@media (min-width: 641px) {
+    .controls {
+        text-align: right;
+    }
+
+        .controls a {
+            padding-left: 10px;
+        }
+
+    .controls {
+        float: right;
+    }
+}
+
+@media (max-width: 640px) {
+    .controls {
+        text-align: left;
+    }
+
+        .controls a {
+            padding-right: 10px;
+        }
+
+    .controls {
+        float: none;
+    }
+}
+
+form .field {
+    clear: left
+}
+
+    form .field:before,
+    form .field:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden
+    }
+
+    form .field:after {
+        clear: left
+    }
+
+form .group .panel-indent,
+form .group blockquote {
+    float: left
+}
+
+form .group fieldset {
+    margin: 0
+}
+
+form .group legend {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+    padding-top: 2px;
+    padding-bottom: 8px;
+    margin: 0;
+    padding: 0 !important
+}
+
+form .group .form-group-day,
+form .group .form-group-month,
+form .group .form-group-year {
+    float: left;
+    margin-right: 20px;
+    clear: none;
+    /*new*/
+    width: 60px;
+    margin-right: 10px;
+}
+
+    form .group .form-group-day label,
+    form .group .form-group-day input,
+    form .group .form-group-month label,
+    form .group .form-group-month input,
+    form .group .form-group-year label,
+    form .group .form-group-year input {
+        display: block;
+        width: 50px;
+        /*new*/
+        width: 100%;
+    }
+
+form .group .form-group-year {
+    width: 70px
+}
+
+form .group--inline label {
+    float: left;
+    width: 12.5em
+}
+
+label {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+    display: block
+}
+
+@media (max-width: 640px) {
+    label {
+        font-size: 16px;
+        line-height: 1.25
+    }
+}
+
+input,
+select {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none
+}
+
+
+
+    /*additions*/
+
+    input[type="text"], input[type="search"] {
+        min-width: 0 !important;
+        margin: 0 !important;
+        width: 250px;
+    }
+
+.stringSectionEdit input[type="text"] {
+    min-width: 600px !important;
+}
+
+
+.form-group-year {
+    width: 70px;
+}
+
+
+@media (max-width: 640px) {
+    input, select {
+        font-size: 16px;
+        line-height: 1.25
+    }
+
+    form .group legend {
+        font-size: 16px;
+        line-height: 1.25
+    }
+
+    input[type="text"], input[type="search"] {
+        font-size: 14px;
+        line-height: 1.14286;
+        width: 100%;
+    }
+}
+
+@media (min-width: 641px) {
+    form .group legend {
+        padding-top: 0;
+        padding-bottom: 5px
+    }
+    /*input[type="text"], input[type="search"] {
+        width: 96%;
+    }*/
+}
+
+.validation-summary {
+    border: 3px solid #df3034;
+    padding: 15px 30px;
+    margin-bottom: 30px
+}
+
+    .validation-summary ul {
+        margin-top: 10px
+    }
+
+    .validation-summary li,
+    .validation-summary p {
+        font-family: "nta", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.25;
+        font-weight: 400;
+        text-transform: none
+    }
+
+@media (max-width: 640px) {
+    .validation-summary li,
+    .validation-summary p {
+        font-size: 14px;
+        line-height: 1.14286
+    }
+}
+
+.validation-summary p {
+    margin-top: 15px;
+    margin-bottom: 5px
+}
+
+.validation-summary a {
+    color: #df3034
+}
+
+.validation-summary .heading-small {
+    margin-top: 15px
+}
+
+.validation-message {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    color: #df3034
+}
+
+@media (max-width: 640px) {
+    .validation-message {
+        font-size: 14px;
+        line-height: 1.14286
+    }
+}
+
+.validation-summary,
+.validation-error {
+    padding: 1em;
+    border: 3px solid #df3034;
+    background: #fae1e1
+}
+
+.validation-summary {
+    margin-top: 1em
+}
+
+form .validation-summary {
+    margin: 0 0 1em
+}
+
+    form .validation-summary:first-child {
+        margin-top: 0
+    }
+
+    form .validation-summary:last-child {
+        margin-bottom: 0
+    }
+
+    form .validation-summary.alert-dialog {
+        margin-top: 1em
+    }
+
+.validation-error {
+    border-width: 0 0 0 3px
+}
+
+.field-validation-error {
+    display: block;
+}
+
+
+.field-validation-error {
+    display: block;
+    color: #b10e1e;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    border: solid 3px #b10e1e;
+    padding: 10px;
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+    .validation-summary-errors span {
+        color: black;
+        padding-bottom: 20px;
+        display: block;
+    }
+
+    .validation-summary-errors ul li a {
+        color: #b10e1e;
+    }
+
+/*********************** Adult Funding statements**********************/
+
+.related {
+    border-top: 2px solid #005ea5;
+}
+
+#allocationDetails .bold {
+    font-weight: 700;
+}
+
+.allocation-related-links {
+    color: #005ea5 !important;
+    text-decoration: underline !important;
+}
+
+    .allocation-related-links a:visited {
+        color: #4c2c92 !important;
+    }
+
+#no-Results {
+    display: none;
+}
+
+.float-right {
+    float: right;
+}
+
+.allocation-statement-funding-stream th, .allocation-statement-funding-stream td {
+    border: none;
+    font-size: inherit;
+}
+
+.allocation-statement-funding-stream th {
+    font-weight: 400;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #bfc1c3;
+}
+
+#allocation-statements-related-content li a[href*="#"]:not(.NotAnchor) {
+    background: none;
+    color: #4c2c92;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.allocation-statement-funding-stream {
+    margin-bottom: 10px;
+}
+
+.funding-statement-card {
+    border-bottom: 1px solid #bfc1c3;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    margin: 0;
+}
+
+.minus-20px-margin-top {
+    margin-top: -20px
+}
+
+.funding-Statements-hr {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.funding-Statement-bold {
+    font-weight: 600;
+}
+
+.padding-left-30px {
+    padding-left: 30px;
+}
+
+/*Added this in but needs to come from elements typography css css*/
+.link-back {
+    display: inline-block;
+    position: relative;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 14px;
+    color: #0b0c0c;
+    text-decoration: none;
+    border-bottom: 1px solid #0b0c0c;
+}
+
+    .link-back::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-right: 6px solid #0b0c0c;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -6px;
+    }
+
+.funding-Statement-value {
+    float: right;
+}
+
+@media (max-width: 700px) {
+    .funding-Statement-value {
+        float: left;
+    }
+}
+
+.js-filter-collapsible-content .toggled-adult-funding-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.js-filter-collapsible-header:focus {
+    outline: 3px solid #ffbf47;
+}
+
+.govuk-tag {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 12px !important;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    display: inline-block;
+    padding: 4px 8px;
+    padding-bottom: 1px;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    color: #ffffff;
+    background-color: #005ea5;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    word-break: normal !important;
+}
+
+.red-background {
+    background-color: #B10E1E !important;
+}
+
+.grey-background {
+    background-color: grey !important;
+}
+
+.allocations-bottomPadding {
+    padding-bottom: 40px;
+}
+
+#allocationDetails p {
+    margin-bottom: 0
+}
+
+.allocation-download {
+    padding-bottom: 20px;
+}
+
+.non-bold {
+    font-weight: normal;
+}
+
+/******* PE Sport ****************************************/
+.multiple-choice input[type='text'], .text-box {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    opacity: 1;
+}
+
+.multiple-choice input[type='submit'] {
+    position: relative;
+    opacity: 1;
+}
+
+.pesport-list table {
+    margin-top: 40px;
+}
+
+    .pesport-list table thead tr th, .pesport-list table thead tr td {
+        width: 50px;
+    }
+
+.pesport-list .responsive-bottom-margin {
+    margin-top: 100px;
+}
+
+.pesport-list .attachment-details {
+    margin-bottom: 10px;
+}
+
+.list-bullet.pesport-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+@media(max-width: 800px) {
+    #pesport-list table td,
+    #pesport-list table th {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 640px) {
+    #pesport-list table td,
+    #pesport-list table th {
+        font-size: 11px;
+    }
+
+    #pesport-list {
+        padding: 0
+    }
+}
+
+@media(max-width: 400px) {
+    #pesport-list table td,
+    #pesport-list table th {
+        font-size: 9px;
+    }
+}
+
+.sportsearchpage .accordion-content .search-block input[type='text'] {
+    float: left;
+    width: 80%;
+}
+
+.sportsearchpage .search-input {
+    background: #00823b url(/Content/sfa/Images/search-button.png) no-repeat 2px 50%;
+    border: solid 2px #005c2a;
+    width: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -500px;
+    border-radius: 0;
+}
+
+@media (min-width: 460px) {
+    .sportsearchpage .accordion-content .search-block {
+        width: 440px;
+    }
+
+        .sportsearchpage .accordion-content .search-block input[type='text'] {
+            width: 100%;
+            max-width: 400px;
+        }
+}
+
+.sportsearchpage .accordion-content {
+    border-left: 5px solid #bfc1c3;
+    padding-left: 30px;
+    padding-top: 10px;
+    height: 100px;
+    float: left;
+    margin-top: 20px;
+    margin-left: -35px;
+    width: 100%;
+}
+
+    .sportsearchpage .accordion-content p {
+        margin-bottom: 0.3em !important;
+    }
+
+.pesport-searchdownload {
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    padding-top: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+.ui-autocomplete {
+    line-height: 19px;
+    color: #0b0c0c;
+    background-color: #f8f8f8;
+    border: 1px solid #bfc1c3;
+    padding: 5px;
+    width: 150px;
+}
+
+    .ui-autocomplete li {
+        padding: 5px;
+    }
+
+        .ui-autocomplete li:hover {
+            background: #005ea5;
+            padding: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+.pub-c-title .attachment {
+    margin: 0 !important;
+}
+
+.back-button {
+    margin-top: 90px;
+}
+
+.sportsearchpage {
+    margin-bottom: 220px !important;
+}
+
+.search-results-title {
+    padding-bottom: 15px;
+}
+
+.sport-group:last-child {
+    padding-top: 30px;
+}
+
+.form-download a {
+    display: block;
+    font-weight: 600;
+    background: url('../../../Content/Originalimages/icons/icon-file-download.png') no-repeat scroll 0 0;
+    min-height: 2.5em;
+    padding: 0 0 0 2.5em;
+}
+
+.sportsearchpageDownload .attachment {
+    padding-left: 10px;
+}
+
+#multiple-schools ul {
+    padding-top: 15px;
+}
+
+.sportsearchpageDownload h1 {
+    font-weight: bold;
+}
+
+@media (min-width: 641px) {
+    /* #school-inter-school .column-third { width: auto !important;} */
+}
+
+#school-inter-school .filter h3 {
+    font-size: 18px !important;
+}
+
+/******* PE Sport End **************************************/
+/******* PE Sport End **************************************/
+
+.gds-multiple-choice [type=checkbox] + label::before {
+    width: 12px;
+    height: 12px;
+    box-sizing: initial;
+}
+
+.gds-multiple-choice [type=checkbox] + label::after {
+    width: 8px;
+    height: 3px;
+    border-width: 0 0 2px 2px;
+    top: 5px;
+    left: 3px;
+    box-sizing: initial;
+    left: 3px;
+}
+
+@media (min-width: 641px) {
+
+    .gds-multiple-choice {
+        padding: 0 0 0 30px;
+    }
+}
+/*** IEX common CSS end ****************************************/
+
+#school-inter-school .js-filter-collapsible-content,
+.docexresults .DocumentTypeFilter .js-filter-collapsible-content,
+#docexresultspage .DocumentTypeFilter .js-filter-collapsible-content {
+    max-height: 310px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media (min-width: 769px) {
+    #school-inter-school .js-filter-collapsible-content::-webkit-scrollbar,
+    .docexresults .DocumentTypeFilter .js-filter-collapsible-content::-webkit-scrollbar,
+    #docexresultspage .DocumentTypeFilter .js-filter-collapsible-content::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+    }
+
+    #school-inter-school .js-filter-collapsible-content::-webkit-scrollbar-thumb,
+    .docexresults .DocumentTypeFilter .js-filter-collapsible-content::-webkit-scrollbar-thumb,
+    #docexresultspage .DocumentTypeFilter .js-filter-collapsible-content::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
+    }
+}
+
+.backToTop {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 14px;
+}
+
+    .backToTop > a > svg {
+        max-width: 13px;
+        max-height: 17px;
+    }
+
+#search-results-heading {
+    float: left;
+}
+
+    #search-results-heading .search-results-title {
+        margin: 0;
+        padding: 0;
+    }
+
+#download-search-link:after {
+    content: "";
+    display: block;
+    clear: right;
+}
+
+#download-search-link {
+    float: right;
+}
+
+.search-field-wrap {
+    background-color: #dee0e2;
+    display: none;
+}
+
+.js-open .search-field-wrap {
+    display: block;
+}
+
+.search-field-wrap .filter-searchwithin-label {
+    background: transparent url(/Content/sfa/Images/icon-mag-glass.png) no-repeat 12px center;
+    background-size: 15px;
+    padding-left: 35px;
+    padding-right: 20px;
+    display: block;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+    .search-field-wrap .filter-searchwithin-label input.filter-search {
+        background-color: transparent;
+        border: 0;
+        border-bottom: #0b0c0c 1px solid;
+        width: 100%;
+        font-size: 16px;
+    }
+
+.sportsearchpage .multiple-choice label.form-hint {
+    font-size: 17px;
+}
+
+#allocationsSection p.download-a-document {
+    display: block;
+    font-weight: 600;
+    background: url('../../../Content/Originalimages/icons/icon-file-download.png') no-repeat scroll 0 0;
+    min-height: 2.5em;
+    padding: 0 0 0 2.5em;
+}
+
+#allocationsSection .attachment {
+    padding: 0;
+}
+
+#allocationsSection p.form-download a {
+    background: none;
+    padding: 0;
+    display: inline;
+    font-weight: 600;
+}
+
+#allocationsSection .published-date {
+    font-weight: normal;
+}
+
+#allocationsSection .glossary-link {
+    position: relative;
+    padding-top: 60px;
+}
+
+#allocationsSection .govuk-bggrey {
+    background-color: #6f777b;
+}
+
+.heading-secondary {
+    padding-top: 4px;
+    padding-bottom: 6px;
+    display: block;
+}
+
+.download-a-document-content {
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-grid;
+}
+
+.download-a-document-section-1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.download-a-document-section-2 {
+    display: block;
+}
+
+.column-full.allocationsBreadCrumb {
+    padding-bottom: 0.75em;
+}
+
+.allocationsBreadCrumb #global-breadcrumb {
+    padding-bottom: 0;
+}
+
+/******* PE Sport End **************************************/
+
+.gapAbove {
+    padding-top: 15px;
+}
+
+.gapLeft {
+    margin-left: 10px;
+}
+
+.govuk-warning-text strong {
+    font-weight: bold;
+}
+
+.button-danger {
+    background-color: #b10e1e;
+}
+
+    .button-danger:hover {
+        background-color: #740711;
+    }
+
+/* Override some bad rule */
+.flash-card [type=radio] + label::before, .flash-card [type=radio] + label::after {
+    content: none;
+}
+
+/* TODO - copy old media size logic around this */
+.govuk-heading-xl.public {
+    margin-top: .625em;
+    margin-bottom: 1.25em;
+}
+
+.strong {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+span.content {
+    font-size: 19px;
+}
+
+table.touch-table th, table.touch-table td {
+    border: 0px solid #000;
+}
+
+span.italic {
+    font-style: italic;
+}
+
+.sportsearch-noresults ul {
+    margin-left: 25px;
+}
+
+.responsive-bottom-margin h2.title {
+    font-weight: bold;
+}
+
+.toggled-adult-funding-content label {
+    font-size: 16px;
+}
+
+.get-started .button {
+    /*    background-image: url('../govuk/images/icons/icon-pointer.png');*/
+    background-image: url('../../../_content/Pds.Core.Web/Content/images/icons/icon-pointer.png');
+}
+
+@media (max-width: 640px) {
+    .transaction .get-started .button {
+        background-position: 100% 50%;
+    }
+}
+
+/******* PE Sport End **************************************/
+.strong {
+    font-weight: bold;
+}
+
+/********Document Exchange Internal Start********************/
+
+#docex-internal-admin .document-checkbox-div input {
+    position: relative;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 0 0 5px;
+}
+
+#docex-internal-admin .document-checkbox-td {
+    vertical-align: top;
+    margin: 0;
+    padding: 15px 0 0 0;
+}
+
+#docex-internal-admin .multiple-choice input {
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    zoom: 1;
+}
+
+#docex-internal-admin .document-checkbox-div [type=checkbox] + label::before {
+    width: 13px !important;
+    height: 13px !important;
+    box-sizing: initial !important;
+}
+
+/*#docex-internal-admin .multiple-choice [type=checkbox] + label::before {
+    content: ""!important;
+    border: 2px solid!important;
+    background: transparent;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 0!important;
+}
+*/
+#docex-internal-admin .document-checkbox-div input {
+    position: relative;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 0 0 5px;
+}
+
+#docex-internal-admin .document-checkbox-div {
+    padding: 0;
+}
+
+#docex-internal-admin .error-message {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.31579;
+    color: #b10e1e;
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 2px 0;
+}
+
+#docex-internal-admin .form-group.choice-required-options {
+    margin-bottom: 30px;
+}
+
+#docex-internal-admin .choice-required-options .error-message {
+    display: none;
+}
+
+#docex-internal-admin .sortable-td-error {
+    font-size: 16px;
+}
+
+#docex-internal-admin .sortable-td {
+    vertical-align: top;
+}
+
+#docex-internal-admin .sortable-table td {
+    word-break: break-word;
+}
+
+
+#docex-internal-admin .column-third.minus-20px-margin-top {
+    padding-left: 0;
+}
+
+#docexresultspage .column-third.minus-20px-margin-top {
+    padding-left: 0;
+}
+
+#docex-internal-admin ul.pagination {
+    float: right;
+    margin: unset;
+    margin-top: -24px;
+    font-size: 16px !important;
+}
+
+#docex-internal-admin .pager-summary {
+    margin-top: 10px;
+    font-size: 16px !important;
+}
+
+#docex-internal-admin ul.pagination li {
+    width: auto;
+    padding-left: 15px;
+}
+
+    #docex-internal-admin ul.pagination li a {
+        font-size: 16px !important;
+    }
+
+#docex-internal-admin table tfoot td {
+    border-bottom: none;
+}
+
+@media (min-width: 641px) {
+    #docex-internal-admin .button-start, #docex-internal-admin .button-get-started {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+    }
+}
+
+#docex-internal-admin .button-start, #docex-internal-admin .button-get-started {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    background-image: url(/Content/sfa/Images/icon-pointer.png);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    padding: 0.36842em 2.15789em 0.21053em 0.84211em;
+}
+
+#docex-internal-admin .width-column-1 {
+    width: 50%;
+}
+
+#docex-internal-admin .pagination-container {
+    margin-top: 20px;
+}
+
+#docex-internal-admin .remove {
+    background-color: rgb(177, 14, 30);
+}
+
+#docex-internal-admin .pager {
+    font-size: 16px;
+    margin-top: 1em;
+    margin-bottom: 1.25em;
+}
+
+.remove-publish .form-group ul {
+    margin-left: 50px;
+}
+
+    .remove-publish .form-group ul li {
+        list-style-type: disc;
+    }
+
+#docex-internal-admin .pagination-container ul li a {
+    font-size: 16px !important;
+    border-bottom: 1px solid #000;
+}
+
+#docex-internal-admin .pagination-container ul .active a {
+    color: #000;
+    cursor: default;
+    border-bottom: none;
+}
+
+#docex-internal-admin .direction-rtl {
+    float: right;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+#docex-internal-admin #btnRemove {
+    background: none !important;
+    color: #005ea5;
+    border: none;
+    padding: 0 !important;
+    height: 22px;
+    font: inherit;
+    border-bottom: 1px solid #005ea5 !important;
+    cursor: pointer;
+    box-shadow: none !important;
+    width: auto;
+    margin-top: -10px;
+}
+
+    #docex-internal-admin #btnRemove:hover {
+        color: #2b8cc4;
+    }
+
+#confirm-remove .list-bullet {
+    margin-bottom: 0;
+}
+
+#docex-internal-admin:focus {
+    outline: none !important;
+}
+
+.spacing-remove {
+    padding-top: -10px;
+}
+
+#docex-internal-admin #btnConfirmPublish {
+    margin-top: 50px;
+    background-color: #00823b;
+    position: relative;
+    display: -moz-inline-stack;
+    display: inline-block;
+    padding: .526315em .789473em .263157em;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    outline-offset: -1px;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 2px 0 #003618;
+    -moz-box-shadow: 0 2px 0 #003618;
+    box-shadow: 0 2px 0 #003618;
+    font-size: 1em;
+    line-height: 1.25;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    color: #fff;
+    vertical-align: top;
+}
+
+#docex-internal-admin .button {
+    white-space: normal;
+}
+
+@media(max-width:640px) {
+    #docex-internal-admin.download-table .sortable-table td {
+        font-size: 10px !important;
+    }
+
+        #docex-internal-admin.download-table .sortable-table td .govuk-tag {
+            font-size: 10px !important;
+        }
+
+    #docex-internal-admin.download-table .width-column-1 {
+        width: 25%;
+    }
+
+    #docex-internal-admin.download-table .width-column-2 {
+        width: 30%;
+    }
+
+    #docex-internal-admin.download-table .width-column-3 {
+        width: 35%;
+    }
+}
+
+
+.progress-box {
+    border: 1px solid #000;
+    padding: 20px;
+}
+
+#progress {
+    padding-bottom: 10px;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+
+#myBar {
+    width: 10%;
+    height: 20px;
+    background-color: blue;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 20px; /* To center it vertically */
+    color: white;
+}
+
+#remove-complete .form-group {
+    margin-bottom: 0;
+}
+
+#doceximportpage #drop-area {
+    position: relative;
+    border: 2px dashed #ccc;
+    width: 100%;
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 0 25px;
+    height: 200px;
+    vertical-align: middle;
+    line-height: 200px;
+}
+
+    #doceximportpage #drop-area.highlight {
+        border-color: green;
+    }
+
+    #doceximportpage #drop-area span {
+        color: lightgrey;
+        float: right;
+    }
+
+
+
+#doceximportpage #fileElem {
+    display: none;
+}
+
+#doceximportpage #labelFileElem {
+    background-color: lightgrey;
+    color: #000;
+    font-weight: normal;
+    box-shadow: 0 1px 0 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    width: auto;
+}
+
+@media(max-width:640px) {
+    #doceximportpage #drop-area {
+        border: none;
+        text-align: center;
+        height: 25px;
+    }
+
+        #doceximportpage #drop-area span {
+            display: none;
+        }
+
+    #doceximportpage #labelFileElem {
+        position: relative;
+    }
+}
+
+#doceximportpage #progressBars li {
+    position: relative;
+    display: block;
+    border: 1px solid grey;
+    padding: 15px;
+}
+
+    #doceximportpage #progressBars li a, #doceximportpage #progressBars li span {
+        float: right;
+    }
+
+    #doceximportpage #progressBars li span {
+        padding-right: 50px;
+    }
+
+    #doceximportpage #progressBars li p {
+        font-weight: bold;
+    }
+
+    #doceximportpage #progressBars li progress {
+        width: 100%;
+    }
+
+#doceximportpage #continueToUpload, #doceximportpage #submit {
+    margin-top: 50px;
+}
+
+#doceximportpage .error {
+    background: #b10e1e;
+}
+
+#doceximportpage details {
+    margin: 30px 0;
+}
+
+#removeFileDiv .multiple-choice {
+    clear: none;
+}
+
+    #removeFileDiv .multiple-choice.option2 {
+        margin-left: 20px;
+    }
+
+#removeFileDiv #removeFile {
+    margin-top: 20px;
+}
+
+#docex-internal-admin .js-filter-collapsible-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#remove-complete ul {
+    list-style-type: inherit;
+    margin-left: 50px;
+}
+
+.intdocexerrorsummmary {
+    display: none;
+    margin-top: 0;
+}
+
+#intdocexerrorsummmary ul.error-summary-list {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.spacing-remove {
+    padding-top: 50px;
+}
+
+.button-space {
+    padding-top: 20px;
+}
+/*#docex-internal-admin .gds-multiple-choice [type=checkbox] + label::after {
+    width: inherit !important;
+    height: inherit !important;
+    border-width: inherit !important;
+    top: inherit !important;
+    left: 3px;
+    box-sizing: inherit !important;
+}*/
+/********Document Exchange Internal End********************/
+.docexresults .no-border-bottom td {
+    border-bottom: 0;
+}
+
+.docexresults .pager {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+    .docexresults .pager .pager-controls {
+        float: right;
+    }
+
+    .docexresults .pager ul {
+        list-style-type: none;
+    }
+
+        .docexresults .pager ul li {
+            float: left;
+            padding-right: 10px;
+        }
+
+#docexuploadpage #fileUploadPlaceholder {
+    margin-top: 30px
+}
+
+#docexuploadpage .fileUploads {
+    font-size: 16px
+}
+
+#docexuploadpage #goToStep3 {
+    margin: 20px 0
+}
+
+#docexuploadpage .error-message {
+    font-weight: bold;
+}
+
+.importCompleteFiles li {
+    border-bottom: 1px solid #ccc;
+}
+
+    .importCompleteFiles li:first-child {
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+    }
+
+.importCompleteFiles {
+    margin-bottom: 50px;
+}
+
+.youvePublishedP {
+    margin-top: 50px;
+}
+
+#docexuploadpage .multiple-choice label {
+    font-size: 16px;
+}
+
+span.heading-secondary {
+    font-size: 27px;
+}
+
+
+
+/**Allocations*/
+
+.pager {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 1.25em;
+}
+
+    .pager .pager-summary {
+        margin-top: 10px;
+        font-size: 16px !important;
+        float: left;
+    }
+
+.backToTop {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 14px;
+}
+
+    .backToTop > a > svg {
+        max-width: 13px;
+        max-height: 17px;
+    }
+
+#uploadCompletePanel .govuk-panel__title {
+    margin-bottom: 10px;
+}
+
+/* Googley eyes fixes */
+.sportsearchpage .multiple-choice [type=radio] + label::after {
+    top: 7px;
+    left: 7px;
+}
+
+.remove-publish .multiple-choice [type=radio] + label::after {
+    top: 7px;
+    left: 7px;
+}
+
+#docexuploadpage .multiple-choice [type=radio] + label::after {
+    top: 7px;
+    left: 7px;
+}
+
+#reconciliation-total td {
+    border-bottom: none;
+    font-weight: bold;
+}
+
+table td.numeric.bold-small {
+    font-size: 19px;
+}
+
+@media (max-width: 640px) {
+    table td.numeric.bold-small {
+        font-size: 16px;
+    }
+}
+
+/*Admin screen changes*/
+.form-group.required .control-label:after {
+    content: "*";
+    color: red;
+}
+
+.dl-horizontal-halves dt, .dl-horizontal-halves dd {
+    width: 45%;
+    border-top: 1px solid #ccc;
+    padding: 10px 0px;
+}
+
+    .dl-horizontal-halves dt.last, .dl-horizontal-halves dd.last {
+        border-bottom: 1px solid #bfc1c3
+    }
+
+table.table-halves td {
+    min-width: 150px;
+    vertical-align:text-top;
+}
+
+table.table-halves td h2 {
+    font-size:19px;
+    font-weight:normal;
+}
+
+    table.table-halves td.first {
+        border-top: 1px solid #bfc1c3
+    }
+
+.govuk-box-highlight-fail {
+    background-color: #b10e1e !important;
+}
+
+.govuk-box-highlight-pass {
+    background-color: #28a197;
+}

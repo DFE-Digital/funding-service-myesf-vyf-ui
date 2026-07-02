@@ -1,0 +1,4486 @@
+{
+  "name": "General Annual Grant Provider",
+  "type": "spreadsheet",
+  "classes": {
+    "bold": {
+      "style": {
+        "bold": true
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "GAGProvider",
+      "title": "indicative_gag_@year1-to-@year2",
+      "RenderGroupsAsRows": true,
+      "dataset": [
+        {
+          "datasetName": "providerFunding",
+          "expression": "ParentProviderType=AcademyTrust&GroupingReason=Indicative"
+        }
+      ],
+      "groups": [
+        {
+          "groups": [
+            {
+              "title": "Organisation"
+            },
+            {
+              "title": "Allocation"
+            },
+            {
+              "title": "Block"
+            },
+            {
+              "title": "Factor"
+            },
+            {
+              "title": "Description"
+            },
+            {
+              "title": "Rate"
+            },
+            {
+              "title": "Places"
+            },
+            {
+              "title": "Full year sub-total"
+            },
+            {
+              "title": "Part year sub-total"
+            },
+            {
+              "title": "Sub-total"
+            },
+            {
+              "title": "Total"
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=false",
+          "groups": [
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Basic entitlement"
+                    },
+                    {
+                      "title": "Primary"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 566)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 4)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Basic entitlement"
+                    },
+                    {
+                      "title": "Key Stage 3"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 568)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 5)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Basic entitlement"
+                    },
+                    {
+                      "title": "Key Stage 4"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 570)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 6)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Basic entitlement"
+                },
+                {
+                  "title": "Total Basic Entitlement"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 579)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 3)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary IDACI band A (most deprived)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 571)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 8)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary IDACI band B"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 572)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 9)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary IDACI band C"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 573)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 10)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary IDACI band D"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 575)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 11)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary IDACI band E"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 576)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 12)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary IDACI band F (least deprived)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 577)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 13)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary free school meals"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 593)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 20)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Primary pupils eligible for free school meals in past 6 years"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 596)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 21)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary IDACI band A (most deprived)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 583)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 14)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary IDACI band B"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 585)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 15)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary IDACI band C"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 587)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 16)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary IDACI band D"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 588)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 17)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary IDACI band E"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 590)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 18)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary IDACI band F (least deprived)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 592)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 19)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary free school meals"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 598)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 22)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Deprivation"
+                    },
+                    {
+                      "title": "Secondary pupils eligible for free school meals in past 6 years"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 601)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 23)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Deprivation"
+                },
+                {
+                  "title": "Total deprivation"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 581)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 7)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total looked-after children"
+                },
+                {
+                  "title": "Total looked-after children"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 603)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 24)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Low prior attainment"
+                    },
+                    {
+                      "title": "Primary pupils not achieving the expected levels of development"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 616)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 26)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Low prior attainment"
+                    },
+                    {
+                      "title": "Secondary pupils not achieving the expected standards in KS3 tests"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 620)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 27)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total low prior attainment"
+                },
+                {
+                  "title": "Total low prior attainment"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 614)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 25)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "English as an additional language"
+                    },
+                    {
+                      "title": "Primary pupils in first year of education within England"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 621)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 29)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "English as an additional language"
+                    },
+                    {
+                      "title": "Primary pupils in first 2 years of education within England"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 623)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 30)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "English as an additional language"
+                    },
+                    {
+                      "title": "Primary pupils in first 3 years of education within England"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 625)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 31)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "English as an additional language"
+                    },
+                    {
+                      "title": "Secondary pupils in first year of education within England"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 628)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 32)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "English as an additional language"
+                    },
+                    {
+                      "title": "Secondary pupils in first 2 years of education within England"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 630)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 33)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "English as an additional language"
+                    },
+                    {
+                      "title": "Secondary pupils in first 3 years of education within England"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 632)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 34)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total English as an additional language"
+                },
+                {
+                  "title": "Total English as an additional language"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 633)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 28)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Mobility"
+                    },
+                    {
+                      "title": "Primary pupils starting school on unusual entry dates (proportion above 6%)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 634)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 36)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Mobility"
+                    },
+                    {
+                      "title": "Secondary pupils starting school on unusual entry dates (proportion above 6%)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 636)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 37)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total mobility"
+                },
+                {
+                  "title": "Total mobility"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 638)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 35)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total pupil-led factors for full year"
+                },
+                {
+                  "title": "Total pupil-led factors for full year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 640)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total pupil-led factors for part year"
+                },
+                {
+                  "title": "Total pupil-led factors for part year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 2)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Lump sum"
+                    },
+                    {
+                      "title": "Total primary lump sum"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 645)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 43)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Lump sum"
+                    },
+                    {
+                      "title": "Total secondary lump sum"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 688)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 44)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 41)].value]>0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Total for small academy in sparsely populated area"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 41)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Maximum sparsity amount set by local authority"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 199)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Method chosen by local authority"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 202)].value",
+                      "datastyle": {
+                        "enumFormat": "SparsityMethodology"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Minimum distance from second nearest school (miles) set by local authority"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 192)].value"
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Academy's distance from second nearest eligible school (miles)"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 191)].value"
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Maximum year group size set by local authority"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 207)].value"
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Sparsity"
+                    },
+                    {
+                      "title": "Academy's average year group size"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 194)].value"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total other factors for full year"
+                },
+                {
+                  "title": "Total other factors for full year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 727)].value"
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total other factors for part year"
+                },
+                {
+                  "title": "Total other factors for part year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 720)].value"
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 50)].value]!=0|@[$..calculations[?(@.templateCalculationId == 647)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Academies that merged last year - get 85% of last year's combined lump"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 647)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 50)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 51)].value]!=0|@[$..calculations[?(@.templateCalculationId == 649)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Additional lump sum for small primary academy in sparsely populated area"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 649)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 51)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 52)].value]!=0|@[$..calculations[?(@.templateCalculationId == 651)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Additional premises funding 1"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 651)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 52)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 53)].value]!=0|@[$..calculations[?(@.templateCalculationId == 674)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Additional premises funding 2"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 674)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 53)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 54)].value]!=0|@[$..calculations[?(@.templateCalculationId == 714)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Additional premises funding 3"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 714)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 54)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 55)].value]!=0|@[$..calculations[?(@.templateCalculationId == 716)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Additional premises funding 4"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 716)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 55)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 56)].value]!=0|@[$..calculations[?(@.templateCalculationId == 715)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Additional premises funding 5"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 715)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 56)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@[$..fundingLines[?(@.templateLineId == 49)].value]!=0|@[$..calculations[?(@.templateCalculationId == 735)].value]!=0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "School budget share"
+                    },
+                    {
+                      "title": "Exceptional adjustments"
+                    },
+                    {
+                      "title": "Total exceptional adjustments"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 735)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 49)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Minimum funding level"
+                },
+                {
+                  "title": "Minimum per pupil funding level set by local authority"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 239)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": "Not Applicable",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Minimum funding level"
+                },
+                {
+                  "title": "Total adjustment to make sure minimum funding level is met"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 726)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 48)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total funding adjustments for full year"
+                },
+                {
+                  "title": "Total funding adjustments for full year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 726)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "School budget share"
+                },
+                {
+                  "title": "Total funding adjustments for part year"
+                },
+                {
+                  "title": "Total funding adjustments for part year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 48)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Protection Funding"
+                },
+                {
+                  "title": "Change in local authority average per pupil rate"
+                },
+                {
+                  "title": "@year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 610)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Protection Funding"
+                },
+                {
+                  "title": "Change in local authority average per pupil rate"
+                },
+                {
+                  "title": "@year0 to @year1"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 611)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Protection Funding"
+                },
+                {
+                  "title": "Change in local authority average per pupil rate"
+                },
+                {
+                  "title": "@year0 to @year1"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 611)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Protection Funding"
+                },
+                {
+                  "title": "Change in local authority average per pupil rate"
+                },
+                {
+                  "title": "Change in local authority average per pupil rate"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 609)].value",
+                  "datastyle": {
+                    "numberFormat": "PercentageWith2DecimalPlaces"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@changeGuaranteedByLA>@avgPerPupilRate",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Difference per pupil"
+                    },
+                    {
+                      "title": "Local authority average per pupil rate @year1 to @year2"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 610)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Difference per pupil"
+                    },
+                    {
+                      "title": "Change in average per pupil rate is lower than local authority guaranteed change by"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 608)].value",
+                      "datastyle": {
+                        "numberFormat": "PercentageWith2DecimalPlaces"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Difference per pupil"
+                    },
+                    {
+                      "title": "Difference per pupil"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 613)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for full year"
+                    },
+                    {
+                      "title": "Pupils @year1 to @year2"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 141)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for full year"
+                    },
+                    {
+                      "title": "Difference per pupil"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 613)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for full year"
+                    },
+                    {
+                      "title": "Total protection funding for full year"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 604)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for days open"
+                    },
+                    {
+                      "title": "Total protection funding for full year"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 604)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for days open"
+                    },
+                    {
+                      "title": "Days open"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 567)].value"
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for days open"
+                    },
+                    {
+                      "title": "Days in the year"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..calculations[?(@.templateCalculationId == 733)].value"
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Protection Funding"
+                    },
+                    {
+                      "title": "Total protection funding for days open"
+                    },
+                    {
+                      "title": "Total protection funding for days open"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 300)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    },
+                    {
+                      "title": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Protection Funding"
+                },
+                {
+                  "title": "Total protection funding"
+                },
+                {
+                  "title": "Total protection funding"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 300)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=false",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (not adjusted for pupils)"
+                },
+                {
+                  "title": "Minimum funding guarantee for full year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 698)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (not adjusted for pupils)"
+                },
+                {
+                  "title": "Days in full year"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 733)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (not adjusted for pupils)"
+                },
+                {
+                  "title": "Days open"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 567)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (not adjusted for pupils)"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (not adjusted for pupils)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 513)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Pupil adjustment"
+                },
+                {
+                  "title": "Pupil numbers used in original minimum funding guarantee calculation"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 696)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Pupil adjustment"
+                },
+                {
+                  "title": "Pupil numbers actually funded"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 528)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Pupil adjustment"
+                },
+                {
+                  "title": "Pupil adjustment"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 737)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (adjusted for pupils)"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (not adjusted for pupils)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 513)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (adjusted for pupils)"
+                },
+                {
+                  "title": "Pupil adjustment"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 737)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (adjusted for pupils)"
+                },
+                {
+                  "title": "Minimum funding guarantee for days open (adjusted for pupils)"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 297)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=false",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Minimum funding guarantee"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": "Total minimum funding guarantee"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 297)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Pre-16 high needs"
+                },
+                {
+                  "title": "Alternative provision"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 477)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 478)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 658)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 310)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=true&@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Pre-16 high needs"
+                },
+                {
+                  "title": "Special"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 466)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 467)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 654)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 308)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=false&@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Pre-16 high needs"
+                },
+                {
+                  "title": "Special occupied"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 469)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 470)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 656)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 309)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=false&@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Pre-16 high needs"
+                },
+                {
+                  "title": "Special unoccupied"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 466)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 467)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 654)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 308)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Pre-16 high needs"
+                },
+                {
+                  "title": "Total pre-16 high needs"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 307)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@FundingBasisIsPlace=true&@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": "Hospital education funding"
+                },
+                {
+                  "title": "Hospital education funding"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 730)].value"
+                },
+                {
+                  "selector": "$..calculations[?(@.templateCalculationId == 662)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 306)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@ReceivesHighNeedsFunding=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "High needs"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": "Total high needs"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 299)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                },
+                {
+                  "title": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@IsMainstreamAcademySponsored=true&@ReceivesSUGPOG=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Start-up grant"
+                },
+                {
+                  "title": "Start-up grant"
+                },
+                {
+                  "title": "Flat rate - paid first year of opening"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 304)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsPrimaryInstitution=true&@providerIsAllThroughInstitution=false",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Start-up grant"
+                    },
+                    {
+                      "title": "Start-up grant"
+                    },
+                    {
+                      "title": "Growth towards full capacity - paid over 2 years to primary schools"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 305)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsSecondaryInstitution=true&@providerIsAllThroughInstitution=false",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Start-up grant"
+                    },
+                    {
+                      "title": "Start-up grant"
+                    },
+                    {
+                      "title": "Growth towards full capacity - paid over 3 years to secondary schools"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 305)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "visibilityCondition": "@providerIsAllThroughInstitution=true",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Start-up grant"
+                    },
+                    {
+                      "title": "Start-up grant"
+                    },
+                    {
+                      "title": "Growth towards full capacity - paid over 2 years to primary schools and 3 years to secondary schools"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 305)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@IsMainstreamAcademySponsored=true&@ReceivesSUGPOG=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Start-up grant"
+                },
+                {
+                  "title": "Start-up grant"
+                },
+                {
+                  "title": "Total start-up grant"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 298)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@ReceivesSUGPOG=true&@IsFreeSchool=true",
+          "groups": [
+            {
+              "visibilityCondition": "@totalPostOpeningGrant>0",
+              "groups": [
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Post-opening grant"
+                    },
+                    {
+                      "title": "Post-opening grant"
+                    },
+                    {
+                      "title": "Per pupil resources"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 302)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Post-opening grant"
+                    },
+                    {
+                      "title": "Post-opening grant"
+                    },
+                    {
+                      "title": "Leadership or other costs to build up pupil numbers"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 303)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "groups": [
+                    {
+                      "title": "@providerName"
+                    },
+                    {
+                      "title": "Indicative general annual grant: academic year @year1 to @year2"
+                    },
+                    {
+                      "title": "Post-opening grant"
+                    },
+                    {
+                      "title": "Post-opening grant"
+                    },
+                    {
+                      "title": "Total post-opening grant"
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "title": ""
+                    },
+                    {
+                      "selector": "$..fundingLines[?(@.templateLineId == 298)].value",
+                      "datastyle": {
+                        "numberFormat": "#,##0.00"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@IsMainstreamAcademySponsored=true&@ReceivesSUGPOG=true",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": "Start-up grant"
+                },
+                {
+                  "title": "Start-up grant"
+                },
+                {
+                  "title": "Total start-up grant for new sponsored academy"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 298)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "visibilityCondition": "@totalAllocation>0",
+          "groups": [
+            {
+              "groups": [
+                {
+                  "title": "@providerName"
+                },
+                {
+                  "title": "Indicative general annual grant: academic year @year1 to @year2"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": "Total allocation"
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "title": ""
+                },
+                {
+                  "selector": "$..fundingLines[?(@.templateLineId == 718)].value",
+                  "datastyle": {
+                    "numberFormat": "#,##0.00"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "receptionUpliftPupilNumbers",
+      "selector": "$..calculations[?(@.templateCalculationId == 61)].value"
+    },
+    {
+      "name": "ks3SubTotal",
+      "selector": "$..fundingLines[?(@.templateLineId == 5)].value"
+    },
+    {
+      "name": "ks4SubTotal",
+      "selector": "$..fundingLines[?(@.templateLineId == 6)].value"
+    },
+    {
+      "name": "totalBasicEntitlement",
+      "selector": "$..fundingLines[?(@.templateLineId == 3)].value"
+    },
+    {
+      "name": "primaryESL1",
+      "selector": "$..fundingLines[?(@.templateLineId == 29)].value"
+    },
+    {
+      "name": "primaryESL2",
+      "selector": "$..fundingLines[?(@.templateLineId == 30)].value"
+    },
+    {
+      "name": "primaryESL3",
+      "selector": "$..fundingLines[?(@.templateLineId == 31)].value"
+    },
+    {
+      "name": "secondaryESL1",
+      "selector": "$..fundingLines[?(@.templateLineId == 32)].value"
+    },
+    {
+      "name": "secondaryESL2",
+      "selector": "$..fundingLines[?(@.templateLineId == 33)].value"
+    },
+    {
+      "name": "secondaryESL3",
+      "selector": "$..fundingLines[?(@.templateLineId == 34)].value"
+    },
+    {
+      "name": "totalESL",
+      "selector": "$..fundingLines[?(@.templateLineId == 28)].value"
+    },
+    {
+      "name": "totalCostOfHigherTeacherSalaries",
+      "selector": "$..fundingLines[?(@.templateLineId == 47)].value"
+    },
+    {
+      "name": "totalForRunningAcademy",
+      "selector": "$..fundingLines[?(@.templateLineId == 45)].value"
+    },
+    {
+      "name": "notionalSENFunding",
+      "selector": "$..fundingLines[?(@.templateLineId == 243)].value"
+    },
+    {
+      "name": "hasNullNotionalSENFunding",
+      "expression": "@notionalSENFunding=nullValue"
+    },
+    {
+      "name": "pfiLoadingFunding",
+      "selector": "$..fundingLines[?(@.templateLineId == 39)].value"
+    },
+    {
+      "name": "hasPFILoadingFunding",
+      "expression": "@pfiLoadingFunding!=0"
+    },
+    {
+      "name": "specialAcademyOrFreeSchool",
+      "expression": "@IsSpecialAcademy=true|@IsSpecialFreeSchool=true"
+    },
+    {
+      "name": "mainstreamAcademyOrFreeSchool",
+      "expression": "@IsMainstreamAcademy=true|@IsMainstreamFreeSchool=true"
+    },
+    {
+      "name": "hospitalEducationTotal",
+      "selector": "$..fundingLines[?(@.templateLineId == 306)].value"
+    },
+    {
+      "name": "hasHospitalEducationFunding",
+      "expression": "@hospitalEducationTotal>0"
+    },
+    {
+      "name": "LAApplyCappingAndScaling",
+      "selector": "$..calculations[?(@.templateCalculationId == 713)].value"
+    },
+    {
+      "name": "schoolHasYearGroupsWithoutPupils",
+      "selector": "$..calculations[?(@.templateCalculationId == 543)].value"
+    },
+    {
+      "name": "totalStartUpGrant",
+      "selector": "$..fundingLines[?(@.templateLineId == 298)].value"
+    },
+    {
+      "name": "totalPostOpeningGrant",
+      "selector": "$..fundingLines[?(@.templateLineId == 298)].value"
+    },
+    {
+      "name": "changeGuaranteedByLA",
+      "selector": "$..calculations[?(@.templateCalculationId == 607)].value"
+    },
+    {
+      "name": "avgPerPupilRate",
+      "selector": "$..calculations[?(@.templateCalculationId == 609)].value"
+    },
+    {
+      "name": "totalAllocation",
+      "selector": "$..fundingLines[?(@.templateLineId == 718)].value"
+    },
+    {
+      "name": "exceptionalCircumstance1",
+      "selector": "$..fundingLines[?(@.templateLineId == 50)].value"
+    },
+    {
+      "name": "FundingBasis",
+      "selector": "$..calculations[?(@.templateCalculationId == 710)].value"
+    },
+    {
+      "name": "FundingBasisIsPlace",
+      "expression": "@FundingBasis=Place"
+    },
+    {
+      "name": "HighNeedsFunding",
+      "selector": "$..fundingLines[?(@.templateLineId == 299)].value"
+    },
+    {
+      "name": "ReceivesHighNeedsFunding",
+      "expression": "@HighNeedsFunding!=nullvalue&@HighNeedsFunding!=0"
+    },
+    {
+      "name": "ProtectionFunding",
+      "selector": "$..fundingLines[?(@.templateLineId == 300)].value"
+    },
+    {
+      "name": "ReceivesProtectionFunding",
+      "expression": "@ProtectionFunding!=nullvalue&@ProtectionFunding!=0"
+    },
+    {
+      "name": "ReceivesSUGPOG",
+      "expression": "@totalPostOpeningGrant!=nullvalue&@totalPostOpeningGrant!=0"
+    },
+    {
+      "name": "IsFreeSchool",
+      "expression": "@IsMainstreamFreeSchool=true|@IsSpecialFreeSchool=true"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    // https://esfstest.herokuapp.com/component-library/funding-table
+
+    var Columns = Model.Components.SingleOrDefault(component => component.Type == ComponentType.Table_Columns);
+    var Rows = Model.Components.SingleOrDefault(component => component.Type == ComponentType.Table_Rows);
+
+    if (Columns == null && Rows == null)
+    {
+        var errorModel = Model.Clone(component =>
+        {
+            component.Title = "ERROR - BOTH COLUMNS AND ROWS NOT DEFINED";
+        });
+
+        await ComponentHelper.Render(Html, ComponentType.Error_Error, errorModel, errorModel.PageData);
+        return;
+    }
+
+    var classes = new List<string>(Model.ClassNames);
+
+    if (Model.UseDefaultClasses)
+    {
+        if (Columns?.Components.FirstOrDefault()?.ClassNames != null)
+        {
+            Rows.ClassNames.AddRange(Columns.Components.FirstOrDefault()?.ClassNames);
+        }
+
+        classes.Insert(0, "govuk-table");
+    }
+    else
+    {
+        Model.DisableDefaultClassesAllDescendants();
+    }
+
+    var TableClasses = string.Join(" ", classes.ToArray());
+
+    var captionClassesList = new List<string>();
+
+    if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+    {
+
+        captionClassesList = Model.UseDefaultClasses ? new List<string>
+        {
+            "govuk-table__caption",
+            "heading-medium",
+            "govuk-!-padding-top-4"
+        } : new List<string>();
+    }
+    else
+    {
+        captionClassesList = Model.UseDefaultClasses ? new List<string>
+        {
+            "govuk-table__caption",
+            "heading-small"
+        } : new List<string>();
+    }
+
+    if (Model.VisuallyHidden)
+    {
+        captionClassesList.Add("visuallyhidden");
+    }
+
+    var CaptionClasses = string.Join(" ", captionClassesList.ToArray());
+
+    var attributes = Model.Attributes?.ToDictionary(entry => entry.Key, entry => entry.Value) ?? new Dictionary<string, object>();
+    var AttributesSb = new System.Text.StringBuilder();
+
+    Models.Component footerComponent = null;
+
+    if (attributes.Any())
+    {
+        foreach (var attribute in attributes)
+        {
+            AttributesSb.Append($" {attribute.Key}=\"{attribute.Value}\"");
+        }
+
+        var showFooter = attributes.ContainsKey("showFooter") && (bool)attributes["showFooter"];
+        if (showFooter)
+        {
+            footerComponent = new Models.Component(Model.ComponentConfiguration)
+            {
+                Type = ComponentType.Table_Footer
+            };
+        }
+    }
+}
+
+<table id="@Model.Id" class="@TableClasses" @Html.Raw(AttributesSb.ToString())>
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <caption class="@CaptionClasses">@Html.Raw(Model.Title)</caption>
+    }
+
+    @if (Columns != null) { await Columns.Render(Html, Model.PageData); }
+    @{
+        await Rows.Render(Html, Model.PageData);
+    }
+    @if (footerComponent != null) { await footerComponent.Render(Html, Model.PageData); }
+</table>

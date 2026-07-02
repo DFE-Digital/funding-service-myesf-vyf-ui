@@ -1,0 +1,137 @@
+@using PDS.ViewYourFunding.Web.Areas.Admin.Enums
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting.FundingStreamSettingsViewModel
+
+<h1 class="govuk-heading-xl">@Model.FundingStream.FundingStreamName settings</h1>
+@{
+    var IsActive = @Model.FundingStream.Active ? "Active" : "Inactive";
+}
+
+
+<table class="touch-table fundingstream-settings-table">
+    <tr>
+        <th>Setting</th>
+        <th>Description</th>
+        <th>Value</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>Funding stream details</td>
+        <td>The name (both normal and within a sentence), code (and whether code can be shown publicly) and status of the funding stream</td>
+        <td>@Model.FundingStream.FundingStreamName, @Model.FundingStream.FundingStreamCode, @IsActive </td>
+        <td> @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminFundingStreamAction, new { fundingStreamId = Model.FundingStream.FundingStreamId, actionMode = FundingStreamSettingAction.Edit }, new { id = "edit-setting-link", @class = "edit-fundingstream-setting" })</td>
+        <td></td>
+    </tr>
+
+    @if (Model.FundingStreamSettings.Any())
+    {
+        @foreach (var setting in Model.FundingStreamSettings)
+        {
+            var canDeleteSetting = setting.Name != "OrganisationDownloadSizeInBytes" && setting.Name != "ProviderDownloadSizeInBytes";
+            <tr>
+                <td>
+                    @setting.Name
+                </td>
+                <td>
+                    @setting.Description
+                </td>
+                <td>
+                    @setting.Value
+                </td>
+                <td>
+                    @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminFundingStreamSettingAction, new { Model.FundingStream.FundingStreamId, setting.SettingValueId, actionMode = FundingStreamSettingAction.Edit }, new { id = "edit-setting-link", @class = "edit-fundingstream-setting" })
+                </td>
+
+
+                <td>
+                    @if (canDeleteSetting)
+                    {
+                        @Html.RouteLink("Delete", ViewYourFundingConstants.RouteName_AdminFundingStreamSettingAction, new { Model.FundingStream.FundingStreamId, setting.SettingValueId, actionMode = FundingStreamSettingAction.Delete }, new { id = "edit-setting-link", @class = "delete-fundingstream-setting" })
+                    }
+                </td>
+             </tr>
+        }
+
+    }
+</table>
+<br />
+@if (Model.CanAddNewSettings)
+{
+    @Html.RouteLink("Add a new setting", ViewYourFundingConstants.RouteName_AdminFundingStreamSettingSetType, new { Model.FundingStream.FundingStreamId }, new { @class = "add-fundingstream-setting" })
+}
+
+<h2>
+    @Html.RouteLink("Next Payments", ViewYourFundingConstants.RouteName_AdminNextPaymentIndex, new { Model.FundingStream.FundingStreamId }, new { @class = "button" })
+</h2>
+
+<h2>
+    @Html.RouteLink("Next Payment Types", ViewYourFundingConstants.RouteName_AdminNextPaymentTypeIndex, new { Model.FundingStream.FundingStreamId }, new { @class = "button" })
+</h2>
+
+
+<h2 class="bold-medium">Publications</h2>
+
+<table class="touch-table fundingstream-publications-table">
+    <tr>
+        <th>Published Date</th>
+        <th>Description</th>
+        <th>Funding Period code</th>
+        <th>Cut Off Date</th>
+        <th>Status</th>
+        <th>UI Model Version</th>
+        <th>Spreadsheet Model Version</th>
+        <th>Spreadsheet Created Date</th>
+        <th></th>
+    </tr>
+    @foreach (var publication in Model.FundingPublications)
+    {
+        <tr>
+            <td>
+                @publication.PublishedDate.ToShortDateString()
+            </td>
+            <td>
+                @publication.Description
+            </td>
+            <td>
+                @publication.FundingPeriodCode
+            </td>
+            <td>
+                @if (publication.CutOffDate.HasValue)
+                {
+                    @publication.CutOffDate.Value.ToShortDateString()
+                }
+            </td>
+            <td>
+                @publication.Status
+            </td>
+            <td>
+                @(publication.UIModelVersion.HasValue ? publication.UIModelVersion.Value.ToString() : "--")
+            </td>
+            <td>
+                @(publication.SpreadsheetModelVersion.HasValue ? publication.SpreadsheetModelVersion.Value.ToString() : "--")
+            </td>
+            <td>
+                @(publication.NewestSpreadsheetCreatedDate.HasValue ? publication.NewestSpreadsheetCreatedDate.Value.ToString() : "--")
+            </td>
+            <td>
+                @if (publication.CanGenerateSpreadSheet)
+                {
+                    @Html.RouteLink("GENERATE SPREADSHEET", ViewYourFundingConstants.RouteName_AdminPublicationGenerateSpreadsheet, new { publication.FundingStreamId, publicationId = publication.Id }, new { @class = "button" })
+                }
+                else
+                {
+                    @Html.Raw("--")
+                }
+            </td>
+            <td>
+                @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminPublicationAction, new { publication.FundingStreamId, publicationId = publication.Id, ActionMode = ActionMode.Edit }, new { })
+            </td>
+            <td>
+                @Html.RouteLink("Delete", ViewYourFundingConstants.RouteName_AdminPublicationAction, new { publication.FundingStreamId, publicationId = publication.Id, ActionMode = ActionMode.Delete }, new { })
+            </td>
+        </tr>
+    }
+</table>
+@Html.RouteLink("Add a Publication", ViewYourFundingConstants.RouteName_AdminPublicationAction, new { Model.FundingStream.FundingStreamId, publicationId = 0, ActionMode = ActionMode.Add }, new { })

@@ -1,0 +1,56 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting.FundingStreamsListViewModel
+   
+ 
+    <table class="touch-table">
+        <tr>
+            <th>Funding Stream</th>
+            <th>Code</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var fundingStream in Model.FundingStreams)
+        {
+            bool activeFundingStream = fundingStream.SettingValues.Any() || fundingStream.Publications.Any() || fundingStream.NextPayments.Any() || fundingStream.NextPaymentTypes.Any();
+
+            <tr>
+                <td>
+                    @fundingStream.FundingStreamName
+                </td>
+
+                <td>
+                    @fundingStream.FundingStreamCode
+                </td>
+
+                <td>
+                    @if (fundingStream.Active)
+                    {
+                        <text>Active</text>
+                    }
+                    else
+                    {
+                        <text>Inactive</text>
+                    }
+                </td>
+
+                <td>
+                    @Html.RouteLink("Edit", ViewYourFundingConstants.RouteName_AdminSettingsFundingStream, new { fundingStreamId = @fundingStream.Id })
+
+                </td>
+
+                <td>
+                    @if (!activeFundingStream)
+                    {
+                        @Html.RouteLink("Delete", ViewYourFundingConstants.RouteName_AdminFundingStreamAction, new { fundingStreamId = @fundingStream.Id, ActionMode = ActionMode.Delete }, new { })
+                    }
+
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+
+    @Html.RouteLink("Add a new funding stream", ViewYourFundingConstants.RouteName_AdminFundingStreamAction, new { fundingStreamId = 0, ActionMode = ActionMode.Add }, new { })

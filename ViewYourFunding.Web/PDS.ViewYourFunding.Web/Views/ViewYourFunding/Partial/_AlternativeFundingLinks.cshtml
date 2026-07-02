@@ -1,0 +1,17 @@
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.AlternativeFundingLinksViewModel
+<p>@(Model.IsStartPage ? "More funding types will be available to view in future on this service. These are:" : "More funding types which everyone can view will be available in future on this service. These are:")</p>
+<ul class="list list-bullet">
+    @{
+        var target = Model.IsStartPage ? null : "_blank";
+        var rel = Model.IsStartPage ? null : "external noopener noreferrer";
+    }
+
+    <li>
+        <a href="https://www.gov.uk/government/publications/pupil-premium-allocations-and-conditions-of-grant-2025-to-2026"
+           target="@target" rel="@rel">pupil premium</a>
+    </li>
+    <li>
+        <a href="https://www.gov.uk/government/publications/universal-infant-free-school-meals-uifsm-2025-to-2026"
+           target="@target" rel="@rel">universal infant free school meals</a>
+    </li>
+</ul>

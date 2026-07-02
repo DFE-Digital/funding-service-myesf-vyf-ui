@@ -1,0 +1,39 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.RunPdfConfirmComparisonViewModel
+
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_BusinessAllocationsConfirmRunPdfComparison, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>        
+        <table class="table-halves">
+            <tr>
+                <td width="50%" class="first">
+                    <h2>@Html.DisplayNameFor(model => model.FundingStreamCodeAndPeriodCode)</h2>
+                </td>
+                <td class="first">@Html.DisplayFor(model => model.FundingStreamCodeAndPeriodCode)</td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    <h2>@Html.DisplayNameFor(model => model.SourceFolder)</h2>
+                </td>
+                <td>@Html.DisplayFor(model => model.SourceFolder)</td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    <h2>@Html.DisplayNameFor(model => model.TargetFolder)</h2>
+                </td>
+                <td>@Html.DisplayFor(model => model.TargetFolder)</td>
+            </tr>
+        </table>
+    </div>
+
+    @Html.HiddenFor(m => m.TargetFolder)
+    @Html.HiddenFor(m => m.SourceFolder)
+    @Html.HiddenFor(m => m.FundingStreamCodeAndPeriodCode)
+    <br />
+    <input type="submit" class="button" value="Run Comparison" />
+    @Html.RouteLink("Back", ViewYourFundingConstants.RouteName_BusinessAllocationsRunPdfComparison)
+}
+

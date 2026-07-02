@@ -1,0 +1,77 @@
+﻿@using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants
+@using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums 
+@model VarianceSelectionViewModel
+
+@{
+    var publishedDate = Model.PublishedDate.ToRouteParameterDate().ToDateDisplay();
+}
+
+@using (Html.BeginRouteForm(LoggedInConstants.RouteName_VarianceSelection, FormMethod.Post, new { @class = "transaction" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="error-summary@(Model.ValidationError ? "" : " hidden")" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
+        <ul class="error-summary-list">
+            <li><a href="#varianceSelection">Select a comparison view</a></li>
+        </ul>
+    </div>
+
+    <fieldset class=@(Model.ValidationError ? "after-error-summary" : "after-hidden-error-summary")>
+        <p><span class="govuk-!-font-weight-bold">Statement:</span> @Model.FundingStream.FundingStreamNameWithinSentence: academic year @Model.YearFrom to @Model.YearTo published on @publishedDate</p>
+
+        <div class="govuk-!-margin-bottom-6">
+            <div class="panel panel-border-narrow">
+                <p>Comparing figures from previous statements will show increases and decreases</p>
+            </div>
+        </div>
+
+        <div class="form-group@(Model.ValidationError ? " form-group-error" : " form-group-no-error")">
+            <span class="error-message@(Model.ValidationError ? "" : " hidden")">Select a comparison view</span>
+
+            @foreach (var option in Model.Options)
+            {
+                <div class="multiple-choice choice-required">
+                    <input id="radio-@option" type="radio" name="SelectedVarianceOption" value="@option">
+                    @if (option == VarianceSelectionOption.FinalStatementPreviousYear)
+                    {
+                        <label for="radio-@option">@Model.YearPrevious to @Model.YearFrom final statement (published @Model.FinalStatementPublishedDate.ToDateDisplay())</label>
+                    }
+                    else if (option == VarianceSelectionOption.PreviousStatementCurrentYear)
+                    {
+                        <label for="radio-@option">@Model.YearFrom to @Model.YearTo previous statement (published @Model.PreviousStatementPublishedDate.ToDateDisplay())</label>
+                    }
+                    @if (option == VarianceSelectionOption.NoComparison)
+                    {
+                        <label for="radio-@option">No comparison</label>
+                    }
+                </div>
+            }
+
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <button class="button" type="submit">Continue</button>
+        @Html.RouteLink("Cancel", LoggedInConstants.RouteName_ProviderStatement, null, new { @class = "govuk-!-padding-left-6" })
+    </div>
+
+    @Html.HiddenFor(model => model.FundingStreamNamePathPart)
+    @Html.HiddenFor(model => model.Ukprn)
+    @Html.HiddenFor(model => model.YearFrom)
+    @Html.HiddenFor(model => model.YearTo)
+    @Html.HiddenFor(model => model.PublishedDate)
+    @Html.HiddenFor(model => model.Tab)
+    @Html.HiddenFor(model => model.ViaChoicePage)
+    @Html.HiddenFor(model => model.IncludeHistory)
+    @Html.HiddenFor(model => model.ViaVariancePage)
+}
+@section vyfScripts {
+    <environment names="Development">
+        <script src="~/scripts/multiple-choice-required-validation.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-multiple-choice-required-validation.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

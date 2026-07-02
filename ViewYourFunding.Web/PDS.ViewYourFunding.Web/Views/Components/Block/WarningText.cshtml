@@ -1,0 +1,7 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Services.Enums
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{
+    await ComponentHelper.Render(Html, ComponentType.DesignComponents_WarningText, Model, Model.PageData);
+}

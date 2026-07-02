@@ -1,0 +1,53 @@
+@using PDS.ViewYourFunding.Services.Constants
+@using PDS.ViewYourFunding.Services.Helper
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Models.ViewYourFunding.ProviderResultsViewModel
+
+<div class="form-block">
+    <p>If a school has converted to an academy, you will see two sets of figures: one for when it was maintained by a local authority, and another for since it has been an academy.</p>
+</div>
+@await Html.PartialAsync("Partial/_SearchResultsFilters", Model.QueryFilterViewModel)
+<div class="column-document-list-two-thirds column-two-thirds document-list">
+    <fieldset>
+        <legend id="document-list" class="visuallyhidden">Search results</legend>
+        <div class="visuallyhidden" role="alert" aria-labelledby="filter-results">
+            @if (Model.ResultCount > 0)
+            {
+                <span id="filter-results" class="pager-summary">Showing 1 to @Model.ResultCount of @Model.ResultCount documents</span>
+            }
+            else
+            {
+                <span id="filter-results" class="pager-summary">Showing @Model.ResultCount documents</span>
+            }
+        </div>
+        <div class="form-block">
+            @if (Model.ResultCount > 0)
+            {
+                <p>Searching on <span class="bold">'@Model.SearchTerm'</span> <span id="resultCountText">we found @Model.ResultCount @(Model.ResultCount == 1 ? "school" : "schools. Did you mean:")</span></p>
+            }
+            else
+            {
+                <p>Searching on <span class="bold">'@Model.SearchTerm'</span> <span id="resultCountText">. No schools were found matching your search. Please refine your criteria.</span></p>
+            }
+            @foreach (var provider in Model.ProviderResults.OrderBy(x => x.OrganisationName))
+            {
+                var providerType = ProviderTypeInternal.FromExternal(provider.ProviderType, provider.ProviderSubType);
+                <div data-la="@provider.ParentPrimaryIdentifier" data-establishment-type="@providerType.RemoveWhitespace()" class="form-block sectionContent searchResultFilter">
+                    @Html.RouteLink(provider.SearchResultDisplay, ViewYourFundingConstants.RouteName_ProviderStatement, new { organisationUkprn = provider.OrganisationUkprn, searchTerm = Model.SearchTerm }, null)
+                </div>
+            }
+            @if (Model.ShowBackToTopLink)
+            {
+                @await Html.PartialAsync("Partial/_BackToTopLink")
+            }
+        </div>
+    </fieldset>
+</div>
+@section vyfScripts{
+    <environment names="Development">
+        <script src="~/Scripts/search-results.js" type="text/javascript"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/vyf-search-results.min.js" asp-file-version="true" type="text/javascript"></script>
+    </environment>
+}

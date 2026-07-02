@@ -1,0 +1,30 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+@{
+    var configuration = Model.ComponentConfiguration;
+    string warningText;
+
+    switch (configuration.FundingStreamCode)
+    {
+        case "DSG":
+            warningText = "Provisional data is subject to change and should be used with caution";
+            break;
+        default:
+            warningText = string.Empty;
+            break;
+    }
+}
+
+@if (!string.IsNullOrEmpty(warningText))
+{
+    <div class="govuk-warning-text custom">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            <p class="govuk-font-size-19">
+                @warningText
+            </p>
+        </strong>
+    </div>
+}

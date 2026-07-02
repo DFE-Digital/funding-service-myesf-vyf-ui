@@ -1,0 +1,193 @@
+[
+  {
+    "outputFileName": "wwwroot/css/vyf-screen.min.css",
+    "inputFiles": [
+      "wwwroot/Content/stylesheets/screen/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/adminscreens.min.css",
+    "inputFiles": [
+      "wwwroot/Content/adminscreens/sfa/*.css",
+      "wwwroot/Content/adminscreens/sass-css/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/loggedin.min.css",
+    "inputFiles": [
+      "wwwroot/Content/loggedinscreens/loggedin.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/vyf-print.min.css",
+    "inputFiles": [
+      "wwwroot/Content/stylesheets/print/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/publicationconfirmation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/publicationConfirmation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/layout-pagination.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/layout-pagination.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/detail.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/detail.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/import-layout.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/import-layout.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-multiple-choice-required-validation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/multiple-choice-required-validation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-accordion.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/accordion.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-IYOaccordion.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/IYOaccordion.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-search-results.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/search-results.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-show-hide-content.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/show-hide-content.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-filters-add-ons.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/filters-add-ons.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-filters.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/filters.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-tabs.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/tabs.js",
+      "wwwroot/Scripts/dsg.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-custom-global-behaviour.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/custom-global-behaviour.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-custom-multi-form-validation.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/multi-form-custom-validation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vyf-mat-filters.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/vyf-mat-filters.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

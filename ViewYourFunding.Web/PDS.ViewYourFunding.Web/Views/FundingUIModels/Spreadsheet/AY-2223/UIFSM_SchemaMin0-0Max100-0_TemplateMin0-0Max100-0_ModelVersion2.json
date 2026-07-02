@@ -1,0 +1,1306 @@
+{
+  "name": "UIFSM Final Spreadsheet",
+  "type": "spreadsheet",
+  "classes": {
+    "borderAllSides": {
+      "style": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "LeftBorder"
+          }
+        ]
+      },
+      "datastyle": {
+        "borders": [
+          {
+            "edge": "TopBorder"
+          },
+          {
+            "edge": "BottomBorder"
+          },
+          {
+            "edge": "RightBorder"
+          },
+          {
+            "edge": "LeftBorder"
+          }
+        ]
+      }
+    },
+    "wideHeaderBold": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "2.5",
+        "wrap": true,
+        "bold": true
+      },
+      "datastyle": {
+        "bold": true
+      }
+    },
+    "headerRow": {
+      "style": {
+        "alignment": "centered",
+        "bold": true
+      }
+    },
+    "wideHeader": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "2.5",
+        "wrap": true
+      }
+    },
+    "schoolHeader": {
+      "style": {
+        "heightInches": 1,
+        "alignment": "centered",
+        "widthInches": "3.5",
+        "wrap": true
+      }
+    },
+    "narrowHeader": {
+      "style": {
+        "alignment": "centered",
+        "heightInches": 1,
+        "widthInches": "1",
+        "wrap": true
+      }
+    },
+    "mediumHeader": {
+      "style": {
+        "heightInches": 1.2,
+        "alignment": "centered",
+        "widthInches": "1.4",
+        "wrap": true
+      }
+    }
+  },
+  "groups": [
+    {
+      "id": "listofallschools",
+      "title": "All Schools",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "(HasFinalAllocationForUIFSM=True)&(ProviderUrn!=0)&(ProviderType!=Local Authority)&(GroupingReason=Information)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - FINAL REVENUE PAYMENT FOR ACADEMIC YEAR @year1/@year2",
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Unique Reference Number (URN)",
+                      "selector": "$..providerUrn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "UK Provider Reference Number (UKPRN)",
+                      "selector": "$..organisationUkprn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Establishment Number (LAEstab)",
+                      "selector": "$..organisationDfeNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..parentPrimaryIdentifier",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Name",
+                      "selector": "$..parentName",
+                      "classname": "headerRow mediumHeader borderAllSides"
+                    },
+                    {
+                      "title": "Establishment Number",
+                      "selector": "$..estabNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "School Name",
+                      "selector": "$..organisationName",
+                      "classname": "headerRow schoolHeader borderAllSides"
+                    },
+                    {
+                      "title": "Academy / Maintained School (as at 1st May @year1)",
+                      "selector": "C74",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "School Type (taken from GIAS as at 1st May @year1)",
+                      "selector": "$..providerSubTypeValue",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "Provisional payment made in June / July @year1 (@britishCurrencySymbol)",
+                      "selector": "C45",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final allocation for @year1/@year2short (@britishCurrencySymbol)",
+                      "selector": "C18",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final  payment for @year1/@year2short (Col J - Col K) (@britishCurrencySymbol)",
+                      "selector": "L19",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from October @year1 census",
+                      "selector": "C20",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from October @year1 census",
+                      "selector": "C21",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from October @year1 census (Col M - Col N)",
+                      "selector": "C22",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from October @year1 census",
+                      "selector": "C23",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from October @year1 census",
+                      "selector": "C24",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from October @year1 census (Col P - Col Q)",
+                      "selector": "C25",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from January @year2 census",
+                      "selector": "C26",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from January @year2 census",
+                      "selector": "C27",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from January @year2 census (Col S - Col T)",
+                      "selector": "C28",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from January @year2 census",
+                      "selector": "C29",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from January @year2 census",
+                      "selector": "C30",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from January @year2 census (Col V - Col W)",
+                      "selector": "C31",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C32",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C33",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Infant pupils used in @year0-@year1short final allocation calculation (Col Y + Col Z)",
+                      "selector": "C34",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maintained_schools",
+      "title": "Maintained Schools",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "(FinalAllocationSchoolType=Maintained School)&(HasFinalAllocationForUIFSM=True)&(ProviderUrn!=0)&(ProviderType!=Local Authority)&(GroupingReason=Information)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - FINAL REVENUE PAYMENT FOR ACADEMIC YEAR @year1/@year2",
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Unique Reference Number (URN)",
+                      "selector": "$..providerUrn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "UK Provider Reference Number (UKPRN)",
+                      "selector": "$..organisationUkprn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Establishment Number (LAEstab)",
+                      "selector": "$..organisationDfeNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..parentPrimaryIdentifier",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Name",
+                      "selector": "$..parentName",
+                      "classname": "headerRow mediumHeader borderAllSides"
+                    },
+                    {
+                      "title": "Establishment Number",
+                      "selector": "$..estabNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "School Name",
+                      "selector": "$..organisationName",
+                      "classname": "headerRow schoolHeader borderAllSides"
+                    },
+                    {
+                      "title": "Academy / Mainitained School (as at 1st May @year1)",
+                      "selector": "C74",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "School Type (taken from GIAS as at 1st May @year1)",
+                      "selector": "$..providerSubTypeValue",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "Provisional payment made in June / July @year1 (@britishCurrencySymbol)",
+                      "selector": "C45",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final allocation for @year1/@year2short (@britishCurrencySymbol)",
+                      "selector": "C18",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final  payment for @year1/@year2short (Col J - Col K) (@britishCurrencySymbol)",
+                      "selector": "L19",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from October @year1 census",
+                      "selector": "C20",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from October @year1 census",
+                      "selector": "C21",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from October @year1 census (Col M - Col N)",
+                      "selector": "C22",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from October @year1 census",
+                      "selector": "C23",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from October @year1 census",
+                      "selector": "C24",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from October @year1 census (Col P - Col Q)",
+                      "selector": "C25",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from January @year2 census",
+                      "selector": "C26",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from January @year2 census",
+                      "selector": "C27",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from January @year2 census (Col S - Col T)",
+                      "selector": "C28",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from January @year2 census",
+                      "selector": "C29",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from January @year2 census",
+                      "selector": "C30",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from January @year2 census (Col V - Col W)",
+                      "selector": "C31",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C32",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C33",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Infant pupils used in @year0-@year1short final allocation calculation (Col Y + Col Z)",
+                      "selector": "C34",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "academies",
+      "title": "Academies",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "(FinalAllocationSchoolType=Academy)&(HasFinalAllocationForUIFSM=True)&(ProviderUrn!=0)&(ProviderType!=Local Authority)&(GroupingReason=Information)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - FINAL REVENUE PAYMENT FOR ACADEMIC YEAR @year1/@year2",
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Unique Reference Number (URN)",
+                      "selector": "$..providerUrn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "UK Provider Reference Number (UKPRN)",
+                      "selector": "$..organisationUkprn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Establishment Number (LAEstab)",
+                      "selector": "$..organisationDfeNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..parentPrimaryIdentifier",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Name",
+                      "selector": "$..parentName",
+                      "classname": "headerRow mediumHeader borderAllSides"
+                    },
+                    {
+                      "title": "Establishment Number",
+                      "selector": "$..estabNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "School Name",
+                      "selector": "$..organisationName",
+                      "classname": "headerRow schoolHeader borderAllSides"
+                    },
+                    {
+                      "title": "Academy / Mainitained School (as at 1st May @year1)",
+                      "selector": "C74",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "School Type (taken from GIAS as at 1st May @year1)",
+                      "selector": "$..providerSubTypeValue",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "Provisional payment made in June / July @year1 (@britishCurrencySymbol)",
+                      "selector": "C45",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final allocation for @year1/@year2short (@britishCurrencySymbol)",
+                      "selector": "C18",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final  payment for @year1/@year2short (Col J - Col K) (@britishCurrencySymbol)",
+                      "selector": "L19",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from October @year1 census",
+                      "selector": "C20",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from October @year1 census",
+                      "selector": "C21",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from October @year1 census (Col M - Col N)",
+                      "selector": "C22",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from October @year1 census",
+                      "selector": "C23",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from October @year1 census",
+                      "selector": "C24",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from October @year1 census (Col P - Col Q)",
+                      "selector": "C25",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from January @year2 census",
+                      "selector": "C26",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from January @year2 census",
+                      "selector": "C27",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from January @year2 census (Col S - Col T)",
+                      "selector": "C28",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from January @year2 census",
+                      "selector": "C29",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from January @year2 census",
+                      "selector": "C30",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from January @year2 census (Col V - Col W)",
+                      "selector": "C31",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C32",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C33",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Infant pupils used in @year0-@year1short final allocation calculation (Col Y + Col Z)",
+                      "selector": "C34",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nmss",
+      "title": "NMSS",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "providerfunding",
+          "parentGroupingType": "LocalAuthority",
+          "orderBy": "OrganisationDfeNumber",
+          "expression": "(FinalAllocationSchoolType=Non-Maintained Special School)&(HasFinalAllocationForUIFSM=True)&(ProviderUrn!=0)&(ProviderType!=Local Authority)&(GroupingReason=Information)"
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - FINAL REVENUE PAYMENT FOR ACADEMIC YEAR @year1/@year2",
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Unique Reference Number (URN)",
+                      "selector": "$..providerUrn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "UK Provider Reference Number (UKPRN)",
+                      "selector": "$..organisationUkprn",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Establishment Number (LAEstab)",
+                      "selector": "$..organisationDfeNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..parentPrimaryIdentifier",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority Name",
+                      "selector": "$..parentName",
+                      "classname": "headerRow mediumHeader borderAllSides"
+                    },
+                    {
+                      "title": "Establishment Number",
+                      "selector": "$..estabNumber",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "School Name",
+                      "selector": "$..organisationName",
+                      "classname": "headerRow schoolHeader borderAllSides"
+                    },
+                    {
+                      "title": "Academy / Mainitained School (as at 1st May @year1)",
+                      "selector": "C74",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "School Type (taken from GIAS as at 1st May @year1)",
+                      "selector": "$..providerSubTypeValue",
+                      "classname": "headerRow wideHeader borderAllSides"
+                    },
+                    {
+                      "title": "Provisional payment made in June / July @year1 (@britishCurrencySymbol)",
+                      "selector": "C45",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final allocation for @year1/@year2short (@britishCurrencySymbol)",
+                      "selector": "C18",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final  payment for @year1/@year2short (Col J - Col K) (@britishCurrencySymbol)",
+                      "selector": "L19",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from October @year1 census",
+                      "selector": "C20",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from October @year1 census",
+                      "selector": "C21",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from October @year1 census (Col M - Col N)",
+                      "selector": "C22",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from October @year1 census",
+                      "selector": "C23",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from October @year1 census",
+                      "selector": "C24",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from October @year1 census (Col P - Col Q)",
+                      "selector": "C25",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception pupils from January @year2 census",
+                      "selector": "C26",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Reception FSM pupils from January @year2 census",
+                      "selector": "C27",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils from January @year2 census (Col S - Col T)",
+                      "selector": "C28",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 pupils from January @year2 census",
+                      "selector": "C29",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Meals taken by Year 1 and Year 2 FSM pupils from January @year2 census",
+                      "selector": "C30",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils from January @year2 census (Col V - Col W)",
+                      "selector": "C31",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Reception pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C32",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Year 1 and Year 2 pupils used in @year0-@year1short final allocation calculation",
+                      "selector": "C33",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    },
+                    {
+                      "title": "Total Eligible Meals taken by Infant pupils used in @year0-@year1short final allocation calculation (Col Y + Col Z)",
+                      "selector": "C34",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0.0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AP_Provisional",
+      "title": "AP Provisional",
+      "autofilter": true,
+      "autoFilterStartRow": 4,
+      "dataset": [
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalAuthority",
+          "orderBy": "GroupCode",
+          "expression": "GroupingReason=Information&GroupCode!=909",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - FINAL REVENUE PAYMENT FOR ACADEMIC YEAR @year1/@year2",
+          "groups": [
+            {
+              "title": "January @year2 Alternative Provision Census",
+              "groups": [
+                {
+                  "title": "",
+                  "groups": [
+                    {
+                      "title": "Local Authority Code",
+                      "selector": "$..groupCode",
+                      "classname": "headerRow narrowHeader borderAllSides",
+                      "overrides": {
+                        "Region0;Region1;Region2;Country": {
+                          "selector": "$..notApplicableText"
+                        }
+                      },
+                      "datastyle": {
+                        "dataType": "Number",
+                        "alignment": "left"
+                      }
+                    },
+                    {
+                      "title": "Local Authority",
+                      "selector": "$..governmentOfficeRegion",
+                      "classname": "headerRow mediumHeader borderAllSides"
+                    },
+                    {
+                      "title": "Provisonal Allocation Paid June / July @year1 (@britishCurrencySymbol)",
+                      "selector": "C68",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final Allocation for @year1-@year2short (@britishCurrencySymbol)",
+                      "selector": "C69",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    },
+                    {
+                      "title": "Final Payment for @year1-@year2short (Col D - Col C) (@britishCurrencySymbol)",
+                      "selector": "C70",
+                      "classname": "headerRow wideHeader borderAllSides",
+                      "datastyle": {
+                        "numberFormat": "#,##0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "local_authority",
+      "title": "LA Summary",
+      "autofilter": true,
+      "autoFilterStartRow": 3,
+      "dataset": [
+        {
+          "datasetName": "funding",
+          "groupingType": "LocalAuthority",
+          "orderBy": "GroupCode",
+          "expression": "GroupingReason=Information&GroupCode!=909",
+          "appendRows": [
+            {
+              "id": "SpacerWithBorder"
+            }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "title": "UNIVERSAL INFANT FREE SCHOOL MEALS (UIFSM) - FINAL REVENUE PAYMENT FOR ACADEMIC YEAR @year1/@year2",
+          "groups": [
+            {
+              "title": "",
+              "groups": [
+                {
+                  "title": "Local Authority Code",
+                  "selector": "$..groupCode",
+                  "classname": "headerRow narrowHeader borderAllSides",
+                  "datastyle": {
+                    "dataType": "Number",
+                    "alignment": "left"
+                  }
+                },
+                {
+                  "title": "Local Authority Name",
+                  "selector": "$..governmentOfficeRegion",
+                  "classname": "headerRow mediumHeader borderAllSides"
+                }
+              ]
+            },
+            {
+              "title": "Provisional Allocations Paid June / July @year1",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Maintained Schools (@britishCurrencySymbol)",
+                  "selector": "C62",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Academies (@britishCurrencySymbol)",
+                  "selector": "C63",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Non-Maintained Special Schools (@britishCurrencySymbol)",
+                  "selector": "C64",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Alternative Provision (@britishCurrencySymbol)",
+                  "selector": "C68",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Final Allocations @year1-@year2short",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Maintained Schools (@britishCurrencySymbol)",
+                  "selector": "C65",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Academies (@britishCurrencySymbol)",
+                  "selector": "C66",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Non-Maintained Special Schools (@britishCurrencySymbol)",
+                  "selector": "C67",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Alternative Provision (@britishCurrencySymbol)",
+                  "selector": "C69",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                }
+              ]
+            },
+            {
+              "title": "Final Payment for @year1-@year2short",
+              "classname": "headerRow borderAllSides",
+              "groups": [
+                {
+                  "title": "Maintained Schools (@britishCurrencySymbol)",
+                  "selector": "C57",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Academies (@britishCurrencySymbol)",
+                  "selector": "C58",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Non-Maintained Special Schools (@britishCurrencySymbol)",
+                  "selector": "C59",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Alternative Provision (@britishCurrencySymbol)",
+                  "selector": "C70",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0"
+                  }
+                },
+                {
+                  "title": "Payment to LAs (@britishCurrencySymbol)",
+                  "selector": "C61",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0.0"
+                  }
+                },
+                {
+                  "title": "Total Grant (@britishCurrencySymbol)",
+                  "selector": "C46",
+                  "classname": "headerRow wideHeader borderAllSides",
+                  "datastyle": {
+                    "numberFormat": "#,##0.0"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

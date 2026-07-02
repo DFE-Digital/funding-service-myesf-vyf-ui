@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace PDS.ViewYourFunding.Services.Interfaces.Models
+{
+    /// <summary>
+    /// An interface representing the response for adding user visit details.
+    /// </summary>
+    public interface IFundingApiAddUserVisitResponse
+    {
+        /// <summary>
+        /// Gets or sets a value indicating whether the add was a success or not.
+        /// </summary>
+        bool Success { get; set; }
+    }
+}

@@ -1,0 +1,86 @@
+@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@using PDS.ViewYourFunding.Services.Helper
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions.RerunPdfGenerationViewModel
+@{
+    var booleanSelectList = new[]
+    {
+        new SelectListItem { Value = "true", Text = "Yes" },
+        new SelectListItem { Value = "false", Text = "No" }
+    };
+}
+<h1 class="govuk-heading-xl">ReRun Document Generation on batch</h1>
+
+@using (Html.BeginRouteForm(ViewYourFundingConstants.RouteName_PdfGenerationActionsConfirmRerunPdfGeneration, null, FormMethod.Post, null, new { @class = "submitDisable" }))
+{
+    @Html.AntiForgeryToken()
+
+
+<dl class="dl-horizontal-halves">
+            <dt>
+                @Html.DisplayNameFor(model => model.SinceCreatedDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SinceCreatedDate)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EndDateTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EndDateTime)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResetFunding)
+            </dt>
+            <dd>
+                @Model.ResetFunding.ToBooleanYesOrNo()
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResetProviderFunding)
+            </dt>
+            <dd>
+                @Model.ResetProviderFunding.ToBooleanYesOrNo()
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FundingStreamCode)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FundingStreamCode)
+            </dd>
+            <dt>
+                <br />
+            </dt>
+            <dd>
+            </dd>
+        </dl>
+	@Html.HiddenFor(m => m.SinceCreatedDate)
+	@Html.HiddenFor(m => m.EndDateTime)
+	@Html.HiddenFor(m => m.ResetFunding)
+	@Html.HiddenFor(m => m.ResetProviderFunding)
+	@Html.HiddenFor(m => m.FundingStreamCode)
+    <input type="submit" class="button" value="Submit" />
+    @Html.RouteLink("Cancel", ViewYourFundingConstants.RouteName_PdfGenerationActionsHome)
+}

@@ -1,0 +1,22 @@
+﻿@using PDS.ViewYourFunding.Web.Models.ViewYourFunding
+@model PDS.ViewYourFunding.Web.Areas.Admin.Models.BusinessAllocationsManagement.SearchByProviderAndYearDetailsViewModel
+
+<h1 class="govuk-heading-xl">@Model.ProviderFundingName (UKPRN: @Model.Ukprn)</h1>
+@Html.AntiForgeryToken()
+<div class="transaction" name="ProviderFundingsHeading">
+    <h2 class="bold-medium">@Model.FundingStreamBusinessAllocationName</h2>
+    <h3>@Model.FormattedFundingPeriodCode</h3>
+</div>
+<div class="govuk-accordion" data-module="accordion" id="accordion-default" name="ProviderFundings">
+    @foreach (var providerFunding in Model.ProviderFundings)
+    {
+        <div class="govuk-accordion__section for-funding-LAREC-1">
+            <div class="govuk-accordion__section-header govuk-accordion__single-funding-statement-header">
+                <h2 class="govuk-accordion__section-heading">
+                    @Html.RouteLink($"Created on {@providerFunding.CreatedDate.ToString("dd MMMM yyyy")} - Version {@providerFunding.DisplayStatementVersion}", ViewYourFundingConstants.RouteName_BusinessAllocationsSearchByProviderDataResult, new {id=@providerFunding.Id})                                        
+                </h2>
+            </div>
+        </div>
+    }
+</div>
+<p name="Back">@Html.RouteLink("Back", ViewYourFundingConstants.RouteName_BusinessAllocationsSearchByProviderAndYear, new { Model.FundingStreamCode })</p>

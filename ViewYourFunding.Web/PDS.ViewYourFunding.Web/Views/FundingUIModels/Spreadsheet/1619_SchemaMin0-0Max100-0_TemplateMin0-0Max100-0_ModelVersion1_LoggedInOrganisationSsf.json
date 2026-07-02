@@ -1,0 +1,360 @@
+{
+  "name": "School Sixth Form Funding",
+  "type": "spreadsheetWithMultiDataWorkSheet",
+  "classes": {
+    "bold": {
+      "style": {
+        "bold": true
+      }
+    }
+  },
+  "additionalFundingStreams": [
+    {
+      "id": "1619-MSS",
+      "code": "1619"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1619Organisation",
+      "title": "1619_@year1-to-@year2_published",
+      "RenderGroupsAsRows": true,
+      "dataset": [
+        {
+          "_type": "Contract - Represents 'Maintained Sixth Forms'",
+          "datasetName": "funding",
+          "groupingType": "LocalAuthoritySsf",
+          "orderByDescended": "StatusChangedDate"
+        },
+        {
+          "datasetName": "providerFunding",
+          "limitedTo": "Dataset1_First_GroupName",
+          "expression": "ParentProviderType=LocalAuthoritySsf",
+          "orderBy": "OrganisationName"
+        },
+        {
+          "_type": "Contract - Represents 'Maintained Special Schools'",
+          "datasetName": "funding",
+          "expression": "GroupingReason=Contracting",
+          "groupingType": "LocalAuthority",
+          "fundingStreamMappings": [ "1619-MSS" ],
+          "limitedTo": "Dataset1_First_GroupName"
+        }
+      ],
+      "groups": [
+        {
+          "groups": [
+            {
+              "title": "Local authority funding"
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": "Total"
+            },
+            {
+              "title": "8 months in 2021 to 2022"
+            },
+            {
+              "title": "4 months in 2022 to 2023"
+            }
+          ]
+        },
+        {
+          "context": "dataset1[0]",
+          "groups": [
+            {
+              "title": "Total mainstream schools funding"
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "selector": "L0",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "D@FY1",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "D@FY2",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            }
+          ]
+        },
+        {
+          "context": "dataset3[0]",
+          "groups": [
+            {
+              "title": "Maintained special schools funding - including student financial support"
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "selector": "L439",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            }
+          ]
+        },
+        {
+          "groups": [
+            {
+              "title": "Total local authority academic year funding"
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": ""
+            },
+            {
+              "formula": {
+                "expression": "{0}+{1}",
+                "selectors": [
+                  "L0",
+                  "L439"
+                ],
+                "contexts": [
+                  "dataset1[0]",
+                  "dataset3[0]"
+                ]
+              },
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "formula": {
+                "expression": "{0}+{1}",
+                "selectors": [
+                  "D@FY1",
+                  "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY1')].value"
+                ],
+                "contexts": [
+                  "dataset1[0]",
+                  "dataset3[0]"
+                ]
+              },
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "formula": {
+                "expression": "{0}+{1}",
+                "selectors": [
+                  "D@FY2",
+                  "$..fundingLines..[?(@.templateLineId == 439)].distributionPeriods[?(@.distributionPeriodId == '@FY2')].value"
+                ],
+                "contexts": [
+                  "dataset1[0]",
+                  "dataset3[0]"
+                ]
+              },
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            }
+          ]
+        },
+        {
+          "groups": [
+            {
+              "title": ""
+            }
+          ]
+        },
+        {
+          "groups": [
+            {
+              "title": "Mainstream schools"
+            },
+            {
+              "title": "Core programme"
+            },
+            {
+              "title": "Student financial support"
+            },
+            {
+              "title": "Industry placements"
+            },
+            {
+              "title": "Advanced maths premium"
+            },
+            {
+              "title": "High value courses"
+            },
+            {
+              "title": ""
+            },
+            {
+              "title": "Total"
+            },
+            {
+              "title": "8 months in 2021 to 2022"
+            },
+            {
+              "title": "4 months in 2022 to 2023"
+            }
+          ]
+        },
+        {
+          "context": "dataset2",
+          "groups": [
+            {
+              "selector": "$..organisationName"
+            },
+            {
+              "selector": "L1",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "L241",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "L300",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "L301",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "L302",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "title": ""
+            },
+            {
+              "selector": "L0",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "D@FY1",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            },
+            {
+              "selector": "D@FY2",
+              "datastyle": {
+                "numberFormat": "ThousandsSeparatedNoDP",
+                "SpreadsheetNumberFormat": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

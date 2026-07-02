@@ -1,0 +1,10 @@
+﻿@using Pds.Core.Web.Models.Hyperlinks
+@using PDS.ViewYourFunding.Web.Helpers
+@model PDS.ViewYourFunding.Web.Models.Shared.BaseViewYourFundingPageViewModel
+
+<p>This page is restricted to authorised users only. You may not have the required access to use this service.</p>
+
+
+<p>You need to speak to your organisation's super user to request this role.</p>
+
+<p class="lede">If the problem continues, you can @Html.Link(AnchorTagType.External, Model.ContactUsLink, "submit an enquiry")</p>

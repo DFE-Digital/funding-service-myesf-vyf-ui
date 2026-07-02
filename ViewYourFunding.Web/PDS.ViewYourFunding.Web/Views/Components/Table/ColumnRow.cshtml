@@ -1,0 +1,38 @@
+@using PDS.ViewYourFunding.Services.Helper
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+@{ 
+    var trClases = new List<string>();
+    trClases.AddRange(Model.ClassNames);
+
+    if (Model.UseDefaultClasses)
+    {
+        trClases.Add("govuk-table__row");
+    }
+    else
+    {
+        Model.DisableDefaultClassesAllDescendants();
+    }
+
+    var trClassesAttribute = trClases.Any() ? $" class=\"{string.Join(" ", trClases.ToArray())}\"" : string.Empty;
+}
+    <tr@(Html.Raw(trClassesAttribute))>
+    @{
+        foreach (var column in Model.Components)
+        {
+            var isFirst = Model.Components.IndexOf(column) == 0;
+
+            if (!isFirst && column.UseDefaultClasses)
+            {
+                column.ClassNames.Add("govuk-table__header--numeric");
+            }
+
+            if (Model.VisuallyHidden)
+            {
+                column.ClassNames.Add("visuallyhidden");
+            }
+
+            await column.Render(Html, Model.PageData);
+        }
+    }
+    </tr>

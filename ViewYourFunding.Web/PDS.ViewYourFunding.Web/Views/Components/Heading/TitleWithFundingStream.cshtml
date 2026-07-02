@@ -1,0 +1,17 @@
+@using Models = PDS.ViewYourFunding.Services.Interfaces.Models
+@model Models.Component
+
+@if (Model.ComponentConfiguration.FundingStreamCode == "GAG")
+{
+    <h1 class="heading-xlarge-loggedin">
+        <span class="heading-secondary-loggedin">@Html.Raw(Model.ComponentConfiguration.ExpandedFundingStreamNameHtml)</span>
+        @Html.Raw(@Model.Title)
+    </h1>
+}
+else
+{
+    <h1 class="heading-xlarge">
+        <span class="heading-secondary">@Html.Raw(Model.ComponentConfiguration.ExpandedFundingStreamNameHtml)</span>
+        @Html.Raw(@Model.Title)
+    </h1>
+}
