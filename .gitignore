@@ -55,6 +55,7 @@ msbuild.wrn
 # Secrets
 appsettings.json
 appsettings.*.json
+!appsettings.example.json
 
 # Explicit
 ViewYourFunding.Web/ViewYourFunding.Automation/ViewYourFunding.Automation.xml

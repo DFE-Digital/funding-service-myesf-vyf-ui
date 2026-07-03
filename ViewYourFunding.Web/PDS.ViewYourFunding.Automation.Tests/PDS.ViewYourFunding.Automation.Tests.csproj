@@ -440,6 +440,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="appsettings.example.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="appsettings.local.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
