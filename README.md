@@ -28,7 +28,7 @@ The application is responsible for BAU work for MYESF such as updating and rolli
 
 In order to run the application locally a valid `appsettings.json` file will need to be created in the `Pds.ViewYourFunding.Web` projects Below, and included in the repo, there is `appsettings.example.json` which can be used as a base and populated with the required values, which can be retrieved from the Azure Portal.
 
-**Note:** Additional appsettings might be required to run different environments, such at AT and preprod. It is recommended to consult the existing developers on this.
+**Note:** Additional appsettings might be required to run different environments. There are different appsettings files for each environment but follow the same structure. It is recommended to consult the existing developers on this.
 
 ## Application Settings (`appsettings.json`)
 
