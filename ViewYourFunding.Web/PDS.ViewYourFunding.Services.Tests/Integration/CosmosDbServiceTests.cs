@@ -257,9 +257,20 @@ namespace PDS.ViewYourFunding.Services.Tests.Integration
             var appConfig = ConfigHelper.GetApplicationConfiguration();
             var clientBuilder =
                 new Microsoft.Azure.Cosmos.Fluent.CosmosClientBuilder(appConfig.CosmosDbConfiguration.ConnectionString);
-            var client = clientBuilder
-                .WithConnectionModeDirect()
-                .Build();
+            CosmosClient client;
+            if (appConfig.CosmosDbConfiguration.CosmosConnectionMode == "Gateway")
+            {
+                client = clientBuilder
+                        .WithConnectionModeGateway()
+                        .Build();
+            }
+            else
+            {
+                client = clientBuilder
+                        .WithConnectionModeDirect()
+                        .Build();
+            }
+
             var database = await client.CreateDatabaseIfNotExistsAsync(appConfig.CosmosDbConfiguration.DatabaseName);
             await database.Database.CreateContainerIfNotExistsAsync("fundingUiIntegrationTests", "/id");
 

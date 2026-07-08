@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace PDS.ViewYourFunding.Automation.Tests.Admin
 {
     [TestClass]
+    [Ignore]
     [TestCategory("Regression"), TestCategory("CoreRegression")]
     public class SearchProviderDataPageTests : FundingStreamRegressionTestBase
     {

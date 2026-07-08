@@ -60,6 +60,7 @@
 	<None Remove="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json" />
     <None Remove="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider.json" />
     <None Remove="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2425.json" />
+    <None Remove="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2526.json" />
     <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm.json" />
     <None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2425.json" />
 	<None Remove="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2526.json" />		
@@ -102,129 +103,132 @@
 
   <ItemGroup>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_MainstreamExisting.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_MainstreamExisting_WithSparsity.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_SpecialExisting.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Special_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\html_GAG_Special_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting_WithSparsity.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_SpecialExisting.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Special_IYO_PostApril_Year2.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Special_IYO_PostApril_Year2.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_No_AgreedChangeToHighNeedsPlaces.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_AgreedChangeToHighNeedsPlaces.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_BaselineForTransition.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
 	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_No_AgreedChangeToHighNeedsPlaces.html">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_AgreedChangeToHighNeedsPlaces.html">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_BaselineForTransition.html">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
     <Content Include="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2425.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FundingUiModels\PDF\1619_Indicative_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AS_2526.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FundingUiModels\PDF\1619_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInLA_SixthForm_AS_2425.json">
@@ -449,11 +453,143 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>	  
 	</None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2425\html_1416_Static_Summary_English_and_Maths_funding.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2425\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2526\html_1416_Static_Summary_English_and_Maths_funding.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2526\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Academies_with_PhasedClosure.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_IYO_Adjustments_2324_SummaryTableBugFixTesting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_Main_Adjustments_2324_SummaryTableBugFixTesting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_withHighValueCoursesForSchoolLeavers_And_SUP_AND_POG.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Academies_with_PhasedClosure.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_2425_IndPlacementFundingTblHide.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_2425_IndPlacementFundingTblShow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_2425_TBandVCHide.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Adjustments_2425_TBandVCShow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Indicative_2425_WithTLevelIndPlacements.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IYO_Adjustments_2324_SummaryTableBugFixTesting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IYO_Adjustments_2425_NS_SET2AllShow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_IYO_Adjustments_2425_S_SET2AllShow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_LA_SixthForm.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Main_Adjustments_2324_SummaryTableBugFixTesting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Main_Adjustments_2425_NS_SET2AllShow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Main_Adjustments_2425_S_SET2AllShow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_Mss.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_withHighValueCoursesForSchoolLeavers_And_SUP_AND_POG.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_Static_2425_Residential_Support_Scheme.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_2526_Increment1_HideAll.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_2526_Increment1_ShowAll.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_IndicativeStatement.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_Indicative_2526_WithTLevelIndPlacements.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_IndustryPlacements_NonSpecialAcca_HasValues.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_Provider_Indicative_WithHighValueCourses.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_Student_Numbers_2526.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_WithDisadvantagedFunding_2223.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_Provider_Indicative_WithoutHighValueCourses_2223.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_2526_Increment1_HideAll.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_2526_Increment1_ShowAll.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_IndicativeStatement.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_Indicative_2526_WithTLevelIndPlacements.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_IndustryPlacements_NonSpecialAcca_HasValues.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_Provider_Indicative_WithHighValueCourses.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_Static_PolicyChanges_2627_ShowAll.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_1619_WithDisadvantagedFunding_2223.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2627\html_Provider_Indicative_WithoutHighValueCourses_2223.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2223\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_MainstreamExisting.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -482,32 +618,71 @@
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\html_GAG_Special_IYO_PostSept.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2324\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_MainstreamExisting.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_MainstreamExisting_WithSparsity.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_SpecialExisting.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Special_IYO_PostApril.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\html_GAG_Special_IYO_PostSept.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2425\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_MainstreamExisting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_MainstreamExisting_WithSparsity.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_Mainstream_IYO_PostApril.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_Mainstream_IYO_PostApril_WithDedelgation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_Mainstream_IYO_PostSept.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_SpecialExisting.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_Special_IYO_PostApril.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\html_GAG_Special_IYO_PostSept.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Indicative_AC_2526\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2223\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -596,9 +771,6 @@
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_withFreeMealsLine.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_SixthForm_withHighValueCoursesForSchoolAndCollegeLeavers_And_SUP_AND_POG.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2324\html_1619_TuitionFunding_Without_MathsTop.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -683,9 +855,6 @@
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_withFreeMealsLine.html">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
-	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_SixthForm_withHighValueCoursesForSchoolAndCollegeLeavers_And_SUP_AND_POG.html">
-		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\html_1619_TuitionFunding_Without_MathsTop.html">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
@@ -709,27 +878,66 @@
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2526\html_1619_SixthForm_Mss_2526.html">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2324\uri.csv">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>	  
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Mainstream_IYO_PostApril.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Mainstream_IYO_PostSept.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Special_IYO_PostApril_Year2.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
 	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2425\uri.csv">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_MainstreamExisting_WithSparsity_Adjusted.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_MainstreamExisting_WithSparsity_Standard.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_Mainstream_Calculation_Baseline_MFG_ScalingCapping.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_Mainstream_IYO_PostApril.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_Mainstream_IYO_PostSept.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_Mainstream_IYO_PostSept_WithDedelgation.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_Special_IYO_PostApril_Year2.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\html_GAG_Static_IYO_Special_PostSept_SecondYear.html">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_GAG_Provider_AC_2526\uri.csv">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2324\uri.csv">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+	<None Update="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\uri.csv">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_dual_census_no_threshold.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -744,6 +952,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\html_pna_threshold_used.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\uri.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_dual_census_no_threshold.html">
@@ -764,6 +975,9 @@
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\html_pna_threshold_used.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
 	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_dual_census_no_threshold.html">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
@@ -781,6 +995,9 @@
 	  </None>
 	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\html_pna_threshold_used.html">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\uri.csv">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>	  
   </ItemGroup>
 
@@ -788,7 +1005,6 @@
 	<Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2425\" />  
     <Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_PNA_AC_2223\" />
     <Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_PNA\" />
-    <Folder Include="ExternalApi\ExpectedHtml\ExternalApiTests_1619_AS_2425\" />
   </ItemGroup>
 
 </Project>

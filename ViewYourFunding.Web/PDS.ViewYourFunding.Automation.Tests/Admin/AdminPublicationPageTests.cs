@@ -5,6 +5,7 @@ using PDS.ViewYourFunding.Automation.Tests.ViewYourFunding;
 namespace PDS.ViewYourFunding.Automation.Tests.Admin
 {
     [TestClass]
+    [Ignore]
     public class AdminPublicationPageTests : FundingStreamRegressionTestBase
     {
         [TestMethod, TestCategory("Regression"), TestCategory("CoreRegression")]

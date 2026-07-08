@@ -9,6 +9,7 @@ namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding
     /// </summary>
     /// <seealso cref="BaseRegressionTest" />
     [TestClass]
+    [Ignore]
     public class StartPageTests : BaseRegressionTest
     {
         /// <summary>

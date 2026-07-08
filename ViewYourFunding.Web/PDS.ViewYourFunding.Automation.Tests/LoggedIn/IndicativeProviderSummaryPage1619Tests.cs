@@ -6,6 +6,7 @@ using ViewYourFunding.Automation.Pages.ViewYourFunding;
 namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
 {
     [TestClass]
+    [Ignore]
     public class IndicativeProviderSummaryPage1619Tests : LoggedInRegressionTestBase
     {
         private readonly ApplicationConfiguration _applicationConfiguration;

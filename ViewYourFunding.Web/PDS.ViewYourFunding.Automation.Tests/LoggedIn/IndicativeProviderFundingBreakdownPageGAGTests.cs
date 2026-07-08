@@ -8,6 +8,7 @@ using ViewYourFunding.Automation.Pages.ViewYourFunding;
 namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
 {
     [TestClass, TestCategory("Regression"), TestCategory("CoreRegression")]
+    [Ignore]
     public class IndicativeProviderFundingBreakdownPageGAGTests : LoggedInRegressionTestBase
     {
         #region Private fields

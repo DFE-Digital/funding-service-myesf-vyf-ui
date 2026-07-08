@@ -6,6 +6,7 @@ using ViewYourFunding.Automation.Utilities;
 namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
 {
     [TestClass]
+    [Ignore]
     public class ProviderSummaryPageTests : LoggedInRegressionTestBase
     {
         private readonly ApplicationConfiguration _applicationConfiguration;

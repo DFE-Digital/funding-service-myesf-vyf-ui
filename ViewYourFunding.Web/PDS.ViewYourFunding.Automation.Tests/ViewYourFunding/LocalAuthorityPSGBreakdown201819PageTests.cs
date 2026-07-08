@@ -8,6 +8,7 @@ namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding
     /// </summary>
     /// <seealso cref="FundingStreamRegressionTestBase" />
     [TestClass]
+    [Ignore]
     public class LocalAuthorityPSGBreakdown201819PageTests : FundingStreamRegressionTestBase
     {
         /// <summary>

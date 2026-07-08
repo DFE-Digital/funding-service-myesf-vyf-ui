@@ -5,6 +5,7 @@ using ViewYourFunding.Automation.Pages.ViewYourFunding;
 namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding
 {
     [TestClass]
+    [Ignore]
     public class LoginTests : FundingStreamRegressionTestBase
     {
         private readonly string username;

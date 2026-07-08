@@ -45,7 +45,7 @@ namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
         [DataRow("html_1619_SpecialAcademies", "1619-AS-2122-10004756-2_0")]
         [DataRow("html_1619_SixthForm_without", "1619-AS-2122-10000866-2_0")]
         [DataRow("html_1619_SixthForm_withFreeMealsLine", "1619-AS-2122-10040630-2_0")]
-        [DataRow("html_1619_SixthForm_withHighValueCoursesForSchoolAndCollegeLeavers_And_SUP_AND_POG", "1619-FY-2021-10040631-1_0")]
+        [DataRow("html_1619_SixthForm_withHighValueCoursesForSchoolLeavers_And_SUP_AND_POG", "1619-FY-2021-10040631-1_0")]
         [DataRow("html_1619_SixthForm_with", "1619-AS-2122-10006247-2_0")]
         [DataRow("html_1619_SixthForm_No_HighValueCoursesForSchoolAndCollegeLeavers_Post2122", "1619-AS-2223-10040631-1_0")]
         [DataRow("html_1619_WithDisadvantagedFunding_2223", "1619-AS-2223-10088096-2_0")]

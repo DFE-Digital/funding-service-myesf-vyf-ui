@@ -80,7 +80,7 @@ namespace PDS.ViewYourFunding.Automation.Tests.ExternalApi
 
         protected async Task<string> GetHtml(string providerFundingId, string layoutId, string schema, string fundingPeriodCode = "AC-2122", string fundingStreamCode = "GAG")
         {
-            var cosmosClient = new CosmosClient(_applicationConfiguration.CosmosDbConfiguration.ConnectionString);
+            var cosmosClient = new CosmosClient(_applicationConfiguration.CosmosDbConfiguration.ConnectionString, new CosmosClientOptions { ConnectionMode = _applicationConfiguration.CosmosDbConfiguration.CosmosConnectionMode == "Gateway" ? ConnectionMode.Gateway : ConnectionMode.Direct });
             var container = cosmosClient
                 .GetDatabase(_applicationConfiguration.CosmosDbConfiguration.DatabaseName)
                 .GetContainer(_applicationConfiguration.CosmosDbConfiguration.LayoutCollection);

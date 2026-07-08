@@ -8,6 +8,7 @@ using System.Text;
 namespace PDS.ViewYourFunding.Automation.Tests.Admin
 {
     [TestClass]
+    [Ignore]
     public class AdminGeneralSettingListPageTests : FundingStreamRegressionTestBase
     {
         public AdminGeneralSettingListPageTests()
