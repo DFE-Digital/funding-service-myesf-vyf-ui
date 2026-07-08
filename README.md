@@ -3,10 +3,11 @@
 The Manage Your Education and Skills Funding (MYESF) UI allows the following:
 
 - View current and previous allocations by organisation or funding type
-- Allows to view funding for organisations: academies and free schools,city technology colleges,general hospitals,local authorities,local authority maintained schools,non-maintained special schools and pupil referral units.
-- Allows to view funding type figures for: Dedicated schools grant and PE and sport premium.
-- Allows to download the latest allocation data for Dedicated schools grant and PE and sport premium.
-- Allows to see the allocation history of Dedicated schools grant and PE and sport premium.
+- Allows users to view funding for organisations: academies and free schools,city technology colleges,general hospitals,local authorities,local authority maintained schools,non-maintained special schools and pupil referral units.
+- Allows users to view funding type figures for: Dedicated schools grant and PE and sport premium.
+- Allows users to download the latest allocation data for Dedicated schools grant and PE and sport premium.
+- Allows users to see the allocation history of Dedicated schools grant and PE and sport premium.
+- Allows authorised users to view digital versions of General Annual Grant (GAG) statements.
 
 ## Provider
 
@@ -14,13 +15,9 @@ The Manage Your Education and Skills Funding (MYESF) UI allows the following:
 
 ## About this project
 
-This project is using .NET 8.0 framework.
+This project is an ASP.NET Core 8 web api utilising Azure App Service for deployment.
 
-This project consists of `Pds.ViewYourFunding.Web`,`Pds.ViewYourFunding.Core`,`Pds.ViewYourFunding.Repositories`,`Pds.ViewYourFunding.Services`, `Pds.VYF.Services` and corresponding test projects.
-
-The UI runs on an Azure App service on Azure.
-
-The application is responsible for BAU work for MYESF such as updating and rolling over funding stream spreadsheets.
+The web api runs on an Azure App service on Azure.
 
 **Note:** The project is currently being updated to be containerised via Docker where the deployment method and target will change, this document will be updated when these changes have been finalised.
 
@@ -28,15 +25,10 @@ The application is responsible for BAU work for MYESF such as updating and rolli
 
 In order to run the application locally a valid `appsettings.json` file will need to be created in the `Pds.ViewYourFunding.Web` projects Below, and included in the repo, there is `appsettings.example.json` which can be used as a base and populated with the required values, which can be retrieved from the Azure Portal.
 
-**Note:** Additional appsettings might be required to run different environments. There are different appsettings files for each environment but follow the same structure. It is recommended to consult the existing developers on this.
-
 ## Application Settings (`appsettings.json`)
 
 ```json
 {
-  "APPINSIGHTS_INSTRUMENTATIONKEY": "",
-  "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
-
   "Authentication": {
     "AppIdUrl": "",
     "ClientId": "",
@@ -72,12 +64,10 @@ In order to run the application locally a valid `appsettings.json` file will nee
     }
   },
   "DfeSignInUrl": "",
-
   "DocumentGeneratorFundingReportsUrl": "",
   "DocumentGeneratorPdfComparerUrl": "",
   "DocumentGeneratorRerunUrl": "",
   "DocumentGeneratorUrl": "",
-
   "Environment": "",
   "FeedReaderUrl": "",
   "FundingDataApiEndPoint": "",
@@ -85,6 +75,18 @@ In order to run the application locally a valid `appsettings.json` file will nee
   "IdamsMetadataAddress": "",
   "IdamsRealm": "",
   "LoggedInProviderHomeLink": "",
+  "Logging": {
+    "ApplicationInsights": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Error"
+      }
+    },
+    "LogLevel": {
+      "Default": "Information"
+    }
+  },
+  "MSClarityId": "",
   "MyesfLogoutUrl": "",
   "oidc": {
     "Authority": "",
@@ -116,14 +118,6 @@ In order to run the application locally a valid `appsettings.json` file will nee
       "ClientId": "",
       "ClientSecret": "",
       "TenantId": ""
-    },
-    "OrganisationApiClient": {
-      "ApiBaseAddress": "",
-      "AppUri": "",
-      "Authority": "https://login.microsoftonline.com/",
-      "ClientId": "",
-      "ClientSecret": "",
-      "TenantId": ""
     }
   },
   "TerminatedLocalAuthority": {
@@ -133,68 +127,61 @@ In order to run the application locally a valid `appsettings.json` file will nee
   },
   "ViewYourFundingApiBaseAddress": "",
   "WEBSITE_HEALTHCHECK_MAXPINGFAILURES": "5",
-  "ConnectionStrings:vyf": ""
+  "ConnectionStrings": {
+    "vyf": ""
+  }
 }
 ```
 
 ### Setting Details
 
-- **`APPINSIGHTS_INSTRUMENTATIONKEY`**  
-  App insights secret key
-
 - **`Authentication:AppIdUrl`**  
-  The intended recipient of the microsoft azure authentication token.
+  The intended recipient of the microsoft azure authentication token for the VYF data api.
  
 - **`Authentication:ClientId`**  
-  The application (client) ID registered in microsoft azure.
+  The application (client) ID registered in azure ad for the VYF data api.
 
 - **`Authentication:ClientSecret`**  
-  The application (client) ID registered in microsoft azure.
+  The application (client) ID registered in azure ad for the VYF data api.
 
 - **`Authentication:Instance`**  
-  The URL of the microsoft azure service used to authenticate. (https://login.microsoftonline.com/)
+  The url of the azure ad service used to authenticate the admin api.
 
 - **`Authentication:TenantId`**  
-  The unique identifier for your microsoft azure tenant.
+  The unique identifier for the admin api azure ad tenant.
 
 - **`BlobStorage:ServiceName`**  
-  The connection string for the UI related azure storage blob containers. use (pdsatsharedstr)
+  The name of the azure blob storage account for the UI related azure storage blob containers.
 
 - **`BlobStorage:Key`**  
-  The connection string key for the UI blobcontainers.
+  The access policy key for the azure blob storage account for the UI related blob containers.
 
 - **`BlobStorage:ContainerName`**  
-  The connection string for the document exchange related azure storage blob containers. use (spreadsheets).
+  The name of the blob storage container used for storage purposes.
 
 - **`CookieName`**  
-  Cookie name value
+  The name given to the cookie used for cross service data access.
 
 - **`CosmosDbConfiguration:AuditCollection`**  
-  The secret value for document exchange cosmos db resource. (Use 'audit')
+  The name of the cosmos db collection used for audit purposes.
   
 - **`CosmosDbConfiguration:ConnectionString`**  
-  The secret connection string calue for cosmosdb
+  The connection string value used for accessing the VYF cosmos db service.
   
 - **`CosmosDbConfiguration:ProviderFundingCollection`**  
-  The value for provider funding collections. (Use 'providerfunding')
+  The name of the cosmos db collection used for provider funding data.
 
 - **`CosmosDbConfiguration:CosmosConnectionMode`**  
-  The connection mode used for cosmosdb Use ('Gateway').
-  
-- **`CosmosDbConfiguration:AuditCollection`**  
-  The secret value for document exchange cosmos db resource. (Use 'audit').
-
-- **`AzureCosmosDb:ServiceEndpoint`**  
-  The uri for the document exchange cosmos db resource.
+  The connection mode used for accessing the VYF cosmos db service.
 
 - **`DfeSignIn:Cookie:Name`**  
-  Dfe sign in cookie name.
+  The name given to the cookie used for Dfe Sign In authentication.
 
 - **`DfeSignIn:DfeLegacyCodeId`**  
-  Dfe legacy code id values (2 number strings).
+  The identifier for the Dfe legacy code used for Dfe Sign In authentication.
   
 - **`DfeSignIn:OpenIDConnect:Authority`**  
-  Dfe sign in open id adress link.
+  The authority URL for DfE sign in Open ID Connect service.
   
 - **`DfeSignIn:OpenIDConnect:Clientid`**  
   The application (client) ID for DfE sign in Open ID Connect service.
@@ -209,7 +196,7 @@ In order to run the application locally a valid `appsettings.json` file will nee
   The application (client) secret for DfE sign in public api service.
   
 - **`DfeSignIn:PublicApi:Tokenissuer`**  
-  The document exchange token identifier for DfE sign in public api service.
+  The identifier for the token issuer for DfE sign in public api service.
 
 - **`DfeSignIn:PublicApi:url`**  
   The url used to access DfE sign in public api service.
@@ -218,147 +205,176 @@ In order to run the application locally a valid `appsettings.json` file will nee
   The url used to access DfE sign in service.
 
 - **`DocumentGeneratorFundingReportsUrl`**  
-  Url link for document generator funding reports.
+  The url for the document generator funding reports function app http trigger.
   
 - **`DocumentGeneratorPdfComparerUrl`**  
-  Url link for document generator pdf file comparer.
+  The url for document generator pdf file comparer function app http trigger.
 
 - **`DocumentGeneratorRerunUrl`**  
-  Url link for document generator rerun.
+  The url for document generator rerun function app http trigger.
+
+- **`DocumentGeneratorRerunUrl`**  
+  The url for document generator base function app http trigger.
   
 - **`Environment`**  
   The target environment string.
   
 - **`FeedReaderUrl`**  
-  Url link for the feed reader.
+  The url for the funding feed reader base function app http trigger
   
 - **`FundingDataApiEndPoint`**  
-  Url link for API endpoint.
+  The url for the VYF data api.
 
 - **`GlobalCacheTimeToLive`**  
-  Numeric value for cache time.
-  
-- **`IdamsMetadataAddress`**  
-  Url link idams metadata.
-
-- **`IdamsRealm`**  
-  Unique idams realm connection string.
+  The default value for cache time to live.
   
 - **`LoggedInProviderHomeLink`**  
-  Url link for provider home.
+  The url for the VYF logged in home page.
+
+- **`Logging:ApplicationInsights:LogLevel:Default`**
+  The default logging level for the service when logging to Application Insights; refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel?view=net-9.0-pp) for an explanation of the different levels.
+
+- **`Logging:ApplicationInsights:LogLevel:Microsoft`**
+  The default logging level for Microsoft specific information when logging to Application Insights; refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel?view=net-9.0-pp) for an explanation of the different levels.
+
+- **`Logging:LogLevel:Default`**
+  The default logging level for the service; refer to the [Microsoft Documentation](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.logging.loglevel?view=net-9.0-pp) for an explanation of the different levels.
 
 - **`MyesfLogoutUrl`**  
-  Url link for logging out of myesf service.
+  The url for logging out of the MYESF service.
   
 - **`oidc:Authority`**  
-  oidc adress link.
+  The authority URL for DfE sign in Open ID Connect service.
 
 - **`oidc:ClientId`**  
-  The oidc ID for DfE sign in Open ID Connect service.
+  The application (client) ID for DfE sign in Open ID Connect service.
 
 - **`oidc:ClientSecret`**  
-  The oidc secret for DfE sign in public service.
+  The application (client) secret for DfE sign in Open ID Connect service.
 
 - **`oidc:PostLogOutUrl`**  
-  String path value for postlogout.
+  The url for logging out of the DfE sign in Open ID Connect service.
 
 - **`oidc:RedirectUrl`**  
-  String path to redirect to.
-  
-- **`PdsApplicationInsights:Environment`**  
-  String of the target environment
+  The redirect url for the DfE sign in Open ID Connect service.
   
 - **`PdsApplicationInsights:InstrumentationKey`**  
-  Unique string key value for application insights.
+  The key value for Application Insights resource for logging purposes.
+
+- **`PdsApplicationInsights:Environment`**  
+  The environment which the app is running on for Application Insights for logging purposes.
 
 - **`RecentlyOpenedLocalAuthorities:FundingPeriodCode`**  
-  Internal local authority code.
+  The funding period code stored for recently opened local authorities used for specific logic.
   
 - **`RecentlyOpenedLocalAuthorities:LocalAuthorityCodeList`**  
-  List of internal local authority codes (seperated by comma).
+  The local authority codes stored for recently opened local authorities used for specific logic.
 
 - **`RequestAuthorisationKey`**  
-  Unique autherisation key value.
+  The secret key used for authorising requests to the external funding api.
   
 - **`roleApi:ClientId`**  
-  The role API client id value.
+  The application (client) ID for DfE sign in public api service.
 
 - **`roleApi:ClientSecret`**  
-  The role API secret value.
+  The application (client) secret for DfE sign in public api service.
   
 - **`roleApi:TokenIssuer`**  
-  The role API user token value.
+  The identifier for the token issuer for DfE sign in public api service.
 
 - **`roleApi:Url`**  
-  Url Link for api testing.
+  The url used to access DfE sign in public api service.
 
 - **`Services:AdminApiClient:ApiBaseAddress`**  
-  Url link to the API admin client.
+  The url for the admin api.
 
 - **`Services:AdminApiClient:AppUri`**  
-  Unique string for admin api client uri.
+  The intended recipient of the microsoft azure authentication token for the admin api.
 
 - **`Services:AdminApiClient:Authority`**  
-  Microsoft authentication.
+  The url of the azure ad service used to authenticate the admin api.
 
 - **`Services:AdminApiClient:ClientId`**  
-  Unique Id string for API admin client.
+  The application (client) ID registered in azure ad for the admin api.
 
 - **`Services:AdminApiClient:ClientSecret`**  
-  Unique secret string for API admin client.
+  The application (client) ID registered in azure ad for the admin api.
 
 - **`Services:AdminApiClient:TenantId`**  
-  Unique tenant Id string for API admin client.
-  
-- **`Services:OrganisationApiClient:ApiBaseAddress`**  
-  Url link to the API Organisation client.
-
-- **`Services:OrganisationApiClient:AppUri`**  
-  Unique string for Organisation API client uri.
-
-- **`Services:OrganisationApiClient:Authority`**  
-  Microsoft authentication.
-
-- **`Services:OrganisationApiClient:ClientId`**  
-  Unique Id string for API Organisation client.
-
-- **`Services:OrganisationApiClient:ClientSecret`**  
-  Unique secret string for API Organisation client.
-
-- **`Services:OrganisationApiClient:TenantId`**  
-  Unique tenant Id string for API Organisation client.
+  The unique identifier for the admin api azure ad tenant.
   
 - **`TerminatedLocalAuthority:FinalPublicationDate`**  
-  Internal use datetime format final publication date value.
+  The final publication dates of terminated local authorities used for specific logic.
   
 - **`TerminatedLocalAuthority:FundingPeriodCode`**  
-  Internal use funding period code.
+  The funding period codes of terminated local authorities used for specific logic.
 
 - **`TerminatedLocalAuthority:LocalAuthorityCode`**  
-  Internal use number local authority code.
+  The local authority codes of terminated local authorities used for specific logic.
   
 - **`ViewYourFundingApiBaseAddress`**  
-  URL link for base of funding API.
-
-- **`WEBSITE_HEALTHCHECK_MAXPINGFAILURES`**  
-  Number value of times checked for failures
+  The url of the VYF external api.
   
 - **`ConnectionStrings:vyf`**  
-  Unique vyf connection string
-
-
-
-## docker-compose
-
-This project depends on a redis distributed cache resource for storing api requests/responses. We are unable to connect to deployed cloud resources and so a local redis container must be created via Docker in order to test full functionality local.
-
-The docker-compose.yml file includeds the orchestration for starting both the api and redis containers.
-
-You must select docker-compose as the startup project to ensure that all dependent resources are running in Docker to run this solution locally.
+  The connection string to the VYF database.
 
 ## Test execution
 
-In order to run the application locally a valid `appsettings.json` file will need to be created in the `Pds.ViewYourFunding.Automation.Tests` project. `appsettings.example.json`, in `Pds.DocumentExchange.Data.Api.Tests` can be used as a base and populated with appropriate values which can be found in Azure Portal. The local environment resources should be utilised.
+### Pds.ViewYourFunding.Web.Tests
+
+In order to test the project locally a valid `appsettings.json` file will need to be created in the `Pds.ViewYourFunding.Web.Tests` project. `appsettings.example.json`, in `Pds.ViewYourFunding.Web.Tests` can be used as a base and populated with appropriate values which can be found in Azure Portal. The local environment resources should be utilised.
+
+## Test Application Settings (`appsettings.json`)
+
+```json
+{
+  "BlobStorage:ContainerName": "",
+  "BlobStorage:Key": "",
+  "BlobStorage:ServiceName": ""
+}
+```
+
+### Setting Details
+
+- **`BlobStorage:ContainerName`**  
+  The name of the blob storage container used for storage purposes. (Use `pdsdevsharedstr`)
+
+- **`BlobStorage:Key`**  
+  The access policy key for the azure blob storage account for the UI related blob containers.
+
+- **`BlobStorage:ServiceName`**  
+  The name of the azure blob storage account for the UI related azure storage blob containers. (Use `spreadsheets1`)
+
+### Pds.ViewYourFunding.Services.Tests
+
+In order to test the project locally a valid `appsettings.json` file will need to be created in the `Pds.ViewYourFunding.Services.Tests` project. `appsettings.example.json`, in `Pds.ViewYourFunding.Services.Tests` can be used as a base and populated with appropriate values which can be found in Azure Portal. The local environment resources should be utilised.
+
+## Test Application Settings (`appsettings.json`)
+
+```json
+{
+  "CosmosDbConfiguration:ConnectionString": "",
+  "CosmosDbConfiguration:DatabaseName": "",
+  "CosmosDbConfiguration:CosmosConnectionMode": ""
+}
+```
+
+### Setting Details
+  
+- **`CosmosDbConfiguration:ConnectionString`**  
+  The connection string value used for accessing the VYF cosmos db service. (Use `pds-dev-shared-cdb`)
+  
+- **`CosmosDbConfiguration:DatabaseName`**  
+  The name of the cosmos db database used for VYF. (Use `funding`)
+
+- **`CosmosDbConfiguration:CosmosConnectionMode`**  
+  The connection mode used for accessing the VYF cosmos db service. (Use `Gateway`)
+
+### Pds.ViewYourFunding.Automation.Tests
+
+In order to test the project locally a valid `appsettings.json` file will need to be created in the `Pds.ViewYourFunding.Services.Tests` project. `appsettings.example.json`, in `Pds.ViewYourFunding.Services.Tests` can be used as a base and populated with appropriate values which can be found in Azure Portal. The local environment resources should be utilised.
+
+The web application must also be running in order for the automation tests to run successfully. Start the web application **without** debugging (Ctrl + F5) using the `ViewYourFunding.Web` profile.
 
 ## Test Application Settings (`appsettings.json`)
 
@@ -375,57 +391,48 @@ In order to run the application locally a valid `appsettings.json` file will nee
   "CosmosDbConfiguration": {
     "ConnectionString": "",
     "LayoutCollection": "",
-    "Database": ""
+    "Database": "",
+    "CosmosConnectionMode": ""
   },
   "baseSiteUrl": "",
-  "TestLoginUsername": "",
-  "TestLoginPassword": "",
   "FundingApiSecretKey": "",
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
-  },
-  "CanWriteExpectedHtml": "true",
-  "AllowedHosts": "*"
+  "CanWriteExpectedHtml": "true"
 }
 ```
 
 ### Setting Details
-
-- **`ConnectionStrings`**  
-  Use local connection for vyf
-
-- **`BlobStorage:ServiceName`**  
-  The connection string for the UI related azure storage blob containers. use (fundingbloblocal)
-
-- **`BlobStorage:Key`**  
-  The connection string key for the UI
+  
+- **`ConnectionStrings:vyf`**  
+  The connection string to the VYF database. (Use local db instance)
 
 - **`BlobStorage:ContainerName`**  
-  The connection string for the document exchange related azure storage blob containers. use (spreadsheets)
+  The name of the blob storage container used for storage purposes. (Use `pdsdevsharedstr`)
+
+- **`BlobStorage:Key`**  
+  The access policy key for the azure blob storage account for the UI related blob containers.
+
+- **`BlobStorage:ServiceName`**  
+  The name of the azure blob storage account for the UI related azure storage blob containers. (Use `spreadsheets1`)
 
 - **`CosmosDbConfiguration:ConnectionString`**  
-  The secret value for document exchange cosmos db resource.
-  
+  The connection string value used for accessing the VYF cosmos db service. (Use `pds-dev-shared-cdb`)
+
 - **`CosmosDbConfiguration:LayoutCollection`**  
-  The secret value for layout collection (Use `layout`)
+  The name of the cosmos db collection used for layout data. (Use `layout`)
   
 - **`CosmosDbConfiguration:Database`**  
-  The name of the cosmos database (Use `funding`)
+  The name of the cosmos db database used for VYF. (Use `funding`)
+
+- **`CosmosDbConfiguration:CosmosConnectionMode`**  
+  The connection mode used for accessing the VYF cosmos db service. (Use `Gateway`)
 
 - **`baseSiteUrl`**  
-  The base site url ('use localhost')
-
-- **`TestLoginUsername`**  
-  The internal testing username
-
-- **`TestLoginPassword`**  
-  The internal testing password
+  The url for the VYF root. (Use local host url)
 
 - **`FundingApiSecretKey`**  
-  The secret connection key for funding api
+  The secret key used for authorising requests to the external funding api.
+
+- **`CanWriteExpectedHtml`**  
+  Sets whether expected html files used for automation test purposes will be re-written.
 
   
