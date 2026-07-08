@@ -37,7 +37,7 @@ namespace PDS.ViewYourFunding.Services.Tests.Unit
 
             var fundings = new FundingApiSearchResponse();
 
-            var spreadsheet = new Spreadsheet(GetGlobalSettingService().Object, null, new ComponentConfigurationService(new ComponentService(null, null), GetBasePathService().Object), uiModel, fundings, null,  new FundingStream { FundingStreamName = "PE and sport premium" }, "AY-1920", 2019, 2020, DateTime.Now, string.Empty, string.Empty, false, false, true);
+            var spreadsheet = new Spreadsheet(GetGlobalSettingService().Object, null, new ComponentConfigurationService(new ComponentService(null, null), GetBasePathService().Object), uiModel, fundings, null, new FundingStream { FundingStreamName = "PE and sport premium" }, "AY-1920", 2019, 2020, DateTime.Now, string.Empty, string.Empty, false, false, true);
             spreadsheet.Build();
 
             spreadsheet.Worksheets.Count.Should().Be(2);

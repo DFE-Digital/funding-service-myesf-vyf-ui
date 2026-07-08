@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PDS.ViewYourFunding.Services.Models
+﻿namespace PDS.ViewYourFunding.Services.Models
 {
     /// <summary>
     /// The In Year Opener Calculator source model.

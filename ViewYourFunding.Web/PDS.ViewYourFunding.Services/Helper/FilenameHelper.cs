@@ -1,10 +1,8 @@
-using PDS.ViewYourFunding.Services.DTOs;
 using PDS.ViewYourFunding.Services.Enums;
 using PDS.ViewYourFunding.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FundingDocumentFileType = PDS.ViewYourFunding.Services.Constants.FundingDocumentFileType;
 using SearchFilter = PDS.ViewYourFunding.Services.DTOs.SearchFilter;
 
 namespace PDS.ViewYourFunding.Services.Helper

@@ -1,13 +1,10 @@
 using Newtonsoft.Json;
-using PDS.ViewYourFunding.Services.Constants;
-using PDS.ViewYourFunding.Services.Implementations.FundingView.ResponseObjects;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Interfaces.Models;
 using PDS.ViewYourFunding.Services.Models;
 using PDS.ViewYourFunding.Services.RequestObjects;
 using PDS.ViewYourFunding.Services.ResponseObjects;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 

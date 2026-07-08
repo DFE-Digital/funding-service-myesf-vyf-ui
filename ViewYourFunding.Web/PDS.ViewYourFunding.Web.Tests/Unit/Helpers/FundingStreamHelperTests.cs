@@ -1,13 +1,10 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PDS.ViewYourFunding.Services.Constants;
 using PDS.ViewYourFunding.Services.Enums;
-using PDS.ViewYourFunding.Services.Interfaces.Models;
 using PDS.ViewYourFunding.Services.Models;
 using PDS.ViewYourFunding.Web.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PDS.ViewYourFunding.Web.Tests.Unit.Helpers
 {

@@ -1,9 +1,9 @@
 ﻿namespace PDS.VYF.Services.Models.ResponseModels.ViewDataResponseModels
 {
-    using System.Collections.Generic;
     using PDS.ViewYourFunding.Services.DTOs;
     using PDS.ViewYourFunding.Services.Interfaces.Models;
     using PDS.ViewYourFunding.Services.Models;
+    using System.Collections.Generic;
 
     /// <summary>
     /// The child summary view data response model.

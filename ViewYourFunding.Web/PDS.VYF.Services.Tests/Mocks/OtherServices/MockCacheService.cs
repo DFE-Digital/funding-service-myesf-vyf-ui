@@ -1,12 +1,6 @@
 ﻿using Moq;
 using PDS.ViewYourFunding.Services.Cache;
 using PDS.ViewYourFunding.Services.Interfaces;
-using PDS.VYF.Services.Models.RequestModels.DataApiRequestModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PDS.VYF.Services.Tests.Mocks.OtherServices
 {

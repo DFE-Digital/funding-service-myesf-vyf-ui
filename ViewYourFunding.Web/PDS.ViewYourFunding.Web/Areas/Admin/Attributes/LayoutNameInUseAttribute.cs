@@ -1,9 +1,7 @@
-﻿using PDS.ViewYourFunding.Repositories.DataModels;
-using PDS.ViewYourFunding.Repositories.Enums;
+﻿using PDS.ViewYourFunding.Repositories.Enums;
 using PDS.ViewYourFunding.Services.Enums;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Enums;
-using PDS.ViewYourFunding.Web.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

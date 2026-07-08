@@ -10,7 +10,6 @@ using Pds.Core.Utils;
 using Pds.Core.Web.Models;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Services.Attributes;
-using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Constants;
 using PDS.ViewYourFunding.Services.DTOs;
 using PDS.ViewYourFunding.Services.Enums;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PDS.ViewYourFunding.Services.Enums
+﻿namespace PDS.ViewYourFunding.Services.Enums
 {
     /// <summary>
     /// File formats.

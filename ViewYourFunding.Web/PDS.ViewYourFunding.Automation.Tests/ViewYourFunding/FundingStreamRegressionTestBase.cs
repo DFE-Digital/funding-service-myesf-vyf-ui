@@ -18,7 +18,6 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using ViewYourFunding.Automation.Testing;
-using ViewYourFunding.Automation.Utilities;
 
 namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding
 {

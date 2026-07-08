@@ -119,7 +119,7 @@ namespace PDS.ViewYourFunding.Automation.Pages.Admin
 
         public static void EnsurePaginationResultsChanged()
         {
-           if (IsElementPresent(By.Id("nextPage")))
+            if (IsElementPresent(By.Id("nextPage")))
             {
                 NoOfResultsDisplayedText().Should().NotBeEquivalentTo(noOfResultsDisplayedText);
             }
@@ -193,7 +193,7 @@ namespace PDS.ViewYourFunding.Automation.Pages.Admin
 
         protected static int ElementCount(By by)
         {
-           return Driver.Instance.FindElements(by).Any() ? Driver.Instance.FindElements(by).Count() : 0;
+            return Driver.Instance.FindElements(by).Any() ? Driver.Instance.FindElements(by).Count() : 0;
         }
 
         #endregion

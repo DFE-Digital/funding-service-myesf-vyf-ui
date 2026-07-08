@@ -18,7 +18,7 @@
         /// <returns>The ProviderFundingApiSearchResponse.</returns>
         public static ProviderFundingApiSearchResponse GetProviderFundingApiSearchResponse(params LoggedInChildModel[] loggedInChildModels)
         {
-            ProviderFundingApiSearchResponse providerFundingApiSearchResponse = new ();
+            ProviderFundingApiSearchResponse providerFundingApiSearchResponse = new();
 
             providerFundingApiSearchResponse.ProviderFunding = loggedInChildModels.Select(model => model.GetFundingApiSearchProviderFunding());
 
@@ -105,7 +105,7 @@
         /// <returns>The FundingValue string.</returns>
         private static string GetFundingValueString(double totalValue, IEnumerable<LoggedInTemplateLine> templateLines, IEnumerable<LoggedInCalculation> calculations)
         {
-            FundingValueNested_1_2 result = new ()
+            FundingValueNested_1_2 result = new()
             {
                 TotalValue = totalValue,
                 FundingLines = templateLines

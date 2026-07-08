@@ -1,6 +1,5 @@
 ﻿namespace PDS.VYF.Services.Implementations.AppServices
 {
-    using System.Globalization;
     using Ardalis.GuardClauses;
     using MoreLinq;
     using Pds.Core.Logging;
@@ -23,6 +22,7 @@
     using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
     using PDS.VYF.Services.Models.ResponseModels.ViewDataResponseModels;
     using PDS.VYF.Services.Models.ViewDataModels;
+    using System.Globalization;
 
     /// <summary>
     /// The Child Funding View Services.
@@ -267,7 +267,7 @@
 
             var fundingStreamAndPeriods = new List<string> { $"{request.FundingStreamCode}-{request.FundingPeriodCode}" };
 
-            ChildSearchApiRequestModel childRequest = new (true, request.UkprnFromRoute!)
+            ChildSearchApiRequestModel childRequest = new(true, request.UkprnFromRoute!)
             {
                 StatusChangedDateOnly = request.PublicationDate,
             };
@@ -289,11 +289,11 @@
                 request.FundingViewScope = childFundingDatum.IsIndicative == true ? FundingViewScope.LoggedInIndicativeProvider : FundingViewScope.LoggedInProvider;
 
 
-                ChildSearchApiRequestModel latestFundingPeriodRequest = new (true, request.UkprnFromRoute!)
+                ChildSearchApiRequestModel latestFundingPeriodRequest = new(true, request.UkprnFromRoute!)
                 {
                     FundingStreamPeriods = await this.fundingStreamSettingsServices.GetEmailEnabledFundingStreamPeriod(),
                 };
-                ChildSearchApiRequestModel latestStatementRequest = new (false, request.UkprnFromRoute!)
+                ChildSearchApiRequestModel latestStatementRequest = new(false, request.UkprnFromRoute!)
                 {
                     FundingStreamPeriods = await this.childApiClientServices.LatestFundingPeriod(latestFundingPeriodRequest),
                 };

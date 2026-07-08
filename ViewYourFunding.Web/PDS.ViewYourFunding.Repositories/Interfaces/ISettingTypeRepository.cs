@@ -26,7 +26,7 @@ namespace PDS.ViewYourFunding.Repositories.Interfaces
         /// </returns>
         Task<Setting> GetSettingTypeById(int id);
 
-          /// <summary>
+        /// <summary>
         /// Create a new SettingType.
         /// </summary>
         /// <param name="settingType">The SettingType to create.</param>

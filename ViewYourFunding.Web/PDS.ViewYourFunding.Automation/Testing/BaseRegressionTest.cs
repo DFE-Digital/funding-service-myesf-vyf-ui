@@ -50,8 +50,8 @@ namespace ViewYourFunding.Automation.Testing
         [TestCleanup]
         public void TearDown()
         {
-           Driver.Instance?.Close();
-           Driver.Instance?.Quit();
+            Driver.Instance?.Close();
+            Driver.Instance?.Quit();
         }
 
         #region Helpers

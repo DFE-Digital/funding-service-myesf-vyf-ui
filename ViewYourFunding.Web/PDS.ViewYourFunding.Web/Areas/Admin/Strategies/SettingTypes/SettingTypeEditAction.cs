@@ -2,7 +2,6 @@ using AutoMapper;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType;
-using System;
 using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Web.Areas.Admin.Strategies.SettingTypes

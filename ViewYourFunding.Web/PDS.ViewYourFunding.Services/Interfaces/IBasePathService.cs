@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace PDS.ViewYourFunding.Services.Interfaces
+﻿namespace PDS.ViewYourFunding.Services.Interfaces
 {
     /// <summary>
     /// BasePath Service.

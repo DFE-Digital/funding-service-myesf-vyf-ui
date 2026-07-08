@@ -1,7 +1,6 @@
 #define vyfv2
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Pds.Core.Common.Identity.Enums;
@@ -20,7 +19,6 @@ using PDS.ViewYourFunding.Web.Areas.LoggedIn.Attributes;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.Requests;
-using PDS.ViewYourFunding.Web.Attributes;
 using PDS.ViewYourFunding.Web.Controllers;
 using PDS.ViewYourFunding.Web.Exceptions;
 using PDS.ViewYourFunding.Web.Helpers;

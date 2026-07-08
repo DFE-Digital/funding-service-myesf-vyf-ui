@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Automation.Pages.LoggedIn;
 using PDS.ViewYourFunding.Core.Configuration;
-using ViewYourFunding.Automation.Utilities;
 
 namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
 {

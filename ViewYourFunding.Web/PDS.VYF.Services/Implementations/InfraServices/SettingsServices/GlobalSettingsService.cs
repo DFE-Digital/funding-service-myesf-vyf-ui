@@ -1,9 +1,5 @@
 ﻿namespace PDS.VYF.Services.Implementations.InfraServices.SettingsServices
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     using Ardalis.GuardClauses;
     using AutoMapper;
     using Pds.Core.Logging;
@@ -12,6 +8,10 @@
     using PDS.ViewYourFunding.Services.Interfaces;
     using PDS.ViewYourFunding.Services.Models;
     using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// The Global Settings Service.
@@ -24,7 +24,7 @@
         private readonly ILoggerAdapter<IUserJourneyService> logger;
         private readonly IGlobalSettingRepository globalSettingRepository;
 
-        private SemaphoreSlim semaphoreSlim = new (1, 1);
+        private SemaphoreSlim semaphoreSlim = new(1, 1);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GlobalSettingsService"/> class.

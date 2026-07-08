@@ -1,6 +1,5 @@
 using AutoMapper;
 using PDS.ViewYourFunding.Repositories.Enums;
-using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Models;
 using PDS.ViewYourFunding.Web.Areas.Admin.Helpers;

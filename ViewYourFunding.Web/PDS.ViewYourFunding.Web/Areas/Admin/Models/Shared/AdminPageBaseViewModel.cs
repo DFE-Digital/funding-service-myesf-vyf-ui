@@ -1,5 +1,4 @@
 ﻿using PDS.ViewYourFunding.Web.Models.Shared;
-using PDS.ViewYourFunding.Web.Models.ViewYourFunding;
 
 namespace PDS.ViewYourFunding.Web.Areas.Admin.Models.Shared
 {

@@ -5,7 +5,6 @@ using OpenQA.Selenium.Support.Extensions;
 using System;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using TestContext = Microsoft.VisualStudio.TestTools.UnitTesting.TestContext;
 

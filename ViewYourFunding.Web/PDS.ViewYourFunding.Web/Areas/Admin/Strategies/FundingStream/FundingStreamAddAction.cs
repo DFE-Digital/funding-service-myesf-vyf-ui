@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream;
-using PDS.ViewYourFunding.Web.Areas.Admin.Strategies.FundingStream;
 using System.Threading.Tasks;
 using Model = PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStream;
 
@@ -49,13 +48,13 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Strategies.FundingStream
         /// <inheritdoc/>
         public Task<FundingStreamViewModel> Action(int fundingStreamId)
         {
-                var viewModel = new FundingStreamViewModel
-                {
-                  ActionMode = ActionMode.Add,
-                  FundingStream = new Model.FundingStream()
-                };
+            var viewModel = new FundingStreamViewModel
+            {
+                ActionMode = ActionMode.Add,
+                FundingStream = new Model.FundingStream()
+            };
 
-                return Task.FromResult(viewModel);
+            return Task.FromResult(viewModel);
         }
 
         /// <inheritdoc/>

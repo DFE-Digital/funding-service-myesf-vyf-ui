@@ -10,7 +10,6 @@ using Pds.Core.Identity.Claims.Interfaces;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Repositories.Enums;
-using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Controllers;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment;
@@ -79,7 +78,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             .Which.Model.Should().BeOfType<NextPaymentsIndexViewModel>();
 
             _mockAdminSettingsService.Verify(x => x.GetAllFundingStreams(It.IsAny<FetchData[]>()), Times.Never);
-      }
+        }
 
 
         /// <summary>

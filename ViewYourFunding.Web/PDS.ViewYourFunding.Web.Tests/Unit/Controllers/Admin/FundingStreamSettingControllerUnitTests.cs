@@ -10,7 +10,6 @@ using Pds.Core.Identity.Claims.Interfaces;
 using Pds.Core.Web.Models;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Repositories.Enums;
-using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Models;

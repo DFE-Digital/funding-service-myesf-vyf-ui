@@ -1,7 +1,6 @@
 ﻿using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Enums;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.FundingStreamSetting;
-using PDS.ViewYourFunding.Web.Areas.Admin.Strategies.FundingStreamSettings;
 using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Web.Areas.Admin.Strategies.FundingStreamSettings

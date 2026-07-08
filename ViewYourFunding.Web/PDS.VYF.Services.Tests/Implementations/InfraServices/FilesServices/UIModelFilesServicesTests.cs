@@ -1,17 +1,10 @@
-﻿using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Moq;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Services.Enums;
 using PDS.ViewYourFunding.Services.Implementations.FundingView;
-using PDS.ViewYourFunding.Services.Implementations.FundingView.ResponseObjects;
 using PDS.ViewYourFunding.Services.Interfaces;
-using PDS.ViewYourFunding.Services.Models;
 using PDS.VYF.Services.Implementations.InfraServices.FilesServices;
 using PDS.VYF.Services.Models.RequestModels.ViewDataRequestModels;
-using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
-using System;
-using System.Threading.Tasks;
 
 namespace PDS.VYF.Services.Tests.Implementations.InfraServices.FilesServices
 {

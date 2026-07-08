@@ -128,7 +128,7 @@ namespace PDS.ViewYourFunding.Repositories.Implementations
         /// </summary>
         /// <param name="name">Caller member name.</param>
         /// <returns>Name of property or method.</returns>
-        private static string GetAsyncMethodName([CallerMemberName]string name = null)
+        private static string GetAsyncMethodName([CallerMemberName] string name = null)
         {
             return name;
         }

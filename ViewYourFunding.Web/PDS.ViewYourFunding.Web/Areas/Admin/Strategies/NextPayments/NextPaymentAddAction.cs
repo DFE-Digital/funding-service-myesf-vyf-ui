@@ -1,11 +1,9 @@
 using AutoMapper;
 using PDS.ViewYourFunding.Repositories.Enums;
-using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication;
 using System.Threading.Tasks;
-using Model = ViewYourFunding.Services.Models;
 
 namespace PDS.ViewYourFunding.Web.Areas.Admin.Strategies.NextPayments
 {

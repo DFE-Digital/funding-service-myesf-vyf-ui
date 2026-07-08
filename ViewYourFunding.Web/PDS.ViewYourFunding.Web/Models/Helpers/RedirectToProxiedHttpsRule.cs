@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Rewrite;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PDS.ViewYourFunding.Services.Constants
+﻿namespace PDS.ViewYourFunding.Services.Constants
 {
     /// <summary>
     /// Data value constants.

@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using PDS.ViewYourFunding.Services.Interfaces.Models;
-using System.Collections.Generic;
+﻿using PDS.ViewYourFunding.Services.Interfaces.Models;
 using System.Linq;
 
 namespace PDS.ViewYourFunding.Services.Helper

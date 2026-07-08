@@ -30,8 +30,8 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
         /// </summary>
         private static readonly DateTime TestPublicationDate = new DateTime(2030, 01, 01);
 
-        private readonly MockCacheService mockCacheService = new ();
-        private readonly MockChildApiClientServices mockChildApiClientServices = new ();
+        private readonly MockCacheService mockCacheService = new();
+        private readonly MockChildApiClientServices mockChildApiClientServices = new();
         private MockRepository mockRepository;
         private Mock<ISharedFundingViewServices> mockSharedFundingViewServices;
         private Mock<ILoggerAdapter<ModelFundingViewService>> mockLoggerAdapter;

@@ -1,28 +1,12 @@
 ﻿using AutoMapper;
-using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Repositories.Interfaces;
 using PDS.ViewYourFunding.Services.Cache;
-using PDS.ViewYourFunding.Services.Config;
-using PDS.ViewYourFunding.Services.Constants;
-using PDS.ViewYourFunding.Services.Enums;
-using PDS.ViewYourFunding.Services.Implementations.FundingView;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Models;
-using PDS.VYF.Services.Abstracts.AppServices;
-using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
-using PDS.VYF.Services.Implementations.AppServices;
 using PDS.VYF.Services.Implementations.InfraServices.SettingsServices;
-using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
-using PDS.VYF.Services.Models.ResponseModels.ViewDataResponseModels;
-using PDS.VYF.Services.Tests.Mocks.InfraServices.DataApiClientServices;
-using PDS.VYF.Services.Tests.Mocks.OtherServices;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace PDS.VYF.Services.Tests.Implementations.InfraServices.SettingsServices
 {

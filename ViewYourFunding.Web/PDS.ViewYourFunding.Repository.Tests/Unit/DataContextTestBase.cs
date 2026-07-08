@@ -16,7 +16,7 @@ namespace PDS.ViewYourFunding.Repositories.Tests.Unit
         /// </summary>
         /// <param name="name">Caller member name.</param>
         /// <returns>Name of property or method.</returns>
-        public static string GetAsyncMethodName([CallerMemberName]string name = null)
+        public static string GetAsyncMethodName([CallerMemberName] string name = null)
         {
             return name;
         }

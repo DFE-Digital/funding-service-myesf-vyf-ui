@@ -1,15 +1,9 @@
-﻿using Pds.Core.Utils.Helpers;
-using PDS.ViewYourFunding.Core.Configuration;
-using PDS.ViewYourFunding.Services.DTOs;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
+﻿using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.Requests;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.Child;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.Parent;
-using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
 using PDS.VYF.Services.Models.ResponseModels.ViewDataResponseModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.Extensions

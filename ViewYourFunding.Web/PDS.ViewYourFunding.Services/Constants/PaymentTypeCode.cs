@@ -1,5 +1,4 @@
-﻿using PDS.ViewYourFunding.Services.DTOs;
-using PDS.ViewYourFunding.Services.Models;
+﻿using PDS.ViewYourFunding.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

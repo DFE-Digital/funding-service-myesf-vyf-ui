@@ -1,8 +1,6 @@
-﻿using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Automation.Pages.LoggedIn;
 using PDS.ViewYourFunding.Core.Configuration;
-using System.Collections.Generic;
 using ViewYourFunding.Automation.Pages.ViewYourFunding;
 
 namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn

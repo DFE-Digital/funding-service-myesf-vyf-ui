@@ -1,10 +1,8 @@
 ﻿using Pds.Core.Web.Models.Hyperlinks;
 using PDS.ViewYourFunding.Services.DTOs;
-using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Models;
 using PDS.ViewYourFunding.Services.ResponseObjects;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using PDS.ViewYourFunding.Web.Models.ViewYourFunding;
 using System.Collections.Generic;
 

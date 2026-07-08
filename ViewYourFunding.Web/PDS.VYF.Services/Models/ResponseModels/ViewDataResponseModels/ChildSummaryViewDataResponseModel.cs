@@ -23,7 +23,7 @@
         /// <value>
         /// The statement visit information.
         /// </value>
-        public Dictionary<string, StatementVisitInfoEnum> StatementVisitInfo { get; private set; } = new ();
+        public Dictionary<string, StatementVisitInfoEnum> StatementVisitInfo { get; private set; } = new();
 
         /// <summary>
         /// Gets or sets a value indicating whether [via choice page].

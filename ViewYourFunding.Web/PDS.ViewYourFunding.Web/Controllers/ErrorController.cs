@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Pds.Core.Identity.Claims.Interfaces;
-using Pds.Core.Utils;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Interfaces;

@@ -1,12 +1,6 @@
-﻿using AutoMapper;
-using FluentAssertions;
-using Microsoft.VisualStudio.TestPlatform.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Moq;
 using Pds.Core.Logging;
-using PDS.ViewYourFunding.Repositories.DataModels;
 using PDS.ViewYourFunding.Services.Constants;
-using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Models;
 using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
@@ -15,10 +9,6 @@ using PDS.VYF.Services.Models.ApiModels;
 using PDS.VYF.Services.Models.RequestModels.DataApiRequestModels;
 using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
 using PDS.VYF.Services.Tests.Mocks.InfraServices.DataApiClientServices;
-using System;
-using System.Threading.Tasks;
-using static PDS.ViewYourFunding.Repositories.DataModels.GlobalSetting;
-using static System.Net.WebRequestMethods;
 
 namespace PDS.VYF.Services.Tests.Implementations.AppServices
 {
@@ -28,8 +18,8 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
     [TestClass, TestCategory("Unit")]
     public class LoggedInApiServicesTests
     {
-        private readonly MockParentApiClientServices mockParentApiClientServices = new ();
-        private readonly MockChildApiClientServices mockChildApiClientServices = new ();
+        private readonly MockParentApiClientServices mockParentApiClientServices = new();
+        private readonly MockChildApiClientServices mockChildApiClientServices = new();
         private MockRepository mockRepository;
         private Mock<ILoggerAdapter<LoggedInApiServices>> mockLoggerAdapter;
         private Mock<IGlobalSettingsService> mockGlobalSettingsService;
@@ -70,13 +60,13 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
             mockGlobalSettingsService.Setup(s => s.GetFirstOrDefault(GlobalSettingTypeConstants.PublicFacingUrlLeftPart)).
                 ReturnsAsync(new ViewYourFunding.Services.Models.GlobalSetting { Value = null });
 
-            ParentSearchApiRequestModel parentRequest = new ()
+            ParentSearchApiRequestModel parentRequest = new()
             {
                 HasToBeLatestFunding = true,
                 ListOfUKPRNs = new List<string>() { "12345679" },
             };
 
-            ChildSearchApiRequestModel childRequest = new ()
+            ChildSearchApiRequestModel childRequest = new()
             {
                 ListOfUKPRNs = new List<string>() { "12345678" },
                 HasToBeLatestFunding = true,
@@ -88,7 +78,7 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
                 "GAG-AC-2425", "GAG-AC-2526", "GAG-AC-2627"
             };
 
-            Dictionary<string, PDS.ViewYourFunding.Services.Models.FundingStream>? fundingStream = new ()
+            Dictionary<string, PDS.ViewYourFunding.Services.Models.FundingStream>? fundingStream = new()
             {
                 {
                     "GAG", new PDS.ViewYourFunding.Services.Models.FundingStream
@@ -126,7 +116,7 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
                 UpdatedFundingsNotRead = 0
             };
 
-            List<LoggedInChildModel>? loggedInChildModel = new ()
+            List<LoggedInChildModel>? loggedInChildModel = new()
             {
                 new LoggedInChildModel()
                 {
@@ -140,7 +130,7 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
             mockChildApiClientServices.Setup(s => s.SearchChildrenOfAParent(It.IsAny<string>(), It.IsAny<ChildSearchApiRequestModel>(), It.IsAny<bool>(), It.IsAny<List<string>?>()))
                 .ReturnsAsync(loggedInChildModel);
 
-            List<ChildStatementModel> childStatementModel = new ()
+            List<ChildStatementModel> childStatementModel = new()
             {
                 new ChildStatementModel()
                 {
@@ -149,7 +139,7 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
                 }
             };
 
-            UserViewCountResponse userViewCountResponse = new ()
+            UserViewCountResponse userViewCountResponse = new()
             {
                 NewCount = 1,
                 UpdatedCount = 0

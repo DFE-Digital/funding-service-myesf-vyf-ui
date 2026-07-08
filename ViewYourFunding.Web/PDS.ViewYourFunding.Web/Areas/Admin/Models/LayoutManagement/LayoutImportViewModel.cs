@@ -125,15 +125,15 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement
         /// <returns>Returns the funding view Type select list.</returns>
         public IEnumerable<SelectListItem> FundingViewTypeSelectItems()
         {
-           return Enum.GetValues(typeof(FundingViewType))
-             .Cast<FundingViewType>()
-             .Where(value => value != FundingViewType.Other)
-             .OrderBy(en => en.ToString()).Select(fundingViewType => new SelectListItem
-             {
-                 Text = GetAttributes<DisplayAttribute>(fundingViewType).FirstOrDefault()?.Name?.ToString()
-                        ?? fundingViewType.ToString(),
-                 Value = ((int)fundingViewType).ToString()
-             }).ToList();
+            return Enum.GetValues(typeof(FundingViewType))
+              .Cast<FundingViewType>()
+              .Where(value => value != FundingViewType.Other)
+              .OrderBy(en => en.ToString()).Select(fundingViewType => new SelectListItem
+              {
+                  Text = GetAttributes<DisplayAttribute>(fundingViewType).FirstOrDefault()?.Name?.ToString()
+                         ?? fundingViewType.ToString(),
+                  Value = ((int)fundingViewType).ToString()
+              }).ToList();
         }
 
         private static IEnumerable<TAttribute> GetAttributes<TAttribute>(Enum enumValue)

@@ -113,8 +113,8 @@
 
         private string[] GetModelFilenames(string fundingViewTypeString, string fundingPeriodCode)
         {
-             var allFilePaths = this.modelFileStoreService.GetModelFilenames($"{fundingViewTypeString}/{fundingPeriodCode}");
-             return allFilePaths ?? this.modelFileStoreService.GetModelFilenames(fundingViewTypeString);
+            var allFilePaths = this.modelFileStoreService.GetModelFilenames($"{fundingViewTypeString}/{fundingPeriodCode}");
+            return allFilePaths ?? this.modelFileStoreService.GetModelFilenames(fundingViewTypeString);
         }
 
         private UiModelFileResponse GetRelevantTemplateFilePath(

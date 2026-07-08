@@ -1,9 +1,7 @@
 ﻿#define vyfv2
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PDS.ViewYourFunding.Web.Attributes;
-using PDS.ViewYourFunding.Web.Models.GlobalSetting;
 using PDS.VYF.Services.Abstracts.AppServices;
 using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Models.ApiModels;

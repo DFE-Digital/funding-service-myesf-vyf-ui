@@ -70,12 +70,12 @@ namespace PDS.ViewYourFunding.Automation.Pages.Admin
 
         public static void EnsureAdminTiles()
         {
-           AdminTiles.Count.Should().BeGreaterOrEqualTo(3);
-           foreach (var header in TileHeaders)
-           {
-               AdminTiles.Any(tile =>
-                   tile.FindElement(By.TagName("h2")).Text.Contains(header, StringComparison.InvariantCultureIgnoreCase)).Should().BeTrue();
-           }
+            AdminTiles.Count.Should().BeGreaterOrEqualTo(3);
+            foreach (var header in TileHeaders)
+            {
+                AdminTiles.Any(tile =>
+                    tile.FindElement(By.TagName("h2")).Text.Contains(header, StringComparison.InvariantCultureIgnoreCase)).Should().BeTrue();
+            }
         }
 
         #endregion

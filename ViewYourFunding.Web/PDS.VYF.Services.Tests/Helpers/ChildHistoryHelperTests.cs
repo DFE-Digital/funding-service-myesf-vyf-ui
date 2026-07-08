@@ -1,10 +1,6 @@
 ﻿using FluentAssertions;
 using Moq;
-using Pds.Core.Logging;
-using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
-using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
 using PDS.VYF.Services.Helpers;
-using PDS.VYF.Services.Implementations.AppServices;
 using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
 using PDS.VYF.Services.Models.ViewDataModels;
 using System.Globalization;

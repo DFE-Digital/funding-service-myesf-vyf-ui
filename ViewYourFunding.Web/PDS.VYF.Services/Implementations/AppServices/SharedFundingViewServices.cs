@@ -1,6 +1,5 @@
 ﻿namespace PDS.VYF.Services.Implementations.AppServices
 {
-    using System.Reflection;
     using PDS.ViewYourFunding.Services.Attributes;
     using PDS.ViewYourFunding.Services.Constants;
     using PDS.ViewYourFunding.Services.DTOs;
@@ -12,6 +11,7 @@
     using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
     using PDS.VYF.Services.Extensions.ModelMapping;
     using PDS.VYF.Services.Models.RequestModels.ViewDataRequestModels;
+    using System.Reflection;
 
     /// <summary>
     /// The class for Shared Funding View Services.

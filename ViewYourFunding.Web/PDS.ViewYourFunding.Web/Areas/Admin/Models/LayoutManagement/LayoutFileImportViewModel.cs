@@ -69,7 +69,7 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement
         /// <value>
         /// The layout model identifier.
         /// </value>
-        public string LayoutModelId { get;  set; }
+        public string LayoutModelId { get; set; }
 
         #endregion
     }

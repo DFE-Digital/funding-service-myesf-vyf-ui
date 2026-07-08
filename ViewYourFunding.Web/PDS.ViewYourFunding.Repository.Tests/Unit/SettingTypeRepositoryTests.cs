@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Repositories.DataModels;
 using PDS.ViewYourFunding.Repositories.Implementations;
-using PDS.ViewYourFunding.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

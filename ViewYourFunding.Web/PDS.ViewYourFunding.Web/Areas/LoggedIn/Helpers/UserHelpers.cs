@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Pds.Core.Common.Identity.Enums;
@@ -7,13 +6,10 @@ using Pds.Core.Common.Identity.Models;
 using Pds.Core.Identity.Claims.Interfaces;
 using Pds.Core.Web.Models;
 using PDS.ViewYourFunding.Core.Configuration;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.Controllers;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Extensions;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels;
-using PDS.ViewYourFunding.Web.Models.Shared;
 using PDS.VYF.Services.Abstracts.AppServices;
 using System.Globalization;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.Helpers

@@ -293,9 +293,9 @@ namespace PDS.ViewYourFunding.Services.Implementations.Hacks
         /// </summary>
         /// <param name="id">The id to search for.</param>
         /// <returns>A funding collection.</returns>
-        #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         public async Task<IFundingApiSearchFunding> GetFunding(string id)
-        #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             throw new NotImplementedException("GetFunding not needed for NMSS");
         }

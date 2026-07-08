@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PDS.ViewYourFunding.Services.Interfaces.Models
+﻿namespace PDS.ViewYourFunding.Services.Interfaces.Models
 {
     /// <summary>
     /// An interface representing the response for adding user visit details.

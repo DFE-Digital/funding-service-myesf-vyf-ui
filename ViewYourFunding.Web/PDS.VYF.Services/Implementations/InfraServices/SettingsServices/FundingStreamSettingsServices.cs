@@ -1,8 +1,6 @@
 ﻿namespace PDS.VYF.Services.Implementations.InfraServices.SettingsServices
 {
-    using Aspose.Cells.Drawing;
     using AutoMapper;
-    using Microsoft.EntityFrameworkCore.Metadata.Internal;
     using Pds.Core.Logging;
     using PDS.ViewYourFunding.Repositories.Interfaces;
     using PDS.ViewYourFunding.Services.Cache;
@@ -89,10 +87,10 @@
 
                    if (!string.IsNullOrWhiteSpace(fs.FundingStreamCode))
                    {
-                     foreach (var fp in fundingPeriods)
-                     {
-                         result.Add(fs.FundingStreamCode + "-" + fp);
-                     }
+                       foreach (var fp in fundingPeriods)
+                       {
+                           result.Add(fs.FundingStreamCode + "-" + fp);
+                       }
                    }
 
                    return string.Join(",", result);

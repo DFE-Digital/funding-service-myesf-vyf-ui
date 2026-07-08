@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.DependencyInjection;
-using Pds.Core.Logging;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Controllers;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Enumerations;
@@ -11,7 +10,6 @@ using PDS.ViewYourFunding.Web.Areas.LoggedIn.Helpers;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels;
 using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
-using PDS.VYF.Services.Implementations.AppServices;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -67,7 +65,8 @@ namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.Filters
 
                 context.Result = new ViewResult()
                 {
-                    ViewName = "../Error/UnauthorisedAccess", ViewData = new ViewDataDictionary(modelMetadataProvider, new ModelStateDictionary())
+                    ViewName = "../Error/UnauthorisedAccess",
+                    ViewData = new ViewDataDictionary(modelMetadataProvider, new ModelStateDictionary())
                     {
                         Model = errorModel
                     },

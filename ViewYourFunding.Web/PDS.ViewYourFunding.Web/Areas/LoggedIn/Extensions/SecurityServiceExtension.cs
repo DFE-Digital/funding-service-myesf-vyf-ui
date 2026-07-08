@@ -1,7 +1,6 @@
 ﻿#nullable enable
 
 using Ardalis.GuardClauses;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Pds.Core.Common.Identity.Models;
 using Pds.Core.Identity.Claims.Interfaces;
 using PDS.VYF.Services.Extensions.Core;

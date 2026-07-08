@@ -182,8 +182,8 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Extensions
         }
 
         [DataRow(0, 2, "0.00")]
-        [DataRow(1.01, 1,  "1.0")]
-        [DataRow(1.053,  2, "1.05")]
+        [DataRow(1.01, 1, "1.0")]
+        [DataRow(1.053, 2, "1.05")]
         [DataRow(75.7536734, 2, "75.75")]
         [DataRow(0.85736355, 4, "0.8574")]
         [TestMethod]

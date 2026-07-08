@@ -1,8 +1,7 @@
 ﻿namespace PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels
 {
-    using System;
-    using PDS.ViewYourFunding.Services.Enums;
     using PDS.VYF.Services.Enums;
+    using System;
 
     /// <summary>
     /// The response model for child comparison.

@@ -57,9 +57,9 @@ namespace PDS.ViewYourFunding.Services.Implementations
                 settingType.SettingName == DoNotUseSettingNameAndDescription);
             if (settingToDelete != null)
             {
-               var result = await RemoveAsync(settingToDelete.Id);
+                var result = await RemoveAsync(settingToDelete.Id);
 
-               return result > 0;
+                return result > 0;
             }
 
             return true;

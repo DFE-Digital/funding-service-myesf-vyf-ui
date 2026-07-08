@@ -60,9 +60,9 @@ namespace PDS.ViewYourFunding.Services.Implementations
 
             if (settingToDelete != null)
             {
-              var result = await RemoveAsync(settingToDelete.Id);
+                var result = await RemoveAsync(settingToDelete.Id);
 
-              return result > 0;
+                return result > 0;
             }
 
             return false;

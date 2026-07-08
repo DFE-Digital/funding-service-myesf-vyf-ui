@@ -1,16 +1,14 @@
 ﻿using FluentAssertions;
-using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using ViewYourFunding.Automation.Pages.ViewYourFunding;
 using ViewYourFunding.Automation.Utilities;
 
 namespace PDS.ViewYourFunding.Automation.Pages.Admin
 {
-   public class AdminGeneralSettingsPage : ViewYourFundingBasePage
+    public class AdminGeneralSettingsPage : ViewYourFundingBasePage
     {
         private static string currentValue;
 

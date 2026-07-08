@@ -1,7 +1,6 @@
 ﻿using Pds.Core.Web.Models.Hyperlinks;
 using PDS.ViewYourFunding.Services.DTOs;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using System.Collections.Generic;
 
 namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.Child

@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
 using Pds.Core.Identity.Claims.Interfaces;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Services.Constants;
-using PDS.ViewYourFunding.Services.DTOs;
 using PDS.ViewYourFunding.Services.Enums;
 using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Interfaces;

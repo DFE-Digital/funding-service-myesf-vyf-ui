@@ -1,6 +1,5 @@
 ﻿namespace PDS.VYF.Services.Implementations.AppServices
 {
-    using System.Globalization;
     using Ardalis.GuardClauses;
     using Pds.Core.Logging;
     using PDS.ViewYourFunding.Services.Constants;
@@ -10,6 +9,7 @@
     using PDS.VYF.Services.Extensions.Core;
     using PDS.VYF.Services.Models.ApiModels;
     using PDS.VYF.Services.Models.RequestModels.DataApiRequestModels;
+    using System.Globalization;
 
     /// <summary>
     /// The Service class for getting LoggedIn Info.
@@ -70,13 +70,13 @@
 
                 if (bool.TryParse(toggledSetting, out bool toggledOn) && toggledOn)
                 {
-                    ParentSearchApiRequestModel parentRequest = new ()
+                    ParentSearchApiRequestModel parentRequest = new()
                     {
                         HasToBeLatestFunding = true,
                         ListOfUKPRNs = new List<string>() { ukprn },
                     };
 
-                    ChildSearchApiRequestModel childRequest = new ()
+                    ChildSearchApiRequestModel childRequest = new()
                     {
                         ListOfUKPRNs = new List<string>() { ukprn },
                         HasToBeLatestFunding = true,

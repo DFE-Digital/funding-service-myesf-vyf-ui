@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using PDS.ViewYourFunding.Automation.Pages.LoggedIn;
 using PDS.ViewYourFunding.Core.Configuration;
-using System;
 using System.Collections.Generic;
 using ViewYourFunding.Automation.Pages.ViewYourFunding;
 
@@ -556,20 +555,20 @@ namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
 
         private static IEnumerable<TableData> GetDiscretionaryBursaryFundBreakdownTableData()
         {
-                yield return new TableData
-                {
-                    Id = "discretionaryBursaryBreakdownTable",
-                    TableRowData = GetDiscretionaryBursaryBreakdownTableRows()
-                };
+            yield return new TableData
+            {
+                Id = "discretionaryBursaryBreakdownTable",
+                TableRowData = GetDiscretionaryBursaryBreakdownTableRows()
+            };
         }
 
         private static IEnumerable<TableData> GetAdjustedDiscretionaryBursaryFundBreakdownTableData()
         {
-                yield return new TableData
-                {
-                    Id = "adjDiscretionaryBursaryFundTable",
-                    TableRowData = GetAdjustedDiscretionaryBursaryTableRows()
-                };
+            yield return new TableData
+            {
+                Id = "adjDiscretionaryBursaryFundTable",
+                TableRowData = GetAdjustedDiscretionaryBursaryTableRows()
+            };
         }
 
         private static IEnumerable<TableData> GetDiscretionaryBursaryFundExceptionalAdjustmentTableData()

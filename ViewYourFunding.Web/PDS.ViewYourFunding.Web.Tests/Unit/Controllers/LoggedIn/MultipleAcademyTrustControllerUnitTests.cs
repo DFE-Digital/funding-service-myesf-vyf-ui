@@ -11,7 +11,6 @@ using Pds.Core.Web.Components.Areas.Lists.Models;
 using Pds.Core.Web.Models;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Services.Attributes;
-using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.DTOs;
 using PDS.ViewYourFunding.Services.Enums;
 using PDS.ViewYourFunding.Services.Implementations;

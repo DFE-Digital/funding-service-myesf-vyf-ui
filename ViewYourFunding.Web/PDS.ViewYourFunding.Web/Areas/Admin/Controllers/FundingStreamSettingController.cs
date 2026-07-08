@@ -456,8 +456,8 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Controllers
 
             if (_nationalLayoutSettingValueDataTypes.Contains(viewModel.SettingValueDataType))
             {
-               await SetupNationalLayoutViewModelProperties(viewModel);
-               viewModel.CurrentValue = await GetLayoutFriendlyName(viewModel.CurrentValue);
+                await SetupNationalLayoutViewModelProperties(viewModel);
+                viewModel.CurrentValue = await GetLayoutFriendlyName(viewModel.CurrentValue);
             }
         }
 

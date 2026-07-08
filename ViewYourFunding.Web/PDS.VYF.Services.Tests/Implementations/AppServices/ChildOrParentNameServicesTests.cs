@@ -16,12 +16,12 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
     [TestClass, TestCategory("Unit")]
     public class ChildOrParentNameServicesTests
     {
-        private readonly MockParentApiClientServices mockParentApiClientServices = new ();
-        private readonly MockChildApiClientServices mockChildApiClientServices = new ();
-        private readonly Mock<ILoggerAdapter<ModelFundingViewService>> mockLogger = new ();
+        private readonly MockParentApiClientServices mockParentApiClientServices = new();
+        private readonly MockChildApiClientServices mockChildApiClientServices = new();
+        private readonly Mock<ILoggerAdapter<ModelFundingViewService>> mockLogger = new();
         private readonly ChildOrParentNameServices childOrParentNameServices;
 
-        private readonly MockCacheService mockCacheService = new ();
+        private readonly MockCacheService mockCacheService = new();
         private MockRepository mockRepository;
         private Mock<IFundingStreamSettingsServices> mockFundingStreamSettingsServices;
 
@@ -102,8 +102,8 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
             }
 
             mockParentApiClientServices.SetupIsParent(ukprn, isParent);
-            mockParentApiClientServices.SetupSearchParent(new List<LoggedInParentModel>() { new () { GroupName = parentName } });
-            mockChildApiClientServices.SetupSearchChild(new List<LoggedInChildModel>() { new () { OrganisationName = childName } });
+            mockParentApiClientServices.SetupSearchParent(new List<LoggedInParentModel>() { new() { GroupName = parentName } });
+            mockChildApiClientServices.SetupSearchChild(new List<LoggedInChildModel>() { new() { OrganisationName = childName } });
 
             // Act
             var result = await childOrParentNameServices.GetParentOrChildNameInternal(ukprn, isParent);
@@ -176,8 +176,8 @@ namespace PDS.VYF.Services.Tests.Implementations.AppServices
             mockFundingStreamSettingsServices.Setup(s => s.GetEmailEnabledFundingStreamPeriod()).ReturnsAsync(periodcode);
 
             mockParentApiClientServices.SetupIsParent(ukprn, isParent);
-            mockChildApiClientServices.SetupSearchChild(new List<LoggedInChildModel>() { new () { OrganisationName = "Dummy Child name" } });
-            mockParentApiClientServices.SetupSearchParent(new List<LoggedInParentModel> { new () { GroupName = "Dummy Parent name" } });
+            mockChildApiClientServices.SetupSearchChild(new List<LoggedInChildModel>() { new() { OrganisationName = "Dummy Child name" } });
+            mockParentApiClientServices.SetupSearchParent(new List<LoggedInParentModel> { new() { GroupName = "Dummy Parent name" } });
             mockCacheService.SetupAddOrGetExistingResultAsync($"ChildOrParentName-{ukprn}", ViewYourFunding.Services.Cache.CacheExpirationPolicy.Sliding, expectedResult);
 
             // Act

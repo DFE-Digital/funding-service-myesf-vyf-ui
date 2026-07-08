@@ -2,11 +2,6 @@
 using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Models.RequestModels.DataApiRequestModels;
 using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PDS.VYF.Services.Tests.Mocks.InfraServices.DataApiClientServices
 {

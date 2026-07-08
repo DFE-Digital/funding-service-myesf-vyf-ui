@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using PDS.ViewYourFunding.Services.Models;
-using System;
 
 namespace PDS.ViewYourFunding.Services.Config
 {

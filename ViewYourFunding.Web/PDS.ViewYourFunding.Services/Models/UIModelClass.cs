@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-
 namespace PDS.ViewYourFunding.Services.Models
 {
     /// <summary>

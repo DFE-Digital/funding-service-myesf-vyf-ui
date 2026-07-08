@@ -513,14 +513,14 @@ namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn
             // Assert
             if (ProviderFundingBreakdownPage.PostOpeningGrantTabTotal.Text == "£0")
             {
-                    ProviderFundingBreakdownPage.EnsureTabLink(
-                  ProviderFundingBreakdownPage.PostOpeningGrantTabContent,
-                  "post-opening grant (opens in new tab).");
+                ProviderFundingBreakdownPage.EnsureTabLink(
+              ProviderFundingBreakdownPage.PostOpeningGrantTabContent,
+              "post-opening grant (opens in new tab).");
 
-                    ProviderFundingBreakdownPage.EnsureTabTotalAllocation(
-                 ProviderFundingBreakdownPage.PostOpeningGrantTabContent,
-                 "Total post-opening grant",
-                 "£0");
+                ProviderFundingBreakdownPage.EnsureTabTotalAllocation(
+             ProviderFundingBreakdownPage.PostOpeningGrantTabContent,
+             "Total post-opening grant",
+             "£0");
             }
             else
             {

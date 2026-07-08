@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Services.Attributes;

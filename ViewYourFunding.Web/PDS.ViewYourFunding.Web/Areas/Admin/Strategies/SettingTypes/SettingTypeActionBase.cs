@@ -1,6 +1,5 @@
 ﻿using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.SettingType;
-using System.Linq;
 using System.Threading.Tasks;
 using Service = PDS.ViewYourFunding.Services.Models;
 

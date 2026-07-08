@@ -1,5 +1,4 @@
 ﻿using Pds.Core.Web.Models.Hyperlinks;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using System.Collections.Generic;
 
 namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels

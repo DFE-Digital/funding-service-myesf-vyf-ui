@@ -2,7 +2,6 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Services.Constants;
 using PDS.ViewYourFunding.Services.Helper;
-using System;
 
 namespace PDS.ViewYourFunding.Services.Tests.Unit.Helpers
 {

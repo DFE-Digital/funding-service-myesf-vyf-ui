@@ -246,16 +246,16 @@ namespace PDS.ViewYourFunding.Web.Tests.Integration
             using (var context = GetContext(databaseName))
             {
                 context.GlobalSettings.Add(new Repositories.DataModels.GlobalSetting()
-                    {
-                        Id = 100,
-                        Type = 100,
-                        Description = "Dummy setting description",
-                        EditType = Repositories.DataModels.GlobalSetting.SettingEditType.Bool,
-                        ReadOnly = false,
-                        Value = "DUMMY",
-                        CreatedAt = DateTime.Now,
-                        UpdatedAt = DateTime.Now
-                    });
+                {
+                    Id = 100,
+                    Type = 100,
+                    Description = "Dummy setting description",
+                    EditType = Repositories.DataModels.GlobalSetting.SettingEditType.Bool,
+                    ReadOnly = false,
+                    Value = "DUMMY",
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now
+                });
 
                 context.SaveChanges();
             }

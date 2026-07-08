@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using PDS.ViewYourFunding.Services.Helper;
 using System.Collections.Generic;
 

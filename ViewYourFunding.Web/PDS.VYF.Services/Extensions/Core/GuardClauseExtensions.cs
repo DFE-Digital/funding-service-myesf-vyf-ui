@@ -1,9 +1,9 @@
 ﻿namespace PDS.VYF.Services.Extensions.Core
 {
+    using Ardalis.GuardClauses;
     using System.ComponentModel.DataAnnotations;
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.CompilerServices;
-    using Ardalis.GuardClauses;
 
     public static class GuardClauseExtensions
     {

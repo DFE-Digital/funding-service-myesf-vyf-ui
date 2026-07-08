@@ -1,6 +1,5 @@
 using PDS.ViewYourFunding.Web.Areas.Admin.Enums;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.DataTypeEdit;
-using System;
 
 namespace PDS.ViewYourFunding.Web.Areas.Admin.Strategies.DataValueTypes
 {

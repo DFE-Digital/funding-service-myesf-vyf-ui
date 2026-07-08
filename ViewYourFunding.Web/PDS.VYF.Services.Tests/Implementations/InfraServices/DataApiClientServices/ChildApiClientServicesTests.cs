@@ -1,17 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using PDS.ViewYourFunding.Services.Enums;
-using PDS.ViewYourFunding.Services.Implementations.FundingView.ResponseObjects;
+﻿using Moq;
 using PDS.ViewYourFunding.Services.Interfaces;
-using PDS.ViewYourFunding.Services.Interfaces.Models;
-using PDS.ViewYourFunding.Services.Models;
 using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
 using PDS.VYF.Services.Implementations.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Models.RequestModels.DataApiRequestModels;
 using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace PDS.VYF.Services.Tests.Implementations.InfraServices.DataApiClientServices
 {
@@ -70,7 +62,7 @@ namespace PDS.VYF.Services.Tests.Implementations.InfraServices.DataApiClientServ
             // Arrange
             var childApiClientServices = this.CreateChildApiClientServices();
             string parentUKPRN = "12345678";
-            ChildSearchApiRequestModel childRequest = new ()
+            ChildSearchApiRequestModel childRequest = new()
             {
                 ListOfUKPRNs = new List<string>() { "12345678" },
                 HasToBeLatestFunding = true,

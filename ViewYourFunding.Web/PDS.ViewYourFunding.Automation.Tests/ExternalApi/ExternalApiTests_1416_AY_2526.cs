@@ -1,8 +1,6 @@
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PDS.ViewYourFunding.Automation.Tests.Config;
 using PDS.ViewYourFunding.Automation.Tests.ExternalApi;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Automation.Tests.LoggedIn

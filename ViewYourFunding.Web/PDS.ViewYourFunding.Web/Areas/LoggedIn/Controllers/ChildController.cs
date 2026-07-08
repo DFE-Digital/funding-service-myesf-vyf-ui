@@ -3,27 +3,18 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
 using Pds.Core.Common.Identity.Enums;
 using Pds.Core.Identity.Claims.Interfaces;
 using PDS.ViewYourFunding.Core.Configuration;
-using PDS.ViewYourFunding.Services.Models;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Attributes;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Constants;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Extensions;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Filters;
-using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models.Requests;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.ViewModels.Child;
-using PDS.ViewYourFunding.Web.Controllers;
-using PDS.ViewYourFunding.Web.Helpers;
 using PDS.VYF.Services.Abstracts.AppServices;
-using PDS.VYF.Services.Abstracts.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Models.RequestModels.ViewDataRequestModels;
-using PDS.VYF.Services.Models.ResponseModels.ViewDataResponseModels;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.Controllers

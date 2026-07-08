@@ -1,12 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Moq;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
 using PDS.VYF.Services.Implementations.InfraServices.DataApiClientServices;
 using PDS.VYF.Services.Models.RequestModels.DataApiRequestModels;
 using PDS.VYF.Services.Models.ResponseModels.DataApiResponseModels;
-using System;
-using System.Threading.Tasks;
 
 namespace PDS.VYF.Services.Tests.Implementations.InfraServices.DataApiClientServices
 {

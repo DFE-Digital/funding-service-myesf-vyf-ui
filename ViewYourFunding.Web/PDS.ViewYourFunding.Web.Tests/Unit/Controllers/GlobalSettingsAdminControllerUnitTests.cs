@@ -8,7 +8,6 @@ using Pds.Core.Common.Identity.Models;
 using Pds.Core.Identity.Claims.Interfaces;
 using Pds.Core.Web.Models;
 using PDS.ViewYourFunding.Core.Configuration;
-using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Interfaces;

@@ -8,12 +8,12 @@ namespace PDS.ViewYourFunding.Web.Areas.LoggedIn.Models
     /// </summary>
     public class FundingViewDetail
     {
-       public Dictionary<string, FundingStream> FundingStreams { get; set; }
+        public Dictionary<string, FundingStream> FundingStreams { get; set; }
 
-       public bool ShowSelectors { get; set; }
+        public bool ShowSelectors { get; set; }
 
-       public bool StatementSpecificationState { get; set; }
+        public bool StatementSpecificationState { get; set; }
 
-       public bool ShowData { get; set; }
+        public bool ShowData { get; set; }
     }
 }

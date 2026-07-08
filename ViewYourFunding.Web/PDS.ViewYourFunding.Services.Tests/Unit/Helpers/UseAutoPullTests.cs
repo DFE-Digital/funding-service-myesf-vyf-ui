@@ -5,7 +5,6 @@ using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PDS.ViewYourFunding.Services.Tests.Unit.Helpers
 {

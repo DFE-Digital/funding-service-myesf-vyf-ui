@@ -10,8 +10,6 @@ using PDS.ViewYourFunding.Services.Interfaces.Models;
 using PDS.ViewYourFunding.Services.Models;
 using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Services.Tests.Unit
@@ -177,7 +175,7 @@ namespace PDS.ViewYourFunding.Services.Tests.Unit
             };
 
             var expected = new UserFundingViewCountResponse
-                { UserId = "user 1", UnreadNewFundings = 10, UnreadUpdatedFundings = 20 };
+            { UserId = "user 1", UnreadNewFundings = 10, UnreadUpdatedFundings = 20 };
 
             // Act
             var actual = await GetUserFundingViewCount(userId, fundingIds);

@@ -79,10 +79,10 @@ namespace PDS.ViewYourFunding.Services.Helper
         /// <returns>Returns the parent group type filter setting.</returns>
         public static string ParentGroupTypeFilterSetting(this FundingStream fundingStream)
         {
-           return fundingStream
-                .SettingValues
-                .FirstOrDefault(sv => sv.Setting?.SettingName == SettingName.ParentGroupTypeFilter)
-                ?.Value;
+            return fundingStream
+                 .SettingValues
+                 .FirstOrDefault(sv => sv.Setting?.SettingName == SettingName.ParentGroupTypeFilter)
+                 ?.Value;
         }
 
         /// <summary>

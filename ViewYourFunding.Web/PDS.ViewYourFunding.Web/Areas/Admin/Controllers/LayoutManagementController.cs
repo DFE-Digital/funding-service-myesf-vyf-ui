@@ -145,37 +145,37 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Controllers
             string fundingViewTypeIds,
             string fundingViewScopeIds)
         {
-           var fundingStreamIdList = (fundingStreamIds == "null") ? new List<int>() : fundingStreamIds.Split(',').Select(int.Parse).ToList();
-           var fundingViewTypes = (fundingViewTypeIds == "null") ? new List<string>() : fundingViewTypeIds.Split(',').Select(fundingViewTypeId => ((FundingViewType)Convert.ToInt32(fundingViewTypeId)).ToString()).ToList();
-           var fundingViewScopes = (fundingViewScopeIds == "null") ? new List<string>() : fundingViewScopeIds.Split(',').Select(fundingViewScopeId => ((FundingViewScope)Convert.ToInt32(fundingViewScopeId)).ToString()).ToList();
-           var pageNo = pageNumber ?? 1;
+            var fundingStreamIdList = (fundingStreamIds == "null") ? new List<int>() : fundingStreamIds.Split(',').Select(int.Parse).ToList();
+            var fundingViewTypes = (fundingViewTypeIds == "null") ? new List<string>() : fundingViewTypeIds.Split(',').Select(fundingViewTypeId => ((FundingViewType)Convert.ToInt32(fundingViewTypeId)).ToString()).ToList();
+            var fundingViewScopes = (fundingViewScopeIds == "null") ? new List<string>() : fundingViewScopeIds.Split(',').Select(fundingViewScopeId => ((FundingViewScope)Convert.ToInt32(fundingViewScopeId)).ToString()).ToList();
+            var pageNo = pageNumber ?? 1;
 
-           _fundingStreamList = await GetAllFundingStreams();
-           var paginationResult = await _layoutManagementService.GetPaginationResult(pageNo, PageSize, fundingStreamIdList, fundingViewTypes, fundingViewScopes);
+            _fundingStreamList = await GetAllFundingStreams();
+            var paginationResult = await _layoutManagementService.GetPaginationResult(pageNo, PageSize, fundingStreamIdList, fundingViewTypes, fundingViewScopes);
 
-           _publications = (await _publicationService.GetAll()).ToList();
+            _publications = (await _publicationService.GetAll()).ToList();
 
-           var layoutUiModels = GetLayoutUiModels(paginationResult.LayoutModels.ToList());
-           var layouts = layoutUiModels.Select(layout =>
+            var layoutUiModels = GetLayoutUiModels(paginationResult.LayoutModels.ToList());
+            var layouts = layoutUiModels.Select(layout =>
 
-            new
-            {
-                LayoutName = layout.LayoutName.ToString(),
-                layout.LayoutId,
-                LastModifiedDateTime = layout.LastModifiedDateTime.ToDateTimeDisplayWithAt(),
-                FundingViewType = layout.FundingViewTypeName,
-                FundingViewTypeValue = layout.FundingViewType.ToString(),
-                FundingViewScope = layout.FundingViewScopeName,
-                FundingViewScopeValue = layout.FundingViewScope.ToString(),
-                layout.FundingStreamName,
-                layout.FundingStreamId,
-                Status = layout.Status.ToString(),
-                StatusName = layout.StatusName,
-                ShowDeleteLink = layout.Status != LayoutStatus.Published,
-                ShowPreviewLink = layout.FundingViewType != FundingViewType.Spreadsheet
-            }).ToList();
+             new
+             {
+                 LayoutName = layout.LayoutName.ToString(),
+                 layout.LayoutId,
+                 LastModifiedDateTime = layout.LastModifiedDateTime.ToDateTimeDisplayWithAt(),
+                 FundingViewType = layout.FundingViewTypeName,
+                 FundingViewTypeValue = layout.FundingViewType.ToString(),
+                 FundingViewScope = layout.FundingViewScopeName,
+                 FundingViewScopeValue = layout.FundingViewScope.ToString(),
+                 layout.FundingStreamName,
+                 layout.FundingStreamId,
+                 Status = layout.Status.ToString(),
+                 StatusName = layout.StatusName,
+                 ShowDeleteLink = layout.Status != LayoutStatus.Published,
+                 ShowPreviewLink = layout.FundingViewType != FundingViewType.Spreadsheet
+             }).ToList();
 
-           return JsonConvert.SerializeObject(new { Layouts = layouts, Pagination = paginationResult.PaginationDetail });
+            return JsonConvert.SerializeObject(new { Layouts = layouts, Pagination = paginationResult.PaginationDetail });
         }
 
         /// <summary>
@@ -440,7 +440,7 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Controllers
             ClearAndClearModelErrors(viewModel);
             if (ModelState.IsValid)
             {
-               return await RedirectToPreviewPage(viewModel);
+                return await RedirectToPreviewPage(viewModel);
             }
 
             var baseViewModel = await GetBasePageViewModel<PreviewLayoutViewModel>();
@@ -615,7 +615,7 @@ namespace PDS.ViewYourFunding.Web.Areas.Admin.Controllers
 
         private async Task<IReadOnlyList<FundingStream>> GetAllFundingStreams()
         {
-           return await _adminSettingsService.GetAllFundingStreams(Repositories.Enums.FetchData.Publications, Repositories.Enums.FetchData.Publications_PublicationLayouts);
+            return await _adminSettingsService.GetAllFundingStreams(Repositories.Enums.FetchData.Publications, Repositories.Enums.FetchData.Publications_PublicationLayouts);
         }
 
         private async Task<IEnumerable<SelectListItem>> GetFundingStreamSelectList()

@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading;
 using ViewYourFunding.Automation.Pages.ViewYourFunding;
 
 namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding

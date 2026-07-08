@@ -2,8 +2,6 @@ using FluentAssertions;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using ViewYourFunding.Automation.Pages.ViewYourFunding;
 using ViewYourFunding.Automation.Utilities;
 

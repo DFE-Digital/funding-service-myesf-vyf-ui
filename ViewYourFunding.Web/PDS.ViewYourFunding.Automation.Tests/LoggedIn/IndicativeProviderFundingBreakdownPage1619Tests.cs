@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Automation.Pages.LoggedIn;
 using PDS.ViewYourFunding.Core.Configuration;
-using System;
 using System.Collections.Generic;
 using ViewYourFunding.Automation.Pages.ViewYourFunding;
 

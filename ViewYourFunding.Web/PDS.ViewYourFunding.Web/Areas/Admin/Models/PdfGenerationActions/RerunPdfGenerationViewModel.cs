@@ -1,10 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Pds.Core.Web.Models.Hyperlinks;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PDS.ViewYourFunding.Web.Areas.Admin.Models.PdfGenerationActions
 {

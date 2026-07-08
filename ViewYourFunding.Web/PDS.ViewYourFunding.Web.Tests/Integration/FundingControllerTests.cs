@@ -24,7 +24,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Text;
@@ -108,7 +107,7 @@ namespace PDS.ViewYourFunding.Web.Tests
 
             var spreadsheet = GetSpreadsheet(path, FileFormat.XLS);
 
-                // Assert
+            // Assert
             spreadsheet.Tables.Count.Should().Be(6);
 
             path = pathResponse.First(res => res.FileExtension == FundingDocumentFileType.Spreadsheet_CSVFormat).FilePath;
@@ -401,7 +400,7 @@ namespace PDS.ViewYourFunding.Web.Tests
         /// <returns>A spreadsheet reader.</returns>
         private static IExcelDataReader CreateSpreadsheetReader(FileFormat fileFormat, Stream fileStream)
         {
-           switch (fileFormat)
+            switch (fileFormat)
             {
                 case FileFormat.CSV:
                     return ExcelReaderFactory.CreateCsvReader(fileStream);
@@ -409,7 +408,7 @@ namespace PDS.ViewYourFunding.Web.Tests
                     return ExcelReaderFactory.CreateReader(fileStream);
             }
 
-           return ExcelReaderFactory.CreateReader(fileStream);
+            return ExcelReaderFactory.CreateReader(fileStream);
         }
 
         /// <summary>

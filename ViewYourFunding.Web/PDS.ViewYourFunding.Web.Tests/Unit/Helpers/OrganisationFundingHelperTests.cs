@@ -7,7 +7,6 @@ using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using PDS.ViewYourFunding.Web.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PDS.ViewYourFunding.Web.Tests.Unit.Helpers
 {
