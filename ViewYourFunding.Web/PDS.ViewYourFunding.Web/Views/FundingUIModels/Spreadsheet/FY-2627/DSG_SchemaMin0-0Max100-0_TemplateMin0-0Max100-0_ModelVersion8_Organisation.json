@@ -1620,7 +1620,7 @@
           ]
         },
         {
-          "title": "@year1 to @year2 grant funding for special units and resourced provision (see accompanying tables) (@britishCurrencySymbols) [will be updated]",
+          "title": "@year1 to @year2 grant funding for special units and resourced provision (see accompanying tables) (@britishCurrencySymbols)",
           "rowSpan": 2,
           "selector": "$..calculations[?(@.templateCalculationId == 323)].value",
           "scale": 1,
@@ -1645,7 +1645,7 @@
           }
         },
         {
-          "title": "Import and export adjustment (@britishCurrencySymbols) [will be updated]",
+          "title": "Import and export adjustment (@britishCurrencySymbols)",
           "rowSpan": 2,
           "scale": 1,
           "selector": "$..calculations[?(@.templateCalculationId == 33)].value",
@@ -1669,7 +1669,7 @@
           }
         },
         {
-          "title": "Total @year1-@year2short high needs block before deductions (@britishCurrencySymbols) [will be updated]",
+          "title": "Total @year1-@year2short high needs block before deductions (@britishCurrencySymbols)",
           "rowSpan": 2,
           "selector": "$..fundingLines[?(@.templateLineId == 10)].value",
           "scale": 1,

@@ -2438,7 +2438,7 @@
           }
         },
         {
-          "title": "Import and export adjustment (@britishCurrencySymbols) [will be updated]",
+          "title": "Import and export adjustment (@britishCurrencySymbols)",
           "rowSpan": 2,
           "selector": "$..calculations[?(@.templateCalculationId == 33)].value",
           "scale": 1,

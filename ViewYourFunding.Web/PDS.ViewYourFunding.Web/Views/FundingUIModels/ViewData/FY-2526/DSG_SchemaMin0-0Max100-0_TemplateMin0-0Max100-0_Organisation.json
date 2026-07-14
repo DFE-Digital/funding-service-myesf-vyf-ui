@@ -2714,7 +2714,7 @@
                     },
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number of 2 year old for working parents entitlement (part-time equivalent) April-August",
+                      "title": "Number of 2 year old for working parents entitlement (part-time equivalent) April-August",
                       "selector": "C298",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -2757,7 +2757,7 @@
 
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number of 2 year old for working parents entitlement (Part-time equivalent) September-March",
+                      "title": "Number of 2 year old for working parents entitlement (Part-time equivalent) September-March",
                       "selector": "C317",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -2877,7 +2877,7 @@
                     },
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number of under 2s entitlement (part-time equivalent) April-August",
+                      "title": "Number of under 2s entitlement (part-time equivalent) April-August",
                       "selector": "C304",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -2922,7 +2922,7 @@
                     },
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number of under 2s entitlement  (Part-time equivalent) September-March",
+                      "title": "Number of under 2s entitlement  (Part-time equivalent) September-March",
                       "selector": "C321",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -3100,7 +3100,7 @@
                   "groups": [
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number for 2 year olds early years pupil premium (part-time equivalent)",
+                      "title": "Number for 2 year olds early years pupil premium (part-time equivalent)",
                       "selector": "C310",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -3165,7 +3165,7 @@
                   "groups": [
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number for under 2s early years pupil premium (part-time equivalent)",
+                      "title": "Number for under 2s early years pupil premium (part-time equivalent)",
                       "selector": "C314",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
