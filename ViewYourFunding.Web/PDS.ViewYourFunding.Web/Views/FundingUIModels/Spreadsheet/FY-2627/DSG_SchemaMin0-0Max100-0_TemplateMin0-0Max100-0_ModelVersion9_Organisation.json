@@ -3517,7 +3517,7 @@
           }
         },
         {
-          "title": "Estimated number of 2 year old for working parents entitlement (part-time equivalent)",
+          "title": "Number of 2 year old for working parents entitlement (part-time equivalent)",
           "selector": "$..calculations[?(@.templateCalculationId == 298)].value",
           "classname": "secondlevelheadercell",
           "scale": 1,
@@ -3597,7 +3597,7 @@
           ]
         },
         {
-          "title": "Estimated number of under 2s entitlement (part-time equivalent)",
+          "title": "Number of under 2s entitlement (part-time equivalent)",
           "selector": "$..calculations[?(@.templateCalculationId == 304)].value",
           "classname": "secondlevelheadercell",
           "datastyle": {
@@ -3729,7 +3729,7 @@
           }
         },
         {
-          "title": "Estimated number for 2 year old early years pupil premium funding (part-time equivalent)",
+          "title": "Number for 2 year old early years pupil premium funding (part-time equivalent)",
           "selector": "$..calculations[?(@.templateCalculationId == 310)].value",
           "classname": "secondlevelheadercell",
           "datastyle": {
@@ -3782,7 +3782,7 @@
           }
         },
         {
-          "title": "Estimated number for under 2s early years pupil premium funding (part-time equivalent)",
+          "title": "Number for under 2s early years pupil premium funding (part-time equivalent)",
           "selector": "$..calculations[?(@.templateCalculationId == 314)].value",
           "classname": "secondlevelheadercell",
           "datastyle": {
