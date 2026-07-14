@@ -2753,7 +2753,7 @@
                     },
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number of 2 year old for working parents entitlement (part-time equivalent)",
+                      "title": "@EstimatedNumberOrNumber of 2 year old for working parents entitlement (part-time equivalent)",
                       "selector": "C298",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -2860,7 +2860,7 @@
                     },
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number of under 2s entitlement (part-time equivalent)",
+                      "title": "@EstimatedNumberOrNumber of under 2s entitlement (part-time equivalent)",
                       "selector": "C304",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -3027,7 +3027,7 @@
                   "groups": [
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number for 2 year olds early years pupil premium (part-time equivalent)",
+                      "title": "@EstimatedNumberOrNumber for 2 year olds early years pupil premium (part-time equivalent)",
                       "selector": "C310",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -3092,7 +3092,7 @@
                   "groups": [
                     {
                       "type": "Table/Row",
-                      "title": "Estimated number for under 2s early years pupil premium (part-time equivalent)",
+                      "title": "@EstimatedNumberOrNumber for under 2s early years pupil premium (part-time equivalent)",
                       "selector": "C314",
                       "datastyle": {
                         "numberFormat": "TwoDPWithoutTrailingZeroes"
@@ -4068,6 +4068,12 @@
     {
       "name": "FirstUsageCounter",
       "value": 0
+    },
+    {
+      "name": "EstimatedNumberOrNumber",
+      "expression": "@PublicationUiModelVersion=9",
+      "trueResponse": "Number",
+      "falseResponse": "Estimated number"
     }
   ]
 }
