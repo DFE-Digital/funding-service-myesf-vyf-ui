@@ -1,4 +1,4 @@
-using AutoMapper;
+using MapsterMapper;
 using PDS.ViewYourFunding.Services.Enums;
 using PDS.ViewYourFunding.Services.Models;
 using System;

@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -17,6 +18,7 @@ using PDS.ViewYourFunding.Services.Models;
 using PDS.ViewYourFunding.Services.ResponseObjects;
 using PDS.ViewYourFunding.Web.Config;
 using PDS.ViewYourFunding.Web.Controllers;
+using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -509,7 +511,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new WebAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         /// <summary>

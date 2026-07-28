@@ -1,4 +1,4 @@
-using AutoMapper;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Pds.Core.Identity.Claims.Interfaces;

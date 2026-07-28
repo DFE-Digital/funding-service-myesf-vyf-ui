@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using MapsterMapper;
 using PDS.ViewYourFunding.Repositories.Interfaces;
 using PDS.ViewYourFunding.Services.Cache;
 using PDS.ViewYourFunding.Services.Interfaces;

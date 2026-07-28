@@ -19,7 +19,7 @@ namespace PDS.ViewYourFunding.Web.Config
         /// </remarks>
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAutoMapperMaps();
+            builder.RegisterMapster();
             builder.RegisterTileDependencies();
         }
     }

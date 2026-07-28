@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -26,6 +27,7 @@ using PDS.ViewYourFunding.Web.Areas.LoggedIn.Controllers;
 using PDS.ViewYourFunding.Web.Areas.LoggedIn.Models;
 using PDS.ViewYourFunding.Web.Config;
 using PDS.ViewYourFunding.Web.Exceptions;
+using PDS.ViewYourFunding.Web.Extensions;
 using PDS.ViewYourFunding.Web.Models.Request;
 using PDS.ViewYourFunding.Web.Tests.Helpers;
 using System;
@@ -1273,7 +1275,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
 
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new WebAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         private static FundingStream Get1619FundingStream(

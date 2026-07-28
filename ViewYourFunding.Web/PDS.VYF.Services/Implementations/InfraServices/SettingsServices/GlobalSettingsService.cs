@@ -1,17 +1,17 @@
 ﻿namespace PDS.VYF.Services.Implementations.InfraServices.SettingsServices
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
     using Ardalis.GuardClauses;
-    using AutoMapper;
+    using MapsterMapper;
     using Pds.Core.Logging;
     using PDS.ViewYourFunding.Repositories.Interfaces;
     using PDS.ViewYourFunding.Services.Cache;
     using PDS.ViewYourFunding.Services.Interfaces;
     using PDS.ViewYourFunding.Services.Models;
     using PDS.VYF.Services.Abstracts.InfraServices.SettingsServices;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// The Global Settings Service.

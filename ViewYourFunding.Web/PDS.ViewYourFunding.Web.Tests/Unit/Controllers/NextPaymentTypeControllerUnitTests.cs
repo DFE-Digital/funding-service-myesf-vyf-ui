@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,6 +17,7 @@ using PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPaymentType;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.Publication;
 using PDS.ViewYourFunding.Web.Areas.Admin.Strategies.NextPayments;
 using PDS.ViewYourFunding.Web.Config;
+using PDS.ViewYourFunding.Web.Extensions;
 using PDS.ViewYourFunding.Web.Models.ViewYourFunding;
 using System;
 using System.Collections.Generic;
@@ -459,7 +461,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new WebAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         private static Services.Models.FundingStream GetMockFundingStream()

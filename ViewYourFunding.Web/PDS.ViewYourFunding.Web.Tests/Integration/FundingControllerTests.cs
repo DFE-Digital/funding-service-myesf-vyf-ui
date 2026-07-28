@@ -1,6 +1,6 @@
-using AutoMapper;
 using ExcelDataReader;
 using FluentAssertions;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

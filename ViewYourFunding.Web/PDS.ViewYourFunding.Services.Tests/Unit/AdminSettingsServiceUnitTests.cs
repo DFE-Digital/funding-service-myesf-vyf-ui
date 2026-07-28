@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using PDS.ViewYourFunding.Repositories.DataModels;
@@ -8,6 +9,7 @@ using PDS.ViewYourFunding.Repositories.Interfaces;
 using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Helper;
 using PDS.ViewYourFunding.Services.Implementations;
+using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -263,7 +265,9 @@ namespace PDS.ViewYourFunding.Services.Tests.Unit
 
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new ServicesAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         private Mock<IFundingStreamRepository> GetFundingStreamRepository()

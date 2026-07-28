@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Repositories.DataModels;
@@ -8,6 +9,7 @@ using PDS.ViewYourFunding.Repositories.Implementations;
 using PDS.ViewYourFunding.Repositories.Interfaces;
 using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Implementations;
+using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -47,7 +49,9 @@ namespace PDS.ViewYourFunding.Services.Tests.Integration
         /// <returns>Mapper configuration.</returns>
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new ServicesAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         private IFundingStreamRepository GetFundingStreamRepository()
@@ -61,11 +65,6 @@ namespace PDS.ViewYourFunding.Services.Tests.Integration
             context.SaveChanges();
 
             return new FundingStreamRepository(context, null);
-        }
-
-        private IMapper GetImapper()
-        {
-            return new MapperConfiguration(x => x.AddProfile(new ServicesAutoMapperProfile())).CreateMapper();
         }
 
         private IList<FundingStream> GetFundingStreamData()

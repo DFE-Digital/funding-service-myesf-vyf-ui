@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Repositories.Implementations;
@@ -9,6 +10,7 @@ using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Config;
 using PDS.ViewYourFunding.Web.Controllers;
+using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -214,7 +216,10 @@ namespace PDS.ViewYourFunding.Web.Tests.Integration
         /// <returns>Auto-mapper settings.</returns>
         private static IMapper GetWebMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new WebAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+
+            return new Mapper(config);
         }
 
         /// <summary>
@@ -223,8 +228,12 @@ namespace PDS.ViewYourFunding.Web.Tests.Integration
         /// <returns>Auto-mapper settings.</returns>
         private static IMapper GetServiceMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new ServicesAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+
+            return new Mapper(config);
         }
+
 
         /// <summary>
         /// Get instance of GlobalSettingsController.

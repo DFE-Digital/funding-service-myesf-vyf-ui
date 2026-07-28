@@ -1,5 +1,5 @@
 #define vyfv2
-using AutoMapper;
+using MapsterMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;

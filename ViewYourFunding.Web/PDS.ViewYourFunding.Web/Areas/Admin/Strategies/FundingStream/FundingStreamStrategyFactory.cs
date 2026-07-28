@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using MapsterMapper;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Services.Interfaces;
 using System.Collections.Generic;

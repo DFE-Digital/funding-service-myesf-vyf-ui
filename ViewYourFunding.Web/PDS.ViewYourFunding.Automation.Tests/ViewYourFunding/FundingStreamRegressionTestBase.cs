@@ -1,4 +1,5 @@
-using AutoMapper;
+using Mapster;
+using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pds.Core.Logging;
@@ -6,12 +7,12 @@ using PDS.ViewYourFunding.Automation.Tests.Constants;
 using PDS.ViewYourFunding.Core.Configuration;
 using PDS.ViewYourFunding.Repositories.Implementations;
 using PDS.ViewYourFunding.Repositories.Interfaces;
-using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.Constants;
 using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Implementations.FundingView;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Models;
+using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -339,7 +340,9 @@ namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding
 
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new ServicesAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         private Context GetContext()

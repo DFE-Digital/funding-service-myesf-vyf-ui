@@ -1,5 +1,5 @@
-using AutoMapper;
 using FluentAssertions;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using MapsterMapper;
 using Pds.Core.Logging;
 using PDS.ViewYourFunding.Repositories.Enums;
 using PDS.ViewYourFunding.Repositories.Interfaces;

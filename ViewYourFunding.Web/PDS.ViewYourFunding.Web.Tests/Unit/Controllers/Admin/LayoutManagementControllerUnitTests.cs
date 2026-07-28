@@ -1,5 +1,6 @@
-using AutoMapper;
 using FluentAssertions;
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -18,6 +19,7 @@ using PDS.ViewYourFunding.Web.Areas.Admin.Controllers;
 using PDS.ViewYourFunding.Web.Areas.Admin.Enums;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.LayoutManagement;
 using PDS.ViewYourFunding.Web.Config;
+using PDS.ViewYourFunding.Web.Extensions;
 using PDS.ViewYourFunding.Web.Models.ViewYourFunding;
 using System;
 using System.Collections.Generic;
@@ -845,7 +847,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.Admin
 
         private static IMapper GetMapper()
         {
-            return new MapperConfiguration(x => x.AddProfile(new WebAutoMapperProfile())).CreateMapper();
+            var config = new TypeAdapterConfig();
+            config.Configure();
+            return new Mapper(config);
         }
 
         private static FundingStream GetFundingStreamData()

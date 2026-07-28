@@ -1,4 +1,4 @@
-using AutoMapper;
+using MapsterMapper;
 using PDS.ViewYourFunding.Repositories.Enums;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Areas.Admin.Models.NextPayment;
