@@ -24,8 +24,10 @@ namespace PDS.ViewYourFunding.Services.Extensions
         /// using Mapster;
         public static void ConfigureServicesMappings(this TypeAdapterConfig config)
         {
+            TypeAdapterConfig.GlobalSettings.AllowImplicitSourceInheritance = true;
+
             config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
-            config.Default.MaxDepth(8);
+            config.Default.PreserveReference(true);
 
             config.NewConfig<Repositories.DataModels.FundingStream, FundingStream>()
                 .TwoWays();
