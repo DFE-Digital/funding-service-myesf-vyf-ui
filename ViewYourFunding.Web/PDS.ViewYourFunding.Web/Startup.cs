@@ -1,4 +1,6 @@
 using Autofac;
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,7 @@ using PDS.ViewYourFunding.Repositories.Migrations;
 using PDS.ViewYourFunding.Services.Binders;
 using PDS.ViewYourFunding.Services.Config;
 using PDS.ViewYourFunding.Services.DependencyInjection;
+using PDS.ViewYourFunding.Services.Extensions;
 using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Services.Models;
@@ -183,6 +186,18 @@ namespace PDS.ViewYourFunding.Web
             builder.RegisterModule<RepositoriesAutofacModule>();
             builder.RegisterModule<ServicesAutofacModule>();
             builder.RegisterModule<WebAutofacModule>();
+
+            var config = new TypeAdapterConfig();
+            config.ConfigureServicesMappings();
+            config.ConfigureWebMappings();
+
+            builder.RegisterInstance(config)
+                .As<TypeAdapterConfig>()
+                .SingleInstance();
+
+            builder.RegisterType<ServiceMapper>()
+                .As<IMapper>()
+                .SingleInstance();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

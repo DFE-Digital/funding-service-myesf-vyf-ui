@@ -6,8 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Repositories.Implementations;
 using PDS.ViewYourFunding.Repositories.Migrations;
 using PDS.ViewYourFunding.Services.Config;
+using PDS.ViewYourFunding.Services.Extensions;
 using PDS.ViewYourFunding.Services.Implementations;
-using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -228,7 +228,7 @@ namespace PDS.ViewYourFunding.Services.Tests.Integration
         private static IMapper GetMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureServicesMappings();
             return new Mapper(config);
         }
     }

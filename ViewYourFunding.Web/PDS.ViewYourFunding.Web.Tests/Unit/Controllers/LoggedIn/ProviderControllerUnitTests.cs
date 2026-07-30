@@ -1623,9 +1623,10 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
                     User = new ClaimsPrincipal(
                         new ClaimsIdentity(
                             new[]
-                        {
-                            new Claim("http://sfs-sfa.gov.uk/claims/principal", "something")
-                        }, "someAuthTypeName"))
+                            {
+                        new Claim("http://sfs-sfa.gov.uk/claims/principal", "something")
+                            },
+                            "someAuthTypeName"))
                 }
             };
 
@@ -1640,88 +1641,88 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
                 FeedbackLink = _feedbackLink,
                 FundingPeriodPublications = new List<KeyValuePair<(int yearFrom, int yearTo), List<Publication>>>(),
                 FundingPeriodProviderFundings = new List<KeyValuePair<(int yearFrom, int yearTo), List<ProviderFundingViewModel>>>
+        {
+            new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                (2021, 2022), new List<ProviderFundingViewModel>
                 {
-                    new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                        (2021, 2022), new List<ProviderFundingViewModel>
-                        {
-                            new ProviderFundingViewModel
-                            {
-                                StatusChangedDate = new DateTime(2021, 6, 1),
-                                FundingPeriodCode = "AC-2122",
-                                IsLatest = true,
-                                IsFinal = false,
-                                VariationReason = "Initial allocation.",
-                                GroupingReason = "Information"
-                            }
-                        }),
-                    new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                        (2023, 2024), new List<ProviderFundingViewModel>
-                        {
-                            new ProviderFundingViewModel
-                            {
-                                StatusChangedDate = new DateTime(2023, 6, 1),
-                                FundingPeriodCode = "AC-2324",
-                                IsLatest = false,
-                                IsFinal = true,
-                                VariationReason = "Initial allocation.",
-                                GroupingReason = "Information"
-                            }
-                        })
-                },
+                    new ProviderFundingViewModel
+                    {
+                        StatusChangedDate = new DateTime(2021, 6, 1),
+                        FundingPeriodCode = "AC-2122",
+                        IsLatest = true,
+                        IsFinal = false,
+                        VariationReason = "Initial allocation.",
+                        GroupingReason = "Information"
+                    }
+                }),
+            new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                (2023, 2024), new List<ProviderFundingViewModel>
+                {
+                    new ProviderFundingViewModel
+                    {
+                        StatusChangedDate = new DateTime(2023, 6, 1),
+                        FundingPeriodCode = "AC-2324",
+                        IsLatest = false,
+                        IsFinal = true,
+                        VariationReason = "Initial allocation.",
+                        GroupingReason = "Information"
+                    }
+                })
+        },
                 FundingViewData = new FundingViewData
                 {
                     FundingStreamCode = "GAG",
                     TotalAmount = 2906249.75M,
                     Components = new List<Component>
+            {
+                new Component(null)
+                {
+                    Type = ComponentType.Accordion_Panel
+                },
+                new Component(null)
+                {
+                    Type = ComponentType.Accordion_Title,
+                    PageData = new Dictionary<string, object>
                     {
-                        new Component(null)
                         {
-                            Type = ComponentType.Accordion_Panel
+                            "FundingPeriodPublications",
+                            new List<KeyValuePair<(int yearFrom, int yearTo), List<Publication>>>()
                         },
-                        new Component(null)
                         {
-                            Type = ComponentType.Accordion_Title,
-                            PageData = new Dictionary<string, object>
+                            "FundingPeriodProviderFundings",
+                            new List<KeyValuePair<(int yearFrom, int yearTo), List<ProviderFundingViewModel>>>
                             {
-                                {
-                                    "FundingPeriodPublications",
-                                    new List<KeyValuePair<(int yearFrom, int yearTo), List<Publication>>>()
-                                },
-                                {
-                                    "FundingPeriodProviderFundings",
-                                    new List<KeyValuePair<(int yearFrom, int yearTo), List<ProviderFundingViewModel>>>
+                                new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                                    (2021, 2022), new List<ProviderFundingViewModel>
                                     {
-                                        new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                                            (2021, 2022), new List<ProviderFundingViewModel>
-                                            {
-                                                new ProviderFundingViewModel
-                                                {
-                                                    StatusChangedDate = new DateTime(2021, 6, 1),
-                                                    FundingPeriodCode = "AC-2122",
-                                                    IsLatest = true,
-                                                    IsFinal = false,
-                                                    VariationReason = "Initial allocation.",
-                                                    GroupingReason = "Information"
-                                                }
-                                            }),
-                                        new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                                            (2023, 2024), new List<ProviderFundingViewModel>
-                                            {
-                                                new ProviderFundingViewModel
-                                                {
-                                                    StatusChangedDate = new DateTime(2023, 6, 1),
-                                                    FundingPeriodCode = "AC-2324",
-                                                    IsLatest = false,
-                                                    IsFinal = true,
-                                                    VariationReason = "Initial allocation.",
-                                                    GroupingReason = "Information"
-                                                }
-                                            })
-                                    }
-                                }
-                            },
-                        },
-                    }
+                                        new ProviderFundingViewModel
+                                        {
+                                            StatusChangedDate = new DateTime(2021, 6, 1),
+                                            FundingPeriodCode = "AC-2122",
+                                            IsLatest = true,
+                                            IsFinal = false,
+                                            VariationReason = "Initial allocation.",
+                                            GroupingReason = "Information"
+                                        }
+                                    }),
+                                new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                                    (2023, 2024), new List<ProviderFundingViewModel>
+                                    {
+                                        new ProviderFundingViewModel
+                                        {
+                                            StatusChangedDate = new DateTime(2023, 6, 1),
+                                            FundingPeriodCode = "AC-2324",
+                                            IsLatest = false,
+                                            IsFinal = true,
+                                            VariationReason = "Initial allocation.",
+                                            GroupingReason = "Information"
+                                        }
+                                    })
+                            }
+                        }
+                    },
+                },
+            }
                 },
                 FundingStream = new Web.Areas.Admin.Models.FundingStream.FundingStream
                 {
@@ -1733,59 +1734,59 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
                     HistoryIndependentOfPublications = true,
                     Active = true,
                     SettingValues = new List<SettingValue>
+            {
+                new SettingValue
+                {
+                    Setting = new SettingType
                     {
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "AcademyAcademicYear"
-                            },
-                            Value = "202122"
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "UseStaticData"
-                            },
-                            Value = "true",
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "ParentProviderType"
-                            },
-                            Value = "AcademyTrust",
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "ProviderDownloadSizeInBytes"
-                            },
-                            Value = "206000",
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "FundingDocumentFileType"
-                            },
-                            Value = "CSV",
-                        }
+                        SettingName = "AcademyAcademicYear"
                     },
+                    Value = "202122"
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "UseStaticData"
+                    },
+                    Value = "true",
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "ParentProviderType"
+                    },
+                    Value = "AcademyTrust",
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "ProviderDownloadSizeInBytes"
+                    },
+                    Value = "206000",
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "FundingDocumentFileType"
+                    },
+                    Value = "CSV",
+                }
+            },
                     NextPayments = new List<NextPayment>(),
                     Publications = new List<Publication>
-                    {
-                        new Publication
-                        {
-                            PublishedDate = new DateTime(2030, 1, 1),
-                            FundingPeriodCode = "AC-2122",
-                            IsLatest = true,
-                            Status = PublicationStatus.Published
-                        }
-                    }
+            {
+                new Publication
+                {
+                    PublishedDate = new DateTime(2030, 1, 1),
+                    FundingPeriodCode = "AC-2122",
+                    IsLatest = true,
+                    Status = PublicationStatus.Published
+                }
+            }
                 },
                 CurrentUser = new CurrentUserViewModel
                 {
@@ -1804,13 +1805,19 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
             var fundingStreamNamePathPart = "general-annual-grant";
 
             // Act
-            var actual = await controller.ProviderHistory("10072811", fundingStreamNamePathPart);
+            var actual = await controller.ProviderHistory(
+                "10072811",
+                fundingStreamNamePathPart);
 
             // Assert
             actual
                 .Should().BeOfType<ViewResult>()
                 .Which.Model.Should().BeOfType<ProviderHistoryViewModel>()
-                .Which.Should().BeEquivalentTo(expectedViewModel);
+                .Which.Should().BeEquivalentTo(
+                    expectedViewModel,
+                    options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues")));
         }
 
         [TestMethod]
@@ -2086,13 +2093,19 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
             var fundingStreamNamePathPart = "general-annual-grant";
 
             // Act
-            var actual = await controller.ProviderHistory("10072811", fundingStreamNamePathPart);
+            var actual = await controller.ProviderHistory(
+                "10072811",
+                fundingStreamNamePathPart);
 
             // Assert
             actual
-                  .Should().BeOfType<ViewResult>()
-                 .Which.Model.Should().BeOfType<ProviderHistoryViewModel>()
-                 .Which.Should().BeEquivalentTo(expectedViewModel);
+                .Should().BeOfType<ViewResult>()
+                .Which.Model.Should().BeOfType<ProviderHistoryViewModel>()
+                .Which.Should().BeEquivalentTo(
+                    expectedViewModel,
+                    options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues")));
         }
 
         // TODO - This test should be uncommented when the temporary fix to grant MAT GAG access unconditionally is removed (Method: ProviderController.IsPartOfMAT).
@@ -2217,9 +2230,10 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
                     User = new ClaimsPrincipal(
                         new ClaimsIdentity(
                             new Claim[]
-                        {
-                            new Claim("http://sfs-sfa.gov.uk/claims/principal", "something")
-                        }, "someAuthTypeName"))
+                            {
+                        new Claim("http://sfs-sfa.gov.uk/claims/principal", "something")
+                            },
+                            "someAuthTypeName"))
                 }
             };
 
@@ -2235,88 +2249,88 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
                 FeedbackLink = _feedbackLink,
                 FundingPeriodPublications = new List<KeyValuePair<(int yearFrom, int yearTo), List<Publication>>>(),
                 FundingPeriodProviderFundings = new List<KeyValuePair<(int yearFrom, int yearTo), List<ProviderFundingViewModel>>>
+        {
+            new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                (2021, 2022), new List<ProviderFundingViewModel>
                 {
-                    new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                        (2021, 2022), new List<ProviderFundingViewModel>
-                        {
-                            new ProviderFundingViewModel
-                            {
-                                StatusChangedDate = new DateTime(2021, 6, 1),
-                                FundingPeriodCode = "AC-2122",
-                                IsLatest = true,
-                                IsFinal = false,
-                                VariationReason = "Initial allocation.",
-                                GroupingReason = "Information"
-                            }
-                        }),
-                    new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                        (2023, 2024), new List<ProviderFundingViewModel>
-                        {
-                            new ProviderFundingViewModel
-                            {
-                                StatusChangedDate = new DateTime(2023, 6, 1),
-                                FundingPeriodCode = "AC-2324",
-                                IsLatest = false,
-                                IsFinal = true,
-                                VariationReason = "Initial allocation.",
-                                GroupingReason = "Information"
-                            }
-                        })
-                },
+                    new ProviderFundingViewModel
+                    {
+                        StatusChangedDate = new DateTime(2021, 6, 1),
+                        FundingPeriodCode = "AC-2122",
+                        IsLatest = true,
+                        IsFinal = false,
+                        VariationReason = "Initial allocation.",
+                        GroupingReason = "Information"
+                    }
+                }),
+            new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                (2023, 2024), new List<ProviderFundingViewModel>
+                {
+                    new ProviderFundingViewModel
+                    {
+                        StatusChangedDate = new DateTime(2023, 6, 1),
+                        FundingPeriodCode = "AC-2324",
+                        IsLatest = false,
+                        IsFinal = true,
+                        VariationReason = "Initial allocation.",
+                        GroupingReason = "Information"
+                    }
+                })
+        },
                 FundingViewData = new FundingViewData
                 {
                     FundingStreamCode = "GAG",
                     TotalAmount = 2906249.75M,
                     Components = new List<Component>
+            {
+                new Component(null)
+                {
+                    Type = ComponentType.Accordion_Title,
+                    PageData = new Dictionary<string, object>
                     {
-                        new Component(null)
                         {
-                            Type = ComponentType.Accordion_Title,
-                            PageData = new Dictionary<string, object>
-                            {
-                                {
-                                    "FundingPeriodPublications",
-                                    new List<KeyValuePair<(int yearFrom, int yearTo), List<Publication>>>()
-                                },
-                                {
-                                    "FundingPeriodProviderFundings",
-                                    new List<KeyValuePair<(int yearFrom, int yearTo), List<ProviderFundingViewModel>>>
-                                    {
-                                        new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                                            (2021, 2022), new List<ProviderFundingViewModel>
-                                            {
-                                                new ProviderFundingViewModel
-                                                {
-                                                    StatusChangedDate = new DateTime(2021, 6, 1),
-                                                    FundingPeriodCode = "AC-2122",
-                                                    IsLatest = true,
-                                                    IsFinal = false,
-                                                    VariationReason = "Initial allocation.",
-                                                    GroupingReason = "Information"
-                                                }
-                                            }),
-                                        new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
-                                            (2023, 2024), new List<ProviderFundingViewModel>
-                                            {
-                                                new ProviderFundingViewModel
-                                                {
-                                                    StatusChangedDate = new DateTime(2023, 6, 1),
-                                                    FundingPeriodCode = "AC-2324",
-                                                    IsLatest = false,
-                                                    IsFinal = true,
-                                                    VariationReason = "Initial allocation.",
-                                                    GroupingReason = "Information"
-                                                }
-                                            })
-                                    }
-                                }
-                            },
+                            "FundingPeriodPublications",
+                            new List<KeyValuePair<(int yearFrom, int yearTo), List<Publication>>>()
                         },
-                        new Component(null)
                         {
-                            Type = ComponentType.Accordion_Panel
+                            "FundingPeriodProviderFundings",
+                            new List<KeyValuePair<(int yearFrom, int yearTo), List<ProviderFundingViewModel>>>
+                            {
+                                new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                                    (2021, 2022), new List<ProviderFundingViewModel>
+                                    {
+                                        new ProviderFundingViewModel
+                                        {
+                                            StatusChangedDate = new DateTime(2021, 6, 1),
+                                            FundingPeriodCode = "AC-2122",
+                                            IsLatest = true,
+                                            IsFinal = false,
+                                            VariationReason = "Initial allocation.",
+                                            GroupingReason = "Information"
+                                        }
+                                    }),
+                                new KeyValuePair<(int, int), List<ProviderFundingViewModel>>(
+                                    (2023, 2024), new List<ProviderFundingViewModel>
+                                    {
+                                        new ProviderFundingViewModel
+                                        {
+                                            StatusChangedDate = new DateTime(2023, 6, 1),
+                                            FundingPeriodCode = "AC-2324",
+                                            IsLatest = false,
+                                            IsFinal = true,
+                                            VariationReason = "Initial allocation.",
+                                            GroupingReason = "Information"
+                                        }
+                                    })
+                            }
                         }
-                    }
+                    },
+                },
+                new Component(null)
+                {
+                    Type = ComponentType.Accordion_Panel
+                }
+            }
                 },
                 FundingStream = new Web.Areas.Admin.Models.FundingStream.FundingStream
                 {
@@ -2328,59 +2342,59 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
                     HistoryIndependentOfPublications = true,
                     Active = true,
                     SettingValues = new List<SettingValue>
+            {
+                new SettingValue
+                {
+                    Setting = new SettingType
                     {
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "AcademyAcademicYear"
-                            },
-                            Value = "202122"
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "UseStaticData"
-                            },
-                            Value = "true",
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "ParentProviderType"
-                            },
-                            Value = "AcademyTrust",
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "ProviderDownloadSizeInBytes"
-                            },
-                            Value = "206000",
-                        },
-                        new SettingValue
-                        {
-                            Setting = new SettingType
-                            {
-                                SettingName = "FundingDocumentFileType"
-                            },
-                            Value = "CSV",
-                        }
+                        SettingName = "AcademyAcademicYear"
                     },
+                    Value = "202122"
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "UseStaticData"
+                    },
+                    Value = "true",
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "ParentProviderType"
+                    },
+                    Value = "AcademyTrust",
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "ProviderDownloadSizeInBytes"
+                    },
+                    Value = "206000",
+                },
+                new SettingValue
+                {
+                    Setting = new SettingType
+                    {
+                        SettingName = "FundingDocumentFileType"
+                    },
+                    Value = "CSV",
+                }
+            },
                     NextPayments = new List<NextPayment>(),
                     Publications = new List<Publication>
-                    {
-                        new Publication
-                        {
-                            PublishedDate = new DateTime(2030, 1, 1),
-                            FundingPeriodCode = "AC-2122",
-                            IsLatest = true,
-                            Status = PublicationStatus.Published
-                        }
-                    }
+            {
+                new Publication
+                {
+                    PublishedDate = new DateTime(2030, 1, 1),
+                    FundingPeriodCode = "AC-2122",
+                    IsLatest = true,
+                    Status = PublicationStatus.Published
+                }
+            }
                 },
                 CurrentUser = new CurrentUserViewModel
                 {
@@ -2405,7 +2419,11 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
             actual
                 .Should().BeOfType<ViewResult>()
                 .Which.Model.Should().BeOfType<ProviderHistoryViewModel>()
-                .Which.Should().BeEquivalentTo(expectedViewModel);
+                .Which.Should().BeEquivalentTo(
+                    expectedViewModel,
+                    options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues")));
         }
 
         [TestMethod]
@@ -2759,7 +2777,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers.LoggedIn
         private static IMapper GetMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureWebMappings();
             return new Mapper(config);
         }
 

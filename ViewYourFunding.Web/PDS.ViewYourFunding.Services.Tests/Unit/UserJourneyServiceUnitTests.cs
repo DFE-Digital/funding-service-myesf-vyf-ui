@@ -6,9 +6,9 @@ using Moq;
 using PDS.ViewYourFunding.Repositories.Enums;
 using PDS.ViewYourFunding.Repositories.Interfaces;
 using PDS.ViewYourFunding.Services.Config;
+using PDS.ViewYourFunding.Services.Extensions;
 using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Interfaces;
-using PDS.ViewYourFunding.Web.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -141,7 +141,7 @@ namespace PDS.ViewYourFunding.Services.Tests.Unit
         private IMapper GetImapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureServicesMappings();
             return new Mapper(config);
         }
     }

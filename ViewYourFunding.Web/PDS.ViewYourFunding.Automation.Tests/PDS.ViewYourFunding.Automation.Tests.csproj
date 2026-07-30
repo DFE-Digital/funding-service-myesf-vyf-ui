@@ -441,6 +441,7 @@
     <ProjectReference Include="..\PDS.ViewYourFunding.Automation\PDS.ViewYourFunding.Automation.csproj" />
     <ProjectReference Include="..\PDS.ViewYourFunding.Core\PDS.ViewYourFunding.Core.csproj" />
     <ProjectReference Include="..\PDS.ViewYourFunding.Services\PDS.ViewYourFunding.Services.csproj" />
+	<ProjectReference Include="..\PDS.ViewYourFunding.Web\PDS.ViewYourFunding.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -341,7 +341,7 @@ namespace PDS.ViewYourFunding.Automation.Tests.ViewYourFunding
         private static IMapper GetMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureWebMappings();
             return new Mapper(config);
         }
 

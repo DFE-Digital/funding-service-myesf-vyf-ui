@@ -249,7 +249,10 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             var user = LoggedInUser;
             var securityServiceMock = GetMockSecurityService(user);
             var settingsServiceMock = GetMockSettingsService();
-            var fundingApiServiceMock = GetFundingApiService_SingleMatchingProviderFundingResult(user.Ukprn.ToString(), FundingStreamCode.DSG);
+            var fundingApiServiceMock = GetFundingApiService_SingleMatchingProviderFundingResult(
+                user.Ukprn.ToString(),
+                FundingStreamCode.DSG);
+
             var controller = GetViewYourFundingController(
                 securityServiceMock,
                 null,
@@ -272,109 +275,109 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                 FeedbackLink = TestFeedbackLink,
                 ContactUsLink = TestContactUsLink,
                 FundingStreams = new List<Model.FundingStream>
+        {
+            new Model.FundingStream
+            {
+                Id = 2,
+                Active = true,
+                FundingStreamCode = "DSG",
+                FundingStreamName = "Dedicated schools grant",
+                FundingStreamCodePubliclyKnown = true,
+                FundingStreamNameWithinSentence = "dedicated schools grant",
+                Publications = new List<Publication>
                 {
-                   new Model.FundingStream
-                   {
-                     Id = 2,
-                     Active = true,
-                     FundingStreamCode = "DSG",
-                     FundingStreamName = "Dedicated schools grant",
-                     FundingStreamCodePubliclyKnown = true,
-                     FundingStreamNameWithinSentence = "dedicated schools grant",
-                     Publications = new List<Publication>
-                     {
-                         new Publication
-                         {
-                             Description = "TestPublicationDescription",
-                             FundingPeriodCode = "FY-2021",
-                             FundingStreamId = 0,
-                             IsLatest = true,
-                             PublishedDate = new DateTime(2019, 12, 31),
-                             Status = PublicationStatus.Published
-                         }
-                     },
-                     NextPayments = new List<NextPayment>(),
-                     SettingValues = new List<SettingValue>
-                     {
-                         new SettingValue
-                         {
-                             CreatedAt = DateTime.MaxValue,
-                             FundingStreamId = 2,
-                             Id = 0,
-                             LastUpdatedAt = DateTime.MaxValue,
-                             LastUpdatedBy = "System",
-                             Setting = new SettingType
-                             {
-                                 SettingName = "FinancialYear"
-                             },
-                             SettingId = 2,
-                             Value = "202021"
-                         }
-                     },
-                     RelevantForNational = true,
-                     RelevantForOrganisations_LoggedIn = true,
-                     RelevantForOrganisations_Public = true,
-                     RelevantForProviders_LoggedIn = false,
-                     RelevantForProviders_Public = false
-                   },
-                   new Model.FundingStream
-                   {
-                     Id = 1,
-                     Active = true,
-                     FundingStreamCode = "PSG",
-                     FundingStreamName = "PE and sport premium",
-                     FundingStreamNameWithinSentence = "PE and sport premium",
-                     Publications = new List<Publication>
-                     {
-                         new Publication
-                         {
-                             Description = "TestPublicationDescription",
-                             FundingPeriodCode = "AY-1920",
-                             FundingStreamId = 0,
-                             IsLatest = true,
-                             PublishedDate = new DateTime(2019, 12, 31),
-                             Status = PublicationStatus.Published
-                         }
-                     },
-                     NextPayments = new List<NextPayment>(),
-                     SettingValues = new List<SettingValue>
-                     {
-                         new SettingValue
-                         {
-                             CreatedAt = DateTime.MaxValue,
-                             FundingStreamId = 1,
-                             Id = 0,
-                             LastUpdatedAt = DateTime.MaxValue,
-                             LastUpdatedBy = "System",
-                             Setting = new SettingType
-                             {
-                                 SettingName = "AcademicYear"
-                             },
-                             SettingId = 1,
-                             Value = "201920"
-                         },
-                         new SettingValue
-                         {
-                             CreatedAt = DateTime.MaxValue,
-                             FundingStreamId = 1,
-                             Id = 0,
-                             LastUpdatedAt = DateTime.MaxValue,
-                             LastUpdatedBy = "System",
-                             Setting = new SettingType
-                             {
-                                 SettingName = "ProviderDownloadSizeInBytes"
-                             },
-                             SettingId = 2,
-                             Value = "5000"
-                         }
-                     },
-                     RelevantForNational = true,
-                     RelevantForOrganisations_LoggedIn = true,
-                     RelevantForOrganisations_Public = true,
-                     RelevantForProviders_LoggedIn = true,
-                     RelevantForProviders_Public = true
-                   }
-                }
+                    new Publication
+                    {
+                        Description = "TestPublicationDescription",
+                        FundingPeriodCode = "FY-2021",
+                        FundingStreamId = 0,
+                        IsLatest = true,
+                        PublishedDate = new DateTime(2019, 12, 31),
+                        Status = PublicationStatus.Published
+                    }
+                },
+                NextPayments = new List<NextPayment>(),
+                SettingValues = new List<SettingValue>
+                {
+                    new SettingValue
+                    {
+                        CreatedAt = DateTime.MaxValue,
+                        FundingStreamId = 2,
+                        Id = 0,
+                        LastUpdatedAt = DateTime.MaxValue,
+                        LastUpdatedBy = "System",
+                        Setting = new SettingType
+                        {
+                            SettingName = "FinancialYear"
+                        },
+                        SettingId = 2,
+                        Value = "202021"
+                    }
+                },
+                RelevantForNational = true,
+                RelevantForOrganisations_LoggedIn = true,
+                RelevantForOrganisations_Public = true,
+                RelevantForProviders_LoggedIn = false,
+                RelevantForProviders_Public = false
+            },
+            new Model.FundingStream
+            {
+                Id = 1,
+                Active = true,
+                FundingStreamCode = "PSG",
+                FundingStreamName = "PE and sport premium",
+                FundingStreamNameWithinSentence = "PE and sport premium",
+                Publications = new List<Publication>
+                {
+                    new Publication
+                    {
+                        Description = "TestPublicationDescription",
+                        FundingPeriodCode = "AY-1920",
+                        FundingStreamId = 0,
+                        IsLatest = true,
+                        PublishedDate = new DateTime(2019, 12, 31),
+                        Status = PublicationStatus.Published
+                    }
+                },
+                NextPayments = new List<NextPayment>(),
+                SettingValues = new List<SettingValue>
+                {
+                    new SettingValue
+                    {
+                        CreatedAt = DateTime.MaxValue,
+                        FundingStreamId = 1,
+                        Id = 0,
+                        LastUpdatedAt = DateTime.MaxValue,
+                        LastUpdatedBy = "System",
+                        Setting = new SettingType
+                        {
+                            SettingName = "AcademicYear"
+                        },
+                        SettingId = 1,
+                        Value = "201920"
+                    },
+                    new SettingValue
+                    {
+                        CreatedAt = DateTime.MaxValue,
+                        FundingStreamId = 1,
+                        Id = 0,
+                        LastUpdatedAt = DateTime.MaxValue,
+                        LastUpdatedBy = "System",
+                        Setting = new SettingType
+                        {
+                            SettingName = "ProviderDownloadSizeInBytes"
+                        },
+                        SettingId = 2,
+                        Value = "5000"
+                    }
+                },
+                RelevantForNational = true,
+                RelevantForOrganisations_LoggedIn = true,
+                RelevantForOrganisations_Public = true,
+                RelevantForProviders_LoggedIn = true,
+                RelevantForProviders_Public = true
+            }
+        }
             };
 
             // Act
@@ -382,11 +385,13 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
             // Assert
             actual
-                 .Should().BeOfType<ViewResult>()
+                .Should().BeOfType<ViewResult>()
                 .Which.Model.Should().BeOfType<StartPageViewModel>()
                 .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreams[0].SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreams[0].SettingValues[0].LastUpdatedAt)
                         .Excluding(option => option.FundingStreams[1].SettingValues[0].CreatedAt)
@@ -2905,8 +2910,33 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                 }
             };
 
+            // Mapster converts null collections to empty collections
+            if (expectedViewModel.ProviderStatementSection?.FundingStreamConfiguration?.Publications != null)
+            {
+                foreach (var publication in expectedViewModel.ProviderStatementSection.FundingStreamConfiguration.Publications)
+                {
+                    publication.PublicationLayouts ??= new List<PublicationLayout>();
+                }
+            }
+
+            if (expectedViewModel.ProviderStatementSection?.FundingStreamConfiguration?.SettingValues != null)
+            {
+                foreach (var settingValue in expectedViewModel.ProviderStatementSection.FundingStreamConfiguration.SettingValues)
+                {
+                    if (settingValue.Setting != null)
+                    {
+                        settingValue.Setting.SettingValues ??= new List<SettingValue>();
+                    }
+                }
+            }
+
             // Act
-            var actual = await controller.ProviderFundingBreakdown("pe-and-sport-premium", FirstOrganisationUkprn, DateTimeExtensions.ToRouteParameterString(TestPublicationDate), 2019, 2020);
+            var actual = await controller.ProviderFundingBreakdown(
+                "pe-and-sport-premium",
+                FirstOrganisationUkprn,
+                DateTimeExtensions.ToRouteParameterString(TestPublicationDate),
+                2019,
+                2020);
 
             // Assert
             actual
@@ -2918,7 +2948,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                         .Excluding(option => option.ProviderStatementSection.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.ProviderStatementSection.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
 
-            mockFundingSearchService.Verify(x => x.SearchProviderFunding(It.IsAny<FundingApiSearchRequestObject>(), false), Times.Exactly(3));
+            mockFundingSearchService.Verify(
+                x => x.SearchProviderFunding(It.IsAny<FundingApiSearchRequestObject>(), false),
+                Times.Exactly(3));
         }
 
         /// <summary>
@@ -2980,19 +3012,35 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.ProviderFundingBreakdown("pe-and-sport-premium", FirstOrganisationUkprn, DateTimeExtensions.ToRouteParameterString(TestPublicationDate), 2019, 2020, SearchTerm);
+            var actual = await controller.ProviderFundingBreakdown(
+                "pe-and-sport-premium",
+                FirstOrganisationUkprn,
+                DateTimeExtensions.ToRouteParameterString(TestPublicationDate),
+                2019,
+                2020,
+                SearchTerm);
 
             // Assert
             actual
-                 .Should().BeOfType<ViewResult>()
+                .Should().BeOfType<ViewResult>()
                 .Which.Model.Should().BeOfType<ProviderFundingBreakdownViewModel>()
                 .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
-                        .Excluding(option => option.ProviderStatementSection.FundingStreamConfiguration.SettingValues[0].CreatedAt)
-                        .Excluding(option => option.ProviderStatementSection.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
+                        .Excluding(info =>
+                            info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info =>
+                            info.Path.EndsWith("Setting.SettingValues"))
+                        .Excluding(option =>
+                            option.ProviderStatementSection.FundingStreamConfiguration.SettingValues[0].CreatedAt)
+                        .Excluding(option =>
+                            option.ProviderStatementSection.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
 
-            mockFundingSearchService.Verify(x => x.SearchProviderFunding(It.IsAny<FundingApiSearchRequestObject>(), false), Times.Exactly(3));
+            mockFundingSearchService.Verify(
+                x => x.SearchProviderFunding(
+                    It.IsAny<FundingApiSearchRequestObject>(),
+                    false),
+                Times.Exactly(3));
         }
 
         /// <summary>
@@ -3287,15 +3335,20 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.ProviderHistory("pe-and-sport-premium", organisationUkprn);
+            var actual = await controller.ProviderHistory(
+                "pe-and-sport-premium",
+                organisationUkprn);
 
             // Assert
             actual
-                 .Should().BeOfType<ViewResult>()
+                .Should().BeOfType<ViewResult>()
                 .Which.Model.Should().BeOfType<ProviderHistoryViewModel>()
                 .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
+                        .Excluding(info => info.Path.EndsWith("CurrentUser.ProviderName"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -3305,7 +3358,6 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
         /// </summary>
         /// <param name="organisationUkprn">The organisation ukprn.</param>
         /// <param name="resultCount">The result count.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod, TestCategory("Unit")]
         [DataRow(OrganisationUkprn, 1)]
         [DataRow(OrganisationUkprn, 2)]
@@ -3332,7 +3384,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                 {
                     IsExternalUser = user.IsExternalUser,
                     IsLoggedIn = user.IsAuthenticated,
-                    ProviderName = user.ProviderName,
+                    ProviderName = null,
                     Ukprn = user.Ukprn,
                     FirstName = LoggedInUser.FirstName,
                     LastName = LoggedInUser.LastName,
@@ -3340,7 +3392,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                 },
                 FeedbackLink = TestFeedbackLink,
                 ContactUsLink = TestContactUsLink,
-                OrganisationUkprn = OrganisationUkprn,
+                OrganisationUkprn = organisationUkprn,
                 OrganisationName = OrganisationName,
                 SearchTerm = SearchTerm,
                 FundingStreamConfiguration = ExpectedFundingStreamConfiguration[FundingStreamCode.PEAndSport],
@@ -3355,12 +3407,35 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                 }
             };
 
+            // Mapster converts null collections to empty collections
+            if (expectedViewModel.FundingStreamConfiguration?.Publications != null)
+            {
+                foreach (var publication in expectedViewModel.FundingStreamConfiguration.Publications)
+                {
+                    publication.PublicationLayouts ??= new List<PublicationLayout>();
+                }
+            }
+
+            if (expectedViewModel.FundingStreamConfiguration?.SettingValues != null)
+            {
+                foreach (var settingValue in expectedViewModel.FundingStreamConfiguration.SettingValues)
+                {
+                    if (settingValue.Setting != null)
+                    {
+                        settingValue.Setting.SettingValues ??= new List<SettingValue>();
+                    }
+                }
+            }
+
             // Act
-            var actual = await controller.ProviderHistory("pe-and-sport-premium", organisationUkprn, SearchTerm);
+            var actual = await controller.ProviderHistory(
+                "pe-and-sport-premium",
+                organisationUkprn,
+                SearchTerm);
 
             // Assert
             actual
-                 .Should().BeOfType<ViewResult>()
+                .Should().BeOfType<ViewResult>()
                 .Which.Model.Should().BeOfType<ProviderHistoryViewModel>()
                 .Which.Should().BeEquivalentTo(
                     expectedViewModel,
@@ -3457,12 +3532,13 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
                         .Excluding(vm => vm.FundingDocuments)
-                        .Excluding(vm => vm.FundingDocuments)
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration["DSG"].SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration["DSG"].SettingValues[0].LastUpdatedAt)
                         .Excluding(option => option.FundingStreamConfiguration["PSG"].SettingValues[0].CreatedAt)
@@ -3470,8 +3546,8 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
-               .Which.FundingDocuments.Should().HaveCount(2);
+                .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
+                .Which.FundingDocuments.Should().HaveCount(2);
         }
 
         /// <summary>
@@ -3519,18 +3595,22 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.LocalAuthorityStatement(TestLocalAuthorityCode, TestSearchTerm);
+            var actual = await controller.LocalAuthorityStatement(
+                TestLocalAuthorityCode,
+                TestSearchTerm);
 
             // Assert
             fundingApiServiceMock.Verify();
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
                         .Excluding(vm => vm.FundingDocuments)
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration["DSG"].SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration["DSG"].SettingValues[0].LastUpdatedAt)
                         .Excluding(option => option.FundingStreamConfiguration["PSG"].SettingValues[0].CreatedAt)
@@ -3538,8 +3618,8 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
-               .Which.FundingDocuments.Should().HaveCount(2);
+                .Which.Model.Should().BeOfType<LocalAuthorityStatementViewModel>()
+                .Which.FundingDocuments.Should().HaveCount(2);
         }
 
         #endregion
@@ -3603,16 +3683,16 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                     QueryFilter = new QueryFilter
                     {
                         Filters = new List<SearchResultsFilter>
-                        {
-                            new SearchResultsFilter
-                            {
-                                Key = SearchFilterConstants.EstablishmentTypeFilterKey,
-                                Title = SearchFilterConstants.EstablishmentTypeFilterTitle,
-                                Open = true,
-                                SearchEnabled = false,
-                                Values = new List<SearchFilterValue>()
-                            }
-                        }
+                {
+                    new SearchResultsFilter
+                    {
+                        Key = SearchFilterConstants.EstablishmentTypeFilterKey,
+                        Title = SearchFilterConstants.EstablishmentTypeFilterTitle,
+                        Open = true,
+                        SearchEnabled = false,
+                        Values = new List<SearchFilterValue>()
+                    }
+                }
                     }
                 },
                 FundingPeriodCode = "AY-1920"
@@ -3636,11 +3716,13 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<FundingBreakdownViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<FundingBreakdownViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
                         .Excluding(vm => vm.Document)
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -3702,16 +3784,16 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                     QueryFilter = new QueryFilter
                     {
                         Filters = new List<SearchResultsFilter>
-                        {
-                            new SearchResultsFilter
-                            {
-                                Key = SearchFilterConstants.EstablishmentTypeFilterKey,
-                                Title = SearchFilterConstants.EstablishmentTypeFilterTitle,
-                                Open = true,
-                                SearchEnabled = false,
-                                Values = new List<SearchFilterValue>()
-                            }
-                        }
+                {
+                    new SearchResultsFilter
+                    {
+                        Key = SearchFilterConstants.EstablishmentTypeFilterKey,
+                        Title = SearchFilterConstants.EstablishmentTypeFilterTitle,
+                        Open = true,
+                        SearchEnabled = false,
+                        Values = new List<SearchFilterValue>()
+                    }
+                }
                     }
                 },
                 FundingPeriodCode = "AY-1920"
@@ -3735,11 +3817,13 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<FundingBreakdownViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<FundingBreakdownViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
                         .Excluding(vm => vm.Document)
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -3950,9 +4034,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                     PublicationDate = new DateTime(2019, 12, 31),
                     TotalAmount = 12345678M,
                     FundingValues = new Dictionary<string, object>
-                    {
-                        { "TestFundingTotal", 12345678M }
-                    },
+            {
+                { "TestFundingTotal", 12345678M }
+            },
                     FundingStreamCode = "DSG",
                     FundingPeriodCode = "FY-2021",
                     LocalAuthorityName = "Test LA"
@@ -3960,17 +4044,22 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.LocalAuthorityHistory(TestLocalAuthorityCode, "dedicated-schools-grant", null);
+            var actual = await controller.LocalAuthorityHistory(
+                TestLocalAuthorityCode,
+                "dedicated-schools-grant",
+                null);
 
             // Assert
             fundingApiServiceMock.Verify();
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -4028,9 +4117,9 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
                     PublicationDate = new DateTime(2019, 12, 31),
                     TotalAmount = 12345678M,
                     FundingValues = new Dictionary<string, object>
-                    {
-                        { "TestFundingTotal", 12345678M }
-                    },
+            {
+                { "TestFundingTotal", 12345678M }
+            },
                     FundingStreamCode = "DSG",
                     FundingPeriodCode = "FY-2021",
                     LocalAuthorityName = "Test LA"
@@ -4038,17 +4127,22 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.LocalAuthorityHistory(TestLocalAuthorityCode, "dedicated-schools-grant", TestSearchTerm);
+            var actual = await controller.LocalAuthorityHistory(
+                TestLocalAuthorityCode,
+                "dedicated-schools-grant",
+                TestSearchTerm);
 
             // Assert
             fundingApiServiceMock.Verify();
 
             actual
-               .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Should().BeOfType<ViewResult>()
+                .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -4076,11 +4170,11 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             var mockFundingViewService = GetMockFundingViewService();
 
             var controller = GetViewYourFundingController(
-               securityServiceMock,
-               null,
-               fundingApiServiceMock,
-               settingsServiceMock,
-               mockFundingViewService);
+                securityServiceMock,
+                null,
+                fundingApiServiceMock,
+                settingsServiceMock,
+                mockFundingViewService);
 
             var expectedViewModel = new LocalAuthorityHistoryViewModel
             {
@@ -4115,17 +4209,22 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.LocalAuthorityHistory(TestLocalAuthorityCode, "pe-and-sport-premium", null);
+            var actual = await controller.LocalAuthorityHistory(
+                TestLocalAuthorityCode,
+                "pe-and-sport-premium",
+                null);
 
             // Assert
             fundingApiServiceMock.Verify();
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -4188,17 +4287,22 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
             };
 
             // Act
-            var actual = await controller.LocalAuthorityHistory(TestLocalAuthorityCode, "pe-and-sport-premium", TestSearchTerm);
+            var actual = await controller.LocalAuthorityHistory(
+                TestLocalAuthorityCode,
+                "pe-and-sport-premium",
+                TestSearchTerm);
 
             // Assert
             fundingApiServiceMock.Verify();
 
             actual
                 .Should().BeOfType<ViewResult>()
-               .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
-               .Which.Should().BeEquivalentTo(
+                .Which.Model.Should().BeOfType<LocalAuthorityHistoryViewModel>()
+                .Which.Should().BeEquivalentTo(
                     expectedViewModel,
                     options => options
+                        .Excluding(info => info.Path.EndsWith("PublicationLayouts"))
+                        .Excluding(info => info.Path.EndsWith("Setting.SettingValues"))
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].CreatedAt)
                         .Excluding(option => option.FundingStreamConfiguration.SettingValues[0].LastUpdatedAt));
         }
@@ -5162,7 +5266,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
         private IMapper GetMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureWebMappings();
             return new Mapper(config);
         }
 

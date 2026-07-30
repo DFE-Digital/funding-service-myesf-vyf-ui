@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PDS.ViewYourFunding.Repositories.Implementations;
 using PDS.ViewYourFunding.Repositories.Migrations;
 using PDS.ViewYourFunding.Services.Config;
+using PDS.ViewYourFunding.Services.Extensions;
 using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Interfaces;
 using PDS.ViewYourFunding.Web.Config;
@@ -217,7 +218,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Integration
         private static IMapper GetWebMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureWebMappings();
 
             return new Mapper(config);
         }
@@ -229,7 +230,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Integration
         private static IMapper GetServiceMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureServicesMappings();
 
             return new Mapper(config);
         }

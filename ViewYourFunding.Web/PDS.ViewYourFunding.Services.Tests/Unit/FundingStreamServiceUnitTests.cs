@@ -5,9 +5,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using PDS.ViewYourFunding.Repositories.Interfaces;
 using PDS.ViewYourFunding.Services.Config;
+using PDS.ViewYourFunding.Services.Extensions;
 using PDS.ViewYourFunding.Services.Implementations;
 using PDS.ViewYourFunding.Services.Models;
-using PDS.ViewYourFunding.Web.Extensions;
 using System.Threading.Tasks;
 using Model = PDS.ViewYourFunding.Repositories.DataModels;
 
@@ -147,7 +147,7 @@ namespace PDS.ViewYourFunding.Services.Tests.Unit
         private IMapper GetMapper()
         {
             var config = new TypeAdapterConfig();
-            config.Configure();
+            config.ConfigureServicesMappings();
             return new Mapper(config);
         }
     }

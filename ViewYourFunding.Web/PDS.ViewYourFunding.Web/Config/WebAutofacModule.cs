@@ -19,7 +19,6 @@ namespace PDS.ViewYourFunding.Web.Config
         /// </remarks>
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMapster();
             builder.RegisterTileDependencies();
         }
     }
