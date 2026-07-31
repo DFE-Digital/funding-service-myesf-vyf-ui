@@ -29,30 +29,6 @@ namespace PDS.ViewYourFunding.Services.Extensions
             config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
             config.Default.PreserveReference(true);
 
-            config.NewConfig<Repositories.DataModels.FundingStream, FundingStream>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.PublicationLayout, PublicationLayout>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.Publication, Publication>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.Setting, Setting>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.SettingValue, SettingValue>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.NextPaymentType, NextPaymentType>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.GlobalSetting, GlobalSetting>()
-                .TwoWays();
-
-            config.NewConfig<Repositories.DataModels.Setting, SettingType>()
-                .TwoWays();
-
             config.NewConfig<Repositories.DataModels.NextPayment, NextPayment>()
                 .Map(
                     dest => dest.NextPaymentTypeDescription,

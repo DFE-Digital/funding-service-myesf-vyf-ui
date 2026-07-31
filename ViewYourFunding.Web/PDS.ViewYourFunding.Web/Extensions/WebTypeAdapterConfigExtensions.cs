@@ -34,31 +34,10 @@ namespace PDS.ViewYourFunding.Web.Extensions
                 config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
                 config.Default.PreserveReference(true);
 
-                config.NewConfig<Publication, PublicationViewModel>()
-                   .TwoWays();
-
                 config.NewConfig<NextPaymentType, Area.Models.NextPaymentType.NextPaymentType>()
                     .Map(
                         dest => dest.IsNextPaymentTypeInUse,
-                        src => src.NextPayments.Any())
-                    .TwoWays();
-
-                config.NewConfig<NextPayment, Area.Models.NextPayment.NextPayment>()
-                    .TwoWays();
-
-                config.NewConfig<Services.Models.GlobalSetting, GlobalSetting>()
-                    .TwoWays();
-
-                config.NewConfig<Services.Models.GlobalSetting, Models.GlobalSetting.GlobalSetting>()
-                    .TwoWays();
-
-                config.NewConfig<LayoutImportViewModel, LayoutFileImportViewModel>()
-                    .TwoWays();
-
-                config.NewConfig<FundingStream, Area.Models.FundingStream.FundingStream>()
-                    .TwoWays();
-
-                config.NewConfig<FundingStream, Web.Models.FundingStream.FundingStream>()
+                        src => src.NextPayments != null ? src.NextPayments.Any() : false)
                     .TwoWays();
 
                 config.NewConfig<Services.Models.SettingType, SettingType>()
@@ -66,12 +45,6 @@ namespace PDS.ViewYourFunding.Web.Extensions
                     dest => dest.IsSettingTypeInUse,
                     src => src.SettingValues != null ? src.SettingValues.Any() : false)
                 .TwoWays();
-
-                config.NewConfig<Services.Models.SettingValue, SettingValue>()
-                .TwoWays();
-
-                config.NewConfig<Services.Models.Pagination, Pagination>()
-                    .TwoWays();
 
                 config.NewConfig<ChildDetailedViewDataRequestModel, ProviderFundingBreakdownRequest>()
                     .Map(

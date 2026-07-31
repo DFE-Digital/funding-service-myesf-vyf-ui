@@ -175,6 +175,13 @@ namespace PDS.ViewYourFunding.Web
                 opt.Cookie.IsEssential = true;
                 opt.Cookie.SecurePolicy = CookieSecurePolicy.Always;
             });
+
+            var config = new TypeAdapterConfig();
+            config.ConfigureServicesMappings();
+            config.ConfigureWebMappings();
+
+            services.AddSingleton(config);
+            services.AddScoped<IMapper, ServiceMapper>();
         }
 
         /// <summary>
@@ -186,18 +193,6 @@ namespace PDS.ViewYourFunding.Web
             builder.RegisterModule<RepositoriesAutofacModule>();
             builder.RegisterModule<ServicesAutofacModule>();
             builder.RegisterModule<WebAutofacModule>();
-
-            var config = new TypeAdapterConfig();
-            config.ConfigureServicesMappings();
-            config.ConfigureWebMappings();
-
-            builder.RegisterInstance(config)
-                .As<TypeAdapterConfig>()
-                .SingleInstance();
-
-            builder.RegisterType<ServiceMapper>()
-                .As<IMapper>()
-                .SingleInstance();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
