@@ -837,30 +837,6 @@
       }
     },
     {
-      "apiVersion": "2019-10-01",
-      "name": "sql-server-firewall-rules",
-      "resourceGroup": "[parameters('sharedResourceGroupName')]",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(variables('deploymentUrlBase'),'sql-server-firewall-rules.json')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "firewallRuleNamePrefix": {
-            "value": "AZURE_IP-"
-          },
-          "ipAddresses": {
-            "value" : "[union(reference('app-service').outputs.possibleOutboundIpAddresses.value, reference('app-service').outputs.possibleOutboundIpAddresses.value)]"
-          },
-          "serverName": {
-            "value": "[parameters('sharedSQLServerName')]"
-          }
-        }
-      }
-    },
-    {
       "apiVersion": "2017-05-10",
       "name": "[concat(variables('AppServicePlanName'), '-metric-', tolower(variables('AppServicePlanMetricsToAlertUpon')[copyIndex()].MetricName))]",
       "type": "Microsoft.Resources/deployments",
