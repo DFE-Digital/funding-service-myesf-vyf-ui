@@ -35,25 +35,19 @@ namespace PDS.ViewYourFunding.Web.Extensions
                 config.Default.PreserveReference(true);
 
                 config.NewConfig<NextPaymentType, Area.Models.NextPaymentType.NextPaymentType>()
-                    .Map(
-                        dest => dest.IsNextPaymentTypeInUse,
-                        src => src.NextPayments != null ? src.NextPayments.Any() : false)
-                    .TwoWays();
+                .TwoWays().Map(
+                    dest => dest.IsNextPaymentTypeInUse,
+                    src => src.NextPayments != null ? src.NextPayments.Any() : false);
 
                 config.NewConfig<Services.Models.SettingType, SettingType>()
-                .Map(
+                .TwoWays().Map(
                     dest => dest.IsSettingTypeInUse,
-                    src => src.SettingValues != null ? src.SettingValues.Any() : false)
-                .TwoWays();
+                    src => src.SettingValues != null ? src.SettingValues.Any() : false);
 
                 config.NewConfig<ChildDetailedViewDataRequestModel, ProviderFundingBreakdownRequest>()
-                    .Map(
-                        dest => dest.Tab,
-                        src => src.SelectedTab)
-                    .Map(
-                        dest => dest.Ukprn,
-                        src => src.UkprnFromRoute)
-                    .TwoWays();
-            }
+                .TwoWays()
+                .Map(dest => dest.Tab, src => src.SelectedTab)
+                .Map(dest => dest.Ukprn, src => src.UkprnFromRoute);
+        }
         }
     }
