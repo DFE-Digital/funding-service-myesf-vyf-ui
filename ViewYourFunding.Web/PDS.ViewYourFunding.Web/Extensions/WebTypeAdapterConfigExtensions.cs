@@ -29,25 +29,25 @@ namespace PDS.ViewYourFunding.Web.Extensions
         /// </param>
         public static void ConfigureWebMappings(this TypeAdapterConfig config)
         {
-                TypeAdapterConfig.GlobalSettings.AllowImplicitSourceInheritance = true;
+            TypeAdapterConfig.GlobalSettings.AllowImplicitSourceInheritance = true;
 
-                config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
-                config.Default.PreserveReference(true);
+            config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
+            config.Default.PreserveReference(true);
 
-                config.NewConfig<NextPaymentType, Area.Models.NextPaymentType.NextPaymentType>()
-                .Map(
-                    dest => dest.IsNextPaymentTypeInUse,
-                    src => src.NextPayments != null ? src.NextPayments.Any() : false).TwoWays();
+            config.NewConfig<NextPaymentType, Area.Models.NextPaymentType.NextPaymentType>()
+            .Map(
+                dest => dest.IsNextPaymentTypeInUse,
+                src => src.NextPayments != null ? src.NextPayments.Any() : false);
 
-                config.NewConfig<Services.Models.SettingType, SettingType>()
-                .Map(
-                    dest => dest.IsSettingTypeInUse,
-                    src => src.SettingValues != null ? src.SettingValues.Any() : false).TwoWays();
+            config.NewConfig<Services.Models.SettingType, SettingType>()
+            .Map(
+                dest => dest.IsSettingTypeInUse,
+                src => src.SettingValues != null ? src.SettingValues.Any() : false);
 
-                config.NewConfig<ChildDetailedViewDataRequestModel, ProviderFundingBreakdownRequest>()
-                .TwoWays()
-                .Map(dest => dest.Tab, src => src.SelectedTab)
-                .Map(dest => dest.Ukprn, src => src.UkprnFromRoute);
-        }
+            config.NewConfig<ChildDetailedViewDataRequestModel, ProviderFundingBreakdownRequest>()
+            .TwoWays()
+            .Map(dest => dest.Tab, src => src.SelectedTab)
+            .Map(dest => dest.Ukprn, src => src.UkprnFromRoute);
         }
     }
+}
