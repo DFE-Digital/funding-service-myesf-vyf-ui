@@ -35,14 +35,14 @@ namespace PDS.ViewYourFunding.Web.Extensions
                 config.Default.PreserveReference(true);
 
                 config.NewConfig<NextPaymentType, Area.Models.NextPaymentType.NextPaymentType>()
-                .TwoWays().Map(
+                .Map(
                     dest => dest.IsNextPaymentTypeInUse,
-                    src => src.NextPayments != null ? src.NextPayments.Any() : false);
+                    src => src.NextPayments != null ? src.NextPayments.Any() : false).TwoWays();
 
                 config.NewConfig<Services.Models.SettingType, SettingType>()
-                .TwoWays().Map(
+                .Map(
                     dest => dest.IsSettingTypeInUse,
-                    src => src.SettingValues != null ? src.SettingValues.Any() : false);
+                    src => src.SettingValues != null ? src.SettingValues.Any() : false).TwoWays();
 
                 config.NewConfig<ChildDetailedViewDataRequestModel, ProviderFundingBreakdownRequest>()
                 .TwoWays()
