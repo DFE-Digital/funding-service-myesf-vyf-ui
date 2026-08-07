@@ -30,7 +30,6 @@ namespace PDS.ViewYourFunding.Services.Extensions
             config.Default.PreserveReference(true);
 
             config.NewConfig<Repositories.DataModels.NextPayment, NextPayment>()
-                .TwoWays()
                 .Map(
                     dest => dest.NextPaymentTypeDescription,
                     src => src.NextPaymentType.Description)
