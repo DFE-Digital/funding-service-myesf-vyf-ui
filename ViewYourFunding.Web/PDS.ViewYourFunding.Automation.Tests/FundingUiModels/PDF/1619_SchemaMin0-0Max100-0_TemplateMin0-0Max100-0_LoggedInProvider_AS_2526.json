@@ -1,8 +1,8 @@
 {
   "name": "16-19 Logged In Provider funding breakdown (All) - AS-2526",
   "type": "PDF",
-        "version": 3,
-        "versionNotes": "218182 - 16-19 allocation statement changes iteration 1 - round T level numbers to whole",
+  "version": 3,
+  "versionNotes": "218182 - 16-19 allocation statement changes iteration 1 - round T level numbers to whole",
   "dataset": [
     {
       "datasetName": "providerFunding"
@@ -17,8 +17,8 @@
       "id": "logo",
       "type": "General/Literal",
       "title": [
-        "<div style='float: left; width: 25%; margin-left: 5px; margin-top: -5px; height: 130px;'>",
-        "   <img style='height: 155px; margin-left:-39px; margin-top:-25px' src='@ESFALogo' />",
+        "<div style='float: left; width: 25%; margin-left: 5px; margin-top: -5px; height: 120px;'>",
+        "   <img style='height: 145px; margin-left:-39px; margin-top:-25px' src='@ESFALogo' />",
         "</div>"
       ]
     },
@@ -88,7 +88,7 @@
     },
     {
       "type": "General/Literal",
-      "title": "<span style='font-size: 12px;'>Please download our <a href='https://www.gov.uk/government/publications/16-to-19-funding-allocation-statement-guides'>supporting guides</a> to help you understand your revenue funding allocation statement.</span><br><br>"
+      "title": "<span style='font-size: 10px;'>Please download our <a href='https://www.gov.uk/government/publications/16-to-19-funding-allocation-statement-guides'>supporting guides</a> to help you understand your revenue funding allocation statement.</span><br><br>"
     },
     {
       "type": "Table/Table",
@@ -740,7 +740,7 @@
               "groups": [
                 {
                   "type": "General/Literal",
-                  "title": "<div style='font-weight: bold; font-size: 16px; margin-top: 7px'>Core programme funding</div>"
+                  "title": "<div style='font-weight: bold; font-size: 14px; margin-top: 5px'>Core programme funding</div>"
                 },
                 {
                   "id": "formulaTables",
@@ -798,7 +798,7 @@
                                               "subtype": "td",
                                               "title": "See&nbsp;student&nbsp;numbers<br>table<br><br>",
                                               "attributes": {
-                                                "style": "font-size: 13px; height: 53px;"
+                                                "style": "font-size: 11px; height: 51px;"
                                               }
                                             }
                                           ]
@@ -844,7 +844,7 @@
                               "title": "X",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 18px;"
+                                "style": "font-size: 16px;"
                               }
                             },
                             {
@@ -882,7 +882,7 @@
                                               "subtype": "td",
                                               "title": "See&nbsp;breakdown&nbsp;of<br>funding&nbsp;by&nbsp;band&nbsp;table<br><br>",
                                               "attributes": {
-                                                "style": "font-size: 13px; height: 53px;"
+                                                "style": "font-size: 11px; height: 51px;"
                                               }
                                             }
                                           ]
@@ -928,7 +928,7 @@
                               "title": "X",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 18px;"
+                                "style": "font-size: 16px;"
                               }
                             },
                             {
@@ -1017,7 +1017,7 @@
                               "title": "X",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 18px;"
+                                "style": "font-size: 16px;"
                               }
                             },
                             {
@@ -1106,7 +1106,7 @@
                               "title": "+",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 26px;"
+                                "style": "font-size: 24px;"
                               }
                             },
                             {
@@ -1144,7 +1144,7 @@
                                               "subtype": "td",
                                               "title": "See&nbsp;English&nbsp;and&nbsp;maths<br>funding&nbsp;table<br><br>",
                                               "attributes": {
-                                                "style": "font-size: 13px; height: 53px;"
+                                                "style": "font-size: 11px; height: 51px;"
                                               }
                                             }
                                           ]
@@ -1192,7 +1192,7 @@
                               "title": "+",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 26px;"
+                                "style": "font-size: 24px;"
                               }
                             },
                             {
@@ -1230,7 +1230,7 @@
                                               "subtype": "td",
                                               "title": "See&nbsp;distribution&nbsp;of<br>disadvantage&nbsp;funding<br>table<br><br>",
                                               "attributes": {
-                                                "style": "font-size: 13px; height: 53px;"
+                                                "style": "font-size: 11px; height: 51px;"
                                               }
                                             }
                                           ]
@@ -1278,7 +1278,7 @@
                               "title": "+",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 26px;"
+                                "style": "font-size: 24px;"
                               }
                             },
                             {
@@ -1316,7 +1316,7 @@
                                               "subtype": "td",
                                               "title": "See&nbsp;large<br>programmes&nbsp;uplift<br>table<br><br>",
                                               "attributes": {
-                                                "style": "font-size: 13px; height: 53px;"
+                                                "style": "font-size: 11px; height: 51px;"
                                               }
                                             }
                                           ]
@@ -1373,7 +1373,7 @@
                               "title": "X",
                               "classname": "bold",
                               "attributes": {
-                                "style": "font-size: 18px;"
+                                "style": "font-size: 16px;"
                               }
                             },
                             {
@@ -5491,24 +5491,24 @@
                             },
                             {
                               "type": "Table/RowColumn",
-                                                                "selector": "$..calculations[?(@.templateCalculationId == 533)].value",
-                                                                "datastyle": {
-                                                                    "numberFormat": "F0"
-                                                                }
+                              "selector": "$..calculations[?(@.templateCalculationId == 533)].value",
+                              "datastyle": {
+                                "numberFormat": "F0"
+                              }
                             },
                             {
                               "type": "Table/RowColumn",
-                                                                "selector": "$..calculations[?(@.templateCalculationId == 25)].value",
-                                                                "datastyle": {
-                                                                    "numberFormat": "F0"
-                                                                }
+                              "selector": "$..calculations[?(@.templateCalculationId == 25)].value",
+                              "datastyle": {
+                                "numberFormat": "F0"
+                              }
                             },
                             {
                               "type": "Table/RowColumn",
-                                                                "selector": "$..calculations[?(@.templateCalculationId == 532)].value",
-                                                                "datastyle": {
-                                                                    "numberFormat": "F0"
-                                                                }
+                              "selector": "$..calculations[?(@.templateCalculationId == 532)].value",
+                              "datastyle": {
+                                "numberFormat": "F0"
+                              }
                             },
                             {
                               "type": "Table/RowColumn",
@@ -7888,7 +7888,7 @@
             {
               "type": "General/Literal",
               "title": [
-                "<div style='font-size: 12px; margin-top: 7px'>The values on your statement are shown rounded to various numbers of decimal places.<br> ",
+                "<div style='font-size: 10px; margin-top: 5px'>The values on your statement are shown rounded to various numbers of decimal places.<br> ",
                 "The calculation of your funding however is done using un-rounded values. This may result in some slight differences when you work through the calculation yourselves.</div>"
               ]
             }
@@ -7901,10 +7901,10 @@
       "subtype": "style",
       "title": [
         "body { font-family: Arial; } ",
-        "h2 { font-size: 22px; font-weight: normal; } ",
-        "h3 { font-size: 18px; margin: 22px 0; } ",
-        "table td, table th, table caption { font-size: 15px; padding: 5px; } ",
-        "#formulaTables th, #formulaTables td { padding: 3px; } ",
+        "h2 { font-size: 20px; font-weight: normal; } ",
+        "h3 { font-size: 16px; margin: 20px 0; } ",
+        "table td, table th, table caption { font-size: 13px; padding: 3px; } ",
+        "#formulaTables th, #formulaTables td { padding: 1px; } ",
         "table.styleTable caption, table.styleTable thead th, .greyBold, .greyBold td { text-align: left; font-weight: bold; } ",
         ".greyBold > td:nth-child(1) { font-weight: normal; } ",
         "table.styleTable { border-collapse: collapse; } ",
@@ -8191,7 +8191,7 @@
     },
     {
       "name": "heightMM",
-                "value": 211.058
+      "value": 211.058
     },
     {
       "name": "topMarginMM",
