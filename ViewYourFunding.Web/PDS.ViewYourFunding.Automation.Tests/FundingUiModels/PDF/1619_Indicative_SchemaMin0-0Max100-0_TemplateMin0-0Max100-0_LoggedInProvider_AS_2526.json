@@ -1,8 +1,8 @@
 {
   "name": "16-19 Logged In Provider Indicative Statement",
   "type": "PDF",
-  "version": 1,
-  "versionNotes": "224696 - VYF - 16-19 - 25-26 - Indicative - Dev + Test",
+  "version": 2,
+  "versionNotes": "278016 - core programme funding diagram cut off",
   "dataset": [
     {
       "datasetName": "providerFunding"

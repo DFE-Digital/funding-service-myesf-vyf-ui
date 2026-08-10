@@ -1,8 +1,8 @@
 {
   "name": "16-19 Logged In Provider funding breakdown (All) - AS-2526",
   "type": "PDF",
-  "version": 3,
-  "versionNotes": "218182 - 16-19 allocation statement changes iteration 1 - round T level numbers to whole",
+  "version": 4,
+  "versionNotes": "278016 - core programme funding diagram cut off",
   "dataset": [
     {
       "datasetName": "providerFunding"
