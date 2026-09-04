@@ -4650,7 +4650,7 @@
           "type": "Tabs/Tab",
           "id": "minimum-funding-guarantee",
           "title": "Minimum funding guarantee",
-          "visibilityCondition": "@MFGTabIYOCondition=true|@SBSMFGTabMainCondition=true",
+          "visibilityCondition": "@MFGTabIYOCondition=true|@MFGTabMainCondition=true",
           "groups": [
             {
               "type": "Html/Div",
@@ -9154,6 +9154,10 @@
     },
     {
       "name": "SBSMFGTabMainCondition",
+      "expression": "@FundingBasisIsPlace=false"
+    },
+    {
+      "name": "MFGTabMainCondition",
       "expression": "@InYearOpener=false&@FundingBasisIsPlace=false"
     },
     {
