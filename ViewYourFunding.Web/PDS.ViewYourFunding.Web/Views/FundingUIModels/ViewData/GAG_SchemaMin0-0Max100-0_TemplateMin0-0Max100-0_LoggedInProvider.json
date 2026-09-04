@@ -9150,7 +9150,7 @@
     },
     {
       "name": "MFGTabIYOCondition",
-      "expression": "@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=false"
+      "expression": "@FundingBasisIsPlace=false&@IsMainstreamFreeSchool=false&@InYearOpener=true"
     },
     {
       "name": "SBSMFGTabMainCondition",
