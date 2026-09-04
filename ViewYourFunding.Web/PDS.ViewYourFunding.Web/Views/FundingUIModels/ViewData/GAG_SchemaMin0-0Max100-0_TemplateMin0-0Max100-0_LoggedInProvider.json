@@ -9154,7 +9154,7 @@
     },
     {
       "name": "SBSMFGTabMainCondition",
-      "expression": "@FundingBasisIsPlace=false"
+      "expression": "@InYearOpener=false&@FundingBasisIsPlace=false"
     },
     {
       "name": "PFCondition",
