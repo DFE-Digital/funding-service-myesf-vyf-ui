@@ -3924,7 +3924,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = (@britishCurrencySymbols)[AD] * [W]",
+              "title": " = @britishCurrencySymbol@DAFrate * [W]",
               "classname": "formuladetail"
             }
           ],

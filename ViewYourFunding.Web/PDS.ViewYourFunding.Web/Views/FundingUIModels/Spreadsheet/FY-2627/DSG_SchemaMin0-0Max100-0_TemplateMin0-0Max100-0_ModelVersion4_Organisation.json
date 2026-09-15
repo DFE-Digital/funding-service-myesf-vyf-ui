@@ -3871,7 +3871,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = (@britishCurrencySymbols)$..calculations[?(@.templateCalculationId == 284)].value * [U]",
+              "title": " = @britishCurrencySymbol@DAFrate * [U]",
               "classname": "formuladetail"
             }
           ],
@@ -3924,7 +3924,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = (@britishCurrencySymbols)$..calculations[?(@.templateCalculationId == 284)].value * [W]",
+              "title": " = @britishCurrencySymbol@DAFrate * [W]",
               "classname": "formuladetail"
             }
           ],
@@ -3977,7 +3977,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = (@britishCurrencySymbols)$..calculations[?(@.templateCalculationId == 284)].value * [Y]",
+              "title": " = @britishCurrencySymbol@DAFrate * [Y]",
               "classname": "formuladetail"
             }
           ],
