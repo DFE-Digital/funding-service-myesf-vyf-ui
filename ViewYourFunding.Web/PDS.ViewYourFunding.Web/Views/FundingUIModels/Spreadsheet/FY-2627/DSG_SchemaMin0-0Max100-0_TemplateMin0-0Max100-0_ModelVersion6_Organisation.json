@@ -3871,7 +3871,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = £938 * [U]",
+              "title": " = @britishCurrencySymbol@DAFrate * [U]",
               "classname": "formuladetail"
             }
           ],
@@ -3924,7 +3924,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = £938 * [W]",
+              "title": " = @britishCurrencySymbol@DAFrate * [W]",
               "classname": "formuladetail"
             }
           ],
@@ -3977,7 +3977,7 @@
               "classname": "formuladetail"
             },
             {
-              "title": " = £938 * [Y]",
+              "title": " = @britishCurrencySymbol@DAFrate * [Y]",
               "classname": "formuladetail"
             }
           ],
@@ -4125,6 +4125,12 @@
           }
         }
       ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "DAFrate",
+     "selector": "$..calculations[?(@.templateCalculationId == 284)].value"
     }
   ]
 }
