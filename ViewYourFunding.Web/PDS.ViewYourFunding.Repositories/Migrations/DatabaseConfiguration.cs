@@ -272,6 +272,11 @@ namespace PDS.ViewYourFunding.Repositories.Migrations
         private const string PSGAY2526FundingPeriodCode = "AY-2526";
 
         /// <summary>
+        /// The PSG Year 2026 - 2027 funding period code.
+        /// </summary>
+        private const string PSGAY2627FundingPeriodCode = "AY-2627";
+
+        /// <summary>
         /// Type Code for Main PNA.
         /// </summary>
         private const string MainPnaTypeCode = "PNA";
@@ -1410,6 +1415,9 @@ namespace PDS.ViewYourFunding.Repositories.Migrations
             // AY-2526 Next payments
             SeedNextPayment(context, fundingStream, now, new DateTime(2025, 12, 18), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
             SeedNextPayment(context, fundingStream, now, new DateTime(2026, 4, 17), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
+
+            // AY-2627 Next payments
+            SeedNextPayment(context, fundingStream, now, new DateTime(2026, 12, 18), nextPaymentType, nextPayments, PSGAY2627FundingPeriodCode);
         }
 
         private static void SeedPSGAcademiesNextPayments(Context context, FundingStream fundingStream, NextPaymentType nextPaymentType, DateTime now, List<NextPayment> nextPayments)
@@ -1442,6 +1450,10 @@ namespace PDS.ViewYourFunding.Repositories.Migrations
             SeedNextPayment(context, fundingStream, now, new DateTime(2025, 11, 10), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
             SeedNextPayment(context, fundingStream, now, new DateTime(2026, 3, 9), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
             SeedNextPayment(context, fundingStream, now, new DateTime(2026, 5, 11), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
+
+            // AY-2627 Next payments
+            SeedNextPayment(context, fundingStream, now, new DateTime(2026, 3, 8), nextPaymentType, nextPayments, PSGAY2627FundingPeriodCode);
+            SeedNextPayment(context, fundingStream, now, new DateTime(2026, 11, 9), nextPaymentType, nextPayments, PSGAY2627FundingPeriodCode);
         }
 
         private static void SeedPSGMSNextPayments(Context context, FundingStream fundingStream, NextPaymentType nextPaymentType, DateTime now, List<NextPayment> nextPayments)
@@ -1474,6 +1486,10 @@ namespace PDS.ViewYourFunding.Repositories.Migrations
             SeedNextPayment(context, fundingStream, now, new DateTime(2025, 10, 31), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
             SeedNextPayment(context, fundingStream, now, new DateTime(2026, 2, 27), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
             SeedNextPayment(context, fundingStream, now, new DateTime(2026, 4, 30), nextPaymentType, nextPayments, PSGAY2526FundingPeriodCode);
+
+            // AY-2627 Next payments
+            SeedNextPayment(context, fundingStream, now, new DateTime(2026, 10, 30), nextPaymentType, nextPayments, PSGAY2627FundingPeriodCode);
+            SeedNextPayment(context, fundingStream, now, new DateTime(2026, 2, 26), nextPaymentType, nextPayments, PSGAY2627FundingPeriodCode);
         }
 
         /// <summary>
