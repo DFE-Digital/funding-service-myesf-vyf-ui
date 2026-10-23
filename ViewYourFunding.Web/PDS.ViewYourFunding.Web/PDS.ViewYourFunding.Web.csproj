@@ -8,8 +8,8 @@
 		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 		<UserSecretsId>966cebe3-b68e-493a-a5fe-b7c7e0cb35b7</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<Compile Remove="Models\Shared\CurrentUserViewModel.cs" />
 	</ItemGroup>
@@ -101,6 +101,9 @@
 		<PackageReference Include="Pds.Core.Web.Components" Version="6.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
 		<PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+		<PackageReference Include="NuGet.Protocol" Version="7.9.0" />
+		<PackageReference Include="NuGet.Packaging" Version="7.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>

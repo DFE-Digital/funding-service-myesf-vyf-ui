@@ -5,9 +5,10 @@
   </PropertyGroup>
 
 	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
   <None Remove="ViewYourFunding.Core.csproj.transform" />
   </ItemGroup>

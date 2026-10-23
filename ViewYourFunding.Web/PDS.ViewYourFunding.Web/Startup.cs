@@ -130,7 +130,6 @@ namespace PDS.ViewYourFunding.Web
 
             services.AddSingleton(Task.Run(InitializeCosmosClientInstanceAsync).GetAwaiter().GetResult());
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddTransient<IRazorViewToStringRenderer, RazorViewToStringRenderer>();
 
             TokenAuthorizeAttribute.ExpectedAuthKey = Configuration["RequestAuthorisationKey"];
