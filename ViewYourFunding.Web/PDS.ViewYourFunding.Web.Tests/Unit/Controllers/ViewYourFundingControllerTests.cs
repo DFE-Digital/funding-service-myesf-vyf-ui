@@ -3358,6 +3358,7 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
         /// </summary>
         /// <param name="organisationUkprn">The organisation ukprn.</param>
         /// <param name="resultCount">The result count.</param>
+        /// <returns> representing the asynchronous unit test. </returns>
         [TestMethod, TestCategory("Unit")]
         [DataRow(OrganisationUkprn, 1)]
         [DataRow(OrganisationUkprn, 2)]
@@ -3449,7 +3450,6 @@ namespace PDS.ViewYourFunding.Web.Tests.Unit.Controllers
         /// </summary>
         /// <param name="organisationUkprn">The organisation ukprn.</param>
         /// <param name="resultCount">The result count.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
         [TestMethod, TestCategory("Unit")]
         [DataRow("", 0)]
         [DataRow(null, 0)]
