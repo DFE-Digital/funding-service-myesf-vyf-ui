@@ -1,16 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>		
+		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
-
+	
 	<PropertyGroup>
 		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 		<UserSecretsId>966cebe3-b68e-493a-a5fe-b7c7e0cb35b7</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<Compile Remove="Models\Shared\CurrentUserViewModel.cs" />
 	</ItemGroup>
@@ -84,26 +83,27 @@
 		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
 		<PackageReference Include="Mapster" Version="10.0.11" />
 		<PackageReference Include="Mapster.DependencyInjection" Version="10.0.11" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.WsFederation" Version="8.0.22" />
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="8.0.22" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.WsFederation" Version="10.0.13" />
 		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.55.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.22">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.13">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.22" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.13" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
-		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.22" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
 		<PackageReference Include="Pds.Core.CodeAnalysis.StyleCop" Version="2.0.0" />
 		<PackageReference Include="Pds.Core.Common" Version="2.0.0" />
-		<PackageReference Include="Pds.Core.SecurityAssurance" Version="2.1.0" />
+		<PackageReference Include="Pds.Core.SecurityAssurance" Version="3.0.0" />
 		<PackageReference Include="Pds.Core.Telemetry.ApplicationInsights" Version="3.0.0" />
-		<PackageReference Include="Pds.Core.Utils" Version="3.0.0" />
-		<PackageReference Include="Pds.Core.Web" Version="5.0.14" />
-		<PackageReference Include="Pds.Core.Web.Components" Version="5.0.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
+		<PackageReference Include="Pds.Core.Utils" Version="3.0.1" />
+		<PackageReference Include="Pds.Core.Web" Version="6.0.0" />
+		<PackageReference Include="Pds.Core.Web.Components" Version="6.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+		<PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+		<PackageReference Include="NuGet.Protocol" Version="7.9.0" />
+		<PackageReference Include="NuGet.Packaging" Version="7.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>

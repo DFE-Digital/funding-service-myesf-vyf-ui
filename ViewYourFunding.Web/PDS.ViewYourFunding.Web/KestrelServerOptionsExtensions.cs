@@ -99,7 +99,9 @@ namespace PDS.ViewYourFunding.Web
 
             if (config.FilePath != null && config.Password != null)
             {
-                return new X509Certificate2(config.FilePath, config.Password);
+                return X509CertificateLoader.LoadPkcs12FromFile(
+                    config.FilePath,
+                    config.Password);
             }
 
             throw new InvalidOperationException("No valid certificate configuration found for the current endpoint.");

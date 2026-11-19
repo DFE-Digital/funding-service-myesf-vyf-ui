@@ -129,8 +129,6 @@ namespace PDS.ViewYourFunding.Services.Implementations
         /// <returns>A string containing the response content.</returns>
         public async Task<string> GetResponse(string url)
         {
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
-
             SetupBaseUrl();
 
             var cacheKey = $"{nameof(GetPostResponse)}-{url}";
@@ -159,8 +157,6 @@ namespace PDS.ViewYourFunding.Services.Implementations
         /// <returns>A string containing the response content.</returns>
         public async Task<T> GetResponseFromUserFundingView<T>(string url)
         {
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
-
             SetupBaseUrl();
 
             var response = await ApiClient.GetAsync(url);
@@ -239,7 +235,6 @@ namespace PDS.ViewYourFunding.Services.Implementations
         /// <param name="parameters">The parameters to post to the endpoint.</param>
         private async Task<T> GetPostResponse<T>(string url, string requestType, string parameters = null)
         {
-            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
             var stringContent = new StringContent(parameters ?? string.Empty, Encoding.UTF8, requestType);
 
             SetupBaseUrl();
