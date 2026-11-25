@@ -221,6 +221,9 @@
 	  <Content Include="ExternalApi\ExpectedHtml\ExternalApiTests_NMSS_AY_2526\html_NMSS_With_Post_Pre16PupilProportions_AS_NA.html">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
+	  <Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2627.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="FundingUiModels\PDF\1416_SchemaMin0-0Max100-0_TemplateMin0-0Max100-0_LoggedInProvider_AY_2526.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
@@ -457,6 +460,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2425\uri.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2627\html_1416_Static_Summary_English_and_Maths_funding.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2627\uri.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ExternalApi\ExpectedHtml\ExternalApiTests_1416_AY_2526\html_1416_Static_Summary_English_and_Maths_funding.html">
